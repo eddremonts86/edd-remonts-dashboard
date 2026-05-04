@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+  <title id="title">Logo 5 — Brutalist Stamp</title>
+  <desc id="desc">Bold condensed stamp logo with angular slash and editorial tech energy.</desc>
+  <defs>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FB7185"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(66 62)">
+    <rect x="0" y="0" width="312" height="292" rx="18" fill="none" stroke="#F5EDE7" stroke-width="12"/>
+    <path d="M88 236L214 60h66L154 236z" fill="url(#g5)"/>
+    <path d="M36 246H274" stroke="#F5EDE7" stroke-width="12"/>
+    <path d="M40 88H144" stroke="#F5EDE7" stroke-width="12"/>
+    <path d="M172 88H270" stroke="#F5EDE7" stroke-width="12" opacity="0.42"/>
+  </g>
+  <g transform="translate(430 96)">
+    <text x="0" y="80" fill="#FFF7F2" font-size="96" font-weight="900" font-family="Arial Narrow, Impact, Haettenschweiler, Arial, sans-serif" letter-spacing="2">INERARTE</text>
+    <text x="2" y="156" fill="url(#g5)" font-size="48" font-weight="900" font-family="Arial Narrow, Impact, Haettenschweiler, Arial, sans-serif" letter-spacing="10">EDUARDO</text>
+    <path d="M0 194H640" stroke="#2A3248" stroke-width="14"/>
+    <text x="0" y="244" fill="#A6B0C8" font-size="26" font-weight="700" font-family="Inter, ui-sans-serif, system-ui, sans-serif" letter-spacing="5">SENIOR FULL-STACK / FRONTEND ENGINEER</text>
+  </g>
+</svg>

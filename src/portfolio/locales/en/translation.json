@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Download CV",
+    "discover": "Discover"
+  },
+  "hero": {
+    "available": "Available for new opportunities",
+    "greeting": "Hello, I'm",
+    "role": "Senior Frontend Engineer",
+    "titleLine1": "Frontend",
+    "titleLine2": "Craftsman.",
+    "explore": "Explore My Work",
+    "scroll": "Scroll"
+  },
+  "personalInfo": {
+    "title": "Senior Frontend Engineer with Full-Stack Roots",
+    "description": "Frontend-first engineer with full-stack roots and nearly two decades of experience since 2007. I build scalable web products that turn complex business rules into fast, intuitive interfaces using React, Vue, Node.js, and cloud platforms.",
+    "location": "Copenhagen, Denmark"
+  },
+  "about": {
+    "title": "About &",
+    "titleAccent": "Services",
+    "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
+    "features": {
+      "0": {
+        "title": "Strategic Collaborative Engineering",
+        "description": "I thrive in cross-functional environments, bridging the gap between product managers, UI/UX designers, and backend infrastructure engineers to ensure aligned delivery."
+      },
+      "1": {
+        "title": "Continuous System Evolution",
+        "description": "The technological landscape is unforgiving. I embrace architectural refactoring, keeping my tech stack, testing coverage, and CI/CD pipelines at the bleeding edge."
+      },
+      "2": {
+        "title": "Resilient Scalability",
+        "description": "Speed means nothing without stability. I build robust microservices leveraging modern Next.js/React meta-frameworks prioritizing zero-downtime overhauls."
+      }
+    },
+    "servicesTitle": "What I Deliver.",
+    "servicesSub": "Delivering premium digital experiences."
+  },
+  "services": {
+    "0": {
+      "title": "Vanguard Frontend Architecture",
+      "description": "I don't just build websites; I engineer interactive digital ecosystems. Utilizing React, Next.js, and Framer Motion, I deliver sub-second loading applications defined by 60fps animations and uncompromising UX precision."
+    },
+    "1": {
+      "title": "Cloud & Backend Resiliency",
+      "description": "An exceptional frontend requires an ironclad backend. I design robust serverless API layers, optimize relational/NoSQL database queries, and establish automated deployment pipelines ensuring 99.9% uptime scalability."
+    }
+  },
+  "experience": {
+    "title": "Professional",
+    "titleAccent": "Journey",
+    "techArsenal": "Tech Arsenal",
+    "subtitle": "From public-sector platforms in Cuba to product teams in Copenhagen, a timeline spanning 2007 to today.",
+    "present": "Present day",
+    "items": {
+      "12": {
+        "role": "Senior Frontend Developer",
+        "description": "Leading frontend development for Schilling web applications and data products, working with React 18/19, TypeScript, Node.js, Tailwind and Shadcn UI to scale complex real-estate workflows."
+      },
+      "11": {
+        "role": "Senior Frontend Developer",
+        "description": "Leading frontend development for Resights web applications and data products, working with Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js, and Vuetify to scale complex real-estate workflows."
+      },
+      "10": {
+        "role": "Senior Frontend Developer",
+        "description": "Built internal health and administration tools for Novo Nordisk with Vue, Vuetify, HTML, and CSS, focusing on reliable UI foundations for regulated medical teams."
+      },
+      "9": {
+        "role": "Senior Frontend Developer",
+        "description": "Delivered accessible campaign and landing experiences for Wunderman Nordic using Vue, SCSS, Bootstrap, and C# integrations, supporting high-traffic launches with stable frontend architecture."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Led frontend development at GiG Media Copenhagen across affiliate and content platforms, modernizing legacy estates built on Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap, and PHP while coordinating outsourced maintenance work."
+      },
+      "7": {
+        "role": "Frontend Developer",
+        "description": "Worked on high-conversion affiliate products at Rebel Penguins, shipping frontend improvements, experiments, and UI iterations across Drupal, Laravel, October CMS, Bootstrap, and MySQL-backed platforms."
+      },
+      "6": {
+        "role": "Full Stack Developer",
+        "description": "Developed internal dashboards and external client sites end to end at Rebel Penguins using PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS, and Laravel."
+      },
+      "5": {
+        "role": "Volunteer",
+        "description": "Supported Plan Denmark's sponsorship department by registering and validating documents, helping keep administrative workflows clean, structured, and reliable."
+      },
+      "4": {
+        "role": "Full Stack Developer",
+        "description": "Founded Viruta Studio Creativo and built custom products for local organizations and media outlets, including sites such as Radio Guama, using PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap, and Ext JS."
+      },
+      "3": {
+        "role": "Full Stack Developer",
+        "description": "Built internal systems at GEOCUBA's R&D agency, combining PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap, and geospatial tooling for operational and information-management needs."
+      },
+      "2": {
+        "role": "Full Stack Developer",
+        "description": "Developed statistical and administrative solutions for the Provincial Office of ONEI using PHP, MySQL, HTML, CSS, Ext JS, Drupal, and Joomla."
+      },
+      "1": {
+        "role": "Full Stack Developer - Junior Developers Manager",
+        "description": "Started my professional career on the National Library project at UCI, building Drupal, PHP, and MySQL solutions while coordinating junior developers as the team matured."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Recent",
+    "titleAccent": "Projects",
+    "subtitle": "A collection of digital experiences blending premium design and robust engineering.",
+    "view": "View Project",
+    "filters": {
+      "all": "All",
+      "frontend": "Frontend",
+      "fullStack": "Full Stack"
+    }
+  },
+  "contact": {
+    "title": "Let's",
+    "titleAccent": "Connect",
+    "subtitle": "Ready to bring your next ambitious project to life? Drop me a message and let's craft something extraordinary.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Project Details...",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "send": "Send Message",
+      "submitting": "Sending...",
+      "error": "Error. Please try emailing me directly.",
+      "target": "Initiate Connection"
+    },
+    "success": {
+      "title": "Message Sent",
+      "body": "Thanks for reaching out! I'll get back to you as soon as possible.",
+      "reset": "Send Another"
+    },
+    "info": {
+      "title": "Contact Details",
+      "emailLabel": "Email",
+      "locationLabel": "Location"
+    }
+  },
+  "stats": {
+    "yearsExperience": "Years Experience",
+    "companies": "Companies",
+    "technologies": "Technologies",
+    "lighthouse": "Lighthouse Score"
+  },
+  "testimonials": [
+    {
+      "quote": "Eduardo will be an asset for any company that employs him – in particular tech companies with a multitude of cultures - and he has my highest recommendations.",
+      "author": "Jonas Warrer",
+      "role": "Managing Director, Media Gaming Innovation Group"
+    },
+    {
+      "quote": "He can work entirely independently, but also in close cooperation. He has shown that he can deliver a viable product with minimal requirements, substituting what's missing, as well as following extensive requirements closely.",
+      "author": "Sarah Braun",
+      "role": "Backend Developer, GiG"
+    },
+    {
+      "quote": "Eduardo has been always a focused individual, with the will and focus to learn everything we required from him. The energy he always brought to the workplace was also very valued.",
+      "author": "Sergi Torres",
+      "role": "Xarxa de Transmissions Santiago"
+    },
+    {
+      "quote": "Eduardo Inerarte has exceptional frontend skills, and was our lead frontend developer. He had also been assigned to lead the outsourcing team that handles our legacy sites and he did a commendable job there.",
+      "author": "Naveen Kumar Vasudevan",
+      "role": "Team Lead, GiG"
+    }
+  ],
+  "codeShowcase": {
+    "badge": "Under the Hood",
+    "title": "Clean Code,",
+    "titleAccent": "Real Impact.",
+    "description": "Every component I build follows strict architectural principles — typed, tested, and optimized. Here's a glimpse of how I define my engineering identity in code.",
+    "hint": "Switch tabs to explore the full config",
+    "principles": {
+      "architecture": {
+        "title": "Typed Architecture",
+        "sub": "End-to-end TypeScript with strict generics"
+      },
+      "performance": {
+        "title": "Performance First",
+        "sub": "Sub-second loads, 60fps animations"
+      },
+      "patterns": {
+        "title": "Modern Patterns",
+        "sub": "Composable, tree-shakeable modules"
+      },
+      "dx": {
+        "title": "Developer Experience",
+        "sub": "Linted, formatted, CI-enforced"
+      }
+    }
+  },
+  "codeBlock": {
+    "filename": "developer.ts"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "inspired": "Crafted with intent.",
+    "builtWith": "Engineered with React 19 & Anime minimalism."
+  },
+  "preloader": {
+    "loading": "Loading experience",
+    "standby": "Stand by"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "skillsMarquee": "Technology skills",
+    "prevTestimonial": "Previous testimonial",
+    "nextTestimonial": "Next testimonial",
+    "gotoTestimonial": "Go to testimonial {{number}}",
+    "mainNav": "Main navigation",
+    "sectionNav": "Section navigation"
+  },
+  "testimonials_loading": "Loading testimonials...",
+  "cv": {
+    "aboutTitle": "About Me",
+    "summary": "Frontend-first engineer with full-stack roots and nearly two decades of experience since 2007. I build scalable web products that turn complex business rules into fast, intuitive interfaces.",
+    "intro": "I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow. I embrace architectural refactoring, keeping my tech stack, testing coverage, and CI/CD pipelines at the bleeding edge.",
+    "experienceTitle": "Professional Experience",
+    "skillsTitle": "Technical Skills",
+    "langLabel": "Languages",
+    "langItems": [
+      { "lang": "Spanish", "level": "Native" },
+      { "lang": "English", "level": "Fluent" },
+      { "lang": "Danish", "level": "B1" }
+    ]
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "about": "Om",
+    "experience": "Erfaring",
+    "projects": "Projekter",
+    "contact": "Kontakt",
+    "resume": "Download CV",
+    "discover": "Opdag"
+  },
+  "hero": {
+    "available": "Ledig for nye muligheder",
+    "greeting": "Hej, jeg er",
+    "role": "Senior Frontend Engineer",
+    "titleLine1": "Frontend",
+    "titleLine2": "Håndværker.",
+    "explore": "Udforsk mit arbejde",
+    "scroll": "Rul ned"
+  },
+  "personalInfo": {
+    "title": "Senior Frontend Engineer med Full-Stack baggrund",
+    "description": "Frontend-fokuseret engineer med full-stack baggrund og næsten to årtiers erfaring siden 2007. Jeg bygger skalerbare webprodukter, der omsætter kompleks forretningslogik til hurtige og intuitive interfaces med React, Vue, Node.js og cloud-platforme.",
+    "location": "København, Danmark"
+  },
+  "about": {
+    "title": "Om &",
+    "titleAccent": "Tjenester",
+    "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet software, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
+    "features": {
+      "0": {
+        "title": "Strategisk Samarbejdende Engineering",
+        "description": "Jeg trives i tværfunktionelle miljøer, der bygger bro mellem produktledere, UI/UX-designere og backend-infrastruktur-ingeniører for at sikre en justeret levering."
+      },
+      "1": {
+        "title": "Kontinuerlig Systemudvikling",
+        "description": "Dagens teknologilandskab er utilgivende. Jeg omfavner arkitektonisk refaktoriseringsarbejde og holder min teknologistak, testdækning og CI/CD-pipelines på forkant."
+      },
+      "2": {
+        "title": "Robust Skalerbarhed",
+        "description": "Hastighed betyder intet uden stabilitet. Jeg bygger robuste mikrotjenester og drager fordel af moderne Next.js/React meta-frameworks, der prioriterer overhalinger med nul nedetid."
+      }
+    },
+    "servicesTitle": "Hvad Jeg Leverer.",
+    "servicesSub": "Leverer premium digitale oplevelser."
+  },
+  "services": {
+    "0": {
+      "title": "Avantgarde Frontend Arkitektur",
+      "description": "Jeg bygger ikke blot hjemmesider; jeg designer interaktive digitale økosystemer. Ved hjælp af React, Next.js og Framer Motion leverer jeg applikationer med indlæsning under 1 sekund, defineret af 60fps-animationer og urokkelig UX-præcision."
+    },
+    "1": {
+      "title": "Cloud & Backend Modstandsdygtighed",
+      "description": "En enestående frontend kræver en stenhård backend. Jeg designer robuste serverless API-lag, optimerer relationelle/NoSQL-databaseforespørgsler og etablerer automatiserede deploymentpipelines, der sikrer en oppetid på 99,9 %."
+    }
+  },
+  "experience": {
+    "title": "Professionel",
+    "titleAccent": "Rejse",
+    "techArsenal": "Teknologisk Arsenal",
+    "subtitle": "Fra offentlige platforme i Cuba til product teams i København, en tidslinje der spænder fra 2007 til i dag.",
+    "present": "Nu",
+    "items": {
+      "12": {
+        "role": "Senior Frontend Udvikler",
+        "description": "Leder frontend-udviklingen af Schillings webapplikationer og dataprodukter, med fokus på React 18/19, TypeScript, Node.js, Tailwind og Shadcn UI til at skalere komplekse ejendomsworkflows."
+      },
+      "11": {
+        "role": "Senior Frontend Developer",
+        "description": "Leder frontend-udviklingen af Resights webapplikationer og dataprodukter med Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js og Vuetify for at skalere komplekse workflows i ejendomsdomænet."
+      },
+      "10": {
+        "role": "Senior Frontend Developer",
+        "description": "Byggede interne sundheds- og administrationsværktøjer for Novo Nordisk med Vue, Vuetify, HTML og CSS med fokus på stabile UI-fundamenter til regulerede medicinske teams."
+      },
+      "9": {
+        "role": "Senior Frontend Developer",
+        "description": "Leverede tilgængelige kampagner og landing pages for Wunderman Nordic med Vue, SCSS, Bootstrap og C#-integrationer, så lanceringer med høj trafik kunne køre på en stabil frontend-arkitektur."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Ledte frontend-udviklingen hos GiG Media Copenhagen på tværs af affiliate- og content-produkter, moderniserede legacy-platforme bygget i Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap og PHP, og koordinerede outsourcede vedligeholdelsesopgaver."
+      },
+      "7": {
+        "role": "Frontend Developer",
+        "description": "Arbejdede på high-conversion affiliate-produkter hos Rebel Penguins og leverede frontend-forbedringer, eksperimenter og UI-iterationer på platforme baseret på Drupal, Laravel, October CMS, Bootstrap og MySQL."
+      },
+      "6": {
+        "role": "Full Stack Developer",
+        "description": "Udviklede interne dashboards og eksterne websites end-to-end hos Rebel Penguins med PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS og Laravel."
+      },
+      "5": {
+        "role": "Volunteer",
+        "description": "Støttede Plan Denmarks sponsorafdeling med registrering og validering af dokumenter og var med til at holde de administrative processer rene, strukturerede og pålidelige."
+      },
+      "4": {
+        "role": "Full Stack Developer",
+        "description": "Grundlagde Viruta Studio Creativo og byggede skræddersyede produkter for lokale organisationer og medier, herunder websites som Radio Guama, med PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap og Ext JS."
+      },
+      "3": {
+        "role": "Full Stack Developer",
+        "description": "Byggede interne systemer i GEOCUBAs forsknings- og udviklingsafdeling ved at kombinere PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap og geospatiale værktøjer til operationelle og informationsmæssige behov."
+      },
+      "2": {
+        "role": "Full Stack Developer",
+        "description": "Udviklede statistiske og administrative løsninger for den provinsielle ONEI-kontor med PHP, MySQL, HTML, CSS, Ext JS, Drupal og Joomla."
+      },
+      "1": {
+        "role": "Full Stack Developer - Junior Developers Manager",
+        "description": "Startede min professionelle karriere på National Library-projektet ved UCI, hvor jeg byggede løsninger i Drupal, PHP og MySQL og samtidig koordinerede juniorudviklere, efterhånden som teamet voksede."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mine Seneste",
+    "titleAccent": "Projekter",
+    "subtitle": "En samling af digitale oplevelser der blander premium design med stabil systemteknik.",
+    "view": "Se Projekt",
+    "filters": {
+      "all": "Alle",
+      "frontend": "Frontend",
+      "fullStack": "Full Stack"
+    }
+  },
+  "contact": {
+    "title": "Lad os",
+    "titleAccent": "Forbinde",
+    "subtitle": "Klar på at gøre dit næste ambitiøse projekt til virkelighed? Drop en besked, og lad os designe noget exceptionelt.",
+    "form": {
+      "name": "Dit Navn",
+      "email": "Din Email",
+      "message": "Projekt Detaljer...",
+      "namePlaceholder": "Jens Jensen",
+      "emailPlaceholder": "jens@eksempel.dk",
+      "send": "Send Besked",
+      "submitting": "Sender...",
+      "error": "Fejl. Prøv venligst at sende mig en e-mail direkte.",
+      "target": "Start Forbindelse"
+    },
+    "success": {
+      "title": "Besked Sendt",
+      "body": "Tak fordi du skrev! Jeg vender tilbage hurtigst muligt.",
+      "reset": "Send Endnu En"
+    },
+    "info": {
+      "title": "Kontakt Information",
+      "emailLabel": "E-mail",
+      "locationLabel": "Placering"
+    }
+  },
+  "stats": {
+    "yearsExperience": "Års Erfaring",
+    "companies": "Virksomheder",
+    "technologies": "Teknologier",
+    "lighthouse": "Lighthouse Score"
+  },
+  "testimonials": [
+    {
+      "quote": "Eduardo vil være et aktiv for enhver virksomhed, der ansætter ham – især teknologivirksomheder med en mangfoldighed af kulturer - og han har mine varmeste anbefalinger.",
+      "author": "Jonas Warrer",
+      "role": "Managing Director, Media Gaming Innovation Group"
+    },
+    {
+      "quote": "Han kan arbejde helt selvstændigt, men også i tæt samarbejde. Han har vist, at han kan levere et levedygtigt produkt med minimale krav, og samtidig følge omfattende krav tæt.",
+      "author": "Sarah Braun",
+      "role": "Backend Developer, GiG"
+    },
+    {
+      "quote": "Eduardo har altid været en fokuseret person, med viljen til at lære alt det, vi krævede af ham. Hans energi på arbejdspladsen var også værdsat, og på et personligt plan er han en fornøjelse at arbejde med.",
+      "author": "Sergi Torres",
+      "role": "Xarxa de Transmissions Santiago"
+    },
+    {
+      "quote": "Eduardo har exceptionelle frontend-kompetencer og var vores ledende frontend-udvikler. Han fik også ansvaret for at lede det team, der håndterer vores ældre sites, og gjorde et fremragende stykke arbejde der.",
+      "author": "Naveen Kumar Vasudevan",
+      "role": "Team Lead, GiG"
+    }
+  ],
+  "codeShowcase": {
+    "badge": "Under Motorhjelmen",
+    "title": "Ren Kode,",
+    "titleAccent": "Reel Effekt.",
+    "description": "Hver komponent jeg bygger følger strenge arkitektoniske principper — typet, testet og optimeret. Her er et glimt af, hvordan jeg definerer min ingeniøridentitet i kode.",
+    "hint": "Skift fane for at udforske den fulde konfiguration",
+    "principles": {
+      "architecture": {
+        "title": "Typet Arkitektur",
+        "sub": "End-to-end TypeScript med strenge generics"
+      },
+      "performance": {
+        "title": "Ydeevne Først",
+        "sub": "Indlæsning under 1 sekund, 60fps animationer"
+      },
+      "patterns": {
+        "title": "Moderne Mønstre",
+        "sub": "Sammensættelige, tree-shakeable moduler"
+      },
+      "dx": {
+        "title": "Udvikleroplevelse",
+        "sub": "Lintet, formateret, CI-håndhævet"
+      }
+    }
+  },
+  "codeBlock": {
+    "filename": "developer.ts"
+  },
+  "footer": {
+    "rights": "Alle rettigheder forbeholdes.",
+    "inspired": "Skabt med intention.",
+    "builtWith": "Udviklet i React 19 og Anime minimalisme."
+  },
+  "preloader": {
+    "loading": "Indlæser oplevelse",
+    "standby": "Vent venligst"
+  },
+  "a11y": {
+    "skipToContent": "Spring til indhold",
+    "skillsMarquee": "Teknologiske kompetencer",
+    "prevTestimonial": "Forrige anbefaling",
+    "nextTestimonial": "Næste anbefaling",
+    "gotoTestimonial": "Gå til anbefaling {{number}}",
+    "mainNav": "Hovednavigation",
+    "sectionNav": "Sektionsnavigation"
+  },
+  "testimonials_loading": "Indlæser anbefalinger...",
+  "cv": {
+    "aboutTitle": "Om Mig",
+    "summary": "Frontend-fokuseret engineer med full-stack baggrund og næsten to årtiers erfaring siden 2007. Jeg bygger skalerbare webprodukter, der omsætter kompleks forretningslogik til hurtige og intuitive interfaces.",
+    "intro": "Jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend, og bygger interfaces der forbliver vedligeholdelige. Jeg holder min teknologistak, testdækning og CI/CD-pipelines på forkant.",
+    "experienceTitle": "Professionel Erfaring",
+    "skillsTitle": "Tekniske Kompetencer",
+    "langLabel": "Sprog",
+    "langItems": [
+      { "lang": "Spansk", "level": "Modersmål" },
+      { "lang": "Engelsk", "level": "Flydende" },
+      { "lang": "Dansk", "level": "B1" }
+    ]
+  }
+}

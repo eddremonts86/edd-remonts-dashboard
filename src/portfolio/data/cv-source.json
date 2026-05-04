@@ -1,0 +1,136 @@
+{
+  "personalInfo": {
+    "name": "Eduardo Inerarte",
+    "email": "eddremonts86@gmail.com",
+    "phone": "(+45) 61436173",
+    "location": "Copenhagen, Denmark",
+    "linkedin": "eduardo-inerarte",
+    "linkedinUrl": "https://www.linkedin.com/in/eduardo-inerarte-643843bb",
+    "github": "eddremonts86",
+    "githubUrl": "https://github.com/eddremonts86",
+    "facebook": "edd.remonts",
+    "facebookUrl": "https://www.facebook.com/edd.remonts",
+    "web": "eddremonts.com",
+    "webUrl": "https://eddremonts.com"
+  },
+  "experiences": [
+    {
+      "id": 12,
+      "period": "01/08/2024 - Present day",
+      "company": "Schilling Aps",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://schilling.dk"
+    },
+    {
+      "id": 11,
+      "period": "01/08/2022 - 30/07/2024",
+      "company": "Resights Aps",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://resights.dk"
+    },
+    {
+      "id": 10,
+      "period": "01/08/2020 - 01/07/2022",
+      "company": "Novo Nordisk",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://www.novonordisk.com"
+    },
+    {
+      "id": 9,
+      "period": "01/02/2020 - 30/09/2020",
+      "company": "Wunderman Nordic",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://www.vml.com"
+    },
+    {
+      "id": 8,
+      "period": "01/12/2017 - 30/01/2020",
+      "company": "GIG Media Copenhagen",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://www.gig.com"
+    },
+    {
+      "id": 7,
+      "period": "01/06/2017 - 01/12/2017",
+      "company": "Rebel Penguins Aps",
+      "location": "Copenhagen (Denmark)",
+      "url": ""
+    },
+    {
+      "id": 6,
+      "period": "01/11/2015 - 01/06/2017",
+      "company": "Rebel Penguins Aps",
+      "location": "Copenhagen (Denmark)",
+      "url": ""
+    },
+    {
+      "id": 5,
+      "period": "01/05/2015 - 31/10/2015",
+      "company": "Plan Denmark",
+      "location": "Copenhagen (Denmark)",
+      "url": "https://planbornefonden.dk"
+    },
+    {
+      "id": 4,
+      "period": "01/12/2014 - 01/05/2015",
+      "company": "Viruta Studio Creativo",
+      "location": "Pinar del Rio (Cuba)",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "period": "01/10/2012 - 01/06/2014",
+      "company": "I & D Agency, GEOCUBA",
+      "location": "Pinar del Rio (Cuba)",
+      "url": "https://www.geocuba.cu"
+    },
+    {
+      "id": 2,
+      "period": "01/09/2010 - 01/10/2012",
+      "company": "Provincial Office ONEI",
+      "location": "Pinar del Rio (Cuba)",
+      "url": ""
+    },
+    {
+      "id": 1,
+      "period": "01/02/2007 - 01/06/2010",
+      "company": "Project 'National Library'. UCI",
+      "location": "Havana (Cuba)",
+      "url": "https://www.uci.cu"
+    }
+  ],
+  "skills": [
+    "React",
+    "Vue.js",
+    "Next.js",
+    "Nuxt.js",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind CSS",
+    "HTML5",
+    "CSS3",
+    "SCSS",
+    "SASS",
+    "Node.js",
+    "PHP",
+    "Laravel",
+    "Symfony",
+    "MySQL",
+    "PostgreSQL",
+    "Nginx",
+    "Apache",
+    "Git",
+    "GitHub Actions",
+    "Docker",
+    "Linux",
+    "bash",
+    "macOS",
+    "Cypress",
+    "Vitest",
+    "Jira",
+    "Confluence",
+    "Framer Motion",
+    "Drupal",
+    "WordPress"
+  ]
+}

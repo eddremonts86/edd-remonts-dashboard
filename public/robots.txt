@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cv/
+
+Sitemap: https://eddremonts.dk/sitemap.xml

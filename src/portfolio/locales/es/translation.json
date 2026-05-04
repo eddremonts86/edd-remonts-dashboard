@@ -1,0 +1,240 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "title": "Ingeniero Frontend Senior con base Full Stack",
+    "description": "Ingeniero orientado a frontend, con raíces full stack y casi dos décadas de experiencia desde 2007. Construyo productos web escalables que convierten reglas de negocio complejas en interfaces rápidas, claras e intuitivas usando React, Vue, Node.js y plataformas cloud.",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "resume": "Descargar CV",
+    "discover": "Descubrir"
+  },
+  "hero": {
+    "available": "Disponible para nuevas oportunidades",
+    "greeting": "Hola, soy",
+    "role": "Ingeniero Frontend Senior",
+    "titleLine1": "Frontend",
+    "titleLine2": "Artesano.",
+    "explore": "Explorar Mi Trabajo",
+    "scroll": "Deslizar"
+  },
+  "personalInfo": {
+    "title": "Ingeniero Senior Full-Stack/Frontend",
+    "description": "Arquitecto aplicaciones web escalables que unen lógica de negocio compleja con experiencias de usuario inmaculadas. Mi enfoque se basa en React 19, Node.js y ecosistemas cloud para entregar soluciones de alto rendimiento diseñadas para gran escala.",
+    "location": "Copenhague, Dinamarca"
+  },
+  "about": {
+    "title": "Sobre mí &",
+    "titleAccent": "Servicios",
+    "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software a medida, antes de mudarme a Dinamarca y especializarme más a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro con comodidad con producto, diseño y backend, y construyo interfaces que siguen siendo mantenibles a medida que el producto crece.",
+    "features": {
+      "0": {
+        "title": "Ingeniería Estratégica Colaborativa",
+        "description": "Tengo éxito en entornos multifuncionales, cerrando la brecha entre product managers, diseñadores UI/UX e ingenieros de infraestructura backend para garantizar una entrega alineada."
+      },
+      "1": {
+        "title": "Evolución Continua de Sistemas",
+        "description": "El panorama tecnológico no perdona. Adopto la refactorización arquitectónica, manteniendo mi stack técnico, cobertura de pruebas y pipelines CI/CD a la vanguardia."
+      },
+      "2": {
+        "title": "Escalabilidad Resiliente",
+        "description": "La velocidad no significa nada sin estabilidad. Construyo microservicios robustos aprovechando meta-frameworks modernos como Next.js/React, priorizando renovaciones con cero tiempo de inactividad."
+      }
+    },
+    "servicesTitle": "Lo que entrego.",
+    "servicesSub": "Entregando experiencias digitales premium."
+  },
+  "services": {
+    "0": {
+      "title": "Arquitectura Frontend de Vanguardia",
+      "description": "No solo construyo sitios web; ideo ecosistemas digitales interactivos. Utilizando React, Next.js y Framer Motion, entrego aplicaciones de carga sub-segundo definidas por animaciones a 60fps y una precisión UX inquebrantable."
+    },
+    "1": {
+      "title": "Resiliencia Cloud y Backend",
+      "description": "Un frontend excepcional requiere un backend férreo. Diseño capas API serverless robustas, optimizo consultas de bases de datos relacionales/NoSQL y establezco pipelines de despliegue automatizados garantizando una escalabilidad con un 99.9% de uptime."
+    }
+  },
+  "experience": {
+    "title": "Trayectoria",
+    "titleAccent": "Profesional",
+    "techArsenal": "Arsenal Tecnológico",
+    "subtitle": "Desde plataformas del sector público en Cuba hasta equipos de producto en Copenhague, una línea temporal que abarca desde 2007 hasta hoy.",
+    "present": "Actualidad",
+    "items": {
+      "12": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Liderando el desarrollo frontend de las aplicaciones web y productos de datos de Schilling, trabajando con React 18/19, TypeScript, Node.js, Tailwind y Shadcn UI para escalar flujos de trabajo complejos en el sector inmobiliario."
+      },
+      "11": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Liderando el desarrollo frontend de las aplicaciones y productos de datos de Resights, trabajando con Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js y Vuetify para escalar flujos complejos del sector inmobiliario."
+      },
+      "10": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Construí herramientas internas de salud y administración para Novo Nordisk con Vue, Vuetify, HTML y CSS, enfocándome en una base de interfaz fiable para equipos médicos con requisitos regulatorios estrictos."
+      },
+      "9": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Entregué campañas y landings accesibles para Wunderman Nordic usando Vue, SCSS, Bootstrap e integraciones con C#, dando soporte a lanzamientos de alto tráfico con una arquitectura frontend estable."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Lideré el desarrollo frontend en GiG Media Copenhagen a través de productos de afiliación y contenido, modernizando plataformas legacy construidas con Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap y PHP, además de coordinar trabajo de mantenimiento externalizado."
+      },
+      "7": {
+        "role": "Desarrollador Frontend",
+        "description": "Trabajé en productos de afiliación de alta conversión en Rebel Penguins, entregando mejoras de frontend, experimentos e iteraciones de UI sobre plataformas basadas en Drupal, Laravel, October CMS, Bootstrap y MySQL."
+      },
+      "6": {
+        "role": "Desarrollador Full Stack",
+        "description": "Desarrollé de extremo a extremo dashboards internos y sitios externos en Rebel Penguins usando PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS y Laravel."
+      },
+      "5": {
+        "role": "Voluntario",
+        "description": "Apoyé al departamento de patrocinio de Plan Denmark registrando y validando documentos, ayudando a mantener flujos administrativos limpios, ordenados y fiables."
+      },
+      "4": {
+        "role": "Desarrollador Full Stack",
+        "description": "Fundé Viruta Studio Creativo y desarrollé productos a medida para organizaciones locales y medios, incluyendo sitios como Radio Guama, usando PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap y Ext JS."
+      },
+      "3": {
+        "role": "Desarrollador Full Stack",
+        "description": "Construí sistemas internos en la agencia de I+D de GEOCUBA combinando PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap y herramientas geoespaciales para necesidades operativas y de gestión de información."
+      },
+      "2": {
+        "role": "Desarrollador Full Stack",
+        "description": "Desarrollé soluciones estadísticas y administrativas para la Oficina Provincial de la ONEI utilizando PHP, MySQL, HTML, CSS, Ext JS, Drupal y Joomla."
+      },
+      "1": {
+        "role": "Desarrollador Full Stack - Responsable de Juniors",
+        "description": "Inicié mi carrera profesional en el proyecto Biblioteca Nacional de la UCI, desarrollando soluciones con Drupal, PHP y MySQL mientras coordinaba a desarrolladores junior conforme el equipo iba madurando."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "titleAccent": "Recientes",
+    "subtitle": "Una colección de experiencias digitales fusionando el diseño premium con una férrea ingeniería.",
+    "view": "Ver Proyecto",
+    "filters": {
+      "all": "Todos",
+      "frontend": "Frontend",
+      "fullStack": "Full Stack"
+    }
+  },
+  "contact": {
+    "title": "Vamos a",
+    "titleAccent": "Conectar",
+    "subtitle": "¿Listo para darle vida a tu próximo ambicioso proyecto? Déjame un mensaje y juntos crearemos algo extraordinario.",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Correo",
+      "message": "Detalles del proyecto...",
+      "namePlaceholder": "Juan Pérez",
+      "emailPlaceholder": "juan@ejemplo.com",
+      "send": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "error": "Error. Por favor, escríbeme directamente por correo.",
+      "target": "Iniciar Conexión"
+    },
+    "success": {
+      "title": "Mensaje Enviado",
+      "body": "¡Gracias por escribirme! Te responderé lo antes posible.",
+      "reset": "Enviar Otro"
+    },
+    "info": {
+      "title": "Detalles de Contacto",
+      "emailLabel": "Correo",
+      "locationLabel": "Ubicación"
+    }
+  },
+  "stats": {
+    "yearsExperience": "Años de Experiencia",
+    "companies": "Empresas",
+    "technologies": "Tecnologías",
+    "lighthouse": "Puntuación Lighthouse"
+  },
+  "testimonials": [
+    {
+      "quote": "Eduardo será un gran activo para cualquier empresa que lo contrate, en especial para compañías tecnológicas multiculturales. Cuenta con mi más alta recomendación.",
+      "author": "Jonas Warrer",
+      "role": "Director General, Media Gaming Innovation Group"
+    },
+    {
+      "quote": "Puede trabajar de forma totalmente independiente, pero también en estrecha colaboración. Ha demostrado poder entregar un producto viable con requisitos mínimos, así como seguir de cerca requisitos muy detallados.",
+      "author": "Sarah Braun",
+      "role": "Backend Developer, GiG"
+    },
+    {
+      "quote": "Eduardo siempre ha sido una persona enfocada y con una gran voluntad de aprender. Su energía en el lugar de trabajo siempre fue muy valorada; a nivel personal, es un placer trabajar con él.",
+      "author": "Sergi Torres",
+      "role": "Xarxa de Transmissions Santiago"
+    },
+    {
+      "quote": "Eduardo tiene habilidades excepcionales en frontend y fue nuestro desarrollador principal. También se le asignó liderar el equipo que maneja nuestros sitios antiguos e hizo un trabajo encomiable allí.",
+      "author": "Naveen Kumar Vasudevan",
+      "role": "Team Lead, GiG"
+    }
+  ],
+  "codeShowcase": {
+    "badge": "Bajo el Capó",
+    "title": "Código Limpio,",
+    "titleAccent": "Impacto Real.",
+    "description": "Cada componente que construyo sigue principios arquitectónicos estrictos — tipado, testeado y optimizado. Aquí un vistazo de cómo defino mi identidad ingenieril en código.",
+    "hint": "Cambia de pestaña para explorar la configuración completa",
+    "principles": {
+      "architecture": {
+        "title": "Arquitectura Tipada",
+        "sub": "TypeScript end-to-end con genéricos estrictos"
+      },
+      "performance": {
+        "title": "Rendimiento Primero",
+        "sub": "Carga sub-segundo, animaciones a 60fps"
+      },
+      "patterns": {
+        "title": "Patrones Modernos",
+        "sub": "Módulos composables y tree-shakeable"
+      },
+      "dx": {
+        "title": "Experiencia Developer",
+        "sub": "Linted, formateado, CI reforzado"
+      }
+    }
+  },
+  "codeBlock": {
+    "filename": "developer.ts"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "inspired": "Hecho con intención.",
+    "builtWith": "Confeccionado con React 19 y Minimalismo Anime."
+  },
+  "preloader": {
+    "loading": "Cargando experiencia",
+    "standby": "Espera"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "skillsMarquee": "Habilidades tecnológicas",
+    "prevTestimonial": "Testimonio anterior",
+    "nextTestimonial": "Siguiente testimonio",
+    "gotoTestimonial": "Ir al testimonio {{number}}",
+    "mainNav": "Navegación principal",
+    "sectionNav": "Navegación por secciones"
+  },
+  "testimonials_loading": "Cargando testimonios...",
+  "cv": {
+    "aboutTitle": "Sobre Mí",
+    "summary": "Ingeniero orientado a frontend, con raíces full stack y casi dos décadas de experiencia desde 2007. Construyo productos web escalables que convierten reglas de negocio complejas en interfaces rápidas, claras e intuitivas.",
+    "intro": "Entiendo toda la cadena de entrega, colaboro cómodamente con producto, diseño y backend. Adopto la refactorización arquitectónica, manteniendo mi stack técnico, cobertura de pruebas y pipelines CI/CD a la vanguardia.",
+    "experienceTitle": "Experiencia Profesional",
+    "skillsTitle": "Habilidades Técnicas",
+    "langLabel": "Idiomas",
+    "langItems": [
+      { "lang": "Español", "level": "Nativo" },
+      { "lang": "Inglés", "level": "Fluido" },
+      { "lang": "Danés", "level": "B1" }
+    ]
+  }
+}
