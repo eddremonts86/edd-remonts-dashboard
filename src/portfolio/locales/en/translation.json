@@ -157,22 +157,26 @@
     {
       "quote": "Eduardo will be an asset for any company that employs him – in particular tech companies with a multitude of cultures - and he has my highest recommendations.",
       "author": "Jonas Warrer",
-      "role": "Managing Director, Media Gaming Innovation Group"
+      "role": "Managing Director, Media Gaming Innovation Group",
+      "avatar": ""
     },
     {
       "quote": "He can work entirely independently, but also in close cooperation. He has shown that he can deliver a viable product with minimal requirements, substituting what's missing, as well as following extensive requirements closely.",
       "author": "Sarah Braun",
-      "role": "Backend Developer, GiG"
+      "role": "Backend Developer, GiG",
+      "avatar": ""
     },
     {
       "quote": "Eduardo has been always a focused individual, with the will and focus to learn everything we required from him. The energy he always brought to the workplace was also very valued.",
       "author": "Sergi Torres",
-      "role": "Xarxa de Transmissions Santiago"
+      "role": "Xarxa de Transmissions Santiago",
+      "avatar": ""
     },
     {
       "quote": "Eduardo Inerarte has exceptional frontend skills, and was our lead frontend developer. He had also been assigned to lead the outsourcing team that handles our legacy sites and he did a commendable job there.",
       "author": "Naveen Kumar Vasudevan",
-      "role": "Team Lead, GiG"
+      "role": "Team Lead, GiG",
+      "avatar": ""
     }
   ],
   "codeShowcase": {

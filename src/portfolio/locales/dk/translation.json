@@ -157,22 +157,26 @@
     {
       "quote": "Eduardo vil være et aktiv for enhver virksomhed, der ansætter ham – især teknologivirksomheder med en mangfoldighed af kulturer - og han har mine varmeste anbefalinger.",
       "author": "Jonas Warrer",
-      "role": "Managing Director, Media Gaming Innovation Group"
+      "role": "Managing Director, Media Gaming Innovation Group",
+      "avatar": ""
     },
     {
       "quote": "Han kan arbejde helt selvstændigt, men også i tæt samarbejde. Han har vist, at han kan levere et levedygtigt produkt med minimale krav, og samtidig følge omfattende krav tæt.",
       "author": "Sarah Braun",
-      "role": "Backend Developer, GiG"
+      "role": "Backend Developer, GiG",
+      "avatar": ""
     },
     {
       "quote": "Eduardo har altid været en fokuseret person, med viljen til at lære alt det, vi krævede af ham. Hans energi på arbejdspladsen var også værdsat, og på et personligt plan er han en fornøjelse at arbejde med.",
       "author": "Sergi Torres",
-      "role": "Xarxa de Transmissions Santiago"
+      "role": "Xarxa de Transmissions Santiago",
+      "avatar": ""
     },
     {
       "quote": "Eduardo har exceptionelle frontend-kompetencer og var vores ledende frontend-udvikler. Han fik også ansvaret for at lede det team, der håndterer vores ældre sites, og gjorde et fremragende stykke arbejde der.",
       "author": "Naveen Kumar Vasudevan",
-      "role": "Team Lead, GiG"
+      "role": "Team Lead, GiG",
+      "avatar": ""
     }
   ],
   "codeShowcase": {

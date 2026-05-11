@@ -22,7 +22,7 @@ export const CarouselControls = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="mt-12 flex items-center gap-6 md:mt-16"
+      className="mt-12 flex items-center justify-center gap-6 md:mt-16"
     >
       <button
         onClick={onPrev}

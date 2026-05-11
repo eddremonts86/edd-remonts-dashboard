@@ -1,5 +1,5 @@
 /**
- * Seed portfolio tables from the static cv-source.json and locale files.
+ * Seed portfolio tables from local data files (self-contained — no external repo dependency).
  * Run once after the initial migration:  pnpm db:seed:portfolio
  */
 import { existsSync } from 'fs'
@@ -23,13 +23,11 @@ if (existsSync('.env.development')) {
 
 // Import JSON data using dynamic import for ESM compatibility
 let cvSource: CvSource
-let enLocale: EnLocale
-let esLocale: EsLocale
+let expTranslationsData: ExpTranslationsData
 
 async function loadJsonData() {
-  cvSource = (await import('../../../eddremonts/edd-portfolio/src/data/cv-source.json', { assert: { type: 'json' } })).default as CvSource
-  enLocale = (await import('../../../eddremonts/edd-portfolio/src/locales/en/translation.json', { assert: { type: 'json' } })).default as EnLocale
-  esLocale = (await import('../../../eddremonts/edd-portfolio/src/locales/es/translation.json', { assert: { type: 'json' } })).default as EsLocale
+  cvSource = (await import('./data/cv-source.json', { assert: { type: 'json' } })).default as CvSource
+  expTranslationsData = (await import('./data/experience-translations.json', { assert: { type: 'json' } })).default as ExpTranslationsData
 }
 
 async function main() {
@@ -44,6 +42,11 @@ async function main() {
   await loadJsonData();
 
 // ─── Types ───────────────────────────────────────────────────────────────────
+
+interface ExperienceItem {
+  role: string
+  description: string
+}
 
 interface CvSource {
   personalInfo: {
@@ -65,29 +68,10 @@ interface CvSource {
   skills: string[]
 }
 
-interface ExperienceItem {
-  role: string
-  description: string
-}
-
-interface EnLocale {
-  experience: {
-    items: Record<string, ExperienceItem>
-  }
-  testimonials: Array<{
-    quote: string
-    author: string
-    role: string
-  }>
-}
-
-interface EsLocale {
-  experience?: {
-    items?: Record<string, ExperienceItem>
-  }
-  testimonials?: Array<{
-    quote: string
-  }>
+interface ExpTranslationsData {
+  en: Record<string, ExperienceItem>
+  es: Record<string, ExperienceItem>
+  dk: Record<string, ExperienceItem>
 }
 
 
@@ -126,12 +110,13 @@ interface EsLocale {
   ).onConflictDoNothing()
 
   const expTranslations = experiences.flatMap(({ id, _sourceId }) => {
-    const enItem = enLocale.experience.items[String(_sourceId)]
-    const esItem = esLocale.experience?.items?.[String(_sourceId)]
+    const enItem = expTranslationsData.en[String(_sourceId)]
+    const esItem = expTranslationsData.es[String(_sourceId)]
+    const dkItem = expTranslationsData.dk[String(_sourceId)]
     return [
       { experienceId: id, locale: 'en', role: enItem?.role ?? '', description: enItem?.description ?? '' },
       { experienceId: id, locale: 'es', role: esItem?.role ?? enItem?.role ?? '', description: esItem?.description ?? enItem?.description ?? '' },
-      { experienceId: id, locale: 'dk', role: enItem?.role ?? '', description: enItem?.description ?? '' },
+      { experienceId: id, locale: 'dk', role: dkItem?.role ?? enItem?.role ?? '', description: dkItem?.description ?? enItem?.description ?? '' },
     ]
   })
 

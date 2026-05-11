@@ -30,36 +30,58 @@ export const TestimonialBlock = () => {
   const currentTestimonial = testimonials[safeIndex];
 
   return (
-    <section className="relative overflow-hidden border-y border-subtle bg-background py-24 md:py-32">
-      <div className="container relative z-10 mx-auto max-w-[1200px] px-6">
+    <section className="relative border-y border-subtle bg-background py-28 md:py-36">
+      {/* Decorative background blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-40 top-1/2 h-150 w-150 -translate-y-1/2 rounded-full bg-primary/4 blur-3xl" />
+        <div className="absolute -right-40 top-1/2 h-125 w-125 -translate-y-1/2 rounded-full bg-primary/3 blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto max-w-200 px-6">
+        {/* Eyebrow */}
+        <m.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14 text-center font-mono text-xs uppercase tracking-[0.25em] text-foreground/35"
+        >
+          {t('testimonials_label', 'What clients say')}
+        </m.p>
+
+        {/* Content area */}
         <div
-          className="flex flex-col items-center text-center"
+          className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Static decorative " — stays fixed while slides change */}
           <m.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-8 block font-serif text-8xl leading-[0] text-primary opacity-20"
+            aria-hidden
+            className="pointer-events-none absolute -left-2 -top-6 select-none font-serif text-[9rem] leading-none text-primary/[0.07] md:-left-4 md:-top-10 md:text-[13rem]"
           >
-            "
+            &#8220;
           </m.span>
 
-          <div className="relative mx-auto flex min-h-[350px] w-full max-w-4xl items-center justify-center overflow-hidden md:min-h-[220px]">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <TestimonialSlide testimonial={currentTestimonial} direction={direction} />
-            </AnimatePresence>
-          </div>
-
-          <CarouselControls
-            total={testimonials.length}
-            current={currentIndex}
-            onPrev={() => paginate(-1)}
-            onNext={() => paginate(1)}
-            onGoto={handleGoto}
-          />
+          {/* Slide — content-driven height, no overflow-hidden */}
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <TestimonialSlide
+              key={currentTestimonial.author}
+              testimonial={currentTestimonial}
+              direction={direction}
+            />
+          </AnimatePresence>
         </div>
+
+        <CarouselControls
+          total={testimonials.length}
+          current={currentIndex}
+          onPrev={() => paginate(-1)}
+          onNext={() => paginate(1)}
+          onGoto={handleGoto}
+        />
       </div>
     </section>
   );
