@@ -1,9 +1,13 @@
 import { spawnSync } from 'node:child_process'
 import postgres from 'postgres'
 
-const adminUrl = 'postgresql://postgres:postgres@127.0.0.1:5433/postgres'
+// Derive host/port from DATABASE_URL so this script works regardless of which
+// port the DB container is mapped to (each app has its own unique port).
+const baseUrl = process.env.DATABASE_URL ?? 'postgresql://postgres:postgres@127.0.0.1:5437/postgres'
+const parsedUrl = new URL(baseUrl)
+const adminUrl = `${parsedUrl.protocol}//${parsedUrl.username}:${parsedUrl.password}@${parsedUrl.hostname}:${parsedUrl.port}/postgres`
 const databaseName = 'tanstack_template_auth_e2e'
-const databaseUrl = `postgresql://postgres:postgres@127.0.0.1:5433/${databaseName}`
+const databaseUrl = `${parsedUrl.protocol}//${parsedUrl.username}:${parsedUrl.password}@${parsedUrl.hostname}:${parsedUrl.port}/${databaseName}`
 
 async function waitForPostgresReady() {
   for (let attempt = 0; attempt < 20; attempt += 1) {

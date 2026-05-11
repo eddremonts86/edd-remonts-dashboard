@@ -5,7 +5,7 @@ import { expect, test } from 'vitest';
 // Adjust the import path to your actual schema
 // import { portfolioProjects } from '../../src/shared/lib/db/schema';
 
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5433/tanstack_template';
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5437/tanstack_template';
 
 // Minimal table name for raw query fallback
 const PROJECTS_TABLE = 'portfolio_projects';
