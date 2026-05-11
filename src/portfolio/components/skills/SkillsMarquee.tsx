@@ -1,7 +1,7 @@
 import { m, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { TechIcon } from '@/portfolio/components/ui/badges/TechIcon';
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { techIconMap } from '@/portfolio/data/techIcons';
 
 export const SkillsMarquee = () => {
   const { t } = useTranslation();
@@ -31,24 +31,42 @@ export const SkillsMarquee = () => {
         }}
       >
         {tripled.map((skill, i) => (
-          <span
+          <m.span
             key={`${skill}-${i}`}
-            className="flex shrink-0 cursor-default select-none items-center gap-4 font-serif text-2xl italic tracking-tight text-foreground opacity-60 transition-opacity duration-500 hover:opacity-100 md:text-3xl"
+            className="group flex shrink-0 cursor-default select-none items-center gap-4 font-serif text-2xl italic tracking-tight text-foreground/60 md:text-3xl"
+            whileHover="hovered"
+            variants={{
+              hovered: {
+                scale: 1.12,
+                color: 'var(--color-foreground)',
+                transition: { type: 'spring', stiffness: 350, damping: 20 },
+              },
+            }}
           >
-            {techIconMap[skill] && (
-              <img
-                src={techIconMap[skill]}
-                alt=""
-                aria-hidden="true"
-                className="h-6 w-6 opacity-70 grayscale md:h-8 md:w-8"
-                loading="lazy"
-              />
-            )}
+            <m.span
+              className="inline-flex shrink-0"
+              variants={{
+                hovered: {
+                  y: -6,
+                  scale: 1.35,
+                  transition: { type: 'spring', stiffness: 380, damping: 12 },
+                },
+              }}
+            >
+              <TechIcon skill={skill} className="h-6 w-6 md:h-7 md:w-7" />
+            </m.span>
             <span>{skill}</span>
-            <span className="text-foreground/20 ml-6 text-xl" aria-hidden="true">
+            <m.span
+              className="ml-6 text-xl"
+              aria-hidden="true"
+              variants={{
+                hovered: { opacity: 0, transition: { duration: 0.15 } },
+              }}
+              style={{ color: 'var(--color-foreground)', opacity: 0.2 }}
+            >
               •
-            </span>
-          </span>
+            </m.span>
+          </m.span>
         ))}
       </m.div>
     </section>
