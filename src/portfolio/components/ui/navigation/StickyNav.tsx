@@ -27,7 +27,7 @@ export const StickyNav = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5, ease: APPLE_EASE }}
-          className="bg-background/80 fixed left-0 top-0 z-[100] w-full border-b border-subtle pt-[env(safe-area-inset-top)] backdrop-blur-xl"
+          className="bg-background/95 fixed left-0 top-0 z-[100] w-full border-b border-subtle pt-[env(safe-area-inset-top)] backdrop-blur-xl"
           aria-label={t('a11y.mainNav')}
         >
           <div className="container mx-auto flex items-center justify-between gap-3 px-4 py-3 md:gap-4 md:px-6 md:py-4">
@@ -36,7 +36,7 @@ export const StickyNav = () => {
               href="#hero"
               className="shrink-0 text-foreground transition-opacity hover:opacity-80"
             >
-              <Logo className="h-10 w-auto md:h-12" />
+              <Logo className="h-9 w-9 md:h-10 md:w-10" />
             </a>
 
             {/* Nav Links — hidden on mobile, visible on md+ */}
@@ -45,7 +45,7 @@ export const StickyNav = () => {
                 <a
                   key={id}
                   href={`#${id}`}
-                  className="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-primary transition-all hover:text-foreground"
+                  className="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-foreground/50 transition-all hover:text-foreground"
                 >
                   {t(labelKey)}
                 </a>
@@ -110,7 +110,7 @@ export const StickyNav = () => {
                       initial={{ x: -16, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: i * 0.05, duration: 0.3, ease: APPLE_EASE }}
-                      className="py-2 font-mono text-xs uppercase tracking-widest text-primary transition-colors hover:text-foreground"
+                      className="py-2 font-mono text-xs uppercase tracking-widest text-foreground/50 transition-colors hover:text-foreground"
                     >
                       {t(labelKey)}
                     </m.a>

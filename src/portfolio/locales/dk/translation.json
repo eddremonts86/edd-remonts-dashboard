@@ -41,7 +41,9 @@
       }
     },
     "servicesTitle": "Hvad Jeg Leverer.",
-    "servicesSub": "Leverer premium digitale oplevelser."
+    "servicesSub": "Leverer premium digitale oplevelser.",
+    "originsLabel": "Ophav",
+    "originsSub": "Cuba → København"
   },
   "services": {
     "0": {
@@ -210,6 +212,15 @@
   "footer": {
     "rights": "Alle rettigheder forbeholdes.",
     "inspired": "Skabt med intention.",
+    "colophon": "Skabt med intention.",
+    "available": "Tilgængelig for nye projekter",
+    "nav": {
+      "label": "Sidefodnavigation",
+      "heading": "Naviger"
+    },
+    "social": {
+      "heading": "Find mig"
+    },
     "builtWith": "Udviklet i React 19 og Anime minimalisme."
   },
   "preloader": {

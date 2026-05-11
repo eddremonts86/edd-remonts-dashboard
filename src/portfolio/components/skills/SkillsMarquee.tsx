@@ -33,12 +33,12 @@ export const SkillsMarquee = () => {
         {tripled.map((skill, i) => (
           <m.span
             key={`${skill}-${i}`}
-            className="group flex shrink-0 cursor-default select-none items-center gap-4 font-serif text-2xl italic tracking-tight text-foreground/60 md:text-3xl"
+            className="group flex shrink-0 cursor-default select-none items-center gap-4 font-serif text-2xl italic tracking-tight text-foreground/70 md:text-3xl"
             whileHover="hovered"
             variants={{
               hovered: {
                 scale: 1.12,
-                color: 'var(--color-foreground)',
+                color: 'var(--foreground)',
                 transition: { type: 'spring', stiffness: 350, damping: 20 },
               },
             }}
@@ -57,12 +57,11 @@ export const SkillsMarquee = () => {
             </m.span>
             <span>{skill}</span>
             <m.span
-              className="ml-6 text-xl"
+              className="ml-6 text-xl text-foreground/20"
               aria-hidden="true"
               variants={{
                 hovered: { opacity: 0, transition: { duration: 0.15 } },
               }}
-              style={{ color: 'var(--color-foreground)', opacity: 0.2 }}
             >
               •
             </m.span>

@@ -12,7 +12,7 @@ export const FeatureCard = ({ icon, index }: { icon: string; index: number }) =>
       className="group relative flex flex-col items-start gap-6 sm:flex-row md:gap-12"
     >
       <div className="mt-1 flex-shrink-0">
-        <div className="text-foreground/50 group-hover:bg-primary/5 flex h-12 w-12 items-center justify-center rounded-full bg-background transition-all duration-700 group-hover:text-primary">
+        <div className="text-foreground/50 group-hover:bg-primary/5 flex h-12 w-12 items-center justify-center rounded-full bg-foreground/[0.04] transition-all duration-700 group-hover:text-primary">
           <IconComponent
             name={icon}
             className="h-5 w-5 transition-transform duration-700 group-hover:scale-110"

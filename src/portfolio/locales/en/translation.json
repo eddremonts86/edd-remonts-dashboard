@@ -41,7 +41,9 @@
       }
     },
     "servicesTitle": "What I Deliver.",
-    "servicesSub": "Delivering premium digital experiences."
+    "servicesSub": "Delivering premium digital experiences.",
+    "originsLabel": "Origins",
+    "originsSub": "Cuba → Copenhagen"
   },
   "services": {
     "0": {
@@ -210,6 +212,15 @@
   "footer": {
     "rights": "All rights reserved.",
     "inspired": "Crafted with intent.",
+    "colophon": "Crafted with intent.",
+    "available": "Available for new work",
+    "nav": {
+      "label": "Footer navigation",
+      "heading": "Navigate"
+    },
+    "social": {
+      "heading": "Elsewhere"
+    },
     "builtWith": "Engineered with React 19 & Anime minimalism."
   },
   "preloader": {

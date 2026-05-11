@@ -33,8 +33,8 @@ export const TestimonialBlock = () => {
     <section className="relative border-y border-subtle bg-background py-28 md:py-36">
       {/* Decorative background blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 top-1/2 h-150 w-150 -translate-y-1/2 rounded-full bg-primary/4 blur-3xl" />
-        <div className="absolute -right-40 top-1/2 h-125 w-125 -translate-y-1/2 rounded-full bg-primary/3 blur-3xl" />
+        <div className="absolute -left-40 top-1/2 h-150 w-150 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-3xl dark:bg-primary/[0.04]" />
+        <div className="absolute -right-40 top-1/2 h-125 w-125 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-3xl dark:bg-primary/[0.03]" />
       </div>
 
       <div className="container relative z-10 mx-auto max-w-200 px-6">

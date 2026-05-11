@@ -25,7 +25,7 @@ export const HeroSection = () => {
 
   const dynamicBG = resolvedTheme === 'dark' ? '/edd/edd_dark.jpg' : '/edd/edd_light.jpg';
 
-  const { bgColor, textColor, mutedTextColor, sublineTextColor, borderColor, buttonHover, greetingTextColor } =
+  const { bgColor, textColor, mutedTextColor, sublineTextColor, buttonHover, greetingTextColor } =
     getHoverColors(isHovered, resolvedTheme);
 
   return (
@@ -89,7 +89,7 @@ export const HeroSection = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, ease: APPLE_EASE, delay: 0.4 }}
-                className="mt-2 block font-display font-medium tracking-tighter dark:mix-blend-difference md:mt-4"
+                className="mt-2 block font-display font-medium tracking-tighter opacity-90 dark:opacity-100 md:mt-4"
               >
                 {t('hero.titleLine1')}
               </m.span>
@@ -128,7 +128,7 @@ export const HeroSection = () => {
             >
               <a
                 href="#projects"
-                className={`group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-full border bg-transparent px-6 py-3 text-[11px] font-medium uppercase tracking-widest transition-all duration-700 md:text-xs ${textColor} ${borderColor} ${buttonHover}`}
+                className={`group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-full border bg-transparent px-6 py-3 text-[11px] font-medium uppercase tracking-widest transition-all duration-700 md:text-xs ${textColor} border-foreground/20 ${buttonHover}`}
               >
                 <span>{t('hero.explore')}</span>
                 <ArrowRight className="h-3 w-3 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -137,7 +137,7 @@ export const HeroSection = () => {
                 href={cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-full border px-6 py-3 text-[11px] font-bold uppercase tracking-widest transition-all duration-700 md:text-xs ${textColor} ${borderColor} ${buttonHover}`}
+                className={`inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-full border px-6 py-3 text-[11px] font-bold uppercase tracking-widest transition-all duration-700 md:text-xs ${textColor} border-foreground/20 ${buttonHover}`}
                 onPointerEnter={() => setIsHovered(true)}
                 onPointerLeave={() => setIsHovered(false)}
               >

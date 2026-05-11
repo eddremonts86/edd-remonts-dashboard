@@ -24,7 +24,7 @@
   :root {
     --background: #fbfaf9; /* Soft paper white */
     --foreground: #101010; /* Deep ink black */
-    --surface: #ffffff;
+    --surface: #f5f4f2; /* Warm off-white — clearly distinct from background */
 
     --primary: #d13426; /* Deep elegant red / crimson */
     --primary-foreground: #ffffff;
@@ -38,7 +38,7 @@
     --apple-glass: rgba(251, 250, 249, 0.72);
     --apple-border: rgba(0, 0, 0, 0.05);
 
-    --border-subtle: rgba(16, 16, 16, 0.06);
+    --border-subtle: rgba(16, 16, 16, 0.10); /* Visible but restrained */
     --border-default: rgba(16, 16, 16, 0.15);
 
     --scrollbar-thumb: rgba(0, 0, 0, 0.1);

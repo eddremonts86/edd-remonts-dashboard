@@ -76,7 +76,7 @@ export const fadeInView = ({
   distance = 30,
   axis = 'y',
   duration = 0.8,
-  margin = '-100px',
+  margin = '-80px',
 }: FadeInOptions = {}) => ({
   initial: { opacity: 0, [axis]: distance } as Record<string, number>,
   whileInView: { opacity: 1, [axis]: 0 } as Record<string, number>,

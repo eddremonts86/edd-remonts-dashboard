@@ -68,9 +68,9 @@ export const ContactSection = () => {
           {/* Right Column: Form */}
           <m.div
             {...fadeInView({ delay: 0.2 })}
-            className="relative overflow-hidden rounded-2xl bg-background p-8 text-foreground shadow-2xl md:p-12 lg:p-14"
+            className="relative overflow-hidden rounded-2xl bg-background p-8 text-foreground ring-1 ring-foreground/[0.06] md:p-12 lg:p-14"
           >
-            <div className="bg-primary/10 pointer-events-none absolute -right-32 -top-32 h-64 w-64 rounded-full blur-[100px]" />
+            <div className="bg-primary/5 pointer-events-none absolute -right-32 -top-32 h-64 w-64 rounded-full blur-[100px]" />
 
             {formStatus === 'success' ? (
               <SuccessMessage onReset={reset} />

@@ -43,7 +43,9 @@
       }
     },
     "servicesTitle": "Lo que entrego.",
-    "servicesSub": "Entregando experiencias digitales premium."
+    "servicesSub": "Entregando experiencias digitales premium.",
+    "originsLabel": "Orígenes",
+    "originsSub": "Cuba → Copenhague"
   },
   "services": {
     "0": {
@@ -212,6 +214,15 @@
   "footer": {
     "rights": "Todos los derechos reservados.",
     "inspired": "Hecho con intención.",
+    "colophon": "Hecho con intención.",
+    "available": "Disponible para nuevos proyectos",
+    "nav": {
+      "label": "Navegación del pie",
+      "heading": "Navegar"
+    },
+    "social": {
+      "heading": "En la red"
+    },
     "builtWith": "Confeccionado con React 19 y Minimalismo Anime."
   },
   "preloader": {

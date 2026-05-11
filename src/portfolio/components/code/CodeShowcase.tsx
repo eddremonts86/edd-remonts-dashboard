@@ -39,8 +39,8 @@ export const CodeShowcase = () => {
 
           {/* Right: The CodeBlock in an elegant frame */}
           <m.div {...fadeInView({ delay: 0.2, distance: 40 })} className="lg:col-span-7">
-            <div className="from-subtle relative rounded-2xl bg-gradient-to-b to-transparent p-1 shadow-2xl">
-              <div className="overflow-hidden rounded-xl bg-[#101010] shadow-inner">
+            <div className="relative rounded-2xl border border-foreground/[0.08] shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+              <div className="overflow-hidden rounded-2xl bg-[#101010]">
                 <CodeBlock years={stats.years} companies={stats.companies} />
               </div>
             </div>

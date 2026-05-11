@@ -1,82 +1,118 @@
+import { type Variants, m, useReducedMotion } from 'framer-motion';
+import { APPLE_EASE } from '@/portfolio/lib/motion';
+
 interface LogoProps {
   className?: string;
 }
 
 /**
- * Inline SVG logo that uses `currentColor` for theme-aware rendering.
- * On light theme, inherits dark text color; on dark theme, inherits light text color.
- * The orange-to-pink gradient stays consistent across themes.
+ * EI monogram — animated stroke draw-on on first mount.
+ * Pure SVG paths, no <text> nodes — renders identically on all OS/browsers.
+ * Square viewport (120×120) scales cleanly at any size.
+ * The vertical bar of the I is shared with the right edge of the E stem,
+ * creating a ligature tension. A small primary-red square caps the top-right.
  */
-export const Logo = ({ className = '' }: LogoProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 1280 420"
-    role="img"
-    aria-labelledby="logo-title logo-desc"
-    className={className}
-  >
-    <title id="logo-title">Inerarte — Eduardo</title>
-    <desc id="logo-desc">
-      Bold condensed stamp logo with angular slash and editorial tech energy.
-    </desc>
-    <defs>
-      <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#F97316" />
-        <stop offset="100%" stopColor="#FB7185" />
-      </linearGradient>
-    </defs>
-    <g transform="translate(66 62)">
-      <rect
-        x="0"
-        y="0"
-        width="312"
-        height="292"
-        rx="18"
+export const Logo = ({ className = '' }: LogoProps) => {
+  const shouldReduce = useReducedMotion();
+
+  const draw: Variants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (delay: number) => ({
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { duration: shouldReduce ? 0 : 1.1, ease: APPLE_EASE, delay: shouldReduce ? 0 : delay },
+        opacity: { duration: 0.01, delay: shouldReduce ? 0 : delay },
+      },
+    }),
+  };
+
+  const fill: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: shouldReduce ? 0 : 0.4, delay: shouldReduce ? 0 : 1.0, ease: 'easeOut' },
+    },
+  };
+
+  return (
+    <m.svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 120 120"
+      role="img"
+      aria-labelledby="logo-ei-title"
+      className={className}
+      initial="hidden"
+      animate="visible"
+    >
+      <title id="logo-ei-title">Eduardo Inerarte</title>
+
+      {/*
+        E glyph:
+          Vertical stem: x=18, y=20 → y=100  (w=10)
+          Top bar:       x=18 → x=72, y=20   (h=10)
+          Mid bar:       x=18 → x=64, y=55   (h=10)
+          Bot bar:       x=18 → x=72, y=90   (h=10)
+
+        I glyph (shares the right edge of the E stem via the gap):
+          Stem:          x=82, y=20 → y=100  (w=10)
+
+        Accent square (primary red):  top-right cap above I
+      */}
+
+      {/* E + I fill (solid, fades in after stroke draw) */}
+      <m.g variants={fill} fill="currentColor">
+        {/* E stem */}
+        <rect x="18" y="20" width="10" height="80" />
+        {/* E top bar */}
+        <rect x="18" y="20" width="54" height="10" />
+        {/* E mid bar */}
+        <rect x="18" y="55" width="46" height="10" />
+        {/* E bot bar */}
+        <rect x="18" y="90" width="54" height="10" />
+        {/* I stem */}
+        <rect x="82" y="20" width="10" height="80" />
+      </m.g>
+
+      {/* Stroke draw-on paths (drawn first, then fill fades over them) */}
+      <m.path
+        d="M18 20 L72 20 L72 30 L28 30 L28 55 L64 55 L64 65 L28 65 L28 90 L72 90 L72 100 L18 100 Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="12"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        variants={draw}
+        custom={0}
       />
-      <path d="M88 236L214 60h66L154 236z" fill="url(#logo-gradient)" />
-      <path d="M36 246H274" stroke="currentColor" strokeWidth="12" />
-      <path d="M40 88H144" stroke="currentColor" strokeWidth="12" />
-      <path d="M172 88H270" stroke="currentColor" strokeWidth="12" opacity="0.42" />
-    </g>
-    <g transform="translate(430 96)">
-      <text
-        x="0"
-        y="80"
-        fill="currentColor"
-        fontSize="96"
-        fontWeight="900"
-        fontFamily="Arial Narrow, Impact, Haettenschweiler, Arial, sans-serif"
-        letterSpacing="2"
-      >
-        INERARTE
-      </text>
-      <text
-        x="2"
-        y="156"
-        fill="url(#logo-gradient)"
-        fontSize="48"
-        fontWeight="900"
-        fontFamily="Arial Narrow, Impact, Haettenschweiler, Arial, sans-serif"
-        letterSpacing="10"
-      >
-        EDUARDO
-      </text>
-      <path d="M0 194H640" stroke="currentColor" strokeWidth="14" opacity="0.3" />
-      <text
-        x="0"
-        y="244"
-        fill="currentColor"
-        fontSize="26"
-        fontWeight="700"
-        fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-        letterSpacing="5"
-        opacity="0.6"
-      >
-        SENIOR FULL-STACK / FRONTEND ENGINEER
-      </text>
-    </g>
-  </svg>
-);
+      <m.path
+        d="M82 20 L92 20 L92 100 L82 100 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        variants={draw}
+        custom={0.3}
+      />
+
+      {/* Primary red accent — small square cap on the I, top-right */}
+      <m.rect
+        x="86"
+        y="10"
+        width="8"
+        height="8"
+        fill="var(--primary)"
+        variants={{
+          hidden: { opacity: 0, scale: 0 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: shouldReduce ? 0 : 0.3, delay: shouldReduce ? 0 : 1.2, ease: APPLE_EASE },
+          },
+        }}
+        style={{ transformOrigin: '90px 14px' }}
+      />
+    </m.svg>
+  );
+};

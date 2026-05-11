@@ -23,7 +23,7 @@ export const TechBadge = ({ skill, index = 0 }: TechBadgeProps) => (
       hovered: { y: -4, scale: 1.07, transition: SPRING },
       pressed: { y: 0, scale: 0.95, transition: SPRING },
     }}
-    className="group text-foreground/70 hover:border-foreground/30 hover:bg-surface/80 flex cursor-default items-center gap-2 rounded-full border border-subtle bg-surface px-4 py-2 font-mono text-xs shadow-sm transition-colors duration-300 hover:text-foreground hover:shadow-md"
+    className="group text-foreground/60 flex cursor-default items-center gap-2 rounded-full bg-foreground/[0.05] px-4 py-2 font-mono text-xs transition-all duration-300 hover:bg-foreground/[0.09] hover:text-foreground"
   >
     <m.span
       className="inline-flex shrink-0"

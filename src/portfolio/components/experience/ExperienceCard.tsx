@@ -15,7 +15,7 @@ export const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
   return (
     <m.div
       {...fadeInView({ delay: Math.min(index * 0.1, 0.4) })}
-      className="group relative -mx-4 flex cursor-default flex-col justify-between rounded-xl px-4 py-10 transition-colors duration-500 hover:bg-surface md:flex-row"
+      className="group relative -mx-4 flex cursor-default flex-col justify-between px-4 py-10 transition-colors duration-500 bg-foreground/[0.01] hover:bg-foreground/[0.04] md:flex-row"
     >
       <div className="mb-4 flex w-full flex-col md:mb-0 md:w-1/3 md:pr-8">
         <span className="mb-2 font-mono text-[11px] tracking-widest text-foreground/40">

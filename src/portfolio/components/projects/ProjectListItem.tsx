@@ -25,7 +25,7 @@ export const ProjectListItem = ({
       {...fadeInView({ delay: index * 0.1 })}
       onMouseEnter={() => onHover(project)}
       onMouseLeave={() => onHover(null)}
-      className="group relative z-10 -mx-4 flex cursor-pointer flex-col items-start justify-between rounded-xl border-b border-subtle px-4 py-10 transition-colors duration-500 hover:bg-surface md:flex-row md:items-center md:py-12"
+      className="group relative z-10 -mx-4 flex cursor-pointer flex-col items-start justify-between border-b border-subtle px-4 py-10 transition-colors duration-500 bg-transparent hover:bg-foreground/[0.03] md:flex-row md:items-center md:py-12"
     >
       <div className="mb-4 flex flex-col md:mb-0">
         <span className="mb-3 font-mono text-[11px] tracking-widest text-primary opacity-50">

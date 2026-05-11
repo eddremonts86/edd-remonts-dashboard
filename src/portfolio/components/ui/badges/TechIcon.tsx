@@ -20,7 +20,7 @@ export const TechIcon = ({ skill, className = 'h-4 w-4' }: TechIconProps) => {
       alt=""
       aria-hidden="true"
       loading="lazy"
-      className={`shrink-0 grayscale opacity-60 dark:invert dark:opacity-70 transition-opacity duration-300 ${className}`}
+      className={`shrink-0 grayscale opacity-70 dark:invert dark:opacity-80 transition-opacity duration-300 ${className}`}
     />
   );
 };
