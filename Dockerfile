@@ -41,7 +41,12 @@ WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-RUN pnpm install --frozen-lockfile --prod
+# Reuse node_modules from base — native binaries (sharp, onnxruntime, esbuild)
+# are already compiled there. No need to reinstall or re-run build scripts.
+COPY --from=base /app/node_modules ./node_modules
+
+# Strip devDependencies, keep only production deps
+RUN pnpm prune --prod
 
 COPY --from=builder /app/dist ./dist
 COPY server.prod.mjs ./server.prod.mjs
