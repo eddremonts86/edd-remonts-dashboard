@@ -1,12 +1,18 @@
 import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
-import { countLines, tabs } from './codeBlockTokens';
+import { countLines, createTabs } from './codeBlockTokens';
 import { CodeArea } from './CodeArea';
 import { StatusBar } from './StatusBar';
 import { WindowChrome } from './WindowChrome';
 
-export const CodeBlock = () => {
+interface CodeBlockProps {
+  years?: number;
+  companies?: number;
+}
+
+export const CodeBlock = ({ years = 18, companies = 12 }: CodeBlockProps) => {
   const [activeTab, setActiveTab] = useState(0);
+  const tabs = createTabs(years, companies);
   const reduceMotion = useReducedMotion();
 
   const containerVariants = {
@@ -24,7 +30,7 @@ export const CodeBlock = () => {
 
   return (
     <div className="group/block relative mx-auto max-w-3xl">
-      <WindowChrome activeTab={activeTab} onTabChange={setActiveTab} />
+      <WindowChrome activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
 
       <div className="overflow-hidden rounded-b-xl border border-white/[0.02] bg-[#0A0A0A] shadow-2xl">
         <AnimatePresence mode="wait">

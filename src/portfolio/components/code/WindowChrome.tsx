@@ -1,11 +1,13 @@
-import { tabs } from './codeBlockTokens';
+import type { FileTab } from './codeBlockTokens';
 
 export const WindowChrome = ({
   activeTab,
   onTabChange,
+  tabs,
 }: {
   activeTab: number;
   onTabChange: (idx: number) => void;
+  tabs: FileTab[];
 }) => (
   <div className="flex items-center gap-3 rounded-t-xl border-b border-white/[0.05] bg-[#151515] px-4 py-3">
     {/* Traffic lights */}

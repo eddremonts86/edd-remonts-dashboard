@@ -1,22 +1,25 @@
 import { m, useReducedMotion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { techIconMap } from '@/portfolio/data/techIcons';
-import { useTranslation } from 'react-i18next';
 
 export const SkillsMarquee = () => {
   const { t } = useTranslation();
   const reduceMotion = useReducedMotion();
-  const { skills } = usePortfolioData();
+  const { skills, isLoading } = usePortfolioData();
 
   // Triple the skills for seamless infinite loop
   const tripled = [...skills, ...skills, ...skills];
 
+  if (isLoading || skills.length === 0) return null;
+
   return (
     <section
-      className="relative z-20 overflow-hidden border-y border-subtle bg-surface py-12"
+      className="relative z-20 overflow-hidden border-b border-subtle bg-surface py-12"
       aria-label={t('a11y.skillsMarquee')}
     >
       <m.div
+        key={skills.length}
         className="flex items-center gap-12 whitespace-nowrap"
         animate={reduceMotion ? {} : { x: ['0%', '-33.333%'] }}
         transition={{

@@ -37,13 +37,13 @@ export const StatsCounter = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: APPLE_EASE }}
-          className="flex flex-col divide-subtle md:flex-row md:divide-x"
+          className="flex flex-col md:flex-row"
         >
           {statItems.map((stat, index) => (
             <m.div
               key={stat.labelKey}
               {...fadeInView({ delay: index * 0.1 })}
-              className="group flex flex-1 cursor-default flex-col items-center justify-center bg-background px-8 py-16 text-center transition-colors duration-500 hover:bg-surface"
+              className="group flex flex-1 cursor-default flex-col items-center justify-center border-b border-r-0 border-subtle bg-background px-8 py-16 text-center transition-colors duration-500 last:border-b-0 hover:bg-surface md:border-b-0 md:border-r md:last:border-r-0"
             >
               <div className="mb-4 font-serif text-6xl leading-none tracking-tight text-foreground transition-colors duration-500 group-hover:text-primary md:text-7xl lg:text-8xl">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />

@@ -29,7 +29,7 @@ export const ExperienceTimeline = () => {
 
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
           <div className="flex flex-col lg:col-span-8">
-            <div className="border-t border-subtle">
+            <div>
               {experiences.map((exp, index) => (
                 <ExperienceCard key={exp.id} exp={exp} index={index} />
               ))}

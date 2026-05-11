@@ -20,7 +20,7 @@ export const FeatureCard = ({ icon, index }: { icon: string; index: number }) =>
         </div>
       </div>
 
-      <div className="group-hover:border-foreground/20 relative z-10 flex-1 border-b border-subtle pb-12 transition-colors duration-700 md:pb-16">
+      <div className="relative z-10 flex-1 pb-12 transition-colors duration-700 md:pb-16">
         <div className="mb-4 flex items-baseline gap-4">
           <span className="text-foreground/30 font-mono text-xs transition-colors duration-700 group-hover:text-primary">
             0{index + 1}

@@ -57,7 +57,8 @@ const I2: Token = { type: 'indent', text: '    ' };
 const I3: Token = { type: 'indent', text: '      ' };
 const COMMA: Token = { type: 'operator', text: ',' };
 
-export const tabs: FileTab[] = [
+export function createTabs(years: number, companies: number): FileTab[] {
+  return [
   /* ─── Tab 1 : edd.config.ts ─── */
   {
     name: 'edd.config.ts',
@@ -229,11 +230,11 @@ export const tabs: FileTab[] = [
       { type: 'brace', text: '{ ' },
       { type: 'property', text: 'years' },
       { type: 'operator', text: ': ' },
-      { type: 'number', text: '19' },
+      { type: 'number', text: String(years) },
       { type: 'operator', text: ', ' },
       { type: 'property', text: 'companies' },
       { type: 'operator', text: ': ' },
-      { type: 'number', text: '10' },
+      { type: 'number', text: String(companies) },
       { type: 'operator', text: ' ' },
       { type: 'brace', text: '}' },
       COMMA,
@@ -406,7 +407,8 @@ export const tabs: FileTab[] = [
       { type: 'operator', text: ';' },
     ],
   },
-];
+  ];
+}
 
 /** Count visual lines (number of 'break' tokens + 1) */
 export const countLines = (tokens: Token[]) => tokens.filter((t) => t.type === 'break').length + 1;

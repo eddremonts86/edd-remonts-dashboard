@@ -1,13 +1,15 @@
 import { CodeBlock } from './CodeBlock';
 import { fadeInView } from '@/portfolio/lib/motion';
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 export const CodeShowcase = () => {
   const { t } = useTranslation();
+  const { stats } = usePortfolioData();
 
   return (
-    <section className="relative overflow-hidden border-b border-subtle bg-background py-24 md:py-40">
+    <section className="relative overflow-hidden bg-background py-24 md:py-40">
       {/* Refined abstract background type */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden opacity-[0.02]">
         <h2 className="whitespace-nowrap text-center font-serif text-[25vw] italic leading-none tracking-tight text-foreground">
@@ -39,7 +41,7 @@ export const CodeShowcase = () => {
           <m.div {...fadeInView({ delay: 0.2, distance: 40 })} className="lg:col-span-7">
             <div className="from-subtle relative rounded-2xl bg-gradient-to-b to-transparent p-1 shadow-2xl">
               <div className="overflow-hidden rounded-xl bg-[#101010] shadow-inner">
-                <CodeBlock />
+                <CodeBlock years={stats.years} companies={stats.companies} />
               </div>
             </div>
           </m.div>

@@ -99,7 +99,7 @@ export const StickyNav = () => {
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: APPLE_EASE }}
-                className="overflow-hidden border-t border-subtle md:hidden"
+                className="overflow-hidden md:hidden"
               >
                 <div className="container mx-auto flex flex-col gap-3 px-4 py-4">
                   {navLinks.map(({ id, labelKey }, i) => (

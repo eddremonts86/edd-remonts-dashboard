@@ -11,7 +11,7 @@ export const AboutSection = () => {
   const { data: aboutIntro } = useContentBlock('about.intro');
 
   return (
-    <section id="about" className="relative border-t border-subtle bg-surface py-24 md:py-40">
+    <section id="about" className="relative bg-surface py-24 md:py-40">
       <div className="container mx-auto max-w-[1400px] px-6">
         <ScrollRevealText text={aboutIntro?.[`value${i18n.language.charAt(0).toUpperCase() + i18n.language.slice(1)}`] || t('about.intro')} />
 

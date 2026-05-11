@@ -15,6 +15,7 @@ export const FloatingImagePreview = ({
   cursorY: MotionValue<number>;
 }) => (
   <m.div
+  aria-hidden="true"
     className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-[320px] w-[450px] overflow-hidden rounded-xl shadow-2xl lg:block"
     style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
     initial={{ opacity: 0, scale: 0.95 }}

@@ -27,7 +27,7 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* Interactive List */}
-        <div className="relative border-t border-subtle">
+        <div className="relative">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
               <ProjectListItem
