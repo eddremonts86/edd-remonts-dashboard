@@ -188,10 +188,13 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@clerk/shared",
+      "@parcel/watcher",
+      "@percy/core",
       "esbuild",
       "onnxruntime-node",
       "protobufjs",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }
