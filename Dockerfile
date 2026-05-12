@@ -51,6 +51,17 @@ RUN pnpm prune --prod
 COPY --from=builder /app/dist ./dist
 COPY server.prod.mjs ./server.prod.mjs
 
+# Files needed at runtime for migrations + idempotent seeds (db:migrate, db:seed:admin, db:seed:portfolio).
+# tsx and drizzle-kit are kept in dependencies so they survive `pnpm prune --prod` above.
+COPY drizzle ./drizzle
+COPY drizzle.config.ts ./drizzle.config.ts
+COPY tsconfig.json ./tsconfig.json
+COPY scripts ./scripts
+COPY src ./src
+# `tsx --env-file=.env ...` (used by db:migrate / db:seed:admin) needs the file to exist.
+# The real env vars come from docker-compose env_file / Coolify panel; this stub is empty.
+RUN touch .env
+
 EXPOSE 3000
 
-CMD ["node", "server.prod.mjs"]
+CMD ["./scripts/prod/start.sh"]
