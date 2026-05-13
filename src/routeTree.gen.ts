@@ -15,6 +15,7 @@ import { Route as DashboardRouteRouteImport } from './routes/_dashboard/route'
 import { Route as LandingIndexRouteImport } from './routes/_landing/index'
 import { Route as AuthSignUpRouteImport } from './routes/auth/sign-up'
 import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
+import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as DashboardDashboardRouteRouteImport } from './routes/_dashboard/dashboard/route'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard/dashboard/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -70,6 +71,11 @@ const AuthSignInRoute = AuthSignInRouteImport.update({
   id: '/sign-in',
   path: '/sign-in',
   getParentRoute: () => AuthRouteRoute,
+} as any)
+const ApiHealthRoute = ApiHealthRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardDashboardRouteRoute = DashboardDashboardRouteRouteImport.update({
   id: '/dashboard',
@@ -224,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/': typeof LandingIndexRoute
   '/auth': typeof AuthRouteRouteWithChildren
   '/dashboard': typeof DashboardDashboardRouteRouteWithChildren
+  '/api/health': typeof ApiHealthRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
   '/dashboard/settings': typeof DashboardDashboardSettingsRouteRouteWithChildren
@@ -256,6 +263,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof LandingIndexRoute
   '/auth': typeof AuthRouteRouteWithChildren
+  '/api/health': typeof ApiHealthRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
   '/api/ai/chat': typeof ApiAiChatRouteRouteWithChildren
@@ -290,6 +298,7 @@ export interface FileRoutesById {
   '/_landing': typeof LandingRouteRouteWithChildren
   '/auth': typeof AuthRouteRouteWithChildren
   '/_dashboard/dashboard': typeof DashboardDashboardRouteRouteWithChildren
+  '/api/health': typeof ApiHealthRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
   '/_landing/': typeof LandingIndexRoute
@@ -326,6 +335,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/dashboard'
+    | '/api/health'
     | '/auth/sign-in'
     | '/auth/sign-up'
     | '/dashboard/settings'
@@ -358,6 +368,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/api/health'
     | '/auth/sign-in'
     | '/auth/sign-up'
     | '/api/ai/chat'
@@ -391,6 +402,7 @@ export interface FileRouteTypes {
     | '/_landing'
     | '/auth'
     | '/_dashboard/dashboard'
+    | '/api/health'
     | '/auth/sign-in'
     | '/auth/sign-up'
     | '/_landing/'
@@ -426,6 +438,7 @@ export interface RootRouteChildren {
   DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
   LandingRouteRoute: typeof LandingRouteRouteWithChildren
   AuthRouteRoute: typeof AuthRouteRouteWithChildren
+  ApiHealthRoute: typeof ApiHealthRoute
   ApiAiChatRouteRoute: typeof ApiAiChatRouteRouteWithChildren
   ApiAiAuditRoute: typeof ApiAiAuditRoute
   ApiAiConfigStoreRoute: typeof ApiAiConfigStoreRoute
@@ -480,6 +493,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/auth/sign-in'
       preLoaderRoute: typeof AuthSignInRouteImport
       parentRoute: typeof AuthRouteRoute
+    }
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_dashboard/dashboard': {
       id: '/_dashboard/dashboard'
@@ -794,6 +814,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRouteRoute: DashboardRouteRouteWithChildren,
   LandingRouteRoute: LandingRouteRouteWithChildren,
   AuthRouteRoute: AuthRouteRouteWithChildren,
+  ApiHealthRoute: ApiHealthRoute,
   ApiAiChatRouteRoute: ApiAiChatRouteRouteWithChildren,
   ApiAiAuditRoute: ApiAiAuditRoute,
   ApiAiConfigStoreRoute: ApiAiConfigStoreRoute,
