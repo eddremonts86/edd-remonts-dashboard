@@ -26,8 +26,8 @@ let cvSource: CvSource
 let expTranslationsData: ExpTranslationsData
 
 async function loadJsonData() {
-  cvSource = (await import('./data/cv-source.json', { assert: { type: 'json' } })).default as CvSource
-  expTranslationsData = (await import('./data/experience-translations.json', { assert: { type: 'json' } })).default as ExpTranslationsData
+  cvSource = (await import('./data/cv-source.json', { with: { type: 'json' } })).default as CvSource
+  expTranslationsData = (await import('./data/experience-translations.json', { with: { type: 'json' } })).default as ExpTranslationsData
 }
 
 async function main() {

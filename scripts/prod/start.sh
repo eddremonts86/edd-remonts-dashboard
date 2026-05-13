@@ -10,6 +10,9 @@ pnpm db:migrate
 echo "[prod-start] seeding admin (idempotent)…"
 pnpm db:seed:admin || echo "[prod-start] seed:admin failed (non-fatal, continuing)"
 
+echo "[prod-start] seeding skills (idempotent)…"
+pnpm db:seed || echo "[prod-start] seed failed (non-fatal, continuing)"
+
 echo "[prod-start] seeding portfolio (idempotent)…"
 pnpm db:seed:portfolio || echo "[prod-start] seed:portfolio failed (non-fatal, continuing)"
 
