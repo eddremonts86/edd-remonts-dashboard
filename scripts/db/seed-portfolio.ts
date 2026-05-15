@@ -11,7 +11,8 @@ import {
   portfolioProjects,
   portfolioProjectTranslations,
   portfolioExperiences,
-  portfolioExperienceTranslations
+  portfolioExperienceTranslations,
+  portfolioContent,
 } from '../../src/shared/lib/db/schema'
 
 if (existsSync('.env.development')) {
@@ -94,7 +95,7 @@ interface ExpTranslationsData {
     .map((exp, idx) => {
       const { start, end } = parsePeriod(exp.period)
       return {
-        id: createId(),
+        id: `exp-${exp.id}`,
         _sourceId: exp.id,
         company: exp.company,
         location: exp.location,
@@ -345,5 +346,17 @@ interface ExpTranslationsData {
   await db.insert(portfolioProjectTranslations).values(projectTranslations).onConflictDoNothing();
   console.log(`  ✓ ${staticProjects.length} projects + ${projectTranslations.length} translations`);
 
+  // ── Content blocks insert ──────────────────────────────────────────────────
+  await db.insert(portfolioContent).values(
+    contentRows.map((r) => ({ ...r, updatedAt: new Date() }))
+  ).onConflictDoNothing();
+  console.log(`  ✓ ${contentRows.length} content blocks`);
+
+  await pool.end();
 }
-main().catch(console.error);
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
