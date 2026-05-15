@@ -419,7 +419,9 @@ async function fetchDynamicContext(intents: Intent[]): Promise<string | null> {
   const sections: string[] = []
 
   try {
-    const { getDb } = await import('@/shared/lib/db')
+    // Use the explicit /index subpath to bypass vite.config.ts's
+    // browser-stub alias (see src/shared/lib/db/load.ts for details).
+    const { getDb } = await import('@/shared/lib/db/index')
     const db = getDb()
 
     if (intents.includes('users')) {
