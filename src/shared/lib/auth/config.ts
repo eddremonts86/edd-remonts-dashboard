@@ -50,7 +50,10 @@ export function getBetterAuthUrl() {
   return (
     readEnvValue('BETTER_AUTH_URL') ??
     readEnvValue('VITE_BETTER_AUTH_URL') ??
-    DEFAULT_BETTER_AUTH_URL
+    // In the browser, fall back to the current origin so the auth client
+    // always points to the same host as the app (avoids CORS and SSR
+    // hydration mismatches when VITE_BETTER_AUTH_URL is not baked in).
+    (typeof window !== 'undefined' ? window.location.origin : DEFAULT_BETTER_AUTH_URL)
   )
 }
 
