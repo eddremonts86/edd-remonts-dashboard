@@ -15,9 +15,9 @@ export interface Experience {
   id: string
   company: string
   location: string
-  periodStart: string | null
-  periodEnd: string | null // null = "Present"
-  url: string | null
+  periodStart?: string
+  periodEnd?: string // undefined = "Present"
+  url?: string
   sortOrder: number
   translations: ExperienceTranslation[]
 }
@@ -29,7 +29,7 @@ export type ExperienceInput = Omit<Experience, 'id'>
 export interface Skill {
   id: string
   name: string
-  iconSlug: string | null
+  iconSlug?: string
   category: string
   proficiency: number
   visible: boolean
@@ -43,14 +43,25 @@ export type SkillInput = Omit<Skill, 'id'>
 export interface ProjectTranslation {
   locale: Locale
   description: string
+  problem: string
+  context: string
+  role: string
+  decisions: string
+  complexity: string
+  results: string
 }
 
 export interface Project {
   id: string
   title: string
-  coverImageUrl: string | null
-  link: string | null
+  coverImageUrl?: string
+  link?: string
+  repositoryUrl?: string
+  internalImageUrl?: string
   category: string
+  scaleLabel: string
+  impactLabel: string
+  architectureLabel: string
   featured: boolean
   sortOrder: number
   translations: ProjectTranslation[]
@@ -70,7 +81,7 @@ export interface Testimonial {
   authorName: string
   authorRole: string
   authorCompany: string
-  avatarUrl: string | null
+  avatarUrl?: string
   visible: boolean
   sortOrder: number
   translations: TestimonialTranslation[]

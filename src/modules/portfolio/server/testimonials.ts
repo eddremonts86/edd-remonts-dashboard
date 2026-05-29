@@ -4,7 +4,7 @@ import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
 import { portfolioTestimonialTranslations, portfolioTestimonials } from '@/shared/lib/db/schema'
-import type { Testimonial, TestimonialInput } from '../types'
+import type { Testimonial } from '../types'
 
 const testTransSchema = z.object({ locale: z.string(), quote: z.string() })
 const testInputSchema = z.object({
@@ -28,7 +28,13 @@ export const getTestimonials = createServerFn({ method: 'GET' }).handler(
     const translations = await db.select().from(portfolioTestimonialTranslations)
 
     return rows.map((t) => ({
-      ...t,
+      id: t.id,
+      authorName: t.authorName,
+      authorRole: t.authorRole,
+      authorCompany: t.authorCompany,
+      avatarUrl: t.avatarUrl ?? undefined,
+      visible: t.visible,
+      sortOrder: t.sortOrder,
       translations: translations
         .filter((tr) => tr.testimonialId === t.id)
         .map((tr) => ({
@@ -50,7 +56,19 @@ export const createTestimonial = createServerFn({ method: 'POST' })
         data.translations.map((t) => ({ testimonialId: id, ...t })),
       )
     }
-    return { id, ...data }
+    return {
+      id,
+      authorName: data.authorName,
+      authorRole: data.authorRole ?? '',
+      authorCompany: data.authorCompany ?? '',
+      avatarUrl: data.avatarUrl,
+      visible: data.visible ?? true,
+      sortOrder: data.sortOrder ?? 0,
+      translations: data.translations.map((item) => ({
+        locale: item.locale as Testimonial['translations'][number]['locale'],
+        quote: item.quote,
+      })),
+    }
   })
 
 export const updateTestimonial = createServerFn({ method: 'POST' })

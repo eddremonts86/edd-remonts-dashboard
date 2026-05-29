@@ -1,4 +1,3 @@
-import { drizzle } from 'drizzle-orm/node-postgres';
 import pg from 'pg';
 import { expect, test } from 'vitest';
 
@@ -12,7 +11,6 @@ const PROJECTS_TABLE = 'portfolio_projects';
 
 test('Seed script inserts all projects', async () => {
   const pool = new pg.Pool({ connectionString: DATABASE_URL });
-  const db = drizzle(pool);
 
   // If you have a Drizzle schema, use:
   // const projects = await db.select().from(portfolioProjects);

@@ -85,6 +85,20 @@ pnpm db:seed     # optional: loads sample data
 pnpm dev         # http://localhost:3000
 ```
 
+### Portfolio mode (required for this app)
+
+This repository includes a DB-driven portfolio with CRUD admin pages. Seed it once so all landing sections (impact metrics, case studies, testimonials, engineering notes, services) load from the database:
+
+```bash
+pnpm db:up && pnpm db:migrate && pnpm db:seed:portfolio && pnpm dev
+```
+
+If you are driving setup from Copilot Chat, use this command:
+
+```text
+/action run pnpm db:up && pnpm db:migrate && pnpm db:seed:portfolio && pnpm dev
+```
+
 ---
 
 ## Using this as a template

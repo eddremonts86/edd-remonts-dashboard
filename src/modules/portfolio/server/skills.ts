@@ -4,7 +4,7 @@ import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
 import { portfolioSkills } from '@/shared/lib/db/schema'
-import type { Skill, SkillInput } from '../types'
+import type { Skill } from '../types'
 
 const skillInputSchema = z.object({
   name: z.string(),
@@ -19,7 +19,16 @@ const skillSchema = skillInputSchema.extend({ id: z.string() })
 export const getSkills = createServerFn({ method: 'GET' }).handler(
   async (): Promise<Skill[]> => {
     const db = await loadDb()
-    return db.select().from(portfolioSkills).orderBy(asc(portfolioSkills.sortOrder))
+    const rows = await db.select().from(portfolioSkills).orderBy(asc(portfolioSkills.sortOrder))
+    return rows.map((row) => ({
+      id: row.id,
+      name: row.name,
+      iconSlug: row.iconSlug ?? undefined,
+      category: row.category,
+      proficiency: row.proficiency,
+      visible: row.visible,
+      sortOrder: row.sortOrder,
+    }))
   },
 )
 

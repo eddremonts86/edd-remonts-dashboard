@@ -1,30 +1,26 @@
 import { AnimatePresence, m } from 'framer-motion';
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { useCarousel } from '@/portfolio/hooks/useCarousel';
 import { CarouselControls } from './CarouselControls';
 import { TestimonialSlide } from './TestimonialSlide';
 
 export const TestimonialBlock = () => {
   const { t } = useTranslation();
-
-  const rawTestimonials = t('testimonials', { returnObjects: true });
-  const testimonials = useMemo(
-    () => (Array.isArray(rawTestimonials) ? rawTestimonials : []),
-    [rawTestimonials],
-  );
+  const { testimonials, isLoading } = usePortfolioData();
 
   const { currentIndex, direction, setIsPaused, paginate, handleGoto } = useCarousel(
     testimonials.length,
   );
 
-  if (testimonials.length === 0) {
-    return (
-      <div className="text-foreground/50 flex justify-center py-24 text-sm">
-        {t('testimonials_loading')}
-      </div>
-    );
-  }
+  // While data is still loading from the DB, render nothing (skeleton would be better,
+  // but silence is preferable to a misleading "loading testimonials" message that
+  // sticks around forever when the table is empty).
+  if (isLoading) return null;
+
+  // When the DB has no testimonials, hide the section entirely instead of showing
+  // a permanent loading state.
+  if (testimonials.length === 0) return null;
 
   const safeIndex = currentIndex >= 0 && currentIndex < testimonials.length ? currentIndex : 0;
   const currentTestimonial = testimonials[safeIndex];

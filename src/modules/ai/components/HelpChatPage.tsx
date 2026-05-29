@@ -9,7 +9,6 @@ import {
   Bot,
   Check,
   ChevronDown,
-  ChevronUp,
   Copy,
   FileText,
   Paperclip,

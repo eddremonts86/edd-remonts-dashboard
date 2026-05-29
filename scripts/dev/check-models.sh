@@ -1,22 +1,9 @@
 #!/usr/bin/env sh
 set -e
 
-MODEL_DIR=".docker_data/llm-models/llama-cpp"
-LEGACY_DIR=".docker_data/models"
-
-mkdir -p "$MODEL_DIR"
-
-if [ -d "$LEGACY_DIR" ]; then
-  legacy_models="$(ls -1 "$LEGACY_DIR"/*.gguf 2>/dev/null || true)"
-  if [ -n "$legacy_models" ]; then
-    for model_path in $legacy_models; do
-      model_file="$(basename "$model_path")"
-      if [ ! -f "$MODEL_DIR/$model_file" ]; then
-        mv "$model_path" "$MODEL_DIR/$model_file"
-      fi
-    done
-  fi
-fi
+# Models are stored centrally at workspace level in docker/models/llama/
+WORKSPACE_ROOT="${WORKSPACE_ROOT:-$(cd "$(dirname "$0")/../../../.." && pwd)}"
+MODEL_DIR="${LLAMA_CPP_MODEL_DIR:-$WORKSPACE_ROOT/docker/models/llama}"
 
 models="$(ls -1 "$MODEL_DIR"/*.gguf 2>/dev/null || true)"
 if [ -z "$models" ]; then

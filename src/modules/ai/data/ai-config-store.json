@@ -27,7 +27,7 @@
     },
     "llama-cpp": {
       "provider": "llama-cpp",
-      "baseUrl": "http://llama-cpp:8080/v1",
+      "baseUrl": "http://localhost:8080/v1",
       "apiKey": "",
       "parameters": {
         "temperature": 0.7,
@@ -53,7 +53,7 @@
     },
     "ollama": {
       "provider": "ollama",
-      "baseUrl": "http://ollama:11434/v1",
+      "baseUrl": "http://localhost:11435/v1",
       "apiKey": "",
       "parameters": {
         "temperature": 0.7,
@@ -79,7 +79,7 @@
     },
     "lm-studio": {
       "provider": "lm-studio",
-      "baseUrl": "http://lmstudio:1234/v1",
+      "baseUrl": "http://localhost:1234/v1",
       "apiKey": "",
       "parameters": {
         "temperature": 0.7,

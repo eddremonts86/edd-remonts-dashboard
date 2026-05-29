@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "experience": "Experience",
+    "authority": "Authority",
     "projects": "Projects",
     "contact": "Contact",
     "resume": "Download CV",
@@ -117,6 +118,12 @@
     "titleAccent": "Projects",
     "subtitle": "A collection of digital experiences blending premium design and robust engineering.",
     "view": "View Project",
+    "problem": "Problem",
+    "results": "Results",
+    "context": "Context",
+    "role": "Role",
+    "decisions": "Decisions",
+    "complexity": "Complexity",
     "filters": {
       "all": "All",
       "frontend": "Frontend",
@@ -153,7 +160,29 @@
     "yearsExperience": "Years Experience",
     "companies": "Companies",
     "technologies": "Technologies",
-    "lighthouse": "Lighthouse Score"
+    "lighthouse": "Lighthouse Score",
+    "usersServed": "Users served",
+    "migrations": "Migrations delivered",
+    "uptime": "Uptime",
+    "teamsLed": "Teams led"
+  },
+  "authority": {
+    "eyebrow": "Engineering Authority",
+    "title": "From execution to systems leadership",
+    "subtitle": "Beyond shipping interfaces: product engineering, scalable architecture, and measurable outcomes.",
+    "principlesLabel": "Engineering principles",
+    "practiceLabel": "How it shows in practice",
+    "notesTitle": "Engineering notes",
+    "ctaLabel": "Next step",
+    "cta": "Looking for an engineer who owns systems, not just tickets? Let's talk.",
+    "ctaButton": "Start a conversation",
+    "tabs": {
+      "architecture": "Architecture",
+      "dx": "Developer Experience",
+      "testing": "Testing & Quality",
+      "performance": "Performance",
+      "ai": "AI-assisted workflow"
+    }
   },
   "testimonials": [
     {

@@ -41,9 +41,10 @@ export const techIconMap: Record<string, string> = {
   ChromaDB: '/tech-icons/chromadb.svg',
   // ── Auth ─────────────────────────────────────────────────────────────────
   Clerk: '/tech-icons/clerk.svg',
+  'Better Auth': '/tech-icons/default-tech.svg',
   // ── AI / LLM ─────────────────────────────────────────────────────────────
   'Anthropic Claude': '/tech-icons/anthropic.svg',
-  OpenAI: '/tech-icons/default-tech.svg',
+  OpenAI: '/tech-icons/openai.svg',
   Ollama: '/tech-icons/ollama.svg',
   // ── Payments ─────────────────────────────────────────────────────────────
   Stripe: '/tech-icons/stripe.svg',
@@ -52,6 +53,8 @@ export const techIconMap: Record<string, string> = {
   // ── HTTP & utilities ─────────────────────────────────────────────────────
   Axios: '/tech-icons/axios.svg',
   Zod: '/tech-icons/zod.svg',
+  'date-fns': '/tech-icons/default-tech.svg',
+  'DnD Kit': '/tech-icons/default-tech.svg',
   // ── Infra & DevOps ───────────────────────────────────────────────────────
   Docker: '/tech-icons/docker.svg',
   Nginx: '/tech-icons/nginx.svg',
@@ -66,7 +69,7 @@ export const techIconMap: Record<string, string> = {
   Vite: '/tech-icons/vite.svg',
   // ── Testing & quality ────────────────────────────────────────────────────
   Vitest: '/tech-icons/vitest.svg',
-  Playwright: '/tech-icons/default-tech.svg',
+  Playwright: '/tech-icons/playwright.svg',
   Cypress: '/tech-icons/cypress.svg',
   ESLint: '/tech-icons/eslint.svg',
   Prettier: '/tech-icons/prettier.svg',

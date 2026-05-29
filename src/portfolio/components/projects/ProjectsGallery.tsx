@@ -1,6 +1,7 @@
 import { useMousePosition } from '@/portfolio/hooks/useMousePosition';
 import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CategoryFilter } from './CategoryFilter';
 import { FloatingImagePreview } from './FloatingImagePreview';
@@ -11,6 +12,7 @@ export const ProjectsGallery = () => {
   const { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject } =
     useProjectFilter();
   const { springX: cursorX, springY: cursorY } = useMousePosition();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
     <section id="projects" className="relative z-10 bg-background py-24 md:py-40">
@@ -26,14 +28,16 @@ export const ProjectsGallery = () => {
           <CategoryFilter active={activeCategory} onSelect={setActiveCategory} />
         </div>
 
-        {/* Interactive List */}
+        {/* Interactive List — `popLayout` keeps layout stable when filtering */}
         <div className="relative">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectListItem
                 key={project.id}
                 project={project}
                 index={index}
+                expanded={expandedId === project.id}
+                onToggle={() => setExpandedId((prev) => (prev === project.id ? null : project.id))}
                 onHover={setHoveredProject}
               />
             ))}

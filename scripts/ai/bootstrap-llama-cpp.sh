@@ -1,19 +1,40 @@
 #!/usr/bin/env sh
+# Download GGUF models for workspace-llama-cpp.
+# Models are stored in the CENTRALIZED docker/models/llama/ directory
+# (workspace root), not in app-local .docker_data/.
+#
+# The workspace-llama-cpp container auto-picks the first .gguf in /models
+# (mounted from docker/models/llama/).
+#
+# Usage — run from the APP directory:
+#   sh scripts/ai/bootstrap-llama-cpp.sh
+#
+# Or from the workspace root:
+#   sh docker/models/llama/download.sh
+
 set -eu
 
-MODEL_DIR=".docker_data/llm-models/llama-cpp"
-MAIN_MODEL_FILE="${LLAMA_CPP_MAIN_FILE:-qwen3.5-9b-instruct-q4_k_m.gguf}"
-DRAFT_MODEL_FILE="${LLAMA_CPP_DRAFT_FILE:-qwen3.5-0.8b-instruct-q8_0.gguf}"
+# Path from the app root to the shared model dir (works when run with `sh
+# scripts/ai/bootstrap-llama-cpp.sh` from apps/<name>/).
+WORKSPACE_ROOT="${WORKSPACE_ROOT:-$(cd "$(dirname "$0")/../../../.." && pwd)}"
+MODEL_DIR="${LLAMA_CPP_MODEL_DIR:-$WORKSPACE_ROOT/docker/models/llama}"
+# Defaults: Qwen3 family (released 2025-05). Speculative decoding pair:
+#   main  = Qwen3-8B Q4_K_M   (~4.9 GB)
+#   draft = Qwen3-0.6B Q8_0   (~640 MB, shares tokenizer with the 8B)
+MAIN_MODEL_FILE="${LLAMA_CPP_MAIN_FILE:-Qwen3-8B-Q4_K_M.gguf}"
+DRAFT_MODEL_FILE="${LLAMA_CPP_DRAFT_FILE:-Qwen3-0.6B-Q8_0.gguf}"
 MAIN_MODEL_PATH="$MODEL_DIR/$MAIN_MODEL_FILE"
 DRAFT_MODEL_PATH="$MODEL_DIR/$DRAFT_MODEL_FILE"
 
-MAIN_MODEL_URL="${LLAMA_CPP_MAIN_URL:-https://huggingface.co/bartowski/Qwen3.5-9B-Instruct-GGUF/resolve/main/Qwen3.5-9B-Instruct-Q4_K_M.gguf}"
-DRAFT_MODEL_URL="${LLAMA_CPP_DRAFT_URL:-https://huggingface.co/bartowski/Qwen3.5-0.8B-Instruct-GGUF/resolve/main/Qwen3.5-0.8B-Instruct-Q8_0.gguf}"
-MAIN_MODEL_URL_FALLBACK="${LLAMA_CPP_MAIN_URL_FALLBACK:-https://huggingface.co/Qwen/Qwen3.5-9B-Instruct-GGUF/resolve/main/Qwen3.5-9B-Instruct-Q4_K_M.gguf}"
-DRAFT_MODEL_URL_FALLBACK="${LLAMA_CPP_DRAFT_URL_FALLBACK:-https://huggingface.co/Qwen/Qwen3.5-0.8B-Instruct-GGUF/resolve/main/Qwen3.5-0.8B-Instruct-Q8_0.gguf}"
+# Primary URLs: official Qwen org GGUFs on HuggingFace (public, no auth).
+# Fallback URLs: unsloth re-uploads (also public).
+MAIN_MODEL_URL="${LLAMA_CPP_MAIN_URL:-https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/main/Qwen3-8B-Q4_K_M.gguf}"
+DRAFT_MODEL_URL="${LLAMA_CPP_DRAFT_URL:-https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/resolve/main/Qwen3-0.6B-Q8_0.gguf}"
+MAIN_MODEL_URL_FALLBACK="${LLAMA_CPP_MAIN_URL_FALLBACK:-https://huggingface.co/unsloth/Qwen3-8B-GGUF/resolve/main/Qwen3-8B-Q4_K_M.gguf}"
+DRAFT_MODEL_URL_FALLBACK="${LLAMA_CPP_DRAFT_URL_FALLBACK:-https://huggingface.co/unsloth/Qwen3-0.6B-GGUF/resolve/main/Qwen3-0.6B-Q8_0.gguf}"
 HF_TOKEN="${HUGGINGFACE_TOKEN:-${HF_TOKEN:-}}"
 
-LEGACY_MODEL_FILE=".docker_data/models/llama-3.2-1b-instruct-q4_k_m.gguf"
+LEGACY_MODEL_FILE="$WORKSPACE_ROOT/apps/edd-remonts-dashboard/.docker_data/models/llama-3.2-1b-instruct-q4_k_m.gguf"
 
 download_file() {
 	output="$1"
@@ -70,7 +91,7 @@ verify_file_size() {
 	fi
 }
 
-echo "[llama-cpp] Checking Qwen 3.5 models..."
+echo "[llama-cpp] Checking Qwen3 models..."
 
 if [ ! -d "$MODEL_DIR" ]; then
 	mkdir -p "$MODEL_DIR"
@@ -98,7 +119,8 @@ else
 fi
 
 echo "[llama-cpp] Verifying model integrity..."
-verify_file_size "$MAIN_MODEL_PATH" 500000000 "main model"
-verify_file_size "$DRAFT_MODEL_PATH" 100000000 "draft model"
+# 8B Q4_K_M ≈ 4.9 GB, 0.6B Q8_0 ≈ 640 MB — use conservative floors.
+verify_file_size "$MAIN_MODEL_PATH" 1000000000 "main model"
+verify_file_size "$DRAFT_MODEL_PATH" 300000000 "draft model"
 
-echo "[llama-cpp] Qwen 3.5 models are ready."
+echo "[llama-cpp] Qwen3 models are ready."

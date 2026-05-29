@@ -7,7 +7,7 @@ import {
   portfolioExperienceTranslations,
   portfolioExperiences,
 } from '@/shared/lib/db/schema'
-import type { Experience, ExperienceInput } from '../types'
+import type { Experience } from '../types'
 
 const translationSchema = z.object({ locale: z.string(), role: z.string(), description: z.string().optional() })
 const expInputSchema = z.object({
@@ -37,7 +37,13 @@ export const getExperiences = createServerFn({ method: 'GET' }).handler(
       .from(portfolioExperienceTranslations)
 
     return rows.map((exp) => ({
-      ...exp,
+      id: exp.id,
+      company: exp.company,
+      location: exp.location,
+      periodStart: exp.periodStart ?? undefined,
+      periodEnd: exp.periodEnd ?? undefined,
+      url: exp.url ?? undefined,
+      sortOrder: exp.sortOrder,
       translations: translations
         .filter((t) => t.experienceId === exp.id)
         .map((t) => ({
@@ -73,7 +79,20 @@ export const createExperience = createServerFn({ method: 'POST' })
       )
     }
 
-    return { id, ...data }
+    return {
+      id,
+      company: data.company,
+      location: data.location ?? '',
+      periodStart: data.periodStart,
+      periodEnd: data.periodEnd,
+      url: data.url,
+      sortOrder: data.sortOrder ?? 0,
+      translations: data.translations.map((item) => ({
+        locale: item.locale as Experience['translations'][number]['locale'],
+        role: item.role,
+        description: item.description ?? '',
+      })),
+    }
   })
 
 // ── Update ────────────────────────────────────────────────────────────────────

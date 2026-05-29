@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "experience": "Experiencia",
+    "authority": "Autoridad",
     "title": "Ingeniero Frontend Senior con base Full Stack",
     "description": "Ingeniero orientado a frontend, con raíces full stack y casi dos décadas de experiencia desde 2007. Construyo productos web escalables que convierten reglas de negocio complejas en interfaces rápidas, claras e intuitivas usando React, Vue, Node.js y plataformas cloud.",
     "projects": "Proyectos",
@@ -119,6 +120,12 @@
     "titleAccent": "Recientes",
     "subtitle": "Una colección de experiencias digitales fusionando el diseño premium con una férrea ingeniería.",
     "view": "Ver Proyecto",
+    "problem": "Problema",
+    "results": "Resultados",
+    "context": "Contexto",
+    "role": "Rol",
+    "decisions": "Decisiones",
+    "complexity": "Complejidad",
     "filters": {
       "all": "Todos",
       "frontend": "Frontend",
@@ -155,7 +162,29 @@
     "yearsExperience": "Años de Experiencia",
     "companies": "Empresas",
     "technologies": "Tecnologías",
-    "lighthouse": "Puntuación Lighthouse"
+    "lighthouse": "Puntuación Lighthouse",
+    "usersServed": "Usuarios atendidos",
+    "migrations": "Migraciones entregadas",
+    "uptime": "Disponibilidad",
+    "teamsLed": "Equipos liderados"
+  },
+  "authority": {
+    "eyebrow": "Autoridad de Ingeniería",
+    "title": "De la ejecución al liderazgo de sistemas",
+    "subtitle": "Más allá de construir interfaces: ingeniería de producto, arquitectura escalable y resultados medibles.",
+    "principlesLabel": "Principios de ingeniería",
+    "practiceLabel": "Cómo se traduce en la práctica",
+    "notesTitle": "Notas de ingeniería",
+    "ctaLabel": "Próximo paso",
+    "cta": "¿Buscas un ingeniero que se apropie de los sistemas, no solo de los tickets? Hablemos.",
+    "ctaButton": "Iniciar conversación",
+    "tabs": {
+      "architecture": "Arquitectura",
+      "dx": "Experiencia de Desarrollo",
+      "testing": "Testing y Calidad",
+      "performance": "Rendimiento",
+      "ai": "Flujo asistido por IA"
+    }
   },
   "testimonials": [
     {

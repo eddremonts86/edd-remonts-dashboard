@@ -6,8 +6,8 @@ export function useContentBlock(key: string) {
   return useQuery<ContentBlock | null>({
     queryKey: ['contentBlock', key],
     queryFn: async () => {
-      const res = await getContentBlock({ key });
-      return res.data ?? null;
+      const res = await getContentBlock({ data: { key } });
+      return res;
     },
   });
 }

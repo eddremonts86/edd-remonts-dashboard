@@ -2,6 +2,7 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion';
 import { lazy, Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutSection } from './components/about/AboutSection';
+import { EngineeringAuthoritySection } from './components/authority/EngineeringAuthoritySection';
 import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
 import { Footer } from './components/footer/Footer';
 import { HeroSection } from './components/hero/HeroSection';
@@ -56,6 +57,7 @@ export function App() {
               <AboutSection />
               <SkillsMarquee />
               <ExperienceTimeline />
+              <EngineeringAuthoritySection />
               <TestimonialBlock />
               <Suspense fallback={null}>
                 <ProjectsGallery />

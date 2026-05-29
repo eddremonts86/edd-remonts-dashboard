@@ -3,6 +3,7 @@
     "home": "Hjem",
     "about": "Om",
     "experience": "Erfaring",
+    "authority": "Autoritet",
     "projects": "Projekter",
     "contact": "Kontakt",
     "resume": "Download CV",
@@ -117,6 +118,12 @@
     "titleAccent": "Projekter",
     "subtitle": "En samling af digitale oplevelser der blander premium design med stabil systemteknik.",
     "view": "Se Projekt",
+    "problem": "Problem",
+    "results": "Resultater",
+    "context": "Kontekst",
+    "role": "Rolle",
+    "decisions": "Beslutninger",
+    "complexity": "Kompleksitet",
     "filters": {
       "all": "Alle",
       "frontend": "Frontend",
@@ -153,7 +160,29 @@
     "yearsExperience": "Års Erfaring",
     "companies": "Virksomheder",
     "technologies": "Teknologier",
-    "lighthouse": "Lighthouse Score"
+    "lighthouse": "Lighthouse Score",
+    "usersServed": "Brugere serviceret",
+    "migrations": "Migrationer leveret",
+    "uptime": "Oppetid",
+    "teamsLed": "Teams ledet"
+  },
+  "authority": {
+    "eyebrow": "Engineering Autoritet",
+    "title": "Fra eksekvering til systemlederskab",
+    "subtitle": "Mere end at levere interfaces: produktudvikling, skalerbar arkitektur og målbare resultater.",
+    "principlesLabel": "Engineering principper",
+    "practiceLabel": "Sådan ser det ud i praksis",
+    "notesTitle": "Engineering noter",
+    "ctaLabel": "Næste skridt",
+    "cta": "Søger du en ingeniør, der ejer systemer, ikke kun opgaver? Lad os snakke.",
+    "ctaButton": "Start en samtale",
+    "tabs": {
+      "architecture": "Arkitektur",
+      "dx": "Developer Experience",
+      "testing": "Test og kvalitet",
+      "performance": "Ydeevne",
+      "ai": "AI-assisteret workflow"
+    }
   },
   "testimonials": [
     {

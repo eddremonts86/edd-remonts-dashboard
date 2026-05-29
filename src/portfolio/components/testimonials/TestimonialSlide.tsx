@@ -18,6 +18,7 @@ export interface Testimonial {
   quote: string;
   author: string;
   role: string;
+  company?: string;
   /** URL to a photo. If absent, initials are shown instead. */
   avatar?: string;
 }
@@ -89,7 +90,7 @@ export const TestimonialSlide = ({
           {testimonial.author}
         </p>
         <p className="font-mono text-xs uppercase tracking-widest text-foreground/40">
-          {testimonial.role}
+          {[testimonial.role, testimonial.company].filter(Boolean).join(' · ')}
         </p>
       </div>
     </m.div>

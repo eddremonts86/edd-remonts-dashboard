@@ -9,10 +9,13 @@
 import { useQuery } from '@tanstack/react-query'
 import { Mail } from 'lucide-react'
 import { createContext, useContext, type ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { getContentBlocks } from '@/modules/portfolio/server/content'
 import { getExperiences } from '@/modules/portfolio/server/experiences'
 import { getProjects } from '@/modules/portfolio/server/projects'
 import { getSkills } from '@/modules/portfolio/server/skills'
+import { getServices } from '@/modules/portfolio/server/services'
+import { getTestimonials } from '@/modules/portfolio/server/testimonials'
 import {
   FacebookIcon,
   GithubIcon,
@@ -78,7 +81,34 @@ export interface CvProject {
   title: string
   image: string
   link: string
+  repositoryUrl: string
+  internalImageUrl: string
   category: string
+  scaleLabel: string
+  impactLabel: string
+  architectureLabel: string
+  description: string
+  problem: string
+  context: string
+  role: string
+  decisions: string
+  complexity: string
+  results: string
+}
+
+export interface CvService {
+  id: string
+  iconSlug: string
+  title: string
+  description: string
+}
+
+export interface CvTestimonial {
+  id: string
+  author: string
+  role: string
+  company: string
+  quote: string
 }
 
 export interface CvStats {
@@ -93,7 +123,10 @@ interface PortfolioData {
   experiences: CvExperience[]
   skills: string[]
   projects: CvProject[]
+  services: CvService[]
+  testimonials: CvTestimonial[]
   stats: CvStats
+  content: Record<string, string>
   isLoading: boolean
 }
 
@@ -129,11 +162,16 @@ const PortfolioDataCtx = createContext<PortfolioData>({
   experiences: [],
   skills: [],
   projects: [],
+  services: [],
+  testimonials: [],
   stats: DEFAULT_STATS,
+  content: {},
   isLoading: true,
 })
 
 export function PortfolioDataProvider({ children }: { children: ReactNode }) {
+  const { i18n } = useTranslation()
+
   const { data: contentBlocks = [], isLoading: loadingContent } = useQuery({
     queryKey: ['portfolio', 'content'],
     queryFn: () => getContentBlocks(),
@@ -158,12 +196,37 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
     staleTime: 5 * 60 * 1000,
   })
 
-  const isLoading = loadingContent || loadingExp || loadingSkills || loadingProjects
+  const { data: dbServices = [], isLoading: loadingServices } = useQuery({
+    queryKey: ['portfolio', 'services'],
+    queryFn: () => getServices(),
+    staleTime: 5 * 60 * 1000,
+  })
+
+  const { data: dbTestimonials = [], isLoading: loadingTestimonials } = useQuery({
+    queryKey: ['portfolio', 'testimonials'],
+    queryFn: () => getTestimonials(),
+    staleTime: 5 * 60 * 1000,
+  })
+
+  const activeLocale = i18n.language.startsWith('es')
+    ? 'es'
+    : i18n.language.startsWith('dk')
+      ? 'dk'
+      : 'en'
+
+  const isLoading =
+    loadingContent || loadingExp || loadingSkills || loadingProjects || loadingServices || loadingTestimonials
 
   // ── Map content blocks → personalInfo ──────────────────────────────────────
   function block(key: string): string {
-    return contentBlocks.find((b) => b.key === key)?.valueEn ?? ''
+    const row = contentBlocks.find((b) => b.key === key)
+    if (!row) return ''
+    if (activeLocale === 'es') return row.valueEs || row.valueEn || ''
+    if (activeLocale === 'dk') return row.valueDk || row.valueEn || ''
+    return row.valueEn || ''
   }
+
+  const content = Object.fromEntries(contentBlocks.map((item) => [item.key, block(item.key)]))
 
   const personalInfo: CvPersonalInfo = {
     name: block('hero.name') || DEFAULT_PERSONAL_INFO.name,
@@ -221,13 +284,55 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   // ── Map DB projects → cvData shape ────────────────────────────────────────
   const projects: CvProject[] = [...dbProjects]
     .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
-    .map((p) => ({
-      id: p.id,
-      title: p.title,
-      image: p.coverImageUrl ?? '',
-      link: p.link ?? '',
-      category: p.category ?? 'Frontend',
-    }))
+    .map((p) => {
+      const tr = pickTr(p.translations, activeLocale)
+      return {
+        id: p.id,
+        title: p.title,
+        image: p.coverImageUrl ?? '',
+        link: p.link ?? '',
+        repositoryUrl: p.repositoryUrl ?? '',
+        internalImageUrl: p.internalImageUrl ?? '',
+        category: p.category ?? 'Frontend',
+        scaleLabel: p.scaleLabel ?? '',
+        impactLabel: p.impactLabel ?? '',
+        architectureLabel: p.architectureLabel ?? '',
+        description: tr?.description ?? '',
+        problem: tr?.problem ?? '',
+        context: tr?.context ?? '',
+        role: tr?.role ?? '',
+        decisions: tr?.decisions ?? '',
+        complexity: tr?.complexity ?? '',
+        results: tr?.results ?? '',
+      }
+    })
+
+  const services: CvService[] = [...dbServices]
+    .filter((service) => service.visible !== false)
+    .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
+    .map((service) => {
+      const tr = pickTr(service.translations, activeLocale)
+      return {
+        id: service.id,
+        iconSlug: service.iconSlug,
+        title: tr?.title ?? '',
+        description: tr?.description ?? '',
+      }
+    })
+
+  const testimonials: CvTestimonial[] = [...dbTestimonials]
+    .filter((item) => item.visible !== false)
+    .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
+    .map((item) => {
+      const tr = pickTr(item.translations, activeLocale)
+      return {
+        id: item.id,
+        author: item.authorName,
+        role: item.authorRole,
+        company: item.authorCompany,
+        quote: tr?.quote ?? '',
+      }
+    })
 
   // ── Stats from DB content blocks (fall back to defaults if not seeded) ───
   const stats: CvStats = {
@@ -238,7 +343,19 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <PortfolioDataCtx.Provider value={{ personalInfo, experiences, skills, projects, stats, isLoading }}>
+    <PortfolioDataCtx.Provider
+      value={{
+        personalInfo,
+        experiences,
+        skills,
+        projects,
+        services,
+        testimonials,
+        stats,
+        content,
+        isLoading,
+      }}
+    >
       {children}
     </PortfolioDataCtx.Provider>
   )

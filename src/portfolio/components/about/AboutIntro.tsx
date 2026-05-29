@@ -11,12 +11,20 @@ export const AboutIntro = () => {
   const { data: aboutIntro } = useContentBlock('about.intro');
   const { containerRef, scrollYProgress } = useScrollReveal();
 
-  const introText =
-    aboutIntro?.[
-      `value${i18n.language.charAt(0).toUpperCase() + i18n.language.slice(1)}`
-    ] || t('about.intro');
+  const locale = i18n.language.startsWith('es')
+    ? 'es'
+    : i18n.language.startsWith('dk')
+      ? 'dk'
+      : 'en';
 
-  const words = introText.split(' ');
+  const introText =
+    (locale === 'es'
+      ? aboutIntro?.valueEs
+      : locale === 'dk'
+        ? aboutIntro?.valueDk
+        : aboutIntro?.valueEn) || t('about.intro');
+
+  const words: string[] = introText.split(' ');
 
   // Words/fragments to highlight in primary color across all supported languages
   const HIGHLIGHT = new Set([
@@ -61,9 +69,9 @@ export const AboutIntro = () => {
         <div className="flex-1 min-w-0 flex items-center">
           <p
             ref={containerRef as RefObject<HTMLParagraphElement>}
-            className="flex flex-wrap gap-x-2 gap-y-1 text-xl font-light leading-relaxed tracking-tight text-foreground/70 md:gap-x-3 md:text-2xl lg:text-[1.625rem]"
+            className="relative flex flex-wrap gap-x-2 gap-y-1 text-xl font-light leading-relaxed tracking-tight text-foreground/70 md:gap-x-3 md:text-2xl lg:text-[1.625rem]"
           >
-            {words.map((word, i) => (
+            {words.map((word: string, i: number) => (
               <RevealWord
                 key={`${i}-${word}`}
                 word={word}
