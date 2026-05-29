@@ -1,105 +1,8 @@
-import { m, AnimatePresence } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Layers, Database, Cpu, Sparkles } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TechIcon } from '@/portfolio/components/ui/badges/TechIcon';
 import { fadeInView } from '@/portfolio/lib/motion';
-
-interface ExtendedCategory {
-  title: string;
-  annot: string;
-  items: string[];
-}
-
-const EXTENDED_CATEGORIES: ExtendedCategory[] = [
-  {
-    title: 'Frontend & UI Systems',
-    annot: 'EXT_PRESENTATION',
-    items: [
-      'React',
-      'Vue.js',
-      'Next.js',
-      'Nuxt.js',
-      'TypeScript',
-      'JavaScript',
-      'Tailwind CSS',
-      'HTML5',
-      'CSS3',
-      'SCSS',
-      'SASS',
-      'Framer Motion',
-      'Radix UI',
-      'React Hook Form',
-      'Recharts',
-      'i18next',
-      'Lucide'
-    ],
-  },
-  {
-    title: 'State, API & Database',
-    annot: 'EXT_PERSISTENCE',
-    items: [
-      'TanStack Query',
-      'TanStack Start',
-      'TanStack Router',
-      'TanStack Form',
-      'TanStack Table',
-      'Node.js',
-      'PHP',
-      'Laravel',
-      'Symfony',
-      'PostgreSQL',
-      'PostGIS',
-      'MySQL',
-      'Drizzle ORM',
-      'ChromaDB',
-      'Zod',
-      'Axios',
-      'date-fns',
-      'OpenAI',
-      'Anthropic Claude',
-      'Ollama'
-    ],
-  },
-  {
-    title: 'Infra, DevOps & Security',
-    annot: 'EXT_INFRASTRUCTURE',
-    items: [
-      'Docker',
-      'Nginx',
-      'Apache',
-      'Linux',
-      'bash',
-      'macOS',
-      'Git',
-      'GitHub Actions',
-      'Netlify',
-      'pnpm',
-      'Vite',
-      'Clerk',
-      'Better Auth',
-      'Stripe',
-      'MapLibre GL'
-    ],
-  },
-  {
-    title: 'Quality, CMS & PM',
-    annot: 'EXT_GOVERNANCE',
-    items: [
-      'Vitest',
-      'Playwright',
-      'Cypress',
-      'ESLint',
-      'Prettier',
-      'Sentry',
-      'Drupal',
-      'WordPress',
-      'Jira',
-      'Confluence',
-      'DnD Kit'
-    ],
-  },
-];
 
 interface CuratedLayer {
   id: string;
@@ -112,41 +15,40 @@ interface CuratedLayer {
 
 export const SkillsMarquee = () => {
   const { t } = useTranslation();
-  const [isArsenalExpanded, setIsArsenalExpanded] = useState(false);
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
       {
         id: 'governance',
-        name: 'Governance & Monorepos',
-        annot: '/ WORKSPACE ARCHITECTURE',
+        name: 'Architecture & Governance',
+        annot: '/ WORKSPACE SYSTEMS',
         Icon: Layers,
-        items: ['Vite', 'pnpm', 'Docker'],
-        rationale: 'Establishes rigid boundaries, monorepo configurations, and strict semantic contracts to keep large-scale SaaS systems clean and composable.',
+        items: ['Monorepo Boundaries', 'Design System Contracts', 'Decoupled Modules'],
+        rationale: 'Governing shared boundaries and modular contracts that allow distributed product teams to release features independently without breaking shared systems.',
       },
       {
         id: 'performance',
-        name: 'Performance & Scale',
+        name: 'Performance Engineering',
         annot: '/ LATENCY & CONVERSION',
         Icon: Cpu,
-        items: ['React', 'TypeScript', 'TanStack Query'],
-        rationale: 'Enforces sub-12ms interaction latency, optimistic state synchronization, and perfect 100% Core Web Vitals under intensive real-time loads.',
+        items: ['Interaction Latency', 'Optimistic Rendering', 'Core Web Vitals'],
+        rationale: 'Enforcing sub-12ms interaction responsiveness and perfect 100% scores across SaaS edges to secure top-tier user retention.',
       },
       {
         id: 'leadership',
         name: 'Technical Leadership',
-        annot: '/ TEAM SYNCHRONIZATION',
+        annot: '/ ORG SYNCHRONIZATION',
         Icon: Sparkles,
-        items: ['GitHub Actions', 'Vitest', 'Playwright'],
-        rationale: 'Orchestrates test suites and automated deployment checks, governing technical standards adopted by 20+ engineers across 4 teams.',
+        items: ['Developer Experience', 'Mentorship Cultures', 'Rigorous Quality Gates'],
+        rationale: 'Active developer coaching, peer alignment, and automated quality gates that standardise delivery speeds by 30% across 20+ engineers.',
       },
       {
         id: 'product',
-        name: 'Product Engineering',
-        annot: '/ FULL-STACK MATURITY',
+        name: 'Product Systems Alignment',
+        annot: '/ FULL-STACK STRATEGY',
         Icon: Database,
-        items: ['TanStack Start', 'PostgreSQL', 'Drizzle ORM'],
-        rationale: 'Models robust domain layers from database schemas to client state to guarantee type-safety and ensure seamless, high-fidelity user experiences.',
+        items: ['Domain Modeling', 'Stakeholder Coordination', 'State & Cache Contracts'],
+        rationale: 'Bridging the gap between engineering execution and business vision by translating product specs into robust type-safe cache architectures.',
       },
     ];
   }, []);
@@ -176,22 +78,8 @@ export const SkillsMarquee = () => {
                 <span className="font-serif italic text-primary">Capabilities</span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
-                Technologies are commodities; architectural alignment and governance are competitive differentiators. Here is how my technical stacks are marshaled to deliver verified business speed and performance stability.
+                Technologies are commodities; architectural alignment and organization governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.
               </p>
-              
-              {/* Deployed full tech registry trigger */}
-              <div className="mt-8">
-                <button
-                  onClick={() => setIsArsenalExpanded(!isArsenalExpanded)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-primary font-bold transition-all duration-300 hover:border-primary/45 select-none cursor-pointer"
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  {isArsenalExpanded ? '/ COLLAPSE FULL REGISTRY' : '/ DEPLOY FULL TECH REGISTRY'}
-                </button>
-              </div>
             </div>
           </m.div>
 
@@ -216,7 +104,7 @@ export const SkillsMarquee = () => {
                     </div>
                     <div>
                       <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
-                        SYSTEM_0{index + 1}
+                        CAPABILITY_0{index + 1}
                       </span>
                       <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
                         {layer.name}
@@ -226,7 +114,7 @@ export const SkillsMarquee = () => {
 
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
                   <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
-                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">/ SYSTEM DESIGN DECISION</span>
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">/ VALUE PROOF</span>
                     {layer.rationale}
                   </p>
 
@@ -237,7 +125,6 @@ export const SkillsMarquee = () => {
                         key={tech}
                         className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
                       >
-                        <TechIcon skill={tech} className="h-3.5 w-3.5" />
                         {tech}
                       </span>
                     ))}
@@ -248,60 +135,6 @@ export const SkillsMarquee = () => {
           </div>
 
         </div>
-
-        {/* Extended Technical Registry inspector panel */}
-        <AnimatePresence>
-          {isArsenalExpanded && (
-            <m.div
-              initial={{ opacity: 0, height: 0, marginTop: 0 }}
-              animate={{ opacity: 1, height: 'auto', marginTop: 48 }}
-              exit={{ opacity: 0, height: 0, marginTop: 0 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="overflow-hidden border border-white/10 bg-zinc-950/40 rounded-3xl p-8 backdrop-blur-md relative select-none"
-            >
-              {/* Technical Grid Blueprint */}
-              <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[20px_20px]" />
-
-              {/* Panel Header */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/55">
-                    Extended Technical Registry
-                  </span>
-                </div>
-                <div className="font-mono text-[8px] text-white/35">SYS_INSPECTOR: DEPLOYED</div>
-              </div>
-
-              {/* Responsive Columns */}
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
-                {EXTENDED_CATEGORIES.map((cat, i) => (
-                  <div key={cat.title} className="space-y-4">
-                    <div className="border-b border-white/5 pb-2">
-                      <span className="font-mono text-[8.5px] text-primary uppercase tracking-widest block">
-                        / 0{i + 1} {cat.annot}
-                      </span>
-                      <h4 className="font-display text-sm font-semibold text-white mt-1">
-                        {cat.title}
-                      </h4>
-                    </div>
-                    <ul className="space-y-2.5 font-mono text-[9.5px]">
-                      {cat.items.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-foreground/75 hover:text-white transition-colors duration-250 select-none">
-                          <TechIcon skill={item} className="h-3.5 w-3.5 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );

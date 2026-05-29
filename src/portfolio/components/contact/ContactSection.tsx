@@ -30,14 +30,14 @@ export const ContactSection = () => {
           >
             <div>
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold block mb-4 animate-pulse">
-                / COORDINATION CHANNEL
+                / GET IN TOUCH
               </span>
               <h2 className="mb-6 font-display text-4xl font-light leading-[0.95] tracking-tight text-white md:text-6xl lg:text-7xl">
-                The Final Act: <br />
-                <span className="font-serif italic text-primary">Establish Connection</span>
+                Let's Build <br />
+                <span className="font-serif italic text-primary">Something Together</span>
               </h2>
-              <p className="max-w-xl text-sm leading-relaxed text-white/50 font-light mt-4">
-                Ready to coordinate operations? Initiate a secure direct payload connection or establish administrative channel synchronization.
+              <p className="max-w-xl text-sm leading-relaxed text-white/50 font-light mt-4 font-display">
+                Ready to discuss a project, hiring a Staff Engineer, or technical consulting? Send a message and let's start a conversation.
               </p>
             </div>
 
@@ -53,10 +53,10 @@ export const ContactSection = () => {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/55">
-                    Engagement Target Parameters
+                    Hiring & Engagement Parameters
                   </span>
                 </div>
-                <div className="font-mono text-[8px] text-white/35">HIRING_TARGET: ACTIVE</div>
+                <div className="font-mono text-[8px] text-white/35">STATUS: AVAILABLE</div>
               </div>
 
               {/* Status details */}
@@ -106,14 +106,14 @@ export const ContactSection = () => {
             <div className="flex flex-col gap-6 max-w-xl">
               <ContactInfoItem
                 icon={Mail}
-                label="Direct channel"
+                label="Direct Email"
                 value={personalInfo.email}
                 href={`mailto:${personalInfo.email}`}
               />
               <ContactInfoItem
                 icon={MapPin}
-                label="COORDINATION POINT"
-                value="Copenhagen, DK · 55.6761° N"
+                label="Location"
+                value="Copenhagen, Denmark"
               />
             </div>
           </m.div>
@@ -129,7 +129,7 @@ export const ContactSection = () => {
             <div className="flex items-center gap-2 mb-8 border-b border-white/10 pb-4">
               <span className="h-2 w-2 rounded-full bg-primary animate-ping" />
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">
-                Establish Connection Node
+                Send a Message
               </span>
             </div>
 

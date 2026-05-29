@@ -13,11 +13,10 @@ interface StoryProject {
   link?: string;
   urlPlaceholder: string;
   coverPath: string;
-  businessContext: string;
-  problem: string;
-  constraints: string;
-  solution: string;
-  outcome: string;
+  context: string;
+  challenge: string;
+  decision: string;
+  businessImpact: string;
   tradeoffsChosen: string;
   tradeoffsRejected: string;
   architectureDiagramType: 'microfrontend' | 'statesync' | 'composition';
@@ -34,13 +33,12 @@ const TOP_STORIES: StoryProject[] = [
     link: 'https://schilling.dk/',
     urlPlaceholder: 'console.schilling.dk/workspace',
     coverPath: '/projects/schilling-cover.png',
-    businessContext: 'Enterprise publishing platform serving major media organizations across Europe with high data density.',
-    problem: 'Initial bundle size exceeded 6MB, causing LCP delays over 7.5s and high abandonment.',
-    constraints: 'Active legacy codebase. No core platform rewrite allowed due to strict regression risks.',
-    solution: 'Designed modular Vite monorepo partitions and enabled strict semantic route contracts.',
-    outcome: 'Slashing initial payload by 94.3% (6.2MB to 350KB), improving LCP to 1.4s and delivery speed by 30%.',
-    tradeoffsChosen: 'Scoped Vite monorepo partitions with strict semantic version contracts.',
-    tradeoffsRejected: 'Monolithic rewrite, avoiding 12 months of delivery freeze and high regression risk.',
+    context: 'Enterprise publishing SaaS serving large media organizations across Europe with high data-density requirements.',
+    challenge: 'Initial monolithic bundle size exceeded 6MB, causing LCP delays over 7.5s and high load abandonment rates. Complete core platform rewrites were strictly forbidden due to high regression risks on legacy billing and data structures.',
+    decision: 'Rather than freeze features for a monolithic rewrite, I designed Vite-based monorepo partitions and enabled route isolation. By establishing strict semantic contracts between workspace modules, I empowered product teams to build and ship independently.',
+    businessImpact: 'Slashed initial bundle payload by 94% (6.2MB to 350KB), improving LCP to 1.4s. Customer abandonment dropped to near zero, feature delivery cycle speeds rose by 30%, and 20+ engineers were onboarded onto a shared design system with zero system regressions.',
+    tradeoffsChosen: 'Scoped monorepo sub-app partitions with strict semantic version contracts for independent squad releases.',
+    tradeoffsRejected: 'Monolithic rewrite. Avoided 12 months of complete feature freeze and massive multi-million euro regression risks.',
     architectureDiagramType: 'microfrontend',
   },
   {
@@ -52,13 +50,12 @@ const TOP_STORIES: StoryProject[] = [
     architectureLabel: 'TanStack DB Synchronization',
     urlPlaceholder: 'logistics.remonts.io/dashboard',
     coverPath: '/projects/edd-remonts-cover.png',
-    businessContext: 'Transactional control dashboard managing real-time logistics tracking and sub-second KPIs.',
-    problem: 'Stream polling saturated client sockets, and direct WebSockets caused DOM thrashing.',
-    constraints: 'Unstable client networks. Must run at a steady 60FPS on commercial viewports.',
-    solution: 'Engineered virtualized DOM memoization queues and TanStack optimistic synchronization.',
-    outcome: 'Reduced queries by 60%, handling 500+ updates/sec at 60FPS with a 98 Lighthouse rating.',
-    tradeoffsChosen: 'Optimistic state sync coupled with a 150ms virtualized DOM queue.',
-    tradeoffsRejected: 'Direct raw WebSockets, avoiding socket saturation and layout shifts.',
+    context: 'Real-time logistics tracking and transactional control dashboard managing high-frequency operational KPIs.',
+    challenge: 'Constant high-frequency data polling saturated client sockets and triggered heavy serverside load. Direct WebSockets caused massive DOM thrashing and layout shifts on unstable mobile networks.',
+    decision: 'Engineered virtualized DOM memoization queues coupled with TanStack Query optimistic caching. I structured rendering updates to isolate mutations strictly to active visual cells rather than re-rendering whole list panels.',
+    businessImpact: 'Slashed socket query traffic by 60%, drastically cutting server infrastructure costs. The application runs seamlessly at a steady 60FPS on commercial mobile viewports under heavy transaction streams (500+ updates/sec), securing a perfect 98 Lighthouse performance score.',
+    tradeoffsChosen: 'Optimistic state sync coupled with a 150ms virtualized DOM rendering throttle to isolate CPU load.',
+    tradeoffsRejected: 'Sub-10ms raw WebSockets. Avoided mobile socket saturation and severe clientside layout shifts.',
     architectureDiagramType: 'statesync',
   },
   {
@@ -71,13 +68,12 @@ const TOP_STORIES: StoryProject[] = [
     link: 'https://www.zunzun.io/',
     urlPlaceholder: 'zunzun.io/canvas/assembler',
     coverPath: '/projects/zunzun-cover.png',
-    businessContext: 'Full-stack site builder assembler focused on modular layouts and fast regeneration.',
-    problem: 'Canvas assembly of hundreds of elements triggered re-render cascades, spiking interaction delay (INP).',
-    constraints: 'Must compile code templates dynamically under a sub-12ms key-response budget.',
-    solution: 'Adopted a composite UI structure with independent reactive nodes to isolate mutations.',
-    outcome: 'Maintained a 100% Core Web Vitals score and sub-12ms input latency during canvas edits.',
-    tradeoffsChosen: 'Composite UI nodes operating as independent reactive registers, isolating leaf mutations.',
-    tradeoffsRejected: 'Global state dispatch, avoiding re-render cascades that spike input latency (INP).',
+    context: 'Full-stack canvas builder and assembler focused on modular layout templates and fast static regeneration.',
+    challenge: 'Real-time canvas assembly of hundreds of elements triggered global state re-render cascades. This spiked key interaction delays (INP), slowing down the editing experience for design creators.',
+    decision: 'Re-architected state flow to use localized reactive nodes. Layout elements function as independent local registers, completely isolating visual mutations from the global state tree and preventing global cascades.',
+    businessImpact: 'Guaranteed sub-12ms interaction response times under intensive real-time editing. Maintained a 100% Core Web Vitals score across all generated outputs, ensuring top-tier SEO discoverability and zero user conversion drops.',
+    tradeoffsChosen: 'Strict composite UI layout nodes operating as independent registers, isolating mutations to leaves.',
+    tradeoffsRejected: 'Single global state tree dispatch, avoiding global re-render cascades that raise key input latency (INP).',
     architectureDiagramType: 'composition',
   },
 ];
@@ -361,7 +357,7 @@ export const ProductStories = () => {
                 </div>
               </div>
 
-              {/* Col B: 5-Stage Case Study & Architectural Tradeoff Ledgers (6 cols) */}
+              {/* Col B: 4-Stage Case Study & Architectural Tradeoff Ledgers (6 cols) */}
               <div className={`lg:col-span-6 space-y-6 ${isOdd ? 'lg:order-1' : ''}`}>
                 <div>
                   <h3 className="font-display text-3xl font-light tracking-tight text-white md:text-4xl">
@@ -369,55 +365,44 @@ export const ProductStories = () => {
                   </h3>
                 </div>
 
-                {/* 5-Stage Case Study Layout (Context, Problem, Constraints, Solution, Outcome) */}
-                <div className="space-y-4 font-display">
+                {/* 4-Stage Case Study Layout (Context, Challenge, Decision, Impact) */}
+                <div className="space-y-5 font-display">
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary font-bold block">
-                        / BUSINESS CONTEXT
+                        / CONTEXT
                       </span>
                       <p className="text-xs leading-relaxed text-foreground/75 font-light">
-                        {project.businessContext}
+                        {project.context}
                       </p>
                     </div>
 
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary font-bold block">
-                        / PROBLEM
+                        / CHALLENGE
                       </span>
                       <p className="text-xs leading-relaxed text-foreground/75 font-light">
-                        {project.problem}
+                        {project.challenge}
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2 border-t border-white/5 pt-4">
-                    <div className="space-y-1">
-                      <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary font-bold block">
-                        / CONSTRAINTS
-                      </span>
-                      <p className="text-xs leading-relaxed text-foreground/75 font-light">
-                        {project.constraints}
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary font-bold block">
-                        / TECHNICAL SOLUTION
-                      </span>
-                      <p className="text-xs leading-relaxed text-foreground/75 font-light">
-                        {project.solution}
-                      </p>
-                    </div>
+                  <div className="border-t border-white/5 pt-4 space-y-1.5">
+                    <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary font-bold block">
+                      / TECHNICAL LEADERSHIP DECISION
+                    </span>
+                    <p className="text-xs leading-relaxed text-foreground/75 font-light">
+                      {project.decision}
+                    </p>
                   </div>
 
                   {/* Highlighted Outcome Box */}
-                  <div className="rounded-xl border border-primary/10 bg-primary/[0.015] p-4.5 pt-3.5 border-t border-white/5">
+                  <div className="rounded-xl border border-primary/10 bg-primary/[0.015] p-5 pt-4 border-t border-white/5">
                     <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary block font-bold mb-1.5">
-                      / BUSINESS OUTCOME
+                      / BUSINESS IMPACT
                     </span>
                     <p className="text-xs text-foreground/80 leading-relaxed font-light font-display">
-                      {project.outcome}
+                      {project.businessImpact}
                     </p>
                   </div>
                 </div>
