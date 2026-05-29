@@ -3,21 +3,55 @@ import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageS
 import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle';
 import { NAV_SECTIONS } from '@/portfolio/data/navigation';
 import { APPLE_EASE } from '@/portfolio/lib/motion';
+import { useTextScramble } from '@/portfolio/hooks/useTextScramble';
 import { AnimatePresence, m } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollVisibility } from '@/portfolio/hooks/useScrollVisibility';
+import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy';
+
+/** Single nav link with letter-scramble hover effect. */
+const ScrambleNavLink = ({
+  id,
+  label,
+  isActive,
+  onClick,
+}: {
+  id: string;
+  label: string;
+  isActive: boolean;
+  onClick?: () => void;
+}) => {
+  const { display, scramble, reset } = useTextScramble(label, 2);
+
+  return (
+    <a
+      href={`#${id}`}
+      onClick={onClick}
+      onMouseEnter={scramble}
+      onMouseLeave={reset}
+      className={`whitespace-nowrap border-b border-transparent pb-0.5 font-mono text-[11px] uppercase tracking-widest transition-all hover:text-foreground ${
+        isActive ? 'border-primary text-foreground' : 'text-foreground/50'
+      }`}
+    >
+      {display}
+    </a>
+  );
+};
 
 export const StickyNav = () => {
   const { t } = useTranslation();
   const visible = useScrollVisibility();
+  const { activeSection } = useScrollSpy(NAV_SECTIONS);
   const [_mobileOpen, setMobileOpen] = useState(false);
   const mobileOpen = visible && _mobileOpen;
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   const navLinks = NAV_SECTIONS.filter((s) => s.id !== 'hero');
+  const activeIndex = NAV_SECTIONS.findIndex((section) => section.id === activeSection);
+  const progress = NAV_SECTIONS.length > 1 ? Math.max(0, ((activeIndex + 1) / NAV_SECTIONS.length) * 100) : 0;
 
   return (
     <AnimatePresence>
@@ -27,13 +61,22 @@ export const StickyNav = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5, ease: APPLE_EASE }}
-          className="bg-background/95 fixed left-0 top-0 z-[100] w-full border-b border-subtle pt-[env(safe-area-inset-top)] backdrop-blur-xl"
+          className="bg-background/95 fixed left-0 top-0 z-100 w-full border-b border-subtle pt-[env(safe-area-inset-top)] backdrop-blur-xl"
           aria-label={t('a11y.mainNav')}
         >
+          <div className="h-px w-full bg-subtle">
+            <m.div
+              className="h-full bg-primary"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.35, ease: APPLE_EASE }}
+            />
+          </div>
+
           <div className="container mx-auto flex items-center justify-between gap-3 px-4 py-3 md:gap-4 md:px-6 md:py-4">
             {/* Brand / Logo */}
             <a
               href="#hero"
+              aria-label={t('nav.home')}
               className="shrink-0 text-foreground transition-opacity hover:opacity-80"
             >
               <Logo className="h-9 w-9 md:h-10 md:w-10" />
@@ -42,15 +85,20 @@ export const StickyNav = () => {
             {/* Nav Links — hidden on mobile, visible on md+ */}
             <div className="hide-scrollbar hidden items-center gap-6 overflow-x-auto md:flex lg:gap-8">
               {navLinks.map(({ id, labelKey }) => (
-                <a
+                <ScrambleNavLink
                   key={id}
-                  href={`#${id}`}
-                  className="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-foreground/50 transition-all hover:text-foreground"
-                >
-                  {t(labelKey)}
-                </a>
+                  id={id}
+                  label={t(labelKey)}
+                  isActive={activeSection === id}
+                />
               ))}
             </div>
+
+            <span className="hidden rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-foreground/55 xl:inline-flex">
+              {t(
+                NAV_SECTIONS.find((section) => section.id === activeSection)?.labelKey || 'nav.home',
+              )}
+            </span>
 
             {/* Controls */}
             <div className="flex shrink-0 items-center gap-2 sm:gap-4">
@@ -62,7 +110,6 @@ export const StickyNav = () => {
                 onClick={() => setMobileOpen((prev) => !prev)}
                 className="text-foreground/70 flex h-10 w-10 items-center justify-center rounded-full border border-subtle bg-surface transition-colors duration-300 hover:text-foreground md:hidden"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={mobileOpen}
               >
                 <AnimatePresence mode="wait" initial={false}>
                   {mobileOpen ? (
@@ -103,17 +150,19 @@ export const StickyNav = () => {
               >
                 <div className="container mx-auto flex flex-col gap-3 px-4 py-4">
                   {navLinks.map(({ id, labelKey }, i) => (
-                    <m.a
+                    <m.div
                       key={id}
-                      href={`#${id}`}
-                      onClick={closeMobile}
                       initial={{ x: -16, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: i * 0.05, duration: 0.3, ease: APPLE_EASE }}
-                      className="py-2 font-mono text-xs uppercase tracking-widest text-foreground/50 transition-colors hover:text-foreground"
                     >
-                      {t(labelKey)}
-                    </m.a>
+                      <ScrambleNavLink
+                        id={id}
+                        label={t(labelKey)}
+                        isActive={activeSection === id}
+                        onClick={closeMobile}
+                      />
+                    </m.div>
                   ))}
                 </div>
               </m.div>

@@ -1,44 +1,82 @@
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { useTranslation } from 'react-i18next';
-import { ExperienceCard } from './ExperienceCard';
-import { TechArsenal } from './TechArsenal';
+import { ExperienceCard, type EraData } from './ExperienceCard';
+
+const ERAS: EraData[] = [
+  {
+    id: 'platforms',
+    period: '2022 — PRESENT',
+    company: 'Schilling ApS & Resights',
+    role: 'Senior Frontend Architect',
+    bullets: [
+      '**Led frontend architecture** across 4 product teams and governed monorepo decoupled frameworks.',
+      '**Owned design system governance**, standardizing UI patterns for 20+ active frontend engineers.',
+      '**Reduced initial bundle payload by 42%**, dropping LCP load time from 7.5s to 1.4s.',
+      '**Increased feature delivery cycles by 30%** through isolated monorepo workspace sub-apps.',
+      '**Bridged coordination gaps** between product management, executive stakeholders, and engineering squads.'
+    ],
+    vector: 'Design Systems Governance · Monorepos · Decoupled Contracts · API Design'
+  },
+  {
+    id: 'scaling',
+    period: '2015 — 2022',
+    company: 'Novo Nordisk, Wunderman, GiG Media & Rebel Penguins',
+    role: 'Senior Frontend Developer & Team Lead',
+    bullets: [
+      '**Scaled high-traffic consumer portals** serving over 2,000,000 active monthly users in Europe.',
+      '**Engineered event-driven DOM virtualized caching** handling 500+ updates/sec with zero frames dropped.',
+      '**Slashed redundant server query overhead by 60%** via optimistic clientside caching layers.',
+      '**Mentored and coordinated 12+ developers** across hybrid agile sprint teams to elevate code quality.',
+      '**Maintained 100% Core Web Vitals score** across major consumer analytics and campaign portals.'
+    ],
+    vector: 'Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs'
+  },
+  {
+    id: 'genesis',
+    period: '2007 — 2015',
+    company: 'UCI National Library, ONEI, GEOCUBA & Viruta Studio',
+    role: 'Full-Stack Software Engineer & R&D Lead',
+    bullets: [
+      '**Engineered lightweight custom javascript engines** under severe Havana 56kbps dial-up resource limits.',
+      '**Cultivated lifelong codebase hygiene habits**, counting every byte to secure client delivery under limits.',
+      '**Built custom vanilla JS data registers** and state registers from first principles without modern frameworks.',
+      '**Led local dev team of 4 engineers** shipping custom GIS and data management tools under limits.',
+      '**Achieved extreme compression** enabling instant application load and use on legacy networks.'
+    ],
+    vector: 'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives'
+  }
+];
 
 export const ExperienceTimeline = () => {
-  const { t } = useTranslation();
-  const { experiences } = usePortfolioData();
-
   return (
     <section
       id="experience"
-      className="relative border-t border-subtle bg-background py-24 md:py-40"
+      className="relative border-t border-subtle bg-background py-28 md:py-40"
     >
-      <div className="container mx-auto max-w-[1400px] px-6">
+      {/* Blueprint grid Overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-[1.2%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[36px_36px]" />
+
+      <div className="container mx-auto max-w-7xl px-6">
         <div className="mb-24 flex flex-col justify-between gap-12 md:mb-32 md:flex-row">
-          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl">
-            {t('experience.titleAccent')}
-            <span className="mt-2 block font-serif italic text-primary">
-              {t('experience.title')}
+          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-[1.05]">
+            Professional <br />
+            <span className="block font-serif italic text-primary">
+              Experience & History
             </span>
           </h2>
-          <div className="max-w-md md:self-end md:text-right">
-            <p className="text-foreground/50 font-mono text-sm uppercase tracking-wide md:text-base">
-              {t('experience.subtitle')}
+          <div className="max-w-md md:self-end">
+            <p className="text-foreground/60 text-sm leading-relaxed md:text-base font-light font-display">
+              18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
-          <div className="flex flex-col lg:col-span-8">
-            <div>
-              {experiences.map((exp, index) => (
-                <ExperienceCard key={exp.id} exp={exp} index={index} />
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-4">
-            <TechArsenal />
-          </div>
+        <div className="relative">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-linear-to-b from-transparent via-border-subtle to-transparent md:block"
+          />
+          {ERAS.map((era, index) => (
+            <ExperienceCard key={era.id} era={era} index={index} />
+          ))}
         </div>
       </div>
     </section>

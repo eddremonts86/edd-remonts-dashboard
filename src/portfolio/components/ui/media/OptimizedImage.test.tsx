@@ -8,6 +8,7 @@ describe('OptimizedImage', () => {
 
     // Fast check for the img element
     const imgElement = screen.getByRole('img', { name: /test image/i });
+    // @ts-ignore
     expect(imgElement).toBeInTheDocument();
   });
 });

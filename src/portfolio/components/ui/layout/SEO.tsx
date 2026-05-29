@@ -38,6 +38,10 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={siteUrl} />
 
+      {/* Favicons & App Logos */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="manifest" href="/manifest.json" />
+
       {/* Theme color */}
       <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
       <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />

@@ -12,22 +12,44 @@
     "discover": "Descubrir"
   },
   "hero": {
-    "available": "Disponible para nuevas oportunidades",
+    "available": "Arquitecto Frontend Senior",
     "greeting": "Hola, soy",
     "role": "Ingeniero Frontend Senior",
-    "titleLine1": "Frontend",
-    "titleLine2": "Artesano.",
+    "titleLine1": "Ingeniero Frontend Senior",
+    "titleLine2": "construyendo plataformas SaaS a gran escala.",
     "explore": "Explorar Mi Trabajo",
-    "scroll": "Deslizar"
+    "scroll": "Deslizar",
+    "nowLabel": "Ahora",
+    "nowBody": "Construyendo interfaces de producto intensivas en datos con TanStack Start, Drizzle y Postgres.",
+    "basedIn": "Ubicado en",
+    "availability": "Disponibilidad",
+    "availabilityValue": "T3 2026",
+    "metricLanguages": "Idiomas",
+    "pipelineLabel": "Pipeline de entrega",
+    "pipeline": {
+      "plan": "Planificar",
+      "build": "Construir",
+      "validate": "Validar",
+      "ship": "Entregar"
+    }
   },
   "personalInfo": {
     "title": "Ingeniero Senior Full-Stack/Frontend",
-    "description": "Arquitecto aplicaciones web escalables que unen lógica de negocio compleja con experiencias de usuario inmaculadas. Mi enfoque se basa en React 19, Node.js y ecosistemas cloud para entregar soluciones de alto rendimiento diseñadas para gran escala.",
+    "description": "Arquitecto Frontend con más de 18 años de experiencia construyendo plataformas empresariales, productos SaaS y aplicaciones de alto tráfico en Europa.",
     "location": "Copenhague, Dinamarca"
   },
+  "skills": {
+    "eyebrow": "Experiencia central",
+    "title": "Stack de ingeniería, intencionalmente curado.",
+    "subtitle": "Los sistemas centrales en los que me apoyo para entregar interfaces de producto resilientes. La amplitud está disponible bajo demanda.",
+    "toolbox": "Caja de herramientas de ingeniería",
+    "view": "Ver stack completo",
+    "hide": "Ocultar stack completo",
+    "fullStackEmpty": "El stack completo ya está representado en la experiencia central."
+  },
   "about": {
-    "title": "Sobre mí &",
-    "titleAccent": "Servicios",
+    "title": "Orígenes &",
+    "titleAccent": "Oficio",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software a medida, antes de mudarme a Dinamarca y especializarme más a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro con comodidad con producto, diseño y backend, y construyo interfaces que siguen siendo mantenibles a medida que el producto crece.",
     "features": {
       "0": {
@@ -126,6 +148,10 @@
     "role": "Rol",
     "decisions": "Decisiones",
     "complexity": "Complejidad",
+    "eyebrow": "Proyectos insignia",
+    "featured": "Vista destacada",
+    "listLabel": "Lanzamientos y notas de caso",
+    "toggleDetails": "Ver detalles",
     "filters": {
       "all": "Todos",
       "frontend": "Frontend",
@@ -166,7 +192,12 @@
     "usersServed": "Usuarios atendidos",
     "migrations": "Migraciones entregadas",
     "uptime": "Disponibilidad",
-    "teamsLed": "Equipos liderados"
+    "teamsLed": "Equipos liderados",
+    "kicker": "En números",
+    "heading": "Throughput de ingeniería, en unidades medibles.",
+    "lead": "Una instantánea de la superficie cubierta: el stack, las auditorías, la fiabilidad y los equipos entregados juntos.",
+    "telemetry": "Telemetría del portafolio",
+    "status": "Operacional"
   },
   "authority": {
     "eyebrow": "Autoridad de Ingeniería",
@@ -243,8 +274,9 @@
   "footer": {
     "rights": "Todos los derechos reservados.",
     "inspired": "Hecho con intención.",
-    "colophon": "Hecho con intención.",
-    "available": "Disponible para nuevos proyectos",
+    "colophon": "Sistemas primero. Mentalidad de producto. Centrado en las personas.",
+    "available": "Señal de portafolio",
+    "manifesto": "Construyendo sistemas de producto resilientes desde 2007. De Cuba a Copenhague. Aún obsesionado con interfaces rápidas y claras.",
     "nav": {
       "label": "Navegación del pie",
       "heading": "Navegar"
@@ -267,6 +299,7 @@
     "mainNav": "Navegación principal",
     "sectionNav": "Navegación por secciones"
   },
+  "testimonials_label": "Lo que dicen los clientes",
   "testimonials_loading": "Cargando testimonios...",
   "cv": {
     "aboutTitle": "Sobre Mí",

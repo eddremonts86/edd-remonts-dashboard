@@ -10,22 +10,44 @@
     "discover": "Discover"
   },
   "hero": {
-    "available": "Available for new opportunities",
+    "available": "Senior Frontend Architect",
     "greeting": "Hello, I'm",
     "role": "Senior Frontend Engineer",
-    "titleLine1": "Frontend",
-    "titleLine2": "Craftsman.",
+    "titleLine1": "Senior Frontend Engineer",
+    "titleLine2": "building large-scale SaaS platforms.",
     "explore": "Explore My Work",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "nowLabel": "Now",
+    "nowBody": "Shipping data-intensive product UIs with TanStack Start, Drizzle and Postgres.",
+    "basedIn": "Based in",
+    "availability": "Availability",
+    "availabilityValue": "Q3 2026",
+    "metricLanguages": "Languages",
+    "pipelineLabel": "Delivery pipeline",
+    "pipeline": {
+      "plan": "Plan",
+      "build": "Build",
+      "validate": "Validate",
+      "ship": "Ship"
+    }
   },
   "personalInfo": {
     "title": "Senior Frontend Engineer with Full-Stack Roots",
-    "description": "Frontend-first engineer with full-stack roots and nearly two decades of experience since 2007. I build scalable web products that turn complex business rules into fast, intuitive interfaces using React, Vue, Node.js, and cloud platforms.",
+    "description": "Frontend Architect with 18+ years of experience building enterprise platforms, SaaS products, and high-traffic applications across Europe.",
     "location": "Copenhagen, Denmark"
   },
+  "skills": {
+    "eyebrow": "Core expertise",
+    "title": "Engineered stack, intentionally curated.",
+    "subtitle": "The core systems I rely on to ship resilient product surfaces. Breadth is available on demand, not forced upfront.",
+    "toolbox": "Engineering toolbox",
+    "view": "View full stack",
+    "hide": "Hide full stack",
+    "fullStackEmpty": "The full stack is already represented in core expertise."
+  },
   "about": {
-    "title": "About &",
-    "titleAccent": "Services",
+    "title": "Origins &",
+    "titleAccent": "Craft",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
@@ -124,6 +146,10 @@
     "role": "Role",
     "decisions": "Decisions",
     "complexity": "Complexity",
+    "eyebrow": "Signature projects",
+    "featured": "Featured view",
+    "listLabel": "Launches and case notes",
+    "toggleDetails": "Toggle details",
     "filters": {
       "all": "All",
       "frontend": "Frontend",
@@ -164,7 +190,12 @@
     "usersServed": "Users served",
     "migrations": "Migrations delivered",
     "uptime": "Uptime",
-    "teamsLed": "Teams led"
+    "teamsLed": "Teams led",
+    "kicker": "By the numbers",
+    "heading": "Engineering throughput, in measurable units.",
+    "lead": "A snapshot of the surface area covered: the stack, the audits, the reliability and the teams shipped alongside.",
+    "telemetry": "Portfolio telemetry",
+    "status": "Operational"
   },
   "authority": {
     "eyebrow": "Engineering Authority",
@@ -241,8 +272,9 @@
   "footer": {
     "rights": "All rights reserved.",
     "inspired": "Crafted with intent.",
-    "colophon": "Crafted with intent.",
-    "available": "Available for new work",
+    "colophon": "Systems first. Product-minded. Human-centered.",
+    "available": "Portfolio signal",
+    "manifesto": "Building resilient product systems since 2007. From Cuba to Copenhagen. Still obsessed with fast, clear interfaces.",
     "nav": {
       "label": "Footer navigation",
       "heading": "Navigate"
@@ -265,6 +297,7 @@
     "mainNav": "Main navigation",
     "sectionNav": "Section navigation"
   },
+  "testimonials_label": "What clients say",
   "testimonials_loading": "Loading testimonials...",
   "cv": {
     "aboutTitle": "About Me",

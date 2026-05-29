@@ -1,7 +1,10 @@
 import { useLanguageCycler } from '@/portfolio/hooks/useLanguageCycler';
+import { LANGUAGES } from '@/portfolio/data/languages';
 
 export const LanguageSelector = () => {
   const { currentLang, nextLang, toggle } = useLanguageCycler();
+
+  if (LANGUAGES.length <= 1) return null;
 
   return (
     <div className="relative z-50">

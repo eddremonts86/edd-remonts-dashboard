@@ -7,6 +7,7 @@ import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
 import { Footer } from './components/footer/Footer';
 import { HeroSection } from './components/hero/HeroSection';
 import { StatsCounter } from './components/stats/StatsCounter';
+import { BusinessImpact } from './components/stats/BusinessImpact';
 import { TestimonialBlock } from './components/testimonials/TestimonialBlock';
 import { DotNavigation } from './components/ui/navigation/DotNavigation';
 import { MouseFollower } from './components/ui/layout/MouseFollower';
@@ -18,9 +19,6 @@ import { StickyNav } from './components/ui/navigation/StickyNav';
 /* ── Below-fold sections — code-split for faster initial load ── */
 const ProjectsGallery = lazy(() =>
   import('./components/projects/ProjectsGallery').then((m) => ({ default: m.ProjectsGallery })),
-);
-const CodeShowcase = lazy(() =>
-  import('./components/code/CodeShowcase').then((m) => ({ default: m.CodeShowcase })),
 );
 const ContactSection = lazy(() =>
   import('./components/contact/ContactSection').then((m) => ({ default: m.ContactSection })),
@@ -53,15 +51,20 @@ export function App() {
 
             <main>
               <HeroSection />
-              <StatsCounter />
+              <BusinessImpact />
               <AboutSection />
               <SkillsMarquee />
-              <ExperienceTimeline />
-              <EngineeringAuthoritySection />
-              <TestimonialBlock />
+
               <Suspense fallback={null}>
                 <ProjectsGallery />
-                <CodeShowcase />
+              </Suspense>
+
+              <StatsCounter />
+              <EngineeringAuthoritySection />
+              <ExperienceTimeline />
+              <TestimonialBlock />
+
+              <Suspense fallback={null}>
                 <ContactSection />
               </Suspense>
             </main>
@@ -72,5 +75,3 @@ export function App() {
     </LazyMotion>
   );
 }
-
-
