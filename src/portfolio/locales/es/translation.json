@@ -12,11 +12,11 @@
     "discover": "Descubrir"
   },
   "hero": {
-    "available": "Ingeniería de sistemas de producto",
+    "available": "Arquitecto Frontend Senior",
     "greeting": "Hola, soy",
     "role": "Ingeniero Frontend Senior",
-    "titleLine1": "Frontend",
-    "titleLine2": "Artesano.",
+    "titleLine1": "Ingeniero Frontend Senior",
+    "titleLine2": "construyendo plataformas SaaS a gran escala.",
     "explore": "Explorar Mi Trabajo",
     "scroll": "Deslizar",
     "nowLabel": "Ahora",
@@ -35,7 +35,7 @@
   },
   "personalInfo": {
     "title": "Ingeniero Senior Full-Stack/Frontend",
-    "description": "Arquitecto aplicaciones web escalables que unen lógica de negocio compleja con experiencias de usuario inmaculadas. Mi enfoque se basa en React 19, Node.js y ecosistemas cloud para entregar soluciones de alto rendimiento diseñadas para gran escala.",
+    "description": "Arquitecto Frontend con más de 18 años de experiencia construyendo plataformas empresariales, productos SaaS y aplicaciones de alto tráfico en Europa.",
     "location": "Copenhague, Dinamarca"
   },
   "skills": {
@@ -48,8 +48,8 @@
     "fullStackEmpty": "El stack completo ya está representado en la experiencia central."
   },
   "about": {
-    "title": "Sobre mí &",
-    "titleAccent": "Servicios",
+    "title": "Orígenes &",
+    "titleAccent": "Oficio",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software a medida, antes de mudarme a Dinamarca y especializarme más a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro con comodidad con producto, diseño y backend, y construyo interfaces que siguen siendo mantenibles a medida que el producto crece.",
     "features": {
       "0": {

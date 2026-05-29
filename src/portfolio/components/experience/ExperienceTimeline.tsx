@@ -4,47 +4,47 @@ const ERAS: EraData[] = [
   {
     id: 'platforms',
     period: '2022 — PRESENT',
-    title: 'Platforms & Systems Governance',
-    focus: 'Division-Wide Enterprise Architecture',
+    title: 'Platform Governance & Decoupling',
+    focus: 'Division-Wide Architecture Standards',
     scopeLevel: '95%',
-    description: 'Spearheading design system governance, enterprise frontend strategy, and micro-frontend structures. Transitioning complex multi-decade legacies into decoupled cloud architectures and mentoring product teams on performance and semantic isolation contracts.',
-    achievements: [
-      'Pioneered monorepo platform migration, slashing bundle payloads from 6.2MB to 350KB.',
-      'Governed design system standard across product divisions, cutting component delivery cycle times by 30%.',
-      'Established strict type-safe REST/GraphQL contract boundaries across distributed team workspaces.'
-    ],
+    narrative: 'Designing organizational systems, enforcing rigid component boundaries, and governing design system maturity across distributed business units. It is no longer just about writing code; it is about architecture governance, mentoring product divisions, and setting standard boundaries that keep multi-decade corporate systems composable and agile.',
+    changed: 'The scale shifted from single-app engineering to orchestrating multi-team governance, shared component boundaries, and decoupled micro-frontend packages.',
+    remained: 'A deep connection to the developers shipping code and an absolute commitment to the quality and latency of the end-user interaction.',
+    learned: 'Governance is not about blocking developers with process; it is about establishing clear system contracts that set them free. True engineering leadership is human translation.',
     companies: ['Schilling ApS', 'Resights ApS'],
-    vector: 'Micro-frontends · Design Systems · Monorepo Orchestration',
+    vector: 'Design Systems Governance · Composable Contracts · Enterprise Scale',
+    teamScope: 'Led frontend architecture across 4 product teams',
+    governanceScope: 'Governed design system & standards used by 20+ engineers',
   },
   {
     id: 'scaling',
     period: '2015 — 2022',
-    title: 'Product Scaling & Lifecycle',
-    focus: 'High-Traffic Frontend Systems',
+    title: 'High-Traffic Adaptation & Scaling',
+    focus: 'High-Throughput Consumer Networks',
     scopeLevel: '75%',
-    description: 'Transitioning to Copenhagen. Scaling high-throughput data visualizers, logistics visual DOM queues, and campaign matrices across enterprise and high-traffic affiliate channels. Leading outsourced teams and modernizing legacy codebases.',
-    achievements: [
-      'Engineered virtualized DOM real-time dashboard queues handling 500+ updates/sec without frame drops.',
-      'Led frontend modernization of affiliate matrices, improving page speeds and search rankings by 25%.',
-      'Built Novo Nordisk administration templates with zero-leakage interfaces for medical staff.'
-    ],
+    narrative: 'Migrating to Copenhagen and scaling high-traffic affiliate matrices, real-time logistics visual DOM queues, and campaign portals. Handling millions of requests and handling massive, volatile data volumes without dropping frames. This era was a masterclass in event-driven state models, local caching strategies, and leading distributed engineering units.',
+    changed: 'The network constraints of my origins dissolved, replaced by new ones: CPU cycle efficiency, memory leakages, complex multi-threaded log queues, and user attention budgets.',
+    remained: 'The core conviction that a well-designed, strictly bounded system behaves predictably and durably under any operational workload.',
+    learned: 'Speed is a byproduct of structure. If you couple your UI directly to your state cascades, the user pays the performance tax. Model the boundaries first.',
     companies: ['Novo Nordisk', 'Wunderman Nordic', 'GiG Media', 'Rebel Penguins'],
-    vector: 'Real-time Dashboards · Event-Driven State · Team Leadership',
+    vector: 'Virtualized DOM queues · Event-Driven State · Team Synchronization',
+    teamScope: 'Coordinated 12+ developers across hybrid sprint squads',
+    governanceScope: 'Managed real-time performance SLA across 2M+ users properties',
   },
   {
     id: 'genesis',
     period: '2007 — 2015',
     title: 'Constraint Genesis & Primitives',
-    focus: 'Severe Resource Constraint Engineering',
+    focus: 'Severe Bandwidth & Compute Constraints',
     scopeLevel: '50%',
-    description: 'Havana, Cuba. Developing high-density platforms under extreme network and compute constraints. When bandwidth is a rare commodity measured in kilobytes, resource allocation and asset footprint are the difference between delivery and failure.',
-    achievements: [
-      'Engineered custom ultra-lightweight client-side parsing libraries to minimize edge asset transfer.',
-      'Architected custom geographical database synchronization layers over unreliable dial-up systems.',
-      'Founded Viruta Studio, building custom lightweight CMS and tools for regional media platforms.'
-    ],
+    narrative: 'Havana, Cuba. Building digital systems under severe resource boundaries where 56kbps dial-up bandwidth was a luxury. When every kilobyte determines whether a system can be delivered or fails, optimization is not a post-launch polish—it is a fundamental survival constraint. Without modern bundlers, we built lightweight custom parsers and state registers from first principles.',
+    changed: 'The tooling moved from pure, raw server-side scripts, dial-up sync scripts, and lightweight vanilla Javascript parsers to advanced isomorphic platforms.',
+    remained: 'An absolute, unyielding obsession with payload discipline, asset budgets, and rendering speeds. I still count every single byte.',
+    learned: 'Severe constraints are not blockers; they are guardrails that teach extreme coding hygiene and structural discipline. Bandwidth limits build clean minds.',
     companies: ['UCI National Library', 'ONEI', 'GEOCUBA R&D', 'Viruta Studio'],
-    vector: 'Constraint Optimization · Full-Stack Primitives · Lightweight Parsing',
+    vector: 'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync',
+    teamScope: 'Led local dev team of 4 engineers at Viruta Studio',
+    governanceScope: 'Enforced sub-100KB payload budgets under strict bandwidth limits',
   }
 ];
 
@@ -52,19 +52,19 @@ export const ExperienceTimeline = () => {
   return (
     <section
       id="experience"
-      className="relative border-t border-subtle bg-background py-24 md:py-40"
+      className="relative border-t border-subtle bg-background py-28 md:py-40"
     >
       <div className="container mx-auto max-w-350 px-6">
         <div className="mb-24 flex flex-col justify-between gap-12 md:mb-32 md:flex-row">
           <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-[1.05]">
-            Capability Growth & <br />
+            Professional <br />
             <span className="block font-serif italic text-primary">
-              Systems Ascension
+              Experience & Origins
             </span>
           </h2>
-          <div className="max-w-md md:self-end md:text-right">
-            <p className="text-foreground/50 font-mono text-sm uppercase tracking-wide md:text-base leading-relaxed">
-              Trace the evolution of architectural ownership: from extreme bandwidth-constrained coding to global platform governance.
+          <div className="max-w-md md:self-end">
+            <p className="text-foreground/60 text-sm leading-relaxed md:text-base font-light font-display">
+              18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.
             </p>
           </div>
         </div>

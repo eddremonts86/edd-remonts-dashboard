@@ -2,7 +2,7 @@ import { ContactInfoItem } from '@/portfolio/components/ui/badges/ContactInfoIte
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { fadeInView } from '@/portfolio/lib/motion';
 import { m } from 'framer-motion';
-import { Mail, MapPin, Server, Clock, Activity, Cpu } from 'lucide-react';
+import { Mail, MapPin, Server, Cpu } from 'lucide-react';
 import { useFormspree } from '@/portfolio/hooks/useFormspree';
 import { FORMSPREE_FORM_ID } from '@/portfolio/lib/config';
 import { ContactForm } from './ContactForm';
@@ -41,11 +41,11 @@ export const ContactSection = () => {
               </p>
             </div>
 
-            {/* High-Fidelity Interactive Telemetry Block */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-md relative overflow-hidden">
+            {/* High-Fidelity Engagement Target Parameters Block */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-md relative overflow-hidden select-none">
               <div className="absolute inset-0 pointer-events-none opacity-[1%] bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[12px_12px]" />
               
-              {/* Telemetry Header */}
+              {/* Card Header */}
               <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-5">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
@@ -53,10 +53,10 @@ export const ContactSection = () => {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/55">
-                    Operational Telemetry
+                    Engagement Target Parameters
                   </span>
                 </div>
-                <div className="font-mono text-[8px] text-white/35">INSPECT: ACTIVE</div>
+                <div className="font-mono text-[8px] text-white/35">HIRING_TARGET: ACTIVE</div>
               </div>
 
               {/* Status details */}
@@ -64,52 +64,39 @@ export const ContactSection = () => {
                 <div className="rounded-xl border border-white/5 bg-black/45 p-4 space-y-2">
                   <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold">
                     <Server className="h-3 w-3 text-primary" />
-                    OPERATIONAL STATUS
+                    AVAILABILITY STATUS
                   </span>
                   <span className="font-display text-sm font-semibold text-white block">
-                    Operational & Available
+                    Active & Ready
                   </span>
                   <span className="font-mono text-[9px] text-white/35 block">
-                    Current Load: STANDBY // Q3 2026 Ready
+                    Immediate Q3 2026 Engagement
                   </span>
                 </div>
 
                 <div className="rounded-xl border border-white/5 bg-black/45 p-4 space-y-2">
                   <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold">
-                    <Clock className="h-3 w-3 text-primary" />
-                    COORDINATION TARGET
+                    <MapPin className="h-3 w-3 text-primary" />
+                    GEOGRAPHY & MODE
                   </span>
                   <span className="font-display text-sm font-semibold text-white block">
                     Copenhagen, DK
                   </span>
                   <span className="font-mono text-[9px] text-white/35 block">
-                    TZ: Europe/Copenhagen (GMT+2)
+                    EU Remote Friendly (GMT+2/1)
                   </span>
                 </div>
 
-                <div className="rounded-xl border border-white/5 bg-black/45 p-4 space-y-2">
-                  <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold">
-                    <Activity className="h-3 w-3 text-primary animate-pulse" />
-                    INPUT LATENCY
-                  </span>
-                  <span className="font-display text-sm font-semibold text-white block">
-                    &lt; 12ms Response
-                  </span>
-                  <span className="font-mono text-[9px] text-white/35 block">
-                    INP Spec: EXCELLENT // optimized latency
-                  </span>
-                </div>
-
-                <div className="rounded-xl border border-white/5 bg-black/45 p-4 space-y-2">
+                <div className="rounded-xl border border-white/5 bg-black/45 p-4 space-y-2 sm:col-span-2">
                   <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold">
                     <Cpu className="h-3 w-3 text-primary" />
-                    COMPLIANCE
+                    PREFERRED TARGET ROLES
                   </span>
                   <span className="font-display text-sm font-semibold text-white block">
-                    100% Core Web Vitals
+                    Senior Frontend · Staff Engineer · Technical Lead · Architectural Consulting
                   </span>
                   <span className="font-mono text-[9px] text-white/35 block">
-                    Performance budget: fully verified
+                    Specialized in enterprise SaaS scaling & platform decoupling
                   </span>
                 </div>
               </div>

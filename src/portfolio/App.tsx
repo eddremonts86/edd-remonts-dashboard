@@ -8,6 +8,7 @@ import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
 import { Footer } from './components/footer/Footer';
 import { HeroSection } from './components/hero/HeroSection';
 import { StatsCounter } from './components/stats/StatsCounter';
+import { BusinessImpact } from './components/stats/BusinessImpact';
 import { TestimonialBlock } from './components/testimonials/TestimonialBlock';
 import { DotNavigation } from './components/ui/navigation/DotNavigation';
 import { MouseFollower } from './components/ui/layout/MouseFollower';
@@ -53,6 +54,7 @@ export function App() {
             <main>
               <HeroSection />
               <StatsCounter />
+              <BusinessImpact />
               <AboutSection />
               <SkillsMarquee />
               

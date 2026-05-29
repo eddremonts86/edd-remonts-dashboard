@@ -47,13 +47,13 @@ export const ProjectsGallery = () => {
         <div className="mb-12 flex flex-col justify-between gap-8 border-b border-subtle pb-8 md:flex-row md:items-end">
           <div className="max-w-xl">
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">
-              / SYSTEM ARCHIVE
+              / ADDITIONAL PROJECTS
             </p>
             <h3 className="text-3xl font-light tracking-tight text-foreground font-display">
-              Additional Case Notes
+              Additional Projects
             </h3>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed font-light">
-              Browse additional shipping records, legacy templates, and smaller client toolsets built throughout my career.
+              Explore additional product features, tools, and legacy software systems engineered throughout my career.
             </p>
           </div>
 

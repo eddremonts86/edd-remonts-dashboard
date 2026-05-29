@@ -10,11 +10,11 @@
     "discover": "Discover"
   },
   "hero": {
-    "available": "Product systems engineer",
+    "available": "Senior Frontend Architect",
     "greeting": "Hello, I'm",
     "role": "Senior Frontend Engineer",
-    "titleLine1": "Frontend",
-    "titleLine2": "Craftsman.",
+    "titleLine1": "Senior Frontend Engineer",
+    "titleLine2": "building large-scale SaaS platforms.",
     "explore": "Explore My Work",
     "scroll": "Scroll",
     "nowLabel": "Now",
@@ -33,7 +33,7 @@
   },
   "personalInfo": {
     "title": "Senior Frontend Engineer with Full-Stack Roots",
-    "description": "Frontend-first engineer with full-stack roots and nearly two decades of experience since 2007. I build scalable web products that turn complex business rules into fast, intuitive interfaces using React, Vue, Node.js, and cloud platforms.",
+    "description": "Frontend Architect with 18+ years of experience building enterprise platforms, SaaS products, and high-traffic applications across Europe.",
     "location": "Copenhagen, Denmark"
   },
   "skills": {
@@ -46,8 +46,8 @@
     "fullStackEmpty": "The full stack is already represented in core expertise."
   },
   "about": {
-    "title": "About &",
-    "titleAccent": "Services",
+    "title": "Origins &",
+    "titleAccent": "Craft",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {

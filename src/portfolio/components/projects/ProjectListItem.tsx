@@ -116,7 +116,7 @@ export const ProjectListItem = ({ project, index, expanded, onToggle, onHover }:
               {/* Decorative terminal blueprint background */}
               <div className="absolute inset-0 pointer-events-none opacity-[2%] bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[12px_12px]" />
               
-              <div className="absolute top-3 right-4 font-mono text-[7px] text-foreground/25 uppercase tracking-[0.25em]">[SYSTEM_LOG_DRAWER::ACTIVE]</div>
+              <div className="absolute top-3 right-4 font-mono text-[7px] text-foreground/25 uppercase tracking-[0.25em]">/ DIAGNOSTIC LOG DRAW_ACTIVE</div>
 
               {project.context && (
                 <CaseBlock icon={Layers} label={t('projects.context', 'Context')} body={project.context} />

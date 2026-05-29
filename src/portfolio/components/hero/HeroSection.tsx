@@ -17,7 +17,7 @@ import { ScrollIndicator } from './ScrollIndicator';
 
 export const HeroSection = () => {
   const { t, i18n } = useTranslation();
-  const { personalInfo, content, stats } = usePortfolioData();
+  const { personalInfo, content } = usePortfolioData();
   const resolvedTheme = useResolvedTheme();
   const containerRef = useRef<HTMLElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -43,23 +43,7 @@ export const HeroSection = () => {
     personalInfo.description ||
     t('personalInfo.description');
 
-  // ── Hero proof metrics ────────────────────────────────────────────────────
-  // The 3 strongest credibility signals. Lighter / secondary stats live in
-  // <StatsCounter />. Values come from the same context to stay in sync.
-  const heroMetrics = [
-    {
-      value: `${stats.years} +`,
-      label: t('stats.yearsExperience', 'Years of experience'),
-    },
-    {
-      value: `${stats.companies}`,
-      label: t('stats.companies', 'Companies'),
-    },
-    {
-      value: '3',
-      label: t('hero.metricLanguages', 'Languages'),
-    },
-  ];
+
 
   const pipelineStages = [
     t('hero.pipeline.plan', 'Plan'),
@@ -240,26 +224,7 @@ export const HeroSection = () => {
                 </p>
               </div>
 
-              {/* Section 2 — Proof metrics as rows (label ↔ value) */}
-              <dl className="border-t border-foreground/10 dark:border-white/10">
-                {heroMetrics.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="group flex items-baseline justify-between gap-4 border-b border-foreground/5 dark:border-white/5 px-6 py-4 transition-colors duration-500 last:border-b-0 hover:bg-foreground/3 dark:hover:bg-white/3 md:px-7"
-                  >
-                    <dt
-                      className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-colors duration-700 ${sublineTextColor}`}
-                    >
-                      {metric.label}
-                    </dt>
-                    <dd
-                      className={`font-display text-3xl font-light leading-none tabular-nums tracking-tight transition-colors duration-500 group-hover:text-primary md:text-4xl ${textColor}`}
-                    >
-                      {metric.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+
 
               {/* Section 3 — Product delivery pipeline */}
               <div className="border-t border-foreground/10 dark:border-white/10 px-6 py-4 md:px-7">

@@ -10,11 +10,11 @@
     "discover": "Opdag"
   },
   "hero": {
-    "available": "Produktsystemingeniør",
+    "available": "Senior Frontend Architect",
     "greeting": "Hej, jeg er",
     "role": "Senior Frontend Engineer",
-    "titleLine1": "Frontend",
-    "titleLine2": "Håndværker.",
+    "titleLine1": "Senior Frontend Engineer",
+    "titleLine2": "der bygger SaaS-platforme i stor skala.",
     "explore": "Udforsk mit arbejde",
     "scroll": "Rul ned",
     "nowLabel": "Nu",
@@ -33,7 +33,7 @@
   },
   "personalInfo": {
     "title": "Senior Frontend Engineer med Full-Stack baggrund",
-    "description": "Frontend-fokuseret engineer med full-stack baggrund og næsten to årtiers erfaring siden 2007. Jeg bygger skalerbare webprodukter, der omsætter kompleks forretningslogik til hurtige og intuitive interfaces med React, Vue, Node.js og cloud-platforme.",
+    "description": "Frontend-arkitekt med mere end 18 års erfaring i at bygge virksomhedsplatforme, SaaS-produkter og applikationer med høj trafik i hele Europa.",
     "location": "København, Danmark"
   },
   "skills": {
@@ -46,8 +46,8 @@
     "fullStackEmpty": "Den fulde stack er allerede repræsenteret i kernekompetencerne."
   },
   "about": {
-    "title": "Om &",
-    "titleAccent": "Tjenester",
+    "title": "Ophav &",
+    "titleAccent": "Håndværk",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet software, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {

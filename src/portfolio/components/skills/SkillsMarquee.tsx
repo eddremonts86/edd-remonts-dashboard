@@ -1,192 +1,307 @@
-import { AnimatePresence, m } from 'framer-motion';
-import { ChevronDown, ChevronUp, Layers, Database, Cpu, Compass } from 'lucide-react';
+import { m, AnimatePresence } from 'framer-motion';
+import { Layers, Database, Cpu, Sparkles } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TechIcon } from '@/portfolio/components/ui/badges/TechIcon';
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { fadeInView } from '@/portfolio/lib/motion';
 
-interface StackLayer {
+interface ExtendedCategory {
+  title: string;
+  annot: string;
+  items: string[];
+}
+
+const EXTENDED_CATEGORIES: ExtendedCategory[] = [
+  {
+    title: 'Frontend & UI Systems',
+    annot: 'EXT_PRESENTATION',
+    items: [
+      'React',
+      'Vue.js',
+      'Next.js',
+      'Nuxt.js',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+      'HTML5',
+      'CSS3',
+      'SCSS',
+      'SASS',
+      'Framer Motion',
+      'Radix UI',
+      'React Hook Form',
+      'Recharts',
+      'i18next',
+      'Lucide'
+    ],
+  },
+  {
+    title: 'State, API & Database',
+    annot: 'EXT_PERSISTENCE',
+    items: [
+      'TanStack Query',
+      'TanStack Start',
+      'TanStack Router',
+      'TanStack Form',
+      'TanStack Table',
+      'Node.js',
+      'PHP',
+      'Laravel',
+      'Symfony',
+      'PostgreSQL',
+      'PostGIS',
+      'MySQL',
+      'Drizzle ORM',
+      'ChromaDB',
+      'Zod',
+      'Axios',
+      'date-fns',
+      'OpenAI',
+      'Anthropic Claude',
+      'Ollama'
+    ],
+  },
+  {
+    title: 'Infra, DevOps & Security',
+    annot: 'EXT_INFRASTRUCTURE',
+    items: [
+      'Docker',
+      'Nginx',
+      'Apache',
+      'Linux',
+      'bash',
+      'macOS',
+      'Git',
+      'GitHub Actions',
+      'Netlify',
+      'pnpm',
+      'Vite',
+      'Clerk',
+      'Better Auth',
+      'Stripe',
+      'MapLibre GL'
+    ],
+  },
+  {
+    title: 'Quality, CMS & PM',
+    annot: 'EXT_GOVERNANCE',
+    items: [
+      'Vitest',
+      'Playwright',
+      'Cypress',
+      'ESLint',
+      'Prettier',
+      'Sentry',
+      'Drupal',
+      'WordPress',
+      'Jira',
+      'Confluence',
+      'DnD Kit'
+    ],
+  },
+];
+
+interface CuratedLayer {
   id: string;
   name: string;
   annot: string;
-  desc: string;
   Icon: typeof Layers;
   items: string[];
+  rationale: string;
 }
 
 export const SkillsMarquee = () => {
   const { t } = useTranslation();
-  const { skills, isLoading } = usePortfolioData();
-  const [showFullStack, setShowFullStack] = useState(false);
+  const [isArsenalExpanded, setIsArsenalExpanded] = useState(false);
 
-  const allSkills = useMemo(
-    () => skills.filter((value, idx, arr) => arr.indexOf(value) === idx),
-    [skills],
-  );
-
-  // Group technologies into three logical architectural layers
-  const stackLayers: StackLayer[] = useMemo(() => {
+  const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
       {
-        id: 'client',
-        name: 'Client Layout & Hydration Core',
-        annot: '/ PRESENTATION 01',
-        desc: 'Highly interactive, accessible, and fluid user experiences with sub-millisecond transition scopes.',
-        Icon: Compass,
-        items: ['React', 'Next.js', 'Framer Motion', 'Radix UI', 'Tailwind CSS'],
+        id: 'frontend',
+        name: 'Frontend Systems',
+        annot: '/ PRESENTATION CORE',
+        Icon: Cpu,
+        items: ['React', 'TanStack Query', 'TypeScript'],
+        rationale: 'Chosen for strict type safety, predictable cache validation, and component-level query isolation under heavy interactive loads.',
       },
       {
-        id: 'sync',
-        name: 'State Transaction & Sync boundary',
-        annot: '/ SYNCHRONIZATION 02',
-        desc: 'Type-safe contracts, local data caching, deduplicated queries, and event sync schemas.',
-        Icon: Layers,
-        items: ['TypeScript', 'TanStack Query', 'Drizzle ORM', 'Zod', 'React Hook Form'],
-      },
-      {
-        id: 'infra',
-        name: 'Edge Environment & Data Storage',
-        annot: '/ INFRASTRUCTURE 03',
-        desc: 'Scalable backend containers, transactional persistence databases, and AI agent execution blocks.',
+        id: 'data',
+        name: 'Data Systems',
+        annot: '/ RELATION & PERSISTENCE',
         Icon: Database,
-        items: ['Node.js', 'PostgreSQL', 'Docker', 'Ollama', 'GitHub Actions'],
+        items: ['PostgreSQL', 'Drizzle ORM'],
+        rationale: 'Prioritizes relational schema integrity combined with type-safe, compile-time SQL query construction to guarantee zero runtime database errors.',
+      },
+      {
+        id: 'platform',
+        name: 'Platform',
+        annot: '/ CONTAINERIZATION & CI',
+        Icon: Layers,
+        items: ['Docker', 'GitHub Actions'],
+        rationale: 'Secures environment parity through hermetic containerization and runs automated delivery checks to achieve rapid, low-friction production releases.',
+      },
+      {
+        id: 'ai',
+        name: 'AI Integration',
+        annot: '/ REASONING & INFERENCE',
+        Icon: Sparkles,
+        items: ['OpenAI', 'Claude', 'Ollama'],
+        rationale: 'Leveraged for automated code auditing, context-aware content generation, and context analysis pipelines integrated into backend runtimes.',
       },
     ];
   }, []);
 
-  if (isLoading || skills.length === 0) return null;
-
   return (
     <section
       id="stack"
-      className="relative z-20 isolate border-y border-subtle bg-surface py-28 md:py-40"
+      className="relative z-20 isolate border-t border-subtle bg-surface py-28 md:py-40"
       aria-label={t('a11y.skillsMarquee')}
     >
       <div className="absolute inset-0 pointer-events-none opacity-[2.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px] mask-image-[linear-to-b,transparent,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,transparent]" />
 
       <div className="container mx-auto max-w-7xl px-6">
-        
-        {/* Section Title */}
-        <div className="mb-20 max-w-3xl">
-          <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-            / TECH STACK
-          </p>
-          <h2 className="font-display text-4xl font-light tracking-tight md:text-6xl lg:text-7xl text-foreground">
-            The Isomorphic <br />
-            <span className="font-serif italic text-primary">Systems Stack</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/70 md:text-base font-light">
-            A representation of my core technical stack organized by structural boundaries, rather than a generic checklist. Built for scale, type safety, and real-time synchronization.
-          </p>
-        </div>
-
-        {/* The horizontal system stack pipeline map */}
-        <div className="grid gap-8 lg:grid-cols-3 relative mb-20">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           
-          {/* Connector lines behind cards for large viewports */}
-          <div className="absolute top-1/2 left-0 right-0 h-px border-t border-dashed border-border-default/35 -translate-y-1/2 hidden lg:block pointer-events-none" />
-
-          {stackLayers.map((layer, index) => {
-            const Icon = layer.Icon;
-            return (
-              <m.div
-                key={layer.id}
-                {...fadeInView({ delay: index * 0.12 })}
-                className="group relative rounded-2xl border border-subtle bg-background p-6 md:p-8 shadow-xs transition-all duration-500 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_24px_48px_rgba(0,0,0,0.05)]"
-              >
-                {/* Visual coordinate details */}
-                <div className="absolute top-4 right-5 font-mono text-[8px] text-foreground/20 uppercase tracking-widest hidden md:block">
-                  {layer.annot}
-                </div>
-
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-subtle text-foreground/50 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
-                    <Icon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary block">
-                      LAYER 0{index + 1}
-                    </span>
-                    <h3 className="text-base font-semibold tracking-tight text-foreground font-display">
-                      {layer.name}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-xs leading-relaxed text-foreground/65 font-light mb-6">
-                  {layer.desc}
-                </p>
-
-                {/* Sub items within this layer */}
-                <div className="flex flex-wrap gap-2">
-                  {layer.items.map((tech) => (
-                    <span
-                      key={tech}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
-                    >
-                      <TechIcon skill={tech} className="h-3.5 w-3.5" />
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </m.div>
-            );
-          })}
-        </div>
-
-        {/* The engineering toolbox: full browseable stack */}
-        <div className="rounded-2xl border border-subtle bg-background/65 px-4 py-3 max-w-4xl mx-auto">
-          <button
-            type="button"
-            onClick={() => setShowFullStack((prev) => !prev)}
-            className="flex w-full items-center justify-between gap-4 rounded-xl px-2 py-2 text-left focus:outline-none"
+          {/* Left Column: Section Title & Narrative (5 cols) */}
+          <m.div 
+            {...fadeInView()} 
+            className="lg:col-span-5 space-y-6"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/65 flex items-center gap-2">
-              <Cpu className="h-3.5 w-3.5 text-primary animate-pulse" />
-              {t('skills.toolbox', 'Engineering toolbox')}
-            </span>
-            <span className="inline-flex items-center gap-2 text-xs text-foreground/60">
-              {showFullStack
-                ? t('skills.hide', 'Hide full stack')
-                : t('skills.view', 'View full stack')}
-              {showFullStack ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-            </span>
-          </button>
+            <div>
+              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
+                / TECH STACK
+              </p>
+              <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
+                The Curated <br />
+                <span className="font-serif italic text-primary">Systems Stack</span>
+              </h2>
+              <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
+                A highly refined representation of my core technical stack, organized strictly by system boundaries. I prioritize structural curation over long, complex tool lists to demonstrate absolute design discipline and visual restraint.
+              </p>
+              
+              {/* Deployed full tech registry trigger */}
+              <div className="mt-8">
+                <button
+                  onClick={() => setIsArsenalExpanded(!isArsenalExpanded)}
+                  className="group inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-primary font-bold transition-all duration-300 hover:border-primary/45 select-none cursor-pointer"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                  {isArsenalExpanded ? '/ COLLAPSE FULL REGISTRY' : '/ DEPLOY FULL TECH REGISTRY'}
+                </button>
+              </div>
+            </div>
+          </m.div>
 
-          <AnimatePresence initial={false} mode="wait">
-            {showFullStack && (
-              <m.div
-                key="full-stack"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.28 }}
-                className="mt-4 pb-3 flex flex-wrap gap-2 overflow-hidden border-t border-subtle pt-4 px-2"
-              >
-                {allSkills.length > 0 ? (
-                  allSkills.map((skill, index) => (
-                    <m.span
-                      key={skill}
-                      initial={{ opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.28, delay: Math.min(index * 0.012, 0.32) }}
-                      whileHover={{ y: -2, scale: 1.02 }}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-background px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/70 transition-colors hover:border-foreground/25 hover:text-foreground"
-                    >
-                      <TechIcon skill={skill} className="h-3.5 w-3.5" />
-                      {skill}
-                    </m.span>
-                  ))
-                ) : (
-                  <p className="text-xs text-foreground/60">
-                    {t('skills.fullStackEmpty', 'The full stack is already represented.')}
+          {/* Right Column: The Curated Stack Layers Matrix (7 cols) */}
+          <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
+            {curatedLayers.map((layer, index) => {
+              const Icon = layer.Icon;
+              return (
+                <m.div
+                  key={layer.id}
+                  {...fadeInView({ delay: index * 0.08 })}
+                  className="group relative rounded-2xl border border-subtle bg-background p-6 shadow-xs transition-all duration-500 hover:border-primary/20 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
+                >
+                  {/* Visual coordinate annotation */}
+                  <div className="absolute top-4 right-5 font-mono text-[8px] text-foreground/20 uppercase tracking-widest">
+                    {layer.annot}
+                  </div>
+
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/45 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
+                        SYSTEM_0{index + 1}
+                      </span>
+                      <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
+                        {layer.name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Monospaced Rationale Statement (Engineering Judgement) */}
+                  <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">/ SYSTEM DESIGN DECISION</span>
+                    {layer.rationale}
                   </p>
-                )}
-              </m.div>
-            )}
-          </AnimatePresence>
+
+                  {/* Curated Tech Items (Premium Outline Pills) */}
+                  <div className="flex flex-wrap gap-2">
+                    {layer.items.map((tech) => (
+                      <span
+                        key={tech}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
+                      >
+                        <TechIcon skill={tech} className="h-3.5 w-3.5" />
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </m.div>
+              );
+            })}
+          </div>
+
         </div>
+
+        {/* Extended Technical Registry inspector panel */}
+        <AnimatePresence>
+          {isArsenalExpanded && (
+            <m.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: 'auto', marginTop: 48 }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden border border-white/10 bg-zinc-950/40 rounded-3xl p-8 backdrop-blur-md relative select-none"
+            >
+              {/* Technical Grid Blueprint */}
+              <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[20px_20px]" />
+
+              {/* Panel Header */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/55">
+                    Extended Technical Registry
+                  </span>
+                </div>
+                <div className="font-mono text-[8px] text-white/35">SYS_INSPECTOR: DEPLOYED</div>
+              </div>
+
+              {/* Responsive Columns */}
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
+                {EXTENDED_CATEGORIES.map((cat, i) => (
+                  <div key={cat.title} className="space-y-4">
+                    <div className="border-b border-white/5 pb-2">
+                      <span className="font-mono text-[8.5px] text-primary uppercase tracking-widest block">
+                        / 0{i + 1} {cat.annot}
+                      </span>
+                      <h4 className="font-display text-sm font-semibold text-white mt-1">
+                        {cat.title}
+                      </h4>
+                    </div>
+                    <ul className="space-y-2.5 font-mono text-[9.5px]">
+                      {cat.items.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-foreground/75 hover:text-white transition-colors duration-250 select-none">
+                          <TechIcon skill={item} className="h-3.5 w-3.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

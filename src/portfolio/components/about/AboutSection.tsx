@@ -11,39 +11,45 @@ export const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="relative bg-surface py-24 md:py-40">
-      <div className="container mx-auto max-w-350 px-6">
-        <AboutIntro />
+    <>
+      <section id="about" className="relative bg-surface py-24 md:py-40">
+        <div className="container mx-auto max-w-350 px-6">
+          <AboutIntro />
 
-        {/* The interactive Cuba to Copenhagen Journey Map */}
-        <m.div {...fadeInView({ delay: 0.2 })} className="mb-24">
-          <JourneyMap />
-        </m.div>
+          {/* The interactive Cuba to Copenhagen Journey Map */}
+          <m.div {...fadeInView({ delay: 0.2 })} className="mt-16">
+            <JourneyMap />
+          </m.div>
+        </div>
+      </section>
 
-        <div className="mt-24 grid gap-16 lg:grid-cols-12 lg:gap-24">
-          {/* Left Column — sticky heading */}
-          <div className="flex flex-col lg:col-span-4">
-            <m.div {...fadeInView()} className="sticky top-32">
-              <h2 className="mb-6 text-4xl font-light tracking-tight md:text-5xl lg:text-7xl">
-                {t('about.titleAccent')}
-                <br />
-                <span className="font-serif italic text-primary">{t('about.title')}</span>
-              </h2>
-              <p className="text-foreground/40 font-mono text-sm uppercase tracking-widest">
-                {t('about.servicesSub', 'Refined & Scalable')}
-              </p>
-            </m.div>
-          </div>
+      <section id="craft" className="relative border-t border-subtle bg-background py-28 md:py-40">
+        <div className="container mx-auto max-w-350 px-6">
+          <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
+            {/* Left Column — sticky heading */}
+            <div className="flex flex-col lg:col-span-4">
+              <m.div {...fadeInView()} className="sticky top-32">
+                <h2 className="mb-6 text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-tight">
+                  {t('about.titleAccent')}
+                  <br />
+                  <span className="font-serif italic text-primary">{t('about.title')}</span>
+                </h2>
+                <p className="text-foreground/40 font-mono text-sm uppercase tracking-widest">
+                  {t('about.servicesSub', 'Refined & Scalable')}
+                </p>
+              </m.div>
+            </div>
 
-          {/* Right Column — three capability pillars */}
-          <div className="flex flex-col gap-4 lg:col-span-8">
-            {FEATURE_ICONS.map((icon, index) => (
-              <FeatureCard key={index} icon={icon} index={index} />
-            ))}
+            {/* Right Column — three capability pillars */}
+            <div className="flex flex-col gap-4 lg:col-span-8">
+              {FEATURE_ICONS.map((icon, index) => (
+                <FeatureCard key={index} icon={icon} index={index} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
