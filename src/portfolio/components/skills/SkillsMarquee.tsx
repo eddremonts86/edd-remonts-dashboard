@@ -117,36 +117,36 @@ export const SkillsMarquee = () => {
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
       {
-        id: 'frontend',
-        name: 'Frontend Systems',
-        annot: '/ PRESENTATION CORE',
-        Icon: Cpu,
-        items: ['React', 'TanStack Query', 'TypeScript'],
-        rationale: 'Chosen for strict type safety, predictable cache validation, and component-level query isolation under heavy interactive loads.',
-      },
-      {
-        id: 'data',
-        name: 'Data Systems',
-        annot: '/ RELATION & PERSISTENCE',
-        Icon: Database,
-        items: ['PostgreSQL', 'Drizzle ORM'],
-        rationale: 'Prioritizes relational schema integrity combined with type-safe, compile-time SQL query construction to guarantee zero runtime database errors.',
-      },
-      {
-        id: 'platform',
-        name: 'Platform',
-        annot: '/ CONTAINERIZATION & CI',
+        id: 'governance',
+        name: 'Governance & Monorepos',
+        annot: '/ WORKSPACE ARCHITECTURE',
         Icon: Layers,
-        items: ['Docker', 'GitHub Actions'],
-        rationale: 'Secures environment parity through hermetic containerization and runs automated delivery checks to achieve rapid, low-friction production releases.',
+        items: ['Vite', 'pnpm', 'Docker'],
+        rationale: 'Establishes rigid boundaries, monorepo configurations, and strict semantic contracts to keep large-scale SaaS systems clean and composable.',
       },
       {
-        id: 'ai',
-        name: 'AI Integration',
-        annot: '/ REASONING & INFERENCE',
+        id: 'performance',
+        name: 'Performance & Scale',
+        annot: '/ LATENCY & CONVERSION',
+        Icon: Cpu,
+        items: ['React', 'TypeScript', 'TanStack Query'],
+        rationale: 'Enforces sub-12ms interaction latency, optimistic state synchronization, and perfect 100% Core Web Vitals under intensive real-time loads.',
+      },
+      {
+        id: 'leadership',
+        name: 'Technical Leadership',
+        annot: '/ TEAM SYNCHRONIZATION',
         Icon: Sparkles,
-        items: ['OpenAI', 'Claude', 'Ollama'],
-        rationale: 'Leveraged for automated code auditing, context-aware content generation, and context analysis pipelines integrated into backend runtimes.',
+        items: ['GitHub Actions', 'Vitest', 'Playwright'],
+        rationale: 'Orchestrates test suites and automated deployment checks, governing technical standards adopted by 20+ engineers across 4 teams.',
+      },
+      {
+        id: 'product',
+        name: 'Product Engineering',
+        annot: '/ FULL-STACK MATURITY',
+        Icon: Database,
+        items: ['TanStack Start', 'PostgreSQL', 'Drizzle ORM'],
+        rationale: 'Models robust domain layers from database schemas to client state to guarantee type-safety and ensure seamless, high-fidelity user experiences.',
       },
     ];
   }, []);
@@ -169,14 +169,14 @@ export const SkillsMarquee = () => {
           >
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
-                / TECH STACK
+                / TECHNICAL EXPERTISE
               </p>
-              <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
-                The Curated <br />
-                <span className="font-serif italic text-primary">Systems Stack</span>
+              <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-white leading-[1.1]">
+                Architectural <br />
+                <span className="font-serif italic text-primary">Capabilities</span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
-                A highly refined representation of my core technical stack, organized strictly by system boundaries. I prioritize structural curation over long, complex tool lists to demonstrate absolute design discipline and visual restraint.
+                Technologies are commodities; architectural alignment and governance are competitive differentiators. Here is how my technical stacks are marshaled to deliver verified business speed and performance stability.
               </p>
               
               {/* Deployed full tech registry trigger */}

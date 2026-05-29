@@ -3,7 +3,6 @@ import { ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { fadeInView } from '@/portfolio/lib/motion';
-import { ArchitectureAtlas } from './ArchitectureAtlas';
 
 export function EngineeringAuthoritySection() {
   const { t } = useTranslation();
@@ -83,11 +82,8 @@ export function EngineeringAuthoritySection() {
         {/* Modular Workspace Layout */}
         <div className="space-y-24">
           
-          {/* Flagship Component: The Interactive Architecture Atlas */}
-          <ArchitectureAtlas />
-
           {/* Editorial Convictions (Curated & High-Contrast Grid) */}
-          <div className="border-t border-subtle/50 pt-16">
+          <div className="pt-8">
             <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-12 font-bold">
               / CORE CONVICTIONS
             </span>

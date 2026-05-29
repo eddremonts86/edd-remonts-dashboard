@@ -12,8 +12,10 @@ export const ProjectsGallery = () => {
     useProjectFilter();
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  // Filter out Zunzun from additional list as it is fully detailed in ProductStories
-  const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun');
+  // Filter out Zunzun from additional list and limit to top 6 items
+  const additionalProjects = filteredProjects
+    .filter((p) => p.id !== 'zunzun')
+    .slice(0, 6);
 
   return (
     <section id="projects" className="relative z-10 overflow-hidden bg-background py-28 md:py-40">

@@ -2,7 +2,6 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion';
 import { lazy, Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutSection } from './components/about/AboutSection';
-import { PhilosophySection } from './components/about/PhilosophySection';
 import { EngineeringAuthoritySection } from './components/authority/EngineeringAuthoritySection';
 import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
 import { Footer } from './components/footer/Footer';
@@ -16,7 +15,6 @@ import { Preloader } from './components/ui/layout/Preloader';
 import { SEO } from './components/ui/layout/SEO';
 import { SkillsMarquee } from './components/skills/SkillsMarquee';
 import { StickyNav } from './components/ui/navigation/StickyNav';
-import { EngineeringCommandCenter } from './components/command-center/EngineeringCommandCenter';
 
 /* ── Below-fold sections — code-split for faster initial load ── */
 const ProjectsGallery = lazy(() =>
@@ -53,22 +51,19 @@ export function App() {
 
             <main>
               <HeroSection />
-              <StatsCounter />
               <BusinessImpact />
               <AboutSection />
               <SkillsMarquee />
-              
-              {/* Engineering Command Center (Interactive Signature Widget) */}
-              <EngineeringCommandCenter />
 
               <Suspense fallback={null}>
                 <ProjectsGallery />
               </Suspense>
-              
+
+              <StatsCounter />
               <EngineeringAuthoritySection />
               <ExperienceTimeline />
               <TestimonialBlock />
-              <PhilosophySection />
+
               <Suspense fallback={null}>
                 <ContactSection />
               </Suspense>
@@ -80,6 +75,3 @@ export function App() {
     </LazyMotion>
   );
 }
-
-
-
