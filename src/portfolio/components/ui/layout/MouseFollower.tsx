@@ -1,6 +1,6 @@
 import { useMousePosition } from '@/portfolio/hooks/useMousePosition';
-import { useInteractiveHover } from '@/portfolio/hooks/useInteractiveHover';
 import { m, useReducedMotion } from 'framer-motion';
+import { useInteractiveHover } from '@/portfolio/hooks/useInteractiveHover';
 
 export const MouseFollower = () => {
   const isHovering = useInteractiveHover();
@@ -9,8 +9,8 @@ export const MouseFollower = () => {
 
   if (reduceMotion) return null;
 
-  // Elegant sizing
-  const size = isHovering ? 60 : 12;
+  // Larger diameter on hover: creates a visible "inversion lens" over interactive elements.
+  const size = isHovering ? 52 : 10;
   const offset = size / 2;
 
   return (
@@ -19,21 +19,17 @@ export const MouseFollower = () => {
       aria-hidden="true"
     >
       <m.div
-        className="border-primary/50 bg-primary/10 absolute flex items-center justify-center rounded-full border backdrop-blur-[2px]"
+        className="absolute rounded-full bg-white"
         style={{
           x: springX,
           y: springY,
-          width: size,
-          height: size,
           translateX: -offset,
           translateY: -offset,
+          mixBlendMode: 'difference',
         }}
-        animate={{
-          width: size,
-          height: size,
-        }}
-        transition={{ type: 'spring', stiffness: 150, damping: 20 }}
-      ></m.div>
+        animate={{ width: size, height: size }}
+        transition={{ type: 'spring', stiffness: 200, damping: 22 }}
+      />
     </m.div>
   );
 };

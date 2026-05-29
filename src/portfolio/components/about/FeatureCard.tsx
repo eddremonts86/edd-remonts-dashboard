@@ -8,28 +8,30 @@ export const FeatureCard = ({ icon, index }: { icon: string; index: number }) =>
 
   return (
     <m.div
-      {...fadeInView({ delay: index * 0.15 })}
-      className="group relative flex flex-col items-start gap-6 sm:flex-row md:gap-12"
+      {...fadeInView({ delay: index * 0.1 })}
+      className="group relative flex flex-col items-start gap-6 py-8 border-b border-subtle last:border-b-0 transition-colors duration-500 hover:bg-foreground/[0.01] sm:flex-row md:gap-10 md:px-4"
     >
-      <div className="mt-1 flex-shrink-0">
-        <div className="text-foreground/50 group-hover:bg-primary/5 flex h-12 w-12 items-center justify-center rounded-full bg-foreground/[0.04] transition-all duration-700 group-hover:text-primary">
+      {/* Icon node */}
+      <div className="relative z-10 shrink-0">
+        <div className="text-foreground/40 border border-subtle flex h-12 w-12 items-center justify-center rounded-xl bg-background transition-all duration-700 group-hover:border-primary/35 group-hover:text-primary">
           <IconComponent
             name={icon}
-            className="h-5 w-5 transition-transform duration-700 group-hover:scale-110"
+            className="h-5 w-5 transition-transform duration-700 group-hover:scale-108"
           />
         </div>
       </div>
 
-      <div className="relative z-10 flex-1 pb-12 transition-colors duration-700 md:pb-16">
-        <div className="mb-4 flex items-baseline gap-4">
-          <span className="text-foreground/30 font-mono text-xs transition-colors duration-700 group-hover:text-primary">
-            0{index + 1}
+      {/* Narrative block */}
+      <div className="relative z-10 flex-1 min-w-0">
+        <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/70 block">
+            / 0{index + 1}
           </span>
-          <h3 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+          <h3 className="text-lg font-medium tracking-tight text-foreground md:text-xl font-display">
             {t(`about.features.${index}.title`)}
           </h3>
         </div>
-        <p className="text-foreground/70 max-w-2xl text-base font-light leading-relaxed md:text-lg">
+        <p className="text-foreground/65 max-w-2xl text-sm font-light leading-relaxed md:text-base">
           {t(`about.features.${index}.description`)}
         </p>
       </div>

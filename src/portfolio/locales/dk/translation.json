@@ -10,18 +10,40 @@
     "discover": "Opdag"
   },
   "hero": {
-    "available": "Ledig for nye muligheder",
+    "available": "Produktsystemingeniør",
     "greeting": "Hej, jeg er",
     "role": "Senior Frontend Engineer",
     "titleLine1": "Frontend",
     "titleLine2": "Håndværker.",
     "explore": "Udforsk mit arbejde",
-    "scroll": "Rul ned"
+    "scroll": "Rul ned",
+    "nowLabel": "Nu",
+    "nowBody": "Bygger dataintænsive produkt-interfaces med TanStack Start, Drizzle og Postgres.",
+    "basedIn": "Baseret i",
+    "availability": "Tilgængelighed",
+    "availabilityValue": "Q3 2026",
+    "metricLanguages": "Sprog",
+    "pipelineLabel": "Leveringspipeline",
+    "pipeline": {
+      "plan": "Plan",
+      "build": "Byg",
+      "validate": "Valider",
+      "ship": "Lever"
+    }
   },
   "personalInfo": {
     "title": "Senior Frontend Engineer med Full-Stack baggrund",
     "description": "Frontend-fokuseret engineer med full-stack baggrund og næsten to årtiers erfaring siden 2007. Jeg bygger skalerbare webprodukter, der omsætter kompleks forretningslogik til hurtige og intuitive interfaces med React, Vue, Node.js og cloud-platforme.",
     "location": "København, Danmark"
+  },
+  "skills": {
+    "eyebrow": "Kernekompetencer",
+    "title": "Engineered stack, intentionally curated.",
+    "subtitle": "De kerne-systemer jeg bruger til at levere resiliente produkt-interfaces. Bredde er tilgængelig på efterspørgsel.",
+    "toolbox": "Engineering værktøjskasse",
+    "view": "Se fuld stack",
+    "hide": "Skjul fuld stack",
+    "fullStackEmpty": "Den fulde stack er allerede repræsenteret i kernekompetencerne."
   },
   "about": {
     "title": "Om &",
@@ -124,6 +146,10 @@
     "role": "Rolle",
     "decisions": "Beslutninger",
     "complexity": "Kompleksitet",
+    "eyebrow": "Signaturprojekter",
+    "featured": "Fremhævet visning",
+    "listLabel": "Lanceringer og casenotes",
+    "toggleDetails": "Vis detaljer",
     "filters": {
       "all": "Alle",
       "frontend": "Frontend",
@@ -164,7 +190,12 @@
     "usersServed": "Brugere serviceret",
     "migrations": "Migrationer leveret",
     "uptime": "Oppetid",
-    "teamsLed": "Teams ledet"
+    "teamsLed": "Teams ledet",
+    "kicker": "I tal",
+    "heading": "Engineering throughput, i målbare enheder.",
+    "lead": "Et snapshot af den dækkede overflade: stacken, auditene, driftsikkerheden og de teams, der er leveret side om side.",
+    "telemetry": "Portfolio telemetri",
+    "status": "Operationel"
   },
   "authority": {
     "eyebrow": "Engineering Autoritet",
@@ -241,8 +272,9 @@
   "footer": {
     "rights": "Alle rettigheder forbeholdes.",
     "inspired": "Skabt med intention.",
-    "colophon": "Skabt med intention.",
-    "available": "Tilgængelig for nye projekter",
+    "colophon": "Systemer først. Produktmentalitet. Menneskefokuseret.",
+    "available": "Porteføljesignal",
+    "manifesto": "Bygger resiliente produktsystemer siden 2007. Fra Cuba til København. Stadig besat af hurtige og klare interfaces.",
     "nav": {
       "label": "Sidefodnavigation",
       "heading": "Naviger"
@@ -265,6 +297,7 @@
     "mainNav": "Hovednavigation",
     "sectionNav": "Sektionsnavigation"
   },
+  "testimonials_label": "Hvad klienter siger",
   "testimonials_loading": "Indlæser anbefalinger...",
   "cv": {
     "aboutTitle": "Om Mig",

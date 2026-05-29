@@ -3,18 +3,25 @@ import { useTranslation } from 'react-i18next';
 import { fadeInView } from '@/portfolio/lib/motion';
 import { AboutIntro } from './AboutIntro';
 import { FeatureCard } from './FeatureCard';
+import { JourneyMap } from './JourneyMap';
 
+const FEATURE_ICONS = ['users', 'rocket', 'zap'] as const;
 
 export const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
     <section id="about" className="relative bg-surface py-24 md:py-40">
-      <div className="container mx-auto max-w-[1400px] px-6">
+      <div className="container mx-auto max-w-350 px-6">
         <AboutIntro />
 
+        {/* The interactive Cuba to Copenhagen Journey Map */}
+        <m.div {...fadeInView({ delay: 0.2 })} className="mb-24">
+          <JourneyMap />
+        </m.div>
+
         <div className="mt-24 grid gap-16 lg:grid-cols-12 lg:gap-24">
-          {/* Left Column */}
+          {/* Left Column — sticky heading */}
           <div className="flex flex-col lg:col-span-4">
             <m.div {...fadeInView()} className="sticky top-32">
               <h2 className="mb-6 text-4xl font-light tracking-tight md:text-5xl lg:text-7xl">
@@ -28,11 +35,10 @@ export const AboutSection = () => {
             </m.div>
           </div>
 
-          {/* Right Column */}
-          <div className="flex flex-col gap-12 md:gap-16 lg:col-span-8">
-            {/* TODO: Migrar features a la BD y consumirlos aquí. Por ahora, se mantienen estáticos o se puede hacer una consulta similar si se modelan como bloques. */}
-            {[0,1,2].map((_, index) => (
-              <FeatureCard key={index} icon={['users','rocket','zap'][index]} index={index} />
+          {/* Right Column — three capability pillars */}
+          <div className="flex flex-col gap-4 lg:col-span-8">
+            {FEATURE_ICONS.map((icon, index) => (
+              <FeatureCard key={index} icon={icon} index={index} />
             ))}
           </div>
         </div>
@@ -40,3 +46,4 @@ export const AboutSection = () => {
     </section>
   );
 };
+

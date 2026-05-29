@@ -165,118 +165,140 @@ export function EngineeringAuthoritySection() {
   return (
     <section
       id="authority"
-      className="relative overflow-hidden border-y border-subtle bg-background py-24 md:py-36"
+      className="relative overflow-hidden border-y border-subtle bg-background py-28 md:py-40"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[4%] bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[24px_24px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 top-20 h-112 w-md rounded-full bg-primary/5 blur-3xl"
-      />
+      {/* Decorative Blueprint Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[2.5%] bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[20px_20px]" />
 
       <div className="container relative z-10 mx-auto max-w-[1400px] px-6">
-        <m.div {...fadeInView()} className="mb-14 grid gap-8 lg:grid-cols-12">
+        
+        {/* Section Header */}
+        <m.div {...fadeInView()} className="mb-20 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-primary/70">
-              {content['authority.eyebrow'] || t('authority.eyebrow', 'Engineering Authority')}
+            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+              / INTELLECTUAL LEADERSHIP
             </p>
-            <h2 className="font-serif text-5xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
-              {content['authority.title'] || t('authority.title', 'From execution to systems leadership')}
+            <h2 className="font-serif text-4xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-8xl">
+              Systems &amp; <br />
+              <span className="font-serif italic text-primary">Intellectual Leadership</span>
             </h2>
           </div>
           <div className="flex items-end lg:col-span-5">
-            <p className="max-w-md text-base font-light leading-relaxed text-foreground/70 md:text-lg">
-              {content['authority.subtitle'] ||
-                t(
-                  'authority.subtitle',
-                  'Beyond shipping interfaces: product engineering, scalable architecture, and measurable outcomes.',
-                )}
+            <p className="max-w-md text-sm font-light leading-relaxed text-foreground/70 md:text-base">
+              My engineering convictions are grounded in architectural governance, rigorous quality gates, and data-backed product outcomes. I do not merely write features; I build platforms.
             </p>
           </div>
         </m.div>
 
-        <div className="overflow-hidden rounded-2xl border border-subtle bg-subtle">
+        {/* Unified Editorial Layout Workspace */}
+        <div className="space-y-24">
+          
+          {/* 1. Systems Capability Table (Replaces generic service cards) */}
           {services.length > 0 && (
-            <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-3">
-              {services.map((service, idx) => {
-                const Icon = getIcon(service.iconSlug);
-                return (
-                  <m.div
-                    key={service.id}
-                    {...fadeInView({ delay: idx * 0.05 })}
-                    className="group flex flex-col gap-4 bg-background px-6 py-7 transition-colors duration-300 hover:bg-foreground/3"
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-subtle text-foreground/50 transition-colors group-hover:border-primary/45 group-hover:text-primary">
-                        <Icon className="h-4 w-4" aria-hidden />
+            <div className="border-t border-subtle">
+              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block py-4">
+                / CAPABILITIES MATRIX
+              </span>
+              
+              <div className="divide-y divide-subtle">
+                {services.map((service, idx) => {
+                  const Icon = getIcon(service.iconSlug);
+                  return (
+                    <m.div
+                      key={service.id}
+                      {...fadeInView({ delay: idx * 0.05 })}
+                      className="group py-8 flex flex-col md:flex-row gap-6 md:items-start justify-between hover:bg-foreground/[0.01] transition-colors duration-300 md:px-6"
+                    >
+                      <div className="flex items-start gap-6 md:w-1/3">
+                        <span className="font-mono text-xs text-primary/65 pt-1 font-bold">
+                          SYSTEM 0{idx + 1}
+                        </span>
+                        <div>
+                          <h3 className="text-lg font-medium text-foreground font-display flex items-center gap-2">
+                            <Icon className="h-4.5 w-4.5 text-foreground/45 group-hover:text-primary transition-colors" />
+                            {service.title}
+                          </h3>
+                        </div>
                       </div>
-                      <span className="font-mono text-[10px] tabular-nums text-foreground/30">
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="text-base font-medium text-foreground">{service.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-foreground/65">
-                        {service.description}
-                      </p>
-                    </div>
-                  </m.div>
-                );
-              })}
+                      <div className="md:w-2/3 md:pl-10">
+                        <p className="text-sm leading-relaxed text-foreground/65 max-w-2xl font-light">
+                          {service.description}
+                        </p>
+                      </div>
+                    </m.div>
+                  );
+                })}
+              </div>
             </div>
           )}
 
-          <div className="grid gap-px lg:grid-cols-12">
+          {/* 2. Principles & Practices Layout */}
+          <div className="grid gap-12 lg:grid-cols-12 border-t border-subtle pt-16">
+            
+            {/* Left Column: Principles */}
             <m.div
               {...fadeInView({ delay: 0.08 })}
-              className="bg-background px-6 py-8 lg:col-span-5 lg:px-8 lg:py-10"
+              className="lg:col-span-5 space-y-8"
             >
-              <p className="mb-7 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/45">
-                {t('authority.principlesLabel', 'Engineering principles')}
-              </p>
-              <ol className="space-y-6">
+              <div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-2">
+                  / CORE PRINCIPLES
+                </span>
+                <h3 className="font-serif text-3xl font-light tracking-tight text-foreground">
+                  Foundational <br />
+                  <span className="font-serif italic text-primary">Precepts</span>
+                </h3>
+              </div>
+              
+              <ol className="space-y-8">
                 {principles.map((item, idx) => (
                   <li key={item} className="flex items-start gap-4">
-                    <span className="mt-0.5 font-mono text-[11px] tracking-[0.22em] text-primary/65">
-                      {String(idx + 1).padStart(2, '0')}
+                    <span className="font-mono text-xs text-primary/65 pt-0.5 font-bold">
+                      {String(idx + 1).padStart(2, '0')}.
                     </span>
-                    <p className="text-[15px] leading-relaxed text-foreground/80 md:text-base">{item}</p>
+                    <p className="text-[15px] leading-relaxed text-foreground/80 font-light">{item}</p>
                   </li>
                 ))}
               </ol>
             </m.div>
 
+            {/* Right Column: Practices (Interactive Accordion) */}
             <m.div
               {...fadeInView({ delay: 0.12 })}
-              className="bg-background px-6 py-8 lg:col-span-7 lg:px-8 lg:py-10"
+              className="lg:col-span-7 space-y-8"
             >
-              <p className="mb-7 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/45">
-                {t('authority.practiceLabel', 'How it shows in practice')}
-              </p>
-              <div className="overflow-hidden rounded-xl border border-subtle bg-subtle">
+              <div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-2">
+                  / PRACTICES IN ACTION
+                </span>
+                <h3 className="font-serif text-3xl font-light tracking-tight text-foreground">
+                  Mindset in <br />
+                  <span className="font-serif italic text-primary">Action</span>
+                </h3>
+              </div>
+
+              <div className="rounded-xl border border-subtle bg-surface/30 backdrop-blur-xs divide-y divide-subtle overflow-hidden">
                 {practices.map((practice) => {
                   const isOpen = openId === practice.id;
                   const Icon = practice.icon;
                   return (
-                    <div key={practice.id} className="bg-background border-b border-subtle last:border-b-0">
+                    <div key={practice.id} className="bg-background/40">
                       <button
                         type="button"
                         onClick={() => setOpenId(practice.id)}
-                        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-foreground/3"
+                        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-foreground/[0.02]"
                       >
                         <span className="flex min-w-0 items-center gap-4">
                           <span
-                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors ${
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors ${
                               isOpen
                                 ? 'border-primary/45 bg-primary/8 text-primary'
-                                : 'border-subtle text-foreground/55'
+                                : 'border-subtle text-foreground/55 bg-background'
                             }`}
                           >
                             <Icon className="h-4 w-4" aria-hidden />
                           </span>
-                          <span className="text-base font-medium text-foreground md:text-lg">
+                          <span className="text-base font-semibold text-foreground font-display">
                             {practice.title}
                           </span>
                         </span>
@@ -297,7 +319,7 @@ export function EngineeringAuthoritySection() {
                             transition={{ duration: 0.28, ease: [0.32, 0.72, 0, 1] }}
                             className="overflow-hidden"
                           >
-                            <p className="px-5 pb-6 pl-17 text-sm leading-relaxed text-foreground/70 md:text-base">
+                            <p className="px-6 pb-6 pl-18 text-sm leading-relaxed text-foreground/70 font-light">
                               {practice.body}
                             </p>
                           </m.div>
@@ -310,37 +332,45 @@ export function EngineeringAuthoritySection() {
             </m.div>
           </div>
 
-          <div className="grid gap-px md:grid-cols-2">
-            {convictions.map((item, i) => (
-              <figure
-                key={item.tag}
-                className="group flex flex-col gap-4 bg-background px-6 py-7 transition-colors duration-500 hover:bg-foreground/3"
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className="font-mono text-[10px] tabular-nums text-foreground/25 transition-colors duration-500 group-hover:text-primary/55"
-                  >
-                    0{i + 1}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/60">
-                    {item.tag}
-                  </span>
-                </div>
-                <figcaption className="text-base font-medium leading-snug tracking-tight text-foreground md:text-lg">
-                  {item.headline}
-                </figcaption>
-                <p className="text-sm font-light leading-relaxed text-foreground/60">{item.body}</p>
-              </figure>
-            ))}
+          {/* 3. Asymmetric Editorial Convictions (Replaces standard cards grid) */}
+          <div className="border-t border-subtle pt-16">
+            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-12">
+              / CORE CONVICTIONS
+            </span>
+            
+            <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
+              {convictions.map((item, i) => (
+                <m.div
+                  key={item.tag}
+                  {...fadeInView({ delay: i * 0.08 })}
+                  className="space-y-4 hover:bg-foreground/[0.005] transition-colors duration-300 p-4 rounded-xl"
+                >
+                  <div className="flex items-center gap-2 border-b border-subtle pb-3">
+                    <span className="font-serif text-3xl font-light text-primary/20 leading-none select-none font-display">
+                      [0{i + 1}]
+                    </span>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary font-bold">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <h4 className="text-xl font-medium leading-snug tracking-tight text-foreground font-display">
+                    {item.headline}
+                  </h4>
+                  <p className="text-sm font-light leading-relaxed text-foreground/65 max-w-xl">
+                    {item.body}
+                  </p>
+                </m.div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-col items-start justify-between gap-6 bg-background px-6 py-7 md:flex-row md:items-center md:px-8">
+          {/* 4. Strategic CTA */}
+          <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle pt-12 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-primary/70">
-                {t('authority.ctaLabel', 'Next step')}
-              </p>
-              <p className="text-lg font-light tracking-tight text-foreground md:text-xl">
+              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary block mb-2">
+                / NEXT STEP
+              </span>
+              <p className="text-lg font-light tracking-tight text-foreground md:text-xl max-w-lg font-display">
                 {content['authority.cta'] ||
                   t(
                     'authority.cta',
@@ -356,6 +386,7 @@ export function EngineeringAuthoritySection() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
             </a>
           </div>
+
         </div>
       </div>
     </section>

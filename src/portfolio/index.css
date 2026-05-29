@@ -75,16 +75,26 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
+    background-image:
+      radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--primary) 11%, transparent) 0%, transparent 30%),
+      radial-gradient(circle at 88% 84%, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 32%);
+    background-attachment: fixed;
   }
 
   body::after {
     content: '';
     position: fixed;
-    inset: 0;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.038;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    animation: grain 0.2s steps(1) infinite;
   }
 
   h1,
@@ -94,6 +104,7 @@
   h5,
   h6 {
     @apply font-display tracking-tight text-foreground transition-colors duration-500;
+    text-wrap: balance;
   }
 
   /* Accessibility Focus Rings */
@@ -105,7 +116,7 @@
     @apply transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
-  /* Selection matches anime neon vibe */
+  /* Crisp, high-contrast selection */
   ::selection {
     background-color: var(--primary);
     color: var(--foreground);
@@ -113,7 +124,7 @@
 }
 
 @layer utilities {
-  /* Apple iOS Glassmorphism */
+  /* Soft translucent surfaces */
   .apple-glass {
     background-color: var(--apple-glass);
     border-color: var(--apple-border);
@@ -124,7 +135,7 @@
     }
   }
 
-  /* Anime Neon Glow */
+  /* Legacy glow helpers */
   .neon-glow-cyan {
     @apply shadow-[0_0_20px_rgba(0,229,255,0.4)];
   }
@@ -154,7 +165,7 @@
     display: none;
   }
 
-  /* Text gradient fusing Apple smoothness with Anime colors */
+  /* Accent gradient text */
   .text-gradient-anime {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
@@ -185,6 +196,21 @@
     to {
       --gradient-angle: 360deg;
     }
+  }
+
+  /* Film grain animation — discrete steps to simulate analogue noise */
+  @keyframes grain {
+    0%,
+    100% { transform: translate(0%, 0%); }
+    10%  { transform: translate(-5%, -4%); }
+    20%  { transform: translate(-2%, 6%); }
+    30%  { transform: translate(3%, -3%); }
+    40%  { transform: translate(-4%, 3%); }
+    50%  { transform: translate(5%, -5%); }
+    60%  { transform: translate(-3%, 4%); }
+    70%  { transform: translate(3%, -6%); }
+    80%  { transform: translate(-3%, 5%); }
+    90%  { transform: translate(4%, -3%); }
   }
 
   /* Floating decorative shapes */
