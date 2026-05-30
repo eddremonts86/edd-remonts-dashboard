@@ -19,55 +19,55 @@ const LESSONS: LessonItem[] = [
   {
     index: '01',
     title: 'Architecture is People',
-    body: 'Systems succeed when developer coordination boundaries align cleanly with system boundaries. Conway’s Law is not a theory; it is an active engineering constraint.',
+    body: "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint.",
   },
   {
     index: '02',
     title: 'Governance Enables Velocity',
-    body: 'Rigid system boundaries and strict semantic contracts are not blockers. They are the essential guardrails that allow independent teams to move and release at maximum speed.',
+    body: 'Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity.',
   },
   {
     index: '03',
     title: 'Performance is a Business Metric',
-    body: 'Interaction latency and LCP directly determine user retention and business conversion. Treating performance as a post-launch polish is a high-cost operational tax.',
+    body: 'Core Web Vitals, page-load latency, and interaction responsiveness directly determine user-retention and business-conversion rates. Treating performance as post-launch polish is a costly operational tax.',
   },
   {
     index: '04',
     title: 'Complexity Compounds',
-    body: 'The most expensive line of code is the one you write without a clear boundary contract. A well-typed spaghetti codebase is still spaghetti; model the domain structure first.',
+    body: 'The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti.',
   },
   {
     index: '05',
     title: 'The Best Systems are Boring',
-    body: 'Highly predictable, stable, and decoupled patterns outperform exciting but hyper-coupled novelties every single day. Predictability is the ultimate indicator of systems maturity.',
+    body: 'Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity.',
   },
 ];
 
 const HOW_I_WORK: HowIWorkItem[] = [
   {
     icon: Compass,
-    title: 'Pragmatic Decision Making',
-    body: 'I prioritize stable, predictable standards and model structural boundaries and data schemas before choosing libraries or tools.',
+    title: 'Pragmatic Decision-Making',
+    body: 'Prioritizes stable, predictable standards, designs strict structural boundaries, and models data schemas before choosing libraries or frameworks.',
   },
   {
     icon: ShieldCheck,
     title: 'Active Mentorship & Trust',
-    body: 'I replace isolated developer silos with active peer alignment, code reviews, and shared contracts, raising the capabilities of the entire team.',
+    body: 'Eliminates isolated developer silos by fostering active peer alignment, leading code reviews, and establishing shared interface contracts.',
   },
   {
     icon: Zap,
     title: 'Product-Minded Alignment',
-    body: 'I translate technical possibilities directly into business value, coordinating closely with product managers and stakeholders to bridge execution gaps.',
+    body: 'Translates complex technical architectures into business value, coordinates with product managers, and bridges execution gaps with non-technical stakeholders.',
   },
   {
     icon: Activity,
-    title: 'Debt Minimization Strategy',
-    body: 'I manage tech debt proactively by establishing strict module isolation, preventing coupling, and maintaining clear API documentation.',
+    title: 'Debt-Minimization Strategy',
+    body: 'Manages technical debt proactively by establishing strict module isolation, preventing architectural coupling, and maintaining comprehensive API documentation.',
   },
   {
     icon: Award,
     title: 'Empowered Autonomy',
-    body: 'I architect system guidelines and standards so that individual product squads can build and deploy safely with absolute confidence and zero friction.',
+    body: 'Architects robust system guidelines, automated quality gates, and modular packages, empowering individual product squads to ship safely with zero friction.',
   },
 ];
 

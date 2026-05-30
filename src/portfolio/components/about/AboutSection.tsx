@@ -20,7 +20,7 @@ const ADVANTAGES: AdvantageItem[] = [
     subtitle: 'A full-stack foundation evolved into elite frontend architecture.',
     bullets: [
       'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.',
-      'Active developer with strong architecture governance and product-first capabilities.',
+      'Maintains a hands-on developer mindset, guides architectural governance, and champions product-first capabilities.',
       'Combines absolute visual craft with production-grade architectural patterns.'
     ]
   },
@@ -31,21 +31,21 @@ const ADVANTAGES: AdvantageItem[] = [
     title: 'Constraint-Born Efficiency DNA',
     subtitle: 'Obsessive performance habits forged under extreme resource limits.',
     bullets: [
-      'Early experience built under severe Cuba dial-up limitations (56kbps).',
-      'Hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render paths.',
-      'Treats performance not as a post-launch polish, but as a critical business conversion driver.'
+      "Cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
+      'Hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.',
+      'Treats web performance not as a post-launch polish, but as a critical business-conversion driver.'
     ]
   },
   {
     id: 'scale',
     index: '03',
     icon: Shield,
-    title: 'European Enterprise SaaS Scale',
+    title: 'European Enterprise-SaaS Scale',
     subtitle: 'Proven authority scaling complex software platforms in Copenhagen.',
     bullets: [
-      'Led monorepo partitions and micro-frontend structures on enterprise scale.',
-      'Slashing initial load payloads by 42% and raising delivery speeds by 30%.',
-      'Establishes rigid modular boundaries keeping systems clean and composable.'
+      'Led monorepo partitions, managed micro-frontend structures, and scaled systems on an enterprise level.',
+      'Slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.',
+      'Established strict modular boundaries to keep systems clean, testable, and highly composable.'
     ]
   },
   {
@@ -55,9 +55,9 @@ const ADVANTAGES: AdvantageItem[] = [
     title: 'Product-Minded Systems Architect',
     subtitle: 'Translating product vision and design system maturity into structured code.',
     bullets: [
-      'Bridges the gap between engineering, product metrics, and brand designers.',
-      'Models domain layers from database schemas to client caching to ensure type safety.',
-      'Designs interfaces that are visually premium and operationally maintainable.'
+      'Aligns technical decisions, product metrics, and design-system aesthetics.',
+      'Models type-safe domain layers, coordinates client-side caching strategies, and manages database schema alignments.',
+      'Designs user interfaces that are visually premium, highly responsive, and operationally maintainable.'
     ]
   },
   {
@@ -67,9 +67,9 @@ const ADVANTAGES: AdvantageItem[] = [
     title: 'Active Technical Leadership & Governance',
     subtitle: 'Orchestrating teams and mentorship cultures that scale.',
     bullets: [
-      'Governs technical standards adopted by 20+ engineers across 4 product teams.',
-      'Replaces isolated engineering practices with active mentoring and clear system contracts.',
-      'Empowers product squads to release independently with absolute, low-friction confidence.'
+      'Governed technical standards adopted by 20+ engineers across 4 autonomous product teams.',
+      'Replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.',
+      'Empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.'
     ]
   }
 ];

@@ -7,10 +7,10 @@ const ERAS: EraData[] = [
     company: 'Schilling ApS & Resights',
     role: 'Senior Frontend Architect',
     bullets: [
-      '**Led frontend architecture** across 4 product teams and governed monorepo decoupled frameworks.',
-      '**Owned design system governance**, standardizing UI patterns for 20+ active frontend engineers.',
-      '**Reduced initial bundle payload by 42%**, dropping LCP load time from 7.5s to 1.4s.',
-      '**Increased feature delivery cycles by 30%** through isolated monorepo workspace sub-apps.',
+      '**Led frontend architecture** across 4 product teams and governed decoupled monorepo frameworks.',
+      '**Owned design-system governance**, standardizing UI patterns for 20+ active frontend engineers.',
+      '**Reduced initial bundle payloads by 42%**, dropping LCP load time from 7.5s to 1.4s.',
+      '**Increased feature-delivery cycles by 30%** through isolated monorepo workspace sub-apps.',
       '**Bridged coordination gaps** between product management, executive stakeholders, and engineering squads.'
     ],
     vector: 'Design Systems Governance · Monorepos · Decoupled Contracts · API Design'
@@ -22,10 +22,10 @@ const ERAS: EraData[] = [
     role: 'Senior Frontend Developer & Team Lead',
     bullets: [
       '**Scaled high-traffic consumer portals** serving over 2,000,000 active monthly users in Europe.',
-      '**Engineered event-driven DOM virtualized caching** handling 500+ updates/sec with zero frames dropped.',
-      '**Slashed redundant server query overhead by 60%** via optimistic clientside caching layers.',
-      '**Mentored and coordinated 12+ developers** across hybrid agile sprint teams to elevate code quality.',
-      '**Maintained 100% Core Web Vitals score** across major consumer analytics and campaign portals.'
+      '**Engineered event-driven virtualized DOM caching** handling 500+ updates/sec with zero frames dropped.',
+      '**Slashed redundant server query overhead by 60%** via optimistic client-side caching layers.',
+      '**Coordinated 12+ developers**, mentored cross-functional squads, and established coding standards to elevate system quality.',
+      '**Maintained 100% Core Web Vitals scores** across major consumer analytics and campaign portals.'
     ],
     vector: 'Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs'
   },
@@ -35,11 +35,11 @@ const ERAS: EraData[] = [
     company: 'UCI National Library, ONEI, GEOCUBA & Viruta Studio',
     role: 'Full-Stack Software Engineer & R&D Lead',
     bullets: [
-      '**Engineered lightweight custom javascript engines** under severe Havana 56kbps dial-up resource limits.',
-      '**Cultivated lifelong codebase hygiene habits**, counting every byte to secure client delivery under limits.',
-      '**Built custom vanilla JS data registers** and state registers from first principles without modern frameworks.',
-      '**Led local dev team of 4 engineers** shipping custom GIS and data management tools under limits.',
-      '**Achieved extreme compression** enabling instant application load and use on legacy networks.'
+      '**Engineered lightweight, custom JavaScript engines** under Havana\'s severe 56kbps dial-up limits.',
+      '**Cultivated lifelong codebase-hygiene habits**, counting every byte to guarantee client delivery under extreme constraints.',
+      '**Built custom vanilla JavaScript data and state registers** from first principles without modern frameworks.',
+      '**Led a local development team of 4 engineers**, shipped custom GIS applications, and managed data platforms under extreme constraints.',
+      '**Achieved extreme asset compression**, enabling instant application loading and smooth execution on legacy networks.'
     ],
     vector: 'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives'
   }

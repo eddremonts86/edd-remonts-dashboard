@@ -83,7 +83,7 @@ export const ContactSection = () => {
                     Copenhagen, DK
                   </span>
                   <span className="font-mono text-[9px] text-white/35 block">
-                    EU Remote Friendly (GMT+2/1)
+                    EU Remote-Friendly (GMT+2/1)
                   </span>
                 </div>
 
@@ -93,10 +93,10 @@ export const ContactSection = () => {
                     PREFERRED TARGET ROLES
                   </span>
                   <span className="font-display text-sm font-semibold text-white block">
-                    Senior Frontend · Staff Engineer · Technical Lead · Architectural Consulting
+                    Staff Engineer · Technical Leader · Frontend Architect · Systems Consultant
                   </span>
                   <span className="font-mono text-[9px] text-white/35 block">
-                    Specialized in enterprise SaaS scaling & platform decoupling
+                    Specialized in enterprise-SaaS scaling and platform decoupling
                   </span>
                 </div>
               </div>

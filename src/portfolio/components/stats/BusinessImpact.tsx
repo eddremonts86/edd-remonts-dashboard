@@ -15,28 +15,28 @@ const IMPACT_CARDS: ImpactCard[] = [
     id: 'payload',
     metric: '42%',
     label: 'Payload Reduction',
-    outcome: 'Slashed initial bundle size by 94%, enabling distributed product teams to release features independently without breaking shared platform systems while improving LCP to 1.4s.',
+    outcome: 'Slashed initial bundle size by 94%, enabling distributed product teams to release features independently, avoid breaking shared platform systems, and improve LCP to 1.4s.',
     Icon: Layers,
   },
   {
     id: 'shipping',
     metric: '30%',
     label: 'Faster Shipping',
-    outcome: 'Established unified design system governance and component contracts adopted by 20+ engineers across 4 product teams, accelerating feature delivery cycles by 30%.',
+    outcome: 'Coordinated unified design-system governance, component contracts, and quality gates adopted by 20+ engineers across 4 product teams, accelerating feature-delivery cycles by 30%.',
     Icon: ShieldCheck,
   },
   {
     id: 'latency',
     metric: 'Sub-12ms',
     label: 'Interaction Latency',
-    outcome: 'Restructured site builder assembler architecture to isolate rendering updates, reducing perceived latency for real-time edits and securing perfect 100% Core Web Vitals.',
+    outcome: 'Restructured site-builder assembler architecture to isolate rendering updates, reduce perceived latency for real-time edits, and secure perfect 100% Core Web Vitals.',
     Icon: Zap,
   },
   {
     id: 'throughput',
     metric: '98 Score',
     label: 'Performance Uptime',
-    outcome: 'Optimized real-time logistics dashboard rendering to handle 500+ updates/sec with zero lag, reducing server socket query infrastructure costs by 60%.',
+    outcome: 'Optimized real-time logistics dashboard rendering to handle 500+ updates/sec with zero lag, which slashed database connection overhead, improved server responsiveness, and reduced query-related infrastructure costs by 60%.',
     Icon: Activity,
   },
 ];
@@ -65,7 +65,7 @@ export const BusinessImpact = () => {
             <span className="font-serif italic text-primary">Business Outcomes</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/60 md:text-base font-light font-display">
-            Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise scale applications.
+            Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.
           </p>
         </m.div>
 

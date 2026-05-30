@@ -85,7 +85,7 @@ export const HeroSection = () => {
                   transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.3 }}
                   className="inline-block"
                 >
-                  Senior Frontend Engineer
+                  Staff Frontend Engineer
                 </m.span>
               </div>
               <div className="overflow-hidden">
@@ -95,7 +95,7 @@ export const HeroSection = () => {
                   transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.42 }}
                   className="font-serif italic text-primary"
                 >
-                  & Frontend Architect
+                  & Technical Leader
                 </m.span>
               </div>
             </h1>
@@ -107,7 +107,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.6, duration: 1 }}
               className="mb-10 max-w-2xl font-body text-base font-light leading-relaxed text-foreground/75 md:text-lg lg:text-xl"
             >
-              18+ years building enterprise SaaS platforms, high-traffic consumer applications and developer-governed design systems.
+              18+ years building enterprise SaaS platforms, high-traffic consumer applications, and developer-governed design systems.
             </m.p>
 
             {/* CTAs */}
@@ -169,7 +169,7 @@ export const HeroSection = () => {
                     Bundle Reduction
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    6.2MB to 350KB initial payload decoupling.
+                    Decoupled architectural boundaries from 6.2MB down to 350KB.
                   </p>
                 </div>
 
@@ -181,7 +181,7 @@ export const HeroSection = () => {
                     Faster Delivery
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    Monorepo isolation & contract-based decoupling.
+                    Accelerated delivery via contract-based workspace isolation.
                   </p>
                 </div>
 
@@ -193,7 +193,7 @@ export const HeroSection = () => {
                     Core Web Vitals
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    Perfect performance scores at enterprise scale.
+                    Secured flawless Lighthouse scores across complex user paths.
                   </p>
                 </div>
 
@@ -205,7 +205,7 @@ export const HeroSection = () => {
                     Engineers Impacted
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    Design system governance & team mentorship.
+                    Mentored engineers, governed design systems, and aligned teams.
                   </p>
                 </div>
               </div>
