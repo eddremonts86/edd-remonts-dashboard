@@ -1,131 +1,139 @@
-import { m } from 'framer-motion';
-import { fadeInView } from '@/portfolio/lib/motion';
-import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react';
+import { m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { fadeInView } from '@/portfolio/lib/motion'
+import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
+import { Section, Container } from '../ui/layout/Section'
 
 interface AdvantageItem {
-  id: string;
-  index: string;
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  subtitle: string;
-  bullets: string[];
+  id: string
+  index: string
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  subtitle: string
+  bullets: string[]
 }
 
-const ADVANTAGES: AdvantageItem[] = [
-  {
-    id: 'experience',
-    index: '01',
-    icon: Award,
-    title: '18 Years of Engineering Maturity',
-    subtitle: 'A full-stack foundation evolved into elite frontend architecture.',
-    bullets: [
-      'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.',
-      'Active developer with strong architecture governance and product-first capabilities.',
-      'Combines absolute visual craft with production-grade architectural patterns.'
-    ]
-  },
-  {
-    id: 'constraints',
-    index: '02',
-    icon: Terminal,
-    title: 'Constraint-Born Efficiency DNA',
-    subtitle: 'Obsessive performance habits forged under extreme resource limits.',
-    bullets: [
-      'Early experience built under severe Cuba dial-up limitations (56kbps).',
-      'Hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render paths.',
-      'Treats performance not as a post-launch polish, but as a critical business conversion driver.'
-    ]
-  },
-  {
-    id: 'scale',
-    index: '03',
-    icon: Shield,
-    title: 'European Enterprise SaaS Scale',
-    subtitle: 'Proven authority scaling complex software platforms in Copenhagen.',
-    bullets: [
-      'Led monorepo partitions and micro-frontend structures on enterprise scale.',
-      'Slashing initial load payloads by 42% and raising delivery speeds by 30%.',
-      'Establishes rigid modular boundaries keeping systems clean and composable.'
-    ]
-  },
-  {
-    id: 'product',
-    index: '04',
-    icon: Compass,
-    title: 'Product-Minded Systems Architect',
-    subtitle: 'Translating product vision and design system maturity into structured code.',
-    bullets: [
-      'Bridges the gap between engineering, product metrics, and brand designers.',
-      'Models domain layers from database schemas to client caching to ensure type safety.',
-      'Designs interfaces that are visually premium and operationally maintainable.'
-    ]
-  },
-  {
-    id: 'leadership',
-    index: '05',
-    icon: Sparkles,
-    title: 'Active Technical Leadership & Governance',
-    subtitle: 'Orchestrating teams and mentorship cultures that scale.',
-    bullets: [
-      'Governs technical standards adopted by 20+ engineers across 4 product teams.',
-      'Replaces isolated engineering practices with active mentoring and clear system contracts.',
-      'Empowers product squads to release independently with absolute, low-friction confidence.'
-    ]
-  }
-];
-
 export const AboutSection = () => {
+  const { t } = useTranslation()
+
+  const advantages: AdvantageItem[] = [
+    {
+      id: 'experience',
+      index: '01',
+      icon: Award,
+      title: t('about.advantages.0.title', '18 Years of Engineering Maturity'),
+      subtitle: t('about.advantages.0.subtitle', 'A full-stack foundation evolved into elite frontend architecture.'),
+      bullets: [
+        t('about.advantages.0.bullets.0', 'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.'),
+        t('about.advantages.0.bullets.1', 'I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.'),
+        t('about.advantages.0.bullets.2', 'I combine absolute visual craft with production-grade architectural patterns.'),
+      ],
+    },
+    {
+      id: 'constraints',
+      index: '02',
+      icon: Terminal,
+      title: t('about.advantages.1.title', 'Constraint-Born Efficiency DNA'),
+      subtitle: t('about.advantages.1.subtitle', 'Obsessive performance habits forged under extreme resource limits.'),
+      bullets: [
+        t('about.advantages.1.bullets.0', "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits."),
+        t('about.advantages.1.bullets.1', 'A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.'),
+        t('about.advantages.1.bullets.2', 'I treat web performance not as a post-launch polish, but as a critical business-conversion driver.'),
+      ],
+    },
+    {
+      id: 'scale',
+      index: '03',
+      icon: Shield,
+      title: t('about.advantages.2.title', 'European Enterprise-SaaS Scale'),
+      subtitle: t('about.advantages.2.subtitle', 'Proven authority scaling complex software platforms in Copenhagen.'),
+      bullets: [
+        t('about.advantages.2.bullets.0', 'I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.'),
+        t('about.advantages.2.bullets.1', 'I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.'),
+        t('about.advantages.2.bullets.2', 'I established strict modular boundaries to keep systems clean, testable, and highly composable.'),
+      ],
+    },
+    {
+      id: 'product',
+      index: '04',
+      icon: Compass,
+      title: t('about.advantages.3.title', 'Product-Minded Systems Architect'),
+      subtitle: t('about.advantages.3.subtitle', 'Translating product vision and design system maturity into structured code.'),
+      bullets: [
+        t('about.advantages.3.bullets.0', 'I align technical decisions, product metrics, and design-system aesthetics.'),
+        t('about.advantages.3.bullets.1', 'I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.'),
+        t('about.advantages.3.bullets.2', 'I design user interfaces that are visually premium, highly responsive, and operationally maintainable.'),
+      ],
+    },
+    {
+      id: 'leadership',
+      index: '05',
+      icon: Sparkles,
+      title: t('about.advantages.4.title', 'Active Technical Leadership & Governance'),
+      subtitle: t('about.advantages.4.subtitle', 'Orchestrating teams and mentorship cultures that scale.'),
+      bullets: [
+        t('about.advantages.4.bullets.0', 'I governed technical standards adopted by 20+ engineers across 4 active product teams.'),
+        t('about.advantages.4.bullets.1', 'I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.'),
+        t('about.advantages.4.bullets.2', 'I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.'),
+      ],
+    },
+  ]
+
   return (
-    <section id="about" className="relative overflow-hidden bg-surface py-28 md:py-40">
-      {/* Visual background grids */}
-      <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px]" />
+    <Section id="about" className="bg-surface">
       <div className="pointer-events-none absolute -left-40 top-1/4 h-120 w-120 rounded-full bg-primary/[0.01] blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-1/4 h-120 w-120 rounded-full bg-primary/[0.01] blur-3xl" />
 
-      <div className="container mx-auto max-w-7xl px-6">
-        
+      <Container>
         {/* Section Header */}
         <div className="mb-20 max-w-3xl">
           <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
-            / WHAT MAKES ME DIFFERENT
+            {t('about.different', '/ WHAT MAKES ME DIFFERENT')}
           </span>
-          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-white leading-tight">
-            Why hire <br />
-            <span className="font-serif italic text-primary">Eduardo Inerarte?</span>
+          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-foreground leading-tight">
+            {t('about.title.whyHire', 'Why you should')} <br />
+            <span className="font-serif italic text-primary">{t('about.title.name', 'hire me')}</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
-            Senior Frontend Engineers are common. Architects who bridge extreme technical constraints, European enterprise scale, product intuition, and team-wide governance are rare.
+            {t(
+              'about.description',
+              'Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.'
+            )}
           </p>
         </div>
 
         {/* Dynamic 5-Card Stacked Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {ADVANTAGES.map((adv, index) => {
-            const Icon = adv.icon;
-            const isLastWide = index === 4;
+          {advantages.map((adv, index) => {
+            const Icon = adv.icon
+            const isLastWide = index === 4
+            const cardProps = fadeInView({ delay: index * 0.08 })
 
             return (
               <m.article
                 key={adv.id}
-                {...fadeInView({ delay: index * 0.08 })}
-                className={`group relative rounded-2xl border border-white/10 bg-white/[0.01] p-8 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/20 hover:bg-white/[0.02] ${
+                initial={cardProps.initial}
+                whileInView={cardProps.whileInView}
+                viewport={cardProps.viewport}
+                transition={cardProps.transition}
+                className={`group relative rounded-2xl border border-subtle bg-surface/30 p-8 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/20 hover:bg-surface/50 ${
                   isLastWide ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 <div className="space-y-6">
                   {/* Card Top Row */}
-                  <div className="flex items-center justify-between border-b border-white/5 pb-4">
+                  <div className="flex items-center justify-between border-b border-subtle pb-4">
                     <span className="font-serif text-3xl font-light italic text-foreground/20 group-hover:text-primary transition-colors duration-300">
                       /{adv.index}
                     </span>
-                    <div className="p-2 rounded-lg border border-white/5 bg-zinc-950 text-white/40 group-hover:text-primary transition-colors">
+                    <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/70 group-hover:text-primary transition-colors">
                       <Icon className="h-4 w-4" />
                     </div>
                   </div>
 
                   {/* Headlines */}
                   <div className="space-y-1">
-                    <h3 className="font-display text-lg font-semibold tracking-tight text-white group-hover:text-primary transition-colors duration-300">
+                    <h3 className="font-display text-lg font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
                       {adv.title}
                     </h3>
                     <p className="text-xs text-foreground/50 leading-relaxed font-light">
@@ -136,7 +144,10 @@ export const AboutSection = () => {
                   {/* Bullet Proof Points */}
                   <ul className="space-y-3 pt-2">
                     {adv.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2 text-xs leading-relaxed text-foreground/75 font-light font-display">
+                      <li
+                        key={bIdx}
+                        className="flex items-start gap-2 text-xs leading-relaxed text-foreground/75 font-light font-display"
+                      >
                         <span className="text-primary mt-1.5 shrink-0 block h-1 w-1 rounded-full bg-primary" />
                         <span>{bullet}</span>
                       </li>
@@ -144,11 +155,10 @@ export const AboutSection = () => {
                   </ul>
                 </div>
               </m.article>
-            );
+            )
           })}
         </div>
-
-      </div>
-    </section>
-  );
-};
+      </Container>
+    </Section>
+  )
+}

@@ -71,31 +71,39 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Person',
-          name: personalInfo.name,
-          jobTitle: personalInfo.title,
-          description: personalInfo.description,
-          url: SITE_URL,
-          image: OG_IMAGE,
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Copenhagen',
-            addressCountry: 'DK',
+        {JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: personalInfo.name,
+            jobTitle: 'Staff Frontend Engineer & Technical Leader',
+            description: personalInfo.description,
+            url: SITE_URL,
+            image: siteImage,
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Copenhagen',
+              addressCountry: 'DK',
+            },
+            knowsAbout: [
+              'React',
+              'TypeScript',
+              'Vite',
+              'Design Systems',
+              'Micro-Frontends',
+              'Monorepos',
+              'Web Performance',
+              'Frontend Architecture',
+            ],
+            sameAs: personalInfo.socials.map((s) => s.url).filter((u) => !u.startsWith('mailto:')),
           },
-          knowsAbout: [
-            'React',
-            'Vue.js',
-            'TypeScript',
-            'Node.js',
-            'Frontend Engineering',
-            'Full-Stack Development',
-            'Cloud Platforms',
-            'Web Performance',
-          ],
-          sameAs: personalInfo.socials.map((s) => s.url).filter((u) => !u.startsWith('mailto:')),
-        })}
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: `${personalInfo.name} — Staff Frontend Engineer & Technical Leader`,
+            url: SITE_URL,
+          }
+        ])}
       </script>
     </Helmet>
   );

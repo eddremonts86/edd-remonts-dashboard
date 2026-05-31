@@ -1,20 +1,21 @@
-import { m } from 'framer-motion';
-import { Layers, Database, Cpu, Sparkles } from 'lucide-react';
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { fadeInView } from '@/portfolio/lib/motion';
+import { m } from 'framer-motion'
+import { Layers, Database, Cpu, Sparkles } from 'lucide-react'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { fadeInView } from '@/portfolio/lib/motion'
 
 interface CuratedLayer {
-  id: string;
-  name: string;
-  annot: string;
-  Icon: typeof Layers;
-  items: string[];
-  rationale: string;
+  id: string
+  name: string
+  annot: string
+  Icon: typeof Layers
+  items: string[]
+  rationale: string
 }
 
 export const SkillsMarquee = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+  const leftColProps = fadeInView()
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
@@ -23,24 +24,27 @@ export const SkillsMarquee = () => {
         name: 'Architecture & Governance',
         annot: '/ WORKSPACE SYSTEMS',
         Icon: Layers,
-        items: ['Monorepo Boundaries', 'Design System Contracts', 'Decoupled Modules'],
-        rationale: 'Governing shared boundaries and modular contracts that allow distributed product teams to release features independently without breaking shared systems.',
+        items: ['Monorepo Boundaries', 'Design-System Contracts', 'Decoupled Modules'],
+        rationale:
+          'Enables distributed product teams to release features independently without breaking shared core architectures.',
       },
       {
         id: 'performance',
         name: 'Performance Engineering',
         annot: '/ LATENCY & CONVERSION',
         Icon: Cpu,
-        items: ['Interaction Latency', 'Optimistic Rendering', 'Core Web Vitals'],
-        rationale: 'Enforcing sub-12ms interaction responsiveness and perfect 100% scores across SaaS edges to secure top-tier user retention.',
+        items: ['Interaction Latency', 'Optimistic State Sync', 'Core Web Vitals'],
+        rationale:
+          'Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms.',
       },
       {
         id: 'leadership',
         name: 'Technical Leadership',
         annot: '/ ORG SYNCHRONIZATION',
         Icon: Sparkles,
-        items: ['Developer Experience', 'Mentorship Cultures', 'Rigorous Quality Gates'],
-        rationale: 'Active developer coaching, peer alignment, and automated quality gates that standardise delivery speeds by 30% across 20+ engineers.',
+        items: ['Developer Experience', 'Active Mentorship', 'Automated Quality Gates'],
+        rationale:
+          'Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship.',
       },
       {
         id: 'product',
@@ -48,10 +52,11 @@ export const SkillsMarquee = () => {
         annot: '/ FULL-STACK STRATEGY',
         Icon: Database,
         items: ['Domain Modeling', 'Stakeholder Coordination', 'State & Cache Contracts'],
-        rationale: 'Bridging the gap between engineering execution and business vision by translating product specs into robust type-safe cache architectures.',
+        rationale:
+          'Bridges execution gaps between engineering teams, product managers, and executive stakeholders.',
       },
-    ];
-  }, []);
+    ]
+  }, [])
 
   return (
     <section
@@ -63,10 +68,12 @@ export const SkillsMarquee = () => {
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
-          
           {/* Left Column: Section Title & Narrative (5 cols) */}
-          <m.div 
-            {...fadeInView()} 
+          <m.div
+            initial={leftColProps.initial}
+            whileInView={leftColProps.whileInView}
+            viewport={leftColProps.viewport}
+            transition={leftColProps.transition}
             className="lg:col-span-5 space-y-6"
           >
             <div>
@@ -74,11 +81,14 @@ export const SkillsMarquee = () => {
                 / TECHNICAL EXPERTISE
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-white leading-[1.1]">
-                Architectural <br />
-                <span className="font-serif italic text-primary">Capabilities</span>
+                {t('skills.title.architectural', 'Architectural')} <br />
+                <span className="font-serif italic text-primary">{t('skills.title.capabilities', 'Capabilities')}</span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
-                Technologies are commodities; architectural alignment and organization governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.
+                {t(
+                  'skills.description',
+                  'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.'
+                )}
               </p>
             </div>
           </m.div>
@@ -86,11 +96,15 @@ export const SkillsMarquee = () => {
           {/* Right Column: The Curated Stack Layers Matrix (7 cols) */}
           <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
             {curatedLayers.map((layer, index) => {
-              const Icon = layer.Icon;
+              const Icon = layer.Icon
+              const cardProps = fadeInView({ delay: index * 0.08 })
               return (
                 <m.div
                   key={layer.id}
-                  {...fadeInView({ delay: index * 0.08 })}
+                  initial={cardProps.initial}
+                  whileInView={cardProps.whileInView}
+                  viewport={cardProps.viewport}
+                  transition={cardProps.transition}
                   className="group relative rounded-2xl border border-subtle bg-background p-6 shadow-xs transition-all duration-500 hover:border-primary/20 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
                 >
                   {/* Visual coordinate annotation */}
@@ -99,12 +113,12 @@ export const SkillsMarquee = () => {
                   </div>
 
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/45 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/70 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
                       <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
-                        CAPABILITY_0{index + 1}
+                        Capability 0{index + 1}
                       </span>
                       <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
                         {layer.name}
@@ -114,7 +128,9 @@ export const SkillsMarquee = () => {
 
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
                   <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
-                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">/ VALUE PROOF</span>
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">
+                      / VALUE PROOF
+                    </span>
                     {layer.rationale}
                   </p>
 
@@ -130,12 +146,11 @@ export const SkillsMarquee = () => {
                     ))}
                   </div>
                 </m.div>
-              );
+              )
             })}
           </div>
-
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

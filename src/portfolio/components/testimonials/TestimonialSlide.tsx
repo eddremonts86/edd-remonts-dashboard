@@ -119,8 +119,8 @@ export const TestimonialSlide = ({
           <ShieldCheck className="h-3 w-3" />
           {authority.relationship}
         </span>
-        <span className="inline-flex items-center gap-1 rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[9px] uppercase tracking-wider text-foreground/50">
-          <CalendarRange className="h-3 w-3 text-foreground/40" />
+        <span className="inline-flex items-center gap-1 rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[9px] uppercase tracking-wider text-foreground/60">
+          <CalendarRange className="h-3 w-3 text-primary animate-pulse" />
           {authority.timeline}
         </span>
       </div>
@@ -131,8 +131,8 @@ export const TestimonialSlide = ({
       </blockquote>
 
       {/* Verification platform detail */}
-      <div className="mb-8 font-mono text-[10px] text-foreground/45 flex items-center gap-1.5 justify-center">
-        <Workflow className="h-3 w-3 text-foreground/35" />
+      <div className="mb-8 font-mono text-[10px] text-foreground/60 flex items-center gap-1.5 justify-center">
+        <Workflow className="h-3 w-3 text-primary" />
         <span>Context: {authority.context}</span>
       </div>
 
@@ -148,7 +148,7 @@ export const TestimonialSlide = ({
           <p className="text-base font-semibold tracking-wide text-foreground">
             {testimonial.author}
           </p>
-          <p className="font-mono text-xs uppercase tracking-widest text-foreground/40 mt-0.5">
+          <p className="font-mono text-xs uppercase tracking-widest text-foreground/60 mt-0.5">
             {[testimonial.role, testimonial.company].filter(Boolean).join(' · ')}
           </p>
         </div>

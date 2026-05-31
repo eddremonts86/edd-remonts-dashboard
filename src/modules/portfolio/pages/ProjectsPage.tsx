@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Table,
   TableBody,
@@ -13,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Textarea } from '@/components/ui/textarea'
 import {
   useCreateProject,
   useDeleteProject,
@@ -45,6 +45,21 @@ const EMPTY: ProjectInput = {
     complexity: '',
     results: '',
   })),
+}
+
+function getProjectField(form: ProjectInput, field: keyof ProjectInput): string {
+  switch (field) {
+    case 'title': return form.title ?? ''
+    case 'coverImageUrl': return form.coverImageUrl ?? ''
+    case 'link': return form.link ?? ''
+    case 'repositoryUrl': return form.repositoryUrl ?? ''
+    case 'internalImageUrl': return form.internalImageUrl ?? ''
+    case 'category': return form.category ?? ''
+    case 'scaleLabel': return form.scaleLabel ?? ''
+    case 'impactLabel': return form.impactLabel ?? ''
+    case 'architectureLabel': return form.architectureLabel ?? ''
+    default: return ''
+  }
 }
 
 export function ProjectsPage() {
@@ -95,6 +110,24 @@ export function ProjectsPage() {
     setOpen(true)
   }
 
+  function setProjectField(field: keyof ProjectInput, value: string) {
+    setForm((prev) => {
+      const updated = { ...prev }
+      switch (field) {
+        case 'title': updated.title = value; break
+        case 'coverImageUrl': updated.coverImageUrl = value; break
+        case 'link': updated.link = value; break
+        case 'repositoryUrl': updated.repositoryUrl = value; break
+        case 'internalImageUrl': updated.internalImageUrl = value; break
+        case 'category': updated.category = value; break
+        case 'scaleLabel': updated.scaleLabel = value; break
+        case 'impactLabel': updated.impactLabel = value; break
+        case 'architectureLabel': updated.architectureLabel = value; break
+      }
+      return updated
+    })
+  }
+
   function setTranslation(
     locale: (typeof LOCALES)[number],
     field: 'description' | 'problem' | 'context' | 'role' | 'decisions' | 'complexity' | 'results',
@@ -102,9 +135,20 @@ export function ProjectsPage() {
   ) {
     setForm((prev) => ({
       ...prev,
-      translations: prev.translations.map((tr) =>
-        tr.locale === locale ? { ...tr, [field]: value } : tr,
-      ),
+      translations: prev.translations.map((tr) => {
+        if (tr.locale !== locale) return tr
+        const updated = { ...tr }
+        switch (field) {
+          case 'description': updated.description = value; break
+          case 'problem': updated.problem = value; break
+          case 'context': updated.context = value; break
+          case 'role': updated.role = value; break
+          case 'decisions': updated.decisions = value; break
+          case 'complexity': updated.complexity = value; break
+          case 'results': updated.results = value; break
+        }
+        return updated
+      }),
     }))
   }
 
@@ -120,7 +164,9 @@ export function ProjectsPage() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.projects', 'Projects')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio.projects', 'Projects')}
+        </h1>
         <Button onClick={openCreate}>{t('common.add', 'Add')}</Button>
       </div>
 
@@ -146,7 +192,9 @@ export function ProjectsPage() {
             <TableRow key={project.id}>
               <TableCell className="font-medium">{project.title}</TableCell>
               <TableCell className="text-muted-foreground">{project.category}</TableCell>
-              <TableCell className="max-w-xs truncate text-muted-foreground">{project.impactLabel || '—'}</TableCell>
+              <TableCell className="max-w-xs truncate text-muted-foreground">
+                {project.impactLabel || '—'}
+              </TableCell>
               <TableCell>{project.featured ? '★' : '—'}</TableCell>
               <TableCell className="flex gap-2">
                 <Button size="sm" variant="outline" onClick={() => openEdit(project)}>
@@ -189,24 +237,27 @@ export function ProjectsPage() {
               <div key={field} className="space-y-1">
                 <Label>{label}</Label>
                 <Input
-                  value={(form[field] as string) ?? ''}
-                  onChange={(e) => setForm((f) => ({ ...f, [field]: e.target.value }))}
+                  value={getProjectField(form, field)}
+                  onChange={(e) => setProjectField(field, e.target.value)}
                 />
               </div>
             ))}
 
             {LOCALES.map((locale) => {
               const tr = form.translations.find((item) => item.locale === locale)
-              const localeLabel: Record<(typeof LOCALES)[number], string> = {
-                en: 'English',
-                es: 'Spanish',
-                dk: 'Danish',
-              }
               if (!tr) return null
+
+              const getLocaleLabel = (loc: (typeof LOCALES)[number]): string => {
+                switch (loc) {
+                  case 'en': return 'English'
+                  case 'es': return 'Spanish'
+                  case 'dk': return 'Danish'
+                }
+              }
 
               return (
                 <div key={locale} className="space-y-3 rounded-lg border p-4">
-                  <p className="text-sm font-medium text-muted-foreground">{localeLabel[locale]}</p>
+                  <p className="text-sm font-medium text-muted-foreground">{getLocaleLabel(locale)}</p>
 
                   <div className="space-y-1">
                     <Label>{t('projects.description', 'Description')}</Label>
@@ -219,32 +270,56 @@ export function ProjectsPage() {
 
                   <div className="space-y-1">
                     <Label>{t('projects.problem', 'Problem')}</Label>
-                    <Textarea rows={3} value={tr.problem} onChange={(e) => setTranslation(locale, 'problem', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.problem}
+                      onChange={(e) => setTranslation(locale, 'problem', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.context', 'Context')}</Label>
-                    <Textarea rows={2} value={tr.context} onChange={(e) => setTranslation(locale, 'context', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.context}
+                      onChange={(e) => setTranslation(locale, 'context', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.role', 'Role')}</Label>
-                    <Textarea rows={2} value={tr.role} onChange={(e) => setTranslation(locale, 'role', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.role}
+                      onChange={(e) => setTranslation(locale, 'role', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.decisions', 'Technical Decisions')}</Label>
-                    <Textarea rows={3} value={tr.decisions} onChange={(e) => setTranslation(locale, 'decisions', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.decisions}
+                      onChange={(e) => setTranslation(locale, 'decisions', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.complexity', 'Complexity')}</Label>
-                    <Textarea rows={2} value={tr.complexity} onChange={(e) => setTranslation(locale, 'complexity', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.complexity}
+                      onChange={(e) => setTranslation(locale, 'complexity', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.results', 'Results')}</Label>
-                    <Textarea rows={3} value={tr.results} onChange={(e) => setTranslation(locale, 'results', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.results}
+                      onChange={(e) => setTranslation(locale, 'results', e.target.value)}
+                    />
                   </div>
                 </div>
               )
@@ -254,6 +329,8 @@ export function ProjectsPage() {
               <input
                 type="checkbox"
                 id="featured"
+                name="featured"
+                aria-label={t('projects.featured', 'Featured')}
                 checked={form.featured ?? false}
                 onChange={(e) => setForm((f) => ({ ...f, featured: e.target.checked }))}
               />

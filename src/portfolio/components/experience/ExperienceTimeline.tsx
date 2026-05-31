@@ -1,84 +1,96 @@
 import { ExperienceCard, type EraData } from './ExperienceCard';
-
-const ERAS: EraData[] = [
-  {
-    id: 'platforms',
-    period: '2022 — PRESENT',
-    company: 'Schilling ApS & Resights',
-    role: 'Senior Frontend Architect',
-    bullets: [
-      '**Led frontend architecture** across 4 product teams and governed monorepo decoupled frameworks.',
-      '**Owned design system governance**, standardizing UI patterns for 20+ active frontend engineers.',
-      '**Reduced initial bundle payload by 42%**, dropping LCP load time from 7.5s to 1.4s.',
-      '**Increased feature delivery cycles by 30%** through isolated monorepo workspace sub-apps.',
-      '**Bridged coordination gaps** between product management, executive stakeholders, and engineering squads.'
-    ],
-    vector: 'Design Systems Governance · Monorepos · Decoupled Contracts · API Design'
-  },
-  {
-    id: 'scaling',
-    period: '2015 — 2022',
-    company: 'Novo Nordisk, Wunderman, GiG Media & Rebel Penguins',
-    role: 'Senior Frontend Developer & Team Lead',
-    bullets: [
-      '**Scaled high-traffic consumer portals** serving over 2,000,000 active monthly users in Europe.',
-      '**Engineered event-driven DOM virtualized caching** handling 500+ updates/sec with zero frames dropped.',
-      '**Slashed redundant server query overhead by 60%** via optimistic clientside caching layers.',
-      '**Mentored and coordinated 12+ developers** across hybrid agile sprint teams to elevate code quality.',
-      '**Maintained 100% Core Web Vitals score** across major consumer analytics and campaign portals.'
-    ],
-    vector: 'Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs'
-  },
-  {
-    id: 'genesis',
-    period: '2007 — 2015',
-    company: 'UCI National Library, ONEI, GEOCUBA & Viruta Studio',
-    role: 'Full-Stack Software Engineer & R&D Lead',
-    bullets: [
-      '**Engineered lightweight custom javascript engines** under severe Havana 56kbps dial-up resource limits.',
-      '**Cultivated lifelong codebase hygiene habits**, counting every byte to secure client delivery under limits.',
-      '**Built custom vanilla JS data registers** and state registers from first principles without modern frameworks.',
-      '**Led local dev team of 4 engineers** shipping custom GIS and data management tools under limits.',
-      '**Achieved extreme compression** enabling instant application load and use on legacy networks.'
-    ],
-    vector: 'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives'
-  }
-];
+import { Section, Container } from '../ui/layout/Section';
+import { useTranslation } from 'react-i18next';
 
 export const ExperienceTimeline = () => {
-  return (
-    <section
-      id="experience"
-      className="relative border-t border-subtle bg-background py-28 md:py-40"
-    >
-      {/* Blueprint grid Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-[1.2%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[36px_36px]" />
+  const { t } = useTranslation();
 
-      <div className="container mx-auto max-w-7xl px-6">
-        <div className="mb-24 flex flex-col justify-between gap-12 md:mb-32 md:flex-row">
-          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-[1.05]">
-            Professional <br />
+  const eras: EraData[] = [
+    {
+      id: 'platforms',
+      period: t('experience.eras.0.period', '2022 — PRESENT'),
+      company: 'Schilling ApS & Resights',
+      role: t('experience.eras.0.role', 'Staff Frontend Engineer & Technical Leader'),
+      stackContext: t('experience.eras.0.stackContext', 'Vite Monorepos · TypeScript · React · Next.js · Design-System Governance · Micro-Frontends'),
+      contributions: [
+        t('experience.eras.0.contributions.0', '**Led the modular decoupling** of a 6.2MB legacy console platform into sub-app partitions.'),
+        t('experience.eras.0.contributions.1', '**Owned design-system governance**, establishing shared module boundaries, standardizing contracts, and templates.'),
+        t('experience.eras.0.contributions.2', '**Mentored cross-functional engineering squads**, standardizing coding practices and setting rigorous CI/CD quality gates.')
+      ],
+      outcomes: [
+        t('experience.eras.0.outcomes.0', '**Slashed initial bundle size by 94%**, resulting in a LCP reduction to a perfect 1.4s.'),
+        t('experience.eras.0.outcomes.1', '**Accelerated feature delivery by 30%**, onboarding 20+ active engineers with zero regression incidents.')
+      ],
+      vector: t('experience.eras.0.vector', 'Design Systems Governance · Monorepos · Decoupled Contracts · API Design'),
+      logoUrl: '/projects/schilling-cover.png'
+    },
+    {
+      id: 'scaling',
+      period: t('experience.eras.1.period', '2015 — 2022'),
+      company: 'Novo Nordisk, Wunderman, GiG Media & Rebel Penguins',
+      role: t('experience.eras.1.role', 'Lead Frontend Developer'),
+      stackContext: t('experience.eras.1.stackContext', 'TanStack Query · Virtualized DOM · Event-Driven Architecture · React · Optimistic Cache Synchronization'),
+      contributions: [
+        t('experience.eras.1.contributions.0', '**Engineered high-frequency DOM memoization queues** to handle logistics operational tracking dashboards.'),
+        t('experience.eras.1.contributions.1', '**Integrated clientside query virtualization** to prevent DOM thrashing over unstable mobile networks.'),
+        t('experience.eras.1.contributions.2', '**Coordinated 12+ developers** across agile sprints, leading audits and setting performance SLAs.')
+      ],
+      outcomes: [
+        t('experience.eras.1.outcomes.0', '**Slashed query overhead by 60%**, dropping server-socket query costs significantly.'),
+        t('experience.eras.1.outcomes.1', '**Maintained steady 60FPS UI performance** on commercial viewports serving over 2,000,000 active European users.')
+      ],
+      vector: t('experience.eras.1.vector', 'Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs'),
+      logoUrl: '/projects/edd-remonts-cover.png'
+    },
+    {
+      id: 'genesis',
+      period: t('experience.eras.2.period', '2007 — 2015'),
+      company: 'UCI National Library, ONEI, GEOCUBA & Viruta Studio',
+      role: t('experience.eras.2.role', 'Full-Stack Software Engineer & R&D Lead'),
+      stackContext: t('experience.eras.2.stackContext', 'Vanilla JavaScript Primitives · Extreme Byte Compression · Lightweight Parsers · Relational DBs'),
+      contributions: [
+        t('experience.eras.2.contributions.0', '**Engineered lightweight, custom JavaScript engines** under Havana\'s severe 56kbps dial-up limits.'),
+        t('experience.eras.2.contributions.1', '**Cultivated rigid codebase-hygiene habits**, counting every byte to secure asset delivery on legacy networks.'),
+        t('experience.eras.2.contributions.2', '**Built custom vanilla JS data and state registers** from first principles without modern dependencies.')
+      ],
+      outcomes: [
+        t('experience.eras.2.outcomes.0', '**Achieved extreme asset compression**, enabling instant application loading on Cuba\'s legacy networks.'),
+        t('experience.eras.2.outcomes.1', '**Successfully delivered GIS applications** and core data portals with zero external framework dependencies.')
+      ],
+      vector: t('experience.eras.2.vector', 'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives'),
+      logoUrl: '/projects/zunzun-cover.png'
+    }
+  ];
+
+  return (
+    <Section id="experience" className="bg-background">
+      <Container>
+        <div className="mb-24 flex flex-col justify-between gap-12 md:mb-32 md:flex-row text-left">
+          <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-[1.05] text-white">
+            {t('experience.title', 'Professional')} <br />
             <span className="block font-serif italic text-primary">
-              Experience & History
+              {t('experience.titleAccent', 'Experience & History')}
             </span>
           </h2>
           <div className="max-w-md md:self-end">
             <p className="text-foreground/60 text-sm leading-relaxed md:text-base font-light font-display">
-              18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.
+              {t('experience.subtitle', '18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.')}
             </p>
           </div>
         </div>
 
-        <div className="relative">
+        <div role="table" aria-label="Experience Era Table" className="relative w-full">
           <div
             aria-hidden
             className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-linear-to-b from-transparent via-border-subtle to-transparent md:block"
           />
-          {ERAS.map((era, index) => (
-            <ExperienceCard key={era.id} era={era} index={index} />
-          ))}
+          <div role="rowgroup">
+            {eras.map((era, index) => (
+              <ExperienceCard key={era.id} era={era} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };

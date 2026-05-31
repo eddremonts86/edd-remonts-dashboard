@@ -10,11 +10,11 @@
     "discover": "Discover"
   },
   "hero": {
-    "available": "Senior Frontend Architect",
+    "available": "Staff Frontend Engineer",
     "greeting": "Hello, I'm",
-    "role": "Senior Frontend Engineer",
-    "titleLine1": "Senior Frontend Engineer",
-    "titleLine2": "building large-scale SaaS platforms.",
+    "role": "Staff Frontend Engineer & Technical Leader",
+    "titleLine1": "Staff Frontend Engineer",
+    "titleLine2": "& Technical Leader",
     "explore": "Explore My Work",
     "scroll": "Scroll",
     "nowLabel": "Now",
@@ -29,11 +29,58 @@
       "build": "Build",
       "validate": "Validate",
       "ship": "Ship"
+    },
+    "outcomeHeader": "18+ years of engineering leadership delivering verified software speed and architectural stability:",
+    "outcomeBullets": [
+      "I slashed initial bundle sizes by 94%, enabling our engineering teams to deploy independently without breaking shared systems.",
+      "I established unified design-system governance adopted by 20+ active engineers across 4 cross-functional squads.",
+      "I secured perfect 100% Core Web Vitals and sub-12ms interaction responsiveness at European enterprise scale."
+    ],
+    "metrics": {
+      "title": "/ PROVEN PERFORMANCE METRICS",
+      "verified": "[VERIFIED]",
+      "bundle": {
+        "value": "42%",
+        "label": "Bundle Reduction",
+        "desc": "Decoupled architectural boundaries from 6.2MB down to 350KB."
+      },
+      "delivery": {
+        "value": "30%",
+        "label": "Faster Delivery",
+        "desc": "Accelerated delivery via contract-based workspace isolation."
+      },
+      "vitals": {
+        "value": "100%",
+        "label": "Core Web Vitals",
+        "desc": "Secured flawless Lighthouse scores across complex user paths."
+      },
+      "impact": {
+        "value": "20+",
+        "label": "Engineers Impacted",
+        "desc": "Mentored engineers, governed design systems, and aligned teams."
+      },
+      "status": "STATUS: MEASURED & REPORTED",
+      "engagement": "ENGAGEMENT: FULL-TIME"
+    },
+    "availability": {
+      "title": "Hiring & Engagement Status",
+      "timeline": {
+        "label": "TIMELINE",
+        "value": "Q3 2026 Ready"
+      },
+      "location": {
+        "label": "LOCATION",
+        "value": "Copenhagen, DK"
+      },
+      "engagement": {
+        "label": "ENGAGEMENT",
+        "value": "Remote / Hybrid"
+      }
     }
   },
   "personalInfo": {
-    "title": "Senior Frontend Engineer with Full-Stack Roots",
-    "description": "Frontend Architect with 18+ years of experience building enterprise platforms, SaaS products, and high-traffic applications across Europe.",
+    "title": "Staff Frontend Engineer with Full-Stack Roots",
+    "description": "Staff Frontend Engineer & Technical Leader with 18+ years of experience building enterprise platforms, SaaS products, and high-traffic applications across Europe.",
     "location": "Copenhagen, Denmark"
   },
   "skills": {
@@ -46,8 +93,12 @@
     "fullStackEmpty": "The full stack is already represented in core expertise."
   },
   "about": {
-    "title": "Origins &",
-    "titleAccent": "Craft",
+    "different": "/ WHAT MAKES ME DIFFERENT",
+    "title": {
+      "whyHire": "Why you should",
+      "name": "hire me?"
+    },
+    "description": "Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
@@ -63,6 +114,63 @@
         "description": "Speed means nothing without stability. I build robust microservices leveraging modern Next.js/React meta-frameworks prioritizing zero-downtime overhauls."
       }
     },
+    "advantages": [
+      {
+        "id": "experience",
+        "index": "01",
+        "title": "18 Years of Engineering Maturity",
+        "subtitle": "A full-stack foundation evolved into elite frontend architecture.",
+        "bullets": [
+          "Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.",
+          "I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.",
+          "I combine absolute visual craft with production-grade architectural patterns."
+        ]
+      },
+      {
+        "id": "constraints",
+        "index": "02",
+        "title": "Constraint-Born Efficiency DNA",
+        "subtitle": "Obsessive performance habits forged under extreme resource limits.",
+        "bullets": [
+          "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
+          "A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.",
+          "I treat web performance not as a post-launch polish, but as a critical business-conversion driver."
+        ]
+      },
+      {
+        "id": "scale",
+        "index": "03",
+        "title": "European Enterprise-SaaS Scale",
+        "subtitle": "Proven authority scaling complex software platforms in Copenhagen.",
+        "bullets": [
+          "I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.",
+          "I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.",
+          "I established strict modular boundaries to keep systems clean, testable, and highly composable."
+        ]
+      },
+      {
+        "id": "product",
+        "index": "04",
+        "title": "Product-Minded Systems Architect",
+        "subtitle": "Translating product vision and design system maturity into structured code.",
+        "bullets": [
+          "I align technical decisions, product metrics, and design-system aesthetics.",
+          "I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.",
+          "I design user interfaces that are visually premium, highly responsive, and operationally maintainable."
+        ]
+      },
+      {
+        "id": "leadership",
+        "index": "05",
+        "title": "Active Technical Leadership & Governance",
+        "subtitle": "Orchestrating teams and mentorship cultures that scale.",
+        "bullets": [
+          "I governed technical standards adopted by 20+ engineers across 4 autonomous product teams.",
+          "I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.",
+          "I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence."
+        ]
+      }
+    ],
     "servicesTitle": "What I Deliver.",
     "servicesSub": "Delivering premium digital experiences.",
     "originsLabel": "Origins",
@@ -80,13 +188,17 @@
   },
   "experience": {
     "title": "Professional",
-    "titleAccent": "Journey",
+    "titleAccent": "Experience & History",
     "techArsenal": "Tech Arsenal",
-    "subtitle": "From public-sector platforms in Cuba to product teams in Copenhagen, a timeline spanning 2007 to today.",
+    "subtitle": "18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.",
     "present": "Present day",
+    "milestoneStack": "Milestone Stack",
+    "techStackScope": "/ Tech Stack & Scope",
+    "contributionsHeader": "/ Core Leadership & Contributions",
+    "outcomesHeader": "/ Verified Business Outcomes",
     "items": {
       "12": {
-        "role": "Senior Frontend Developer",
+        "role": "Staff Frontend Engineer & Technical Leader",
         "description": "Leading frontend development for Schilling web applications and data products, working with React 18/19, TypeScript, Node.js, Tailwind and Shadcn UI to scale complex real-estate workflows."
       },
       "11": {
@@ -133,7 +245,63 @@
         "role": "Full Stack Developer - Junior Developers Manager",
         "description": "Started my professional career on the National Library project at UCI, building Drupal, PHP, and MySQL solutions while coordinating junior developers as the team matured."
       }
-    }
+    },
+    "eras": [
+      {
+        "id": "platforms",
+        "period": "2022 — PRESENT",
+        "company": "Schilling ApS & Resights",
+        "role": "Staff Frontend Engineer & Technical Leader",
+        "stackContext": "Vite Monorepos · TypeScript · React · Next.js · Design-System Governance · Micro-Frontends",
+        "contributions": [
+          "**Led the modular decoupling** of a 6.2MB legacy console platform into sub-app partitions.",
+          "**Owned design-system governance**, establishing shared module boundaries, standardizing contracts, and templates.",
+          "**Mentored cross-functional engineering squads**, standardizing coding practices and setting rigorous CI/CD quality gates."
+        ],
+        "outcomes": [
+          "**Slashed initial bundle size by 94%**, resulting in a LCP reduction to a perfect 1.4s.",
+          "**Accelerated feature delivery by 30%**, onboarding 20+ active engineers with zero regression incidents."
+        ],
+        "vector": "Design Systems Governance · Monorepos · Decoupled Contracts · API Design",
+        "logoUrl": "/projects/schilling-cover.png"
+      },
+      {
+        "id": "scaling",
+        "period": "2015 — 2022",
+        "company": "Novo Nordisk, Wunderman, GiG Media & Rebel Penguins",
+        "role": "Lead Frontend Developer",
+        "stackContext": "TanStack Query · Virtualized DOM · Event-Driven Architecture · React · Optimistic Cache Synchronization",
+        "contributions": [
+          "**Engineered high-frequency DOM memoization queues** to handle logistics operational tracking dashboards.",
+          "**Integrated clientside query virtualization** to prevent DOM thrashing over unstable mobile networks.",
+          "**Coordinated 12+ developers** across agile sprints, leading audits and setting performance SLAs."
+        ],
+        "outcomes": [
+          "**Slashed query overhead by 60%**, dropping server-socket query costs significantly.",
+          "**Maintained steady 60FPS UI performance** on commercial viewports serving over 2,000,000 active European users."
+        ],
+        "vector": "Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs",
+        "logoUrl": "/projects/edd-remonts-cover.png"
+      },
+      {
+        "id": "genesis",
+        "period": "2007 — 2015",
+        "company": "UCI National Library, ONEI, GEOCUBA & Viruta Studio",
+        "role": "Full-Stack Software Engineer & R&D Lead",
+        "stackContext": "Vanilla JavaScript Primitives · Extreme Byte Compression · Lightweight Parsers · Relational DBs",
+        "contributions": [
+          "**Engineered lightweight, custom JavaScript engines** under Havana's severe 56kbps dial-up limits.",
+          "**Cultivated rigid codebase-hygiene habits**, counting every byte to secure asset delivery on legacy networks.",
+          "**Built custom vanilla JS data and state registers** from first principles without modern dependencies."
+        ],
+        "outcomes": [
+          "**Achieved extreme asset compression**, enabling instant application loading on Cuba's legacy networks.",
+          "**Successfully delivered GIS applications** and core data portals with zero external framework dependencies."
+        ],
+        "vector": "Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives",
+        "logoUrl": "/projects/zunzun-cover.png"
+      }
+    ]
   },
   "projects": {
     "title": "My Recent",
@@ -154,12 +322,101 @@
       "all": "All",
       "frontend": "Frontend",
       "fullStack": "Full Stack"
+    },
+    "stories": {
+      "tradeoffTitle": "ARCHITECTURAL TRADEOFF LEDGER",
+      "pathChosen": "✓ PATH CHOSEN",
+      "pathRejected": "✗ PATH REJECTED",
+      "viewInterface": "/ VIEW FULL INTERFACE",
+      "viewArchitecture": "/ VIEW ARCHITECTURE",
+      "metricOutcomes": "/ Metric Outcomes",
+      "metricSubtitle": "What we changed / Why it mattered",
+      "outcomePayload": "42% Payload Reduction [6.2MB → 350KB]",
+      "outcomePayloadDesc": "Vite-based monorepo partitions decoupled legacy assets, securing a perfect 1.4s LCP load time.",
+      "outcomeDeduplication": "60% Request Deduplication [500+ updates/sec]",
+      "outcomeDeduplicationDesc": "Virtualized-DOM rendering throttles prevented mobile thrashing and cut server-infrastructure costs.",
+      "outcomeVitals": "100% Core Web Vitals [INP Sub-12ms]",
+      "outcomeVitalsDesc": "Localized reactive leaf nodes completely isolated visual mutations from the global state tree.",
+      "modal": {
+        "topology": "SYSTEM TOPOLOGY",
+        "diagnostic": "DIAGNOSTIC_SNAP",
+        "verified": "VERIFIED: OK",
+        "standards": "100% STANDARDS VERIFIED",
+        "workspace": "MONOREPO WORKSPACE [SCHILLING]",
+        "stream": "LIVE TRANSACTIONAL OPERATIONS STREAM",
+        "store": "Global Store",
+        "registry": "Client Registry",
+        "leaf": "Isolated Leaf"
+      },
+      "schilling": {
+        "title": "Schilling SaaS Enterprise Platform",
+        "category": "Enterprise Platform Architecture",
+        "scaleLabel": "100k+ Lines of Code",
+        "impactLabel": "42% Payload Cut",
+        "architectureLabel": "Micro-Frontend Core",
+        "context": "Enterprise publishing SaaS serving large media organizations across Europe with high-data-density requirements.",
+        "challenge": "Monolithic bundle sizes exceeded 6MB, which triggered LCP delays over 7.5s, raised bounce rates, and caused high-load abandonment. Complete core platform rewrites were strictly forbidden due to legacy billing and data-structure regression risks.",
+        "decision": "Rather than freeze features for a multi-year rewrite, I designed Vite-based monorepo partitions, enabled route isolation, and established strict semantic contracts between modules, allowing product teams to build and ship independently.",
+        "businessImpact": "Slashed initial bundle payloads by 94% (6.2MB to 350KB), which dropped customer abandonment to near-zero, accelerated feature-delivery speeds by 30%, and allowed 20+ engineers to ship features with zero regressions.",
+        "tradeoffsChosen": "Scoped monorepo sub-app partitions with strict semantic-version contracts to support independent, low-risk releases.",
+        "tradeoffsRejected": "Monolithic rewrite, avoiding a 12-month feature freeze and multi-million-euro regression risks."
+      },
+      "edd-remonts": {
+        "title": "Edd Remonts System Dashboard",
+        "category": "Real-Time Transactional Dashboard",
+        "scaleLabel": "Real-time Event Stream",
+        "impactLabel": "98 Lighthouse Score",
+        "architectureLabel": "TanStack DB Synchronization",
+        "context": "Real-time logistics tracking and transactional control dashboard managing high-frequency operational KPIs.",
+        "challenge": "Constant high-frequency data polling saturated client sockets, triggered heavy server-side load, and caused severe page-load latency. Direct WebSockets caused massive DOM thrashing and layout shifts on unstable mobile networks.",
+        "decision": "Engineered virtualized-DOM memoization queues, integrated TanStack Query for optimistic caching, and isolated rendering updates strictly to active cells instead of re-rendering whole list panels.",
+        "businessImpact": "Slashed socket query traffic by 60%, reduced server-infrastructure costs, and secured a perfect 98 Lighthouse score. The application runs at a steady 60FPS on commercial-grade mobile devices even under intensive real-time transactional streams (500+ updates/sec).",
+        "tradeoffsChosen": "Optimistic state synchronization coupled with a 150ms virtualized-DOM throttle to isolate CPU load.",
+        "tradeoffsRejected": "Raw WebSockets under 10ms, which would saturate mobile sockets and cause clientside layout shifts."
+      },
+      "zunzun": {
+        "title": "Zunzun.io Platform Engine",
+        "category": "Full-Stack Performance Ecosystem",
+        "scaleLabel": "Sub-millisecond Rendering",
+        "impactLabel": "100% Core Web Vitals",
+        "architectureLabel": "Modular State Framework",
+        "context": "Full-stack canvas-builder and layout-assembler focused on modular templates and fast static-site regeneration.",
+        "challenge": "Canvas assembly of hundreds of elements triggered global state-re-render cascades, spiked key interaction delays (INP), and degraded user experiences.",
+        "decision": "Re-architected state flow to use localized reactive nodes, treated layout elements as independent registers, and completely isolated visual mutations from the global state tree to prevent cascades.",
+        "businessImpact": "Guaranteed sub-12ms response times, maintained a 100% Core Web Vitals score across all outputs, and eliminated drop-offs during intensive real-time editing.",
+        "tradeoffsChosen": "Strict composite-UI layout nodes operating as independent registers to isolate mutations to leaves.",
+        "tradeoffsRejected": "Single global-state dispatch, avoiding global re-render cascades that spike key input latency (INP)."
+      }
     }
   },
   "contact": {
-    "title": "Let's",
-    "titleAccent": "Connect",
-    "subtitle": "Ready to bring your next ambitious project to life? Drop me a message and let's craft something extraordinary.",
+    "title": "Let's Build",
+    "titleAccent": "Something Together",
+    "subtitle": "Ready to discuss a project, hiring a Staff Engineer, or technical consulting? Send a message and let's start a conversation.",
+    "eyebrow": "/ GET IN TOUCH",
+    "params": {
+      "title": "Hiring & Engagement Parameters",
+      "status": "STATUS: AVAILABLE",
+      "avail": {
+        "label": "AVAILABILITY STATUS",
+        "value": "Active & Ready",
+        "sub": "Immediate Q3 2026 Engagement"
+      },
+      "geo": {
+        "label": "GEOGRAPHY & MODE",
+        "value": "Copenhagen, DK",
+        "sub": "EU Remote-Friendly (GMT+2/1)"
+      },
+      "roles": {
+        "label": "PREFERRED TARGET ROLES",
+        "value": "Staff Engineer · Technical Leader · Frontend Architect · Systems Consultant",
+        "sub": "Specialized in enterprise-SaaS scaling and platform decoupling"
+      },
+      "emailLabel": "Direct Email",
+      "locationLabel": "Location",
+      "locationValue": "Copenhagen, Denmark"
+    },
+    "sendMsg": "Send a Message",
     "form": {
       "name": "Your Name",
       "email": "Your Email",
@@ -169,7 +426,9 @@
       "send": "Send Message",
       "submitting": "Sending...",
       "error": "Error. Please try emailing me directly.",
-      "target": "Initiate Connection"
+      "target": "Initiate Connection",
+      "privacyNotice": "* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.",
+      "hpLabel": "Do not fill this out if you are human"
     },
     "success": {
       "title": "Message Sent",
@@ -195,25 +454,114 @@
     "heading": "Engineering throughput, in measurable units.",
     "lead": "A snapshot of the surface area covered: the stack, the audits, the reliability and the teams shipped alongside.",
     "telemetry": "Portfolio telemetry",
-    "status": "Operational"
+    "status": "Operational",
+    "businessImpact": {
+      "title": "Measurable",
+      "titleAccent": "Business Outcomes",
+      "subtitle": "Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.",
+      "measuredOutcome": "Measured Outcome",
+      "techAction": "Technical Action",
+      "businessBenefit": "Business Benefit",
+      "proof": "[Proof Link →]"
+    },
+    "impactCards": {
+      "payload": {
+        "metric": "42%",
+        "title": "Payload Reduction",
+        "whatChanged": "Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.",
+        "whatItImproved": "Enabled distributed teams to release features independently, and improved LCP to 1.4s."
+      },
+      "shipping": {
+        "metric": "30%",
+        "title": "Faster Shipping",
+        "whatChanged": "Coordinated design-system contracts, component standards, and modular versioning guidelines.",
+        "whatItImproved": "Accelerated overall feature-delivery speeds by 30% across 20+ frontend engineers."
+      },
+      "latency": {
+        "metric": "Sub-12ms",
+        "title": "Interaction Latency",
+        "whatChanged": "Restructured site-builder rendering architecture to isolate mutation cycles to individual cells.",
+        "whatItImproved": "Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals."
+      },
+      "throughput": {
+        "metric": "98 Score",
+        "title": "Performance Uptime",
+        "whatChanged": "Optimized real-time logistics socket rendering with virtualized list memoization queues.",
+        "whatItImproved": "Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%."
+      }
+    }
   },
   "authority": {
-    "eyebrow": "Engineering Authority",
-    "title": "From execution to systems leadership",
-    "subtitle": "Beyond shipping interfaces: product engineering, scalable architecture, and measurable outcomes.",
+    "eyebrow": "/ LEADERSHIP & PHILOSOPHY",
+    "title": "Engineering",
+    "titleAccent": "Leadership",
+    "subtitle": "Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.",
     "principlesLabel": "Engineering principles",
     "practiceLabel": "How it shows in practice",
     "notesTitle": "Engineering notes",
     "ctaLabel": "Next step",
     "cta": "Looking for an engineer who owns systems, not just tickets? Let's talk.",
     "ctaButton": "Start a conversation",
+    "lessonsHeader": "Lessons From 18 Years",
+    "howIWorkHeader": "How I Work",
+    "partnershipHeader": "/ PARTNERSHIP",
+    "partnershipDesc": "Looking for a Staff Engineer who coordinates systems, governs boundaries, and mentors squads? Let’s talk.",
     "tabs": {
       "architecture": "Architecture",
       "dx": "Developer Experience",
       "testing": "Testing & Quality",
       "performance": "Performance",
       "ai": "AI-assisted workflow"
-    }
+    },
+    "lessons": [
+      {
+        "index": "01",
+        "title": "Architecture is People",
+        "body": "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint."
+      },
+      {
+        "index": "02",
+        "title": "Governance Enables Velocity",
+        "body": "Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity."
+      },
+      {
+        "index": "03",
+        "title": "Performance is a Business Metric",
+        "body": "Core Web Vitals, page-load latency, and interaction responsiveness directly determine user-retention and business-conversion rates. Treating performance as post-launch polish is a costly operational tax."
+      },
+      {
+        "index": "04",
+        "title": "Complexity Compounds",
+        "body": "The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti."
+      },
+      {
+        "index": "05",
+        "title": "The Best Systems are Boring",
+        "body": "Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity."
+      }
+    ],
+    "howIWork": [
+      {
+        "title": "Pragmatic Decision-Making",
+        "body": "Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue."
+      },
+      {
+        "title": "Active Mentorship & Trust",
+        "body": "Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers."
+      },
+      {
+        "title": "Product-Minded Alignment",
+        "body": "Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps."
+      },
+      {
+        "title": "Debt-Minimization Strategy",
+        "body": "Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades."
+      },
+      {
+        "title": "Empowered Autonomy",
+        "body": "Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy."
+      }
+    ]
   },
   "testimonials": [
     {

@@ -84,7 +84,7 @@ export const StatsCounter = () => {
   ];
 
   return (
-    <section className="relative z-10 overflow-hidden border-y border-subtle bg-[#09090b] py-16 md:py-20 select-none">
+    <section className="relative z-10 overflow-hidden border-y border-subtle bg-surface py-16 md:py-20 select-none">
       {/* Visual blueprint overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[40px_40px]" />
 
@@ -100,7 +100,7 @@ export const StatsCounter = () => {
                 {stat.label}
               </span>
               
-              <h3 className="font-display text-3xl font-light tracking-tight text-white md:text-4xl whitespace-nowrap">
+              <h3 className="font-display text-3xl font-light tracking-tight text-foreground md:text-4xl whitespace-nowrap">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
               </h3>
 

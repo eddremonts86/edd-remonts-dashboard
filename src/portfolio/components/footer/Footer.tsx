@@ -20,7 +20,7 @@ export const Footer = () => {
   const familyName = nameParts.slice(1).join(' ');
 
   return (
-    <footer className="relative bg-[#09090b] text-neutral-100 border-t border-white/5 pb-[max(3rem,env(safe-area-inset-bottom))] pt-20 selection:bg-primary selection:text-white overflow-hidden w-full">
+    <footer className="relative bg-background text-foreground border-t border-subtle pb-[max(3rem,env(safe-area-inset-bottom))] pt-20 selection:bg-primary selection:text-primary-foreground overflow-hidden w-full">
       {/* Decorative topology coordinates */}
       <div className="absolute inset-0 pointer-events-none opacity-[1%] bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[20px_20px]" />
 
@@ -37,16 +37,16 @@ export const Footer = () => {
           {/* Col 1: Identity (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <h3 className="font-serif text-3xl font-light tracking-tight text-white md:text-4xl uppercase">
+              <h3 className="font-serif text-3xl font-light tracking-tight text-foreground md:text-4xl uppercase">
                 {givenName} <span className="font-serif italic text-primary">{familyName}</span>.
               </h3>
-              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mt-2 flex items-center gap-1.5">
+              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/60 mt-2 flex items-center gap-1.5">
                 <Server className="h-3 w-3 text-primary animate-pulse" />
-                Platforms & Systems Engineer
+                {t('footer.sub', 'Platforms & Systems Engineer')}
               </p>
             </div>
             
-            <p className="text-xs leading-relaxed text-white/50 max-w-xl font-light">
+            <p className="text-xs leading-relaxed text-foreground/60 max-w-xl font-light">
               {t(
                 'footer.manifesto',
                 'Building resilient product systems since 2007. From Cuba to Copenhagen. Still obsessed with optimized rendering, fast interfaces, and strict boundary control.',
@@ -57,15 +57,15 @@ export const Footer = () => {
           {/* Col 2: Navigation Columns (5 cols) */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:justify-self-end">
             <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35 block font-semibold">
-                NAVIGATE
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
+                {t('footer.nav.heading', 'NAVIGATE')}
               </span>
               <div className="flex flex-col gap-2.5 font-mono text-[10px]">
                 {FOOTER_NAV.map((section) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="text-white/55 hover:text-primary transition-colors duration-200 w-fit"
+                    className="text-foreground/60 hover:text-primary transition-colors duration-200 w-fit"
                   >
                     /{section.id.toUpperCase()}
                   </a>
@@ -74,8 +74,8 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35 block font-semibold">
-                ELSEWHERE
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
+                {t('footer.social.heading', 'ELSEWHERE')}
               </span>
               <div className="flex flex-col gap-2.5 font-mono text-[10px]">
                 {personalInfo.socials.map((social) => (
@@ -84,7 +84,7 @@ export const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/55 hover:text-primary transition-colors duration-200 flex items-center gap-1.5 w-fit"
+                    className="text-foreground/60 hover:text-primary transition-colors duration-200 flex items-center gap-1.5 w-fit"
                   >
                     {social.name.toUpperCase()}
                   </a>
@@ -95,13 +95,13 @@ export const Footer = () => {
         </div>
 
         {/* ── Bottom rule: copyright & Back to Top ────────────────── */}
-        <div className="flex flex-col items-start justify-between gap-6 border-t border-white/5 py-8 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle py-8 sm:flex-row sm:items-center">
           <div className="space-y-1">
-            <p className="font-mono text-[9px] uppercase tracking-widest text-white/30">
+            <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/60">
               &copy; {currentYear} {personalInfo.name}.{' '}
               {t('footer.rights', 'All rights reserved.')}
             </p>
-            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-white/20">
+            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/60">
               {t('footer.builtWith', 'Engineered with React 19 & Anime minimalism.')}
             </p>
           </div>
@@ -109,10 +109,10 @@ export const Footer = () => {
           <button
             onClick={scrollToTop}
             type="button"
-            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2 font-mono text-[9px] uppercase tracking-widest text-white/50 hover:text-white hover:border-primary/45 hover:bg-primary/5 transition-all duration-300 cursor-pointer"
+            className="group inline-flex items-center gap-2 rounded-full border border-subtle bg-surface/30 px-4 py-2 font-mono text-[9px] uppercase tracking-widest text-foreground/50 hover:text-primary hover:border-primary hover:bg-primary/5 transition-all duration-300 cursor-pointer"
           >
             <Layers className="h-3 w-3 text-primary animate-pulse" />
-            <span>Back to Top</span>
+            <span>{t('footer.backToTop', 'Back to Top')}</span>
             <ArrowUp className="h-3 w-3 transition-transform group-hover:-translate-y-0.5" />
           </button>
         </div>

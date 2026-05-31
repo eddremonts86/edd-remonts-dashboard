@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ThemeProviderContext, type Theme, type ThemeProviderProps } from './ThemeContextBase';
 import { STORAGE_KEYS } from '@/portfolio/lib/storageKeys';
 
@@ -8,17 +8,36 @@ export const ThemeProvider = ({
   storageKey = STORAGE_KEYS.theme,
   ...props
 }: ThemeProviderProps) => {
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const stored = localStorage.getItem(storageKey);
+    if (stored) {
+      setTheme(stored as Theme);
+    }
+  }, [storageKey]);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const root = window.document.documentElement;
 
     root.classList.remove('light', 'dark');
-    root.classList.add('dark');
-  }, []);
+
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.classList.add(systemTheme);
+    } else {
+      root.classList.add(theme);
+    }
+  }, [theme]);
 
   const value = {
-    theme: 'dark' as Theme,
-    setTheme: () => {},
+    theme,
+    setTheme: (t: Theme) => {
+      localStorage.setItem(storageKey, t);
+      setTheme(t);
+    },
   };
 
   return (
