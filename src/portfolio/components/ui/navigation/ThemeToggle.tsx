@@ -14,8 +14,8 @@ export const ThemeToggle = () => {
         onClick={() => setTheme('light')}
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
           theme === 'light'
-            ? 'bg-primary text-white shadow-md'
-            : 'text-foreground/45 hover:text-foreground hover:bg-foreground/[0.05]'
+            ? 'bg-primary text-primary-foreground shadow-md'
+            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
         }`}
         aria-label="Light mode"
         title="Light Mode"
@@ -26,8 +26,8 @@ export const ThemeToggle = () => {
         onClick={() => setTheme('dark')}
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
           theme === 'dark'
-            ? 'bg-primary text-white shadow-md'
-            : 'text-foreground/45 hover:text-foreground hover:bg-foreground/[0.05]'
+            ? 'bg-primary text-primary-foreground shadow-md'
+            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
         }`}
         aria-label="Dark mode"
         title="Dark Mode"
@@ -38,8 +38,8 @@ export const ThemeToggle = () => {
         onClick={() => setTheme('system')}
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
           theme === 'system'
-            ? 'bg-primary text-white shadow-md'
-            : 'text-foreground/45 hover:text-foreground hover:bg-foreground/[0.05]'
+            ? 'bg-primary text-primary-foreground shadow-md'
+            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
         }`}
         aria-label="System mode"
         title="System Mode"

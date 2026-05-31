@@ -40,7 +40,7 @@ export const Footer = () => {
               <h3 className="font-serif text-3xl font-light tracking-tight text-foreground md:text-4xl uppercase">
                 {givenName} <span className="font-serif italic text-primary">{familyName}</span>.
               </h3>
-              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/45 mt-2 flex items-center gap-1.5">
+              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/60 mt-2 flex items-center gap-1.5">
                 <Server className="h-3 w-3 text-primary animate-pulse" />
                 {t('footer.sub', 'Platforms & Systems Engineer')}
               </p>
@@ -57,7 +57,7 @@ export const Footer = () => {
           {/* Col 2: Navigation Columns (5 cols) */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:justify-self-end">
             <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/40 block font-semibold">
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
                 {t('footer.nav.heading', 'NAVIGATE')}
               </span>
               <div className="flex flex-col gap-2.5 font-mono text-[10px]">
@@ -74,7 +74,7 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/40 block font-semibold">
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
                 {t('footer.social.heading', 'ELSEWHERE')}
               </span>
               <div className="flex flex-col gap-2.5 font-mono text-[10px]">
@@ -97,11 +97,11 @@ export const Footer = () => {
         {/* ── Bottom rule: copyright & Back to Top ────────────────── */}
         <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle py-8 sm:flex-row sm:items-center">
           <div className="space-y-1">
-            <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/40">
+            <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/60">
               &copy; {currentYear} {personalInfo.name}.{' '}
               {t('footer.rights', 'All rights reserved.')}
             </p>
-            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/30">
+            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/60">
               {t('footer.builtWith', 'Engineered with React 19 & Anime minimalism.')}
             </p>
           </div>

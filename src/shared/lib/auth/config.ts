@@ -47,14 +47,25 @@ export function isClerkEnabled() {
 }
 
 export function getBetterAuthUrl() {
-  return (
-    readEnvValue('BETTER_AUTH_URL') ??
-    readEnvValue('VITE_BETTER_AUTH_URL') ??
-    // In the browser, fall back to the current origin so the auth client
-    // always points to the same host as the app (avoids CORS and SSR
-    // hydration mismatches when VITE_BETTER_AUTH_URL is not baked in).
-    (typeof window !== 'undefined' ? window.location.origin : DEFAULT_BETTER_AUTH_URL)
-  )
+  const envUrl = readEnvValue('BETTER_AUTH_URL') ?? readEnvValue('VITE_BETTER_AUTH_URL')
+  if (typeof window !== 'undefined') {
+    // If the browser origin is different from the env-configured URL,
+    // dynamically fall back to the active browser origin to prevent CORS
+    // policy violations when previewing on local ports (like http://localhost:4173).
+    if (envUrl) {
+      try {
+        const parsed = new URL(envUrl)
+        if (parsed.host !== window.location.host) {
+          return window.location.origin
+        }
+      } catch {
+        // invalid URL format, ignore
+      }
+      return envUrl
+    }
+    return window.location.origin
+  }
+  return envUrl ?? DEFAULT_BETTER_AUTH_URL
 }
 
 export function getBetterAuthSecret() {

@@ -173,7 +173,7 @@ export const ProductStories = () => {
                       <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
                     {/* URL Input */}
-                    <div className="rounded-md bg-background px-6 py-0.5 border border-subtle font-mono text-[8px] text-foreground/45 tracking-wider truncate max-w-[220px] w-full text-center">
+                    <div className="rounded-md bg-background px-6 py-0.5 border border-subtle font-mono text-[8px] text-foreground/60 tracking-wider truncate max-w-[220px] w-full text-center">
                       {project.urlPlaceholder}
                     </div>
                     <div className="w-12 shrink-0" /> {/* Spacer */}
@@ -218,7 +218,7 @@ export const ProductStories = () => {
                     <span className="text-[9px] uppercase tracking-wider text-primary block font-bold">
                       {t('projects.stories.metricOutcomes', '/ Metric Outcomes')}
                     </span>
-                    <span className="text-[8px] text-foreground/40 block mt-0.5">
+                    <span className="text-[8px] text-foreground/60 block mt-0.5">
                       {t('projects.stories.metricSubtitle', 'What we changed / Why it mattered')}
                     </span>
                   </div>
@@ -427,7 +427,7 @@ export const ProductStories = () => {
                     )}
 
                     <div className="border-t border-subtle pt-2 flex items-center justify-between font-mono text-[7px]">
-                      <span className="text-foreground/45">{t('projects.stories.modal.verified', 'VERIFIED: OK')}</span>
+                      <span className="text-foreground/60">{t('projects.stories.modal.verified', 'VERIFIED: OK')}</span>
                       <span className="text-primary font-bold">{t('projects.stories.modal.standards', '100% STANDARDS VERIFIED')}</span>
                     </div>
                   </div>

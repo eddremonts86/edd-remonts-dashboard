@@ -231,7 +231,7 @@ export const HeroSection = () => {
                 </div>
               </div>
  
-              <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/45">
+              <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/60">
                 <span>{t('hero.metrics.status', 'STATUS: MEASURED & REPORTED')}</span>
                 <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
               </div>

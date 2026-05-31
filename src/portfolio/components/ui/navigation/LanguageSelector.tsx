@@ -18,8 +18,8 @@ export const LanguageSelector = () => {
           onClick={() => i18n.changeLanguage(lang.code)}
           className={`flex h-7 min-w-[32px] items-center justify-center rounded-full px-2 transition-all duration-300 font-mono text-[9px] font-bold cursor-pointer ${
             i18n.language === lang.code
-              ? 'bg-primary text-white shadow-md'
-              : 'text-foreground/45 hover:text-foreground hover:bg-foreground/[0.05]'
+              ? 'bg-primary text-primary-foreground shadow-md'
+              : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
           }`}
           aria-label={`Change language to ${lang.label}`}
           title={lang.label}

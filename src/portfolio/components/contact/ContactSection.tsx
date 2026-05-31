@@ -52,7 +52,7 @@ export const ContactSection = () => {
                     {t('contact.params.title', 'Hiring & Engagement Parameters')}
                   </span>
                 </div>
-                <div className="font-mono text-[8px] text-foreground/45">{t('contact.params.status', 'STATUS: AVAILABLE')}</div>
+                <div className="font-mono text-[8px] text-foreground/60">{t('contact.params.status', 'STATUS: AVAILABLE')}</div>
               </div>
 
               {/* Status details - High-fidelity grid */}
@@ -65,7 +65,7 @@ export const ContactSection = () => {
                   <span className="font-display text-sm font-semibold text-foreground block">
                     {t('contact.params.avail.value', 'Active & Ready')}
                   </span>
-                  <span className="font-mono text-[9px] text-foreground/40 block">
+                  <span className="font-mono text-[9px] text-foreground/60 block">
                     {t('contact.params.avail.sub', 'Immediate Q3 2026 Engagement')}
                   </span>
                 </div>
@@ -78,7 +78,7 @@ export const ContactSection = () => {
                   <span className="font-display text-sm font-semibold text-foreground block">
                     {t('contact.params.geo.value', 'Copenhagen, DK')}
                   </span>
-                  <span className="font-mono text-[9px] text-foreground/40 block">
+                  <span className="font-mono text-[9px] text-foreground/60 block">
                     {t('contact.params.geo.sub', 'EU Remote-Friendly (GMT+2/1)')}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export const ContactSection = () => {
                   <span className="font-display text-sm font-semibold text-foreground block">
                     {t('contact.params.roles.value', 'Staff Engineer · Technical Leader · Frontend Architect · Systems Consultant')}
                   </span>
-                  <span className="font-mono text-[9px] text-foreground/40 block">
+                  <span className="font-mono text-[9px] text-foreground/60 block">
                     {t('contact.params.roles.sub', 'Specialized in enterprise-SaaS scaling and platform decoupling')}
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export const ContactSection = () => {
                   <span className="font-display text-sm font-semibold text-foreground block truncate group-hover:text-primary transition-colors">
                     {personalInfo.email}
                   </span>
-                  <span className="font-mono text-[9px] text-foreground/40 block group-hover:text-foreground/50 transition-colors">
+                  <span className="font-mono text-[9px] text-foreground/60 block group-hover:text-foreground/75 transition-colors">
                     {t('contact.form.target', 'Initiate Connection')}
                   </span>
                 </a>
@@ -120,7 +120,7 @@ export const ContactSection = () => {
                   <span className="font-display text-sm font-semibold text-foreground block">
                     {t('contact.params.locationValue', 'Copenhagen, Denmark')}
                   </span>
-                  <span className="font-mono text-[9px] text-foreground/40 block">
+                  <span className="font-mono text-[9px] text-foreground/60 block">
                     {t('contact.params.locationLabel', 'Location')}
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export const ContactSection = () => {
 
             <div className="flex items-center gap-2 mb-8 border-b border-subtle pb-4">
               <span className="h-2 w-2 rounded-full bg-primary animate-ping" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/45">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60">
                 {t('contact.sendMsg', 'Send a Message')}
               </span>
             </div>

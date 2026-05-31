@@ -159,7 +159,7 @@ export function EngineeringAuthoritySection() {
                     {...fadeInView({ delay: i * 0.06 })}
                     className="group rounded-2xl border border-subtle bg-surface/30 p-6 backdrop-blur-md flex gap-5 items-start transition-all duration-500 hover:border-primary/20 hover:bg-surface/50"
                   >
-                    <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/45 group-hover:text-primary transition-colors shrink-0">
+                    <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/60 group-hover:text-primary transition-colors shrink-0">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div className="space-y-1.5">

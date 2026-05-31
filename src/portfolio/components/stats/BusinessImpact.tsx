@@ -94,10 +94,10 @@ export const BusinessImpact = () => {
                 <div className="space-y-4">
                   {/* Card Header */}
                   <div className="flex items-center justify-between border-b border-subtle pb-3.5">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/40 font-bold">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 font-bold">
                       {t('stats.businessImpact.measuredOutcome', '/ Measured Outcome')}
                     </span>
-                    <div className="p-1 rounded-lg border border-subtle bg-surface text-foreground/45 group-hover:text-primary transition-colors">
+                    <div className="p-1 rounded-lg border border-subtle bg-surface text-foreground/60 group-hover:text-primary transition-colors">
                       <Icon className="h-4 w-4" />
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export const BusinessImpact = () => {
                 {/* Description split: Action & Business Benefit */}
                 <div className="mt-6 space-y-3.5 text-xs text-left font-display">
                   <div className="space-y-1">
-                    <span className="font-mono text-[8px] uppercase tracking-wider text-foreground/40 block">
+                    <span className="font-mono text-[8px] uppercase tracking-wider text-foreground/60 block">
                       {t('stats.businessImpact.techAction', '/ Technical Action')}
                     </span>
                     <p className="text-foreground/75 font-light leading-relaxed">

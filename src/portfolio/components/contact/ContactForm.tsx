@@ -98,7 +98,7 @@ export const ContactForm = ({
             <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           )}
         </button>
-        <p className="mt-4 text-center font-mono text-[8px] text-foreground/35 leading-normal select-none">
+        <p className="mt-4 text-center font-mono text-[8px] text-foreground/60 leading-normal select-none">
           {t('contact.form.privacyNotice', '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.')}
         </p>
       </div>
