@@ -1,20 +1,20 @@
-import { m } from 'framer-motion';
-import { Layers, Database, Cpu, Sparkles } from 'lucide-react';
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { fadeInView } from '@/portfolio/lib/motion';
+import { m } from 'framer-motion'
+import { Layers, Database, Cpu, Sparkles } from 'lucide-react'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { fadeInView } from '@/portfolio/lib/motion'
 
 interface CuratedLayer {
-  id: string;
-  name: string;
-  annot: string;
-  Icon: typeof Layers;
-  items: string[];
-  rationale: string;
+  id: string
+  name: string
+  annot: string
+  Icon: typeof Layers
+  items: string[]
+  rationale: string
 }
 
 export const SkillsMarquee = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
@@ -24,7 +24,8 @@ export const SkillsMarquee = () => {
         annot: '/ WORKSPACE SYSTEMS',
         Icon: Layers,
         items: ['Monorepo Boundaries', 'Design System Contracts', 'Decoupled Modules'],
-        rationale: 'Governing shared boundaries and modular contracts that allow distributed product teams to release features independently without breaking shared systems.',
+        rationale:
+          'Governing shared boundaries and modular contracts that allow distributed product teams to release features independently without breaking shared systems.',
       },
       {
         id: 'performance',
@@ -32,7 +33,8 @@ export const SkillsMarquee = () => {
         annot: '/ LATENCY & CONVERSION',
         Icon: Cpu,
         items: ['Interaction Latency', 'Optimistic Rendering', 'Core Web Vitals'],
-        rationale: 'Enforcing sub-12ms interaction responsiveness and perfect 100% scores across SaaS edges to secure top-tier user retention.',
+        rationale:
+          'Enforcing sub-12ms interaction responsiveness and perfect 100% scores across SaaS edges to secure top-tier user retention.',
       },
       {
         id: 'leadership',
@@ -40,7 +42,8 @@ export const SkillsMarquee = () => {
         annot: '/ ORG SYNCHRONIZATION',
         Icon: Sparkles,
         items: ['Developer Experience', 'Mentorship Cultures', 'Rigorous Quality Gates'],
-        rationale: 'Active developer coaching, peer alignment, and automated quality gates that standardise delivery speeds by 30% across 20+ engineers.',
+        rationale:
+          'Active developer coaching, peer alignment, and automated quality gates that standardise delivery speeds by 30% across 20+ engineers.',
       },
       {
         id: 'product',
@@ -48,10 +51,11 @@ export const SkillsMarquee = () => {
         annot: '/ FULL-STACK STRATEGY',
         Icon: Database,
         items: ['Domain Modeling', 'Stakeholder Coordination', 'State & Cache Contracts'],
-        rationale: 'Bridging the gap between engineering execution and business vision by translating product specs into robust type-safe cache architectures.',
+        rationale:
+          'Bridging the gap between engineering execution and business vision by translating product specs into robust type-safe cache architectures.',
       },
-    ];
-  }, []);
+    ]
+  }, [])
 
   return (
     <section
@@ -63,12 +67,8 @@ export const SkillsMarquee = () => {
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
-          
           {/* Left Column: Section Title & Narrative (5 cols) */}
-          <m.div 
-            {...fadeInView()} 
-            className="lg:col-span-5 space-y-6"
-          >
+          <m.div {...fadeInView()} className="lg:col-span-5 space-y-6">
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
                 / TECHNICAL EXPERTISE
@@ -78,7 +78,9 @@ export const SkillsMarquee = () => {
                 <span className="font-serif italic text-primary">Capabilities</span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
-                Technologies are commodities; architectural alignment and organization governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.
+                Technologies are commodities; architectural alignment and organization governance
+                are competitive differentiators. Here is how my capabilities are marshaled to
+                deliver verified business speed and performance stability.
               </p>
             </div>
           </m.div>
@@ -86,7 +88,7 @@ export const SkillsMarquee = () => {
           {/* Right Column: The Curated Stack Layers Matrix (7 cols) */}
           <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
             {curatedLayers.map((layer, index) => {
-              const Icon = layer.Icon;
+              const Icon = layer.Icon
               return (
                 <m.div
                   key={layer.id}
@@ -99,7 +101,7 @@ export const SkillsMarquee = () => {
                   </div>
 
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/45 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/70 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
@@ -114,7 +116,9 @@ export const SkillsMarquee = () => {
 
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
                   <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
-                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">/ VALUE PROOF</span>
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">
+                      / VALUE PROOF
+                    </span>
                     {layer.rationale}
                   </p>
 
@@ -130,12 +134,11 @@ export const SkillsMarquee = () => {
                     ))}
                   </div>
                 </m.div>
-              );
+              )
             })}
           </div>
-
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

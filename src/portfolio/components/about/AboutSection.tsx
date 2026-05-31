@@ -1,14 +1,14 @@
-import { m } from 'framer-motion';
-import { fadeInView } from '@/portfolio/lib/motion';
-import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react';
+import { m } from 'framer-motion'
+import { fadeInView } from '@/portfolio/lib/motion'
+import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
 
 interface AdvantageItem {
-  id: string;
-  index: string;
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  subtitle: string;
-  bullets: string[];
+  id: string
+  index: string
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  subtitle: string
+  bullets: string[]
 }
 
 const ADVANTAGES: AdvantageItem[] = [
@@ -21,8 +21,8 @@ const ADVANTAGES: AdvantageItem[] = [
     bullets: [
       'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.',
       'Maintains a hands-on developer mindset, guides architectural governance, and champions product-first capabilities.',
-      'Combines absolute visual craft with production-grade architectural patterns.'
-    ]
+      'Combines absolute visual craft with production-grade architectural patterns.',
+    ],
   },
   {
     id: 'constraints',
@@ -33,8 +33,8 @@ const ADVANTAGES: AdvantageItem[] = [
     bullets: [
       "Cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
       'Hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.',
-      'Treats web performance not as a post-launch polish, but as a critical business-conversion driver.'
-    ]
+      'Treats web performance not as a post-launch polish, but as a critical business-conversion driver.',
+    ],
   },
   {
     id: 'scale',
@@ -45,8 +45,8 @@ const ADVANTAGES: AdvantageItem[] = [
     bullets: [
       'Led monorepo partitions, managed micro-frontend structures, and scaled systems on an enterprise level.',
       'Slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.',
-      'Established strict modular boundaries to keep systems clean, testable, and highly composable.'
-    ]
+      'Established strict modular boundaries to keep systems clean, testable, and highly composable.',
+    ],
   },
   {
     id: 'product',
@@ -57,8 +57,8 @@ const ADVANTAGES: AdvantageItem[] = [
     bullets: [
       'Aligns technical decisions, product metrics, and design-system aesthetics.',
       'Models type-safe domain layers, coordinates client-side caching strategies, and manages database schema alignments.',
-      'Designs user interfaces that are visually premium, highly responsive, and operationally maintainable.'
-    ]
+      'Designs user interfaces that are visually premium, highly responsive, and operationally maintainable.',
+    ],
   },
   {
     id: 'leadership',
@@ -69,10 +69,10 @@ const ADVANTAGES: AdvantageItem[] = [
     bullets: [
       'Governed technical standards adopted by 20+ engineers across 4 autonomous product teams.',
       'Replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.',
-      'Empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.'
-    ]
-  }
-];
+      'Empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.',
+    ],
+  },
+]
 
 export const AboutSection = () => {
   return (
@@ -83,7 +83,6 @@ export const AboutSection = () => {
       <div className="pointer-events-none absolute -right-40 bottom-1/4 h-120 w-120 rounded-full bg-primary/[0.01] blur-3xl" />
 
       <div className="container mx-auto max-w-7xl px-6">
-        
         {/* Section Header */}
         <div className="mb-20 max-w-3xl">
           <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
@@ -94,15 +93,17 @@ export const AboutSection = () => {
             <span className="font-serif italic text-primary">Eduardo Inerarte?</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
-            Senior Frontend Engineers are common. Architects who bridge extreme technical constraints, European enterprise scale, product intuition, and team-wide governance are rare.
+            Senior Frontend Engineers are common. Architects who bridge extreme technical
+            constraints, European enterprise scale, product intuition, and team-wide governance are
+            rare.
           </p>
         </div>
 
         {/* Dynamic 5-Card Stacked Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {ADVANTAGES.map((adv, index) => {
-            const Icon = adv.icon;
-            const isLastWide = index === 4;
+            const Icon = adv.icon
+            const isLastWide = index === 4
 
             return (
               <m.article
@@ -118,7 +119,7 @@ export const AboutSection = () => {
                     <span className="font-serif text-3xl font-light italic text-foreground/20 group-hover:text-primary transition-colors duration-300">
                       /{adv.index}
                     </span>
-                    <div className="p-2 rounded-lg border border-white/5 bg-zinc-950 text-white/40 group-hover:text-primary transition-colors">
+                    <div className="p-2 rounded-lg border border-white/5 bg-zinc-950 text-white/70 group-hover:text-primary transition-colors">
                       <Icon className="h-4 w-4" />
                     </div>
                   </div>
@@ -136,7 +137,10 @@ export const AboutSection = () => {
                   {/* Bullet Proof Points */}
                   <ul className="space-y-3 pt-2">
                     {adv.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2 text-xs leading-relaxed text-foreground/75 font-light font-display">
+                      <li
+                        key={bIdx}
+                        className="flex items-start gap-2 text-xs leading-relaxed text-foreground/75 font-light font-display"
+                      >
                         <span className="text-primary mt-1.5 shrink-0 block h-1 w-1 rounded-full bg-primary" />
                         <span>{bullet}</span>
                       </li>
@@ -144,11 +148,10 @@ export const AboutSection = () => {
                   </ul>
                 </div>
               </m.article>
-            );
+            )
           })}
         </div>
-
       </div>
     </section>
-  );
-};
+  )
+}

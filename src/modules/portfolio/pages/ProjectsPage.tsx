@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Table,
   TableBody,
@@ -13,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Textarea } from '@/components/ui/textarea'
 import {
   useCreateProject,
   useDeleteProject,
@@ -120,7 +120,9 @@ export function ProjectsPage() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.projects', 'Projects')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio.projects', 'Projects')}
+        </h1>
         <Button onClick={openCreate}>{t('common.add', 'Add')}</Button>
       </div>
 
@@ -146,7 +148,9 @@ export function ProjectsPage() {
             <TableRow key={project.id}>
               <TableCell className="font-medium">{project.title}</TableCell>
               <TableCell className="text-muted-foreground">{project.category}</TableCell>
-              <TableCell className="max-w-xs truncate text-muted-foreground">{project.impactLabel || '—'}</TableCell>
+              <TableCell className="max-w-xs truncate text-muted-foreground">
+                {project.impactLabel || '—'}
+              </TableCell>
               <TableCell>{project.featured ? '★' : '—'}</TableCell>
               <TableCell className="flex gap-2">
                 <Button size="sm" variant="outline" onClick={() => openEdit(project)}>
@@ -219,32 +223,56 @@ export function ProjectsPage() {
 
                   <div className="space-y-1">
                     <Label>{t('projects.problem', 'Problem')}</Label>
-                    <Textarea rows={3} value={tr.problem} onChange={(e) => setTranslation(locale, 'problem', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.problem}
+                      onChange={(e) => setTranslation(locale, 'problem', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.context', 'Context')}</Label>
-                    <Textarea rows={2} value={tr.context} onChange={(e) => setTranslation(locale, 'context', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.context}
+                      onChange={(e) => setTranslation(locale, 'context', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.role', 'Role')}</Label>
-                    <Textarea rows={2} value={tr.role} onChange={(e) => setTranslation(locale, 'role', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.role}
+                      onChange={(e) => setTranslation(locale, 'role', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.decisions', 'Technical Decisions')}</Label>
-                    <Textarea rows={3} value={tr.decisions} onChange={(e) => setTranslation(locale, 'decisions', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.decisions}
+                      onChange={(e) => setTranslation(locale, 'decisions', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.complexity', 'Complexity')}</Label>
-                    <Textarea rows={2} value={tr.complexity} onChange={(e) => setTranslation(locale, 'complexity', e.target.value)} />
+                    <Textarea
+                      rows={2}
+                      value={tr.complexity}
+                      onChange={(e) => setTranslation(locale, 'complexity', e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-1">
                     <Label>{t('projects.results', 'Results')}</Label>
-                    <Textarea rows={3} value={tr.results} onChange={(e) => setTranslation(locale, 'results', e.target.value)} />
+                    <Textarea
+                      rows={3}
+                      value={tr.results}
+                      onChange={(e) => setTranslation(locale, 'results', e.target.value)}
+                    />
                   </div>
                 </div>
               )
@@ -254,6 +282,8 @@ export function ProjectsPage() {
               <input
                 type="checkbox"
                 id="featured"
+                name="featured"
+                aria-label={t('projects.featured', 'Featured')}
                 checked={form.featured ?? false}
                 onChange={(e) => setForm((f) => ({ ...f, featured: e.target.checked }))}
               />
