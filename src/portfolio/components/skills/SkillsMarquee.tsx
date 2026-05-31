@@ -15,6 +15,7 @@ interface CuratedLayer {
 
 export const SkillsMarquee = () => {
   const { t } = useTranslation()
+  const leftColProps = fadeInView()
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
@@ -68,19 +69,26 @@ export const SkillsMarquee = () => {
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           {/* Left Column: Section Title & Narrative (5 cols) */}
-          <m.div {...fadeInView()} className="lg:col-span-5 space-y-6">
+          <m.div
+            initial={leftColProps.initial}
+            whileInView={leftColProps.whileInView}
+            viewport={leftColProps.viewport}
+            transition={leftColProps.transition}
+            className="lg:col-span-5 space-y-6"
+          >
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
                 / TECHNICAL EXPERTISE
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-white leading-[1.1]">
-                Architectural <br />
-                <span className="font-serif italic text-primary">Capabilities</span>
+                {t('skills.title.architectural', 'Architectural')} <br />
+                <span className="font-serif italic text-primary">{t('skills.title.capabilities', 'Capabilities')}</span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
-                Technologies are commodities; architectural alignment and organization governance
-                are competitive differentiators. Here is how my capabilities are marshaled to
-                deliver verified business speed and performance stability.
+                {t(
+                  'skills.description',
+                  'Technologies are commodities; architectural alignment and organization governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.'
+                )}
               </p>
             </div>
           </m.div>
@@ -89,10 +97,14 @@ export const SkillsMarquee = () => {
           <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
             {curatedLayers.map((layer, index) => {
               const Icon = layer.Icon
+              const cardProps = fadeInView({ delay: index * 0.08 })
               return (
                 <m.div
                   key={layer.id}
-                  {...fadeInView({ delay: index * 0.08 })}
+                  initial={cardProps.initial}
+                  whileInView={cardProps.whileInView}
+                  viewport={cardProps.viewport}
+                  transition={cardProps.transition}
                   className="group relative rounded-2xl border border-subtle bg-background p-6 shadow-xs transition-all duration-500 hover:border-primary/20 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
                 >
                   {/* Visual coordinate annotation */}
@@ -106,7 +118,7 @@ export const SkillsMarquee = () => {
                     </div>
                     <div>
                       <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
-                        CAPABILITY_0{index + 1}
+                        {t('skills.capabilityPrefix', 'CAPABILITY_0')}{index + 1}
                       </span>
                       <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
                         {layer.name}

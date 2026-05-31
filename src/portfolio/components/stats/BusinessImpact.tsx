@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeInView } from '@/portfolio/lib/motion'
 import { Activity, ShieldCheck, Zap, Layers } from 'lucide-react'
 
@@ -46,6 +47,9 @@ const IMPACT_CARDS: ImpactCard[] = [
 ]
 
 export const BusinessImpact = () => {
+  const { t } = useTranslation()
+  const sectionHeaderProps = fadeInView()
+
   return (
     <section
       id="impact"
@@ -56,18 +60,25 @@ export const BusinessImpact = () => {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* Section Header */}
-        <m.div {...fadeInView()} className="mb-20 max-w-3xl">
+        <m.div
+          initial={sectionHeaderProps.initial}
+          whileInView={sectionHeaderProps.whileInView}
+          viewport={sectionHeaderProps.viewport}
+          transition={sectionHeaderProps.transition}
+          className="mb-20 max-w-3xl"
+        >
           <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
             / BUSINESS IMPACT
           </span>
           <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-white leading-tight">
-            Measurable <br />
-            <span className="font-serif italic text-primary">Business Outcomes</span>
+            {t('impact.title.measurable', 'Measurable')} <br />
+            <span className="font-serif italic text-primary">{t('impact.title.outcomes', 'Business Outcomes')}</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/60 md:text-base font-light font-display">
-            Technical excellence is relevant when it drives business value. Here is the concrete,
-            verifiable operational and product impact delivered across enterprise-scale
-            applications.
+            {t(
+              'impact.description',
+              'Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.'
+            )}
           </p>
         </m.div>
 
@@ -75,17 +86,21 @@ export const BusinessImpact = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative">
           {IMPACT_CARDS.map((card, index) => {
             const Icon = card.Icon
+            const cardProps = fadeInView({ delay: index * 0.08 })
             return (
               <m.article
                 key={card.id}
-                {...fadeInView({ delay: index * 0.08 })}
+                initial={cardProps.initial}
+                whileInView={cardProps.whileInView}
+                viewport={cardProps.viewport}
+                transition={cardProps.transition}
                 className="group relative rounded-2xl border border-white/10 bg-white/[0.01] p-6 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/25 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
               >
                 <div className="space-y-4">
                   {/* Card Header */}
                   <div className="flex items-center justify-between border-b border-white/5 pb-3.5">
                     <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35 font-bold">
-                      Outcome 0{index + 1}
+                      {t('impact.outcomePrefix', 'Outcome 0')}{index + 1}
                     </span>
                     <div className="p-1 rounded-lg border border-white/5 bg-zinc-950 text-white/70 group-hover:text-primary transition-colors">
                       <Icon className="h-4 w-4" />

@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeInView } from '@/portfolio/lib/motion'
 import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
 
@@ -75,6 +76,8 @@ const ADVANTAGES: AdvantageItem[] = [
 ]
 
 export const AboutSection = () => {
+  const { t } = useTranslation()
+
   return (
     <section id="about" className="relative overflow-hidden bg-surface py-28 md:py-40">
       {/* Visual background grids */}
@@ -89,13 +92,14 @@ export const AboutSection = () => {
             / WHAT MAKES ME DIFFERENT
           </span>
           <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-white leading-tight">
-            Why hire <br />
-            <span className="font-serif italic text-primary">Eduardo Inerarte?</span>
+            {t('about.title.whyHire', 'Why hire')} <br />
+            <span className="font-serif italic text-primary">{t('about.title.name', 'Eduardo Inerarte?')}</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
-            Senior Frontend Engineers are common. Architects who bridge extreme technical
-            constraints, European enterprise scale, product intuition, and team-wide governance are
-            rare.
+            {t(
+              'about.description',
+              'Senior Frontend Engineers are common. Architects who bridge extreme technical constraints, European enterprise scale, product intuition, and team-wide governance are rare.'
+            )}
           </p>
         </div>
 
@@ -104,11 +108,15 @@ export const AboutSection = () => {
           {ADVANTAGES.map((adv, index) => {
             const Icon = adv.icon
             const isLastWide = index === 4
+            const cardProps = fadeInView({ delay: index * 0.08 })
 
             return (
               <m.article
                 key={adv.id}
-                {...fadeInView({ delay: index * 0.08 })}
+                initial={cardProps.initial}
+                whileInView={cardProps.whileInView}
+                viewport={cardProps.viewport}
+                transition={cardProps.transition}
                 className={`group relative rounded-2xl border border-white/10 bg-white/[0.01] p-8 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/20 hover:bg-white/[0.02] ${
                   isLastWide ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}

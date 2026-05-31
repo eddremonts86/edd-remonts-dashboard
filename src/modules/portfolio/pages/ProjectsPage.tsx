@@ -47,6 +47,21 @@ const EMPTY: ProjectInput = {
   })),
 }
 
+function getProjectField(form: ProjectInput, field: keyof ProjectInput): string {
+  switch (field) {
+    case 'title': return form.title ?? ''
+    case 'coverImageUrl': return form.coverImageUrl ?? ''
+    case 'link': return form.link ?? ''
+    case 'repositoryUrl': return form.repositoryUrl ?? ''
+    case 'internalImageUrl': return form.internalImageUrl ?? ''
+    case 'category': return form.category ?? ''
+    case 'scaleLabel': return form.scaleLabel ?? ''
+    case 'impactLabel': return form.impactLabel ?? ''
+    case 'architectureLabel': return form.architectureLabel ?? ''
+    default: return ''
+  }
+}
+
 export function ProjectsPage() {
   const { t } = useTranslation()
   const { data: projects = [], isLoading } = useProjects()
@@ -95,6 +110,24 @@ export function ProjectsPage() {
     setOpen(true)
   }
 
+  function setProjectField(field: keyof ProjectInput, value: string) {
+    setForm((prev) => {
+      const updated = { ...prev }
+      switch (field) {
+        case 'title': updated.title = value; break
+        case 'coverImageUrl': updated.coverImageUrl = value; break
+        case 'link': updated.link = value; break
+        case 'repositoryUrl': updated.repositoryUrl = value; break
+        case 'internalImageUrl': updated.internalImageUrl = value; break
+        case 'category': updated.category = value; break
+        case 'scaleLabel': updated.scaleLabel = value; break
+        case 'impactLabel': updated.impactLabel = value; break
+        case 'architectureLabel': updated.architectureLabel = value; break
+      }
+      return updated
+    })
+  }
+
   function setTranslation(
     locale: (typeof LOCALES)[number],
     field: 'description' | 'problem' | 'context' | 'role' | 'decisions' | 'complexity' | 'results',
@@ -102,9 +135,20 @@ export function ProjectsPage() {
   ) {
     setForm((prev) => ({
       ...prev,
-      translations: prev.translations.map((tr) =>
-        tr.locale === locale ? { ...tr, [field]: value } : tr,
-      ),
+      translations: prev.translations.map((tr) => {
+        if (tr.locale !== locale) return tr
+        const updated = { ...tr }
+        switch (field) {
+          case 'description': updated.description = value; break
+          case 'problem': updated.problem = value; break
+          case 'context': updated.context = value; break
+          case 'role': updated.role = value; break
+          case 'decisions': updated.decisions = value; break
+          case 'complexity': updated.complexity = value; break
+          case 'results': updated.results = value; break
+        }
+        return updated
+      }),
     }))
   }
 
@@ -193,24 +237,27 @@ export function ProjectsPage() {
               <div key={field} className="space-y-1">
                 <Label>{label}</Label>
                 <Input
-                  value={(form[field] as string) ?? ''}
-                  onChange={(e) => setForm((f) => ({ ...f, [field]: e.target.value }))}
+                  value={getProjectField(form, field)}
+                  onChange={(e) => setProjectField(field, e.target.value)}
                 />
               </div>
             ))}
 
             {LOCALES.map((locale) => {
               const tr = form.translations.find((item) => item.locale === locale)
-              const localeLabel: Record<(typeof LOCALES)[number], string> = {
-                en: 'English',
-                es: 'Spanish',
-                dk: 'Danish',
-              }
               if (!tr) return null
+
+              const getLocaleLabel = (loc: (typeof LOCALES)[number]): string => {
+                switch (loc) {
+                  case 'en': return 'English'
+                  case 'es': return 'Spanish'
+                  case 'dk': return 'Danish'
+                }
+              }
 
               return (
                 <div key={locale} className="space-y-3 rounded-lg border p-4">
-                  <p className="text-sm font-medium text-muted-foreground">{localeLabel[locale]}</p>
+                  <p className="text-sm font-medium text-muted-foreground">{getLocaleLabel(locale)}</p>
 
                   <div className="space-y-1">
                     <Label>{t('projects.description', 'Description')}</Label>
