@@ -4,6 +4,7 @@ import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
 import { useCarousel } from '@/portfolio/hooks/useCarousel';
 import { CarouselControls } from './CarouselControls';
 import { TestimonialSlide } from './TestimonialSlide';
+import { Section, Container } from '../ui/layout/Section';
 
 export const TestimonialBlock = () => {
   const { t } = useTranslation();
@@ -13,27 +14,24 @@ export const TestimonialBlock = () => {
     testimonials.length,
   );
 
-  // While data is still loading from the DB, render nothing (skeleton would be better,
-  // but silence is preferable to a misleading "loading testimonials" message that
-  // sticks around forever when the table is empty).
+  // While data is still loading from the DB, render nothing
   if (isLoading) return null;
 
-  // When the DB has no testimonials, hide the section entirely instead of showing
-  // a permanent loading state.
+  // When the DB has no testimonials, hide the section entirely
   if (testimonials.length === 0) return null;
 
   const safeIndex = currentIndex >= 0 && currentIndex < testimonials.length ? currentIndex : 0;
   const currentTestimonial = testimonials[safeIndex];
 
   return (
-    <section className="relative border-y border-subtle bg-background py-28 md:py-36">
+    <Section className="border-y border-subtle bg-background">
       {/* Decorative background blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-40 top-1/2 h-150 w-150 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-3xl dark:bg-primary/[0.04]" />
         <div className="absolute -right-40 top-1/2 h-125 w-125 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-3xl dark:bg-primary/[0.03]" />
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-200 px-6">
+      <Container className="max-w-2xl mx-auto">
         {/* Eyebrow */}
         <m.p
           initial={{ opacity: 0, y: 10 }}
@@ -78,7 +76,7 @@ export const TestimonialBlock = () => {
           onNext={() => paginate(1)}
           onGoto={handleGoto}
         />
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };

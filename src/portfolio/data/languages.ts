@@ -10,7 +10,9 @@ export interface Language {
 }
 
 export const LANGUAGES: Language[] = [
-  { code: 'en', label: 'English', browserPrefixes: ['en'] },
+  { code: 'en', label: 'EN', browserPrefixes: ['en'] },
+  { code: 'dk', label: 'DK', browserPrefixes: ['da', 'dk'] },
+  { code: 'es', label: 'ES', browserPrefixes: ['es'] },
 ];
 
 export const DEFAULT_LANGUAGE = LANGUAGES[0].code;

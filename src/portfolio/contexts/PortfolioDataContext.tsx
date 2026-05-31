@@ -264,7 +264,7 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   const experiences: CvExperience[] = [...dbExperiences]
     .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
     .map((exp) => {
-      const tr = pickTr(exp.translations, 'en')
+      const tr = pickTr(exp.translations, activeLocale)
       return {
         id: 12 - (exp.sortOrder ?? 0),
         period: buildPeriod(exp.periodStart, exp.periodEnd),

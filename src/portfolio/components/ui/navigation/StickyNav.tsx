@@ -50,8 +50,6 @@ export const StickyNav = () => {
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   const navLinks = NAV_SECTIONS.filter((s) => s.id !== 'hero');
-  const activeIndex = NAV_SECTIONS.findIndex((section) => section.id === activeSection);
-  const progress = NAV_SECTIONS.length > 1 ? Math.max(0, ((activeIndex + 1) / NAV_SECTIONS.length) * 100) : 0;
 
   return (
     <AnimatePresence>
@@ -64,14 +62,6 @@ export const StickyNav = () => {
           className="bg-background/95 fixed left-0 top-0 z-100 w-full border-b border-subtle pt-[env(safe-area-inset-top)] backdrop-blur-xl"
           aria-label={t('a11y.mainNav')}
         >
-          <div className="h-px w-full bg-subtle">
-            <m.div
-              className="h-full bg-primary"
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.35, ease: APPLE_EASE }}
-            />
-          </div>
-
           <div className="container mx-auto flex items-center justify-between gap-3 px-4 py-3 md:gap-4 md:px-6 md:py-4">
             {/* Brand / Logo */}
             <a
@@ -93,12 +83,6 @@ export const StickyNav = () => {
                 />
               ))}
             </div>
-
-            <span className="hidden rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-foreground/55 xl:inline-flex">
-              {t(
-                NAV_SECTIONS.find((section) => section.id === activeSection)?.labelKey || 'nav.home',
-              )}
-            </span>
 
             {/* Controls */}
             <div className="flex shrink-0 items-center gap-2 sm:gap-4">

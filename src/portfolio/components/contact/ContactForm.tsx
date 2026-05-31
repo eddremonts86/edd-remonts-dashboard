@@ -19,7 +19,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-name"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-white/50"
+            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
           >
             {t('contact.form.name')}
           </label>
@@ -28,7 +28,7 @@ export const ContactForm = ({
             name="name"
             type="text"
             required
-            className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 font-mono text-sm text-white placeholder-white/20 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
             placeholder={t('contact.form.namePlaceholder')}
           />
         </div>
@@ -36,7 +36,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-email"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-white/50"
+            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
           >
             {t('contact.form.email')}
           </label>
@@ -45,7 +45,7 @@ export const ContactForm = ({
             name="email"
             type="email"
             required
-            className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 font-mono text-sm text-white placeholder-white/20 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
             placeholder={t('contact.form.emailPlaceholder')}
           />
         </div>
@@ -53,7 +53,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-message"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-white/50"
+            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
           >
             {t('contact.form.message')}
           </label>
@@ -62,10 +62,16 @@ export const ContactForm = ({
             name="message"
             rows={4}
             required
-            className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 font-mono text-sm text-white placeholder-white/20 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full resize-none rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
             placeholder="..."
           />
         </div>
+      </div>
+
+      {/* Honeypot field */}
+      <div className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="contact-hp">{t('contact.form.hpLabel', 'Do not fill this out if you are human')}</label>
+        <input id="contact-hp" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
       </div>
 
       {status === 'error' && (
@@ -79,7 +85,7 @@ export const ContactForm = ({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[10px] uppercase tracking-widest text-white transition-all duration-300 hover:bg-primary/95 disabled:cursor-not-allowed disabled:opacity-50 shadow-md cursor-pointer"
+          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[10px] uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/95 disabled:cursor-not-allowed disabled:opacity-50 shadow-md cursor-pointer"
         >
           <span className="relative z-10">
             {status === 'submitting'
@@ -92,6 +98,9 @@ export const ContactForm = ({
             <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           )}
         </button>
+        <p className="mt-4 text-center font-mono text-[8px] text-foreground/35 leading-normal select-none">
+          {t('contact.form.privacyNotice', '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.')}
+        </p>
       </div>
     </form>
   );

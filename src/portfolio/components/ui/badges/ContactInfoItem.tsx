@@ -27,7 +27,7 @@ export const ContactInfoItem = ({ icon: Icon, label, value, href }: ContactInfoI
 
   if (href) {
     return (
-      <a href={href} className="group flex w-fit items-center gap-6">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="group flex w-fit items-center gap-6">
         {content}
       </a>
     )

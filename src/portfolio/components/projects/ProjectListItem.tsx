@@ -1,8 +1,9 @@
 import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext';
-import { fadeInView } from '@/portfolio/lib/motion';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpRight, ChevronDown, Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+
+import { forwardRef } from 'react';
 
 type Project = CvProject;
 
@@ -14,28 +15,47 @@ interface Props {
   onHover: (p: Project | null) => void;
 }
 
-export const ProjectListItem = ({ project, index, expanded, onToggle, onHover }: Props) => {
-  const { t } = useTranslation();
-  const hasLink = Boolean(project.link);
-  const hasCaseStudy = Boolean(
-    project.problem || project.results || project.context || project.role || project.decisions,
-  );
+export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
+  ({ project, index, expanded, onToggle, onHover }, ref) => {
+    const { t } = useTranslation();
+    const hasLink = Boolean(project.link);
+    const hasCaseStudy = Boolean(
+      project.problem || project.results || project.context || project.role || project.decisions,
+    );
 
-  const techVector = project.architectureLabel || project.scaleLabel || 'Systems Integration';
+    const getNormalizedVector = (label?: string) => {
+      if (!label) return 'Systems Integration';
+      const l = label.toLowerCase();
+      if (l.includes('decouple') || l.includes('isolate') || l.includes('partition') || l.includes('micro')) {
+        return 'Platform Decoupling';
+      }
+      if (l.includes('front') || l.includes('arch') || l.includes('monorepo') || l.includes('system') || l.includes('design')) {
+        return 'Frontend Architecture';
+      }
+      return 'Systems Integration';
+    };
 
-  return (
-    <m.div
-      {...fadeInView({ delay: index * 0.05 })}
-      onMouseEnter={() => onHover(project)}
-      onMouseLeave={() => onHover(null)}
-      className="border-b border-subtle/30 py-4.5 transition-all duration-300 hover:bg-foreground/[0.02] rounded-xl px-4 cursor-pointer"
-      onClick={hasCaseStudy ? onToggle : undefined}
-    >
+    const techVector = getNormalizedVector(project.architectureLabel || project.scaleLabel);
+
+    return (
+      <m.div
+        ref={ref}
+        layout="position"
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -15 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        role="row"
+        onMouseEnter={() => onHover(project)}
+        onMouseLeave={() => onHover(null)}
+        className="border-b border-subtle/30 py-4.5 transition-all duration-300 hover:bg-foreground/[0.02] rounded-xl px-4 cursor-pointer"
+        onClick={hasCaseStudy ? onToggle : undefined}
+      >
       {/* 12-Column Structured Grid Row (MD+), Flex layout on Mobile */}
       <div className="flex flex-col gap-3 md:grid md:grid-cols-12 md:items-center md:gap-4">
         
         {/* Col 1: Serial Tracker Index (Col span: 1) */}
-        <div className="md:col-span-1 flex items-center gap-2">
+        <div role="cell" className="md:col-span-1 flex items-center gap-2">
           <span className="font-mono text-[10px] text-primary/65 font-bold select-none tracking-widest">
             0{index + 1}
           </span>
@@ -44,21 +64,21 @@ export const ProjectListItem = ({ project, index, expanded, onToggle, onHover }:
         </div>
 
         {/* Col 2: Project Title (Col span: 4) */}
-        <div className="md:col-span-4 min-w-0">
+        <div role="cell" className="md:col-span-4 min-w-0">
           <h3 className="font-display text-base font-semibold leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
             {project.title}
           </h3>
         </div>
 
         {/* Col 3: Category Pill (Col span: 2) */}
-        <div className="md:col-span-2">
+        <div role="cell" className="md:col-span-2">
           <span className="inline-flex rounded-md border border-subtle bg-surface/50 px-2 py-0.5 font-mono text-[8.5px] uppercase tracking-wider text-foreground/50">
             {project.category}
           </span>
         </div>
 
         {/* Col 4: Technology/Architectural Vector (Col span: 4) */}
-        <div className="md:col-span-4 min-w-0 flex items-center gap-2">
+        <div role="cell" className="md:col-span-4 min-w-0 flex items-center gap-2">
           <Layers className="h-3.5 w-3.5 text-foreground/25 shrink-0" />
           <span className="font-mono text-[10px] text-foreground/50 truncate max-w-full">
             {techVector}
@@ -67,6 +87,7 @@ export const ProjectListItem = ({ project, index, expanded, onToggle, onHover }:
 
         {/* Col 5: Actions Links (Col span: 1, aligned right) */}
         <div 
+          role="cell"
           className="md:col-span-1 justify-self-end flex items-center gap-3 mt-2 md:mt-0"
           onClick={(e) => e.stopPropagation()} // Prevent double trigger with row click
         >
@@ -136,7 +157,7 @@ export const ProjectListItem = ({ project, index, expanded, onToggle, onHover }:
       </AnimatePresence>
     </m.div>
   );
-};
+});
 
 interface CaseBlockProps {
   icon: React.ComponentType<{ className?: string }>;

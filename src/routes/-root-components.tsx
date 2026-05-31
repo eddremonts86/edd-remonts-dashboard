@@ -16,7 +16,7 @@ const ReactQueryDevtools = React.lazy(() =>
 function DevtoolsWrapper() {
   const visible = useDevtoolsVisibility()
 
-  if (!visible) return null
+  if (!import.meta.env.DEV || !visible) return null
 
   return (
     <>

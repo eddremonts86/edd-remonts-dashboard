@@ -24,27 +24,27 @@ export const SkillsMarquee = () => {
         name: 'Architecture & Governance',
         annot: '/ WORKSPACE SYSTEMS',
         Icon: Layers,
-        items: ['Monorepo Boundaries', 'Design System Contracts', 'Decoupled Modules'],
+        items: ['Monorepo Boundaries', 'Design-System Contracts', 'Decoupled Modules'],
         rationale:
-          'Governing shared boundaries and modular contracts that allow distributed product teams to release features independently without breaking shared systems.',
+          'Enables distributed product teams to release features independently without breaking shared core architectures.',
       },
       {
         id: 'performance',
         name: 'Performance Engineering',
         annot: '/ LATENCY & CONVERSION',
         Icon: Cpu,
-        items: ['Interaction Latency', 'Optimistic Rendering', 'Core Web Vitals'],
+        items: ['Interaction Latency', 'Optimistic State Sync', 'Core Web Vitals'],
         rationale:
-          'Enforcing sub-12ms interaction responsiveness and perfect 100% scores across SaaS edges to secure top-tier user retention.',
+          'Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms.',
       },
       {
         id: 'leadership',
         name: 'Technical Leadership',
         annot: '/ ORG SYNCHRONIZATION',
         Icon: Sparkles,
-        items: ['Developer Experience', 'Mentorship Cultures', 'Rigorous Quality Gates'],
+        items: ['Developer Experience', 'Active Mentorship', 'Automated Quality Gates'],
         rationale:
-          'Active developer coaching, peer alignment, and automated quality gates that standardise delivery speeds by 30% across 20+ engineers.',
+          'Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship.',
       },
       {
         id: 'product',
@@ -53,7 +53,7 @@ export const SkillsMarquee = () => {
         Icon: Database,
         items: ['Domain Modeling', 'Stakeholder Coordination', 'State & Cache Contracts'],
         rationale:
-          'Bridging the gap between engineering execution and business vision by translating product specs into robust type-safe cache architectures.',
+          'Bridges execution gaps between engineering teams, product managers, and executive stakeholders.',
       },
     ]
   }, [])
@@ -87,7 +87,7 @@ export const SkillsMarquee = () => {
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
                 {t(
                   'skills.description',
-                  'Technologies are commodities; architectural alignment and organization governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.'
+                  'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.'
                 )}
               </p>
             </div>
@@ -118,7 +118,7 @@ export const SkillsMarquee = () => {
                     </div>
                     <div>
                       <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
-                        {t('skills.capabilityPrefix', 'CAPABILITY_0')}{index + 1}
+                        Capability 0{index + 1}
                       </span>
                       <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
                         {layer.name}

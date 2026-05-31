@@ -42,14 +42,14 @@ export function App() {
             className="min-h-screen bg-background text-foreground"
           >
             <SEO />
-            <a href="#about" className="skip-to-content">
-              {t('a11y.skipToContent')}
+            <a href="#content" className="skip-to-content">
+              {t('a11y.skipToContent', 'Skip to content')}
             </a>
             <MouseFollower />
             <StickyNav />
             <DotNavigation />
 
-            <main>
+            <main id="content">
               <HeroSection />
               <BusinessImpact />
               <AboutSection />
