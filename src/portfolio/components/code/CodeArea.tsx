@@ -1,5 +1,6 @@
-import { m } from 'framer-motion';
-import { colorMap, type Token } from './codeBlockTokens';
+import { m } from 'framer-motion'
+import { colorMap, type Token } from './codeBlockTokens'
+import type { Variants } from 'framer-motion'
 
 export const CodeArea = ({
   tokens,
@@ -8,11 +9,11 @@ export const CodeArea = ({
   containerVariants,
   tokenVariants,
 }: {
-  tokens: Token[];
-  lineCount: number;
-  tabKey: number;
-  containerVariants: import('framer-motion').Variants;
-  tokenVariants: import('framer-motion').Variants;
+  tokens: Token[]
+  lineCount: number
+  tabKey: number
+  containerVariants: Variants
+  tokenVariants: Variants
 }) => (
   <div className="flex">
     {/* Line numbers gutter */}
@@ -35,8 +36,8 @@ export const CodeArea = ({
     >
       <code>
         {tokens.map((token, i) => {
-          if (token.type === 'break') return <br key={`${tabKey}-br-${i}`} />;
-          if (token.type === 'indent') return <span key={`${tabKey}-ind-${i}`}>{token.text}</span>;
+          if (token.type === 'break') return <br key={`${tabKey}-br-${i}`} />
+          if (token.type === 'indent') return <span key={`${tabKey}-ind-${i}`}>{token.text}</span>
           return (
             <m.span
               key={`${tabKey}-${i}`}
@@ -45,7 +46,7 @@ export const CodeArea = ({
             >
               {token.text}
             </m.span>
-          );
+          )
         })}
         {/* Blinking cursor */}
         <m.span
@@ -62,4 +63,4 @@ export const CodeArea = ({
       </code>
     </m.pre>
   </div>
-);
+)

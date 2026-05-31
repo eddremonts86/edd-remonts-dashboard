@@ -1,21 +1,21 @@
-import { OptimizedImage } from '@/portfolio/components/ui/media/OptimizedImage';
-import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext';
-import { APPLE_EASE } from '@/portfolio/lib/motion';
-import { AnimatePresence, m, type MotionValue } from 'framer-motion';
+import { AnimatePresence, m, type MotionValue } from 'framer-motion'
+import { OptimizedImage } from '@/portfolio/components/ui/media/OptimizedImage'
+import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
 
-type Project = CvProject;
+type Project = CvProject
 
 export const FloatingImagePreview = ({
   project,
   cursorX,
   cursorY,
 }: {
-  project: Project | null;
-  cursorX: MotionValue<number>;
-  cursorY: MotionValue<number>;
+  project: Project | null
+  cursorX: MotionValue<number>
+  cursorY: MotionValue<number>
 }) => (
   <m.div
-  aria-hidden="true"
+    aria-hidden="true"
     className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-[320px] w-[450px] overflow-hidden rounded-xl shadow-2xl lg:block"
     style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
     initial={{ opacity: 0, scale: 0.95 }}
@@ -42,4 +42,4 @@ export const FloatingImagePreview = ({
       )}
     </AnimatePresence>
   </m.div>
-);
+)

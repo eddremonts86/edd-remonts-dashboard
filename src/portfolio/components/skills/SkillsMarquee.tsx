@@ -64,7 +64,7 @@ export const SkillsMarquee = () => {
       className="relative z-20 isolate border-t border-subtle bg-surface py-28 md:py-40"
       aria-label={t('a11y.skillsMarquee')}
     >
-      <div className="absolute inset-0 pointer-events-none opacity-[2.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px] mask-image-[linear-to-b,transparent,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,transparent]" />
+      <div className="absolute inset-0 pointer-events-none opacity-2.5 bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px] mask-image-[linear-to-b,transparent,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,transparent]" />
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
@@ -80,14 +80,16 @@ export const SkillsMarquee = () => {
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
                 / TECHNICAL EXPERTISE
               </p>
-              <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-white leading-[1.1]">
+              <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
                 {t('skills.title.architectural', 'Architectural')} <br />
-                <span className="font-serif italic text-primary">{t('skills.title.capabilities', 'Capabilities')}</span>
+                <span className="font-serif italic text-primary">
+                  {t('skills.title.capabilities', 'Capabilities')}
+                </span>
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
                 {t(
                   'skills.description',
-                  'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.'
+                  'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.',
                 )}
               </p>
             </div>

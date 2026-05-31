@@ -1,23 +1,23 @@
-import { CodeBlock } from './CodeBlock';
-import { fadeInView } from '@/portfolio/lib/motion';
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { m } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
+import { fadeInView } from '@/portfolio/lib/motion'
+import { CodeBlock } from './CodeBlock'
 
 export const CodeShowcase = () => {
-  const { t } = useTranslation();
-  const { stats } = usePortfolioData();
+  const { t } = useTranslation()
+  const { stats } = usePortfolioData()
 
   return (
     <section className="relative overflow-hidden bg-background py-24 md:py-40">
       {/* Refined abstract background type */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden opacity-[0.02]">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden opacity-2">
         <h2 className="whitespace-nowrap text-center font-serif text-[25vw] italic leading-none tracking-tight text-foreground">
           craft.
         </h2>
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-[1400px] px-6">
+      <div className="container relative z-10 mx-auto max-w-350 px-6">
         <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-24">
           {/* Left: Refined typography */}
           <m.div {...fadeInView({ distance: 30, axis: 'x' })} className="lg:col-span-5">
@@ -48,5 +48,5 @@ export const CodeShowcase = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

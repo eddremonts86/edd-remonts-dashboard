@@ -1,17 +1,17 @@
-import { useMousePosition } from '@/portfolio/hooks/useMousePosition';
-import { m, useReducedMotion } from 'framer-motion';
-import { useInteractiveHover } from '@/portfolio/hooks/useInteractiveHover';
+import { m, useReducedMotion } from 'framer-motion'
+import { useInteractiveHover } from '@/portfolio/hooks/useInteractiveHover'
+import { useMousePosition } from '@/portfolio/hooks/useMousePosition'
 
 export const MouseFollower = () => {
-  const isHovering = useInteractiveHover();
-  const reduceMotion = useReducedMotion();
-  const { springX, springY } = useMousePosition();
+  const isHovering = useInteractiveHover()
+  const reduceMotion = useReducedMotion()
+  const { springX, springY } = useMousePosition()
 
-  if (reduceMotion) return null;
+  if (reduceMotion) return null
 
   // Larger diameter on hover: creates a visible "inversion lens" over interactive elements.
-  const size = isHovering ? 52 : 10;
-  const offset = size / 2;
+  const size = isHovering ? 52 : 10
+  const offset = size / 2
 
   return (
     <m.div
@@ -31,5 +31,5 @@ export const MouseFollower = () => {
         transition={{ type: 'spring', stiffness: 200, damping: 22 }}
       />
     </m.div>
-  );
-};
+  )
+}

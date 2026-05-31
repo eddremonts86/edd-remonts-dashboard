@@ -29,7 +29,7 @@ export function HeroSection({ content }: Props) {
       className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-background pb-24 md:pb-32"
     >
       <div className="container relative z-10 mx-auto w-full px-6">
-        <div className="mx-auto w-full max-w-[1400px] xl:pl-12">
+        <div className="mx-auto w-full max-w-350 xl:pl-12">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

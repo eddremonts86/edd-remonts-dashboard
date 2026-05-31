@@ -1,12 +1,9 @@
-import { createServerFn } from '@tanstack/react-start'
 import { createId } from '@paralleldrive/cuid2'
+import { createServerFn } from '@tanstack/react-start'
 import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
-import {
-  portfolioServiceTranslations,
-  portfolioServices,
-} from '@/shared/lib/db/schema'
+import { portfolioServiceTranslations, portfolioServices } from '@/shared/lib/db/schema'
 import type { Service } from '../types'
 
 const svcTransSchema = z.object({
@@ -28,10 +25,7 @@ export const getServices = createServerFn({ method: 'GET' }).handler(
   async (): Promise<Service[]> => {
     const db = await loadDb()
 
-    const rows = await db
-      .select()
-      .from(portfolioServices)
-      .orderBy(asc(portfolioServices.sortOrder))
+    const rows = await db.select().from(portfolioServices).orderBy(asc(portfolioServices.sortOrder))
 
     const translations = await db.select().from(portfolioServiceTranslations)
 
@@ -107,7 +101,12 @@ export const updateService = createServerFn({ method: 'POST' })
     for (const t of data.translations) {
       await db
         .insert(portfolioServiceTranslations)
-        .values({ serviceId: data.id, locale: t.locale, title: t.title, description: t.description ?? '' })
+        .values({
+          serviceId: data.id,
+          locale: t.locale,
+          title: t.title,
+          description: t.description ?? '',
+        })
         .onConflictDoUpdate({
           target: [portfolioServiceTranslations.serviceId, portfolioServiceTranslations.locale],
           set: { title: t.title, description: t.description ?? '' },

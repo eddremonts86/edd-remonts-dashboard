@@ -1,7 +1,7 @@
 import { m } from 'framer-motion'
+import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { fadeInView } from '@/portfolio/lib/motion'
-import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
 import { Section, Container } from '../ui/layout/Section'
 
 interface AdvantageItem {
@@ -22,11 +22,23 @@ export const AboutSection = () => {
       index: '01',
       icon: Award,
       title: t('about.advantages.0.title', '18 Years of Engineering Maturity'),
-      subtitle: t('about.advantages.0.subtitle', 'A full-stack foundation evolved into elite frontend architecture.'),
+      subtitle: t(
+        'about.advantages.0.subtitle',
+        'A full-stack foundation evolved into elite frontend architecture.',
+      ),
       bullets: [
-        t('about.advantages.0.bullets.0', 'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.'),
-        t('about.advantages.0.bullets.1', 'I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.'),
-        t('about.advantages.0.bullets.2', 'I combine absolute visual craft with production-grade architectural patterns.'),
+        t(
+          'about.advantages.0.bullets.0',
+          'Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.',
+        ),
+        t(
+          'about.advantages.0.bullets.1',
+          'I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.',
+        ),
+        t(
+          'about.advantages.0.bullets.2',
+          'I combine absolute visual craft with production-grade architectural patterns.',
+        ),
       ],
     },
     {
@@ -34,11 +46,23 @@ export const AboutSection = () => {
       index: '02',
       icon: Terminal,
       title: t('about.advantages.1.title', 'Constraint-Born Efficiency DNA'),
-      subtitle: t('about.advantages.1.subtitle', 'Obsessive performance habits forged under extreme resource limits.'),
+      subtitle: t(
+        'about.advantages.1.subtitle',
+        'Obsessive performance habits forged under extreme resource limits.',
+      ),
       bullets: [
-        t('about.advantages.1.bullets.0', "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits."),
-        t('about.advantages.1.bullets.1', 'A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.'),
-        t('about.advantages.1.bullets.2', 'I treat web performance not as a post-launch polish, but as a critical business-conversion driver.'),
+        t(
+          'about.advantages.1.bullets.0',
+          "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
+        ),
+        t(
+          'about.advantages.1.bullets.1',
+          'A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.',
+        ),
+        t(
+          'about.advantages.1.bullets.2',
+          'I treat web performance not as a post-launch polish, but as a critical business-conversion driver.',
+        ),
       ],
     },
     {
@@ -46,11 +70,23 @@ export const AboutSection = () => {
       index: '03',
       icon: Shield,
       title: t('about.advantages.2.title', 'European Enterprise-SaaS Scale'),
-      subtitle: t('about.advantages.2.subtitle', 'Proven authority scaling complex software platforms in Copenhagen.'),
+      subtitle: t(
+        'about.advantages.2.subtitle',
+        'Proven authority scaling complex software platforms in Copenhagen.',
+      ),
       bullets: [
-        t('about.advantages.2.bullets.0', 'I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.'),
-        t('about.advantages.2.bullets.1', 'I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.'),
-        t('about.advantages.2.bullets.2', 'I established strict modular boundaries to keep systems clean, testable, and highly composable.'),
+        t(
+          'about.advantages.2.bullets.0',
+          'I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.',
+        ),
+        t(
+          'about.advantages.2.bullets.1',
+          'I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.',
+        ),
+        t(
+          'about.advantages.2.bullets.2',
+          'I established strict modular boundaries to keep systems clean, testable, and highly composable.',
+        ),
       ],
     },
     {
@@ -58,11 +94,23 @@ export const AboutSection = () => {
       index: '04',
       icon: Compass,
       title: t('about.advantages.3.title', 'Product-Minded Systems Architect'),
-      subtitle: t('about.advantages.3.subtitle', 'Translating product vision and design system maturity into structured code.'),
+      subtitle: t(
+        'about.advantages.3.subtitle',
+        'Translating product vision and design system maturity into structured code.',
+      ),
       bullets: [
-        t('about.advantages.3.bullets.0', 'I align technical decisions, product metrics, and design-system aesthetics.'),
-        t('about.advantages.3.bullets.1', 'I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.'),
-        t('about.advantages.3.bullets.2', 'I design user interfaces that are visually premium, highly responsive, and operationally maintainable.'),
+        t(
+          'about.advantages.3.bullets.0',
+          'I align technical decisions, product metrics, and design-system aesthetics.',
+        ),
+        t(
+          'about.advantages.3.bullets.1',
+          'I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.',
+        ),
+        t(
+          'about.advantages.3.bullets.2',
+          'I design user interfaces that are visually premium, highly responsive, and operationally maintainable.',
+        ),
       ],
     },
     {
@@ -70,19 +118,31 @@ export const AboutSection = () => {
       index: '05',
       icon: Sparkles,
       title: t('about.advantages.4.title', 'Active Technical Leadership & Governance'),
-      subtitle: t('about.advantages.4.subtitle', 'Orchestrating teams and mentorship cultures that scale.'),
+      subtitle: t(
+        'about.advantages.4.subtitle',
+        'Orchestrating teams and mentorship cultures that scale.',
+      ),
       bullets: [
-        t('about.advantages.4.bullets.0', 'I governed technical standards adopted by 20+ engineers across 4 active product teams.'),
-        t('about.advantages.4.bullets.1', 'I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.'),
-        t('about.advantages.4.bullets.2', 'I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.'),
+        t(
+          'about.advantages.4.bullets.0',
+          'I governed technical standards adopted by 20+ engineers across 4 active product teams.',
+        ),
+        t(
+          'about.advantages.4.bullets.1',
+          'I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.',
+        ),
+        t(
+          'about.advantages.4.bullets.2',
+          'I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence.',
+        ),
       ],
     },
   ]
 
   return (
     <Section id="about" className="bg-surface">
-      <div className="pointer-events-none absolute -left-40 top-1/4 h-120 w-120 rounded-full bg-primary/[0.01] blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 bottom-1/4 h-120 w-120 rounded-full bg-primary/[0.01] blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-120 w-120 rounded-full bg-primary/1 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-1/4 h-120 w-120 rounded-full bg-primary/1 blur-3xl" />
 
       <Container>
         {/* Section Header */}
@@ -92,12 +152,14 @@ export const AboutSection = () => {
           </span>
           <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-foreground leading-tight">
             {t('about.title.whyHire', 'Why you should')} <br />
-            <span className="font-serif italic text-primary">{t('about.title.name', 'hire me')}</span>
+            <span className="font-serif italic text-primary">
+              {t('about.title.name', 'hire me')}
+            </span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
             {t(
               'about.description',
-              'Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.'
+              'Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.',
             )}
           </p>
         </div>

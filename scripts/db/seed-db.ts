@@ -9,36 +9,80 @@ import { portfolioSkills } from '@/shared/lib/db/schema'
 
 const SKILLS = [
   // Frontend
-  'React', 'Vue.js', 'Next.js', 'Nuxt.js', 'TypeScript', 'JavaScript',
-  'Tailwind CSS', 'HTML5', 'CSS3', 'SCSS', 'SASS', 'Framer Motion',
-  'Radix UI', 'React Hook Form', 'Recharts', 'i18next',
+  'React',
+  'Vue.js',
+  'Next.js',
+  'Nuxt.js',
+  'TypeScript',
+  'JavaScript',
+  'Tailwind CSS',
+  'HTML5',
+  'CSS3',
+  'SCSS',
+  'SASS',
+  'Framer Motion',
+  'Radix UI',
+  'React Hook Form',
+  'Recharts',
+  'i18next',
   // Full-stack / meta-frameworks
-  'TanStack Start', 'TanStack Router', 'TanStack Query', 'TanStack Form', 'TanStack Table',
+  'TanStack Start',
+  'TanStack Router',
+  'TanStack Query',
+  'TanStack Form',
+  'TanStack Table',
   // Backend & runtime
-  'Node.js', 'PHP', 'Laravel', 'Symfony',
+  'Node.js',
+  'PHP',
+  'Laravel',
+  'Symfony',
   // Databases & ORM
-  'PostgreSQL', 'PostGIS', 'MySQL', 'Drizzle ORM', 'ChromaDB',
+  'PostgreSQL',
+  'PostGIS',
+  'MySQL',
+  'Drizzle ORM',
+  'ChromaDB',
   // Auth
   'Better Auth',
   // AI / LLM
-  'Anthropic Claude', 'OpenAI', 'Ollama',
+  'Anthropic Claude',
+  'OpenAI',
+  'Ollama',
   // Payments
   'Stripe',
   // Maps
   'MapLibre GL',
   // Infra & DevOps
-  'Docker', 'Nginx', 'Apache', 'Linux', 'bash', 'macOS',
-  'Git', 'GitHub Actions', 'Netlify',
+  'Docker',
+  'Nginx',
+  'Apache',
+  'Linux',
+  'bash',
+  'macOS',
+  'Git',
+  'GitHub Actions',
+  'Netlify',
   // Testing & quality
-  'Vitest', 'Playwright', 'Cypress', 'ESLint', 'Prettier',
+  'Vitest',
+  'Playwright',
+  'Cypress',
+  'ESLint',
+  'Prettier',
   // Tooling
-  'Vite', 'Zod', 'pnpm',
+  'Vite',
+  'Zod',
+  'pnpm',
   // CMS & legacy
-  'Drupal', 'WordPress',
+  'Drupal',
+  'WordPress',
   // Project management
-  'Jira', 'Confluence',
+  'Jira',
+  'Confluence',
   // HTTP & utilities
-  'Axios', 'date-fns', 'Lucide', 'DnD Kit',
+  'Axios',
+  'date-fns',
+  'Lucide',
+  'DnD Kit',
   // Auth (additional)
   'Clerk',
 ]

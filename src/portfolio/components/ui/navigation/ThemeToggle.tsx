@@ -1,13 +1,13 @@
-import { useTheme } from '@/portfolio/contexts/ThemeContextBase';
-import { Sun, Moon, Monitor } from 'lucide-react';
+import { Sun, Moon, Monitor } from 'lucide-react'
+import { useTheme } from '@/portfolio/contexts/ThemeContextBase'
 
 export const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
 
   return (
-    <div 
-      className="flex border border-subtle rounded-full bg-surface/80 p-0.5 select-none shrink-0 backdrop-blur-md" 
-      role="group" 
+    <div
+      className="flex border border-subtle rounded-full bg-surface/80 p-0.5 select-none shrink-0 backdrop-blur-md"
+      role="group"
       aria-label="Select color theme"
     >
       <button
@@ -15,7 +15,7 @@ export const ThemeToggle = () => {
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
           theme === 'light'
             ? 'bg-primary text-primary-foreground shadow-md'
-            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
+            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
         }`}
         aria-label="Light mode"
         title="Light Mode"
@@ -27,7 +27,7 @@ export const ThemeToggle = () => {
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
           theme === 'dark'
             ? 'bg-primary text-primary-foreground shadow-md'
-            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
+            : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
         }`}
         aria-label="Dark mode"
         title="Dark Mode"
@@ -47,5 +47,5 @@ export const ThemeToggle = () => {
         <Monitor className="h-3.5 w-3.5" />
       </button>
     </div>
-  );
-};
+  )
+}

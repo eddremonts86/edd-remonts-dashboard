@@ -1,20 +1,20 @@
-import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter';
-import { AnimatePresence, m } from 'framer-motion';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { CategoryFilter } from './CategoryFilter';
-import { ProjectListItem } from './ProjectListItem';
-import { ProductStories } from './ProductStories';
-import { Section, Container } from '../ui/layout/Section';
+import { AnimatePresence, m } from 'framer-motion'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter'
+import { Section, Container } from '../ui/layout/Section'
+import { CategoryFilter } from './CategoryFilter'
+import { ProductStories } from './ProductStories'
+import { ProjectListItem } from './ProjectListItem'
 
 export const ProjectsGallery = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const { activeCategory, setActiveCategory, filteredProjects, setHoveredProject } =
-    useProjectFilter();
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+    useProjectFilter()
+  const [expandedId, setExpandedId] = useState<string | null>(null)
 
   // Filter out Zunzun from additional list
-  const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun');
+  const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
 
   return (
     <Section id="projects" className="bg-background">
@@ -24,14 +24,13 @@ export const ProjectsGallery = () => {
           <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/60">
             {t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
           </p>
-          <h2 className="text-4xl font-light tracking-tight md:text-6xl lg:text-8xl text-white">
+          <h2 className="text-4xl font-light tracking-tight md:text-6xl lg:text-8xl text-foreground">
             Product Stories
-            <span className="mt-2 block font-serif italic text-primary">
-              Not Project Cards.
-            </span>
+            <span className="mt-2 block font-serif italic text-primary">Not Project Cards.</span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/70 md:text-base">
-            Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.
+            Narratives tracking the context, technological hurdles, system architectures, and
+            metrics behind three major digital platforms.
           </p>
         </div>
 
@@ -46,11 +45,12 @@ export const ProjectsGallery = () => {
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">
               / ADDITIONAL PROJECTS
             </p>
-            <h3 className="text-3xl font-light tracking-tight text-foreground font-display text-white">
+            <h3 className="text-3xl font-light tracking-tight text-foreground font-display">
               Additional Projects
             </h3>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed font-light">
-              Explore additional product features, tools, and legacy software systems engineered throughout my career.
+              Explore additional product features, tools, and legacy software systems engineered
+              throughout my career.
             </p>
           </div>
 
@@ -60,24 +60,33 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* 3. Table Column Header Row (MD+) */}
-        <div 
-          role="table" 
-          aria-label="Additional Projects Registry"
-          className="w-full text-left"
-        >
-          <div 
+        <div role="table" aria-label="Additional Projects Registry" className="w-full text-left">
+          <div
             role="row"
             className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[9px] uppercase tracking-wider text-foreground/35 select-none"
           >
-            <span role="columnheader" className="col-span-1">Index</span>
-            <span role="columnheader" className="col-span-4">Project / Scope</span>
-            <span role="columnheader" className="col-span-2">Category</span>
-            <span role="columnheader" className="col-span-4">Architectural Vector</span>
-            <span role="columnheader" className="col-span-1 justify-self-end">Inspect</span>
+            <span role="columnheader" className="col-span-1">
+              Index
+            </span>
+            <span role="columnheader" className="col-span-4">
+              Project / Scope
+            </span>
+            <span role="columnheader" className="col-span-2">
+              Category
+            </span>
+            <span role="columnheader" className="col-span-4">
+              Architectural Vector
+            </span>
+            <span role="columnheader" className="col-span-1 justify-self-end">
+              Inspect
+            </span>
           </div>
 
           {/* 4. Typographic Systems Integration Registry Table */}
-          <div role="rowgroup" className="flex flex-col border-t border-subtle/20 relative min-h-[400px]">
+          <div
+            role="rowgroup"
+            className="flex flex-col border-t border-subtle/20 relative min-h-[400px]"
+          >
             <AnimatePresence mode="popLayout" initial={false}>
               {additionalProjects.map((project, index) => (
                 <ProjectListItem
@@ -85,7 +94,9 @@ export const ProjectsGallery = () => {
                   project={project}
                   index={index}
                   expanded={expandedId === project.id}
-                  onToggle={() => setExpandedId((prev) => (prev === project.id ? null : project.id))}
+                  onToggle={() =>
+                    setExpandedId((prev) => (prev === project.id ? null : project.id))
+                  }
                   onHover={setHoveredProject}
                 />
               ))}
@@ -104,6 +115,5 @@ export const ProjectsGallery = () => {
         )}
       </Container>
     </Section>
-  );
-};
-
+  )
+}

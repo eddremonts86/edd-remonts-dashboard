@@ -26,7 +26,7 @@ export function ContactSection({ content }: Props) {
   return (
     <section id="contact" className="bg-background py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,10 @@ export function ContactSection({ content }: Props) {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-base leading-relaxed text-muted-foreground md:text-lg"
             >
-              {t('contact.description', 'Have a project in mind or want to discuss a potential collaboration? Feel free to reach out.')}
+              {t(
+                'contact.description',
+                'Have a project in mind or want to discuss a potential collaboration? Feel free to reach out.',
+              )}
             </motion.p>
 
             <motion.div

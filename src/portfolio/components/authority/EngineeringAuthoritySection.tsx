@@ -1,78 +1,108 @@
-import { m } from 'framer-motion';
-import { ArrowUpRight, Compass, ShieldCheck, Zap, Activity, Award } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { fadeInView } from '@/portfolio/lib/motion';
+import { m } from 'framer-motion'
+import { ArrowUpRight, Compass, ShieldCheck, Zap, Activity, Award } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { fadeInView } from '@/portfolio/lib/motion'
 
 interface LessonItem {
-  index: string;
-  title: string;
-  body: string;
+  index: string
+  title: string
+  body: string
 }
 
 interface HowIWorkItem {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  body: string;
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  body: string
 }
 
 export function EngineeringAuthoritySection() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const lessons: LessonItem[] = [
     {
       index: '01',
       title: t('authority.lessons.0.title', 'Architecture is People'),
-      body: t('authority.lessons.0.body', "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint."),
+      body: t(
+        'authority.lessons.0.body',
+        "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint.",
+      ),
     },
     {
       index: '02',
       title: t('authority.lessons.1.title', 'Governance Enables Velocity'),
-      body: t('authority.lessons.1.body', 'Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity.'),
+      body: t(
+        'authority.lessons.1.body',
+        'Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity.',
+      ),
     },
     {
       index: '03',
       title: t('authority.lessons.2.title', 'Performance is a Business Metric'),
-      body: t('authority.lessons.2.body', 'Core Web Vitals, page-load latency, and interaction responsiveness directly determine user-retention and business-conversion rates. Treating performance as post-launch polish is a costly operational tax.'),
+      body: t(
+        'authority.lessons.2.body',
+        'Core Web Vitals, page-load latency, and interaction responsiveness directly determine user-retention and business-conversion rates. Treating performance as post-launch polish is a costly operational tax.',
+      ),
     },
     {
       index: '04',
       title: t('authority.lessons.3.title', 'Complexity Compounds'),
-      body: t('authority.lessons.3.body', 'The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti.'),
+      body: t(
+        'authority.lessons.3.body',
+        'The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti.',
+      ),
     },
     {
       index: '05',
       title: t('authority.lessons.4.title', 'The Best Systems are Boring'),
-      body: t('authority.lessons.4.body', 'Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity.'),
+      body: t(
+        'authority.lessons.4.body',
+        'Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity.',
+      ),
     },
-  ];
+  ]
 
   const howIWork: HowIWorkItem[] = [
     {
       icon: Compass,
       title: t('authority.howIWork.0.title', 'Pragmatic Decision-Making'),
-      body: t('authority.howIWork.0.body', 'Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue.'),
+      body: t(
+        'authority.howIWork.0.body',
+        'Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue.',
+      ),
     },
     {
       icon: ShieldCheck,
       title: t('authority.howIWork.1.title', 'Active Mentorship & Trust'),
-      body: t('authority.howIWork.1.body', 'Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers.'),
+      body: t(
+        'authority.howIWork.1.body',
+        'Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers.',
+      ),
     },
     {
       icon: Zap,
       title: t('authority.howIWork.2.title', 'Product-Minded Alignment'),
-      body: t('authority.howIWork.2.body', 'Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps.'),
+      body: t(
+        'authority.howIWork.2.body',
+        'Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps.',
+      ),
     },
     {
       icon: Activity,
       title: t('authority.howIWork.3.title', 'Debt-Minimization Strategy'),
-      body: t('authority.howIWork.3.body', 'Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades.'),
+      body: t(
+        'authority.howIWork.3.body',
+        'Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades.',
+      ),
     },
     {
       icon: Award,
       title: t('authority.howIWork.4.title', 'Empowered Autonomy'),
-      body: t('authority.howIWork.4.body', 'Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy.'),
+      body: t(
+        'authority.howIWork.4.body',
+        'Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy.',
+      ),
     },
-  ];
+  ]
 
   return (
     <section
@@ -80,10 +110,9 @@ export function EngineeringAuthoritySection() {
       className="relative overflow-hidden border-t border-subtle bg-background py-28 md:py-40"
     >
       {/* Decorative Blueprint Grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[24px_24px]" />
+      <div className="absolute inset-0 pointer-events-none opacity-1.5 bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[24px_24px]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
-        
         {/* Section Header */}
         <m.div {...fadeInView()} className="mb-24 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -92,19 +121,23 @@ export function EngineeringAuthoritySection() {
             </span>
             <h2 className="font-serif text-4xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-7xl text-foreground">
               {t('authority.title', 'Engineering')} <br />
-              <span className="font-serif italic text-primary">{t('authority.titleAccent', 'Leadership')}</span>
+              <span className="font-serif italic text-primary">
+                {t('authority.titleAccent', 'Leadership')}
+              </span>
             </h2>
           </div>
           <div className="flex items-end lg:col-span-5">
             <p className="max-w-md text-sm font-light leading-relaxed text-foreground/75 md:text-base font-display">
-              {t('authority.subtitle', 'Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.')}
+              {t(
+                'authority.subtitle',
+                'Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.',
+              )}
             </p>
           </div>
         </m.div>
 
         {/* Dual Column Leadership Grid */}
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
-          
           {/* Column A: Lessons From 18 Years */}
           <div className="lg:col-span-6 space-y-12">
             <div className="border-b border-subtle pb-6">
@@ -152,7 +185,7 @@ export function EngineeringAuthoritySection() {
 
             <div className="grid gap-6">
               {howIWork.map((item, i) => {
-                const Icon = item.icon;
+                const Icon = item.icon
                 return (
                   <m.div
                     key={item.title}
@@ -171,11 +204,10 @@ export function EngineeringAuthoritySection() {
                       </p>
                     </div>
                   </m.div>
-                );
+                )
               })}
             </div>
           </div>
-
         </div>
 
         {/* Strategic CTA */}
@@ -185,7 +217,10 @@ export function EngineeringAuthoritySection() {
               {t('authority.partnershipHeader', '/ PARTNERSHIP')}
             </span>
             <p className="text-lg font-light tracking-tight text-foreground md:text-xl max-w-lg font-display">
-              {t('authority.partnershipDesc', 'Looking for a Staff Engineer who coordinates systems, governs boundaries, and mentors squads? Let’s talk.')}
+              {t(
+                'authority.partnershipDesc',
+                'Looking for a Staff Engineer who coordinates systems, governs boundaries, and mentors squads? Let’s talk.',
+              )}
             </p>
           </div>
           <a
@@ -196,8 +231,7 @@ export function EngineeringAuthoritySection() {
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
           </a>
         </div>
-
       </div>
     </section>
-  );
+  )
 }

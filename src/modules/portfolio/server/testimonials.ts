@@ -1,5 +1,5 @@
-import { createServerFn } from '@tanstack/react-start'
 import { createId } from '@paralleldrive/cuid2'
+import { createServerFn } from '@tanstack/react-start'
 import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
@@ -52,9 +52,9 @@ export const createTestimonial = createServerFn({ method: 'POST' })
     const id = createId()
     await db.insert(portfolioTestimonials).values({ id, ...data })
     if (data.translations.length > 0) {
-      await db.insert(portfolioTestimonialTranslations).values(
-        data.translations.map((t) => ({ testimonialId: id, ...t })),
-      )
+      await db
+        .insert(portfolioTestimonialTranslations)
+        .values(data.translations.map((t) => ({ testimonialId: id, ...t })))
     }
     return {
       id,
@@ -82,7 +82,10 @@ export const updateTestimonial = createServerFn({ method: 'POST' })
         .insert(portfolioTestimonialTranslations)
         .values({ testimonialId: id, ...t })
         .onConflictDoUpdate({
-          target: [portfolioTestimonialTranslations.testimonialId, portfolioTestimonialTranslations.locale],
+          target: [
+            portfolioTestimonialTranslations.testimonialId,
+            portfolioTestimonialTranslations.locale,
+          ],
           set: { quote: t.quote },
         })
     }

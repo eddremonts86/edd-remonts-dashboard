@@ -1,9 +1,9 @@
-import { Mail } from 'lucide-react';
-import { FacebookIcon, GithubIcon, LinkedinIcon } from '@/portfolio/components/ui/icons/SocialIcons';
-import cvSource from './cv-source.json';
-import enLocale from '@/portfolio/locales/en/translation.json';
+import { Mail } from 'lucide-react'
+import { FacebookIcon, GithubIcon, LinkedinIcon } from '@/portfolio/components/ui/icons/SocialIcons'
+import enLocale from '@/portfolio/locales/en/translation.json'
+import cvSource from './cv-source.json'
 
-const src = cvSource.personalInfo;
+const src = cvSource.personalInfo
 
 export const personalInfo = {
   name: src.name,
@@ -23,7 +23,7 @@ export const personalInfo = {
     { name: 'Facebook', url: src.facebookUrl, icon: FacebookIcon },
     { name: 'Email', url: `mailto:${src.email}`, icon: Mail },
   ],
-};
+}
 
 export const aboutMe = {
   intro:
@@ -48,19 +48,18 @@ export const aboutMe = {
       icon: 'zap',
     },
   ],
-};
+}
 
 export const experiences = cvSource.experiences.map((exp) => {
-  const item =
-    enLocale.experience.items[String(exp.id) as keyof typeof enLocale.experience.items];
+  const item = enLocale.experience.items[String(exp.id) as keyof typeof enLocale.experience.items]
   return {
     ...exp,
     role: item?.role ?? '',
     description: item?.description ?? '',
-  };
-});
+  }
+})
 
-export const skills = cvSource.skills;
+export const skills = cvSource.skills
 
 export const projects = [
   {
@@ -154,7 +153,7 @@ export const projects = [
     link: 'https://www.sesport.dk/fodbold',
     category: 'Frontend',
   },
-];
+]
 
 export const services = [
   {
@@ -171,4 +170,4 @@ export const services = [
       'An exceptional frontend requires an ironclad backend. I design robust serverless API layers, optimize relational/NoSQL database queries, and establish automated deployment pipelines ensuring 99.9% uptime scalability.',
     icon: 'server',
   },
-];
+]

@@ -1,23 +1,23 @@
 // @ts-ignore
-import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import '@testing-library/jest-dom'
+import { vi } from 'vitest'
 
 const localStorageMock = {
   getItem: vi.fn(),
   setItem: vi.fn(),
   removeItem: vi.fn(),
   clear: vi.fn(),
-};
+}
 
 Object.defineProperty(window, 'localStorage', {
   value: localStorageMock,
-});
+})
 
 class IntersectionObserverMock {
-  callback: IntersectionObserverCallback;
+  callback: IntersectionObserverCallback
 
   constructor(callback: IntersectionObserverCallback) {
-    this.callback = callback;
+    this.callback = callback
   }
 
   observe(element: Element) {
@@ -34,11 +34,11 @@ class IntersectionObserverMock {
         },
       ],
       this as unknown as IntersectionObserver,
-    );
+    )
   }
 
   unobserve() {}
   disconnect() {}
 }
 
-window.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver;
+window.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver

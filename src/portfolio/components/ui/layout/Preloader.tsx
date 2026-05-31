@@ -1,11 +1,11 @@
-import { AnimatePresence, m } from 'framer-motion';
-import { APPLE_EASE } from '@/portfolio/lib/motion';
-import { useTranslation } from 'react-i18next';
-import { useFakeProgress } from '@/portfolio/hooks/useFakeProgress';
+import { AnimatePresence, m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { useFakeProgress } from '@/portfolio/hooks/useFakeProgress'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
 
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
-  const { t } = useTranslation();
-  const progress = useFakeProgress(onComplete);
+  const { t } = useTranslation()
+  const progress = useFakeProgress(onComplete)
 
   return (
     <AnimatePresence>
@@ -19,7 +19,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
       >
         <m.div
           exit={{ opacity: 0, y: -20, transition: { duration: 0.8, ease: APPLE_EASE } }}
-          className="container relative z-10 flex h-full w-full max-w-[1400px] flex-col justify-between px-6 py-12 md:py-24"
+          className="container relative z-10 flex h-full w-full max-w-350 flex-col justify-between px-6 py-12 md:py-24"
         >
           <div className="flex w-full items-start justify-between font-mono text-[11px] uppercase tracking-widest opacity-40">
             <span>{t('preloader.loading')}</span>
@@ -52,5 +52,5 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         </m.div>
       </m.div>
     </AnimatePresence>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
 interface StatusBadgeProps {
-  label: string;
-  className?: string;
+  label: string
+  className?: string
 }
 
 /** Pulsing availability dot + label — shared by Hero & Contact sections. */
@@ -16,4 +16,4 @@ export const StatusBadge = ({ label, className = '' }: StatusBadgeProps) => (
       {label}
     </span>
   </div>
-);
+)

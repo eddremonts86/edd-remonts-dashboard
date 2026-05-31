@@ -1,15 +1,15 @@
-import { Logo } from '@/portfolio/components/ui/media/Logo';
-import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector';
-import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle';
-import { NAV_SECTIONS } from '@/portfolio/data/navigation';
-import { APPLE_EASE } from '@/portfolio/lib/motion';
-import { useTextScramble } from '@/portfolio/hooks/useTextScramble';
-import { AnimatePresence, m } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useScrollVisibility } from '@/portfolio/hooks/useScrollVisibility';
-import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy';
+import { AnimatePresence, m } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import { useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Logo } from '@/portfolio/components/ui/media/Logo'
+import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
+import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
+import { NAV_SECTIONS } from '@/portfolio/data/navigation'
+import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy'
+import { useScrollVisibility } from '@/portfolio/hooks/useScrollVisibility'
+import { useTextScramble } from '@/portfolio/hooks/useTextScramble'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
 
 /** Single nav link with letter-scramble hover effect. */
 const ScrambleNavLink = ({
@@ -18,12 +18,12 @@ const ScrambleNavLink = ({
   isActive,
   onClick,
 }: {
-  id: string;
-  label: string;
-  isActive: boolean;
-  onClick?: () => void;
+  id: string
+  label: string
+  isActive: boolean
+  onClick?: () => void
 }) => {
-  const { display, scramble, reset } = useTextScramble(label, 2);
+  const { display, scramble, reset } = useTextScramble(label, 2)
 
   return (
     <a
@@ -37,19 +37,19 @@ const ScrambleNavLink = ({
     >
       {display}
     </a>
-  );
-};
+  )
+}
 
 export const StickyNav = () => {
-  const { t } = useTranslation();
-  const visible = useScrollVisibility();
-  const { activeSection } = useScrollSpy(NAV_SECTIONS);
-  const [_mobileOpen, setMobileOpen] = useState(false);
-  const mobileOpen = visible && _mobileOpen;
+  const { t } = useTranslation()
+  const visible = useScrollVisibility()
+  const { activeSection } = useScrollSpy(NAV_SECTIONS)
+  const [_mobileOpen, setMobileOpen] = useState(false)
+  const mobileOpen = visible && _mobileOpen
 
-  const closeMobile = useCallback(() => setMobileOpen(false), []);
+  const closeMobile = useCallback(() => setMobileOpen(false), [])
 
-  const navLinks = NAV_SECTIONS.filter((s) => s.id !== 'hero');
+  const navLinks = NAV_SECTIONS.filter((s) => s.id !== 'hero')
 
   return (
     <AnimatePresence>
@@ -155,5 +155,5 @@ export const StickyNav = () => {
         </m.nav>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}

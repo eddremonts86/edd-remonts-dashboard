@@ -37,7 +37,14 @@ import {
   useTestAiConnection,
   useUpdateAiConfig,
 } from '../api/ai-config.queries'
-import { AnthropicIcon, LlamaCppIcon, LMStudioIcon, MinimaxIcon, OllamaIcon, OpenAIIcon } from './AiIcons'
+import {
+  AnthropicIcon,
+  LlamaCppIcon,
+  LMStudioIcon,
+  MinimaxIcon,
+  OllamaIcon,
+  OpenAIIcon,
+} from './AiIcons'
 import { AiLanguageAudit } from './AiLanguageAudit'
 
 const PROVIDER_DEFAULTS: Record<AiProvider, Partial<AiConfigFormData>> = {

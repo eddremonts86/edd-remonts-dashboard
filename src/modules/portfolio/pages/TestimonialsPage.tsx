@@ -73,7 +73,9 @@ export function TestimonialsPage() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.testimonials', 'Testimonials')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio.testimonials', 'Testimonials')}
+        </h1>
         <Button onClick={openCreate}>{t('common.add', 'Add')}</Button>
       </div>
 
@@ -103,11 +105,7 @@ export function TestimonialsPage() {
                 <Button size="sm" variant="outline" onClick={() => openEdit(item)}>
                   {t('common.edit', 'Edit')}
                 </Button>
-                <Button
-                  size="sm"
-                  variant="destructive"
-                  onClick={() => deleteMut.mutate(item.id)}
-                >
+                <Button size="sm" variant="destructive" onClick={() => deleteMut.mutate(item.id)}>
                   {t('common.delete', 'Delete')}
                 </Button>
               </TableCell>
@@ -120,7 +118,9 @@ export function TestimonialsPage() {
         <SheetContent className="overflow-y-auto sm:max-w-md">
           <SheetHeader>
             <SheetTitle>
-              {editing ? t('testimonials.edit', 'Edit Testimonial') : t('testimonials.create', 'New Testimonial')}
+              {editing
+                ? t('testimonials.edit', 'Edit Testimonial')
+                : t('testimonials.create', 'New Testimonial')}
             </SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">

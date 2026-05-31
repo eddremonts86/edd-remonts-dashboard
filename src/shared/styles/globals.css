@@ -297,21 +297,46 @@
   --animate-sparkle: sparkle 2s ease-in-out infinite;
 
   @keyframes blob {
-    0% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
-    33% { transform: translate(30px, -50px) scale(1.1); opacity: 0.6; }
-    66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
-    100% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
+    0% {
+      transform: translate(0px, 0px) scale(1);
+      opacity: 0.3;
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+      opacity: 0.6;
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+      opacity: 0.3;
+    }
   }
 
   @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   @keyframes sparkle {
-    0%, 100% { opacity: 0; transform: scale(0); }
-    50% { opacity: 1; transform: scale(1); }
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
@@ -404,7 +429,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.pf h1, .pf h2, .pf h3, .pf h4, .pf h5, .pf h6 {
+.pf h1,
+.pf h2,
+.pf h3,
+.pf h4,
+.pf h5,
+.pf h6 {
   font-family: 'Epilogue', sans-serif;
   letter-spacing: -0.025em;
   color: var(--foreground);
@@ -415,11 +445,21 @@
    The dashboard's @theme declares --font-serif/--font-mono as Geist,
    so we must explicitly re-set the font-family for these utilities
    when used inside .pf. */
-.pf .font-body { font-family: 'Epilogue', sans-serif !important; }
-.pf .font-display { font-family: 'Epilogue', sans-serif !important; }
-.pf .font-serif { font-family: 'Cinzel', serif !important; }
-.pf .font-mono { font-family: 'JetBrains Mono', monospace !important; }
-.pf .font-sans { font-family: 'Epilogue', sans-serif !important; }
+.pf .font-body {
+  font-family: 'Epilogue', sans-serif !important;
+}
+.pf .font-display {
+  font-family: 'Epilogue', sans-serif !important;
+}
+.pf .font-serif {
+  font-family: 'Cinzel', serif !important;
+}
+.pf .font-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+.pf .font-sans {
+  font-family: 'Epilogue', sans-serif !important;
+}
 
 /* Noise overlay for portfolio */
 .pf::after {
@@ -438,4 +478,3 @@
   initial-value: 0deg;
   inherits: false;
 }
-

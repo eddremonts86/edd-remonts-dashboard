@@ -1,9 +1,9 @@
-import { MapPin, Calendar, Compass } from 'lucide-react';
-import { m } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { MapPin, Calendar, Compass } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export const AvailabilityCard = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <m.div
@@ -54,5 +54,5 @@ export const AvailabilityCard = () => {
         </div>
       </div>
     </m.div>
-  );
-};
+  )
+}

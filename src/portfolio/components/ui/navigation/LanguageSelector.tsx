@@ -10,8 +10,6 @@ export const LanguageSelector = () => {
 
   if (LANGUAGES.length <= 1) return null
 
-  const currentLang = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0]
-
   return (
     <div
       className="flex border border-subtle rounded-full bg-surface/80 p-0.5 select-none shrink-0 backdrop-blur-md"

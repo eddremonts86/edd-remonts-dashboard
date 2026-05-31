@@ -1,7 +1,7 @@
-import { ThemeProvider } from '@/portfolio/contexts/ThemeContext';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
-import { ThemeToggle } from './ThemeToggle';
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { ThemeProvider } from '@/portfolio/contexts/ThemeContext'
+import { ThemeToggle } from './ThemeToggle'
 
 describe('ThemeToggle', () => {
   it('renders correctly and responds to clicks', () => {
@@ -9,13 +9,13 @@ describe('ThemeToggle', () => {
       <ThemeProvider defaultTheme="light">
         <ThemeToggle />
       </ThemeProvider>,
-    );
+    )
 
-    const button = screen.getByRole('button', { name: /theme:/i });
+    const button = screen.getByRole('button', { name: /theme:/i })
     // @ts-ignore
-    expect(button).toBeInTheDocument();
+    expect(button).toBeInTheDocument()
 
     // Fire click to toggle theme
-    fireEvent.click(button);
-  });
-});
+    fireEvent.click(button)
+  })
+})

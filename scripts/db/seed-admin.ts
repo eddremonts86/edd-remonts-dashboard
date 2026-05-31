@@ -12,8 +12,8 @@
  * Safe to run multiple times (ON CONFLICT DO UPDATE).
  */
 
-import postgres from 'postgres'
 import { hashPassword } from 'better-auth/crypto'
+import postgres from 'postgres'
 
 const DATABASE_URL = process.env.DATABASE_URL
 const NODE_ENV = process.env.NODE_ENV

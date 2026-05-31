@@ -1,27 +1,27 @@
-import { AnimatePresence, m } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { useCarousel } from '@/portfolio/hooks/useCarousel';
-import { CarouselControls } from './CarouselControls';
-import { TestimonialSlide } from './TestimonialSlide';
-import { Section, Container } from '../ui/layout/Section';
+import { AnimatePresence, m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
+import { useCarousel } from '@/portfolio/hooks/useCarousel'
+import { Section, Container } from '../ui/layout/Section'
+import { CarouselControls } from './CarouselControls'
+import { TestimonialSlide } from './TestimonialSlide'
 
 export const TestimonialBlock = () => {
-  const { t } = useTranslation();
-  const { testimonials, isLoading } = usePortfolioData();
+  const { t } = useTranslation()
+  const { testimonials, isLoading } = usePortfolioData()
 
   const { currentIndex, direction, setIsPaused, paginate, handleGoto } = useCarousel(
     testimonials.length,
-  );
+  )
 
   // While data is still loading from the DB, render nothing
-  if (isLoading) return null;
+  if (isLoading) return null
 
   // When the DB has no testimonials, hide the section entirely
-  if (testimonials.length === 0) return null;
+  if (testimonials.length === 0) return null
 
-  const safeIndex = currentIndex >= 0 && currentIndex < testimonials.length ? currentIndex : 0;
-  const currentTestimonial = testimonials[safeIndex];
+  const safeIndex = currentIndex >= 0 && currentIndex < testimonials.length ? currentIndex : 0
+  const currentTestimonial = testimonials[safeIndex]
 
   return (
     <Section className="border-y border-subtle bg-background">
@@ -78,5 +78,5 @@ export const TestimonialBlock = () => {
         />
       </Container>
     </Section>
-  );
-};
+  )
+}

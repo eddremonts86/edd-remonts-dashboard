@@ -1,17 +1,17 @@
-import { AlertCircle, ArrowRight } from 'lucide-react';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { AlertCircle, ArrowRight } from 'lucide-react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 export const ContactForm = ({
   status,
   onSubmit,
 }: {
-  status: FormStatus;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  status: FormStatus
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <form className="relative z-10 space-y-8" onSubmit={onSubmit}>
@@ -69,15 +69,22 @@ export const ContactForm = ({
       </div>
 
       {/* Honeypot field */}
-      <div className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0 overflow-hidden" aria-hidden="true">
-        <label htmlFor="contact-hp">{t('contact.form.hpLabel', 'Do not fill this out if you are human')}</label>
+      <div
+        className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="contact-hp">
+          {t('contact.form.hpLabel', 'Do not fill this out if you are human')}
+        </label>
         <input id="contact-hp" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
       </div>
 
       {status === 'error' && (
         <div className="flex items-center gap-4 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
           <AlertCircle className="h-5 w-5 flex-shrink-0" />
-          <span className="text-sm font-bold tracking-wide font-mono">{t('contact.form.error')}</span>
+          <span className="text-sm font-bold tracking-wide font-mono">
+            {t('contact.form.error')}
+          </span>
         </div>
       )}
 
@@ -99,9 +106,12 @@ export const ContactForm = ({
           )}
         </button>
         <p className="mt-4 text-center font-mono text-[8px] text-foreground/60 leading-normal select-none">
-          {t('contact.form.privacyNotice', '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.')}
+          {t(
+            'contact.form.privacyNotice',
+            '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.',
+          )}
         </p>
       </div>
     </form>
-  );
-};
+  )
+}

@@ -1,18 +1,7 @@
-import {
-  IconBriefcase,
-  IconCode,
-  IconFolderCode,
-  IconQuote,
-  IconUsers,
-} from '@tabler/icons-react'
+import { IconBriefcase, IconCode, IconFolderCode, IconQuote, IconUsers } from '@tabler/icons-react'
 import { Link } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { WidgetRefreshButton, WidgetRefreshingIndicator } from '@/modules/core/widget'
 import { useDashboardStats } from '../api/dashboard.queries'
 
@@ -27,7 +16,16 @@ interface KpiCardProps {
   to: string
 }
 
-function KpiCard({ title, value, description, icon, isLoading, isFetching, onRefresh, to }: KpiCardProps) {
+function KpiCard({
+  title,
+  value,
+  description,
+  icon,
+  isLoading,
+  isFetching,
+  onRefresh,
+  to,
+}: KpiCardProps) {
   return (
     <Link to={to} className="block group">
       <Card className="transition-colors group-hover:bg-muted/40 cursor-pointer h-full">
@@ -53,13 +51,41 @@ function KpiCard({ title, value, description, icon, isLoading, isFetching, onRef
 }
 
 const QUICK_LINKS = [
-  { labelKey: 'sidebar.portfolio.experiences', fallback: 'Experiences', to: '/dashboard/portfolio/experiences' },
-  { labelKey: 'sidebar.portfolio.skills', fallback: 'Skills & Tech', to: '/dashboard/portfolio/skills' },
-  { labelKey: 'sidebar.portfolio.projects', fallback: 'Projects', to: '/dashboard/portfolio/projects' },
-  { labelKey: 'sidebar.portfolio.testimonials', fallback: 'Testimonials', to: '/dashboard/portfolio/testimonials' },
-  { labelKey: 'sidebar.portfolio.services', fallback: 'Services', to: '/dashboard/portfolio/services' },
-  { labelKey: 'sidebar.portfolio.content', fallback: 'Content Blocks', to: '/dashboard/portfolio/content' },
-  { labelKey: 'sidebar.portfolio.translations', fallback: 'Translations', to: '/dashboard/portfolio/translations' },
+  {
+    labelKey: 'sidebar.portfolio.experiences',
+    fallback: 'Experiences',
+    to: '/dashboard/portfolio/experiences',
+  },
+  {
+    labelKey: 'sidebar.portfolio.skills',
+    fallback: 'Skills & Tech',
+    to: '/dashboard/portfolio/skills',
+  },
+  {
+    labelKey: 'sidebar.portfolio.projects',
+    fallback: 'Projects',
+    to: '/dashboard/portfolio/projects',
+  },
+  {
+    labelKey: 'sidebar.portfolio.testimonials',
+    fallback: 'Testimonials',
+    to: '/dashboard/portfolio/testimonials',
+  },
+  {
+    labelKey: 'sidebar.portfolio.services',
+    fallback: 'Services',
+    to: '/dashboard/portfolio/services',
+  },
+  {
+    labelKey: 'sidebar.portfolio.content',
+    fallback: 'Content Blocks',
+    to: '/dashboard/portfolio/content',
+  },
+  {
+    labelKey: 'sidebar.portfolio.translations',
+    fallback: 'Translations',
+    to: '/dashboard/portfolio/translations',
+  },
 ] as const
 
 export function DashboardPage() {
@@ -73,9 +99,7 @@ export function DashboardPage() {
     <div className="flex flex-col gap-6 animate-in fade-in duration-500">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight">
-            {t('dashboard.title', 'Dashboard')}
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('dashboard.title', 'Dashboard')}</h2>
           <p className="text-muted-foreground">
             {t('dashboard.subtitle', 'Overview of your portfolio.')}
           </p>

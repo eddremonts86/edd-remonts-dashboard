@@ -1,8 +1,8 @@
-import { type Variants, m, useReducedMotion } from 'framer-motion';
-import { APPLE_EASE } from '@/portfolio/lib/motion';
+import { type Variants, m, useReducedMotion } from 'framer-motion'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
 
 interface LogoProps {
-  className?: string;
+  className?: string
 }
 
 /**
@@ -13,7 +13,7 @@ interface LogoProps {
  * creating a ligature tension. A small primary-red square caps the top-right.
  */
 export const Logo = ({ className = '' }: LogoProps) => {
-  const shouldReduce = useReducedMotion();
+  const shouldReduce = useReducedMotion()
 
   const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -21,19 +21,27 @@ export const Logo = ({ className = '' }: LogoProps) => {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: shouldReduce ? 0 : 1.1, ease: APPLE_EASE, delay: shouldReduce ? 0 : delay },
+        pathLength: {
+          duration: shouldReduce ? 0 : 1.1,
+          ease: APPLE_EASE,
+          delay: shouldReduce ? 0 : delay,
+        },
         opacity: { duration: 0.01, delay: shouldReduce ? 0 : delay },
       },
     }),
-  };
+  }
 
   const fill: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: shouldReduce ? 0 : 0.4, delay: shouldReduce ? 0 : 1.0, ease: 'easeOut' },
+      transition: {
+        duration: shouldReduce ? 0 : 0.4,
+        delay: shouldReduce ? 0 : 1.0,
+        ease: 'easeOut',
+      },
     },
-  };
+  }
 
   return (
     <m.svg
@@ -108,11 +116,15 @@ export const Logo = ({ className = '' }: LogoProps) => {
           visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: shouldReduce ? 0 : 0.3, delay: shouldReduce ? 0 : 1.2, ease: APPLE_EASE },
+            transition: {
+              duration: shouldReduce ? 0 : 0.3,
+              delay: shouldReduce ? 0 : 1.2,
+              ease: APPLE_EASE,
+            },
           },
         }}
         style={{ transformOrigin: '90px 14px' }}
       />
     </m.svg>
-  );
-};
+  )
+}

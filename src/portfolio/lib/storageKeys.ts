@@ -5,4 +5,4 @@
 export const STORAGE_KEYS = {
   lang: 'edd-portfolio-lang',
   theme: 'edd-portfolio-theme',
-} as const;
+} as const

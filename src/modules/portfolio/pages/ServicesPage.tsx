@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Table,
   TableBody,
@@ -13,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Textarea } from '@/components/ui/textarea'
 import {
   useCreateService,
   useDeleteService,
@@ -118,11 +118,7 @@ export function ServicesPage() {
                   <Button size="sm" variant="outline" onClick={() => openEdit(svc)}>
                     {t('common.edit', 'Edit')}
                   </Button>
-                  <Button
-                    size="sm"
-                    variant="destructive"
-                    onClick={() => deleteMut.mutate(svc.id)}
-                  >
+                  <Button size="sm" variant="destructive" onClick={() => deleteMut.mutate(svc.id)}>
                     {t('common.delete', 'Delete')}
                   </Button>
                 </TableCell>

@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
+import { useTranslation } from 'react-i18next'
 import { useExperiences } from '../api/experiences.queries'
 import { useProjects } from '../api/projects.queries'
 import { useSkills } from '../api/skills.queries'
@@ -33,17 +33,35 @@ export function PortfolioOverviewPage() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio', 'Portfolio')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio', 'Portfolio')}
+        </h1>
         <p className="mt-1 text-muted-foreground">
           {t('portfolio.overview.description', 'Manage all portfolio content from one place.')}
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard title={t('sidebar.portfolio.experiences', 'Experiences')} count={experiences.length} to="/dashboard/portfolio/experiences" />
-        <StatCard title={t('sidebar.portfolio.skills', 'Skills')} count={skills.length} to="/dashboard/portfolio/skills" />
-        <StatCard title={t('sidebar.portfolio.projects', 'Projects')} count={projects.length} to="/dashboard/portfolio/projects" />
-        <StatCard title={t('sidebar.portfolio.testimonials', 'Testimonials')} count={testimonials.length} to="/dashboard/portfolio/testimonials" />
+        <StatCard
+          title={t('sidebar.portfolio.experiences', 'Experiences')}
+          count={experiences.length}
+          to="/dashboard/portfolio/experiences"
+        />
+        <StatCard
+          title={t('sidebar.portfolio.skills', 'Skills')}
+          count={skills.length}
+          to="/dashboard/portfolio/skills"
+        />
+        <StatCard
+          title={t('sidebar.portfolio.projects', 'Projects')}
+          count={projects.length}
+          to="/dashboard/portfolio/projects"
+        />
+        <StatCard
+          title={t('sidebar.portfolio.testimonials', 'Testimonials')}
+          count={testimonials.length}
+          to="/dashboard/portfolio/testimonials"
+        />
       </div>
     </div>
   )

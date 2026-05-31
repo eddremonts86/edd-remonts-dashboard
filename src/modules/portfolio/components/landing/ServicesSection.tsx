@@ -30,7 +30,7 @@ export function ServicesSection({ services }: Props) {
   return (
     <section id="services" className="bg-muted/30 py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,9 +63,7 @@ export function ServicesSection({ services }: Props) {
                   className="rounded-2xl border border-border bg-background p-8"
                 >
                   <span className="mb-4 block text-3xl">{icon}</span>
-                  <h3 className="mb-3 text-xl font-medium text-foreground">
-                    {tr?.title ?? ''}
-                  </h3>
+                  <h3 className="mb-3 text-xl font-medium text-foreground">{tr?.title ?? ''}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {tr?.description ?? ''}
                   </p>

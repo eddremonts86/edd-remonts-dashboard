@@ -38,7 +38,7 @@
     --apple-glass: rgba(251, 250, 249, 0.72);
     --apple-border: rgba(0, 0, 0, 0.05);
 
-    --border-subtle: rgba(16, 16, 16, 0.10); /* Visible but restrained */
+    --border-subtle: rgba(16, 16, 16, 0.1); /* Visible but restrained */
     --border-default: rgba(16, 16, 16, 0.15);
 
     --scrollbar-thumb: rgba(0, 0, 0, 0.1);
@@ -76,8 +76,16 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
     background-image:
-      radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--primary) 11%, transparent) 0%, transparent 30%),
-      radial-gradient(circle at 88% 84%, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 32%);
+      radial-gradient(
+        circle at 12% 14%,
+        color-mix(in srgb, var(--primary) 11%, transparent) 0%,
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 88% 84%,
+        color-mix(in srgb, var(--primary) 9%, transparent) 0%,
+        transparent 32%
+      );
     background-attachment: fixed;
   }
 
@@ -201,16 +209,36 @@
   /* Film grain animation — discrete steps to simulate analogue noise */
   @keyframes grain {
     0%,
-    100% { transform: translate(0%, 0%); }
-    10%  { transform: translate(-5%, -4%); }
-    20%  { transform: translate(-2%, 6%); }
-    30%  { transform: translate(3%, -3%); }
-    40%  { transform: translate(-4%, 3%); }
-    50%  { transform: translate(5%, -5%); }
-    60%  { transform: translate(-3%, 4%); }
-    70%  { transform: translate(3%, -6%); }
-    80%  { transform: translate(-3%, 5%); }
-    90%  { transform: translate(4%, -3%); }
+    100% {
+      transform: translate(0%, 0%);
+    }
+    10% {
+      transform: translate(-5%, -4%);
+    }
+    20% {
+      transform: translate(-2%, 6%);
+    }
+    30% {
+      transform: translate(3%, -3%);
+    }
+    40% {
+      transform: translate(-4%, 3%);
+    }
+    50% {
+      transform: translate(5%, -5%);
+    }
+    60% {
+      transform: translate(-3%, 4%);
+    }
+    70% {
+      transform: translate(3%, -6%);
+    }
+    80% {
+      transform: translate(-3%, 5%);
+    }
+    90% {
+      transform: translate(4%, -3%);
+    }
   }
 
   /* Floating decorative shapes */

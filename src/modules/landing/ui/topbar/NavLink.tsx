@@ -10,8 +10,7 @@ interface NavLinkProps {
 }
 
 export const NavLink = memo(({ item, onClick, className }: NavLinkProps) => {
-  const baseStyles =
-    'text-sm font-medium text-foreground/80 hover:text-primary transition-colors'
+  const baseStyles = 'text-sm font-medium text-foreground/80 hover:text-primary transition-colors'
 
   if (item.to) {
     return (
@@ -29,11 +28,7 @@ export const NavLink = memo(({ item, onClick, className }: NavLinkProps) => {
   }
 
   return (
-    <a
-      href={item.href}
-      className={cn(baseStyles, className)}
-      onClick={(e) => onClick(e, item.id)}
-    >
+    <a href={item.href} className={cn(baseStyles, className)} onClick={(e) => onClick(e, item.id)}>
       {item.label}
     </a>
   )

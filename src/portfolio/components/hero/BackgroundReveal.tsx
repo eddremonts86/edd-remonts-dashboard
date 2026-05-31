@@ -1,8 +1,8 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 
 interface BackgroundRevealProps {
-  src: string;
-  theme: string;
+  src: string
+  theme: string
 }
 
 export const BackgroundReveal = ({ src, theme }: BackgroundRevealProps) => {
@@ -23,5 +23,5 @@ export const BackgroundReveal = ({ src, theme }: BackgroundRevealProps) => {
       <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_45%,#09090b_95%]" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
     </m.div>
-  );
-};
+  )
+}

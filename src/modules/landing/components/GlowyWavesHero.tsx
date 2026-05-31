@@ -64,12 +64,7 @@ export function GlowyWavesHero() {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-24 text-center md:px-8 lg:px-12">
-        <m.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="w-full"
-        >
+        <m.div variants={containerVariants} initial="hidden" animate="visible" className="w-full">
           <m.div
             variants={itemVariants}
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/40 bg-background/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-foreground/70 dark:border-border/60 dark:bg-background/70 dark:text-foreground/80"

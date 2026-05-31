@@ -13,7 +13,8 @@ import type { AppModuleManifest } from '@/modules/core/types'
 export const portfolioModule: AppModuleManifest = {
   id: 'portfolio',
   title: 'Portfolio',
-  description: 'Admin dashboard for managing all portfolio content — experiences, skills, projects, testimonials, translations, and site settings.',
+  description:
+    'Admin dashboard for managing all portfolio content — experiences, skills, projects, testimonials, translations, and site settings.',
   enabledByDefault: true,
   routes: [
     { path: '/dashboard/portfolio', kind: 'page' },

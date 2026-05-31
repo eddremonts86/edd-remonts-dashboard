@@ -23,10 +23,7 @@ export const getContentBlock = createServerFn({ method: 'GET' })
   .inputValidator(z.object({ key: z.string() }))
   .handler(async ({ data }): Promise<ContentBlock | null> => {
     const db = await loadDb()
-    const rows = await db
-      .select()
-      .from(portfolioContent)
-      .where(eq(portfolioContent.key, data.key))
+    const rows = await db.select().from(portfolioContent).where(eq(portfolioContent.key, data.key))
     return rows[0] ?? null
   })
 

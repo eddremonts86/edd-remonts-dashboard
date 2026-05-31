@@ -47,9 +47,14 @@ export function SiteMetaSettings() {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-semibold text-foreground">{t('settings.site.title', 'Site Metadata')}</h3>
+        <h3 className="text-lg font-semibold text-foreground">
+          {t('settings.site.title', 'Site Metadata')}
+        </h3>
         <p className="text-sm text-muted-foreground">
-          {t('settings.site.description', 'Control the site title, description, and social sharing metadata.')}
+          {t(
+            'settings.site.description',
+            'Control the site title, description, and social sharing metadata.',
+          )}
         </p>
       </div>
 

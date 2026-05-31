@@ -1,28 +1,28 @@
-import { NAV_SECTIONS } from '@/portfolio/data/navigation';
-import { m } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy';
+import { m } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { NAV_SECTIONS } from '@/portfolio/data/navigation'
+import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy'
 
 export const DotNavigation = () => {
-  const { t } = useTranslation();
-  const { activeSection, isVisible } = useScrollSpy(NAV_SECTIONS);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const { t } = useTranslation()
+  const { activeSection, isVisible } = useScrollSpy(NAV_SECTIONS)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   // Track global page scroll progress for the vertical track fill
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
-      setScrollProgress(progress);
-    };
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0
+      setScrollProgress(progress)
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
     <nav
@@ -33,14 +33,14 @@ export const DotNavigation = () => {
       <div className="absolute right-[11px] top-2 bottom-2 w-[1.5px] bg-foreground/10 dark:bg-white/10 rounded-full pointer-events-none" />
 
       {/* Active Scroll Progress Line */}
-      <m.div 
-        className="absolute right-[11px] top-2 w-[1.5px] bg-primary rounded-full origin-top pointer-events-none" 
+      <m.div
+        className="absolute right-[11px] top-2 w-[1.5px] bg-primary rounded-full origin-top pointer-events-none"
         style={{ height: `${scrollProgress}%`, maxHeight: 'calc(100% - 16px)' }}
         transition={{ type: 'spring', stiffness: 80, damping: 15 }}
       />
 
       {NAV_SECTIONS.map(({ id, labelKey }, index) => {
-        const isActive = activeSection === id;
+        const isActive = activeSection === id
 
         return (
           <a
@@ -64,14 +64,12 @@ export const DotNavigation = () => {
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               ) : (
-                <m.div
-                  className="h-2 w-2 rounded-full border border-subtle bg-surface/80 hover:border-primary hover:bg-primary/20 transition-all duration-300 z-20 scale-100 hover:scale-125"
-                />
+                <m.div className="h-2 w-2 rounded-full border border-subtle bg-surface/80 hover:border-primary hover:bg-primary/20 transition-all duration-300 z-20 scale-100 hover:scale-125" />
               )}
             </div>
           </a>
-        );
+        )
       })}
     </nav>
-  );
-};
+  )
+}

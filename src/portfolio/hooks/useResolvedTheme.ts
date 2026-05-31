@@ -1,16 +1,15 @@
-import { useSyncExternalStore } from 'react';
-import { useTheme } from '@/portfolio/contexts/ThemeContextBase';
+import { useSyncExternalStore } from 'react'
+import { useTheme } from '@/portfolio/contexts/ThemeContextBase'
 
-const mql =
-  typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+const mql = typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)') : null
 
 function subscribeSystemTheme(cb: () => void) {
-  mql?.addEventListener('change', cb);
-  return () => mql?.removeEventListener('change', cb);
+  mql?.addEventListener('change', cb)
+  return () => mql?.removeEventListener('change', cb)
 }
 
 function getSystemSnapshot(): 'light' | 'dark' {
-  return mql?.matches ? 'dark' : 'light';
+  return mql?.matches ? 'dark' : 'light'
 }
 
 /**
@@ -18,11 +17,11 @@ function getSystemSnapshot(): 'light' | 'dark' {
  * via the OS media query. Reacts to OS-level theme changes in real time.
  */
 export function useResolvedTheme(): 'light' | 'dark' {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
   const systemTheme = useSyncExternalStore(
     subscribeSystemTheme,
     getSystemSnapshot,
     () => 'light' as const,
-  );
-  return theme === 'system' ? systemTheme : (theme as 'light' | 'dark');
+  )
+  return theme === 'system' ? systemTheme : (theme as 'light' | 'dark')
 }

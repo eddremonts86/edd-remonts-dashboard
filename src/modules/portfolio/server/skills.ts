@@ -1,5 +1,5 @@
-import { createServerFn } from '@tanstack/react-start'
 import { createId } from '@paralleldrive/cuid2'
+import { createServerFn } from '@tanstack/react-start'
 import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
@@ -16,21 +16,19 @@ const skillInputSchema = z.object({
 })
 const skillSchema = skillInputSchema.extend({ id: z.string() })
 
-export const getSkills = createServerFn({ method: 'GET' }).handler(
-  async (): Promise<Skill[]> => {
-    const db = await loadDb()
-    const rows = await db.select().from(portfolioSkills).orderBy(asc(portfolioSkills.sortOrder))
-    return rows.map((row) => ({
-      id: row.id,
-      name: row.name,
-      iconSlug: row.iconSlug ?? undefined,
-      category: row.category,
-      proficiency: row.proficiency,
-      visible: row.visible,
-      sortOrder: row.sortOrder,
-    }))
-  },
-)
+export const getSkills = createServerFn({ method: 'GET' }).handler(async (): Promise<Skill[]> => {
+  const db = await loadDb()
+  const rows = await db.select().from(portfolioSkills).orderBy(asc(portfolioSkills.sortOrder))
+  return rows.map((row) => ({
+    id: row.id,
+    name: row.name,
+    iconSlug: row.iconSlug ?? undefined,
+    category: row.category,
+    proficiency: row.proficiency,
+    visible: row.visible,
+    sortOrder: row.sortOrder,
+  }))
+})
 
 export const createSkill = createServerFn({ method: 'POST' })
   .inputValidator(skillInputSchema)
