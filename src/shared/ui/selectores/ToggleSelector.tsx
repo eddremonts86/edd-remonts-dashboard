@@ -12,9 +12,10 @@ interface ToggleSelectorProps {
   items: ToggleSelectorItem[]
   value: string
   onChange: (value: string) => void
+  ariaLabel?: string
 }
 
-export function ToggleSelector({ items, value, onChange }: ToggleSelectorProps) {
+export function ToggleSelector({ items, value, onChange, ariaLabel }: ToggleSelectorProps) {
   return (
     <div className="inline-flex rounded-lg border border-border bg-muted/30 p-1">
       <ToggleGroup
@@ -24,6 +25,7 @@ export function ToggleSelector({ items, value, onChange }: ToggleSelectorProps) 
           if (v) onChange(v)
         }}
         className="justify-start"
+        aria-label={ariaLabel}
       >
         {items.map(({ id, name, icon: Icon, flag }) => (
           <ToggleGroupItem

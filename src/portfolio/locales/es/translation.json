@@ -12,6 +12,9 @@
   "hero": {
     "available": "Staff Frontend Engineer",
     "greeting": "Hola, soy",
+    "verified": "VERIFICADO / MEDIDO Y REPORTADO",
+    "viewWork": "Ver mi trabajo",
+    "downloadCV": "Descargar CV",
     "role": "Staff Frontend Engineer y Líder Técnico",
     "titleLine1": "Staff Frontend Engineer",
     "titleLine2": "& Líder Técnico",
@@ -39,6 +42,7 @@
     "metrics": {
       "title": "/ MÉTRICAS DE RENDIMIENTO VERIFICADAS",
       "verified": "[VERIFICADO]",
+      "viewProof": "Ver evidencia",
       "bundle": {
         "value": "42%",
         "label": "Reducción de Bundle",
@@ -643,7 +647,10 @@
     "nextTestimonial": "Recomendación siguiente",
     "gotoTestimonial": "Ir a recomendación número {{number}}",
     "mainNav": "Navegación principal",
-    "sectionNav": "Navegación de secciones"
+    "sectionNav": "Navegación de secciones",
+    "selectLanguage": "Seleccionar idioma",
+    "changeLanguageTo": "Cambiar idioma a {{language}}",
+    "themeSelector": "Tema: {{theme}}. Cambiar tema"
   },
   "testimonials_label": "Opiniones de clientes",
   "testimonials_loading": "Cargando testimonios...",

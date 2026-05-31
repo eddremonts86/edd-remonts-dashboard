@@ -3,6 +3,8 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import { HeadContent, Scripts } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import * as React from 'react'
+import { useTranslation } from 'react-i18next'
+import { SkipLink } from '@/components/ui/skip-link'
 import { useDevtoolsVisibility } from '@/modules/settings'
 import { AppProviders } from '@/shared/providers'
 import { RootErrorContent } from './-root-components/RootErrorContent'
@@ -39,14 +41,18 @@ function DevtoolsWrapper() {
 }
 
 export function RootDocument({ children }: { children: React.ReactNode }) {
+  const { i18n } = useTranslation()
+  const lang = i18n.language ?? 'en'
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased" suppressHydrationWarning>
+        <SkipLink />
         <AppProviders>
-          {children}
+          <main id="main-content">{children}</main>
           <DevtoolsWrapper />
         </AppProviders>
         <Scripts />
