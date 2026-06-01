@@ -16,7 +16,7 @@ export const useTextScramble = (text: string, framesPerChar = 3) => {
 
   // Keep text in sync if the prop changes (e.g. language switch)
   useEffect(() => {
-    setDisplay(text)
+     
   }, [text])
 
   const scramble = useCallback(() => {

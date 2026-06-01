@@ -12,7 +12,7 @@ describe('ThemeToggle', () => {
     )
 
     const button = screen.getByRole('button', { name: /theme:/i })
-    // @ts-ignore
+    // @ts-expect-error - testing-library types not available
     expect(button).toBeInTheDocument()
 
     // Fire click to toggle theme

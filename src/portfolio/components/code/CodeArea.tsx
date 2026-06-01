@@ -1,6 +1,6 @@
+import type { Variants } from 'framer-motion'
 import { m } from 'framer-motion'
 import { colorMap, type Token } from './codeBlockTokens'
-import type { Variants } from 'framer-motion'
 
 export const CodeArea = ({
   tokens,

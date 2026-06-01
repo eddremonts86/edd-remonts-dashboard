@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error - testing-library types
 import '@testing-library/jest-dom'
 import { vi } from 'vitest'
 

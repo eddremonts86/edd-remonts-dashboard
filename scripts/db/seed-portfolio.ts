@@ -510,7 +510,7 @@ async function main() {
 
   await db
     .insert(portfolioProjects)
-    .values(staticProjects.map(({ translations, ...row }) => row))
+    .values(staticProjects.map(({ translations: _translations, ...row }) => row))
     .onConflictDoNothing()
 
   const projectTranslations = staticProjects.flatMap((proj) =>

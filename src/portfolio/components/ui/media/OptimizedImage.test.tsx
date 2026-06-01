@@ -8,7 +8,7 @@ describe('OptimizedImage', () => {
 
     // Fast check for the img element
     const imgElement = screen.getByRole('img', { name: /test image/i })
-    // @ts-ignore
+    // @ts-expect-error - testing-library types not available
     expect(imgElement).toBeInTheDocument()
   })
 })

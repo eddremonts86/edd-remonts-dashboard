@@ -33,6 +33,7 @@ function useSheetPing(enabled = true) {
 
   React.useEffect(() => {
     if (!enabled) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     ping()
     const intervalId = window.setInterval(ping, 30000)
     const onOnline = () => ping()

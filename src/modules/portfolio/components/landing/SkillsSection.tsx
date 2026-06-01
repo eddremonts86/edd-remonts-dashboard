@@ -54,7 +54,7 @@ export function SkillsSection({ skills }: Props) {
                       className="rounded-full border border-border px-4 py-1.5 text-sm text-foreground"
                     >
                       {skill.name}
-                      {skill.proficiency != null && skill.proficiency >= 85 && (
+                      {skill.proficiency !== null && skill.proficiency >= 85 && (
                         <span className="ml-1.5 text-xs text-muted-foreground">★</span>
                       )}
                     </span>

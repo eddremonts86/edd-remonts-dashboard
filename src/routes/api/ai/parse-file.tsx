@@ -10,7 +10,7 @@ type ParseFileResult = {
 }
 
 async function parsePdf(buffer: Buffer, fileName: string): Promise<ParseFileResult> {
-  // @ts-ignore - ESM package type anomaly
+  // @ts-expect-error - ESM package type anomaly
   const pdfParse = (await import('pdf-parse')).default
   const data = await pdfParse(buffer)
   const text = data.text.trim()

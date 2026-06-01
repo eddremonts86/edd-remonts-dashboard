@@ -39,8 +39,11 @@ try {
       if (rows.length > 0) {
         console.log(`ℹ️   Database "${dbName}" already exists (no CREATEDB needed)`)
       } else {
+         
+         
         throw new Error(
           `Database "${dbName}" does not exist and the user has no CREATEDB privilege. Grant CREATEDB to the role or run db-init first.`,
+          { cause: e }
         )
       }
     } finally {
