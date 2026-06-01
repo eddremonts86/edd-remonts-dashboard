@@ -1,5 +1,5 @@
-import { m } from 'framer-motion';
-import { ShieldCheck, CalendarRange, Workflow } from 'lucide-react';
+import { m } from 'framer-motion'
+import { ShieldCheck, CalendarRange, Workflow } from 'lucide-react'
 
 const slideVariants = {
   enter: (direction: number) => ({
@@ -13,52 +13,52 @@ const slideVariants = {
     opacity: 0,
     filter: 'blur(8px)',
   }),
-};
+}
 
 export interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  company?: string;
-  avatar?: string;
+  quote: string
+  author: string
+  role: string
+  company?: string
+  avatar?: string
 }
 
 // Map testimonial authors to dynamic, high-authority engineering context
 function getTestimonialAuthority(author: string) {
-  const name = author.toLowerCase();
+  const name = author.toLowerCase()
   if (name.includes('warrer')) {
     return {
       relationship: 'Direct Architectural Sponsor',
       timeline: 'Collaborated 4 Years (2014 - 2018)',
       context: 'Microfrontend Core & Team Refinement at GiG',
-    };
+    }
   }
   if (name.includes('braun')) {
     return {
       relationship: 'Collaborative Systems Delivery',
       timeline: 'Collaborated 3 Years (2015 - 2018)',
       context: 'Cross-functional API Synchronization & Core Pipelines',
-    };
+    }
   }
   if (name.includes('torres')) {
     return {
       relationship: 'Full-Stack Collaboration Partner',
       timeline: 'Collaborated 2 Years (2012 - 2014)',
       context: 'Systems Integration & Mobile Layout Primitives',
-    };
+    }
   }
   if (name.includes('kumar')) {
     return {
       relationship: 'Frontend Platform Alignment',
       timeline: 'Collaborated 4 Years (2014 - 2018)',
       context: 'Platform Migrations & Outsource Governance',
-    };
+    }
   }
   return {
     relationship: 'Verified Technology Partner',
     timeline: 'Systems Sync',
     context: 'Core Platform Delivery',
-  };
+  }
 }
 
 function getInitials(name: string): string {
@@ -67,7 +67,7 @@ function getInitials(name: string): string {
     .filter(Boolean)
     .slice(0, 2)
     .map((n) => n[0].toUpperCase())
-    .join('');
+    .join('')
 }
 
 function Avatar({ name, src }: { name: string; src?: string }) {
@@ -78,7 +78,7 @@ function Avatar({ name, src }: { name: string; src?: string }) {
         alt={name}
         className="h-14 w-14 rounded-full object-cover ring-2 ring-primary/20 ring-offset-2 ring-offset-background"
       />
-    );
+    )
   }
   return (
     <div
@@ -87,17 +87,17 @@ function Avatar({ name, src }: { name: string; src?: string }) {
     >
       {getInitials(name)}
     </div>
-  );
+  )
 }
 
 export const TestimonialSlide = ({
   testimonial,
   direction,
 }: {
-  testimonial: Testimonial;
-  direction: number;
+  testimonial: Testimonial
+  direction: number
 }) => {
-  const authority = getTestimonialAuthority(testimonial.author);
+  const authority = getTestimonialAuthority(testimonial.author)
 
   return (
     <m.div
@@ -154,5 +154,5 @@ export const TestimonialSlide = ({
         </div>
       </m.div>
     </m.div>
-  );
-};
+  )
+}

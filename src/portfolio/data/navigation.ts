@@ -4,8 +4,8 @@
  */
 
 export interface NavSection {
-  id: string;
-  labelKey: string;
+  id: string
+  labelKey: string
 }
 
 export const NAV_SECTIONS: NavSection[] = [
@@ -15,4 +15,4 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: 'authority', labelKey: 'nav.authority' },
   { id: 'experience', labelKey: 'nav.experience' },
   { id: 'contact', labelKey: 'nav.contact' },
-];
+]

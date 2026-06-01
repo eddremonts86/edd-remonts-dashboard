@@ -4,4 +4,4 @@
  */
 
 /** Formspree form endpoint ID */
-export const FORMSPREE_FORM_ID = 'xgonbeaj';
+export const FORMSPREE_FORM_ID = 'xgonbeaj'

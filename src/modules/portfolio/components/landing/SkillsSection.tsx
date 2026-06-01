@@ -19,7 +19,7 @@ export function SkillsSection({ skills }: Props) {
   return (
     <section id="skills" className="bg-muted/30 py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export function SkillsSection({ skills }: Props) {
                       className="rounded-full border border-border px-4 py-1.5 text-sm text-foreground"
                     >
                       {skill.name}
-                      {skill.proficiency != null && skill.proficiency >= 85 && (
+                      {skill.proficiency !== null && skill.proficiency >= 85 && (
                         <span className="ml-1.5 text-xs text-muted-foreground">★</span>
                       )}
                     </span>

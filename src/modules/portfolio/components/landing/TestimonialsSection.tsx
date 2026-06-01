@@ -15,7 +15,7 @@ export function TestimonialsSection({ testimonials }: Props) {
   return (
     <section id="testimonials" className="bg-muted/30 py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,8 +33,8 @@ export function TestimonialsSection({ testimonials }: Props) {
 
           <div className="grid gap-6 md:grid-cols-2">
             {visible.map((item, i) => {
-              const translation = item.translations?.find((tr) => tr.locale === locale)
-                ?? item.translations?.[0]
+              const translation =
+                item.translations?.find((tr) => tr.locale === locale) ?? item.translations?.[0]
               return (
                 <motion.figure
                   key={item.id}

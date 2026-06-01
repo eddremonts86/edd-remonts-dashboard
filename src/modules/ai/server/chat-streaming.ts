@@ -470,7 +470,8 @@ export async function streamLmStudioChat(options: {
 
   const payloadMessages = messages
     .map((message) => {
-      const hasImages = Array.isArray(message.parts) && message.parts.some((p) => p.type === 'image')
+      const hasImages =
+        Array.isArray(message.parts) && message.parts.some((p) => p.type === 'image')
       if (hasImages && Array.isArray(message.parts)) {
         const contentParts: Array<
           { type: 'text'; text: string } | { type: 'image_url'; image_url: { url: string } }
@@ -531,7 +532,8 @@ export async function streamOllamaChat(options: {
   const serviceRootUrl = toServiceRootUrl(config.baseUrl)
   const payloadMessages = messages
     .map((message) => {
-      const hasImages = Array.isArray(message.parts) && message.parts.some((p) => p.type === 'image')
+      const hasImages =
+        Array.isArray(message.parts) && message.parts.some((p) => p.type === 'image')
       if (hasImages && Array.isArray(message.parts)) {
         // Ollama format: base64 strings in an `images` array, text as plain string
         const images: string[] = []
@@ -541,9 +543,7 @@ export async function streamOllamaChat(options: {
             textParts.push(part.text)
           } else if (part.type === 'image') {
             // Strip data URL prefix if present — Ollama expects raw base64
-            const base64 = part.image.includes(',')
-              ? part.image.split(',')[1]
-              : part.image
+            const base64 = part.image.includes(',') ? part.image.split(',')[1] : part.image
             images.push(base64)
           }
         }

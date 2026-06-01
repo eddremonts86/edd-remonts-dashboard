@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Table,
   TableBody,
@@ -12,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Textarea } from '@/components/ui/textarea'
 import { useContentBlocks, useUpsertContentBlock } from '../api/content.queries'
 import type { ContentBlock } from '../types'
 
@@ -39,11 +39,18 @@ export function ContentBlocksPage() {
     return (
       <div className="space-y-6 p-6">
         <div className="flex items-center gap-4">
-          <Button variant="outline" onClick={() => { setEditing(null); setForm(null) }}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setEditing(null)
+              setForm(null)
+            }}
+          >
             ← {t('common.back', 'Back')}
           </Button>
           <h1 className="text-2xl font-semibold text-foreground">
-            {t('content.edit', 'Edit Content Block')} — <code className="text-base">{editing.key}</code>
+            {t('content.edit', 'Edit Content Block')} —{' '}
+            <code className="text-base">{editing.key}</code>
           </h1>
         </div>
 
@@ -59,12 +66,12 @@ export function ContentBlocksPage() {
                   <Textarea
                     rows={4}
                     value={value}
-                    onChange={(e) => setForm((f) => f ? { ...f, [field]: e.target.value } : f)}
+                    onChange={(e) => setForm((f) => (f ? { ...f, [field]: e.target.value } : f))}
                   />
                 ) : (
                   <Input
                     value={value}
-                    onChange={(e) => setForm((f) => f ? { ...f, [field]: e.target.value } : f)}
+                    onChange={(e) => setForm((f) => (f ? { ...f, [field]: e.target.value } : f))}
                   />
                 )}
               </div>
@@ -80,7 +87,9 @@ export function ContentBlocksPage() {
 
   return (
     <div className="space-y-6 p-6">
-      <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.content', 'Content Blocks')}</h1>
+      <h1 className="text-2xl font-semibold text-foreground">
+        {t('sidebar.portfolio.content', 'Content Blocks')}
+      </h1>
 
       <Table>
         <TableHeader>
@@ -101,7 +110,9 @@ export function ContentBlocksPage() {
           {blocks.map((block) => (
             <TableRow key={block.key}>
               <TableCell className="font-mono text-sm">{block.key}</TableCell>
-              <TableCell className="max-w-xs truncate text-muted-foreground">{block.valueEn}</TableCell>
+              <TableCell className="max-w-xs truncate text-muted-foreground">
+                {block.valueEn}
+              </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline" onClick={() => openEdit(block)}>
                   {t('common.edit', 'Edit')}

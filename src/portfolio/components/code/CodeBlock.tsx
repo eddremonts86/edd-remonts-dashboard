@@ -1,32 +1,32 @@
-import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
-import { useState } from 'react';
-import { countLines, createTabs } from './codeBlockTokens';
-import { CodeArea } from './CodeArea';
-import { StatusBar } from './StatusBar';
-import { WindowChrome } from './WindowChrome';
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
+import { CodeArea } from './CodeArea'
+import { countLines, createTabs } from './codeBlockTokens'
+import { StatusBar } from './StatusBar'
+import { WindowChrome } from './WindowChrome'
 
 interface CodeBlockProps {
-  years?: number;
-  companies?: number;
+  years?: number
+  companies?: number
 }
 
 export const CodeBlock = ({ years = 18, companies = 12 }: CodeBlockProps) => {
-  const [activeTab, setActiveTab] = useState(0);
-  const tabs = createTabs(years, companies);
-  const reduceMotion = useReducedMotion();
+  const [activeTab, setActiveTab] = useState(0)
+  const tabs = createTabs(years, companies)
+  const reduceMotion = useReducedMotion()
 
   const containerVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.018 } },
-  };
+  }
 
   const tokenVariants = {
     hidden: { opacity: 0, y: 4 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.15 } },
-  };
+  }
 
-  const activeTokens = tabs[activeTab].tokens;
-  const lineCount = countLines(activeTokens);
+  const activeTokens = tabs[activeTab].tokens
+  const lineCount = countLines(activeTokens)
 
   return (
     <div className="group/block relative mx-auto max-w-3xl">
@@ -54,5 +54,5 @@ export const CodeBlock = ({ years = 18, companies = 12 }: CodeBlockProps) => {
         <StatusBar lineCount={lineCount} />
       </div>
     </div>
-  );
-};
+  )
+}

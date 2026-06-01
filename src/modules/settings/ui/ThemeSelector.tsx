@@ -17,5 +17,17 @@ export function ThemeSelector({ value, onChange }: ThemeSelectorProps) {
     { id: 'system', name: t('theme.system'), icon: IconDeviceDesktop },
   ]
 
-  return <ToggleSelector items={items} value={value} onChange={(v) => onChange(v as Theme)} />
+  const currentThemeLabel = items.find((item) => item.id === value)?.name ?? value
+  const ariaLabel = t('a11y.themeSelector', 'Theme: {{theme}}. Change theme', {
+    theme: currentThemeLabel,
+  })
+
+  return (
+    <ToggleSelector
+      items={items}
+      value={value}
+      onChange={(v) => onChange(v as Theme)}
+      ariaLabel={ariaLabel}
+    />
+  )
 }

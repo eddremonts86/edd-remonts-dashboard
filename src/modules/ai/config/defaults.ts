@@ -71,9 +71,7 @@ export const ANTHROPIC_BASE_URL =
   'https://api.anthropic.com/v1'
 
 export const MINIMAX_BASE_URL =
-  getEnv('MINIMAX_BASE_URL') ||
-  getEnv('VITE_AI_MINIMAX_BASE_URL') ||
-  'https://api.minimaxi.chat/v1'
+  getEnv('MINIMAX_BASE_URL') || getEnv('VITE_AI_MINIMAX_BASE_URL') || 'https://api.minimaxi.chat/v1'
 
 export const PROVIDER_DEFAULTS: Record<AiProvider, AiConfigFormData> = {
   minimax: {

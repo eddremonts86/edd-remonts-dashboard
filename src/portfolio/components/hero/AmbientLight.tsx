@@ -1,4 +1,4 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 
 export const AmbientLight = ({ hidden }: { hidden: boolean }) => (
   <div
@@ -15,4 +15,4 @@ export const AmbientLight = ({ hidden }: { hidden: boolean }) => (
       className="bg-secondary/10 absolute bottom-[-10%] left-[10%] h-[50vw] w-[50vw] rounded-full blur-[100px]"
     />
   </div>
-);
+)

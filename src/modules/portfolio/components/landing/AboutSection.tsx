@@ -24,7 +24,7 @@ export function AboutSection({ content }: Props) {
   return (
     <section id="about" className="bg-background py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

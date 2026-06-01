@@ -59,9 +59,9 @@ async function loadJson<T>(path: string): Promise<T> {
 
 /** Load techIconMap by importing the actual module (single source of truth). */
 async function loadTechIconMap(): Promise<Map<string, string>> {
-  const mod = (await import(
-    pathToFileURL(join(ROOT, 'src/portfolio/data/techIcons.ts')).href
-  )) as { techIconMap: Record<string, string> }
+  const mod = (await import(pathToFileURL(join(ROOT, 'src/portfolio/data/techIcons.ts')).href)) as {
+    techIconMap: Record<string, string>
+  }
   return new Map(Object.entries(mod.techIconMap))
 }
 

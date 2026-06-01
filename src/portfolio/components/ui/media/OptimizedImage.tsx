@@ -1,14 +1,14 @@
-import { APPLE_EASE } from '@/portfolio/lib/motion';
-import type { HTMLMotionProps } from 'framer-motion';
-import { m } from 'framer-motion';
-import React, { useState } from 'react';
-import { useIntersectionObserver } from '@/portfolio/hooks/useIntersectionObserver';
+import type { HTMLMotionProps } from 'framer-motion'
+import { m } from 'framer-motion'
+import React, { useState } from 'react'
+import { useIntersectionObserver } from '@/portfolio/hooks/useIntersectionObserver'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
 
 interface OptimizedImageProps extends HTMLMotionProps<'img'> {
-  src: string;
-  alt: string;
-  fallbackSrc?: string;
-  blurDataURL?: string;
+  src: string
+  alt: string
+  fallbackSrc?: string
+  blurDataURL?: string
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -19,22 +19,22 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className = '',
   ...props
 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [hasError, setHasError] = useState(false)
   const { ref: imgRef, isInView } = useIntersectionObserver<HTMLDivElement>({
     rootMargin: '50px',
     threshold: 0.1,
-  });
+  })
 
   const handleLoad = () => {
-    setIsLoaded(true);
-  };
+    setIsLoaded(true)
+  }
 
   const handleError = () => {
-    setHasError(true);
-  };
+    setHasError(true)
+  }
 
-  const currentSrc = hasError && fallbackSrc ? fallbackSrc : src;
+  const currentSrc = hasError && fallbackSrc ? fallbackSrc : src
 
   return (
     <div className={`relative overflow-hidden bg-black/5 ${className}`} ref={imgRef}>
@@ -79,5 +79,5 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
     </div>
-  );
-};
+  )
+}

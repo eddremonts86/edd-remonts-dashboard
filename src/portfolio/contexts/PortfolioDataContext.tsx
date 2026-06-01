@@ -13,14 +13,10 @@ import { useTranslation } from 'react-i18next'
 import { getContentBlocks } from '@/modules/portfolio/server/content'
 import { getExperiences } from '@/modules/portfolio/server/experiences'
 import { getProjects } from '@/modules/portfolio/server/projects'
-import { getSkills } from '@/modules/portfolio/server/skills'
 import { getServices } from '@/modules/portfolio/server/services'
+import { getSkills } from '@/modules/portfolio/server/skills'
 import { getTestimonials } from '@/modules/portfolio/server/testimonials'
-import {
-  FacebookIcon,
-  GithubIcon,
-  LinkedinIcon,
-} from '@/portfolio/components/ui/icons/SocialIcons'
+import { FacebookIcon, GithubIcon, LinkedinIcon } from '@/portfolio/components/ui/icons/SocialIcons'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -42,11 +38,10 @@ function buildPeriod(start: string | null | undefined, end: string | null | unde
 }
 
 /** Pick translation for locale, fallback to 'en' */
-function pickTr<T extends { locale: string }>(
-  translations: T[],
-  locale: string,
-): T | undefined {
-  return translations.find((t) => t.locale === locale) ?? translations.find((t) => t.locale === 'en')
+function pickTr<T extends { locale: string }>(translations: T[], locale: string): T | undefined {
+  return (
+    translations.find((t) => t.locale === locale) ?? translations.find((t) => t.locale === 'en')
+  )
 }
 
 // ── Types (matching cvData shapes exactly) ───────────────────────────────────
@@ -141,7 +136,11 @@ const DEFAULT_PERSONAL_INFO: CvPersonalInfo = {
   phone: '(+45) 61436173',
   location: 'Copenhagen, Denmark',
   socials: [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduardo-inerarte-643843bb', icon: LinkedinIcon },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/eduardo-inerarte-643843bb',
+      icon: LinkedinIcon,
+    },
     { name: 'GitHub', url: 'https://github.com/eddremonts86', icon: GithubIcon },
     { name: 'Facebook', url: 'https://www.facebook.com/edd.remonts', icon: FacebookIcon },
     { name: 'Email', url: 'mailto:eddremonts86@gmail.com', icon: Mail },
@@ -215,7 +214,12 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
       : 'en'
 
   const isLoading =
-    loadingContent || loadingExp || loadingSkills || loadingProjects || loadingServices || loadingTestimonials
+    loadingContent ||
+    loadingExp ||
+    loadingSkills ||
+    loadingProjects ||
+    loadingServices ||
+    loadingTestimonials
 
   // ── Map content blocks → personalInfo ──────────────────────────────────────
   function block(key: string): string {
@@ -338,7 +342,8 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   const stats: CvStats = {
     years: Number(block('stats.years')) || DEFAULT_STATS.years,
     companies: Number(block('stats.companies')) || DEFAULT_STATS.companies,
-    technologies: Number(block('stats.technologies').replace('+', '')) || DEFAULT_STATS.technologies,
+    technologies:
+      Number(block('stats.technologies').replace('+', '')) || DEFAULT_STATS.technologies,
     lighthouse: Number(block('stats.lighthouse')) || DEFAULT_STATS.lighthouse,
   }
 
@@ -361,6 +366,7 @@ export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function usePortfolioData(): PortfolioData {
   return useContext(PortfolioDataCtx)
 }

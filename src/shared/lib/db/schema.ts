@@ -247,4 +247,3 @@ export const portfolioServiceTranslations = pgTable(
     pk: primaryKey({ columns: [t.serviceId, t.locale] }),
   }),
 )
-

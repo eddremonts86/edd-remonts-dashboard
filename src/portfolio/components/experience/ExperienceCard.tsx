@@ -1,41 +1,44 @@
-import { fadeInView } from '@/portfolio/lib/motion';
-import { m } from 'framer-motion';
-import { Layers, Calendar } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { Layers, Calendar } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { fadeInView } from '@/portfolio/lib/motion'
 
 export interface EraData {
-  id: string;
-  period: string;
-  company: string;
-  role: string;
-  stackContext: string;
-  contributions: string[];
-  outcomes: string[];
-  vector: string;
-  logoUrl?: string;
+  id: string
+  period: string
+  company: string
+  role: string
+  stackContext: string
+  contributions: string[]
+  outcomes: string[]
+  vector: string
+  logoUrl?: string
 }
 
 interface ExperienceCardProps {
-  era: EraData;
-  index: number;
+  era: EraData
+  index: number
 }
 
 export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   // Simple bold parser: splits by '**' and renders odd indices inside <strong>
   const parseBoldText = (text: string) => {
-    const parts = text.split('**');
+    const parts = text.split('**')
     return parts.map((part, i) =>
       i % 2 === 1 ? (
-        <strong key={i} className="text-foreground font-semibold group-hover:text-primary transition-colors duration-300">
+        <strong
+          key={i}
+          className="text-foreground font-semibold group-hover:text-primary transition-colors duration-300"
+        >
           {part}
         </strong>
       ) : (
         part
-      )
-    );
-  };
+      ),
+    )
+  }
 
   return (
     <m.div
@@ -51,7 +54,6 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
 
       {/* Content Layout */}
       <div className="flex flex-1 flex-col justify-between px-2 transition-colors duration-500 hover:bg-surface/5 md:flex-row md:rounded-2xl md:p-6 gap-8">
-        
         {/* Left Column: Period, Role, Company */}
         <div role="cell" className="flex w-full flex-col md:w-[35%] text-left">
           <span className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.25em] text-primary uppercase font-bold mb-3">
@@ -95,7 +97,10 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
         </div>
 
         {/* Right Column: Contributions & Outcomes */}
-        <div role="cell" className="flex w-full flex-col justify-start md:w-[65%] space-y-6 text-left">
+        <div
+          role="cell"
+          className="flex w-full flex-col justify-start md:w-[65%] space-y-6 text-left"
+        >
           {/* Stack context */}
           <div className="space-y-1">
             <span className="font-mono text-[8px] text-primary uppercase tracking-widest block font-bold">
@@ -142,8 +147,7 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
             </ul>
           </div>
         </div>
-
       </div>
     </m.div>
-  );
-};
+  )
+}

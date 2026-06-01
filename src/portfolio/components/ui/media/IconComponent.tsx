@@ -1,5 +1,5 @@
-import { Database, Layout, Rocket, ShieldCheck, Star, Users } from 'lucide-react';
-import type { ComponentType } from 'react';
+import { Database, Layout, Rocket, ShieldCheck, Star, Users } from 'lucide-react'
+import type { ComponentType } from 'react'
 
 const IconMap: Record<string, ComponentType<{ className?: string }>> = {
   users: Users,
@@ -7,9 +7,9 @@ const IconMap: Record<string, ComponentType<{ className?: string }>> = {
   shield: ShieldCheck,
   layout: Layout,
   server: Database,
-};
+}
 
 export const IconComponent = ({ name, className }: { name: string; className?: string }) => {
-  const Icon = IconMap[name] ?? Star;
-  return <Icon className={className} />;
-};
+  const Icon = IconMap[name] ?? Star
+  return <Icon className={className} />
+}

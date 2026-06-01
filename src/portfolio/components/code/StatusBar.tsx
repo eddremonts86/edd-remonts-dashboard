@@ -12,4 +12,4 @@ export const StatusBar = ({ lineCount }: { lineCount: number }) => (
       <span>Spaces: 2</span>
     </div>
   </div>
-);
+)

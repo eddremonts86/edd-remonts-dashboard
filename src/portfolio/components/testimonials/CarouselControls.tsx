@@ -1,6 +1,6 @@
-import { m } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export const CarouselControls = ({
   total,
@@ -9,13 +9,13 @@ export const CarouselControls = ({
   onNext,
   onGoto,
 }: {
-  total: number;
-  current: number;
-  onPrev: () => void;
-  onNext: () => void;
-  onGoto: (idx: number) => void;
+  total: number
+  current: number
+  onPrev: () => void
+  onNext: () => void
+  onGoto: (idx: number) => void
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <m.div
@@ -51,5 +51,5 @@ export const CarouselControls = ({
         <ChevronRight className="mr-[-1px] h-4 w-4" />
       </button>
     </m.div>
-  );
-};
+  )
+}

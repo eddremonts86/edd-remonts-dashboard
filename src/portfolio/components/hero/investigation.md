@@ -11,10 +11,10 @@ Y honestamente, el salto es grande.
 
 La nueva sección de:
 
-* “Autoridad de Ingeniería”
-* principios
-* pensamiento arquitectónico
-* systems ownership
+- “Autoridad de Ingeniería”
+- principios
+- pensamiento arquitectónico
+- systems ownership
 
 …sube muchísimo el nivel percibido.
 
@@ -28,11 +28,11 @@ Voy a ir por capas.
 
 Ahora mismo el sitio tiene:
 
-* MUCHÍSIMA información,
-* MUCHOS logos,
-* MUCHAS secciones,
-* MUCHAS métricas,
-* MUCHOS bloques visuales similares.
+- MUCHÍSIMA información,
+- MUCHOS logos,
+- MUCHAS secciones,
+- MUCHAS métricas,
+- MUCHOS bloques visuales similares.
 
 El resultado:
 
@@ -41,10 +41,10 @@ El resultado:
 
 Los mejores portfolios del mundo son:
 
-* más curados,
-* más enfocados,
-* más editoriales,
-* más narrativos.
+- más curados,
+- más enfocados,
+- más editoriales,
+- más narrativos.
 
 ---
 
@@ -60,24 +60,24 @@ Eso mata memorabilidad.
 
 Actualmente tienes:
 
-* Hero
-* métricas
-* origen
-* servicios
-* stack
-* experiencia
-* autoridad
-* proyectos
-* code section
-* contacto
+- Hero
+- métricas
+- origen
+- servicios
+- stack
+- experiencia
+- autoridad
+- proyectos
+- code section
+- contacto
 
 Todo muy fuerte.
 
 Pero no hay:
 
-* respiración,
-* contraste dramático,
-* ritmo narrativo.
+- respiración,
+- contraste dramático,
+- ritmo narrativo.
 
 ---
 
@@ -87,11 +87,11 @@ Los portfolios top-tier funcionan casi como una película.
 
 Hay:
 
-* tensión,
-* pausas,
-* revelaciones,
-* contraste,
-* momentos hero.
+- tensión,
+- pausas,
+- revelaciones,
+- contraste,
+- momentos hero.
 
 Tu sitio todavía se siente algo:
 
@@ -107,9 +107,9 @@ Esta es probablemente la mejora más importante de UX/UI.
 
 Ahora mismo el stack:
 
-* domina demasiado visualmente,
-* se repite varias veces,
-* ocupa muchísimo espacio cognitivo.
+- domina demasiado visualmente,
+- se repite varias veces,
+- ocupa muchísimo espacio cognitivo.
 
 Eso baja percepción premium.
 
@@ -119,13 +119,13 @@ Eso baja percepción premium.
 
 No muestran:
 
-* 70 logos.
+- 70 logos.
 
 Muestran:
 
-* criterio,
-* selección,
-* identidad.
+- criterio,
+- selección,
+- identidad.
 
 ---
 
@@ -137,12 +137,12 @@ Muestran:
 
 Solo:
 
-* React
-* TypeScript
-* TanStack
-* Node
-* PostgreSQL
-* AI tooling
+- React
+- TypeScript
+- TanStack
+- Node
+- PostgreSQL
+- AI tooling
 
 ---
 
@@ -162,7 +162,7 @@ O:
 
 Ahora mismo:
 
-* parecen tarjetas normales.
+- parecen tarjetas normales.
 
 Para competir globalmente:
 los proyectos deben parecer:
@@ -191,10 +191,10 @@ Muy importante.
 
 Ejemplo:
 
-* reveal transitions,
-* parallax suave,
-* scroll choreography,
-* depth.
+- reveal transitions,
+- parallax suave,
+- scroll choreography,
+- depth.
 
 ---
 
@@ -206,10 +206,10 @@ No solo:
 
 Sino:
 
-* scale,
-* role,
-* impact,
-* challenge.
+- scale,
+- role,
+- impact,
+- challenge.
 
 ---
 
@@ -227,17 +227,17 @@ Pero aún no es “world-class unforgettable”.
 
 Los mejores portfolios tienen:
 
-* una identidad visual central,
-* un concepto.
+- una identidad visual central,
+- un concepto.
 
 Ejemplos:
 
-* brutal minimalism,
-* editorial systems,
-* immersive motion,
-* futuristic labs,
-* OS-like interfaces,
-* cinematic storytelling.
+- brutal minimalism,
+- editorial systems,
+- immersive motion,
+- futuristic labs,
+- OS-like interfaces,
+- cinematic storytelling.
 
 ---
 
@@ -249,12 +249,12 @@ Por tu perfil técnico:
 
 Algo entre:
 
-* Linear,
-* Vercel,
-* Stripe,
-* Raycast,
-* Cron,
-* Railway.
+- Linear,
+- Vercel,
+- Stripe,
+- Raycast,
+- Cron,
+- Railway.
 
 ---
 
@@ -284,9 +284,9 @@ Muy ligera.
 
 Elementos que reaccionen a:
 
-* cursor,
-* scroll,
-* velocity.
+- cursor,
+- scroll,
+- velocity.
 
 ---
 
@@ -312,9 +312,9 @@ Pero visualmente todavía parece:
 
 Como:
 
-* engineering observability,
-* deployment metrics,
-* infra dashboards.
+- engineering observability,
+- deployment metrics,
+- infra dashboards.
 
 ---
 
@@ -322,11 +322,11 @@ Como:
 
 En vez de cards:
 
-* terminal metrics,
-* live counters,
-* graph traces,
-* uptime visuals,
-* lighthouse graphs.
+- terminal metrics,
+- live counters,
+- graph traces,
+- uptime visuals,
+- lighthouse graphs.
 
 ---
 
@@ -344,8 +344,8 @@ Pero los mejores del mundo usan:
 
 # Qué veo ahora
 
-* buena tipografía,
-* pero todavía genérica.
+- buena tipografía,
+- pero todavía genérica.
 
 ---
 
@@ -355,9 +355,9 @@ Pero los mejores del mundo usan:
 
 Ejemplo:
 
-* massive headlines,
-* tiny captions,
-* editorial rhythm.
+- massive headlines,
+- tiny captions,
+- editorial rhythm.
 
 ---
 
@@ -391,9 +391,9 @@ Pero visualmente aún parece:
 
 ## Hazla parecer:
 
-* engineering doctrine,
-* internal engineering handbook,
-* systems philosophy.
+- engineering doctrine,
+- internal engineering handbook,
+- systems philosophy.
 
 ---
 
@@ -401,16 +401,16 @@ Pero visualmente aún parece:
 
 ## Split layout
 
-* manifesto izquierda,
-* diagrams derecha.
+- manifesto izquierda,
+- diagrams derecha.
 
 ---
 
 ## Interactive system maps
 
-* module graphs,
-* architecture flows,
-* rendering pipelines.
+- module graphs,
+- architecture flows,
+- rendering pipelines.
 
 ---
 
@@ -470,11 +470,11 @@ parecen producto SaaS premium.
 
 ## b) Mejor states system
 
-* hover,
-* active,
-* transitions,
-* focus,
-* keyboard.
+- hover,
+- active,
+- transitions,
+- focus,
+- keyboard.
 
 ---
 
@@ -495,9 +495,9 @@ clásica.
 
 Que:
 
-* cambie según sección,
-* muestre progreso,
-* contextualice contenido.
+- cambie según sección,
+- muestre progreso,
+- contextualice contenido.
 
 ---
 
@@ -516,12 +516,12 @@ Pero todavía bastante plano.
 
 # Agrega:
 
-* layers,
-* translucency,
-* lighting,
-* texture,
-* depth gradients,
-* atmospheric blur.
+- layers,
+- translucency,
+- lighting,
+- texture,
+- depth gradients,
+- atmospheric blur.
 
 MUY sutil.
 
@@ -533,18 +533,18 @@ Todo está muy “perfect”.
 
 Los mejores portfolios mezclan:
 
-* precisión
+- precisión
   con
-* tensión visual.
+- tensión visual.
 
 ---
 
 # Ejemplo:
 
-* layouts inesperados,
-* typography collisions,
-* asymmetry controlada,
-* pacing irregular.
+- layouts inesperados,
+- typography collisions,
+- asymmetry controlada,
+- pacing irregular.
 
 ---
 
@@ -552,7 +552,7 @@ Los mejores portfolios mezclan:
 
 Los portfolios elite:
 
-* se sienten PERFECTOS en mobile.
+- se sienten PERFECTOS en mobile.
 
 ---
 
@@ -595,15 +595,15 @@ Eso deja emoción.
 
 Tu sitio todavía es:
 
-* tech portfolio.
+- tech portfolio.
 
 Los top-tier parecen:
 
-* revista,
-* producto,
-* sistema operativo,
-* manifesto,
-* laboratorio.
+- revista,
+- producto,
+- sistema operativo,
+- manifesto,
+- laboratorio.
 
 ---
 
@@ -612,19 +612,19 @@ Los top-tier parecen:
 Ahora mismo:
 el sitio demuestra:
 
-* skill.
+- skill.
 
 Pero los mejores del mundo demuestran:
 
-* taste.
+- taste.
 
 Y taste visual:
 es principalmente:
 
-* restraint,
-* pacing,
-* hierarchy,
-* narrative control.
+- restraint,
+- pacing,
+- hierarchy,
+- narrative control.
 
 ---
 
@@ -636,8 +636,8 @@ Sí, quitar.
 
 Los sitios elite:
 
-* no intentan demostrar TODO,
-* intentan controlar percepción.
+- no intentan demostrar TODO,
+- intentan controlar percepción.
 
 ---
 
@@ -737,19 +737,19 @@ Necesario para memorabilidad.
 
 Con:
 
-* menos ruido,
-* más narrativa,
-* mejor tipografía,
-* projects cinematográficos,
-* interacciones signature,
-* systems storytelling,
+- menos ruido,
+- más narrativa,
+- mejor tipografía,
+- projects cinematográficos,
+- interacciones signature,
+- systems storytelling,
 
 …sí veo perfectamente posible que este portfolio llegue a nivel:
 
-* Awwwards honorable/high mention,
-* CSS Design Awards,
-* top frontend portfolios circulando en X/LinkedIn,
-* recruiters de Stripe/Vercel/Linear-style companies.
+- Awwwards honorable/high mention,
+- CSS Design Awards,
+- top frontend portfolios circulando en X/LinkedIn,
+- recruiters de Stripe/Vercel/Linear-style companies.
 
 La base técnica ya la tienes.
 Ahora el siguiente nivel es:

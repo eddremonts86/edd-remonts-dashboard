@@ -8,6 +8,7 @@ meaningful KPI widgets that give Eduardo an at-a-glance overview of his portfoli
 **Target user:** Eduardo (portfolio owner), sole admin of the dashboard.
 
 **Success looks like:**
+
 - Opening `/dashboard` shows portfolio entity counts (experiences, projects, skills, testimonials)
 - Each stat card is a clickable shortcut to the relevant portfolio management section
 - Style is consistent with the existing "Total Users" widget (shadcn/ui `Card`)
@@ -72,13 +73,13 @@ apps/edd-remonts-dashboard/src/modules/dashboard/
 
 ## Widgets Plan
 
-| Widget | Icon | Value source | Link |
-|---|---|---|---|
-| Total Users | `IconUsers` | `COUNT(users)` | `/dashboard/users` |
-| Total Experiences | `IconBriefcase` | `COUNT(portfolioExperiences)` | `/dashboard/portfolio/experiences` |
-| Total Projects | `IconFolderCode` | `COUNT(portfolioProjects)` | `/dashboard/portfolio/projects` |
-| Total Skills | `IconCode` | `COUNT(portfolioSkills)` | `/dashboard/portfolio/skills` |
-| Total Testimonials | `IconQuote` | `COUNT(portfolioTestimonials)` | `/dashboard/portfolio/testimonials` |
+| Widget             | Icon             | Value source                   | Link                                |
+| ------------------ | ---------------- | ------------------------------ | ----------------------------------- |
+| Total Users        | `IconUsers`      | `COUNT(users)`                 | `/dashboard/users`                  |
+| Total Experiences  | `IconBriefcase`  | `COUNT(portfolioExperiences)`  | `/dashboard/portfolio/experiences`  |
+| Total Projects     | `IconFolderCode` | `COUNT(portfolioProjects)`     | `/dashboard/portfolio/projects`     |
+| Total Skills       | `IconCode`       | `COUNT(portfolioSkills)`       | `/dashboard/portfolio/skills`       |
+| Total Testimonials | `IconQuote`      | `COUNT(portfolioTestimonials)` | `/dashboard/portfolio/testimonials` |
 
 Followed by a **Quick Access** grid replacing the "Getting Started" placeholder.
 

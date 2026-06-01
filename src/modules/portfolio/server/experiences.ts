@@ -1,15 +1,16 @@
-import { createServerFn } from '@tanstack/react-start'
 import { createId } from '@paralleldrive/cuid2'
+import { createServerFn } from '@tanstack/react-start'
 import { asc, eq } from 'drizzle-orm'
 import { z } from 'zod'
 import { loadDb } from '@/shared/lib/db/load'
-import {
-  portfolioExperienceTranslations,
-  portfolioExperiences,
-} from '@/shared/lib/db/schema'
+import { portfolioExperienceTranslations, portfolioExperiences } from '@/shared/lib/db/schema'
 import type { Experience } from '../types'
 
-const translationSchema = z.object({ locale: z.string(), role: z.string(), description: z.string().optional() })
+const translationSchema = z.object({
+  locale: z.string(),
+  role: z.string(),
+  description: z.string().optional(),
+})
 const expInputSchema = z.object({
   company: z.string(),
   location: z.string().optional(),
@@ -32,9 +33,7 @@ export const getExperiences = createServerFn({ method: 'GET' }).handler(
       .from(portfolioExperiences)
       .orderBy(asc(portfolioExperiences.sortOrder))
 
-    const translations = await db
-      .select()
-      .from(portfolioExperienceTranslations)
+    const translations = await db.select().from(portfolioExperienceTranslations)
 
     return rows.map((exp) => ({
       id: exp.id,
@@ -74,9 +73,9 @@ export const createExperience = createServerFn({ method: 'POST' })
     })
 
     if (data.translations.length > 0) {
-      await db.insert(portfolioExperienceTranslations).values(
-        data.translations.map((t) => ({ experienceId: id, ...t })),
-      )
+      await db
+        .insert(portfolioExperienceTranslations)
+        .values(data.translations.map((t) => ({ experienceId: id, ...t })))
     }
 
     return {
@@ -121,7 +120,10 @@ export const updateExperience = createServerFn({ method: 'POST' })
         .insert(portfolioExperienceTranslations)
         .values({ experienceId: data.id, ...t })
         .onConflictDoUpdate({
-          target: [portfolioExperienceTranslations.experienceId, portfolioExperienceTranslations.locale],
+          target: [
+            portfolioExperienceTranslations.experienceId,
+            portfolioExperienceTranslations.locale,
+          ],
           set: { role: t.role, description: t.description },
         })
     }

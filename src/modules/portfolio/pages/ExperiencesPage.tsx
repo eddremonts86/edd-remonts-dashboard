@@ -73,7 +73,9 @@ export function ExperiencesPage() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.experiences', 'Experiences')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio.experiences', 'Experiences')}
+        </h1>
         <Button onClick={openCreate}>{t('common.add', 'Add')}</Button>
       </div>
 
@@ -105,11 +107,7 @@ export function ExperiencesPage() {
                 <Button size="sm" variant="outline" onClick={() => openEdit(exp)}>
                   {t('common.edit', 'Edit')}
                 </Button>
-                <Button
-                  size="sm"
-                  variant="destructive"
-                  onClick={() => deleteMut.mutate(exp.id)}
-                >
+                <Button size="sm" variant="destructive" onClick={() => deleteMut.mutate(exp.id)}>
                   {t('common.delete', 'Delete')}
                 </Button>
               </TableCell>
@@ -122,7 +120,9 @@ export function ExperiencesPage() {
         <SheetContent className="overflow-y-auto sm:max-w-md">
           <SheetHeader>
             <SheetTitle>
-              {editing ? t('experience.edit', 'Edit Experience') : t('experience.create', 'New Experience')}
+              {editing
+                ? t('experience.edit', 'Edit Experience')
+                : t('experience.create', 'New Experience')}
             </SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">

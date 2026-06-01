@@ -12,12 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import {
-  useCreateSkill,
-  useDeleteSkill,
-  useSkills,
-  useUpdateSkill,
-} from '../api/skills.queries'
+import { useCreateSkill, useDeleteSkill, useSkills, useUpdateSkill } from '../api/skills.queries'
 import type { Skill, SkillInput } from '../types'
 
 const EMPTY: SkillInput = {
@@ -71,7 +66,9 @@ export function SkillsPage() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-foreground">{t('sidebar.portfolio.skills', 'Skills & Tech')}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          {t('sidebar.portfolio.skills', 'Skills & Tech')}
+        </h1>
         <Button onClick={openCreate}>{t('common.add', 'Add')}</Button>
       </div>
 
@@ -101,11 +98,7 @@ export function SkillsPage() {
                 <Button size="sm" variant="outline" onClick={() => openEdit(skill)}>
                   {t('common.edit', 'Edit')}
                 </Button>
-                <Button
-                  size="sm"
-                  variant="destructive"
-                  onClick={() => deleteMut.mutate(skill.id)}
-                >
+                <Button size="sm" variant="destructive" onClick={() => deleteMut.mutate(skill.id)}>
                   {t('common.delete', 'Delete')}
                 </Button>
               </TableCell>

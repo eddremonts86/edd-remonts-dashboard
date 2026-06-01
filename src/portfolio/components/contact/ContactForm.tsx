@@ -1,17 +1,18 @@
-import { AlertCircle, ArrowRight } from 'lucide-react';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { AlertCircle, ArrowRight } from 'lucide-react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 export const ContactForm = ({
   status,
   onSubmit,
 }: {
-  status: FormStatus;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  status: FormStatus
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <form className="relative z-10 space-y-8" onSubmit={onSubmit}>
@@ -28,7 +29,7 @@ export const ContactForm = ({
             name="name"
             type="text"
             required
-            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder={t('contact.form.namePlaceholder')}
           />
         </div>
@@ -45,7 +46,7 @@ export const ContactForm = ({
             name="email"
             type="email"
             required
-            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder={t('contact.form.emailPlaceholder')}
           />
         </div>
@@ -62,22 +63,29 @@ export const ContactForm = ({
             name="message"
             rows={4}
             required
-            className="w-full resize-none rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder-foreground/30 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+            className="w-full resize-none rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder="..."
           />
         </div>
       </div>
 
       {/* Honeypot field */}
-      <div className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0 overflow-hidden" aria-hidden="true">
-        <label htmlFor="contact-hp">{t('contact.form.hpLabel', 'Do not fill this out if you are human')}</label>
+      <div
+        className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="contact-hp">
+          {t('contact.form.hpLabel', 'Do not fill this out if you are human')}
+        </label>
         <input id="contact-hp" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
       </div>
 
       {status === 'error' && (
         <div className="flex items-center gap-4 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
           <AlertCircle className="h-5 w-5 flex-shrink-0" />
-          <span className="text-sm font-bold tracking-wide font-mono">{t('contact.form.error')}</span>
+          <span className="text-sm font-bold tracking-wide font-mono">
+            {t('contact.form.error')}
+          </span>
         </div>
       )}
 
@@ -85,8 +93,21 @@ export const ContactForm = ({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[10px] uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/95 disabled:cursor-not-allowed disabled:opacity-50 shadow-md cursor-pointer"
+          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[10px] uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/95 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-4 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:scale-100 shadow-md cursor-pointer"
         >
+          {/* Reflective dynamic sheen sweep on hover */}
+          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+          {/* Submission dynamic white flash */}
+          {status === 'submitting' && (
+            <m.span
+              initial={{ opacity: 0.6 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute inset-0 bg-white z-20 pointer-events-none"
+            />
+          )}
+
           <span className="relative z-10">
             {status === 'submitting'
               ? t('contact.form.submitting', 'SENDING...')
@@ -99,9 +120,12 @@ export const ContactForm = ({
           )}
         </button>
         <p className="mt-4 text-center font-mono text-[8px] text-foreground/60 leading-normal select-none">
-          {t('contact.form.privacyNotice', '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.')}
+          {t(
+            'contact.form.privacyNotice',
+            '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.',
+          )}
         </p>
       </div>
     </form>
-  );
-};
+  )
+}

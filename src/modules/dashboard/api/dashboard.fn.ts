@@ -23,7 +23,13 @@ export const getDashboardStatsFn = createServerFn({ method: 'GET' })
   .inputValidator(z.void())
   .handler(async (): Promise<DashboardStats> => {
     if (isE2E) {
-      return { totalUsers: 5, totalExperiences: 12, totalProjects: 13, totalSkills: 32, totalTestimonials: 4 }
+      return {
+        totalUsers: 5,
+        totalExperiences: 12,
+        totalProjects: 13,
+        totalSkills: 32,
+        totalTestimonials: 4,
+      }
     }
 
     const db = await loadDb()

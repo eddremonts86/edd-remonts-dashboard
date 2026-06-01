@@ -1,27 +1,23 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 
 export const ScrollIndicator = ({
   label,
   isHovered,
   theme,
 }: {
-  label: string;
-  isHovered: boolean;
-  theme: 'light' | 'dark';
+  label: string
+  isHovered: boolean
+  theme: 'light' | 'dark'
 }) => {
-  const isDarkHover = isHovered && theme === 'dark';
-  const isLightHover = isHovered && theme === 'light';
-  const trackColor = isDarkHover
-    ? 'bg-white/20'
-    : isLightHover
-      ? 'bg-black/20'
-      : 'bg-foreground/20';
-  const thumbColor = isDarkHover ? 'bg-white' : isLightHover ? 'bg-black' : 'bg-primary';
+  const isDarkHover = isHovered && theme === 'dark'
+  const isLightHover = isHovered && theme === 'light'
+  const trackColor = isDarkHover ? 'bg-white/20' : isLightHover ? 'bg-black/20' : 'bg-foreground/20'
+  const thumbColor = isDarkHover ? 'bg-white' : isLightHover ? 'bg-black' : 'bg-primary'
   const textColor = isDarkHover
     ? 'text-white/60'
     : isLightHover
       ? 'text-black/60'
-      : 'text-foreground/60';
+      : 'text-foreground/60'
 
   return (
     <m.div
@@ -44,5 +40,5 @@ export const ScrollIndicator = ({
         />
       </div>
     </m.div>
-  );
-};
+  )
+}

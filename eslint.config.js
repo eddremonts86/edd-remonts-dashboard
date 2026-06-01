@@ -84,7 +84,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['scripts/**/*.{ts,js,mjs,cjs}', 'ia-config/**/*.js', '**/*.cjs'],
+    files: ['scripts/**/*.{ts,js,mjs,cjs}', 'ia-config/**/*.js', '**/*.cjs', 'server.prod.mjs'],
     languageOptions: {
       globals: {
         Buffer: 'readonly',
@@ -93,6 +93,9 @@ export default tseslint.config(
         module: 'readonly',
         process: 'readonly',
         require: 'readonly',
+        URL: 'readonly',
+        Headers: 'readonly',
+        Request: 'readonly',
       },
     },
     rules: {

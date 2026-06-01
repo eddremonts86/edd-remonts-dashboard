@@ -1,28 +1,28 @@
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { NAV_SECTIONS } from '@/portfolio/data/navigation';
-import { m } from 'framer-motion';
-import { ArrowUp, Server, Layers } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { ArrowUp, Server, Layers } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
+import { NAV_SECTIONS } from '@/portfolio/data/navigation'
 
-const FOOTER_NAV = NAV_SECTIONS.filter((s) => s.id !== 'hero');
+const FOOTER_NAV = NAV_SECTIONS.filter((s) => s.id !== 'hero')
 
 export const Footer = () => {
-  const { t } = useTranslation();
-  const { personalInfo } = usePortfolioData();
-  const currentYear = new Date().getFullYear();
+  const { t } = useTranslation()
+  const { personalInfo } = usePortfolioData()
+  const currentYear = new Date().getFullYear()
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
-  const nameParts = personalInfo.name.trim().split(/\s+/);
-  const givenName = nameParts[0] ?? personalInfo.name;
-  const familyName = nameParts.slice(1).join(' ');
+  const nameParts = personalInfo.name.trim().split(/\s+/)
+  const givenName = nameParts[0] ?? personalInfo.name
+  const familyName = nameParts.slice(1).join(' ')
 
   return (
     <footer className="relative bg-background text-foreground border-t border-subtle pb-[max(3rem,env(safe-area-inset-bottom))] pt-20 selection:bg-primary selection:text-primary-foreground overflow-hidden w-full">
       {/* Decorative topology coordinates */}
-      <div className="absolute inset-0 pointer-events-none opacity-[1%] bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[20px_20px]" />
+      <div className="absolute inset-0 pointer-events-none opacity-1 bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[20px_20px]" />
 
       <m.div
         initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,6 @@ export const Footer = () => {
       >
         {/* ── Main body: name + nav ────────────────────── */}
         <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-12 lg:gap-16">
-          
           {/* Col 1: Identity (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             <div>
@@ -45,7 +44,7 @@ export const Footer = () => {
                 {t('footer.sub', 'Platforms & Systems Engineer')}
               </p>
             </div>
-            
+
             <p className="text-xs leading-relaxed text-foreground/60 max-w-xl font-light">
               {t(
                 'footer.manifesto',
@@ -98,8 +97,7 @@ export const Footer = () => {
         <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle py-8 sm:flex-row sm:items-center">
           <div className="space-y-1">
             <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/60">
-              &copy; {currentYear} {personalInfo.name}.{' '}
-              {t('footer.rights', 'All rights reserved.')}
+              &copy; {currentYear} {personalInfo.name}. {t('footer.rights', 'All rights reserved.')}
             </p>
             <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/60">
               {t('footer.builtWith', 'Engineered with React 19 & Anime minimalism.')}
@@ -118,5 +116,5 @@ export const Footer = () => {
         </div>
       </m.div>
     </footer>
-  );
-};
+  )
+}

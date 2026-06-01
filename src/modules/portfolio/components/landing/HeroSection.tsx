@@ -19,7 +19,8 @@ export function HeroSection({ content }: Props) {
   const locale = i18n.language
 
   const name = getBlock(content, 'hero.name', locale) || 'Eduardo Inerarte'
-  const title = getBlock(content, 'hero.title', locale) || t('personalInfo.title', 'Senior Frontend Engineer')
+  const title =
+    getBlock(content, 'hero.title', locale) || t('personalInfo.title', 'Senior Frontend Engineer')
   const tagline = getBlock(content, 'hero.tagline', locale) || t('personalInfo.description', '')
 
   return (
@@ -28,7 +29,7 @@ export function HeroSection({ content }: Props) {
       className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-background pb-24 md:pb-32"
     >
       <div className="container relative z-10 mx-auto w-full px-6">
-        <div className="mx-auto w-full max-w-[1400px] xl:pl-12">
+        <div className="mx-auto w-full max-w-350 xl:pl-12">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,6 +39,12 @@ export function HeroSection({ content }: Props) {
             <span className="rounded-full border border-border px-3 py-1 text-xs font-medium uppercase tracking-widest text-muted-foreground">
               {t('hero.available', 'Available for opportunities')}
             </span>
+            <a
+              href="/evidence"
+              className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary hover:bg-primary/20"
+            >
+              {t('hero.verified', 'VERIFIED / MEASURED & REPORTED')}
+            </a>
           </motion.div>
 
           <div className="relative z-10 w-full">
@@ -48,7 +55,7 @@ export function HeroSection({ content }: Props) {
                 transition={{ duration: 1.2, delay: 0.3 }}
                 className="font-serif"
               >
-                {t('hero.greeting', 'Hello, I\'m')}
+                {t('hero.greeting', "Hello, I'm")}
               </motion.span>
               <motion.span
                 initial={{ y: 50, opacity: 0 }}
@@ -64,11 +71,24 @@ export function HeroSection({ content }: Props) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+              className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
             >
               <div className="max-w-xl">
                 <p className="text-lg font-medium text-foreground md:text-xl">{title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">{tagline}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {tagline}
+                </p>
+                <div className="mt-4 flex items-center gap-6">
+                  <a href="#projects" className="text-sm font-medium text-primary hover:underline">
+                    {t('hero.viewWork', 'View my work')} →
+                  </a>
+                  <a
+                    href="/cv"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                  >
+                    {t('hero.downloadCV', 'Download CV')}
+                  </a>
+                </div>
               </div>
               <a
                 href="#about"

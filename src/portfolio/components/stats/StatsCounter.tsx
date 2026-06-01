@@ -1,15 +1,15 @@
-import { m } from 'framer-motion';
-import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext';
-import { useAnimatedCounter } from '@/portfolio/hooks/useAnimatedCounter';
-import { fadeInView } from '@/portfolio/lib/motion';
+import { m } from 'framer-motion'
+import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
+import { useAnimatedCounter } from '@/portfolio/hooks/useAnimatedCounter'
+import { fadeInView } from '@/portfolio/lib/motion'
 
 interface StatItem {
-  id: string;
-  value: number;
-  suffix: string;
-  label: string;
-  description: string;
-  decimals?: number;
+  id: string
+  value: number
+  suffix: string
+  label: string
+  description: string
+  decimals?: number
 }
 
 const AnimatedNumber = ({
@@ -17,32 +17,32 @@ const AnimatedNumber = ({
   suffix,
   decimals = 0,
 }: {
-  value: number;
-  suffix: string;
-  decimals?: number;
+  value: number
+  suffix: string
+  decimals?: number
 }) => {
-  const ref = useAnimatedCounter(value, suffix, decimals);
+  const ref = useAnimatedCounter(value, suffix, decimals)
   return (
     <span ref={ref} className="font-mono tracking-tight font-light">
       {decimals > 0 ? value.toFixed(decimals) : value}
       {suffix}
     </span>
-  );
-};
+  )
+}
 
 export const StatsCounter = () => {
-  const { stats, content, skills } = usePortfolioData();
+  const { stats, content, skills } = usePortfolioData()
 
-  const technologiesCount = skills.length > 0 ? skills.length : stats.technologies;
-  const usersServed = Number((content['stats.usersServed'] || '').replace(/[^0-9]/g, ''));
-  const usersValue = usersServed > 0 ? Math.round(usersServed / 1000) : 40;
-  
-  const uptimeRaw = (content['stats.uptime'] || '').replace(',', '.').replace(/[^0-9.]/g, '');
-  const uptime = uptimeRaw ? Number(uptimeRaw) : 0;
-  const uptimeDecimals = uptimeRaw.includes('.') ? uptimeRaw.split('.')[1].length : 0;
-  
-  const migrations = Number((content['stats.migrations'] || '').replace(/[^0-9]/g, ''));
-  const migrationsValue = migrations > 0 ? migrations : 16;
+  const technologiesCount = skills.length > 0 ? skills.length : stats.technologies
+  const usersServed = Number((content['stats.usersServed'] || '').replace(/[^0-9]/g, ''))
+  const usersValue = usersServed > 0 ? Math.round(usersServed / 1000) : 40
+
+  const uptimeRaw = (content['stats.uptime'] || '').replace(',', '.').replace(/[^0-9.]/g, '')
+  const uptime = uptimeRaw ? Number(uptimeRaw) : 0
+  const uptimeDecimals = uptimeRaw.includes('.') ? uptimeRaw.split('.')[1].length : 0
+
+  const migrations = Number((content['stats.migrations'] || '').replace(/[^0-9]/g, ''))
+  const migrationsValue = migrations > 0 ? migrations : 16
 
   const statItems: StatItem[] = [
     {
@@ -81,12 +81,12 @@ export const StatsCounter = () => {
       label: '/ ENTERPRISE MIGRATIONS',
       description: 'Legacy codebases decoupled into agile modular structures.',
     },
-  ];
+  ]
 
   return (
     <section className="relative z-10 overflow-hidden border-y border-subtle bg-surface py-16 md:py-20 select-none">
       {/* Visual blueprint overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-[1.5%] bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[40px_40px]" />
+      <div className="absolute inset-0 pointer-events-none cinematic-grid-large" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
@@ -99,7 +99,7 @@ export const StatsCounter = () => {
               <span className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-primary font-bold block">
                 {stat.label}
               </span>
-              
+
               <h3 className="font-display text-3xl font-light tracking-tight text-foreground md:text-4xl whitespace-nowrap">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
               </h3>
@@ -112,5 +112,5 @@ export const StatsCounter = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

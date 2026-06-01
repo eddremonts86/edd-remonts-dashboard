@@ -1,33 +1,32 @@
-import { m, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowDownToLine } from 'lucide-react';
-import { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { MagneticButton } from '@/portfolio/components/ui/effects/MagneticButton';
-import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector';
-import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle';
-import { useHeroParallax } from '@/portfolio/hooks/useHeroParallax';
-import { useResolvedTheme } from '@/portfolio/hooks/useResolvedTheme';
-import { getCvUrl } from '@/portfolio/lib/cvUrl';
-import { getHoverColors } from '@/portfolio/lib/hoverColors';
-import { APPLE_EASE } from '@/portfolio/lib/motion';
-import { AmbientLight } from './AmbientLight';
-import { BackgroundReveal } from './BackgroundReveal';
-import { ScrollIndicator } from './ScrollIndicator';
-import { AvailabilityCard } from './AvailabilityCard';
+import { m, AnimatePresence } from 'framer-motion'
+import { ArrowRight, ArrowDownToLine } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { MagneticButton } from '@/portfolio/components/ui/effects/MagneticButton'
+import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
+import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
+import { useHeroParallax } from '@/portfolio/hooks/useHeroParallax'
+import { useResolvedTheme } from '@/portfolio/hooks/useResolvedTheme'
+import { getCvUrl } from '@/portfolio/lib/cvUrl'
+import { getHoverColors } from '@/portfolio/lib/hoverColors'
+import { APPLE_EASE } from '@/portfolio/lib/motion'
+import { AmbientLight } from './AmbientLight'
+import { AvailabilityCard } from './AvailabilityCard'
+import { BackgroundReveal } from './BackgroundReveal'
+import { ScrollIndicator } from './ScrollIndicator'
 
 export const HeroSection = () => {
-  const { t, i18n } = useTranslation();
-  const resolvedTheme = useResolvedTheme();
-  const containerRef = useRef<HTMLElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const { t, i18n } = useTranslation()
+  const resolvedTheme = useResolvedTheme()
+  const containerRef = useRef<HTMLElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
 
-  const cvUrl = getCvUrl(i18n.language, resolvedTheme);
-  const { opacity, scale, y } = useHeroParallax(containerRef);
+  const cvUrl = getCvUrl(i18n.language, resolvedTheme)
+  const { opacity, scale, y } = useHeroParallax(containerRef)
 
-  const dynamicBG = resolvedTheme === 'dark' ? '/edd/edd_dark.jpg' : '/edd/edd_light.jpg';
+  const dynamicBG = resolvedTheme === 'dark' ? '/edd/edd_dark.jpg' : '/edd/edd_light.jpg'
 
-  const { bgColor, textColor } =
-    getHoverColors(isHovered, resolvedTheme);
+  const { bgColor, textColor } = getHoverColors(isHovered, resolvedTheme)
 
   return (
     <section
@@ -81,64 +80,82 @@ export const HeroSection = () => {
             >
               <div className="overflow-hidden">
                 <m.span
-                   initial={{ y: '110%' }}
-                   animate={{ y: '0%' }}
-                   transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.3 }}
-                   className="inline-block"
+                  initial={{ y: '110%' }}
+                  animate={{ y: '0%' }}
+                  transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.3 }}
+                  className="inline-block"
                 >
                   {t('hero.titleLine1', 'Staff Frontend Engineer')}
                 </m.span>
               </div>
               <div className="overflow-hidden">
                 <m.span
-                   initial={{ y: '110%' }}
-                   animate={{ y: '0%' }}
-                   transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.42 }}
-                   className="font-serif italic text-primary"
+                  initial={{ y: '110%' }}
+                  animate={{ y: '0%' }}
+                  transition={{ duration: 1.05, ease: APPLE_EASE, delay: 0.42 }}
+                  className="font-serif italic text-primary"
                 >
                   {t('hero.titleLine2', '& Technical Leader')}
                 </m.span>
               </div>
             </h1>
- 
+
             {/* Description */}
             {/* Shortened Copy with 2-3 Outcome-Focused Highlights */}
             <m.div
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               transition={{ delay: 0.6, duration: 1 }}
-               className="mb-10 max-w-2xl text-left text-sm font-light leading-relaxed text-foreground/75 space-y-4 md:text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 1 }}
+              className="mb-10 max-w-2xl text-left text-sm font-light leading-relaxed text-foreground/75 space-y-4 md:text-base"
             >
               <p className="text-base font-semibold text-foreground">
-                {t('hero.outcomeHeader', '18+ years of engineering leadership delivering verified software speed and architectural stability:')}
+                {t(
+                  'hero.outcomeHeader',
+                  '18+ years of engineering leadership delivering verified software speed and architectural stability:',
+                )}
               </p>
               <ul className="space-y-3 font-display">
                 <li className="flex items-start gap-2.5">
                   <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>{t('hero.outcomeBullets.0', 'I slashed initial bundle sizes by 94%, enabling our engineering teams to deploy independently without breaking shared systems.')}</span>
+                  <span>
+                    {t(
+                      'hero.outcomeBullets.0',
+                      'I slashed initial bundle sizes by 94%, enabling our engineering teams to deploy independently without breaking shared systems.',
+                    )}
+                  </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>{t('hero.outcomeBullets.1', 'I established unified design-system governance adopted by 20+ active engineers across 4 cross-functional squads.')}</span>
+                  <span>
+                    {t(
+                      'hero.outcomeBullets.1',
+                      'I established unified design-system governance adopted by 20+ active engineers across 4 cross-functional squads.',
+                    )}
+                  </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>{t('hero.outcomeBullets.2', 'I secured perfect 100% Core Web Vitals and sub-12ms interaction responsiveness at European enterprise scale.')}</span>
+                  <span>
+                    {t(
+                      'hero.outcomeBullets.2',
+                      'I secured perfect 100% Core Web Vitals and sub-12ms interaction responsiveness at European enterprise scale.',
+                    )}
+                  </span>
                 </li>
               </ul>
             </m.div>
- 
+
             {/* CTAs */}
             <m.div
-               initial={{ opacity: 0, y: 12 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.8, duration: 0.9, ease: APPLE_EASE }}
-               className="flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.9, ease: APPLE_EASE }}
+              className="flex flex-wrap items-center gap-4"
             >
               <MagneticButton>
                 <a
-                   href="#projects"
-                   className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 bg-white px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-zinc-950 transition-all duration-500 hover:bg-primary hover:text-white md:text-xs"
+                  href="#projects"
+                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 bg-white px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-zinc-950 transition-all duration-500 hover:bg-primary hover:text-white md:text-xs"
                 >
                   <span>{t('hero.explore', 'View Work')}</span>
                   <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -146,40 +163,40 @@ export const HeroSection = () => {
               </MagneticButton>
               <MagneticButton>
                 <a
-                   href={cvUrl}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:bg-surface/50 hover:border-default md:text-xs"
-                   onPointerEnter={() => setIsHovered(true)}
-                   onPointerLeave={() => setIsHovered(false)}
+                  href={cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:bg-surface/50 hover:border-default md:text-xs"
+                  onPointerEnter={() => setIsHovered(true)}
+                  onPointerLeave={() => setIsHovered(false)}
                 >
                   <ArrowDownToLine className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-y-0.5" />
                   <span>{t('nav.resume', 'Download CV')}</span>
                 </a>
               </MagneticButton>
             </m.div>
- 
+
             {/* Availability Info */}
             <AvailabilityCard />
           </div>
- 
+
           {/* ── RIGHT column ─ Highlight Metrics Panel ────────────────── */}
           <m.aside
-             initial={{ opacity: 0, x: 20 }}
-             animate={{ opacity: 1, x: 0 }}
-             transition={{ delay: 0.7, duration: 1, ease: APPLE_EASE }}
-             className="lg:col-span-5 lg:self-center"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7, duration: 1, ease: APPLE_EASE }}
+            className="lg:col-span-5 lg:self-center"
           >
-            <div
-               className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6"
-            >
+            <div className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6">
               <div className="flex items-center justify-between border-b border-subtle pb-4">
                 <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50 font-bold">
                   {t('hero.metrics.title', '/ PROVEN PERFORMANCE METRICS')}
                 </span>
-                <span className="font-mono text-[8px] text-primary font-bold">{t('hero.metrics.verified', '[VERIFIED]')}</span>
+                <span className="font-mono text-[8px] text-primary font-bold">
+                  {t('hero.metrics.verified', '[VERIFIED]')}
+                </span>
               </div>
- 
+
               {/* 2x2 Grid of High-Impact Metrics */}
               <div className="grid grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-1">
@@ -190,10 +207,13 @@ export const HeroSection = () => {
                     {t('hero.metrics.bundle.label', 'Bundle Reduction')}
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t('hero.metrics.bundle.desc', 'Decoupled architectural boundaries from 6.2MB down to 350KB.')}
+                    {t(
+                      'hero.metrics.bundle.desc',
+                      'Decoupled architectural boundaries from 6.2MB down to 350KB.',
+                    )}
                   </p>
                 </div>
- 
+
                 <div className="space-y-1">
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.delivery.value', '30%')}
@@ -202,10 +222,13 @@ export const HeroSection = () => {
                     {t('hero.metrics.delivery.label', 'Faster Delivery')}
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t('hero.metrics.delivery.desc', 'Accelerated delivery via contract-based workspace isolation.')}
+                    {t(
+                      'hero.metrics.delivery.desc',
+                      'Accelerated delivery via contract-based workspace isolation.',
+                    )}
                   </p>
                 </div>
- 
+
                 <div className="space-y-1">
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.vitals.value', '100%')}
@@ -214,10 +237,13 @@ export const HeroSection = () => {
                     {t('hero.metrics.vitals.label', 'Core Web Vitals')}
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t('hero.metrics.vitals.desc', 'Secured flawless Lighthouse scores across complex user paths.')}
+                    {t(
+                      'hero.metrics.vitals.desc',
+                      'Secured flawless Lighthouse scores across complex user paths.',
+                    )}
                   </p>
                 </div>
- 
+
                 <div className="space-y-1">
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.impact.value', '20+')}
@@ -226,11 +252,14 @@ export const HeroSection = () => {
                     {t('hero.metrics.impact.label', 'Engineers Impacted')}
                   </p>
                   <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t('hero.metrics.impact.desc', 'Mentored engineers, governed design systems, and aligned teams.')}
+                    {t(
+                      'hero.metrics.impact.desc',
+                      'Mentored engineers, governed design systems, and aligned teams.',
+                    )}
                   </p>
                 </div>
               </div>
- 
+
               <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/60">
                 <span>{t('hero.metrics.status', 'STATUS: MEASURED & REPORTED')}</span>
                 <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
@@ -246,5 +275,5 @@ export const HeroSection = () => {
         theme={resolvedTheme}
       />
     </section>
-  );
-};
+  )
+}

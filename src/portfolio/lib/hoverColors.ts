@@ -1,16 +1,16 @@
 export interface HoverColors {
-  bgColor: string;
-  textColor: string;
-  mutedTextColor: string;
-  sublineTextColor: string;
-  borderColor: string;
-  buttonHover: string;
-  greetingTextColor: string;
+  bgColor: string
+  textColor: string
+  mutedTextColor: string
+  sublineTextColor: string
+  borderColor: string
+  buttonHover: string
+  greetingTextColor: string
 }
 
 export function getHoverColors(isHovered: boolean, resolvedTheme: string): HoverColors {
-  const isDark = isHovered && resolvedTheme === 'dark';
-  const isLight = isHovered && resolvedTheme === 'light';
+  const isDark = isHovered && resolvedTheme === 'dark'
+  const isLight = isHovered && resolvedTheme === 'light'
 
   return {
     bgColor: isDark ? 'bg-black' : isLight ? 'bg-white' : 'bg-background',
@@ -24,5 +24,5 @@ export function getHoverColors(isHovered: boolean, resolvedTheme: string): Hover
         ? 'hover:bg-black hover:text-white'
         : 'hover:bg-foreground hover:text-background',
     greetingTextColor: isDark ? 'text-white' : isLight ? 'text-black' : 'text-primary',
-  };
+  }
 }

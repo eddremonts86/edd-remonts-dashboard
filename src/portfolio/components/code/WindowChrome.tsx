@@ -1,15 +1,15 @@
-import type { FileTab } from './codeBlockTokens';
+import type { FileTab } from './codeBlockTokens'
 
 export const WindowChrome = ({
   activeTab,
   onTabChange,
   tabs,
 }: {
-  activeTab: number;
-  onTabChange: (idx: number) => void;
-  tabs: FileTab[];
+  activeTab: number
+  onTabChange: (idx: number) => void
+  tabs: FileTab[]
 }) => (
-  <div className="flex items-center gap-3 rounded-t-xl border-b border-white/[0.05] bg-[#151515] px-4 py-3">
+  <div className="flex items-center gap-3 rounded-t-xl border-b border-foreground/10 bg-[#151515] px-4 py-3">
     {/* Traffic lights */}
     <div className="flex shrink-0 gap-2">
       <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -25,8 +25,8 @@ export const WindowChrome = ({
           onClick={() => onTabChange(idx)}
           className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-1.5 font-mono text-[11px] tracking-wide transition-all duration-300 ${
             idx === activeTab
-              ? 'bg-white/10 text-white shadow-sm'
-              : 'text-white/40 hover:bg-white/5 hover:text-white/80'
+              ? 'bg-foreground/10 text-foreground shadow-sm'
+              : 'text-foreground/40 hover:bg-foreground/5 hover:text-foreground/80'
           }`}
         >
           <span className="text-[10px] opacity-70">{tab.icon}</span>
@@ -38,8 +38,8 @@ export const WindowChrome = ({
     {/* Minimap dots (decorative) */}
     <div className="ml-auto flex items-center gap-1 opacity-20" aria-hidden="true">
       {Array.from({ length: 4 }).map((_, i) => (
-        <div key={i} className="h-3 w-1 rounded-sm bg-white/40" />
+        <div key={i} className="h-3 w-1 rounded-sm bg-foreground/40" />
       ))}
     </div>
   </div>
-);
+)

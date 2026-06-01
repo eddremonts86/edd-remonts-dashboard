@@ -38,11 +38,14 @@
     --apple-glass: rgba(251, 250, 249, 0.72);
     --apple-border: rgba(0, 0, 0, 0.05);
 
-    --border-subtle: rgba(16, 16, 16, 0.10); /* Visible but restrained */
+    --border-subtle: rgba(16, 16, 16, 0.1); /* Visible but restrained */
     --border-default: rgba(16, 16, 16, 0.15);
 
     --scrollbar-thumb: rgba(0, 0, 0, 0.1);
     --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+
+    --grid-line: rgba(16, 16, 16, 0.04);
+    --vignette: radial-gradient(circle, transparent 65%, rgba(16, 16, 16, 0.03) 100%);
   }
 
   .dark {
@@ -67,6 +70,9 @@
 
     --scrollbar-thumb: rgba(255, 255, 255, 0.15);
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+
+    --grid-line: rgba(255, 255, 255, 0.02);
+    --vignette: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.32) 100%);
   }
 
   body {
@@ -76,9 +82,26 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
     background-image:
-      radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--primary) 11%, transparent) 0%, transparent 30%),
-      radial-gradient(circle at 88% 84%, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 32%);
+      radial-gradient(
+        circle at 12% 14%,
+        color-mix(in srgb, var(--primary) 11%, transparent) 0%,
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 88% 84%,
+        color-mix(in srgb, var(--primary) 9%, transparent) 0%,
+        transparent 32%
+      );
     background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    background: var(--vignette);
   }
 
   body::after {
@@ -90,7 +113,7 @@
     height: 200%;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.038;
+    opacity: 0.024;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     background-size: 200px 200px;
     background-repeat: repeat;
@@ -201,16 +224,55 @@
   /* Film grain animation — discrete steps to simulate analogue noise */
   @keyframes grain {
     0%,
-    100% { transform: translate(0%, 0%); }
-    10%  { transform: translate(-5%, -4%); }
-    20%  { transform: translate(-2%, 6%); }
-    30%  { transform: translate(3%, -3%); }
-    40%  { transform: translate(-4%, 3%); }
-    50%  { transform: translate(5%, -5%); }
-    60%  { transform: translate(-3%, 4%); }
-    70%  { transform: translate(3%, -6%); }
-    80%  { transform: translate(-3%, 5%); }
-    90%  { transform: translate(4%, -3%); }
+    100% {
+      transform: translate(0%, 0%);
+    }
+    10% {
+      transform: translate(-5%, -4%);
+    }
+    20% {
+      transform: translate(-2%, 6%);
+    }
+    30% {
+      transform: translate(3%, -3%);
+    }
+    40% {
+      transform: translate(-4%, 3%);
+    }
+    50% {
+      transform: translate(5%, -5%);
+    }
+    60% {
+      transform: translate(-3%, 4%);
+    }
+    70% {
+      transform: translate(3%, -6%);
+    }
+    80% {
+      transform: translate(-3%, 5%);
+    }
+    90% {
+      transform: translate(4%, -3%);
+    }
+  }
+
+  /* Cinematic background grid utilities */
+  .cinematic-grid {
+    background-image: 
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+  }
+
+  .cinematic-grid-large {
+    background-image: 
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
   }
 
   /* Floating decorative shapes */

@@ -1,6 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { createService, deleteService, getServices, updateService } from '../../../src/modules/portfolio/server/services'
 import { loadDb } from '@/shared/lib/db/load'
+import {
+  createService,
+  deleteService,
+  getServices,
+  updateService,
+} from '../../../src/modules/portfolio/server/services'
 
 vi.mock('@tanstack/react-start', () => ({
   createServerFn: () => {
@@ -32,9 +37,18 @@ describe('Services CRUD server functions', () => {
     const dbMock = {
       select: vi.fn(() => ({
         from: vi.fn(() => ({
-          orderBy: vi.fn().mockResolvedValue([
-            { id: 'svc-1', iconSlug: 'code', visible: true, sortOrder: 0, createdAt: new Date(), updatedAt: new Date() },
-          ]),
+          orderBy: vi
+            .fn()
+            .mockResolvedValue([
+              {
+                id: 'svc-1',
+                iconSlug: 'code',
+                visible: true,
+                sortOrder: 0,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+              },
+            ]),
         })),
       })),
     }
@@ -45,16 +59,27 @@ describe('Services CRUD server functions', () => {
       if (callCount === 1) {
         return {
           from: vi.fn(() => ({
-            orderBy: vi.fn().mockResolvedValue([
-              { id: 'svc-1', iconSlug: 'code', visible: true, sortOrder: 0, createdAt: new Date(), updatedAt: new Date() },
-            ]),
+            orderBy: vi
+              .fn()
+              .mockResolvedValue([
+                {
+                  id: 'svc-1',
+                  iconSlug: 'code',
+                  visible: true,
+                  sortOrder: 0,
+                  createdAt: new Date(),
+                  updatedAt: new Date(),
+                },
+              ]),
           })),
         }
       }
       return {
-        from: vi.fn().mockResolvedValue([
-          { serviceId: 'svc-1', locale: 'en', title: 'Web Dev', description: 'I build things.' },
-        ]),
+        from: vi
+          .fn()
+          .mockResolvedValue([
+            { serviceId: 'svc-1', locale: 'en', title: 'Web Dev', description: 'I build things.' },
+          ]),
       }
     })
 
@@ -137,4 +162,3 @@ describe('Services CRUD server functions', () => {
     expect(dbMock.delete).toHaveBeenCalled()
   })
 })
-

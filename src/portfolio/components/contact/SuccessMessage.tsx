@@ -1,9 +1,9 @@
-import { m } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { m } from 'framer-motion'
+import { CheckCircle2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export const SuccessMessage = ({ onReset }: { onReset: () => void }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <m.div
@@ -26,5 +26,5 @@ export const SuccessMessage = ({ onReset }: { onReset: () => void }) => {
         {t('contact.success.reset')}
       </button>
     </m.div>
-  );
-};
+  )
+}

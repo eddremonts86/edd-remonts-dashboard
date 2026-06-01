@@ -12,6 +12,9 @@
   "hero": {
     "available": "Staff Frontend Engineer",
     "greeting": "Hej, jeg er",
+    "verified": "VERIFICERET / MÅLT OG RAPPORTERET",
+    "viewWork": "Se mit arbejde",
+    "downloadCV": "Download CV",
     "role": "Staff Frontend Engineer & Teknisk Leder",
     "titleLine1": "Staff Frontend Engineer",
     "titleLine2": "& Teknisk Leder",
@@ -39,6 +42,7 @@
     "metrics": {
       "title": "/ VERIFICEREDE YDEEVNE-METRIKKER",
       "verified": "[VERIFICERET]",
+      "viewProof": "Se bevis",
       "bundle": {
         "value": "42%",
         "label": "Bundle Reduktion",
@@ -643,7 +647,10 @@
     "nextTestimonial": "Næste anbefaling",
     "gotoTestimonial": "Gå til anbefaling {{number}}",
     "mainNav": "Hovednavigation",
-    "sectionNav": "Sektionsnavigation"
+    "sectionNav": "Sektionsnavigation",
+    "selectLanguage": "Vælg sprog",
+    "changeLanguageTo": "Skift sprog til {{language}}",
+    "themeSelector": "Tema: {{theme}}. Skift tema"
   },
   "testimonials_label": "Hvad klienter siger",
   "testimonials_loading": "Indlæser anbefalinger...",

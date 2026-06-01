@@ -56,7 +56,7 @@ import type {
   PersistedActionState,
   StoredMessage,
 } from '@/modules/ai/storage/chat-storage'
-import { aiConfigApi, useAiConfigStore  } from '@/modules/settings'
+import { aiConfigApi, useAiConfigStore } from '@/modules/settings'
 import { useCurrentUser } from '@/modules/users'
 import { useAppAuth } from '@/shared/lib/auth/app-auth'
 import { useTQuery } from '@/shared/lib/query'
@@ -156,8 +156,10 @@ function useConversationManager(userId: string | null, userRole: 'admin' | 'user
   }, [userId, userRole])
 
   // Load the active conversation object when activeId changes
+   
   React.useEffect(() => {
     if (!activeId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveConv(null)
       return
     }
@@ -385,7 +387,9 @@ const MarkdownTh = ({ children }: { children?: React.ReactNode }) => (
   </th>
 )
 const MarkdownTd = ({ children }: { children?: React.ReactNode }) => (
-  <td className="border-b border-white/5 px-4 py-2.5 text-foreground/80 last:border-0">{children}</td>
+  <td className="border-b border-white/5 px-4 py-2.5 text-foreground/80 last:border-0">
+    {children}
+  </td>
 )
 
 // Extracted code renderer — avoids duplicating this logic in every ReactMarkdown instance
@@ -527,7 +531,10 @@ function MessageBubble({
               {copied ? (
                 <Check size={11} className="text-emerald-400" />
               ) : (
-                <Copy size={11} className="text-muted-foreground/30 transition-colors hover:text-muted-foreground/60" />
+                <Copy
+                  size={11}
+                  className="text-muted-foreground/30 transition-colors hover:text-muted-foreground/60"
+                />
               )}
             </button>
           )}
@@ -621,7 +628,9 @@ function MessageBubble({
                             <ul className="mb-2 ml-4 list-disc space-y-1 last:mb-0">{children}</ul>
                           ),
                           ol: ({ children }) => (
-                            <ol className="mb-2 ml-4 list-decimal space-y-1 last:mb-0">{children}</ol>
+                            <ol className="mb-2 ml-4 list-decimal space-y-1 last:mb-0">
+                              {children}
+                            </ol>
                           ),
                           li: ({ children }) => <li className="leading-relaxed">{children}</li>,
                           a: ({ href, children }) => (
@@ -799,8 +808,23 @@ function EmptyState({ onSuggestionClick }: { onSuggestionClick: (text: string) =
 // --- File extraction helpers ---
 
 const DIRECT_TEXT_EXTENSIONS = new Set([
-  'txt', 'md', 'csv', 'json', 'yaml', 'yml', 'xml', 'log',
-  'ts', 'tsx', 'js', 'jsx', 'py', 'html', 'css', 'sh', 'sql',
+  'txt',
+  'md',
+  'csv',
+  'json',
+  'yaml',
+  'yml',
+  'xml',
+  'log',
+  'ts',
+  'tsx',
+  'js',
+  'jsx',
+  'py',
+  'html',
+  'css',
+  'sh',
+  'sql',
 ])
 
 function isDirectTextFile(file: File): boolean {
@@ -1041,30 +1065,30 @@ export function HelpChatPage() {
 
     try {
       await Promise.all(
-      attachments.map(async (file) => {
-        if (file.type.startsWith('image/')) {
-          const reader = new FileReader()
-          const dataUrl = await new Promise<string>((resolve) => {
-            reader.onload = () => resolve(reader.result as string)
-            reader.readAsDataURL(file)
-          })
-          // TanStack AI ImagePart format: { type: 'image', source: { type: 'url', value: dataUrl } }
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          parts.push({ type: 'image', source: { type: 'url', value: dataUrl } } as any)
-        } else if (isDirectTextFile(file)) {
-          // Plain-text formats: read client-side, no round-trip needed
-          const content = await file.text().catch(() => 'Error reading file')
-          parts.push({
-            type: 'text',
-            content: `[File: ${file.name}]\n\`\`\`\n${content}\n\`\`\``,
-          })
-        } else {
-          // Binary documents (PDF, xlsx, docx…): extract text server-side
-          const content = await extractDocumentText(file)
-          parts.push({ type: 'text', content })
-        }
-      }),
-    )
+        attachments.map(async (file) => {
+          if (file.type.startsWith('image/')) {
+            const reader = new FileReader()
+            const dataUrl = await new Promise<string>((resolve) => {
+              reader.onload = () => resolve(reader.result as string)
+              reader.readAsDataURL(file)
+            })
+            // TanStack AI ImagePart format: { type: 'image', source: { type: 'url', value: dataUrl } }
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            parts.push({ type: 'image', source: { type: 'url', value: dataUrl } } as any)
+          } else if (isDirectTextFile(file)) {
+            // Plain-text formats: read client-side, no round-trip needed
+            const content = await file.text().catch(() => 'Error reading file')
+            parts.push({
+              type: 'text',
+              content: `[File: ${file.name}]\n\`\`\`\n${content}\n\`\`\``,
+            })
+          } else {
+            // Binary documents (PDF, xlsx, docx…): extract text server-side
+            const content = await extractDocumentText(file)
+            parts.push({ type: 'text', content })
+          }
+        }),
+      )
     } finally {
       setIsParsing(false)
     }

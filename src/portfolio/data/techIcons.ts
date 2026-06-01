@@ -81,4 +81,4 @@ export const techIconMap: Record<string, string> = {
   // ── Project management ───────────────────────────────────────────────────
   Jira: '/tech-icons/jira.svg',
   Confluence: '/tech-icons/confluence.svg',
-};
+}
