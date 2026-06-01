@@ -1,4 +1,5 @@
-import React from 'react'
+import { m, useScroll, useTransform } from 'framer-motion'
+import React, { useRef } from 'react'
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   id?: string
@@ -7,14 +8,27 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const Section = ({ id, className = '', children, ...props }: SectionProps) => {
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+
+  // Subtle dynamic visual depth: translate grid vertically between -12px and 12px
+  const y = useTransform(scrollYProgress, [0, 1], [-12, 12])
+
   return (
     <section
+      ref={ref}
       id={id}
       className={`relative overflow-hidden py-24 md:py-36 border-t border-subtle bg-background ${className}`}
       {...props}
     >
-      {/* Blueprint Grid Motif */}
-      <div className="absolute inset-0 pointer-events-none opacity-1.2 bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px]" />
+      {/* Blueprint Grid Motif with sutil scroll parallax */}
+      <m.div
+        style={{ y }}
+        className="absolute inset-0 pointer-events-none cinematic-grid"
+      />
       {children}
     </section>
   )

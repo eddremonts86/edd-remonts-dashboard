@@ -21,11 +21,11 @@ export const CURSOR_SPRING = { damping: 25, stiffness: 200, mass: 0.5 } as const
 /* ── Entry presets ── */
 
 /** Standard entry animation for elements appearing from below */
-export const ENTRY_INITIAL = { opacity: 0, y: 20 } as const
+export const ENTRY_INITIAL = { opacity: 0, y: 12 } as const
 export const ENTRY_ANIMATE = { opacity: 1, y: 0 } as const
 
 /** Standard section entry animation (larger movement) */
-export const SECTION_ENTRY_INITIAL = { opacity: 0, y: 30 } as const
+export const SECTION_ENTRY_INITIAL = { opacity: 0, y: 16 } as const
 export const SECTION_ENTRY_ANIMATE = { opacity: 1, y: 0 } as const
 
 /** Default transition using Apple ease */
@@ -52,7 +52,7 @@ type MotionAxis = 'y' | 'x'
 interface FadeInOptions {
   /** Delay in seconds */
   delay?: number
-  /** Pixels to travel (default 30) */
+  /** Pixels to travel (default 12) */
   distance?: number
   /** Axis of movement (default 'y') */
   axis?: MotionAxis
@@ -73,7 +73,7 @@ interface FadeInOptions {
  */
 export const fadeInView = ({
   delay = 0,
-  distance = 30,
+  distance = 12,
   axis = 'y',
   duration = 0.8,
   margin = '-80px',

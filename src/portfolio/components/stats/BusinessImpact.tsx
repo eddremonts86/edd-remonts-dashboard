@@ -85,7 +85,7 @@ export const BusinessImpact = () => {
       className="relative overflow-hidden border-b border-subtle bg-background py-24 md:py-36"
     >
       {/* Blueprint Grid Motif */}
-      <div className="absolute inset-0 pointer-events-none opacity-1.5 bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px]" />
+      <div className="absolute inset-0 pointer-events-none cinematic-grid" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* Section Header */}

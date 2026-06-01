@@ -198,7 +198,7 @@ export const ProductStories = () => {
             className="relative overflow-hidden rounded-3xl border border-subtle bg-surface/30 p-6 md:p-12 lg:p-16 backdrop-blur-md"
           >
             {/* Visual background blueprint motif */}
-            <div className="absolute inset-0 pointer-events-none opacity-3 bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[40px_40px]" />
+            <div className="absolute inset-0 pointer-events-none cinematic-grid-large" />
 
             {/* Top Header metadata */}
             <div className="flex flex-wrap items-baseline justify-between gap-6 border-b border-subtle pb-6 mb-12">

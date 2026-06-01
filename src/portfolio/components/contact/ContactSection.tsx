@@ -22,7 +22,10 @@ export const ContactSection = () => {
       <Container>
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           {/* Left Column: The Final Manifesto & Operational Telemetry Dashboard */}
-          <m.div {...fadeInView({ distance: 30, axis: 'x' })} className="lg:col-span-7 space-y-12">
+          <m.div {...fadeInView({ distance: 30, axis: 'x' })} className="lg:col-span-7 space-y-12 relative">
+            {/* Cinematic text spotlight glow to dampen grid contrast and optimize readability */}
+            <div className="absolute -left-16 -top-16 h-[120%] w-[120%] rounded-full bg-background/50 blur-[90px] pointer-events-none -z-10 dark:bg-background/80" />
+
             <div>
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold block mb-4 animate-pulse">
                 {t('contact.eyebrow', '/ GET IN TOUCH')}

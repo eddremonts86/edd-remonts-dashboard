@@ -64,7 +64,7 @@ export const SkillsMarquee = () => {
       className="relative z-20 isolate border-t border-subtle bg-surface py-28 md:py-40"
       aria-label={t('a11y.skillsMarquee')}
     >
-      <div className="absolute inset-0 pointer-events-none opacity-2.5 bg-[linear-gradient(to_right,#efefef_1px,transparent_1px),linear-gradient(to_bottom,#efefef_1px,transparent_1px)] bg-size-[32px_32px] mask-image-[linear-to-b,transparent,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,transparent]" />
+      <div className="absolute inset-0 pointer-events-none cinematic-grid" />
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">

@@ -12,7 +12,7 @@ export const LanguageSelector = () => {
 
   return (
     <div
-      className="flex border border-subtle rounded-full bg-surface/80 p-0.5 select-none shrink-0 backdrop-blur-md"
+      className="flex border border-border-default/50 rounded-full bg-surface/50 p-1 gap-1 select-none shrink-0 backdrop-blur-md"
       role="radiogroup"
       aria-label={t('a11y.selectLanguage', 'Select language')}
     >
@@ -23,10 +23,10 @@ export const LanguageSelector = () => {
           <button
             key={lang.code}
             onClick={() => i18n.changeLanguage(lang.code)}
-            className={`flex h-7 min-w-[32px] items-center justify-center rounded-full px-2 transition-all duration-300 font-mono text-[9px] font-bold cursor-pointer ${
+            className={`flex h-7 min-w-[32px] items-center justify-center rounded-full px-2.5 transition-all duration-200 font-mono text-[9px] font-bold cursor-pointer ${
               isSelected
-                ? 'bg-primary text-primary-foreground shadow-md'
-                : 'text-foreground/60 hover:text-foreground hover:bg-foreground/[0.05]'
+                ? 'bg-foreground text-background shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-foreground/5 scale-105 z-10'
+                : 'text-foreground/50 hover:text-foreground/80 hover:bg-foreground/[0.04]'
             }`}
             role="radio"
             aria-checked={isSelected}
