@@ -8,7 +8,8 @@
     "contact": "Contacto",
     "resume": "Descargar CV",
     "discover": "Descubrir",
-    "lab": "El Laboratorio"
+    "lab": "El Laboratorio",
+    "log": "Bitácora"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -747,5 +748,38 @@
     "whoami": "eduardo — staff frontend engineer. uptime: 18 años. sin procesos zombi.",
     "empty": "comando no encontrado — buen intento",
     "footerHint": "↑↓ navegar · ↵ ejecutar"
+  },
+  "log": {
+    "kicker": "Aprendiendo en público",
+    "title": "Bitácora.",
+    "accent": "Enviado, no maquetado.",
+    "description": "Un corte curado del historial real de commits de este repo: qué se envió, qué me enseñó y con qué herramientas. Cada hash enlaza al diff.",
+    "viewAll": "Historial completo en GitHub",
+    "entries": {
+      "v3": {
+        "title": "Lancé la v3 cinematográfica: shader de tinta, el Laboratorio y paleta ⌘K",
+        "learning": "Un fragment shader de 6KB hecho a mano gana a una librería 3D de 150KB cuando el rendimiento es la marca."
+      },
+      "spec": {
+        "title": "Escribí el spec de diseño antes de tocar código",
+        "learning": "Decidir qué NO añadir (three.js) fue la línea más valiosa del documento."
+      },
+      "grid": {
+        "title": "Tramas cinematográficas y overlays dinámicos",
+        "learning": "La atmósfera nace de sutilezas en capas — grano, viñeta, líneas finas — no de colores más fuertes."
+      },
+      "a11y": {
+        "title": "Pasada de accesibilidad por todos los componentes",
+        "learning": "El movimiento que se puede apagar es oficio; el que no, es decoración."
+      },
+      "i18n": {
+        "title": "Internacionalicé cada sección — EN / ES / DK",
+        "learning": "El copy es material de diseño: traducirlo te obliga a encontrar la frase de verdad."
+      },
+      "v2": {
+        "title": "Site v2: el portafolio se volvió un producto sobre base de datos",
+        "learning": "Como mi propia comida de perro: el dashboard que gestiona este sitio es en sí el caso de estudio."
+      }
+    }
   }
 }

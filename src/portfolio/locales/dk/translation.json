@@ -8,7 +8,8 @@
     "contact": "Kontakt",
     "resume": "Download CV",
     "discover": "Opdag",
-    "lab": "Laboratoriet"
+    "lab": "Laboratoriet",
+    "log": "Byggelog"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -747,5 +748,38 @@
     "whoami": "eduardo — staff frontend engineer. uptime: 18 år. ingen zombieprocesser.",
     "empty": "kommando ikke fundet — men godt forsøgt",
     "footerHint": "↑↓ navigér · ↵ kør"
+  },
+  "log": {
+    "kicker": "Lærer i det åbne",
+    "title": "Byggelog.",
+    "accent": "Leveret, ikke iscenesat.",
+    "description": "Et kurateret udsnit af repoets virkelige commit-historik — hvad der blev leveret, hvad det lærte mig, og hvilke værktøjer der gjorde det. Hver hash linker til diffen.",
+    "viewAll": "Fuld historik på GitHub",
+    "entries": {
+      "v3": {
+        "title": "Leverede den filmiske v3 — blæk-shader, Laboratoriet og ⌘K-paletten",
+        "learning": "En håndskrevet fragment shader på 6KB slår et 3D-bibliotek på 150KB, når performance er brandet."
+      },
+      "spec": {
+        "title": "Skrev design-specifikationen før koden",
+        "learning": "At beslutte hvad der IKKE skulle med (three.js) var dokumentets mest værdifulde linje."
+      },
+      "grid": {
+        "title": "Filmiske grid-motiver og dynamiske overlays",
+        "learning": "Atmosfære kommer fra lagdelt subtilitet — korn, vignet, hårfine linjer — ikke fra stærkere farver."
+      },
+      "a11y": {
+        "title": "Tilgængeligheds-gennemgang af alle komponenter",
+        "learning": "Bevægelse man kan slå fra er håndværk; bevægelse man ikke kan, er dekoration."
+      },
+      "i18n": {
+        "title": "Internationaliserede hver sektion — EN / ES / DK",
+        "learning": "Tekst er designmateriale: at oversætte den tvinger dig til at finde den rigtige sætning."
+      },
+      "v2": {
+        "title": "Site v2 — portfolioet blev et databasedrevet produkt",
+        "learning": "Egen medicin: dashboardet der styrer dette site er i sig selv casestudiet."
+      }
+    }
   }
 }

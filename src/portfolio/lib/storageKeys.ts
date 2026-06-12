@@ -4,5 +4,8 @@
  */
 export const STORAGE_KEYS = {
   lang: 'edd-portfolio-lang',
-  theme: 'edd-portfolio-theme',
+  // Shared with the dashboard ThemeProvider (src/shared/providers/theme-provider.tsx).
+  // Both providers write `light|dark|system` to <html>; one key keeps them agreeing
+  // on load instead of racing (portfolio effect runs first, dashboard's last).
+  theme: 'tanstack-template-theme',
 } as const

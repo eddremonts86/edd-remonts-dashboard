@@ -24,6 +24,9 @@ const ProjectsGallery = lazy(() =>
 const LabSection = lazy(() =>
   import('./components/lab/LabSection').then((m) => ({ default: m.LabSection })),
 )
+const BuildLogSection = lazy(() =>
+  import('./components/buildlog/BuildLogSection').then((m) => ({ default: m.BuildLogSection })),
+)
 const ContactSection = lazy(() =>
   import('./components/contact/ContactSection').then((m) => ({ default: m.ContactSection })),
 )
@@ -66,6 +69,10 @@ export function App() {
 
               <Suspense fallback={null}>
                 <LabSection />
+              </Suspense>
+
+              <Suspense fallback={null}>
+                <BuildLogSection />
               </Suspense>
 
               <BusinessImpact />

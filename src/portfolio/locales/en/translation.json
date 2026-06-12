@@ -8,7 +8,8 @@
     "contact": "Contact",
     "resume": "Download CV",
     "discover": "Discover",
-    "lab": "The Lab"
+    "lab": "The Lab",
+    "log": "Build Log"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -747,5 +748,38 @@
     "whoami": "eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.",
     "empty": "command not found — but nice try",
     "footerHint": "↑↓ navigate · ↵ run"
+  },
+  "log": {
+    "kicker": "Learning In Public",
+    "title": "Build Log.",
+    "accent": "Shipped, not staged.",
+    "description": "A curated cut of this repo’s real commit history — what shipped, what it taught me, and the tools that did it. Every hash links to the diff.",
+    "viewAll": "Full history on GitHub",
+    "entries": {
+      "v3": {
+        "title": "Shipped the cinematic v3 — ink shader, The Lab, ⌘K palette",
+        "learning": "A 6KB hand-rolled fragment shader beats a 150KB 3D library when performance is the brand."
+      },
+      "spec": {
+        "title": "Wrote the design spec before touching code",
+        "learning": "Deciding what NOT to add (three.js) was the most valuable line in the document."
+      },
+      "grid": {
+        "title": "Cinematic grid motifs and dynamic overlays",
+        "learning": "Atmosphere comes from layered subtlety — grain, vignette, hairlines — not from louder colors."
+      },
+      "a11y": {
+        "title": "Accessibility pass across portfolio components",
+        "learning": "Motion you can switch off is craft; motion you cannot is decoration."
+      },
+      "i18n": {
+        "title": "Internationalized every section — EN / ES / DK",
+        "learning": "Copy is a design material: translating it forces you to find the actual sentence."
+      },
+      "v2": {
+        "title": "Site v2 — the portfolio became a database-driven product",
+        "learning": "Eating my own dog food: the dashboard that manages this site is itself the case study."
+      }
+    }
   }
 }
