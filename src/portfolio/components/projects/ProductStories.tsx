@@ -2,6 +2,7 @@ import { m, AnimatePresence } from 'framer-motion'
 import { Activity, GitBranch, Laptop, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { TiltCard } from '@/portfolio/components/ui/effects/TiltCard'
 import { fadeInView } from '@/portfolio/lib/motion'
 
 interface StoryProject {
@@ -224,7 +225,8 @@ export const ProductStories = () => {
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
               {/* Col A: The Visual Showcase Console (MacBook Viewport Frame) */}
               <div className={`lg:col-span-6 space-y-6 ${isOdd ? 'lg:order-2' : ''}`}>
-                {/* 1. MacBook Browser Frame Container */}
+                {/* 1. MacBook Browser Frame Container — pointer-tracked 3D tilt */}
+                <TiltCard maxTilt={4} className="rounded-2xl">
                 <div className="w-full relative shadow-2xl rounded-2xl overflow-hidden border border-subtle bg-surface">
                   {/* Top Window Bar */}
                   <div className="bg-surface px-4 py-2.5 flex items-center justify-between border-b border-subtle select-none">
@@ -253,6 +255,7 @@ export const ProductStories = () => {
                     </div>
                   </div>
                 </div>
+                </TiltCard>
 
                 {/* 2. Interactive Monospaced View Controller Tabs */}
                 <div className="flex border border-subtle rounded-xl bg-surface/50 p-1 divide-x divide-subtle font-mono text-[9px] tracking-wider relative select-none">

@@ -7,7 +7,8 @@
     "projects": "Projekter",
     "contact": "Kontakt",
     "resume": "Download CV",
-    "discover": "Opdag"
+    "discover": "Opdag",
+    "lab": "Laboratoriet"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -23,7 +24,21 @@
     "nowLabel": "Nu",
     "nowBody": "Bygger dataintensive produkt-interfaces med TanStack Start, Drizzle og Postgres.",
     "basedIn": "Baseret i",
-    "availability": "Tilgængelighed",
+    "availability": {
+      "title": "Ansættelses- og tilgængelighedsstatus",
+      "timeline": {
+        "label": "TIDSLINJE",
+        "value": "Klar Q3 2026"
+      },
+      "location": {
+        "label": "PLACERING",
+        "value": "København, DK"
+      },
+      "engagement": {
+        "label": "MODALITET",
+        "value": "Remote / Hybrid"
+      }
+    },
     "availabilityValue": "Q3 2026",
     "metricLanguages": "Sprog",
     "pipelineLabel": "Leveringspipeline",
@@ -66,21 +81,9 @@
       "status": "STATUS: MÅLT & RAPPORTERET",
       "engagement": "ANSÆTTELSE: FULD TID"
     },
-    "availability": {
-      "title": "Ansættelses- og tilgængelighedsstatus",
-      "timeline": {
-        "label": "TIDSLINJE",
-        "value": "Klar Q3 2026"
-      },
-      "location": {
-        "label": "PLACERING",
-        "value": "København, DK"
-      },
-      "engagement": {
-        "label": "MODALITET",
-        "value": "Remote / Hybrid"
-      }
-    }
+    "tagline": "18 år med interfaces, hvor beviset kan måles — 100% Core Web Vitals, interaktioner under 12 ms og designsystemer brugt af 20+ ingeniører.",
+    "taglineAccent": "Alt herunder er levende. Rør ved det.",
+    "enterLab": "Ind i laboratoriet"
   },
   "personalInfo": {
     "title": "Staff Frontend Engineer med Full-Stack rødder",
@@ -201,53 +204,53 @@
     "contributionsHeader": "/ Kerne-lederskab & bidrag",
     "outcomesHeader": "/ Verificerede forretningsresultater",
     "items": {
-      "12": {
-        "role": "Staff Frontend Engineer & Teknisk Leder",
-        "description": "Leder frontend-udviklingen af Schillings webapplikationer og dataprodukter, med fokus på React 18/19, TypeScript, Node.js, Tailwind og Shadcn UI til at skalere komplekse ejendomsworkflows."
-      },
-      "11": {
-        "role": "Senior Frontend Developer",
-        "description": "Leder frontend-udviklingen af Resights webapplikationer og dataprodukter med Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js og Vuetify for at skalere komplekse workflows i ejendomsdomænet."
-      },
-      "10": {
-        "role": "Senior Frontend Developer",
-        "description": "Byggede interne sundheds- og administrationsværktøjer for Novo Nordisk med Vue, Vuetify, HTML og CSS med fokus på stabile UI-fundamenter til regulerede medicinske teams."
-      },
-      "9": {
-        "role": "Senior Frontend Developer",
-        "description": "Leverede tilgængelige kampagner og landing pages for Wunderman Nordic med Vue, SCSS, Bootstrap og C#-integrationer, så lanceringer med høj trafik kunne køre på en stabil frontend-arkitektur."
-      },
-      "8": {
-        "role": "Lead Frontend Developer",
-        "description": "Ledte frontend-udviklingen hos GiG Media Copenhagen på tværs af affiliate- og content-produkter, moderniserede legacy-platforme bygget i Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap og PHP, og koordinerede outsourcede vedligeholdelsesopgaver."
-      },
-      "7": {
-        "role": "Frontend Developer",
-        "description": "Arbejdede på high-conversion affiliate-produkter hos Rebel Penguins og leverede frontend-forbedringer, eksperimenter og UI-iterationer på platforme baseret på Drupal, Laravel, October CMS, Bootstrap og MySQL."
-      },
-      "6": {
-        "role": "Full Stack Developer",
-        "description": "Udviklede interne dashboards og eksterne websites end-to-end hos Rebel Penguins med PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS og Laravel."
-      },
-      "5": {
-        "role": "Volunteer",
-        "description": "Støttede Plan Denmarks sponsorafdeling med registrering og validering af dokumenter og var med til at holde de administrative processer rene, strukturerede og pålidelige."
-      },
-      "4": {
-        "role": "Full Stack Developer",
-        "description": "Grundlagde Viruta Studio Creativo og byggede skræddersyede produkter for lokale organisationer og medier, herunder websites som Radio Guama, med PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap og Ext JS."
-      },
-      "3": {
-        "role": "Full Stack Developer",
-        "description": "Byggede interne systemer i GEOCUBAs forsknings- og udviklingsafdeling ved at kombinere PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap og geospatiale værktøjer til operationelle og informationsmæssige behov."
+      "1": {
+        "role": "Full Stack Developer - Junior Developers Manager",
+        "description": "Startede min professionelle karriere på National Library-projektet ved UCI, hvor jeg byggede løsninger i Drupal, PHP og MySQL og samtidig koordinerede juniorudviklere, efterhånden som teamet voksede."
       },
       "2": {
         "role": "Full Stack Developer",
         "description": "Udviklede statistiske og administrative løsninger for den provinsielle ONEI-kontor med PHP, MySQL, HTML, CSS, Ext JS, Drupal og Joomla."
       },
-      "1": {
-        "role": "Full Stack Developer - Junior Developers Manager",
-        "description": "Startede min professionelle karriere på National Library-projektet ved UCI, hvor jeg byggede løsninger i Drupal, PHP og MySQL og samtidig koordinerede juniorudviklere, efterhånden som teamet voksede."
+      "3": {
+        "role": "Full Stack Developer",
+        "description": "Byggede interne systemer i GEOCUBAs forsknings- og udviklingsafdeling ved at kombinere PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap og geospatiale værktøjer til operationelle og informationsmæssige behov."
+      },
+      "4": {
+        "role": "Full Stack Developer",
+        "description": "Grundlagde Viruta Studio Creativo og byggede skræddersyede produkter for lokale organisationer og medier, herunder websites som Radio Guama, med PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap og Ext JS."
+      },
+      "5": {
+        "role": "Volunteer",
+        "description": "Støttede Plan Denmarks sponsorafdeling med registrering og validering af dokumenter og var med til at holde de administrative processer rene, strukturerede og pålidelige."
+      },
+      "6": {
+        "role": "Full Stack Developer",
+        "description": "Udviklede interne dashboards og eksterne websites end-to-end hos Rebel Penguins med PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS og Laravel."
+      },
+      "7": {
+        "role": "Frontend Developer",
+        "description": "Arbejdede på high-conversion affiliate-produkter hos Rebel Penguins og leverede frontend-forbedringer, eksperimenter og UI-iterationer på platforme baseret på Drupal, Laravel, October CMS, Bootstrap og MySQL."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Ledte frontend-udviklingen hos GiG Media Copenhagen på tværs af affiliate- og content-produkter, moderniserede legacy-platforme bygget i Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap og PHP, og koordinerede outsourcede vedligeholdelsesopgaver."
+      },
+      "9": {
+        "role": "Senior Frontend Developer",
+        "description": "Leverede tilgængelige kampagner og landing pages for Wunderman Nordic med Vue, SCSS, Bootstrap og C#-integrationer, så lanceringer med høj trafik kunne køre på en stabil frontend-arkitektur."
+      },
+      "10": {
+        "role": "Senior Frontend Developer",
+        "description": "Byggede interne sundheds- og administrationsværktøjer for Novo Nordisk med Vue, Vuetify, HTML og CSS med fokus på stabile UI-fundamenter til regulerede medicinske teams."
+      },
+      "11": {
+        "role": "Senior Frontend Developer",
+        "description": "Leder frontend-udviklingen af Resights webapplikationer og dataprodukter med Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js og Vuetify for at skalere komplekse workflows i ejendomsdomænet."
+      },
+      "12": {
+        "role": "Staff Frontend Engineer & Teknisk Leder",
+        "description": "Leder frontend-udviklingen af Schillings webapplikationer og dataprodukter, med fokus på React 18/19, TypeScript, Node.js, Tailwind og Shadcn UI til at skalere komplekse ejendomsworkflows."
       }
     },
     "eras": [
@@ -308,8 +311,8 @@
     ]
   },
   "projects": {
-    "title": "Mine Seneste",
-    "titleAccent": "Projekter",
+    "title": "Produkthistorier",
+    "titleAccent": "Ikke projektkort.",
     "subtitle": "En samling af digitale oplevelser der forener premium design med kompromisløs systemteknik.",
     "view": "Se Projekt",
     "problem": "Problem",
@@ -391,7 +394,8 @@
         "tradeoffsChosen": "Isolerede UI-layoutnoder, der fungerer som uafhængige registre for at begrænse ændringer til de enkelte blade.",
         "tradeoffsRejected": "Brug af centraliseret global state dispatch, hvilket ville have udløst globale render-kaskader og øget input latency (INP)."
       }
-    }
+    },
+    "description": "Fortællinger om kontekst, tekniske udfordringer, arkitekturer og metrikker bag tre store digitale platforme."
   },
   "contact": {
     "title": "Lad os Bygge",
@@ -634,11 +638,21 @@
     "social": {
       "heading": "Find mig"
     },
-    "builtWith": "Udviklet i React 19 og minimalisme inspireret af anime."
+    "builtWith": "Udviklet i React 19 og minimalisme inspireret af anime.",
+    "paletteHint": "Psst — tryk ⌘K. Der er kommandoer herinde."
   },
   "preloader": {
     "loading": "Indlæser oplevelse",
-    "standby": "Vent venligst"
+    "standby": "Vent venligst",
+    "role": "Et levende portfolio",
+    "skip": "Indlæser — klik for at springe over",
+    "boot": {
+      "renderer": "initialiserer renderer",
+      "fonts": "indlæser skrifttyper — cinzel, epilogue",
+      "shader": "kompilerer blæk-shader — 1 draw call",
+      "content": "hydrerer beviser",
+      "action": "kamera kører"
+    }
   },
   "a11y": {
     "skipToContent": "Spring til indhold",
@@ -662,9 +676,76 @@
     "skillsTitle": "Tekniske Kompetencer",
     "langLabel": "Sprog",
     "langItems": [
-      { "lang": "Spansk", "level": "Modersmål" },
-      { "lang": "Engelsk", "level": "Flydende" },
-      { "lang": "Dansk", "level": "B1" }
+      {
+        "lang": "Spansk",
+        "level": "Modersmål"
+      },
+      {
+        "lang": "Engelsk",
+        "level": "Flydende"
+      },
+      {
+        "lang": "Dansk",
+        "level": "B1"
+      }
     ]
+  },
+  "lab": {
+    "kicker": "Interaktionsstudier",
+    "title": "Laboratoriet.",
+    "accent": "Rør ved arbejdet.",
+    "description": "Levende eksperimenter, håndbygget til denne side — ingen videoer, ingen skjulte biblioteker. Træk i sliderne, skub til prikkerne, affyr pucken. Sådan udforsker jeg, før jeg shipper.",
+    "goalLabel": "Mål",
+    "toolsLabel": "Værktøjer",
+    "notes": {
+      "kicker": "Lab-noter",
+      "body": "En playground skaffer dig ikke jobbet. Den skaffer dig samtalen — og samtalen er den nye jobsamtale.",
+      "footer": "Nye eksperimenter lander her først. Tryk ⌘K hvor som helst."
+    },
+    "exhibits": {
+      "ink": {
+        "title": "Blækstudie",
+        "goal": "En filmisk baggrund bør koste ét draw call, ikke et 3D-bibliotek."
+      },
+      "spring": {
+        "title": "Fjeder-lab",
+        "goal": "Hver varighed på dette site er en afstemt fjeder — her er prøvebænken.",
+        "chamberLabel": "Fjederkammer — klik for at affyre pucken",
+        "hint": "klik hvor som helst — pucken adlyder din fjeder"
+      },
+      "magnet": {
+        "title": "Magnetfelt",
+        "goal": "54 prikker, én rAF-løkke og nul React re-renders, mens du leger.",
+        "fieldLabel": "Magnetisk prikfelt — bevæg markøren igennem det"
+      },
+      "scramble": {
+        "title": "Dekoder",
+        "goal": "Navigationens scramble-effekt, isoleret så du kan fodre den med hvad som helst.",
+        "sample": "håndværk er synlig dømmekraft",
+        "placeholder": "Skriv en sætning…",
+        "inputLabel": "Sætning der skal dekodes",
+        "action": "Afkod"
+      },
+      "code": {
+        "title": "Kodebiograf",
+        "goal": "En titelsekvens for kildekode — tokeniseret, forskudt og ærlig omkring at være teater."
+      }
+    }
+  },
+  "palette": {
+    "title": "Kommandopalet",
+    "placeholder": "Skriv en kommando — eller prøv \"sudo\"…",
+    "goto": "Gå til",
+    "themeLight": "Skift til lys — rul krediteringerne",
+    "themeDark": "Skift til mørk — sluk lyset",
+    "language": "Sprog",
+    "cv": "Download CV",
+    "copyUrl": "Kopiér sitets URL",
+    "copied": "Kopieret — del det et godt sted.",
+    "source": "Se kildekoden — dette site er også et projekt",
+    "teapot": "HTTP 418 — Jeg er en tepotte. Prøv kontaktformularen i stedet.",
+    "whoami": "eduardo — staff frontend engineer. uptime: 18 år. ingen zombieprocesser.",
+    "empty": "kommando ikke fundet — men godt forsøgt",
+    "footerHint": "↑↓ navigér · ↵ kør"
   }
 }

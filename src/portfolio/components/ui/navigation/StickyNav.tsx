@@ -86,6 +86,15 @@ export const StickyNav = () => {
 
             {/* Controls */}
             <div className="flex shrink-0 items-center gap-2 sm:gap-4">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('pf:open-palette'))}
+                aria-label={t('palette.title', 'Command palette')}
+                title={t('palette.title', 'Command palette')}
+                className="hidden items-center gap-1.5 rounded-full border border-subtle bg-surface/50 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-foreground/55 backdrop-blur-md transition-colors duration-300 hover:border-primary/50 hover:text-primary md:flex"
+              >
+                <kbd className="font-mono">⌘K</kbd>
+              </button>
               <LanguageSelector />
               <ThemeToggle />
 

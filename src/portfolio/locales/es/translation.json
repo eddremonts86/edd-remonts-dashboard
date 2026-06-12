@@ -7,7 +7,8 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "resume": "Descargar CV",
-    "discover": "Descubrir"
+    "discover": "Descubrir",
+    "lab": "El Laboratorio"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -23,7 +24,21 @@
     "nowLabel": "Ahora",
     "nowBody": "Construyendo interfaces de producto intensivas en datos con TanStack Start, Drizzle y Postgres.",
     "basedIn": "Ubicado en",
-    "availability": "Disponibilidad",
+    "availability": {
+      "title": "Estado de Contratación y Disponibilidad",
+      "timeline": {
+        "label": "CRONOGRAMA",
+        "value": "Listo para T3 2026"
+      },
+      "location": {
+        "label": "UBICACIÓN",
+        "value": "Copenhague, DK"
+      },
+      "engagement": {
+        "label": "MODALIDAD",
+        "value": "Remoto / Híbrido"
+      }
+    },
     "availabilityValue": "T3 2026",
     "metricLanguages": "Idiomas",
     "pipelineLabel": "Pipeline de entrega",
@@ -66,21 +81,9 @@
       "status": "ESTADO: MEDIDO Y REPORTADO",
       "engagement": "CONTRATACIÓN: TIEMPO COMPLETO"
     },
-    "availability": {
-      "title": "Estado de Contratación y Disponibilidad",
-      "timeline": {
-        "label": "CRONOGRAMA",
-        "value": "Listo para T3 2026"
-      },
-      "location": {
-        "label": "UBICACIÓN",
-        "value": "Copenhague, DK"
-      },
-      "engagement": {
-        "label": "MODALIDAD",
-        "value": "Remoto / Híbrido"
-      }
-    }
+    "tagline": "18 años construyendo interfaces donde la prueba es medible: 100% Core Web Vitals, interacciones por debajo de 12 ms y design systems adoptados por más de 20 ingenieros.",
+    "taglineAccent": "Todo lo que sigue está vivo. Tócalo.",
+    "enterLab": "Entrar al laboratorio"
   },
   "personalInfo": {
     "title": "Staff Frontend Engineer con raíces Full-Stack",
@@ -201,53 +204,53 @@
     "contributionsHeader": "/ Liderazgo y contribuciones centrales",
     "outcomesHeader": "/ Resultados de negocio verificados",
     "items": {
-      "12": {
-        "role": "Staff Frontend Engineer & Líder Técnico",
-        "description": "Liderando el desarrollo frontend para las aplicaciones web y productos de datos de Schilling, trabajando con React 18/19, TypeScript, Node.js, Tailwind y Shadcn UI para escalar flujos de trabajo de alta densidad."
-      },
-      "11": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Liderando el desarrollo frontend para los productos de datos de Resights, trabajando con Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js y Vuetify para escalar flujos del sector inmobiliario."
-      },
-      "10": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Construí herramientas internas de salud y administración para Novo Nordisk con Vue, Vuetify, HTML y CSS, enfocándome en una base de interfaz fiable para equipos médicos regulados."
-      },
-      "9": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Entregué campañas y landings accesibles para Wunderman Nordic usando Vue, SCSS, Bootstrap e integraciones con C#, dando soporte a lanzamientos de alto tráfico."
-      },
-      "8": {
-        "role": "Lead Frontend Developer",
-        "description": "Lideré el desarrollo frontend en GiG Media Copenhagen, modernizando plataformas legacy con Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap y PHP mientras coordinaba equipos externos de soporte."
-      },
-      "7": {
-        "role": "Desarrollador Frontend",
-        "description": "Trabajé en productos de afiliación de alta conversión en Rebel Penguins, entregando mejoras de frontend, experimentos e iteraciones de UI sobre plataformas de gran volumen."
-      },
-      "6": {
-        "role": "Desarrollador Full Stack",
-        "description": "Desarrollé dashboards internos de extremo a extremo y sitios de clientes en Rebel Penguins usando PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS y Laravel."
-      },
-      "5": {
-        "role": "Voluntario",
-        "description": "Apoyé al departamento de patrocinio de Plan Dinamarca registrando y validando documentos para mantener procesos administrativos limpios y ordenados."
-      },
-      "4": {
-        "role": "Desarrollador Full Stack",
-        "description": "Fundé Viruta Studio Creativo y desarrollé productos a medida para organizaciones locales e informativos usando PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap y Ext JS."
-      },
-      "3": {
-        "role": "Desarrollador Full Stack",
-        "description": "Construí sistemas internos en la agencia de I+D de GEOCUBA combinando PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap y herramientas geoespaciales."
+      "1": {
+        "role": "Desarrollador Full Stack - Responsable de Juniors",
+        "description": "Inicié mi carrera profesional en el proyecto Biblioteca Nacional de la UCI, desarrollando soluciones con Drupal, PHP y MySQL mientras coordinaba desarrolladores junior."
       },
       "2": {
         "role": "Desarrollador Full Stack",
         "description": "Desarrollé soluciones estadísticas y administrativas para la Oficina Provincial de la ONEI utilizando PHP, MySQL, HTML, CSS, Ext JS, Drupal y Joomla."
       },
-      "1": {
-        "role": "Desarrollador Full Stack - Responsable de Juniors",
-        "description": "Inicié mi carrera profesional en el proyecto Biblioteca Nacional de la UCI, desarrollando soluciones con Drupal, PHP y MySQL mientras coordinaba desarrolladores junior."
+      "3": {
+        "role": "Desarrollador Full Stack",
+        "description": "Construí sistemas internos en la agencia de I+D de GEOCUBA combinando PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap y herramientas geoespaciales."
+      },
+      "4": {
+        "role": "Desarrollador Full Stack",
+        "description": "Fundé Viruta Studio Creativo y desarrollé productos a medida para organizaciones locales e informativos usando PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap y Ext JS."
+      },
+      "5": {
+        "role": "Voluntario",
+        "description": "Apoyé al departamento de patrocinio de Plan Dinamarca registrando y validando documentos para mantener procesos administrativos limpios y ordenados."
+      },
+      "6": {
+        "role": "Desarrollador Full Stack",
+        "description": "Desarrollé dashboards internos de extremo a extremo y sitios de clientes en Rebel Penguins usando PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS y Laravel."
+      },
+      "7": {
+        "role": "Desarrollador Frontend",
+        "description": "Trabajé en productos de afiliación de alta conversión en Rebel Penguins, entregando mejoras de frontend, experimentos e iteraciones de UI sobre plataformas de gran volumen."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Lideré el desarrollo frontend en GiG Media Copenhagen, modernizando plataformas legacy con Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap y PHP mientras coordinaba equipos externos de soporte."
+      },
+      "9": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Entregué campañas y landings accesibles para Wunderman Nordic usando Vue, SCSS, Bootstrap e integraciones con C#, dando soporte a lanzamientos de alto tráfico."
+      },
+      "10": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Construí herramientas internas de salud y administración para Novo Nordisk con Vue, Vuetify, HTML y CSS, enfocándome en una base de interfaz fiable para equipos médicos regulados."
+      },
+      "11": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Liderando el desarrollo frontend para los productos de datos de Resights, trabajando con Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js y Vuetify para escalar flujos del sector inmobiliario."
+      },
+      "12": {
+        "role": "Staff Frontend Engineer & Líder Técnico",
+        "description": "Liderando el desarrollo frontend para las aplicaciones web y productos de datos de Schilling, trabajando con React 18/19, TypeScript, Node.js, Tailwind y Shadcn UI para escalar flujos de trabajo de alta densidad."
       }
     },
     "eras": [
@@ -308,8 +311,8 @@
     ]
   },
   "projects": {
-    "title": "Mis Proyectos",
-    "titleAccent": "Recientes",
+    "title": "Historias de producto",
+    "titleAccent": "No tarjetas de proyecto.",
     "subtitle": "Una colección de experiencias digitales que fusionan el diseño premium con una férrea ingeniería de sistemas.",
     "view": "Ver Proyecto",
     "problem": "Problema",
@@ -391,7 +394,8 @@
         "tradeoffsChosen": "Estructuración de componentes aislados tipo registro para limitar las mutaciones visuales a las hojas de la UI.",
         "tradeoffsRejected": "Uso de un dispatch global centralizado, evitando cascadas críticas de renderizado que disparan los retrasos de interacción (INP)."
       }
-    }
+    },
+    "description": "Narrativas que recorren el contexto, los retos técnicos, las arquitecturas y las métricas detrás de tres grandes plataformas digitales."
   },
   "contact": {
     "title": "Construyamos",
@@ -634,11 +638,21 @@
     "social": {
       "heading": "En la red"
     },
-    "builtWith": "Construido con React 19 y Minimalismo Estilo Anime."
+    "builtWith": "Construido con React 19 y Minimalismo Estilo Anime.",
+    "paletteHint": "Psst — pulsa ⌘K. Aquí dentro hay comandos."
   },
   "preloader": {
     "loading": "Cargando experiencia",
-    "standby": "Por favor espera"
+    "standby": "Por favor espera",
+    "role": "Un portafolio vivo",
+    "skip": "Cargando — haz clic para saltar",
+    "boot": {
+      "renderer": "iniciando renderer",
+      "fonts": "cargando tipografías — cinzel, epilogue",
+      "shader": "compilando shader de tinta — 1 draw call",
+      "content": "hidratando evidencia",
+      "action": "cámara… acción"
+    }
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal",
@@ -662,9 +676,76 @@
     "skillsTitle": "Habilidades Técnicas",
     "langLabel": "Idiomas",
     "langItems": [
-      { "lang": "Español", "level": "Nativo" },
-      { "lang": "Inglés", "level": "Fluido" },
-      { "lang": "Danés", "level": "B1" }
+      {
+        "lang": "Español",
+        "level": "Nativo"
+      },
+      {
+        "lang": "Inglés",
+        "level": "Fluido"
+      },
+      {
+        "lang": "Danés",
+        "level": "B1"
+      }
     ]
+  },
+  "lab": {
+    "kicker": "Estudios de interacción",
+    "title": "El Laboratorio.",
+    "accent": "Toca el trabajo.",
+    "description": "Experimentos vivos, construidos a mano para esta página: sin vídeos ni librerías tras el telón. Mueve los sliders, empuja los puntos, lanza el disco. Así exploro antes de lanzar.",
+    "goalLabel": "Objetivo",
+    "toolsLabel": "Herramientas",
+    "notes": {
+      "kicker": "Notas de laboratorio",
+      "body": "Un playground no te consigue el trabajo. Te consigue la conversación — y la conversación es la nueva entrevista.",
+      "footer": "Los experimentos nuevos aterrizan aquí primero. Pulsa ⌘K donde quieras."
+    },
+    "exhibits": {
+      "ink": {
+        "title": "Estudio de tinta",
+        "goal": "Un fondo cinematográfico debería costar una sola draw call, no una librería 3D."
+      },
+      "spring": {
+        "title": "Spring Lab",
+        "goal": "Cada duración de este sitio es un muelle afinado: este es el banco de pruebas.",
+        "chamberLabel": "Cámara de muelles: haz clic para lanzar el disco",
+        "hint": "haz clic donde quieras: el disco obedece a tu muelle"
+      },
+      "magnet": {
+        "title": "Campo magnético",
+        "goal": "54 puntos, un solo bucle rAF y cero re-renders de React mientras juegas.",
+        "fieldLabel": "Campo de puntos magnéticos: mueve el cursor a través de él"
+      },
+      "scramble": {
+        "title": "Decodificador",
+        "goal": "El efecto scramble de la navegación, aislado para que lo alimentes con lo que quieras.",
+        "sample": "el oficio es criterio hecho visible",
+        "placeholder": "Escribe una frase…",
+        "inputLabel": "Frase a decodificar",
+        "action": "Decodificar"
+      },
+      "code": {
+        "title": "Cine de código",
+        "goal": "Una secuencia de títulos para código fuente: tokenizada, escalonada y honesta sobre ser teatro."
+      }
+    }
+  },
+  "palette": {
+    "title": "Paleta de comandos",
+    "placeholder": "Escribe un comando — o prueba \"sudo\"…",
+    "goto": "Ir a",
+    "themeLight": "Cambiar a claro — que rueden los créditos",
+    "themeDark": "Cambiar a oscuro — apaga las luces",
+    "language": "Idioma",
+    "cv": "Descargar CV",
+    "copyUrl": "Copiar URL del sitio",
+    "copied": "Copiado — compártelo en un buen sitio.",
+    "source": "Ver código fuente — este sitio también es un proyecto",
+    "teapot": "HTTP 418 — Soy una tetera. Mejor usa el formulario de contacto.",
+    "whoami": "eduardo — staff frontend engineer. uptime: 18 años. sin procesos zombi.",
+    "empty": "comando no encontrado — buen intento",
+    "footerHint": "↑↓ navegar · ↵ ejecutar"
   }
 }

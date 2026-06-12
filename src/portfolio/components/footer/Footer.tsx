@@ -102,6 +102,13 @@ export const Footer = () => {
             <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/60">
               {t('footer.builtWith', 'Engineered with React 19 & Anime minimalism.')}
             </p>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('pf:open-palette'))}
+              className="hidden cursor-pointer font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/40 transition-colors duration-300 hover:text-primary md:block"
+            >
+              {t('footer.paletteHint', 'Psst — press ⌘K. There are commands in here.')}
+            </button>
           </div>
 
           <button

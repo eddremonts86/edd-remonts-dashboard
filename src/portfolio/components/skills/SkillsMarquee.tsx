@@ -3,6 +3,7 @@ import { Layers, Database, Cpu, Sparkles } from 'lucide-react'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { fadeInView } from '@/portfolio/lib/motion'
+import { TechFilmStrip } from './TechFilmStrip'
 
 interface CuratedLayer {
   id: string
@@ -65,6 +66,11 @@ export const SkillsMarquee = () => {
       aria-label={t('a11y.skillsMarquee')}
     >
       <div className="absolute inset-0 pointer-events-none cinematic-grid" />
+
+      {/* Film-strip marquee of the actual stack — full-bleed above the matrix */}
+      <div className="relative mb-20 md:mb-28">
+        <TechFilmStrip />
+      </div>
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">

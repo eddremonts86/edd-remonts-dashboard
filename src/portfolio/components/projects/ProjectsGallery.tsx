@@ -1,38 +1,39 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useMousePosition } from '@/portfolio/hooks/useMousePosition'
 import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter'
 import { Section, Container } from '../ui/layout/Section'
+import { SectionSlate } from '../ui/layout/SectionSlate'
 import { CategoryFilter } from './CategoryFilter'
+import { FloatingImagePreview } from './FloatingImagePreview'
 import { ProductStories } from './ProductStories'
 import { ProjectListItem } from './ProjectListItem'
 
 export const ProjectsGallery = () => {
   const { t } = useTranslation()
-  const { activeCategory, setActiveCategory, filteredProjects, setHoveredProject } =
+  const { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject } =
     useProjectFilter()
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const { springX, springY } = useMousePosition()
 
   // Filter out Zunzun from additional list
   const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
 
   return (
     <Section id="projects" className="bg-background">
+      <FloatingImagePreview project={hoveredProject} cursorX={springX} cursorY={springY} />
       <Container>
-        {/* Section Header */}
-        <div className="mb-20 max-w-3xl text-left">
-          <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/60">
-            {t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
-          </p>
-          <h2 className="text-4xl font-light tracking-tight md:text-6xl lg:text-8xl text-foreground">
-            Product Stories
-            <span className="mt-2 block font-serif italic text-primary">Not Project Cards.</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/70 md:text-base">
-            Narratives tracking the context, technological hurdles, system architectures, and
-            metrics behind three major digital platforms.
-          </p>
-        </div>
+        <SectionSlate
+          reel={2}
+          kicker={t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
+          title={t('projects.title', 'Product Stories')}
+          accent={t('projects.titleAccent', 'Not Project Cards.')}
+          description={t(
+            'projects.description',
+            'Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.',
+          )}
+        />
 
         {/* 1. Immersive Product Stories Marquee */}
         <div className="mb-32">

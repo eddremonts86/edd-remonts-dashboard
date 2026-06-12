@@ -113,6 +113,11 @@
   /* Portfolio-only token (only consumed inside .pf wrapper) */
   --color-surface: var(--surface);
 
+  /* Hairline border palette — resolves the border-subtle/border-default
+     classes used across the portfolio (previously silent no-ops that fell
+     back to currentColor) */
+  --color-subtle: var(--border-subtle, rgba(16, 16, 16, 0.1));
+
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
@@ -133,6 +138,32 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+}
+
+/* Companion to --color-subtle above: `border-default` reads the stronger
+   hairline token (also previously a no-op class) */
+@utility border-default {
+  border-color: var(--border-default, rgba(16, 16, 16, 0.15));
+}
+
+/* Theme-switch circular wipe (View Transitions API, progressive enhancement).
+   Gated behind .pf-theme-wipe so router view transitions are untouched.
+   --pf-vt-x/y are set by the toggle button at click time. */
+html.pf-theme-wipe::view-transition-old(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html.pf-theme-wipe::view-transition-new(root) {
+  animation: pf-theme-wipe 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  mix-blend-mode: normal;
+}
+@keyframes pf-theme-wipe {
+  from {
+    clip-path: circle(0% at var(--pf-vt-x, 92%) var(--pf-vt-y, 6%));
+  }
+  to {
+    clip-path: circle(150% at var(--pf-vt-x, 92%) var(--pf-vt-y, 6%));
+  }
 }
 
 :root {
