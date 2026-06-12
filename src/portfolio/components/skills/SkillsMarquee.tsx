@@ -86,10 +86,11 @@ export const SkillsMarquee = () => {
   return (
     <section
       id="stack"
-      className="relative z-20 isolate border-t border-subtle bg-surface py-28 md:py-40"
+      className="relative z-20 isolate py-28 md:py-40"
       aria-label={t('a11y.skillsMarquee')}
     >
-      <div className="absolute inset-0 pointer-events-none cinematic-grid" />
+      <span aria-hidden="true" className="section-seam" />
+      <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
       {/* Film-strip marquee of the actual stack — full-bleed above the matrix */}
       <div className="relative mb-20 md:mb-28">
@@ -107,7 +108,7 @@ export const SkillsMarquee = () => {
             className="lg:col-span-5 space-y-6"
           >
             <div>
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
+              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
                 {t('skills.kicker', '/ TECHNICAL EXPERTISE')}
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
@@ -137,7 +138,7 @@ export const SkillsMarquee = () => {
                   whileInView={cardProps.whileInView}
                   viewport={cardProps.viewport}
                   transition={cardProps.transition}
-                  className="group relative rounded-2xl border border-subtle bg-background p-6 shadow-xs transition-all duration-500 hover:border-primary/20 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
+                  className="pf-card group p-6"
                 >
                   {/* Visual coordinate annotation */}
                   <div className="absolute top-4 right-5 font-mono text-[8px] text-foreground/20 uppercase tracking-widest">

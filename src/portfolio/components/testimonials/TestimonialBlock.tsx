@@ -24,7 +24,7 @@ export const TestimonialBlock = () => {
   const currentTestimonial = testimonials[safeIndex]
 
   return (
-    <Section className="border-y border-subtle bg-background">
+    <Section>
       {/* Decorative background blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-40 top-1/2 h-150 w-150 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-3xl dark:bg-primary/[0.04]" />

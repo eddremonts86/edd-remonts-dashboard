@@ -69,7 +69,10 @@ export const SpringLab = () => {
         ref={chamberRef}
         role="button"
         tabIndex={0}
-        aria-label={t('lab.exhibits.spring.chamberLabel', 'Spring chamber — click to launch the puck')}
+        aria-label={t(
+          'lab.exhibits.spring.chamberLabel',
+          'Spring chamber — click to launch the puck',
+        )}
         onPointerDown={(e) => moveTo(e.clientX, e.clientY)}
         onKeyDown={(e) => {
           const step = 0.18
@@ -81,7 +84,7 @@ export const SpringLab = () => {
         className="relative min-h-44 flex-1 cursor-crosshair overflow-hidden bg-background/60 md:min-h-52"
       >
         {/* Chamber graticule */}
-        <div aria-hidden="true" className="absolute inset-0 cinematic-grid opacity-60" />
+        <div aria-hidden="true" className="absolute inset-0 cinematic-grid opacity-[0.18]" />
         <span className="pointer-events-none absolute left-3 top-3 font-mono text-[8px] uppercase tracking-[0.2em] text-foreground/40">
           {t('lab.exhibits.spring.hint', 'click anywhere — the puck obeys your spring')}
         </span>
@@ -98,9 +101,7 @@ export const SpringLab = () => {
           aria-hidden="true"
           animate={{ left: `${target.x * 100}%`, top: `${target.y * 100}%` }}
           transition={
-            prefersReducedMotion
-              ? { duration: 0 }
-              : { type: 'spring', stiffness, damping, mass }
+            prefersReducedMotion ? { duration: 0 } : { type: 'spring', stiffness, damping, mass }
           }
           style={{ width: PUCK, height: PUCK, x: '-50%', y: '-50%' }}
           className="absolute rounded-full bg-primary shadow-[0_0_24px_rgba(209,52,38,0.5)]"
@@ -116,22 +117,8 @@ export const SpringLab = () => {
           step={5}
           onChange={setStiffness}
         />
-        <Dial
-          label="damping"
-          value={damping}
-          min={1}
-          max={50}
-          step={1}
-          onChange={setDamping}
-        />
-        <Dial
-          label="mass"
-          value={mass}
-          min={0.5}
-          max={5}
-          step={0.5}
-          onChange={setMass}
-        />
+        <Dial label="damping" value={damping} min={1} max={50} step={1} onChange={setDamping} />
+        <Dial label="mass" value={mass} min={0.5} max={5} step={0.5} onChange={setMass} />
       </div>
     </div>
   )

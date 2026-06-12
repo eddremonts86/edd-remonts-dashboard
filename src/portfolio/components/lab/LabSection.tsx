@@ -88,7 +88,7 @@ export const LabSection = () => {
 
           <m.aside
             {...fadeInView({ delay: 0.16, distance: 24 })}
-            className="flex flex-col justify-between gap-6 rounded-2xl border border-primary/25 bg-primary/[0.04] p-6 md:col-span-6 lg:col-span-2"
+            className="pf-accent-panel flex flex-col justify-between gap-6 p-6 md:col-span-6 lg:col-span-2"
           >
             <div>
               <p className="mb-3 font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-primary">

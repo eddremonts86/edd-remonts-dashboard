@@ -140,7 +140,7 @@ export const AboutSection = () => {
   ]
 
   return (
-    <Section id="about" className="bg-surface">
+    <Section id="about">
       <div className="pointer-events-none absolute -left-40 top-1/4 h-120 w-120 rounded-full bg-primary/1 blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-1/4 h-120 w-120 rounded-full bg-primary/1 blur-3xl" />
 
@@ -178,7 +178,7 @@ export const AboutSection = () => {
                 whileInView={cardProps.whileInView}
                 viewport={cardProps.viewport}
                 transition={cardProps.transition}
-                className={`group relative rounded-2xl border border-subtle bg-surface/30 p-8 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/20 hover:bg-surface/50 ${
+                className={`pf-card group flex flex-col justify-between p-8 ${
                   isLastWide ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >

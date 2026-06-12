@@ -21,7 +21,7 @@ export const ProjectsGallery = () => {
   const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
 
   return (
-    <Section id="projects" className="bg-background">
+    <Section id="projects">
       <FloatingImagePreview project={hoveredProject} cursorX={springX} cursorY={springY} />
       <Container>
         <SectionSlate

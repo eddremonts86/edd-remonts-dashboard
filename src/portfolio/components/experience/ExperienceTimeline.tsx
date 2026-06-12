@@ -126,7 +126,7 @@ export const ExperienceTimeline = () => {
   ]
 
   return (
-    <Section id="experience" className="bg-background">
+    <Section id="experience">
       <Container>
         <div className="mb-24 flex flex-col justify-between gap-12 md:mb-32 md:flex-row text-left">
           <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl leading-[1.05] text-foreground">

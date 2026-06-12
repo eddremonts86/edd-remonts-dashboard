@@ -21,8 +21,8 @@ export const Footer = () => {
 
   return (
     <footer className="relative bg-background text-foreground border-t border-subtle pb-[max(3rem,env(safe-area-inset-bottom))] pt-20 selection:bg-primary selection:text-primary-foreground overflow-hidden w-full">
-      {/* Decorative topology coordinates */}
-      <div className="absolute inset-0 pointer-events-none opacity-1 bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[20px_20px]" />
+      {/* Soft tonal aura — editorial light, no grid */}
+      <div aria-hidden="true" className="pf-section-bg" />
 
       <m.div
         initial={{ opacity: 0, y: 20 }}
@@ -31,10 +31,10 @@ export const Footer = () => {
         transition={{ duration: 0.8 }}
         className="w-full px-6 md:px-16 xl:px-24"
       >
-        {/* ── Main body: name + nav ────────────────────── */}
-        <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-12 lg:gap-16">
-          {/* Col 1: Identity (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
+        {/* ── Main body: name + social ────────────────────── */}
+        <div className="grid grid-cols-1 gap-12 pb-12 lg:grid-cols-12 lg:gap-16">
+          {/* Col 1: Identity (8 cols) */}
+          <div className="lg:col-span-8 space-y-6">
             <div>
               <h3 className="font-serif text-3xl font-light tracking-tight text-foreground md:text-4xl uppercase">
                 {givenName} <span className="font-serif italic text-primary">{familyName}</span>.
@@ -53,43 +53,46 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Col 2: Navigation Columns (5 cols) */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:justify-self-end">
-            <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
-                {t('footer.nav.heading', 'NAVIGATE')}
-              </span>
-              <div className="flex flex-col gap-2.5 font-mono text-[10px]">
-                {FOOTER_NAV.map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className="text-foreground/60 hover:text-primary transition-colors duration-200 w-fit"
-                  >
-                    /{section.id.toUpperCase()}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60 block font-semibold">
-                {t('footer.social.heading', 'ELSEWHERE')}
-              </span>
-              <div className="flex flex-col gap-2.5 font-mono text-[10px]">
-                {personalInfo.socials.map((social) => (
+          {/* Col 2: Social links (4 cols, right-aligned) */}
+          <div className="lg:col-span-4 lg:justify-self-end space-y-3">
+            <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-foreground font-bold flex items-center gap-2 before:content-[''] before:block before:h-px before:w-4 before:bg-primary before:shrink-0">
+              {t('footer.social.heading', 'ELSEWHERE')}
+            </p>
+            <div className="flex flex-col gap-2.5 font-mono text-[10px]">
+              {personalInfo.socials.map((social) => {
+                const Icon = social.icon
+                return (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground/60 hover:text-primary transition-colors duration-200 flex items-center gap-1.5 w-fit"
+                    className="text-foreground/60 hover:text-primary transition-colors duration-200 flex items-center gap-2 w-fit group"
                   >
+                    <Icon className="h-3.5 w-3.5 shrink-0 transition-colors duration-200" />
                     {social.name.toUpperCase()}
                   </a>
-                ))}
-              </div>
+                )
+              })}
             </div>
+          </div>
+        </div>
+
+        {/* ── Nav row: all sections as a horizontal strip ────────── */}
+        <div className="border-t border-subtle py-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-foreground font-bold flex items-center gap-2 shrink-0 before:content-[''] before:block before:h-px before:w-4 before:bg-primary before:shrink-0">
+            {t('footer.nav.heading', 'NAVIGATE')}
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px]">
+            {FOOTER_NAV.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                className="text-foreground/50 hover:text-primary transition-colors duration-200"
+              >
+                /{section.id.toUpperCase()}
+              </a>
+            ))}
           </div>
         </div>
 

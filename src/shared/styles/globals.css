@@ -384,12 +384,44 @@ html.pf-theme-wipe::view-transition-new(root) {
   --accent-foreground: #ffffff;
   --apple-glass: rgba(251, 250, 249, 0.72);
   --apple-border: rgba(0, 0, 0, 0.05);
-  --border-subtle: rgba(16, 16, 16, 0.06);
-  --border-default: rgba(16, 16, 16, 0.15);
+  --border-subtle: rgba(16, 16, 16, 0.1);
+  --border-default: rgba(16, 16, 16, 0.16);
   --scrollbar-thumb: rgba(0, 0, 0, 0.1);
   --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
   --grid-line: rgba(16, 16, 16, 0.04);
   --vignette: radial-gradient(circle, transparent 65%, rgba(16, 16, 16, 0.03) 100%);
+
+  /* Unified glass + card surface system (mirrors the hero panel).
+     On near-white paper, glass translucency alone reads flat — so light
+     mode leans on a crisp hairline, a top sheen, and a layered soft
+     shadow to lift cards off the page. */
+  --glass-bg: rgba(255, 255, 255, 0.66);
+  --glass-border: rgba(16, 16, 16, 0.1);
+  --glass-sheen: rgba(255, 255, 255, 0.85);
+  --shadow-glass:
+    inset 0 1px 0 var(--glass-sheen), 0 1px 2px rgba(16, 16, 16, 0.05),
+    0 10px 24px -10px rgba(16, 16, 16, 0.16), 0 30px 50px -26px rgba(16, 16, 16, 0.12);
+  --shadow-glass-hover:
+    inset 0 1px 0 var(--glass-sheen), 0 1px 2px rgba(16, 16, 16, 0.06),
+    0 18px 36px -12px rgba(16, 16, 16, 0.22), 0 40px 64px -28px rgba(16, 16, 16, 0.16);
+  /* Continuous ambient field — soft warm-neutral depth (no pink cast on
+     the warm paper). A whisper of primary stays only at the very top so
+     the page still feels lit by the hero's ink, not washed in rose. */
+  --pf-ambient:
+    radial-gradient(
+      120% 80% at 50% -10%,
+      color-mix(in srgb, var(--primary) 3.5%, transparent),
+      transparent 58%
+    ),
+    radial-gradient(
+      100% 70% at 88% 108%,
+      color-mix(in srgb, var(--foreground) 3%, transparent),
+      transparent 55%
+    );
+  /* Section light pools — neutral charcoal in light so they read as soft
+     depth, never dusty pink. */
+  --pf-pool-a: color-mix(in srgb, var(--foreground) 3.5%, transparent);
+  --pf-pool-b: color-mix(in srgb, var(--foreground) 3%, transparent);
 
   /* Override Tailwind v4 colour mappings for the portfolio */
   --color-background: var(--background);
@@ -405,6 +437,8 @@ html.pf-theme-wipe::view-transition-new(root) {
   --color-surface: var(--surface);
   font-family: 'Epilogue', sans-serif;
   background-color: var(--background);
+  background-image: var(--pf-ambient);
+  background-attachment: fixed;
   color: var(--foreground);
 }
 
@@ -421,12 +455,38 @@ html.pf-theme-wipe::view-transition-new(root) {
   --accent-foreground: #ffffff;
   --apple-glass: rgba(10, 10, 10, 0.72);
   --apple-border: rgba(255, 255, 255, 0.05);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-default: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.14);
   --scrollbar-thumb: rgba(255, 255, 255, 0.15);
   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
   --grid-line: rgba(255, 255, 255, 0.02);
   --vignette: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.32) 100%);
+
+  /* Unified glass + card surface system (mirrors the hero panel) */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-sheen: rgba(255, 255, 255, 0.06);
+  --shadow-glass:
+    inset 0 1px 0 var(--glass-sheen), 0 1px 2px rgba(0, 0, 0, 0.4),
+    0 18px 44px -14px rgba(0, 0, 0, 0.62);
+  --shadow-glass-hover:
+    inset 0 1px 0 var(--glass-sheen), 0 1px 2px rgba(0, 0, 0, 0.5),
+    0 30px 64px -18px rgba(0, 0, 0, 0.72);
+  /* Continuous ambient field — soft primary light pooled top + bottom */
+  --pf-ambient:
+    radial-gradient(
+      120% 80% at 50% -10%,
+      color-mix(in srgb, var(--primary) 9%, transparent),
+      transparent 58%
+    ),
+    radial-gradient(
+      100% 70% at 88% 108%,
+      color-mix(in srgb, var(--primary) 7%, transparent),
+      transparent 55%
+    );
+  /* Section light pools — keep the cinematic red glow on the black field. */
+  --pf-pool-a: color-mix(in srgb, var(--primary) 6%, transparent);
+  --pf-pool-b: color-mix(in srgb, var(--foreground) 4%, transparent);
 }
 
 /* Press feedback — pills and palette rows visibly respond to the click
@@ -438,6 +498,21 @@ html.pf-theme-wipe::view-transition-new(root) {
   transition: transform 120ms ease;
 }
 
+/* Hide the page scroll indicator on the portfolio while keeping scroll
+   fully functional (wheel/touch/keyboard). Scoped to the portfolio page
+   so the dashboard keeps its own scrollbars. */
+html:has(.pf),
+html:has(.pf) body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge/IE */
+}
+html:has(.pf)::-webkit-scrollbar,
+html:has(.pf) body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* WebKit/Blink */
+}
+
 /* Portfolio utility classes */
 .pf .apple-glass {
   background-color: var(--apple-glass);
@@ -447,6 +522,95 @@ html.pf-theme-wipe::view-transition-new(root) {
   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
   transition: colors 500ms;
+}
+
+/* ── Unified glass + card system ─────────────────────────────────
+   One recipe so every section speaks the hero's material language:
+   translucent surface, perceptible hairline, confident soft shadow. */
+.pf .pf-glass {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  transition:
+    border-color 500ms ease,
+    box-shadow 500ms ease,
+    transform 500ms ease,
+    background-color 500ms ease;
+}
+
+.pf .pf-card {
+  position: relative;
+  border-radius: 1rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  transition:
+    border-color 500ms ease,
+    box-shadow 500ms ease,
+    transform 500ms ease,
+    background-color 500ms ease;
+}
+
+.pf .pf-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 28%, transparent);
+  box-shadow: var(--shadow-glass-hover);
+  transform: translateY(-3px);
+}
+
+/* Accent panel — editorial highlight box. Replaces muddy primary-tinted
+   fills (bg-primary/5) that read as dusty pink in the light theme. Uses
+   the shared glass surface with a primary left rule so it reads as
+   "important" without washing the panel in low-alpha red. */
+.pf .pf-accent-panel {
+  position: relative;
+  border-radius: 0.75rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--primary);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+}
+
+/* Feathered chapter divider — replaces the hard 1px border-t seams so
+   sections dissolve into the shared ambient field instead of stacking. */
+.pf .section-seam {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-default) 22%,
+    var(--border-default) 78%,
+    transparent
+  );
+  opacity: 0.55;
+}
+
+/* ── Section aura ────────────────────────────────────────────────
+   Replaces the graph-paper "cinematic-grid" with soft editorial light
+   pools (no lines), so every section carries the hero's lit depth.
+   Alternate sides per section with --alt for gentle rhythm. */
+.pf .pf-section-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(62% 48% at 12% -8%, var(--pf-pool-a), transparent 62%),
+    radial-gradient(58% 50% at 100% 112%, var(--pf-pool-b), transparent 60%);
+}
+
+.pf .pf-section-bg--alt {
+  background-image:
+    radial-gradient(62% 48% at 88% -8%, var(--pf-pool-a), transparent 62%),
+    radial-gradient(58% 50% at 0% 112%, var(--pf-pool-b), transparent 60%);
 }
 
 .pf .skip-to-content {
@@ -533,35 +697,76 @@ html.pf-theme-wipe::view-transition-new(root) {
 }
 
 @keyframes pf-grain {
-  0%, 100% { transform: translate(0%, 0%); }
-  10% { transform: translate(-5%, -4%); }
-  20% { transform: translate(-2%, 6%); }
-  30% { transform: translate(3%, -3%); }
-  40% { transform: translate(-4%, 3%); }
-  50% { transform: translate(5%, -5%); }
-  60% { transform: translate(-3%, 4%); }
-  70% { transform: translate(3%, -6%); }
-  80% { transform: translate(-3%, 5%); }
-  90% { transform: translate(4%, -3%); }
+  0%,
+  100% {
+    transform: translate(0%, 0%);
+  }
+  10% {
+    transform: translate(-5%, -4%);
+  }
+  20% {
+    transform: translate(-2%, 6%);
+  }
+  30% {
+    transform: translate(3%, -3%);
+  }
+  40% {
+    transform: translate(-4%, 3%);
+  }
+  50% {
+    transform: translate(5%, -5%);
+  }
+  60% {
+    transform: translate(-3%, 4%);
+  }
+  70% {
+    transform: translate(3%, -6%);
+  }
+  80% {
+    transform: translate(-3%, 5%);
+  }
+  90% {
+    transform: translate(4%, -3%);
+  }
 }
 
 /* Cinematic background grid utilities scoped to portfolio */
 .pf .cinematic-grid {
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 32px 32px;
-  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0.15) 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0.15) 80%,
+    transparent 100%
+  );
 }
 
 .pf .cinematic-grid-large {
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
-  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0.15) 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0.15) 80%,
+    transparent 100%
+  );
 }
 
 /* Custom property for gradient rotation */
