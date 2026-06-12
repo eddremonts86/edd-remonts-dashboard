@@ -7,7 +7,9 @@
     "projects": "Projekter",
     "contact": "Kontakt",
     "resume": "Download CV",
-    "discover": "Opdag"
+    "discover": "Opdag",
+    "lab": "Laboratoriet",
+    "log": "Byggelog"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -23,7 +25,21 @@
     "nowLabel": "Nu",
     "nowBody": "Bygger dataintensive produkt-interfaces med TanStack Start, Drizzle og Postgres.",
     "basedIn": "Baseret i",
-    "availability": "Tilgængelighed",
+    "availability": {
+      "title": "Ansættelses- og tilgængelighedsstatus",
+      "timeline": {
+        "label": "TIDSLINJE",
+        "value": "Klar Q3 2026"
+      },
+      "location": {
+        "label": "PLACERING",
+        "value": "København, DK"
+      },
+      "engagement": {
+        "label": "ARBEJDSFORM",
+        "value": "Remote / Hybrid"
+      }
+    },
     "availabilityValue": "Q3 2026",
     "metricLanguages": "Sprog",
     "pipelineLabel": "Leveringspipeline",
@@ -40,17 +56,17 @@
       "Jeg sikrede 100% perfekte Core Web Vitals og under 12ms interaktions-responsivitet på europæisk virksomhedsskala."
     ],
     "metrics": {
-      "title": "/ VERIFICEREDE YDEEVNE-METRIKKER",
+      "title": "/ VERIFICEREDE YDEEVNEMETRIKKER",
       "verified": "[VERIFICERET]",
       "viewProof": "Se bevis",
       "bundle": {
-        "value": "42%",
-        "label": "Bundle Reduktion",
+        "value": "94%",
+        "label": "Bundle-reduktion",
         "desc": "Frakoblede arkitektoniske grænser for at bringe platformen ned fra 6.2MB til 350KB."
       },
       "delivery": {
         "value": "30%",
-        "label": "Hurtigere Levering",
+        "label": "Hurtigere levering",
         "desc": "Fremskyndede leveringshastigheden via kontraktbaseret workspace-isolering."
       },
       "vitals": {
@@ -60,27 +76,15 @@
       },
       "impact": {
         "value": "20+",
-        "label": "Udviklere Påvirket",
+        "label": "Udviklere påvirket",
         "desc": "Mentorede udviklere, styrede design-systemer og skabte fælles retning."
       },
       "status": "STATUS: MÅLT & RAPPORTERET",
       "engagement": "ANSÆTTELSE: FULD TID"
     },
-    "availability": {
-      "title": "Ansættelses- og tilgængelighedsstatus",
-      "timeline": {
-        "label": "TIDSLINJE",
-        "value": "Klar Q3 2026"
-      },
-      "location": {
-        "label": "PLACERING",
-        "value": "København, DK"
-      },
-      "engagement": {
-        "label": "MODALITET",
-        "value": "Remote / Hybrid"
-      }
-    }
+    "tagline": "18 år med interfaces, hvor beviset kan måles — 100% Core Web Vitals, interaktioner under 12 ms og designsystemer brugt af 20+ ingeniører.",
+    "taglineAccent": "Alt herunder er levende. Rør ved det.",
+    "enterLab": "Ind i laboratoriet"
   },
   "personalInfo": {
     "title": "Staff Frontend Engineer med Full-Stack rødder",
@@ -89,12 +93,61 @@
   },
   "skills": {
     "eyebrow": "Kernekompetencer",
-    "title": "Engineered stack, intentionally curated.",
-    "subtitle": "De kerne-systemer jeg bruger til at levere resiliente produkt-interfaces. Bredde er tilgængelig på efterspørgsel.",
+    "title": {
+      "architectural": "Arkitektoniske",
+      "capabilities": "kompetencer"
+    },
+    "subtitle": "De kernesystemer jeg bruger til at levere robuste produkt-interfaces. Bredden hentes frem efter behov, ikke på forhånd.",
     "toolbox": "Engineering værktøjskasse",
     "view": "Se fuld stack",
     "hide": "Skjul fuld stack",
-    "fullStackEmpty": "Den fulde stack er allerede repræsenteret i kernekompetencerne."
+    "fullStackEmpty": "Den fulde stack er allerede repræsenteret i kernekompetencerne.",
+    "kicker": "/ TEKNISK EKSPERTISE",
+    "capabilityLabel": "Kompetence",
+    "valueProof": "/ VÆRDIBEVIS",
+    "description": "Teknologier er hyldevarer; arkitektonisk afstemning og organisatorisk governance er de reelle konkurrencefordele. Sådan organiserer jeg mine kompetencer for at levere målbar hastighed og stabilitet.",
+    "layers": {
+      "governance": {
+        "name": "Arkitektur & governance",
+        "annot": "/ WORKSPACE-SYSTEMER",
+        "items": [
+          "Monorepo-grænser",
+          "Design-system-kontrakter",
+          "Afkoblede moduler"
+        ],
+        "rationale": "Lader distribuerede produktteams udrulle funktioner uafhængigt uden at bryde den fælles arkitektur."
+      },
+      "performance": {
+        "name": "Performance-engineering",
+        "annot": "/ LATENS & KONVERTERING",
+        "items": [
+          "Interaktionslatens",
+          "Optimistisk synkronisering",
+          "Core Web Vitals"
+        ],
+        "rationale": "Sikrer perfekte Core Web Vitals og svartider under 12 ms på enterprise-platforme."
+      },
+      "leadership": {
+        "name": "Teknisk lederskab",
+        "annot": "/ ORGANISATORISK SYNKRONISERING",
+        "items": [
+          "Udvikleroplevelse",
+          "Aktiv mentorering",
+          "Automatiserede quality gates"
+        ],
+        "rationale": "Accelererer leveringscyklusser med 30% på tværs af 20+ udviklere gennem aktiv mentorering."
+      },
+      "product": {
+        "name": "Produkt- og systemafstemning",
+        "annot": "/ FULL-STACK-STRATEGI",
+        "items": [
+          "Domænemodellering",
+          "Stakeholder-koordinering",
+          "State- og cache-kontrakter"
+        ],
+        "rationale": "Lukker eksekveringshuller mellem engineering, produktledere og direktion."
+      }
+    }
   },
   "about": {
     "different": "/ HVAD DER GØR MIG SPECIEL",
@@ -102,7 +155,7 @@
       "whyHire": "Hvorfor du bør",
       "name": "arbejde med mig?"
     },
-    "description": "Mange kan skrive UI-kode. Jeg specialiserer mig i at bygge bro mellem ekstreme tekniske begrænsninger, europæisk enterprise-skala, produktsystemers intuition og fælles teknisk governance.",
+    "description": "Mange kan skrive UI-kode. Jeg specialiserer mig i at kombinere effektivitet formet af begrænsninger, europæisk enterprise-skala, produktintuition og teknisk governance på tværs af teams.",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet forretningssoftware, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend-teams, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {
@@ -148,7 +201,7 @@
         "subtitle": "Dokumenteret erfaring med at skalere komplekse softwareplatforme i København.",
         "bullets": [
           "Jeg har ledet opdelingen af monorepos, styret micro-frontend arkitekturer og skaleret systemer på enterprise-niveau.",
-          "Jeg reducerede den indledende payload med 42%, mens jeg øgede leveringshastigheden med 30% på tværs af teams.",
+          "Jeg reducerede den indledende payload med 94% og øgede samtidig leveringshastigheden med 30% på tværs af teams.",
           "Jeg etablerede skarpe modulgrænser for at holde systemerne rene, testbare og højt sammensættelige."
         ]
       },
@@ -192,7 +245,7 @@
   },
   "experience": {
     "title": "Professionel",
-    "titleAccent": "Erfaring & Historie",
+    "titleAccent": "erfaring & historie",
     "techArsenal": "Teknologisk Arsenal",
     "subtitle": "Mere end 18 års erfaring med at bygge, skalere og designe holdbare digitale produkter fra Havana til København.",
     "present": "Nu",
@@ -201,53 +254,53 @@
     "contributionsHeader": "/ Kerne-lederskab & bidrag",
     "outcomesHeader": "/ Verificerede forretningsresultater",
     "items": {
-      "12": {
-        "role": "Staff Frontend Engineer & Teknisk Leder",
-        "description": "Leder frontend-udviklingen af Schillings webapplikationer og dataprodukter, med fokus på React 18/19, TypeScript, Node.js, Tailwind og Shadcn UI til at skalere komplekse ejendomsworkflows."
+      "1": {
+        "role": "Full Stack Developer - Junior Developers Manager",
+        "description": "Startede min professionelle karriere på National Library-projektet ved UCI, hvor jeg byggede løsninger i Drupal, PHP og MySQL og samtidig koordinerede juniorudviklere, efterhånden som teamet voksede."
       },
-      "11": {
-        "role": "Senior Frontend Developer",
-        "description": "Leder frontend-udviklingen af Resights webapplikationer og dataprodukter med Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js og Vuetify for at skalere komplekse workflows i ejendomsdomænet."
-      },
-      "10": {
-        "role": "Senior Frontend Developer",
-        "description": "Byggede interne sundheds- og administrationsværktøjer for Novo Nordisk med Vue, Vuetify, HTML og CSS med fokus på stabile UI-fundamenter til regulerede medicinske teams."
-      },
-      "9": {
-        "role": "Senior Frontend Developer",
-        "description": "Leverede tilgængelige kampagner og landing pages for Wunderman Nordic med Vue, SCSS, Bootstrap og C#-integrationer, så lanceringer med høj trafik kunne køre på en stabil frontend-arkitektur."
-      },
-      "8": {
-        "role": "Lead Frontend Developer",
-        "description": "Ledte frontend-udviklingen hos GiG Media Copenhagen på tværs af affiliate- og content-produkter, moderniserede legacy-platforme bygget i Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap og PHP, og koordinerede outsourcede vedligeholdelsesopgaver."
-      },
-      "7": {
-        "role": "Frontend Developer",
-        "description": "Arbejdede på high-conversion affiliate-produkter hos Rebel Penguins og leverede frontend-forbedringer, eksperimenter og UI-iterationer på platforme baseret på Drupal, Laravel, October CMS, Bootstrap og MySQL."
-      },
-      "6": {
+      "2": {
         "role": "Full Stack Developer",
-        "description": "Udviklede interne dashboards og eksterne websites end-to-end hos Rebel Penguins med PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS og Laravel."
-      },
-      "5": {
-        "role": "Volunteer",
-        "description": "Støttede Plan Denmarks sponsorafdeling med registrering og validering af dokumenter og var med til at holde de administrative processer rene, strukturerede og pålidelige."
-      },
-      "4": {
-        "role": "Full Stack Developer",
-        "description": "Grundlagde Viruta Studio Creativo og byggede skræddersyede produkter for lokale organisationer og medier, herunder websites som Radio Guama, med PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap og Ext JS."
+        "description": "Udviklede statistiske og administrative løsninger for ONEI's provinskontor med PHP, MySQL, HTML, CSS, Ext JS, Drupal og Joomla."
       },
       "3": {
         "role": "Full Stack Developer",
         "description": "Byggede interne systemer i GEOCUBAs forsknings- og udviklingsafdeling ved at kombinere PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap og geospatiale værktøjer til operationelle og informationsmæssige behov."
       },
-      "2": {
+      "4": {
         "role": "Full Stack Developer",
-        "description": "Udviklede statistiske og administrative løsninger for den provinsielle ONEI-kontor med PHP, MySQL, HTML, CSS, Ext JS, Drupal og Joomla."
+        "description": "Grundlagde Viruta Studio Creativo og byggede skræddersyede produkter for lokale organisationer og medier, herunder websites som Radio Guama, med PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap og Ext JS."
       },
-      "1": {
-        "role": "Full Stack Developer - Junior Developers Manager",
-        "description": "Startede min professionelle karriere på National Library-projektet ved UCI, hvor jeg byggede løsninger i Drupal, PHP og MySQL og samtidig koordinerede juniorudviklere, efterhånden som teamet voksede."
+      "5": {
+        "role": "Volunteer",
+        "description": "Støttede Plan Denmarks sponsorafdeling med registrering og validering af dokumenter og var med til at holde de administrative processer rene, strukturerede og pålidelige."
+      },
+      "6": {
+        "role": "Full Stack Developer",
+        "description": "Udviklede interne dashboards og eksterne websites end-to-end hos Rebel Penguins med PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS og Laravel."
+      },
+      "7": {
+        "role": "Frontend Developer",
+        "description": "Arbejdede på high-conversion affiliate-produkter hos Rebel Penguins og leverede frontend-forbedringer, eksperimenter og UI-iterationer på platforme baseret på Drupal, Laravel, October CMS, Bootstrap og MySQL."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Ledte frontend-udviklingen hos GiG Media Copenhagen på tværs af affiliate- og content-produkter, moderniserede legacy-platforme bygget i Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap og PHP, og koordinerede outsourcede vedligeholdelsesopgaver."
+      },
+      "9": {
+        "role": "Senior Frontend Developer",
+        "description": "Leverede tilgængelige kampagner og landing pages for Wunderman Nordic med Vue, SCSS, Bootstrap og C#-integrationer, så lanceringer med høj trafik kunne køre på en stabil frontend-arkitektur."
+      },
+      "10": {
+        "role": "Senior Frontend Developer",
+        "description": "Byggede interne sundheds- og administrationsværktøjer for Novo Nordisk med Vue, Vuetify, HTML og CSS med fokus på stabile UI-fundamenter til regulerede medicinske teams."
+      },
+      "11": {
+        "role": "Senior Frontend Developer",
+        "description": "Leder frontend-udviklingen af Resights webapplikationer og dataprodukter med Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js og Vuetify for at skalere komplekse workflows i ejendomsdomænet."
+      },
+      "12": {
+        "role": "Staff Frontend Engineer & Teknisk Leder",
+        "description": "Leder frontend-udviklingen af Schillings webapplikationer og dataprodukter, med fokus på React 18/19, TypeScript, Node.js, Tailwind og Shadcn UI til at skalere komplekse publicerings-workflows."
       }
     },
     "eras": [
@@ -258,7 +311,7 @@
         "role": "Staff Frontend Engineer & Teknisk Leder",
         "stackContext": "Vite Monorepos · TypeScript · React · Next.js · Design-System Governance · Microfrontends",
         "contributions": [
-          "**Leder den modulære adskillelse** af en 6.2MB legacy console-platform i uafhængige underapp-partitioner.",
+          "**Ledte den modulære adskillelse** af en 6.2MB legacy console-platform i uafhængige underapp-partitioner.",
           "**Ansvarlig for design-system governance**, fastlæggelse af fælles modulgrænser og standardisering af API-kontrakter.",
           "**Mentorering af tværfaglige ingeniør-squads**, strømlining af kodningsstandarder og implementering af strenge filtre i CI/CD."
         ],
@@ -266,7 +319,7 @@
           "**Nedbragte den indledende bundle-størrelse med 94%**, hvilket resulterede i et LCP på perfekte 1.4s.",
           "**Øgede leveringshastigheden af funktioner med 30%**, onboarding af mere end 20 aktive udviklere uden regressioner."
         ],
-        "vector": "Design Systems Governance · Monorepos · Decoupled Contracts · API Design",
+        "vector": "Design-system governance · Monorepos · Afkoblede kontrakter · API-design",
         "logoUrl": "/projects/schilling-cover.png"
       },
       {
@@ -278,10 +331,10 @@
         "contributions": [
           "**Udviklede højfrekvente DOM-memoisation-køer** til at understøtte logistiske dashboard-interfaces i realtid.",
           "**Integrerede forespørgsels-virtualisering på klientsiden** for at eliminere problemer på ustabile mobilnetværk.",
-          "**Coordinerede mere end 12 udviklere** i agile sprints, ledte kode-audits og sikrede strenge SLAs for ydeevne."
+          "**Koordinerede mere end 12 udviklere** i agile sprints, ledte kode-audits og sikrede strenge SLAs for ydeevne."
         ],
         "outcomes": [
-          "**Minimererede server-socket forespørgselsomkostninger med 60%** ved at optimere datatrafikken.",
+          "**Minimerede server-socket forespørgselsomkostninger med 60%** ved at optimere datatrafikken.",
           "**Sikrede en stabil 60FPS UI-performance** på mobile enheder med mere end 2.000.000 aktive europæiske brugere."
         ],
         "vector": "Virtualiseret DOM · Event-Driven State · Optimistisk Caching · SLAs for Ydeevne",
@@ -295,7 +348,7 @@
         "stackContext": "Vanilla JavaScript Primitives · Ekstrem Byte-komprimering · Lette Parsers · Relationelle Databaser",
         "contributions": [
           "**Byggede lette og customiserede JavaScript-motorer** under Cubas hårde dial-up-begrænsninger (56kbps).",
-          "**Udviklede urokkelige vaner for kodehygiejne**, tællende hver eneste byte for at sikre øjeblikkelig indlæsning på langsomme netværk.",
+          "**Udviklede urokkelige vaner for kodehygiejne** og talte hver eneste byte for at sikre øjeblikkelig indlæsning på langsomme netværk.",
           "**Udviklede lokale JS-registre for data og tilstand** uden at ty til moderne tunge rammeværker."
         ],
         "outcomes": [
@@ -308,8 +361,8 @@
     ]
   },
   "projects": {
-    "title": "Mine Seneste",
-    "titleAccent": "Projekter",
+    "title": "Produkthistorier",
+    "titleAccent": "Ikke projektkort.",
     "subtitle": "En samling af digitale oplevelser der forener premium design med kompromisløs systemteknik.",
     "view": "Se Projekt",
     "problem": "Problem",
@@ -335,7 +388,7 @@
       "viewArchitecture": "/ SE ARKITEKTUR",
       "metricOutcomes": "/ Målbare Resultater",
       "metricSubtitle": "Hvad vi ændrede / Hvorfor det betød noget",
-      "outcomePayload": "42% Payload-reduktion [6.2MB → 350KB]",
+      "outcomePayload": "94% payload-reduktion [6.2MB → 350KB]",
       "outcomePayloadDesc": "Opdeling af monorepo med Vite adskilte ældre ressourcer, hvilket gav et fejlfrit LCP på 1.4s.",
       "outcomeDeduplication": "60% Request-deduplikering [500+ updates/sek]",
       "outcomeDeduplicationDesc": "Virtualiserede renderingstrin forhindrede DOM-overbelastning og nedbragte server-infrastruktur-omkostninger.",
@@ -355,8 +408,8 @@
       "schilling": {
         "title": "Schilling SaaS Enterprise Platform",
         "category": "Enterprise Platform Arkitektur",
-        "scaleLabel": "100k+ Linjer af Kode",
-        "impactLabel": "42% Payload-reduktion",
+        "scaleLabel": "100k+ linjer kode",
+        "impactLabel": "94% payload-reduktion",
         "architectureLabel": "Micro-Frontend Core",
         "context": "Enterprise SaaS til forlag, der betjener store medieorganisationer i Europa med høje krav til datatæthed.",
         "challenge": "Monolitiske bundle-størrelser oversteg 6MB, hvilket gav LCP-forsinkelser på over 7.5s og øgede bounce-raten. Komplette omskrivninger var udelukket på grund af finansielle regressionsrisici.",
@@ -391,13 +444,26 @@
         "tradeoffsChosen": "Isolerede UI-layoutnoder, der fungerer som uafhængige registre for at begrænse ændringer til de enkelte blade.",
         "tradeoffsRejected": "Brug af centraliseret global state dispatch, hvilket ville have udløst globale render-kaskader og øget input latency (INP)."
       }
-    }
+    },
+    "description": "Fortællinger om kontekst, tekniske udfordringer, arkitekturer og metrikker bag tre store digitale platforme.",
+    "registry": {
+      "kicker": "/ FLERE PROJEKTER",
+      "title": "Flere projekter",
+      "description": "Udforsk flere produktfunktioner, værktøjer og ældre systemer bygget gennem min karriere.",
+      "aria": "Register over yderligere projekter",
+      "colIndex": "Indeks",
+      "colProject": "Projekt / Omfang",
+      "colCategory": "Kategori",
+      "colVector": "Arkitektonisk vektor",
+      "colInspect": "Inspicér"
+    },
+    "empty": "Ingen projekter matcher dette filter endnu."
   },
   "contact": {
-    "title": "Lad os Bygge",
-    "titleAccent": "Noget Sammen",
-    "subtitle": "Klar til at drøfte et projekt, ansættelse af en Staff Engineer eller teknisk rådgivning? Send en besked, og lad os starte dialogen.",
-    "eyebrow": "/ I KONTAKT",
+    "title": "Lad os bygge",
+    "titleAccent": "noget sammen",
+    "subtitle": "Klar til at drøfte et projekt, ansætte en Staff Engineer eller booke teknisk rådgivning? Send en besked, og lad os starte dialogen.",
+    "eyebrow": "/ TAG KONTAKT",
     "params": {
       "title": "Ansættelses- & Samarbejdsparametre",
       "status": "STATUS: TILGÆNGELIG",
@@ -407,7 +473,7 @@
         "sub": "Mulighed for omgående start i Q3 2026"
       },
       "geo": {
-        "label": "PLACERING & MODALITET",
+        "label": "PLACERING & ARBEJDSFORM",
         "value": "København, DK",
         "sub": "Fleksibel i forhold til remote i EU (GMT+2/1)"
       },
@@ -420,27 +486,27 @@
       "locationLabel": "Placering",
       "locationValue": "København, Danmark"
     },
-    "sendMsg": "Send en Besked",
+    "sendMsg": "Send en besked",
     "form": {
-      "name": "Dit Navn",
-      "email": "Din E-mail",
-      "message": "Projekt Detaljer...",
-      "namePlaceholder": "John Doe",
-      "emailPlaceholder": "john@eksempel.dk",
-      "send": "Send Besked",
+      "name": "Dit navn",
+      "email": "Din e-mail",
+      "message": "Projektdetaljer…",
+      "namePlaceholder": "Mette Hansen",
+      "emailPlaceholder": "mette@eksempel.dk",
+      "send": "Send besked",
       "submitting": "Sender...",
       "error": "Fejl. Prøv venligst at sende mig en e-mail direkte.",
-      "target": "Start Forbindelse",
+      "target": "Start forbindelsen",
       "privacyNotice": "* PRIVATLIVSPOLITIK: Dine oplysninger behandles strengt fortroligt for at besvare din henvendelse, og vil aldrig blive delt eller brugt til markedsføring.",
       "hpLabel": "Udfyld ikke dette felt, hvis du er et menneske"
     },
     "success": {
-      "title": "Besked Sendt",
+      "title": "Besked sendt",
       "body": "Tak for din henvendelse! Jeg vender tilbage hurtigst muligt.",
-      "reset": "Send Endnu En"
+      "reset": "Send en ny"
     },
     "info": {
-      "title": "Kontakt Information",
+      "title": "Kontaktinformation",
       "emailLabel": "E-mail",
       "locationLabel": "Placering"
     }
@@ -450,7 +516,7 @@
     "companies": "Virksomheder",
     "technologies": "Teknologier",
     "lighthouse": "Lighthouse Score",
-    "usersServed": "Brugere Serviceret",
+    "usersServed": "Brugere betjent",
     "migrations": "Migrationer Leveret",
     "uptime": "Oppetid",
     "teamsLed": "Teams Ledet",
@@ -461,35 +527,36 @@
     "status": "Operationel",
     "businessImpact": {
       "title": "Målbare",
-      "titleAccent": "Forretningsresultater",
+      "titleAccent": "forretningsresultater",
       "subtitle": "Teknisk ydeevne er afgørende, når det skaber reel værdi. Her er den konkrete, målbare og verificerbare driftseffekt leveret på tværs af enterprise-systemer.",
-      "measuredOutcome": "Målt Resultat",
-      "techAction": "Teknisk Handling",
+      "measuredOutcome": "Målt resultat",
+      "techAction": "Teknisk handling",
       "businessBenefit": "Forretningsfordel",
-      "proof": "[Bekræft Bevis →]"
+      "proof": "[Se bevis →]",
+      "eyebrow": "/ FORRETNINGSEFFEKT"
     },
     "impactCards": {
       "payload": {
-        "metric": "42%",
+        "metric": "94%",
         "title": "Payload-reduktion",
         "whatChanged": "Opdelte monorepos med Vite og anvendte avanceret code-splitting, hvilket skar 94% af indlæsningsvægten.",
         "whatItImproved": "Gjorde det muligt for under-teams at udrulle uafhængigt og bragte LCP ned på perfekte 1.4s."
       },
       "shipping": {
         "metric": "30%",
-        "title": "Hurtigere Levering",
+        "title": "Hurtigere levering",
         "whatChanged": "Koordinerede fælles design-systemer, standardiserede komponentbiblioteker og versionsguider.",
         "whatItImproved": "Fremskyndede udrulningshastigheden med 30% for mere end 20 aktive udviklere."
       },
       "latency": {
         "metric": "Under 12ms",
-        "title": "Interaktions-latency",
+        "title": "Interaktionslatens",
         "whatChanged": "Isolerede renderingen i browseren, så muteringer udelukkende sker i de aktive celler.",
         "whatItImproved": "Fjernede fuldstændig den forsinkelse, brugeren oplever, og sikrede fejlfrie Core Web Vitals."
       },
       "throughput": {
-        "metric": "98 Score",
-        "title": "Uppetid & Ydeevne",
+        "metric": "98/100",
+        "title": "Stabil ydeevne",
         "whatChanged": "Optimerede realtids-opdateringer af sockets via memoization og virtualiserede lister.",
         "whatItImproved": "Håndterede over 500 opdateringer/sekund fejlfrit og reducerede databaseomkostninger med 60%."
       }
@@ -565,7 +632,9 @@
         "title": "Øget autonomi",
         "body": "Strategi: Opbygger decentraliseret tillid hos udviklerne. Handling: Standardiserer strenge automatiserede test og monorepo-grænser. Resultat: Gør uafhængige squads i stand til at udrulle sikker kode dagligt."
       }
-    ]
+    ],
+    "lessonsHeaderLabel": "/ MODENHED",
+    "howIWorkHeaderLabel": "/ EKSEKVERING"
   },
   "testimonials": [
     {
@@ -634,11 +703,21 @@
     "social": {
       "heading": "Find mig"
     },
-    "builtWith": "Udviklet i React 19 og minimalisme inspireret af anime."
+    "builtWith": "Bygget med React 19, håndskrevet WebGL og redaktionel minimalisme.",
+    "paletteHint": "Psst — tryk ⌘K. Der er kommandoer herinde."
   },
   "preloader": {
     "loading": "Indlæser oplevelse",
-    "standby": "Vent venligst"
+    "standby": "Vent venligst",
+    "role": "Et levende portfolio",
+    "skip": "Indlæser — klik for at springe over",
+    "boot": {
+      "renderer": "initialiserer renderer",
+      "fonts": "indlæser skrifttyper — cinzel, epilogue",
+      "shader": "kompilerer blæk-shader — 1 draw call",
+      "content": "hydrerer beviser",
+      "action": "kamera kører"
+    }
   },
   "a11y": {
     "skipToContent": "Spring til indhold",
@@ -662,9 +741,137 @@
     "skillsTitle": "Tekniske Kompetencer",
     "langLabel": "Sprog",
     "langItems": [
-      { "lang": "Spansk", "level": "Modersmål" },
-      { "lang": "Engelsk", "level": "Flydende" },
-      { "lang": "Dansk", "level": "B1" }
+      {
+        "lang": "Spansk",
+        "level": "Modersmål"
+      },
+      {
+        "lang": "Engelsk",
+        "level": "Flydende"
+      },
+      {
+        "lang": "Dansk",
+        "level": "B1"
+      }
     ]
+  },
+  "lab": {
+    "kicker": "Interaktionsstudier",
+    "title": "Laboratoriet.",
+    "accent": "Rør ved arbejdet.",
+    "description": "Levende eksperimenter, håndbygget til denne side — ingen videoer, ingen skjulte biblioteker. Træk i sliderne, skub til prikkerne, affyr pucken. Sådan udforsker jeg, før jeg shipper.",
+    "goalLabel": "Mål",
+    "toolsLabel": "Værktøjer",
+    "notes": {
+      "kicker": "Lab-noter",
+      "body": "En playground skaffer dig ikke jobbet. Den skaffer dig samtalen — og samtalen er den nye jobsamtale.",
+      "footer": "Nye eksperimenter lander her først. Tryk ⌘K hvor som helst."
+    },
+    "exhibits": {
+      "ink": {
+        "title": "Blækstudie",
+        "goal": "En filmisk baggrund bør koste ét draw call, ikke et 3D-bibliotek."
+      },
+      "spring": {
+        "title": "Fjeder-lab",
+        "goal": "Hver varighed på dette site er en afstemt fjeder — her er prøvebænken.",
+        "chamberLabel": "Fjederkammer — klik for at affyre pucken",
+        "hint": "klik hvor som helst — pucken adlyder din fjeder"
+      },
+      "magnet": {
+        "title": "Magnetfelt",
+        "goal": "54 prikker, én rAF-løkke og nul React re-renders, mens du leger.",
+        "fieldLabel": "Magnetisk prikfelt — bevæg markøren igennem det"
+      },
+      "scramble": {
+        "title": "Dekoder",
+        "goal": "Navigationens scramble-effekt, isoleret så du kan fodre den med hvad som helst.",
+        "sample": "håndværk er synlig dømmekraft",
+        "placeholder": "Skriv en sætning…",
+        "inputLabel": "Sætning der skal dekodes",
+        "action": "Afkod"
+      },
+      "code": {
+        "title": "Kodebiograf",
+        "goal": "En titelsekvens for kildekode — tokeniseret, forskudt og ærlig omkring at være teater."
+      }
+    }
+  },
+  "palette": {
+    "title": "Kommandopalet",
+    "placeholder": "Skriv en kommando — eller prøv \"sudo\"…",
+    "goto": "Gå til",
+    "themeLight": "Skift til lys — rul krediteringerne",
+    "themeDark": "Skift til mørk — sluk lyset",
+    "language": "Sprog",
+    "cv": "Download CV",
+    "copyUrl": "Kopiér sitets URL",
+    "copied": "URL kopieret — klar til at dele.",
+    "source": "Se kildekoden — dette site er også et projekt",
+    "teapot": "HTTP 418 — Jeg er en tepotte. Prøv kontaktformularen i stedet.",
+    "whoami": "eduardo — staff frontend engineer. uptime: 18 år. ingen zombieprocesser.",
+    "empty": "kommando ikke fundet — men godt forsøgt",
+    "footerHint": "↑↓ navigér · ↵ kør"
+  },
+  "log": {
+    "kicker": "Lærer i det åbne",
+    "title": "Byggelog.",
+    "accent": "Leveret, ikke iscenesat.",
+    "description": "Et kurateret udsnit af repoets virkelige commit-historik — hvad der blev leveret, hvad det lærte mig, og hvilke værktøjer der gjorde det. Hver hash linker til diffen.",
+    "viewAll": "Fuld historik på GitHub",
+    "entries": {
+      "v3": {
+        "title": "Leverede den filmiske v3 — blæk-shader, Laboratoriet og ⌘K-paletten",
+        "learning": "En håndskrevet fragment shader på 6KB slår et 3D-bibliotek på 150KB, når performance er brandet."
+      },
+      "spec": {
+        "title": "Skrev design-specifikationen før koden",
+        "learning": "At beslutte hvad der IKKE skulle med (three.js) var dokumentets mest værdifulde linje."
+      },
+      "grid": {
+        "title": "Filmiske grid-motiver og dynamiske overlays",
+        "learning": "Atmosfære kommer fra lagdelt subtilitet — korn, vignet, hårfine linjer — ikke fra stærkere farver."
+      },
+      "a11y": {
+        "title": "Tilgængeligheds-gennemgang af alle komponenter",
+        "learning": "Bevægelse man kan slå fra er håndværk; bevægelse man ikke kan, er dekoration."
+      },
+      "i18n": {
+        "title": "Internationaliserede hver sektion — EN / ES / DK",
+        "learning": "Tekst er designmateriale: at oversætte den tvinger dig til at finde den rigtige sætning."
+      },
+      "v2": {
+        "title": "Site v2 — portfolioet blev et databasedrevet produkt",
+        "learning": "Egen medicin: dashboardet der styrer dette site er i sig selv casestudiet."
+      }
+    }
+  },
+  "testimonialAuthority": {
+    "contextLabel": "Kontekst",
+    "warrer": {
+      "relationship": "Direkte arkitektur-sponsor",
+      "timeline": "4 års samarbejde (2014 – 2018)",
+      "context": "Microfrontend-kerne og teamudvikling hos GiG"
+    },
+    "braun": {
+      "relationship": "Fælles systemleverance",
+      "timeline": "3 års samarbejde (2015 – 2018)",
+      "context": "Tværfaglig API-synkronisering og kernepipelines"
+    },
+    "torres": {
+      "relationship": "Full-stack samarbejdspartner",
+      "timeline": "2 års samarbejde (2012 – 2014)",
+      "context": "Systemintegration og mobile layout-primitiver"
+    },
+    "kumar": {
+      "relationship": "Frontend-platformafstemning",
+      "timeline": "4 års samarbejde (2014 – 2018)",
+      "context": "Platformmigreringer og outsourcing-styring"
+    },
+    "default": {
+      "relationship": "Verificeret teknologipartner",
+      "timeline": "Løbende samarbejde",
+      "context": "Levering af kerneplatform"
+    }
   }
 }

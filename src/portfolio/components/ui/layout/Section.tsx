@@ -14,21 +14,21 @@ export const Section = ({ id, className = '', children, ...props }: SectionProps
     offset: ['start end', 'end start'],
   })
 
-  // Subtle dynamic visual depth: translate grid vertically between -12px and 12px
-  const y = useTransform(scrollYProgress, [0, 1], [-12, 12])
+  // Subtle dynamic visual depth: drift the aura vertically between -20px and 20px
+  const y = useTransform(scrollYProgress, [0, 1], [-20, 20])
 
   return (
     <section
       ref={ref}
       id={id}
-      className={`relative overflow-hidden py-24 md:py-36 border-t border-subtle bg-background ${className}`}
+      className={`relative overflow-hidden py-24 md:py-36 ${className}`}
       {...props}
     >
-      {/* Blueprint Grid Motif with sutil scroll parallax */}
-      <m.div
-        style={{ y }}
-        className="absolute inset-0 pointer-events-none cinematic-grid"
-      />
+      {/* Feathered chapter divider — dissolves into the shared ambient field */}
+      <span aria-hidden="true" className="section-seam" />
+
+      {/* Soft tonal aura — editorial light, no grid */}
+      <m.div style={{ y }} className="pf-section-bg" aria-hidden="true" />
       {children}
     </section>
   )

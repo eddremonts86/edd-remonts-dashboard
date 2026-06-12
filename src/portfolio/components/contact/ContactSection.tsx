@@ -17,12 +17,15 @@ export const ContactSection = () => {
   return (
     <Section
       id="contact"
-      className="bg-surface text-foreground selection:bg-primary selection:text-primary-foreground"
+      className="text-foreground selection:bg-primary selection:text-primary-foreground"
     >
       <Container>
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           {/* Left Column: The Final Manifesto & Operational Telemetry Dashboard */}
-          <m.div {...fadeInView({ distance: 30, axis: 'x' })} className="lg:col-span-7 space-y-12 relative">
+          <m.div
+            {...fadeInView({ distance: 30, axis: 'x' })}
+            className="lg:col-span-7 space-y-12 relative"
+          >
             {/* Cinematic text spotlight glow to dampen grid contrast and optimize readability */}
             <div className="absolute -left-16 -top-16 h-[120%] w-[120%] rounded-full bg-background/50 blur-[90px] pointer-events-none -z-10 dark:bg-background/80" />
 
@@ -46,8 +49,6 @@ export const ContactSection = () => {
 
             {/* High-Fidelity Engagement Target Parameters Block */}
             <div className="rounded-2xl border border-subtle bg-surface/30 p-6 backdrop-blur-md relative overflow-hidden select-none">
-              <div className="absolute inset-0 pointer-events-none opacity-1 bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[12px_12px]" />
-
               {/* Card Header */}
               <div className="flex items-center justify-between border-b border-subtle pb-3 mb-5">
                 <div className="flex items-center gap-2">

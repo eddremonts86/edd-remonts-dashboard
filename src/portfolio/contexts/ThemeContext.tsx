@@ -40,7 +40,34 @@ export const ThemeProvider = ({
     theme,
     setTheme: (t: Theme) => {
       localStorage.setItem(storageKey, t)
-      setTheme(t)
+
+      // Cinematic theme wipe via the View Transitions API — progressive
+      // enhancement, gated behind a marker class so router-driven view
+      // transitions are unaffected.
+      const doc = document as Document & {
+        startViewTransition?: (cb: () => void) => { finished: Promise<void> }
+      }
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (!doc.startViewTransition || reduced) {
+        setTheme(t)
+        return
+      }
+
+      const root = document.documentElement
+      root.classList.add('pf-theme-wipe')
+      const transition = doc.startViewTransition(() => {
+        // Apply the class synchronously so the new snapshot has the new theme
+        root.classList.remove('light', 'dark')
+        if (t === 'system') {
+          root.classList.add(
+            window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+          )
+        } else {
+          root.classList.add(t)
+        }
+        setTheme(t)
+      })
+      transition.finished.finally(() => root.classList.remove('pf-theme-wipe'))
     },
   }
 

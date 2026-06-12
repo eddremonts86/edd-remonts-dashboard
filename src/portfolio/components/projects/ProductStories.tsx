@@ -2,6 +2,7 @@ import { m, AnimatePresence } from 'framer-motion'
 import { Activity, GitBranch, Laptop, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { TiltCard } from '@/portfolio/components/ui/effects/TiltCard'
 import { fadeInView } from '@/portfolio/lib/motion'
 
 interface StoryProject {
@@ -77,7 +78,7 @@ export const ProductStories = () => {
       title: t('projects.stories.schilling.title', 'Schilling SaaS Enterprise Platform'),
       category: t('projects.stories.schilling.category', 'Enterprise Platform Architecture'),
       scaleLabel: t('projects.stories.schilling.scaleLabel', '100k+ Lines of Code'),
-      impactLabel: t('projects.stories.schilling.impactLabel', '42% Payload Cut'),
+      impactLabel: t('projects.stories.schilling.impactLabel', '94% Bundle Cut'),
       architectureLabel: t('projects.stories.schilling.architectureLabel', 'Micro-Frontend Core'),
       link: 'https://schilling.dk/',
       urlPlaceholder: 'console.schilling.dk/workspace',
@@ -197,8 +198,8 @@ export const ProductStories = () => {
             {...fadeInView({ duration: 0.8 })}
             className="relative overflow-hidden rounded-3xl border border-subtle bg-surface/30 p-6 md:p-12 lg:p-16 backdrop-blur-md"
           >
-            {/* Visual background blueprint motif */}
-            <div className="absolute inset-0 pointer-events-none cinematic-grid-large" />
+            {/* Soft tonal aura — editorial light, no grid */}
+            <div aria-hidden="true" className="pf-section-bg" />
 
             {/* Top Header metadata */}
             <div className="flex flex-wrap items-baseline justify-between gap-6 border-b border-subtle pb-6 mb-12">
@@ -224,35 +225,37 @@ export const ProductStories = () => {
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
               {/* Col A: The Visual Showcase Console (MacBook Viewport Frame) */}
               <div className={`lg:col-span-6 space-y-6 ${isOdd ? 'lg:order-2' : ''}`}>
-                {/* 1. MacBook Browser Frame Container */}
-                <div className="w-full relative shadow-2xl rounded-2xl overflow-hidden border border-subtle bg-surface">
-                  {/* Top Window Bar */}
-                  <div className="bg-surface px-4 py-2.5 flex items-center justify-between border-b border-subtle select-none">
-                    {/* Dots */}
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                {/* 1. MacBook Browser Frame Container — pointer-tracked 3D tilt */}
+                <TiltCard maxTilt={4} className="rounded-2xl">
+                  <div className="w-full relative shadow-2xl rounded-2xl overflow-hidden border border-subtle bg-surface">
+                    {/* Top Window Bar */}
+                    <div className="bg-surface px-4 py-2.5 flex items-center justify-between border-b border-subtle select-none">
+                      {/* Dots */}
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                      </div>
+                      {/* URL Input */}
+                      <div className="rounded-md bg-background px-6 py-0.5 border border-subtle font-mono text-[8px] text-foreground/60 tracking-wider truncate max-w-55 w-full text-center">
+                        {project.urlPlaceholder}
+                      </div>
+                      <div className="w-12 shrink-0" /> {/* Spacer */}
                     </div>
-                    {/* URL Input */}
-                    <div className="rounded-md bg-background px-6 py-0.5 border border-subtle font-mono text-[8px] text-foreground/60 tracking-wider truncate max-w-55 w-full text-center">
-                      {project.urlPlaceholder}
-                    </div>
-                    <div className="w-12 shrink-0" /> {/* Spacer */}
-                  </div>
 
-                  {/* Viewport Canvas (Static screenshot frame) */}
-                  <div className="w-full aspect-4/3 relative bg-surface flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 w-full h-full">
-                      <img
-                        src={project.coverPath}
-                        alt={`${project.title} Interface UI`}
-                        className="w-full h-full object-cover object-top select-none"
-                        loading="lazy"
-                      />
+                    {/* Viewport Canvas (Static screenshot frame) */}
+                    <div className="w-full aspect-4/3 relative bg-surface flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 w-full h-full">
+                        <img
+                          src={project.coverPath}
+                          alt={`${project.title} Interface UI`}
+                          className="w-full h-full object-cover object-top select-none"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
 
                 {/* 2. Interactive Monospaced View Controller Tabs */}
                 <div className="flex border border-subtle rounded-xl bg-surface/50 p-1 divide-x divide-subtle font-mono text-[9px] tracking-wider relative select-none">
@@ -291,7 +294,7 @@ export const ProductStories = () => {
                         <span className="font-semibold text-foreground">
                           {t(
                             'projects.stories.outcomePayload',
-                            '42% Payload Reduction [6.2MB → 350KB]',
+                            '94% Payload Reduction [6.2MB → 350KB]',
                           )}
                         </span>
                       </div>
@@ -384,7 +387,7 @@ export const ProductStories = () => {
                   </div>
 
                   {/* Highlighted Outcome Box */}
-                  <div className="rounded-xl border border-primary/10 bg-primary/5 p-5 pt-4 border-t border-subtle">
+                  <div className="pf-accent-panel p-5">
                     <span className="font-mono text-[8.5px] uppercase tracking-wider text-primary block font-bold mb-1.5">
                       {t('projects.results', '/ BUSINESS IMPACT')}
                     </span>

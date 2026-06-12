@@ -7,7 +7,9 @@
     "projects": "Projects",
     "contact": "Contact",
     "resume": "Download CV",
-    "discover": "Discover"
+    "discover": "Discover",
+    "lab": "The Lab",
+    "log": "Build Log"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -23,7 +25,21 @@
     "nowLabel": "Now",
     "nowBody": "Shipping data-intensive product UIs with TanStack Start, Drizzle and Postgres.",
     "basedIn": "Based in",
-    "availability": "Availability",
+    "availability": {
+      "title": "Hiring & Engagement Status",
+      "timeline": {
+        "label": "TIMELINE",
+        "value": "Q3 2026 Ready"
+      },
+      "location": {
+        "label": "LOCATION",
+        "value": "Copenhagen, DK"
+      },
+      "engagement": {
+        "label": "ENGAGEMENT",
+        "value": "Remote / Hybrid"
+      }
+    },
     "availabilityValue": "Q3 2026",
     "metricLanguages": "Languages",
     "pipelineLabel": "Delivery pipeline",
@@ -44,7 +60,7 @@
       "verified": "[VERIFIED]",
       "viewProof": "View evidence",
       "bundle": {
-        "value": "42%",
+        "value": "94%",
         "label": "Bundle Reduction",
         "desc": "Decoupled architectural boundaries from 6.2MB down to 350KB."
       },
@@ -66,21 +82,9 @@
       "status": "STATUS: MEASURED & REPORTED",
       "engagement": "ENGAGEMENT: FULL-TIME"
     },
-    "availability": {
-      "title": "Hiring & Engagement Status",
-      "timeline": {
-        "label": "TIMELINE",
-        "value": "Q3 2026 Ready"
-      },
-      "location": {
-        "label": "LOCATION",
-        "value": "Copenhagen, DK"
-      },
-      "engagement": {
-        "label": "ENGAGEMENT",
-        "value": "Remote / Hybrid"
-      }
-    }
+    "tagline": "18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.",
+    "taglineAccent": "Everything below is live. Touch it.",
+    "enterLab": "Enter the Lab"
   },
   "personalInfo": {
     "title": "Staff Frontend Engineer with Full-Stack Roots",
@@ -89,12 +93,61 @@
   },
   "skills": {
     "eyebrow": "Core expertise",
-    "title": "Engineered stack, intentionally curated.",
+    "title": {
+      "architectural": "Architectural",
+      "capabilities": "Capabilities"
+    },
     "subtitle": "The core systems I rely on to ship resilient product surfaces. Breadth is available on demand, not forced upfront.",
     "toolbox": "Engineering toolbox",
     "view": "View full stack",
     "hide": "Hide full stack",
-    "fullStackEmpty": "The full stack is already represented in core expertise."
+    "fullStackEmpty": "The full stack is already represented in core expertise.",
+    "kicker": "/ TECHNICAL EXPERTISE",
+    "capabilityLabel": "Capability",
+    "valueProof": "/ VALUE PROOF",
+    "description": "Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.",
+    "layers": {
+      "governance": {
+        "name": "Architecture & Governance",
+        "annot": "/ WORKSPACE SYSTEMS",
+        "items": [
+          "Monorepo Boundaries",
+          "Design-System Contracts",
+          "Decoupled Modules"
+        ],
+        "rationale": "Enables distributed product teams to release features independently without breaking shared core architectures."
+      },
+      "performance": {
+        "name": "Performance Engineering",
+        "annot": "/ LATENCY & CONVERSION",
+        "items": [
+          "Interaction Latency",
+          "Optimistic State Sync",
+          "Core Web Vitals"
+        ],
+        "rationale": "Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms."
+      },
+      "leadership": {
+        "name": "Technical Leadership",
+        "annot": "/ ORG SYNCHRONIZATION",
+        "items": [
+          "Developer Experience",
+          "Active Mentorship",
+          "Automated Quality Gates"
+        ],
+        "rationale": "Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship."
+      },
+      "product": {
+        "name": "Product Systems Alignment",
+        "annot": "/ FULL-STACK STRATEGY",
+        "items": [
+          "Domain Modeling",
+          "Stakeholder Coordination",
+          "State & Cache Contracts"
+        ],
+        "rationale": "Bridges execution gaps between engineering teams, product managers, and executive stakeholders."
+      }
+    }
   },
   "about": {
     "different": "/ WHAT MAKES ME DIFFERENT",
@@ -102,7 +155,7 @@
       "whyHire": "Why you should",
       "name": "hire me?"
     },
-    "description": "Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.",
+    "description": "Many can write UI code. I specialize in combining constraint-forged efficiency, European enterprise scale, product intuition, and team-wide technical governance.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
@@ -148,7 +201,7 @@
         "subtitle": "Proven authority scaling complex software platforms in Copenhagen.",
         "bullets": [
           "I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.",
-          "I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.",
+          "I slashed initial load payloads by 94% while raising delivery speeds by 30% across cross-functional engineering units.",
           "I established strict modular boundaries to keep systems clean, testable, and highly composable."
         ]
       },
@@ -201,53 +254,53 @@
     "contributionsHeader": "/ Core Leadership & Contributions",
     "outcomesHeader": "/ Verified Business Outcomes",
     "items": {
-      "12": {
-        "role": "Staff Frontend Engineer & Technical Leader",
-        "description": "Leading frontend development for Schilling web applications and data products, working with React 18/19, TypeScript, Node.js, Tailwind and Shadcn UI to scale complex real-estate workflows."
-      },
-      "11": {
-        "role": "Senior Frontend Developer",
-        "description": "Leading frontend development for Resights web applications and data products, working with Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js, and Vuetify to scale complex real-estate workflows."
-      },
-      "10": {
-        "role": "Senior Frontend Developer",
-        "description": "Built internal health and administration tools for Novo Nordisk with Vue, Vuetify, HTML, and CSS, focusing on reliable UI foundations for regulated medical teams."
-      },
-      "9": {
-        "role": "Senior Frontend Developer",
-        "description": "Delivered accessible campaign and landing experiences for Wunderman Nordic using Vue, SCSS, Bootstrap, and C# integrations, supporting high-traffic launches with stable frontend architecture."
-      },
-      "8": {
-        "role": "Lead Frontend Developer",
-        "description": "Led frontend development at GiG Media Copenhagen across affiliate and content platforms, modernizing legacy estates built on Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap, and PHP while coordinating outsourced maintenance work."
-      },
-      "7": {
-        "role": "Frontend Developer",
-        "description": "Worked on high-conversion affiliate products at Rebel Penguins, shipping frontend improvements, experiments, and UI iterations across Drupal, Laravel, October CMS, Bootstrap, and MySQL-backed platforms."
-      },
-      "6": {
-        "role": "Full Stack Developer",
-        "description": "Developed internal dashboards and external client sites end to end at Rebel Penguins using PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS, and Laravel."
-      },
-      "5": {
-        "role": "Volunteer",
-        "description": "Supported Plan Denmark's sponsorship department by registering and validating documents, helping keep administrative workflows clean, structured, and reliable."
-      },
-      "4": {
-        "role": "Full Stack Developer",
-        "description": "Founded Viruta Studio Creativo and built custom products for local organizations and media outlets, including sites such as Radio Guama, using PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap, and Ext JS."
-      },
-      "3": {
-        "role": "Full Stack Developer",
-        "description": "Built internal systems at GEOCUBA's R&D agency, combining PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap, and geospatial tooling for operational and information-management needs."
+      "1": {
+        "role": "Full Stack Developer - Junior Developers Manager",
+        "description": "Started my professional career on the National Library project at UCI, building Drupal, PHP, and MySQL solutions while coordinating junior developers as the team matured."
       },
       "2": {
         "role": "Full Stack Developer",
         "description": "Developed statistical and administrative solutions for the Provincial Office of ONEI using PHP, MySQL, HTML, CSS, Ext JS, Drupal, and Joomla."
       },
-      "1": {
-        "role": "Full Stack Developer - Junior Developers Manager",
-        "description": "Started my professional career on the National Library project at UCI, building Drupal, PHP, and MySQL solutions while coordinating junior developers as the team matured."
+      "3": {
+        "role": "Full Stack Developer",
+        "description": "Built internal systems at GEOCUBA's R&D agency, combining PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap, and geospatial tooling for operational and information-management needs."
+      },
+      "4": {
+        "role": "Full Stack Developer",
+        "description": "Founded Viruta Studio Creativo and built custom products for local organizations and media outlets, including sites such as Radio Guama, using PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap, and Ext JS."
+      },
+      "5": {
+        "role": "Volunteer",
+        "description": "Supported Plan Denmark's sponsorship department by registering and validating documents, helping keep administrative workflows clean, structured, and reliable."
+      },
+      "6": {
+        "role": "Full Stack Developer",
+        "description": "Developed internal dashboards and external client sites end to end at Rebel Penguins using PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS, and Laravel."
+      },
+      "7": {
+        "role": "Frontend Developer",
+        "description": "Worked on high-conversion affiliate products at Rebel Penguins, shipping frontend improvements, experiments, and UI iterations across Drupal, Laravel, October CMS, Bootstrap, and MySQL-backed platforms."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Led frontend development at GiG Media Copenhagen across affiliate and content platforms, modernizing legacy estates built on Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap, and PHP while coordinating outsourced maintenance work."
+      },
+      "9": {
+        "role": "Senior Frontend Developer",
+        "description": "Delivered accessible campaign and landing experiences for Wunderman Nordic using Vue, SCSS, Bootstrap, and C# integrations, supporting high-traffic launches with stable frontend architecture."
+      },
+      "10": {
+        "role": "Senior Frontend Developer",
+        "description": "Built internal health and administration tools for Novo Nordisk with Vue, Vuetify, HTML, and CSS, focusing on reliable UI foundations for regulated medical teams."
+      },
+      "11": {
+        "role": "Senior Frontend Developer",
+        "description": "Leading frontend development for Resights web applications and data products, working with Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js, and Vuetify to scale complex real-estate workflows."
+      },
+      "12": {
+        "role": "Staff Frontend Engineer & Technical Leader",
+        "description": "Leading frontend development for Schilling web applications and data products, working with React 18/19, TypeScript, Node.js, Tailwind and Shadcn UI to scale complex publishing workflows."
       }
     },
     "eras": [
@@ -308,8 +361,8 @@
     ]
   },
   "projects": {
-    "title": "My Recent",
-    "titleAccent": "Projects",
+    "title": "Product Stories",
+    "titleAccent": "Not Project Cards.",
     "subtitle": "A collection of digital experiences blending premium design and robust engineering.",
     "view": "View Project",
     "problem": "Problem",
@@ -335,7 +388,7 @@
       "viewArchitecture": "/ VIEW ARCHITECTURE",
       "metricOutcomes": "/ Metric Outcomes",
       "metricSubtitle": "What we changed / Why it mattered",
-      "outcomePayload": "42% Payload Reduction [6.2MB → 350KB]",
+      "outcomePayload": "94% Payload Reduction [6.2MB → 350KB]",
       "outcomePayloadDesc": "Vite-based monorepo partitions decoupled legacy assets, securing a perfect 1.4s LCP load time.",
       "outcomeDeduplication": "60% Request Deduplication [500+ updates/sec]",
       "outcomeDeduplicationDesc": "Virtualized-DOM rendering throttles prevented mobile thrashing and cut server-infrastructure costs.",
@@ -356,7 +409,7 @@
         "title": "Schilling SaaS Enterprise Platform",
         "category": "Enterprise Platform Architecture",
         "scaleLabel": "100k+ Lines of Code",
-        "impactLabel": "42% Payload Cut",
+        "impactLabel": "94% Bundle Cut",
         "architectureLabel": "Micro-Frontend Core",
         "context": "Enterprise publishing SaaS serving large media organizations across Europe with high-data-density requirements.",
         "challenge": "Monolithic bundle sizes exceeded 6MB, which triggered LCP delays over 7.5s, raised bounce rates, and caused high-load abandonment. Complete core platform rewrites were strictly forbidden due to legacy billing and data-structure regression risks.",
@@ -391,12 +444,25 @@
         "tradeoffsChosen": "Strict composite-UI layout nodes operating as independent registers to isolate mutations to leaves.",
         "tradeoffsRejected": "Single global-state dispatch, avoiding global re-render cascades that spike key input latency (INP)."
       }
-    }
+    },
+    "description": "Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.",
+    "registry": {
+      "kicker": "/ ADDITIONAL PROJECTS",
+      "title": "Additional Projects",
+      "description": "Explore additional product features, tools, and legacy software systems engineered throughout my career.",
+      "aria": "Additional projects registry",
+      "colIndex": "Index",
+      "colProject": "Project / Scope",
+      "colCategory": "Category",
+      "colVector": "Architectural Vector",
+      "colInspect": "Inspect"
+    },
+    "empty": "No projects found for this filter yet."
   },
   "contact": {
     "title": "Let's Build",
     "titleAccent": "Something Together",
-    "subtitle": "Ready to discuss a project, hiring a Staff Engineer, or technical consulting? Send a message and let's start a conversation.",
+    "subtitle": "Ready to discuss a project, hire a staff engineer, or book technical consulting? Send a message and let's start a conversation.",
     "eyebrow": "/ GET IN TOUCH",
     "params": {
       "title": "Hiring & Engagement Parameters",
@@ -425,8 +491,8 @@
       "name": "Your Name",
       "email": "Your Email",
       "message": "Project Details...",
-      "namePlaceholder": "John Doe",
-      "emailPlaceholder": "john@example.com",
+      "namePlaceholder": "Jane Doe",
+      "emailPlaceholder": "jane@example.com",
       "send": "Send Message",
       "submitting": "Sending...",
       "error": "Error. Please try emailing me directly.",
@@ -466,11 +532,12 @@
       "measuredOutcome": "Measured Outcome",
       "techAction": "Technical Action",
       "businessBenefit": "Business Benefit",
-      "proof": "[Proof Link →]"
+      "proof": "[Proof Link →]",
+      "eyebrow": "/ BUSINESS IMPACT"
     },
     "impactCards": {
       "payload": {
-        "metric": "42%",
+        "metric": "94%",
         "title": "Payload Reduction",
         "whatChanged": "Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.",
         "whatItImproved": "Enabled distributed teams to release features independently, and improved LCP to 1.4s."
@@ -488,8 +555,8 @@
         "whatItImproved": "Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals."
       },
       "throughput": {
-        "metric": "98 Score",
-        "title": "Performance Uptime",
+        "metric": "98/100",
+        "title": "Sustained Performance",
         "whatChanged": "Optimized real-time logistics socket rendering with virtualized list memoization queues.",
         "whatItImproved": "Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%."
       }
@@ -565,7 +632,9 @@
         "title": "Empowered Autonomy",
         "body": "Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy."
       }
-    ]
+    ],
+    "lessonsHeaderLabel": "/ MATURITY",
+    "howIWorkHeaderLabel": "/ EXECUTION"
   },
   "testimonials": [
     {
@@ -634,11 +703,21 @@
     "social": {
       "heading": "Elsewhere"
     },
-    "builtWith": "Engineered with React 19 & Anime minimalism."
+    "builtWith": "Engineered with React 19, hand-rolled WebGL & editorial minimalism.",
+    "paletteHint": "Psst — press ⌘K. There are commands in here."
   },
   "preloader": {
     "loading": "Loading experience",
-    "standby": "Stand by"
+    "standby": "Stand by",
+    "role": "A Living Portfolio",
+    "skip": "Loading — click to skip",
+    "boot": {
+      "renderer": "init renderer",
+      "fonts": "load typefaces — cinzel, epilogue",
+      "shader": "compile ink shader — 1 draw call",
+      "content": "hydrate evidence",
+      "action": "roll camera"
+    }
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -662,9 +741,137 @@
     "skillsTitle": "Technical Skills",
     "langLabel": "Languages",
     "langItems": [
-      { "lang": "Spanish", "level": "Native" },
-      { "lang": "English", "level": "Fluent" },
-      { "lang": "Danish", "level": "B1" }
+      {
+        "lang": "Spanish",
+        "level": "Native"
+      },
+      {
+        "lang": "English",
+        "level": "Fluent"
+      },
+      {
+        "lang": "Danish",
+        "level": "B1"
+      }
     ]
+  },
+  "lab": {
+    "kicker": "Interaction Studies",
+    "title": "The Lab.",
+    "accent": "Touch the work.",
+    "description": "Live experiments, hand-built for this page — no videos, no libraries behind the curtain. Drag the sliders, push the dots, launch the puck. This is how I explore before I ship.",
+    "goalLabel": "Goal",
+    "toolsLabel": "Tools used",
+    "notes": {
+      "kicker": "Lab Notes",
+      "body": "A playground will not get you the job. It gets you the conversation — and the conversation is the job interview now.",
+      "footer": "New exhibits land here first. Press ⌘K anywhere."
+    },
+    "exhibits": {
+      "ink": {
+        "title": "Ink Study",
+        "goal": "A cinematic background should cost one draw call, not a 3D library."
+      },
+      "spring": {
+        "title": "Spring Lab",
+        "goal": "Every duration on this site is a tuned spring — here is the tuning bench.",
+        "chamberLabel": "Spring chamber — click to launch the puck",
+        "hint": "click anywhere — the puck obeys your spring"
+      },
+      "magnet": {
+        "title": "Magnetic Field",
+        "goal": "54 dots, one rAF loop, zero React re-renders while you play.",
+        "fieldLabel": "Magnetic dot field — move your cursor through it"
+      },
+      "scramble": {
+        "title": "Decoder",
+        "goal": "The nav-link scramble effect, isolated so you can feed it anything.",
+        "sample": "craft is judgment made visible",
+        "placeholder": "Type a phrase…",
+        "inputLabel": "Phrase to scramble",
+        "action": "Decode"
+      },
+      "code": {
+        "title": "Code Cinema",
+        "goal": "A title sequence for source code — tokenized, staggered, and honest about being theatre."
+      }
+    }
+  },
+  "palette": {
+    "title": "Command palette",
+    "placeholder": "Type a command — or try \"sudo\"…",
+    "goto": "Go to",
+    "themeLight": "Switch to light — roll credits",
+    "themeDark": "Switch to dark — kill the lights",
+    "language": "Language",
+    "cv": "Download CV",
+    "copyUrl": "Copy site URL",
+    "copied": "URL copied — ready to share.",
+    "source": "View source — this site is a project too",
+    "teapot": "HTTP 418 — I'm a teapot. Try the contact form instead.",
+    "whoami": "eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.",
+    "empty": "command not found — but nice try",
+    "footerHint": "↑↓ navigate · ↵ run"
+  },
+  "log": {
+    "kicker": "Learning In Public",
+    "title": "Build Log.",
+    "accent": "Shipped, not staged.",
+    "description": "A curated cut of this repo’s real commit history — what shipped, what it taught me, and the tools that did it. Every hash links to the diff.",
+    "viewAll": "Full history on GitHub",
+    "entries": {
+      "v3": {
+        "title": "Shipped the cinematic v3 — ink shader, The Lab, ⌘K palette",
+        "learning": "A 6KB hand-rolled fragment shader beats a 150KB 3D library when performance is the brand."
+      },
+      "spec": {
+        "title": "Wrote the design spec before touching code",
+        "learning": "Deciding what NOT to add (three.js) was the most valuable line in the document."
+      },
+      "grid": {
+        "title": "Cinematic grid motifs and dynamic overlays",
+        "learning": "Atmosphere comes from layered subtlety — grain, vignette, hairlines — not from louder colors."
+      },
+      "a11y": {
+        "title": "Accessibility pass across portfolio components",
+        "learning": "Motion you can switch off is craft; motion you cannot is decoration."
+      },
+      "i18n": {
+        "title": "Internationalized every section — EN / ES / DK",
+        "learning": "Copy is a design material: translating it forces you to find the actual sentence."
+      },
+      "v2": {
+        "title": "Site v2 — the portfolio became a database-driven product",
+        "learning": "Eating my own dog food: the dashboard that manages this site is itself the case study."
+      }
+    }
+  },
+  "testimonialAuthority": {
+    "contextLabel": "Context",
+    "warrer": {
+      "relationship": "Direct Architectural Sponsor",
+      "timeline": "Collaborated 4 years (2014 – 2018)",
+      "context": "Microfrontend core & team refinement at GiG"
+    },
+    "braun": {
+      "relationship": "Collaborative Systems Delivery",
+      "timeline": "Collaborated 3 years (2015 – 2018)",
+      "context": "Cross-functional API synchronization & core pipelines"
+    },
+    "torres": {
+      "relationship": "Full-Stack Collaboration Partner",
+      "timeline": "Collaborated 2 years (2012 – 2014)",
+      "context": "Systems integration & mobile layout primitives"
+    },
+    "kumar": {
+      "relationship": "Frontend Platform Alignment",
+      "timeline": "Collaborated 4 years (2014 – 2018)",
+      "context": "Platform migrations & outsource governance"
+    },
+    "default": {
+      "relationship": "Verified Technology Partner",
+      "timeline": "Ongoing collaboration",
+      "context": "Core platform delivery"
+    }
   }
 }

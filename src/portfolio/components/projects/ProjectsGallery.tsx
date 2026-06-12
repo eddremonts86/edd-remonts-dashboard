@@ -1,38 +1,39 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useMousePosition } from '@/portfolio/hooks/useMousePosition'
 import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter'
 import { Section, Container } from '../ui/layout/Section'
+import { SectionSlate } from '../ui/layout/SectionSlate'
 import { CategoryFilter } from './CategoryFilter'
+import { FloatingImagePreview } from './FloatingImagePreview'
 import { ProductStories } from './ProductStories'
 import { ProjectListItem } from './ProjectListItem'
 
 export const ProjectsGallery = () => {
   const { t } = useTranslation()
-  const { activeCategory, setActiveCategory, filteredProjects, setHoveredProject } =
+  const { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject } =
     useProjectFilter()
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const { springX, springY } = useMousePosition()
 
   // Filter out Zunzun from additional list
   const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
 
   return (
-    <Section id="projects" className="bg-background">
+    <Section id="projects">
+      <FloatingImagePreview project={hoveredProject} cursorX={springX} cursorY={springY} />
       <Container>
-        {/* Section Header */}
-        <div className="mb-20 max-w-3xl text-left">
-          <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/60">
-            {t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
-          </p>
-          <h2 className="text-4xl font-light tracking-tight md:text-6xl lg:text-8xl text-foreground">
-            Product Stories
-            <span className="mt-2 block font-serif italic text-primary">Not Project Cards.</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/70 md:text-base">
-            Narratives tracking the context, technological hurdles, system architectures, and
-            metrics behind three major digital platforms.
-          </p>
-        </div>
+        <SectionSlate
+          reel={2}
+          kicker={t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
+          title={t('projects.title', 'Product Stories')}
+          accent={t('projects.titleAccent', 'Not Project Cards.')}
+          description={t(
+            'projects.description',
+            'Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.',
+          )}
+        />
 
         {/* 1. Immersive Product Stories Marquee */}
         <div className="mb-32">
@@ -43,14 +44,16 @@ export const ProjectsGallery = () => {
         <div className="mb-12 flex flex-col justify-between gap-8 border-b border-subtle pb-8 md:flex-row md:items-end text-left">
           <div className="max-w-xl">
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">
-              / ADDITIONAL PROJECTS
+              {t('projects.registry.kicker', '/ ADDITIONAL PROJECTS')}
             </p>
             <h3 className="text-3xl font-light tracking-tight text-foreground font-display">
-              Additional Projects
+              {t('projects.registry.title', 'Additional Projects')}
             </h3>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed font-light">
-              Explore additional product features, tools, and legacy software systems engineered
-              throughout my career.
+              {t(
+                'projects.registry.description',
+                'Explore additional product features, tools, and legacy software systems engineered throughout my career.',
+              )}
             </p>
           </div>
 
@@ -60,25 +63,29 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* 3. Table Column Header Row (MD+) */}
-        <div role="table" aria-label="Additional Projects Registry" className="w-full text-left">
+        <div
+          role="table"
+          aria-label={t('projects.registry.aria', 'Additional projects registry')}
+          className="w-full text-left"
+        >
           <div
             role="row"
             className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[9px] uppercase tracking-wider text-foreground/35 select-none"
           >
             <span role="columnheader" className="col-span-1">
-              Index
+              {t('projects.registry.colIndex', 'Index')}
             </span>
             <span role="columnheader" className="col-span-4">
-              Project / Scope
+              {t('projects.registry.colProject', 'Project / Scope')}
             </span>
             <span role="columnheader" className="col-span-2">
-              Category
+              {t('projects.registry.colCategory', 'Category')}
             </span>
             <span role="columnheader" className="col-span-4">
-              Architectural Vector
+              {t('projects.registry.colVector', 'Architectural Vector')}
             </span>
             <span role="columnheader" className="col-span-1 justify-self-end">
-              Inspect
+              {t('projects.registry.colInspect', 'Inspect')}
             </span>
           </div>
 

@@ -1,8 +1,10 @@
 import { m, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ArrowDownToLine } from 'lucide-react'
+import { ArrowRight, ArrowDownToLine, FlaskConical } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { InkCanvas } from '@/portfolio/components/gl/InkCanvas'
 import { MagneticButton } from '@/portfolio/components/ui/effects/MagneticButton'
+import { TiltCard } from '@/portfolio/components/ui/effects/TiltCard'
 import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
 import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
 import { useHeroParallax } from '@/portfolio/hooks/useHeroParallax'
@@ -33,11 +35,15 @@ export const HeroSection = () => {
       ref={containerRef}
       className={`relative flex min-h-svh flex-col overflow-hidden transition-colors duration-1000 ${bgColor}`}
     >
+      {/* Living ink shot — CSS blobs stay underneath as the no-WebGL fallback */}
+      <AmbientLight hidden={isHovered} />
+      <div className="absolute inset-0" aria-hidden="true">
+        <InkCanvas interactive quality={0.7} inkAmount={0.7} accentAmount={0.5} hidden={isHovered} />
+      </div>
+
       <AnimatePresence>
         {isHovered && <BackgroundReveal src={dynamicBG} theme={resolvedTheme} />}
       </AnimatePresence>
-
-      <AmbientLight hidden={isHovered} />
 
       {/* ── Top utility row ──────────────────────────────────────────────── */}
       <m.div
@@ -106,43 +112,17 @@ export const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1 }}
-              className="mb-10 max-w-2xl text-left text-sm font-light leading-relaxed text-foreground/75 space-y-4 md:text-base"
+              className="mb-10 max-w-xl text-left"
             >
-              <p className="text-base font-semibold text-foreground">
+              <p className="text-sm font-light leading-relaxed text-foreground/75 md:text-lg">
                 {t(
-                  'hero.outcomeHeader',
-                  '18+ years of engineering leadership delivering verified software speed and architectural stability:',
-                )}
+                  'hero.tagline',
+                  '18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.',
+                )}{' '}
+                <span className="font-serif italic text-foreground">
+                  {t('hero.taglineAccent', 'Everything below is live. Touch it.')}
+                </span>
               </p>
-              <ul className="space-y-3 font-display">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>
-                    {t(
-                      'hero.outcomeBullets.0',
-                      'I slashed initial bundle sizes by 94%, enabling our engineering teams to deploy independently without breaking shared systems.',
-                    )}
-                  </span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>
-                    {t(
-                      'hero.outcomeBullets.1',
-                      'I established unified design-system governance adopted by 20+ active engineers across 4 cross-functional squads.',
-                    )}
-                  </span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>
-                    {t(
-                      'hero.outcomeBullets.2',
-                      'I secured perfect 100% Core Web Vitals and sub-12ms interaction responsiveness at European enterprise scale.',
-                    )}
-                  </span>
-                </li>
-              </ul>
             </m.div>
 
             {/* CTAs */}
@@ -159,6 +139,15 @@ export const HeroSection = () => {
                 >
                   <span>{t('hero.explore', 'View Work')}</span>
                   <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                </a>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href="#lab"
+                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:border-primary/60 hover:text-primary md:text-xs"
+                >
+                  <FlaskConical className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-rotate-12" />
+                  <span>{t('hero.enterLab', 'Enter the Lab')}</span>
                 </a>
               </MagneticButton>
               <MagneticButton>
@@ -187,6 +176,7 @@ export const HeroSection = () => {
             transition={{ delay: 0.7, duration: 1, ease: APPLE_EASE }}
             className="lg:col-span-5 lg:self-center"
           >
+            <TiltCard maxTilt={5} className="rounded-2xl">
             <div className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6">
               <div className="flex items-center justify-between border-b border-subtle pb-4">
                 <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50 font-bold">
@@ -201,7 +191,7 @@ export const HeroSection = () => {
               <div className="grid grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-1">
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.bundle.value', '42%')}
+                    {t('hero.metrics.bundle.value', '94%')}
                   </p>
                   <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.bundle.label', 'Bundle Reduction')}
@@ -265,6 +255,7 @@ export const HeroSection = () => {
                 <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
               </div>
             </div>
+            </TiltCard>
           </m.aside>
         </div>
       </m.div>

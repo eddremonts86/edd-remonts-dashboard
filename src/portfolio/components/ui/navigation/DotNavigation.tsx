@@ -41,6 +41,9 @@ export const DotNavigation = () => {
 
       {NAV_SECTIONS.map(({ id, labelKey }, index) => {
         const isActive = activeSection === id
+        // Dot sits at this fraction of the track — colored if progress line has reached it
+        const dotFraction = (index / (NAV_SECTIONS.length - 1)) * 100
+        const isPassed = scrollProgress >= dotFraction
 
         return (
           <a
@@ -63,6 +66,8 @@ export const DotNavigation = () => {
                   className="h-6 w-1.5 bg-primary rounded-full shadow-[0_0_12px_rgba(209,52,38,0.5)] z-20"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
+              ) : isPassed ? (
+                <div className="h-2 w-2 rounded-full bg-primary z-20 transition-transform duration-300 hover:scale-125" />
               ) : (
                 <m.div className="h-2 w-2 rounded-full border border-subtle bg-surface/80 hover:border-primary hover:bg-primary/20 transition-all duration-300 z-20 scale-100 hover:scale-125" />
               )}

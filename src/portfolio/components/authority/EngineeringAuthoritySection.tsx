@@ -105,21 +105,19 @@ export function EngineeringAuthoritySection() {
   ]
 
   return (
-    <section
-      id="authority"
-      className="relative overflow-hidden border-t border-subtle bg-background py-28 md:py-40"
-    >
-      {/* Decorative Blueprint Grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-1.5 bg-[radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] bg-size-[24px_24px]" />
+    <section id="authority" className="relative overflow-hidden py-28 md:py-40">
+      <span aria-hidden="true" className="section-seam" />
+      {/* Soft tonal aura — editorial light, no grid */}
+      <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <m.div {...fadeInView()} className="mb-24 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <span className="mb-4 font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block animate-pulse">
+            <span className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold block">
               {t('authority.eyebrow', '/ LEADERSHIP & PHILOSOPHY')}
             </span>
-            <h2 className="font-serif text-4xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-7xl text-foreground">
+            <h2 className="font-display text-4xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-7xl text-foreground">
               {t('authority.title', 'Engineering')} <br />
               <span className="font-serif italic text-primary">
                 {t('authority.titleAccent', 'Leadership')}
@@ -190,7 +188,7 @@ export function EngineeringAuthoritySection() {
                   <m.div
                     key={item.title}
                     {...fadeInView({ delay: i * 0.06 })}
-                    className="group rounded-2xl border border-subtle bg-surface/30 p-6 backdrop-blur-md flex gap-5 items-start transition-all duration-500 hover:border-primary/20 hover:bg-surface/50"
+                    className="pf-card group flex items-start gap-5 p-6"
                   >
                     <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/60 group-hover:text-primary transition-colors shrink-0">
                       <Icon className="h-4 w-4" />

@@ -84,9 +84,10 @@ export const StatsCounter = () => {
   ]
 
   return (
-    <section className="relative z-10 overflow-hidden border-y border-subtle bg-surface py-16 md:py-20 select-none">
-      {/* Visual blueprint overlay */}
-      <div className="absolute inset-0 pointer-events-none cinematic-grid-large" />
+    <section className="relative z-10 overflow-hidden py-16 md:py-20 select-none">
+      <span aria-hidden="true" className="section-seam" />
+      {/* Soft tonal aura — editorial light, no grid */}
+      <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">

@@ -7,7 +7,9 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "resume": "Descargar CV",
-    "discover": "Descubrir"
+    "discover": "Descubrir",
+    "lab": "El Laboratorio",
+    "log": "Bitácora"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -19,11 +21,25 @@
     "titleLine1": "Staff Frontend Engineer",
     "titleLine2": "& Líder Técnico",
     "explore": "Explorar Mi Trabajo",
-    "scroll": "Deslizar",
+    "scroll": "Desliza",
     "nowLabel": "Ahora",
     "nowBody": "Construyendo interfaces de producto intensivas en datos con TanStack Start, Drizzle y Postgres.",
     "basedIn": "Ubicado en",
-    "availability": "Disponibilidad",
+    "availability": {
+      "title": "Estado de Contratación y Disponibilidad",
+      "timeline": {
+        "label": "CRONOGRAMA",
+        "value": "Listo para T3 2026"
+      },
+      "location": {
+        "label": "UBICACIÓN",
+        "value": "Copenhague, DK"
+      },
+      "engagement": {
+        "label": "MODALIDAD",
+        "value": "Remoto / Híbrido"
+      }
+    },
     "availabilityValue": "T3 2026",
     "metricLanguages": "Idiomas",
     "pipelineLabel": "Pipeline de entrega",
@@ -44,13 +60,13 @@
       "verified": "[VERIFICADO]",
       "viewProof": "Ver evidencia",
       "bundle": {
-        "value": "42%",
-        "label": "Reducción de Bundle",
+        "value": "94%",
+        "label": "Reducción de bundle",
         "desc": "Desacoplé los límites arquitectónicos de la plataforma de 6.2MB a solo 350KB."
       },
       "delivery": {
         "value": "30%",
-        "label": "Entrega Más Rápida",
+        "label": "Entrega más rápida",
         "desc": "Aceleré la velocidad de entrega de código mediante aislamiento de workspaces basado en contratos."
       },
       "vitals": {
@@ -60,27 +76,15 @@
       },
       "impact": {
         "value": "20+",
-        "label": "Ingenieros Impactados",
-        "desc": "Alineé equipos, lideré la gobernanza de sistemas de diseño y mentoreé ingenieros."
+        "label": "Ingenieros impactados",
+        "desc": "Alineé equipos, lideré la gobernanza de sistemas de diseño y mentoricé a ingenieros."
       },
       "status": "ESTADO: MEDIDO Y REPORTADO",
       "engagement": "CONTRATACIÓN: TIEMPO COMPLETO"
     },
-    "availability": {
-      "title": "Estado de Contratación y Disponibilidad",
-      "timeline": {
-        "label": "CRONOGRAMA",
-        "value": "Listo para T3 2026"
-      },
-      "location": {
-        "label": "UBICACIÓN",
-        "value": "Copenhague, DK"
-      },
-      "engagement": {
-        "label": "MODALIDAD",
-        "value": "Remoto / Híbrido"
-      }
-    }
+    "tagline": "18 años construyendo interfaces donde la prueba es medible: 100% Core Web Vitals, interacciones por debajo de 12 ms y design systems adoptados por más de 20 ingenieros.",
+    "taglineAccent": "Todo lo que sigue está vivo. Tócalo.",
+    "enterLab": "Entrar al laboratorio"
   },
   "personalInfo": {
     "title": "Staff Frontend Engineer con raíces Full-Stack",
@@ -89,12 +93,61 @@
   },
   "skills": {
     "eyebrow": "Experiencia central",
-    "title": "Stack de ingeniería, intencionalmente curado.",
+    "title": {
+      "architectural": "Capacidades",
+      "capabilities": "arquitectónicas"
+    },
     "subtitle": "Los sistemas centrales en los que me apoyo para entregar interfaces de producto resilientes. La amplitud está disponible bajo demanda.",
     "toolbox": "Caja de herramientas de ingeniería",
     "view": "Ver stack completo",
     "hide": "Ocultar stack completo",
-    "fullStackEmpty": "El stack completo ya está representado en la experiencia central."
+    "fullStackEmpty": "El stack completo ya está representado en la experiencia central.",
+    "kicker": "/ EXPERIENCIA TÉCNICA",
+    "capabilityLabel": "Capacidad",
+    "valueProof": "/ PRUEBA DE VALOR",
+    "description": "Las tecnologías son commodities; la alineación arquitectónica y la gobernanza organizativa son las verdaderas ventajas competitivas. Así se organizan mis capacidades para entregar velocidad y estabilidad verificadas.",
+    "layers": {
+      "governance": {
+        "name": "Arquitectura y gobernanza",
+        "annot": "/ SISTEMAS DE WORKSPACE",
+        "items": [
+          "Límites de monorepo",
+          "Contratos de design system",
+          "Módulos desacoplados"
+        ],
+        "rationale": "Permite a equipos distribuidos lanzar funcionalidades de forma independiente sin romper la arquitectura compartida."
+      },
+      "performance": {
+        "name": "Ingeniería de rendimiento",
+        "annot": "/ LATENCIA Y CONVERSIÓN",
+        "items": [
+          "Latencia de interacción",
+          "Sincronización optimista",
+          "Core Web Vitals"
+        ],
+        "rationale": "Asegura Core Web Vitals perfectos y respuestas por debajo de 12 ms en plataformas de escala empresarial."
+      },
+      "leadership": {
+        "name": "Liderazgo técnico",
+        "annot": "/ SINCRONIZACIÓN ORGANIZATIVA",
+        "items": [
+          "Experiencia de desarrollo",
+          "Mentoría activa",
+          "Quality gates automatizados"
+        ],
+        "rationale": "Acelera los ciclos de entrega un 30% en equipos de más de 20 ingenieros mediante mentoría activa."
+      },
+      "product": {
+        "name": "Alineación producto-sistemas",
+        "annot": "/ ESTRATEGIA FULL-STACK",
+        "items": [
+          "Modelado de dominio",
+          "Coordinación con stakeholders",
+          "Contratos de estado y caché"
+        ],
+        "rationale": "Cierra las brechas de ejecución entre ingeniería, product managers y dirección."
+      }
+    }
   },
   "about": {
     "different": "/ LO QUE ME HACE DIFERENTE",
@@ -102,12 +155,12 @@
       "whyHire": "¿Por qué deberías",
       "name": "trabajar conmigo?"
     },
-    "description": "Muchos pueden escribir código de interfaz. Yo me especializo en conectar restricciones técnicas extremas, escala empresarial europea, intuición de sistemas de producto y gobernanza técnica global.",
+    "description": "Mucha gente sabe escribir código de interfaz. Yo me especializo en combinar la eficiencia forjada bajo restricciones, la escala empresarial europea, la intuición de producto y la gobernanza técnica de equipos.",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software empresarial a medida antes de mudarme a Dinamarca y especializarme a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro estrechamente con producto, diseño e infraestructura, y construyo interfaces que siguen siendo mantenibles a medida que los productos crecen.",
     "features": {
       "0": {
         "title": "Ingeniería Estratégica Colaborativa",
-        "description": "Tengo éxito en entornos multifuncionales, cerrando la brecha entre product managers, diseñadores UI/UX e ingenieros de infraestructura backend para garantizar una entrega alineada."
+        "description": "Me muevo con soltura en entornos multifuncionales, tendiendo puentes entre product managers, diseñadores UI/UX e ingenieros de backend para garantizar una entrega alineada."
       },
       "1": {
         "title": "Evolución Continua de Sistemas",
@@ -148,8 +201,8 @@
         "subtitle": "Autoridad probada escalando plataformas de software complejas en Copenhague.",
         "bullets": [
           "Lideré particiones de monorepos, gestioné arquitecturas de microfrontends y escalé sistemas a nivel corporativo.",
-          "Reduje el peso de la carga útil inicial en un 42% y aceleré las velocidades de entrega en un 30% en múltiples unidades de ingeniería.",
-          "Establecí límites modulares estrictos para mantener los sistemas limpios, testeables y altamente acoplables."
+          "Reduje el peso de la carga útil inicial en un 94% y aceleré las velocidades de entrega en un 30% en múltiples unidades de ingeniería.",
+          "Establecí límites modulares estrictos para mantener los sistemas limpios, testeables y altamente componibles."
         ]
       },
       {
@@ -183,7 +236,7 @@
   "services": {
     "0": {
       "title": "Arquitectura Frontend de Vanguardia",
-      "description": "No solo construyo sitios web; diseño ecosistemas digitales interactivos de nivel superior. Utilizando React, Next.js y Framer Motion, entrego aplicaciones de carga sub-segundo definidas por animaciones a 60fps y una precisión UX inquebrantable."
+      "description": "No solo construyo sitios web; diseño ecosistemas digitales interactivos. Con React, Next.js y Framer Motion entrego aplicaciones que cargan en menos de un segundo, con animaciones a 60 fps y una precisión de UX innegociable."
     },
     "1": {
       "title": "Resiliencia Cloud y Backend",
@@ -192,7 +245,7 @@
   },
   "experience": {
     "title": "Trayectoria",
-    "titleAccent": "Profesional",
+    "titleAccent": "profesional",
     "techArsenal": "Tech Arsenal",
     "subtitle": "Más de 18 años construyendo, escalando y diseñando productos digitales resilientes desde La Habana hasta Copenhague.",
     "present": "Actualidad",
@@ -201,53 +254,53 @@
     "contributionsHeader": "/ Liderazgo y contribuciones centrales",
     "outcomesHeader": "/ Resultados de negocio verificados",
     "items": {
-      "12": {
-        "role": "Staff Frontend Engineer & Líder Técnico",
-        "description": "Liderando el desarrollo frontend para las aplicaciones web y productos de datos de Schilling, trabajando con React 18/19, TypeScript, Node.js, Tailwind y Shadcn UI para escalar flujos de trabajo de alta densidad."
-      },
-      "11": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Liderando el desarrollo frontend para los productos de datos de Resights, trabajando con Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js y Vuetify para escalar flujos del sector inmobiliario."
-      },
-      "10": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Construí herramientas internas de salud y administración para Novo Nordisk con Vue, Vuetify, HTML y CSS, enfocándome en una base de interfaz fiable para equipos médicos regulados."
-      },
-      "9": {
-        "role": "Desarrollador Frontend Senior",
-        "description": "Entregué campañas y landings accesibles para Wunderman Nordic usando Vue, SCSS, Bootstrap e integraciones con C#, dando soporte a lanzamientos de alto tráfico."
-      },
-      "8": {
-        "role": "Lead Frontend Developer",
-        "description": "Lideré el desarrollo frontend en GiG Media Copenhagen, modernizando plataformas legacy con Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap y PHP mientras coordinaba equipos externos de soporte."
-      },
-      "7": {
-        "role": "Desarrollador Frontend",
-        "description": "Trabajé en productos de afiliación de alta conversión en Rebel Penguins, entregando mejoras de frontend, experimentos e iteraciones de UI sobre plataformas de gran volumen."
-      },
-      "6": {
-        "role": "Desarrollador Full Stack",
-        "description": "Desarrollé dashboards internos de extremo a extremo y sitios de clientes en Rebel Penguins usando PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS y Laravel."
-      },
-      "5": {
-        "role": "Voluntario",
-        "description": "Apoyé al departamento de patrocinio de Plan Dinamarca registrando y validando documentos para mantener procesos administrativos limpios y ordenados."
-      },
-      "4": {
-        "role": "Desarrollador Full Stack",
-        "description": "Fundé Viruta Studio Creativo y desarrollé productos a medida para organizaciones locales e informativos usando PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap y Ext JS."
-      },
-      "3": {
-        "role": "Desarrollador Full Stack",
-        "description": "Construí sistemas internos en la agencia de I+D de GEOCUBA combinando PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap y herramientas geoespaciales."
+      "1": {
+        "role": "Desarrollador Full Stack - Responsable de Juniors",
+        "description": "Inicié mi carrera profesional en el proyecto Biblioteca Nacional de la UCI, desarrollando soluciones con Drupal, PHP y MySQL mientras coordinaba desarrolladores junior."
       },
       "2": {
         "role": "Desarrollador Full Stack",
         "description": "Desarrollé soluciones estadísticas y administrativas para la Oficina Provincial de la ONEI utilizando PHP, MySQL, HTML, CSS, Ext JS, Drupal y Joomla."
       },
-      "1": {
-        "role": "Desarrollador Full Stack - Responsable de Juniors",
-        "description": "Inicié mi carrera profesional en el proyecto Biblioteca Nacional de la UCI, desarrollando soluciones con Drupal, PHP y MySQL mientras coordinaba desarrolladores junior."
+      "3": {
+        "role": "Desarrollador Full Stack",
+        "description": "Construí sistemas internos en la agencia de I+D de GEOCUBA combinando PHP, MySQL, PostgreSQL, Ext JS, jQuery, Bootstrap y herramientas geoespaciales."
+      },
+      "4": {
+        "role": "Desarrollador Full Stack",
+        "description": "Fundé Viruta Studio Creativo y desarrollé productos a medida para organizaciones y medios de comunicación locales, incluyendo sitios como Radio Guamá, usando PHP, MySQL, PostgreSQL, Joomla, Drupal, Bootstrap y Ext JS."
+      },
+      "5": {
+        "role": "Voluntario",
+        "description": "Apoyé al departamento de patrocinio de Plan Dinamarca registrando y validando documentos para mantener procesos administrativos limpios y ordenados."
+      },
+      "6": {
+        "role": "Desarrollador Full Stack",
+        "description": "Desarrollé dashboards internos de extremo a extremo y sitios de clientes en Rebel Penguins usando PHP, MySQL, jQuery, Bootstrap, Drupal, October CMS y Laravel."
+      },
+      "7": {
+        "role": "Desarrollador Frontend",
+        "description": "Trabajé en productos de afiliación de alta conversión en Rebel Penguins, entregando mejoras de frontend, experimentos e iteraciones de UI sobre plataformas de gran volumen."
+      },
+      "8": {
+        "role": "Lead Frontend Developer",
+        "description": "Lideré el desarrollo frontend en GiG Media Copenhagen, modernizando plataformas legacy con Laravel, Drupal, October CMS, MySQL, jQuery, Bootstrap y PHP mientras coordinaba equipos externos de soporte."
+      },
+      "9": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Entregué campañas y landings accesibles para Wunderman Nordic usando Vue, SCSS, Bootstrap e integraciones con C#, dando soporte a lanzamientos de alto tráfico."
+      },
+      "10": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Construí herramientas internas de salud y administración para Novo Nordisk con Vue, Vuetify, HTML y CSS, enfocándome en una base de interfaz fiable para equipos médicos regulados."
+      },
+      "11": {
+        "role": "Desarrollador Frontend Senior",
+        "description": "Liderando el desarrollo frontend para los productos de datos de Resights, trabajando con Vue 2/3, Nuxt 2/3, TypeScript, Pinia/Vuex, Node.js y Vuetify para escalar flujos del sector inmobiliario."
+      },
+      "12": {
+        "role": "Staff Frontend Engineer & Líder Técnico",
+        "description": "Liderando el desarrollo frontend para las aplicaciones web y productos de datos de Schilling, trabajando con React 18/19, TypeScript, Node.js, Tailwind y Shadcn UI para escalar flujos de trabajo editoriales complejos."
       }
     },
     "eras": [
@@ -260,7 +313,7 @@
         "contributions": [
           "**Lideré el desacoplamiento modular** de una plataforma de consola heredada de 6.2MB en particiones de subaplicaciones independientes.",
           "**Dirigí la gobernanza del sistema de diseño**, definiendo contratos semánticos claros y estandarizando componentes compartidos.",
-          "**Mentoreé a squads de ingeniería multifuncionales**, alineando estándares de código e implementando estrictos filtros de calidad en CI/CD."
+          "**Mentoricé a squads de ingeniería multifuncionales**, alineando estándares de código e implementando estrictos filtros de calidad en CI/CD."
         ],
         "outcomes": [
           "**Reduje el peso del bundle inicial en un 94%**, logrando bajar el LCP a un tiempo impecable de 1.4s.",
@@ -308,8 +361,8 @@
     ]
   },
   "projects": {
-    "title": "Mis Proyectos",
-    "titleAccent": "Recientes",
+    "title": "Historias de producto",
+    "titleAccent": "No tarjetas de proyecto.",
     "subtitle": "Una colección de experiencias digitales que fusionan el diseño premium con una férrea ingeniería de sistemas.",
     "view": "Ver Proyecto",
     "problem": "Problema",
@@ -335,10 +388,10 @@
       "viewArchitecture": "/ VER ARQUITECTURA",
       "metricOutcomes": "/ Resultados Métricos",
       "metricSubtitle": "Qué cambiamos / Por qué importó",
-      "outcomePayload": "Reducción de Bundle del 42% [6.2MB → 350KB]",
+      "outcomePayload": "Reducción de bundle del 94% [6.2MB → 350KB]",
       "outcomePayloadDesc": "Las particiones del monorepo Vite desacoplaron activos legados, asegurando un LCP perfecto de 1.4s.",
       "outcomeDeduplication": "Reducción de Peticiones del 60% [500+ camb./seg]",
-      "outcomeDeduplicationDesc": "Los aceleradores de renderizado virtualizados redujeron la saturación del cliente y disminuyeron los costes de servidor.",
+      "outcomeDeduplicationDesc": "Los limitadores de renderizado sobre DOM virtualizado evitaron la saturación del cliente y recortaron los costes de servidor.",
       "outcomeVitals": "100% Core Web Vitals [INP sub-12ms]",
       "outcomeVitalsDesc": "Nodos reactivos y locales aislaron por completo las mutaciones del árbol global, neutralizando bloqueos de entrada.",
       "modal": {
@@ -355,8 +408,8 @@
       "schilling": {
         "title": "Plataforma Schilling SaaS Enterprise",
         "category": "Arquitectura de Plataformas Corporativas",
-        "scaleLabel": "Más de 100k Líneas de Código",
-        "impactLabel": "Corte de Bundle del 42%",
+        "scaleLabel": "Más de 100k líneas de código",
+        "impactLabel": "Corte de bundle del 94%",
         "architectureLabel": "Core Microfrontend",
         "context": "SaaS de gestión editorial que sirve a corporaciones mediáticas líderes en Europa con estrictos requisitos de densidad de datos.",
         "challenge": "Los tamaños de bundle monolíticos superaban los 6MB, disparando tiempos de LCP a más de 7.5s y provocando pérdidas de usuarios. Las refactorizaciones completas estaban prohibidas debido al alto riesgo de regresiones financieras.",
@@ -374,8 +427,8 @@
         "context": "Dashboard logístico y transaccional diseñado para la monitorización en vivo de KPIs de alta frecuencia de actualización.",
         "challenge": "El polling constante saturaba las conexiones del cliente, elevaba la carga de la base de datos y aumentaba la latencia de carga. Los sockets planos provocaban DOM thrashing en terminales con cobertura inestable.",
         "decision": "Implementé colas de memoización del DOM virtualizadas, integré TanStack Query para optimizar la caché en cliente y restringí las mutaciones visuales exclusivamente a las celdas activas.",
-        "businessImpact": "Slasheé el tráfico de sockets en un 60%, reduje costes de infraestructura y aseguré una puntuación perfecta de 98 en Lighthouse, manteniendo 60FPS fluidos incluso con flujos intensos de más de 500 actualizaciones/segundo.",
-        "tradeoffsChosen": "Sincronización de estados optimista acoplada con un acelerador virtualizado de 150ms para minimizar el consumo de CPU.",
+        "businessImpact": "Recorté el tráfico de sockets en un 60%, reduje los costes de infraestructura y aseguré una puntuación perfecta de 98 en Lighthouse, manteniendo 60 fps estables incluso con flujos de más de 500 actualizaciones por segundo.",
+        "tradeoffsChosen": "Sincronización optimista de estado acoplada a un limitador de 150 ms sobre el DOM virtualizado para contener el consumo de CPU.",
         "tradeoffsRejected": "WebSockets planos con latencia < 10ms, que habrían saturado la red del usuario y provocado layout shifts constantes."
       },
       "zunzun": {
@@ -391,13 +444,26 @@
         "tradeoffsChosen": "Estructuración de componentes aislados tipo registro para limitar las mutaciones visuales a las hojas de la UI.",
         "tradeoffsRejected": "Uso de un dispatch global centralizado, evitando cascadas críticas de renderizado que disparan los retrasos de interacción (INP)."
       }
-    }
+    },
+    "description": "Narrativas que recorren el contexto, los retos técnicos, las arquitecturas y las métricas detrás de tres grandes plataformas digitales.",
+    "registry": {
+      "kicker": "/ PROYECTOS ADICIONALES",
+      "title": "Más proyectos",
+      "description": "Explora otras funcionalidades de producto, herramientas y sistemas heredados construidos a lo largo de mi carrera.",
+      "aria": "Registro de proyectos adicionales",
+      "colIndex": "Índice",
+      "colProject": "Proyecto / Alcance",
+      "colCategory": "Categoría",
+      "colVector": "Vector arquitectónico",
+      "colInspect": "Inspeccionar"
+    },
+    "empty": "Aún no hay proyectos para este filtro."
   },
   "contact": {
     "title": "Construyamos",
-    "titleAccent": "Algo Juntos",
-    "subtitle": "¿Listo para discutir un proyecto, contratar a un Staff Engineer o consultoría de sistemas? Envía un mensaje y comencemos la conversación.",
-    "eyebrow": "/ EN CONTACTO",
+    "titleAccent": "algo juntos",
+    "subtitle": "¿Listo para hablar de un proyecto, contratar a un Staff Engineer o reservar una consultoría técnica? Envía un mensaje y empecemos la conversación.",
+    "eyebrow": "/ HABLEMOS",
     "params": {
       "title": "Parámetros de Contratación y Colaboración",
       "status": "ESTADO: DISPONIBLE",
@@ -420,76 +486,77 @@
       "locationLabel": "Ubicación",
       "locationValue": "Copenhague, Dinamarca"
     },
-    "sendMsg": "Enviar un Mensaje",
+    "sendMsg": "Enviar un mensaje",
     "form": {
-      "name": "Tu Nombre",
-      "email": "Tu Correo Electrónico",
-      "message": "Detalles del Proyecto...",
-      "namePlaceholder": "John Doe",
-      "emailPlaceholder": "john@ejemplo.com",
-      "send": "Enviar Mensaje",
+      "name": "Tu nombre",
+      "email": "Tu correo electrónico",
+      "message": "Detalles del proyecto…",
+      "namePlaceholder": "Ana García",
+      "emailPlaceholder": "ana@ejemplo.com",
+      "send": "Enviar mensaje",
       "submitting": "Enviando...",
       "error": "Error. Por favor intenta escribirme directamente por correo.",
-      "target": "Iniciar Conexión",
+      "target": "Iniciar conexión",
       "privacyNotice": "* AVISO DE PRIVACIDAD: Tus datos se tratan de manera estrictamente confidencial para responder a tu consulta directa, y nunca se compartirán ni utilizarán para fines comerciales.",
       "hpLabel": "No rellenes este campo si eres humano"
     },
     "success": {
-      "title": "Mensaje Enviado",
+      "title": "Mensaje enviado",
       "body": "¡Gracias por contactar! Te responderé en el menor tiempo posible.",
-      "reset": "Enviar Otro"
+      "reset": "Enviar otro"
     },
     "info": {
-      "title": "Detalles de Contacto",
-      "emailLabel": "Correo Electrónico",
+      "title": "Detalles de contacto",
+      "emailLabel": "Correo electrónico",
       "locationLabel": "Ubicación"
     }
   },
   "stats": {
-    "yearsExperience": "Años de Experiencia",
+    "yearsExperience": "Años de experiencia",
     "companies": "Empresas",
     "technologies": "Tecnologías",
     "lighthouse": "Puntuación Lighthouse",
-    "usersServed": "Usuarios Atendidos",
-    "migrations": "Migraciones Entregadas",
+    "usersServed": "Usuarios atendidos",
+    "migrations": "Migraciones entregadas",
     "uptime": "Disponibilidad",
-    "teamsLed": "Equipos Liderados",
+    "teamsLed": "Equipos liderados",
     "kicker": "En números",
     "heading": "Throughput de ingeniería, en unidades medibles.",
     "lead": "Un vistazo de la superficie cubierta: el stack, las auditorías de rendimiento, la fiabilidad operativa y los equipos de desarrollo coordinados.",
     "telemetry": "Telemetría del portafolio",
     "status": "Operacional",
     "businessImpact": {
-      "title": "Impacto de Negocio",
-      "titleAccent": "Medible",
+      "title": "Impacto de negocio",
+      "titleAccent": "medible",
       "subtitle": "La excelencia técnica cobra valor cuando impulsa el valor de negocio. He aquí el impacto operativo y de producto concreto y verificable entregado en sistemas de gran escala.",
-      "measuredOutcome": "Resultado Medido",
-      "techAction": "Acción Técnica",
-      "businessBenefit": "Beneficio de Negocio",
-      "proof": "[Verificar Prueba →]"
+      "measuredOutcome": "Resultado medido",
+      "techAction": "Acción técnica",
+      "businessBenefit": "Beneficio de negocio",
+      "proof": "[Ver prueba →]",
+      "eyebrow": "/ IMPACTO DE NEGOCIO"
     },
     "impactCards": {
       "payload": {
-        "metric": "42%",
-        "title": "Reducción de Bundle",
+        "metric": "94%",
+        "title": "Reducción de bundle",
         "whatChanged": "Particioné monorepos en Vite y apliqué code-splitting avanzado, reduciendo el peso de bundle inicial en un 94%.",
         "whatItImproved": "Permitió entregas independientes entre subequipos y redujo el LCP a un tiempo idóneo de 1.4s."
       },
       "shipping": {
         "metric": "30%",
-        "title": "Entregas Más Rápidas",
+        "title": "Entregas más rápidas",
         "whatChanged": "Coordiné contratos de diseño de sistemas, estandaricé librerías modulares y guías de versiones.",
         "whatItImproved": "Aceleró los tiempos globales de desarrollo en un 30% para un conjunto de más de 20 ingenieros."
       },
       "latency": {
         "metric": "Sub-12ms",
-        "title": "Latencia de Interacción",
+        "title": "Latencia de interacción",
         "whatChanged": "Aislé los ciclos de renderizado de la UI de edición, limitando las mutaciones a celdas operativas concretas.",
         "whatItImproved": "Mitigó por completo la latencia percibida por el usuario y garantizó Core Web Vitals impecables."
       },
       "throughput": {
-        "metric": "Clasif. 98",
-        "title": "Uptime y Rendimiento",
+        "metric": "98/100",
+        "title": "Rendimiento sostenido",
         "whatChanged": "Optimicé las colas de refresco visual de sockets mediante memoización y virtualización de listas.",
         "whatItImproved": "Soportó ráfagas de más de 500 actualizaciones/segundo y recortó costes de peticiones de infraestructura en un 60%."
       }
@@ -520,7 +587,7 @@
     "lessons": [
       {
         "index": "01",
-        "title": "La arquitectura es factor humano",
+        "title": "La arquitectura son personas",
         "body": "Los sistemas prosperan cuando los límites de los equipos, las interfaces de software y las responsabilidades están perfectamente delimitados. La ley de Conway no es teoría, es una restricción real."
       },
       {
@@ -540,8 +607,8 @@
       },
       {
         "index": "05",
-        "title": "Los mejores sistemas son predictivos y maduros",
-        "body": "Patrones estables y desacoplados superan a novedades emocionantes pero frágiles. Una ejecución uniforme de software es el principal indicador de la madurez tecnológica de una organización."
+        "title": "Los mejores sistemas son aburridos",
+        "body": "Los patrones predecibles, estables y desacoplados superan a las novedades emocionantes pero frágiles. La ejecución predecible del software es el mejor indicador de la madurez de una organización."
       }
     ],
     "howIWork": [
@@ -565,7 +632,9 @@
         "title": "Autonomía fortalecida",
         "body": "Estrategia: Fomento la confianza descentralizada de los ingenieros. Acción: Estandarizo pruebas automatizadas estrictas y límites de monorepos. Resultado: Capacito a squads independientes para desplegar código seguro a diario."
       }
-    ]
+    ],
+    "lessonsHeaderLabel": "/ MADUREZ",
+    "howIWorkHeaderLabel": "/ EJECUCIÓN"
   },
   "testimonials": [
     {
@@ -610,10 +679,10 @@
       },
       "patterns": {
         "title": "Patrones Modernos",
-        "sub": "Módulos modulares, tree-shakeable y composibles"
+        "sub": "Módulos componibles y tree-shakeable"
       },
       "dx": {
-        "title": "Experiencia Developer",
+        "title": "Experiencia de desarrollo",
         "sub": "Código formateado, linter integrado y validado en CI"
       }
     }
@@ -634,11 +703,21 @@
     "social": {
       "heading": "En la red"
     },
-    "builtWith": "Construido con React 19 y Minimalismo Estilo Anime."
+    "builtWith": "Construido con React 19, WebGL hecho a mano y minimalismo editorial.",
+    "paletteHint": "Psst — pulsa ⌘K. Aquí dentro hay comandos."
   },
   "preloader": {
     "loading": "Cargando experiencia",
-    "standby": "Por favor espera"
+    "standby": "Por favor espera",
+    "role": "Un portafolio vivo",
+    "skip": "Cargando — haz clic para saltar",
+    "boot": {
+      "renderer": "iniciando renderer",
+      "fonts": "cargando tipografías — cinzel, epilogue",
+      "shader": "compilando shader de tinta — 1 draw call",
+      "content": "hidratando evidencia",
+      "action": "cámara… acción"
+    }
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal",
@@ -656,15 +735,143 @@
   "testimonials_loading": "Cargando testimonios...",
   "cv": {
     "aboutTitle": "Sobre Mí",
-    "summary": "Ingeniero orientado a frontend con sólida trayectoria full-stack y casi dos décadas en activo desde 2007. Construyo soluciones web corporativas que estructuran reglas de negocio robustas en interfaces dinámicas y sumamente intuitivas.",
-    "intro": "Entiendo toda la cadena de valor tecnológico, colaboro con holgura en el nexo entre producto, diseño y backend. Priorizo la refactorización arquitectónica proactiva y mantengo la suite de tests, stack y CI/CD en máxima excelencia operacional.",
+    "summary": "Ingeniero orientado a frontend con raíces full-stack y casi dos décadas de experiencia desde 2007. Construyo productos web escalables que convierten reglas de negocio complejas en interfaces rápidas e intuitivas.",
+    "intro": "Entiendo toda la cadena de entrega, colaboro con naturalidad con producto, diseño y backend, y construyo interfaces que siguen siendo mantenibles a medida que el producto crece. Abrazo la refactorización arquitectónica y mantengo el stack, la cobertura de pruebas y los pipelines de CI/CD al día.",
     "experienceTitle": "Trayectoria Profesional",
     "skillsTitle": "Habilidades Técnicas",
     "langLabel": "Idiomas",
     "langItems": [
-      { "lang": "Español", "level": "Nativo" },
-      { "lang": "Inglés", "level": "Fluido" },
-      { "lang": "Danés", "level": "B1" }
+      {
+        "lang": "Español",
+        "level": "Nativo"
+      },
+      {
+        "lang": "Inglés",
+        "level": "Fluido"
+      },
+      {
+        "lang": "Danés",
+        "level": "B1"
+      }
     ]
+  },
+  "lab": {
+    "kicker": "Estudios de interacción",
+    "title": "El Laboratorio.",
+    "accent": "Toca el trabajo.",
+    "description": "Experimentos vivos, construidos a mano para esta página: sin vídeos ni librerías tras el telón. Mueve los sliders, empuja los puntos, lanza el disco. Así exploro antes de lanzar.",
+    "goalLabel": "Objetivo",
+    "toolsLabel": "Herramientas",
+    "notes": {
+      "kicker": "Notas de laboratorio",
+      "body": "Un playground no te consigue el trabajo. Te consigue la conversación — y la conversación es la nueva entrevista.",
+      "footer": "Los experimentos nuevos aterrizan aquí primero. Pulsa ⌘K donde quieras."
+    },
+    "exhibits": {
+      "ink": {
+        "title": "Estudio de tinta",
+        "goal": "Un fondo cinematográfico debería costar una sola draw call, no una librería 3D."
+      },
+      "spring": {
+        "title": "Spring Lab",
+        "goal": "Cada duración de este sitio es un muelle afinado: este es el banco de pruebas.",
+        "chamberLabel": "Cámara de muelles: haz clic para lanzar el disco",
+        "hint": "haz clic donde quieras: el disco obedece a tu muelle"
+      },
+      "magnet": {
+        "title": "Campo magnético",
+        "goal": "54 puntos, un solo bucle rAF y cero re-renders de React mientras juegas.",
+        "fieldLabel": "Campo de puntos magnéticos: mueve el cursor a través de él"
+      },
+      "scramble": {
+        "title": "Decodificador",
+        "goal": "El efecto scramble de la navegación, aislado para que lo alimentes con lo que quieras.",
+        "sample": "el oficio es criterio hecho visible",
+        "placeholder": "Escribe una frase…",
+        "inputLabel": "Frase a decodificar",
+        "action": "Decodificar"
+      },
+      "code": {
+        "title": "Cine de código",
+        "goal": "Una secuencia de títulos para código fuente: tokenizada, escalonada y honesta sobre ser teatro."
+      }
+    }
+  },
+  "palette": {
+    "title": "Paleta de comandos",
+    "placeholder": "Escribe un comando — o prueba \"sudo\"…",
+    "goto": "Ir a",
+    "themeLight": "Cambiar a claro — que rueden los créditos",
+    "themeDark": "Cambiar a oscuro — apaga las luces",
+    "language": "Idioma",
+    "cv": "Descargar CV",
+    "copyUrl": "Copiar URL del sitio",
+    "copied": "URL copiada — lista para compartir.",
+    "source": "Ver código fuente — este sitio también es un proyecto",
+    "teapot": "HTTP 418 — Soy una tetera. Mejor usa el formulario de contacto.",
+    "whoami": "eduardo — staff frontend engineer. uptime: 18 años. sin procesos zombi.",
+    "empty": "comando no encontrado — buen intento",
+    "footerHint": "↑↓ navegar · ↵ ejecutar"
+  },
+  "log": {
+    "kicker": "Aprendiendo en público",
+    "title": "Bitácora.",
+    "accent": "Enviado, no maquetado.",
+    "description": "Un corte curado del historial real de commits de este repo: qué se envió, qué me enseñó y con qué herramientas. Cada hash enlaza al diff.",
+    "viewAll": "Historial completo en GitHub",
+    "entries": {
+      "v3": {
+        "title": "Lancé la v3 cinematográfica: shader de tinta, el Laboratorio y paleta ⌘K",
+        "learning": "Un fragment shader de 6KB hecho a mano gana a una librería 3D de 150KB cuando el rendimiento es la marca."
+      },
+      "spec": {
+        "title": "Escribí el spec de diseño antes de tocar código",
+        "learning": "Decidir qué NO añadir (three.js) fue la línea más valiosa del documento."
+      },
+      "grid": {
+        "title": "Tramas cinematográficas y overlays dinámicos",
+        "learning": "La atmósfera nace de sutilezas en capas — grano, viñeta, líneas finas — no de colores más fuertes."
+      },
+      "a11y": {
+        "title": "Pasada de accesibilidad por todos los componentes",
+        "learning": "El movimiento que se puede apagar es oficio; el que no, es decoración."
+      },
+      "i18n": {
+        "title": "Internacionalicé cada sección — EN / ES / DK",
+        "learning": "El copy es material de diseño: traducirlo te obliga a encontrar la frase de verdad."
+      },
+      "v2": {
+        "title": "Site v2: el portafolio se volvió un producto sobre base de datos",
+        "learning": "Dogfooding de verdad: el dashboard que gestiona este sitio es, en sí mismo, el caso de estudio."
+      }
+    }
+  },
+  "testimonialAuthority": {
+    "contextLabel": "Contexto",
+    "warrer": {
+      "relationship": "Patrocinador directo de arquitectura",
+      "timeline": "4 años de colaboración (2014 – 2018)",
+      "context": "Núcleo de microfrontends y consolidación de equipos en GiG"
+    },
+    "braun": {
+      "relationship": "Entrega colaborativa de sistemas",
+      "timeline": "3 años de colaboración (2015 – 2018)",
+      "context": "Sincronización de APIs multifuncionales y pipelines centrales"
+    },
+    "torres": {
+      "relationship": "Socio de colaboración full-stack",
+      "timeline": "2 años de colaboración (2012 – 2014)",
+      "context": "Integración de sistemas y primitivas de maquetación móvil"
+    },
+    "kumar": {
+      "relationship": "Alineación de plataforma frontend",
+      "timeline": "4 años de colaboración (2014 – 2018)",
+      "context": "Migraciones de plataforma y gobernanza de outsourcing"
+    },
+    "default": {
+      "relationship": "Socio tecnológico verificado",
+      "timeline": "Colaboración continua",
+      "context": "Entrega de plataforma central"
+    }
   }
 }

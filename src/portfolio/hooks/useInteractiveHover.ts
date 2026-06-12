@@ -16,9 +16,15 @@ export function useInteractiveHover(selector = DEFAULT_SELECTOR): boolean {
       }
     }
     const handleOut = (e: MouseEvent) => {
-      if ((e.target as Element)?.closest?.(selector)) {
-        setIsHovering(false)
-      }
+      const el = (e.target as Element)?.closest?.(selector)
+      if (!el) return
+      // mouseover/out bubble on every child boundary inside a link/button —
+      // only drop the hover state when the pointer actually leaves the
+      // interactive element (and isn't entering another one). Without this
+      // the cursor lens flickers while traversing icons/spans inside a link.
+      const next = e.relatedTarget as Element | null
+      if (next && (el.contains(next) || next.closest?.(selector))) return
+      setIsHovering(false)
     }
 
     document.addEventListener('mouseover', handleOver, { passive: true })

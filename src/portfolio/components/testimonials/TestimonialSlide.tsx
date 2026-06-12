@@ -1,5 +1,8 @@
 import { m } from 'framer-motion'
 import { ShieldCheck, CalendarRange, Workflow } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+
+type TFunc = ReturnType<typeof useTranslation>['t']
 
 const slideVariants = {
   enter: (direction: number) => ({
@@ -24,40 +27,50 @@ export interface Testimonial {
 }
 
 // Map testimonial authors to dynamic, high-authority engineering context
-function getTestimonialAuthority(author: string) {
+function getTestimonialAuthority(author: string, t: TFunc) {
   const name = author.toLowerCase()
-  if (name.includes('warrer')) {
-    return {
+  const key = name.includes('warrer')
+    ? 'warrer'
+    : name.includes('braun')
+      ? 'braun'
+      : name.includes('torres')
+        ? 'torres'
+        : name.includes('kumar')
+          ? 'kumar'
+          : 'default'
+
+  const fallbacks: Record<string, { relationship: string; timeline: string; context: string }> = {
+    warrer: {
       relationship: 'Direct Architectural Sponsor',
-      timeline: 'Collaborated 4 Years (2014 - 2018)',
+      timeline: 'Collaborated 4 Years (2014 – 2018)',
       context: 'Microfrontend Core & Team Refinement at GiG',
-    }
-  }
-  if (name.includes('braun')) {
-    return {
+    },
+    braun: {
       relationship: 'Collaborative Systems Delivery',
-      timeline: 'Collaborated 3 Years (2015 - 2018)',
+      timeline: 'Collaborated 3 Years (2015 – 2018)',
       context: 'Cross-functional API Synchronization & Core Pipelines',
-    }
-  }
-  if (name.includes('torres')) {
-    return {
+    },
+    torres: {
       relationship: 'Full-Stack Collaboration Partner',
-      timeline: 'Collaborated 2 Years (2012 - 2014)',
+      timeline: 'Collaborated 2 Years (2012 – 2014)',
       context: 'Systems Integration & Mobile Layout Primitives',
-    }
-  }
-  if (name.includes('kumar')) {
-    return {
+    },
+    kumar: {
       relationship: 'Frontend Platform Alignment',
-      timeline: 'Collaborated 4 Years (2014 - 2018)',
+      timeline: 'Collaborated 4 Years (2014 – 2018)',
       context: 'Platform Migrations & Outsource Governance',
-    }
+    },
+    default: {
+      relationship: 'Verified Technology Partner',
+      timeline: 'Ongoing collaboration',
+      context: 'Core Platform Delivery',
+    },
   }
+
   return {
-    relationship: 'Verified Technology Partner',
-    timeline: 'Systems Sync',
-    context: 'Core Platform Delivery',
+    relationship: t(`testimonialAuthority.${key}.relationship`, fallbacks[key].relationship),
+    timeline: t(`testimonialAuthority.${key}.timeline`, fallbacks[key].timeline),
+    context: t(`testimonialAuthority.${key}.context`, fallbacks[key].context),
   }
 }
 
@@ -97,7 +110,8 @@ export const TestimonialSlide = ({
   testimonial: Testimonial
   direction: number
 }) => {
-  const authority = getTestimonialAuthority(testimonial.author)
+  const { t } = useTranslation()
+  const authority = getTestimonialAuthority(testimonial.author, t)
 
   return (
     <m.div
@@ -133,7 +147,9 @@ export const TestimonialSlide = ({
       {/* Verification platform detail */}
       <div className="mb-8 font-mono text-[10px] text-foreground/60 flex items-center gap-1.5 justify-center">
         <Workflow className="h-3 w-3 text-primary" />
-        <span>Context: {authority.context}</span>
+        <span>
+          {t('testimonialAuthority.contextLabel', 'Context')}: {authority.context}
+        </span>
       </div>
 
       {/* Attribution — staggered entry after the quote enters */}

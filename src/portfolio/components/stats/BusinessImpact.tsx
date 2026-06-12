@@ -19,7 +19,7 @@ export const BusinessImpact = () => {
   const impactCards: ImpactCard[] = [
     {
       id: 'payload',
-      metric: t('stats.impactCards.payload.metric', '42%'),
+      metric: t('stats.impactCards.payload.metric', '94%'),
       title: t('stats.impactCards.payload.title', 'Payload Reduction'),
       whatChanged: t(
         'stats.impactCards.payload.whatChanged',
@@ -64,8 +64,8 @@ export const BusinessImpact = () => {
     },
     {
       id: 'throughput',
-      metric: t('stats.impactCards.throughput.metric', '98 Score'),
-      title: t('stats.impactCards.throughput.title', 'Performance Uptime'),
+      metric: t('stats.impactCards.throughput.metric', '98/100'),
+      title: t('stats.impactCards.throughput.title', 'Sustained Performance'),
       whatChanged: t(
         'stats.impactCards.throughput.whatChanged',
         'Optimized real-time logistics socket rendering with virtualized list memoization queues.',
@@ -80,17 +80,15 @@ export const BusinessImpact = () => {
   ]
 
   return (
-    <section
-      id="impact"
-      className="relative overflow-hidden border-b border-subtle bg-background py-24 md:py-36"
-    >
-      {/* Blueprint Grid Motif */}
-      <div className="absolute inset-0 pointer-events-none cinematic-grid" />
+    <section id="impact" className="relative overflow-hidden py-24 md:py-36">
+      <span aria-hidden="true" className="section-seam" />
+      {/* Soft tonal aura — editorial light, no grid */}
+      <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <m.div {...fadeInView()} className="mb-20 max-w-3xl">
-          <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold block mb-4">
             {t('stats.businessImpact.eyebrow', '/ BUSINESS IMPACT')}
           </span>
           <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-foreground leading-tight">
@@ -115,7 +113,7 @@ export const BusinessImpact = () => {
               <m.article
                 key={card.id}
                 {...fadeInView({ delay: index * 0.08 })}
-                className="group relative rounded-2xl border border-subtle bg-surface/30 p-6 backdrop-blur-md flex flex-col justify-between transition-all duration-500 hover:border-primary/25 hover:shadow-[0_16px_36px_rgba(209,52,38,0.02)] hover:-translate-y-0.5"
+                className="pf-card group flex flex-col justify-between p-6"
               >
                 <div className="space-y-4">
                   {/* Card Header */}
