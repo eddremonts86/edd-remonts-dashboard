@@ -13,7 +13,9 @@ interface MousePosition {
  * Tracks mouse position with spring-smoothed values.
  * Shared by MouseFollower and ProjectsGallery floating image.
  */
-export function useMousePosition(springConfig = CURSOR_SPRING): MousePosition {
+export function useMousePosition(
+  springConfig: { stiffness: number; damping: number; mass?: number } = CURSOR_SPRING,
+): MousePosition {
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
   const springX = useSpring(x, springConfig)
