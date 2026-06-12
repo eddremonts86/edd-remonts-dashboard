@@ -19,7 +19,7 @@ export const BusinessImpact = () => {
   const impactCards: ImpactCard[] = [
     {
       id: 'payload',
-      metric: t('stats.impactCards.payload.metric', '42%'),
+      metric: t('stats.impactCards.payload.metric', '94%'),
       title: t('stats.impactCards.payload.title', 'Payload Reduction'),
       whatChanged: t(
         'stats.impactCards.payload.whatChanged',
@@ -64,8 +64,8 @@ export const BusinessImpact = () => {
     },
     {
       id: 'throughput',
-      metric: t('stats.impactCards.throughput.metric', '98 Score'),
-      title: t('stats.impactCards.throughput.title', 'Performance Uptime'),
+      metric: t('stats.impactCards.throughput.metric', '98/100'),
+      title: t('stats.impactCards.throughput.title', 'Sustained Performance'),
       whatChanged: t(
         'stats.impactCards.throughput.whatChanged',
         'Optimized real-time logistics socket rendering with virtualized list memoization queues.',

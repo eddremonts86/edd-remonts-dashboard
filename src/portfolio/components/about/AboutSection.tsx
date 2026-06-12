@@ -81,7 +81,7 @@ export const AboutSection = () => {
         ),
         t(
           'about.advantages.2.bullets.1',
-          'I slashed initial load payloads by 42% while raising delivery speeds by 30% across cross-functional engineering units.',
+          'I slashed initial load payloads by 94% while raising delivery speeds by 30% across cross-functional engineering units.',
         ),
         t(
           'about.advantages.2.bullets.2',

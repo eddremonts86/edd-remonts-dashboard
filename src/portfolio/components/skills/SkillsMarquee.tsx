@@ -22,42 +22,66 @@ export const SkillsMarquee = () => {
     return [
       {
         id: 'governance',
-        name: 'Architecture & Governance',
-        annot: '/ WORKSPACE SYSTEMS',
+        name: t('skills.layers.governance.name', 'Architecture & Governance'),
+        annot: t('skills.layers.governance.annot', '/ WORKSPACE SYSTEMS'),
         Icon: Layers,
-        items: ['Monorepo Boundaries', 'Design-System Contracts', 'Decoupled Modules'],
-        rationale:
+        items: [
+          t('skills.layers.governance.items.0', 'Monorepo Boundaries'),
+          t('skills.layers.governance.items.1', 'Design-System Contracts'),
+          t('skills.layers.governance.items.2', 'Decoupled Modules'),
+        ],
+        rationale: t(
+          'skills.layers.governance.rationale',
           'Enables distributed product teams to release features independently without breaking shared core architectures.',
+        ),
       },
       {
         id: 'performance',
-        name: 'Performance Engineering',
-        annot: '/ LATENCY & CONVERSION',
+        name: t('skills.layers.performance.name', 'Performance Engineering'),
+        annot: t('skills.layers.performance.annot', '/ LATENCY & CONVERSION'),
         Icon: Cpu,
-        items: ['Interaction Latency', 'Optimistic State Sync', 'Core Web Vitals'],
-        rationale:
+        items: [
+          t('skills.layers.performance.items.0', 'Interaction Latency'),
+          t('skills.layers.performance.items.1', 'Optimistic State Sync'),
+          t('skills.layers.performance.items.2', 'Core Web Vitals'),
+        ],
+        rationale: t(
+          'skills.layers.performance.rationale',
           'Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms.',
+        ),
       },
       {
         id: 'leadership',
-        name: 'Technical Leadership',
-        annot: '/ ORG SYNCHRONIZATION',
+        name: t('skills.layers.leadership.name', 'Technical Leadership'),
+        annot: t('skills.layers.leadership.annot', '/ ORG SYNCHRONIZATION'),
         Icon: Sparkles,
-        items: ['Developer Experience', 'Active Mentorship', 'Automated Quality Gates'],
-        rationale:
+        items: [
+          t('skills.layers.leadership.items.0', 'Developer Experience'),
+          t('skills.layers.leadership.items.1', 'Active Mentorship'),
+          t('skills.layers.leadership.items.2', 'Automated Quality Gates'),
+        ],
+        rationale: t(
+          'skills.layers.leadership.rationale',
           'Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship.',
+        ),
       },
       {
         id: 'product',
-        name: 'Product Systems Alignment',
-        annot: '/ FULL-STACK STRATEGY',
+        name: t('skills.layers.product.name', 'Product Systems Alignment'),
+        annot: t('skills.layers.product.annot', '/ FULL-STACK STRATEGY'),
         Icon: Database,
-        items: ['Domain Modeling', 'Stakeholder Coordination', 'State & Cache Contracts'],
-        rationale:
+        items: [
+          t('skills.layers.product.items.0', 'Domain Modeling'),
+          t('skills.layers.product.items.1', 'Stakeholder Coordination'),
+          t('skills.layers.product.items.2', 'State & Cache Contracts'),
+        ],
+        rationale: t(
+          'skills.layers.product.rationale',
           'Bridges execution gaps between engineering teams, product managers, and executive stakeholders.',
+        ),
       },
     ]
-  }, [])
+  }, [t])
 
   return (
     <section
@@ -84,7 +108,7 @@ export const SkillsMarquee = () => {
           >
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-primary font-bold">
-                / TECHNICAL EXPERTISE
+                {t('skills.kicker', '/ TECHNICAL EXPERTISE')}
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
                 {t('skills.title.architectural', 'Architectural')} <br />
@@ -126,7 +150,7 @@ export const SkillsMarquee = () => {
                     </div>
                     <div>
                       <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
-                        Capability 0{index + 1}
+                        {t('skills.capabilityLabel', 'Capability')} 0{index + 1}
                       </span>
                       <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
                         {layer.name}
@@ -137,7 +161,7 @@ export const SkillsMarquee = () => {
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
                   <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
                     <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">
-                      / VALUE PROOF
+                      {t('skills.valueProof', '/ VALUE PROOF')}
                     </span>
                     {layer.rationale}
                   </p>

@@ -78,7 +78,7 @@ export const ProductStories = () => {
       title: t('projects.stories.schilling.title', 'Schilling SaaS Enterprise Platform'),
       category: t('projects.stories.schilling.category', 'Enterprise Platform Architecture'),
       scaleLabel: t('projects.stories.schilling.scaleLabel', '100k+ Lines of Code'),
-      impactLabel: t('projects.stories.schilling.impactLabel', '42% Payload Cut'),
+      impactLabel: t('projects.stories.schilling.impactLabel', '94% Bundle Cut'),
       architectureLabel: t('projects.stories.schilling.architectureLabel', 'Micro-Frontend Core'),
       link: 'https://schilling.dk/',
       urlPlaceholder: 'console.schilling.dk/workspace',
@@ -294,7 +294,7 @@ export const ProductStories = () => {
                         <span className="font-semibold text-foreground">
                           {t(
                             'projects.stories.outcomePayload',
-                            '42% Payload Reduction [6.2MB → 350KB]',
+                            '94% Payload Reduction [6.2MB → 350KB]',
                           )}
                         </span>
                       </div>

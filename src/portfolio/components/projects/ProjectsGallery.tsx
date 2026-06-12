@@ -44,14 +44,16 @@ export const ProjectsGallery = () => {
         <div className="mb-12 flex flex-col justify-between gap-8 border-b border-subtle pb-8 md:flex-row md:items-end text-left">
           <div className="max-w-xl">
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">
-              / ADDITIONAL PROJECTS
+              {t('projects.registry.kicker', '/ ADDITIONAL PROJECTS')}
             </p>
             <h3 className="text-3xl font-light tracking-tight text-foreground font-display">
-              Additional Projects
+              {t('projects.registry.title', 'Additional Projects')}
             </h3>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed font-light">
-              Explore additional product features, tools, and legacy software systems engineered
-              throughout my career.
+              {t(
+                'projects.registry.description',
+                'Explore additional product features, tools, and legacy software systems engineered throughout my career.',
+              )}
             </p>
           </div>
 
@@ -61,25 +63,29 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* 3. Table Column Header Row (MD+) */}
-        <div role="table" aria-label="Additional Projects Registry" className="w-full text-left">
+        <div
+          role="table"
+          aria-label={t('projects.registry.aria', 'Additional projects registry')}
+          className="w-full text-left"
+        >
           <div
             role="row"
             className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[9px] uppercase tracking-wider text-foreground/35 select-none"
           >
             <span role="columnheader" className="col-span-1">
-              Index
+              {t('projects.registry.colIndex', 'Index')}
             </span>
             <span role="columnheader" className="col-span-4">
-              Project / Scope
+              {t('projects.registry.colProject', 'Project / Scope')}
             </span>
             <span role="columnheader" className="col-span-2">
-              Category
+              {t('projects.registry.colCategory', 'Category')}
             </span>
             <span role="columnheader" className="col-span-4">
-              Architectural Vector
+              {t('projects.registry.colVector', 'Architectural Vector')}
             </span>
             <span role="columnheader" className="col-span-1 justify-self-end">
-              Inspect
+              {t('projects.registry.colInspect', 'Inspect')}
             </span>
           </div>
 

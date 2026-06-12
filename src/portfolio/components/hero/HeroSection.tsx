@@ -191,7 +191,7 @@ export const HeroSection = () => {
               <div className="grid grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-1">
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.bundle.value', '42%')}
+                    {t('hero.metrics.bundle.value', '94%')}
                   </p>
                   <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.bundle.label', 'Bundle Reduction')}
