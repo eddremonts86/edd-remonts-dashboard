@@ -36,15 +36,17 @@ export const MagneticButton = ({ children, strength = 0.38, className }: Magneti
     rawY.set(0)
   }
 
+  // Handlers live on a STATIC outer wrapper: if they sat on the translated
+  // element, the hover boundary would move with the pull and oscillate
+  // (button trembles / hover flickers at the edges).
   return (
-    <m.div
+    <div
       ref={ref}
-      style={{ x, y }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={className}
     >
-      {children}
-    </m.div>
+      <m.div style={{ x, y }}>{children}</m.div>
+    </div>
   )
 }

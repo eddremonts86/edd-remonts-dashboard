@@ -429,6 +429,15 @@ html.pf-theme-wipe::view-transition-new(root) {
   --vignette: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.32) 100%);
 }
 
+/* Press feedback — pills and palette rows visibly respond to the click
+   itself (default/hover/active/disabled are the four button states) */
+.pf a[class*='rounded-full']:active,
+.pf button[class*='rounded-full']:active,
+.pf button[class*='rounded-lg']:active {
+  transform: scale(0.97);
+  transition: transform 120ms ease;
+}
+
 /* Portfolio utility classes */
 .pf .apple-glass {
   background-color: var(--apple-glass);
