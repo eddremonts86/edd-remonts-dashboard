@@ -38,9 +38,7 @@ export const ExhibitCard = ({
       className={`group flex flex-col overflow-hidden rounded-2xl border border-subtle bg-surface/40 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_48px_-16px_rgba(209,52,38,0.25)] ${className}`}
     >
       <header className="flex items-center justify-between border-b border-subtle px-5 py-3">
-        <h3 className="font-display text-sm font-medium tracking-tight text-foreground">
-          {title}
-        </h3>
+        <h3 className="font-display text-sm font-medium tracking-tight text-foreground">{title}</h3>
         <span className="font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-primary">
           {`EXP.${String(index).padStart(2, '0')}`}
         </span>

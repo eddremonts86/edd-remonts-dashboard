@@ -198,7 +198,10 @@ export const CommandPalette = () => {
         secret: true,
         run: () => {
           announce(
-            t('palette.whoami', 'eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.'),
+            t(
+              'palette.whoami',
+              'eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.',
+            ),
           )
           close()
         },

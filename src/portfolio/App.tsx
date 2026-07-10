@@ -6,8 +6,8 @@ import { EngineeringAuthoritySection } from './components/authority/EngineeringA
 import { ExperienceTimeline } from './components/experience/ExperienceTimeline'
 import { Footer } from './components/footer/Footer'
 import { HeroSection } from './components/hero/HeroSection'
+import { ProblemsSection } from './components/problems/ProblemsSection'
 import { SkillsMarquee } from './components/skills/SkillsMarquee'
-import { BusinessImpact } from './components/stats/BusinessImpact'
 import { StatsCounter } from './components/stats/StatsCounter'
 import { TestimonialBlock } from './components/testimonials/TestimonialBlock'
 import { MouseFollower } from './components/ui/layout/MouseFollower'
@@ -57,15 +57,18 @@ export function App() {
             <StickyNav />
             <DotNavigation />
 
-            {/* Evidence-first running order: work and the playground lead;
-                biography and process follow. */}
+            {/* Evidence-first running order: visitor-facing problems lead,
+                then the proof (cases + testimonials), then the playground,
+                then the biography and capabilities. */}
             <main id="content">
               <HeroSection />
-              <StatsCounter />
+              <ProblemsSection />
 
               <Suspense fallback={null}>
                 <ProjectsGallery />
               </Suspense>
+
+              <TestimonialBlock />
 
               <Suspense fallback={null}>
                 <LabSection />
@@ -75,12 +78,14 @@ export function App() {
                 <BuildLogSection />
               </Suspense>
 
-              <BusinessImpact />
               <AboutSection />
-              <EngineeringAuthoritySection />
               <SkillsMarquee />
               <ExperienceTimeline />
-              <TestimonialBlock />
+              <EngineeringAuthoritySection />
+
+              {/* Operational summary sits at the end so the hero can carry
+                  the elevator pitch without competing with a second stat grid. */}
+              <StatsCounter />
 
               <Suspense fallback={null}>
                 <ContactSection />

@@ -38,7 +38,13 @@ export const HeroSection = () => {
       {/* Living ink shot — CSS blobs stay underneath as the no-WebGL fallback */}
       <AmbientLight hidden={isHovered} />
       <div className="absolute inset-0" aria-hidden="true">
-        <InkCanvas interactive quality={0.7} inkAmount={0.7} accentAmount={0.5} hidden={isHovered} />
+        <InkCanvas
+          interactive
+          quality={0.7}
+          inkAmount={0.7}
+          accentAmount={0.5}
+          hidden={isHovered}
+        />
       </div>
 
       <AnimatePresence>
@@ -177,84 +183,84 @@ export const HeroSection = () => {
             className="lg:col-span-5 lg:self-center"
           >
             <TiltCard maxTilt={5} className="rounded-2xl">
-            <div className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6">
-              <div className="flex items-center justify-between border-b border-subtle pb-4">
-                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50 font-bold">
-                  {t('hero.metrics.title', '/ PROVEN PERFORMANCE METRICS')}
-                </span>
-                <span className="font-mono text-[8px] text-primary font-bold">
-                  {t('hero.metrics.verified', '[VERIFIED]')}
-                </span>
+              <div className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6">
+                <div className="flex items-center justify-between border-b border-subtle pb-4">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50 font-bold">
+                    {t('hero.metrics.title', '/ PROVEN PERFORMANCE METRICS')}
+                  </span>
+                  <span className="font-mono text-[8px] text-primary font-bold">
+                    {t('hero.metrics.verified', '[VERIFIED]')}
+                  </span>
+                </div>
+
+                {/* 2x2 Grid of High-Impact Metrics */}
+                <div className="grid grid-cols-2 gap-6 md:gap-8">
+                  <div className="space-y-1">
+                    <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
+                      {t('hero.metrics.bundle.value', '94%')}
+                    </p>
+                    <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                      {t('hero.metrics.bundle.label', 'Bundle Reduction')}
+                    </p>
+                    <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                      {t(
+                        'hero.metrics.bundle.desc',
+                        'Decoupled architectural boundaries from 6.2MB down to 350KB.',
+                      )}
+                    </p>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
+                      {t('hero.metrics.delivery.value', '30%')}
+                    </p>
+                    <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                      {t('hero.metrics.delivery.label', 'Faster Delivery')}
+                    </p>
+                    <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                      {t(
+                        'hero.metrics.delivery.desc',
+                        'Accelerated delivery via contract-based workspace isolation.',
+                      )}
+                    </p>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
+                      {t('hero.metrics.vitals.value', '100%')}
+                    </p>
+                    <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                      {t('hero.metrics.vitals.label', 'Core Web Vitals')}
+                    </p>
+                    <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                      {t(
+                        'hero.metrics.vitals.desc',
+                        'Secured flawless Lighthouse scores across complex user paths.',
+                      )}
+                    </p>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
+                      {t('hero.metrics.impact.value', '20+')}
+                    </p>
+                    <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                      {t('hero.metrics.impact.label', 'Engineers Impacted')}
+                    </p>
+                    <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                      {t(
+                        'hero.metrics.impact.desc',
+                        'Mentored engineers, governed design systems, and aligned teams.',
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/60">
+                  <span>{t('hero.metrics.status', 'STATUS: MEASURED & REPORTED')}</span>
+                  <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
+                </div>
               </div>
-
-              {/* 2x2 Grid of High-Impact Metrics */}
-              <div className="grid grid-cols-2 gap-6 md:gap-8">
-                <div className="space-y-1">
-                  <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.bundle.value', '94%')}
-                  </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
-                    {t('hero.metrics.bundle.label', 'Bundle Reduction')}
-                  </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t(
-                      'hero.metrics.bundle.desc',
-                      'Decoupled architectural boundaries from 6.2MB down to 350KB.',
-                    )}
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.delivery.value', '30%')}
-                  </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
-                    {t('hero.metrics.delivery.label', 'Faster Delivery')}
-                  </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t(
-                      'hero.metrics.delivery.desc',
-                      'Accelerated delivery via contract-based workspace isolation.',
-                    )}
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.vitals.value', '100%')}
-                  </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
-                    {t('hero.metrics.vitals.label', 'Core Web Vitals')}
-                  </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t(
-                      'hero.metrics.vitals.desc',
-                      'Secured flawless Lighthouse scores across complex user paths.',
-                    )}
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
-                    {t('hero.metrics.impact.value', '20+')}
-                  </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
-                    {t('hero.metrics.impact.label', 'Engineers Impacted')}
-                  </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
-                    {t(
-                      'hero.metrics.impact.desc',
-                      'Mentored engineers, governed design systems, and aligned teams.',
-                    )}
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/60">
-                <span>{t('hero.metrics.status', 'STATUS: MEASURED & REPORTED')}</span>
-                <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
-              </div>
-            </div>
             </TiltCard>
           </m.aside>
         </div>
