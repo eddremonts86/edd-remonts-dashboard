@@ -762,5 +762,11 @@
       "timeline": "Ongoing collaboration",
       "context": "Core platform delivery"
     }
+  },
+  "problems": {
+    "kicker": "/ IF YOU HAVE THIS PROBLEM",
+    "title.line1": "I work on the problems that",
+    "title.line2": "block real product teams.",
+    "seeCase": "See case →"
   }
 }

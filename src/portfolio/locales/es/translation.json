@@ -762,5 +762,11 @@
       "timeline": "Colaboración continua",
       "context": "Entrega de plataforma central"
     }
+  },
+  "problems": {
+    "kicker": "/ SI TIENES ESTE PROBLEMA",
+    "title.line1": "Trabajo sobre los problemas que",
+    "title.line2": "bloquean a equipos de producto reales.",
+    "seeCase": "Ver caso →"
   }
 }

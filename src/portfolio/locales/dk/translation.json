@@ -762,5 +762,11 @@
       "timeline": "Løbende samarbejde",
       "context": "Levering af kerneplatform"
     }
+  },
+  "problems": {
+    "kicker": "/ HVIS DU HAR DETTE PROBLEM",
+    "title.line1": "Jeg arbejder med de problemer, der",
+    "title.line2": "blokerer rigtige produktteams.",
+    "seeCase": "Se case →"
   }
 }
