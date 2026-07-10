@@ -110,19 +110,31 @@
       "governance": {
         "name": "Arquitectura y gobernanza",
         "annot": "/ SISTEMAS DE WORKSPACE",
-        "items": ["Límites de monorepo", "Contratos de design system", "Módulos desacoplados"],
+        "items": [
+          "Límites de monorepo",
+          "Contratos de design system",
+          "Módulos desacoplados"
+        ],
         "rationale": "Permite a equipos distribuidos lanzar funcionalidades de forma independiente sin romper la arquitectura compartida."
       },
       "performance": {
         "name": "Ingeniería de rendimiento",
         "annot": "/ LATENCIA Y CONVERSIÓN",
-        "items": ["Latencia de interacción", "Sincronización optimista", "Core Web Vitals"],
+        "items": [
+          "Latencia de interacción",
+          "Sincronización optimista",
+          "Core Web Vitals"
+        ],
         "rationale": "Asegura Core Web Vitals perfectos y respuestas por debajo de 12 ms en plataformas de escala empresarial."
       },
       "leadership": {
         "name": "Liderazgo técnico",
         "annot": "/ SINCRONIZACIÓN ORGANIZATIVA",
-        "items": ["Experiencia de desarrollo", "Mentoría activa", "Quality gates automatizados"],
+        "items": [
+          "Experiencia de desarrollo",
+          "Mentoría activa",
+          "Quality gates automatizados"
+        ],
         "rationale": "Acelera los ciclos de entrega un 30% en equipos de más de 20 ingenieros mediante mentoría activa."
       },
       "product": {
@@ -521,32 +533,6 @@
       "businessBenefit": "Beneficio de negocio",
       "proof": "[Ver prueba →]",
       "eyebrow": "/ IMPACTO DE NEGOCIO"
-    },
-    "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Reducción de bundle",
-        "whatChanged": "Particioné monorepos en Vite y apliqué code-splitting avanzado, reduciendo el peso de bundle inicial en un 94%.",
-        "whatItImproved": "Permitió entregas independientes entre subequipos y redujo el LCP a un tiempo idóneo de 1.4s."
-      },
-      "shipping": {
-        "metric": "30%",
-        "title": "Entregas más rápidas",
-        "whatChanged": "Coordiné contratos de diseño de sistemas, estandaricé librerías modulares y guías de versiones.",
-        "whatItImproved": "Aceleró los tiempos globales de desarrollo en un 30% para un conjunto de más de 20 ingenieros."
-      },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Latencia de interacción",
-        "whatChanged": "Aislé los ciclos de renderizado de la UI de edición, limitando las mutaciones a celdas operativas concretas.",
-        "whatItImproved": "Mitigó por completo la latencia percibida por el usuario y garantizó Core Web Vitals impecables."
-      },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Rendimiento sostenido",
-        "whatChanged": "Optimicé las colas de refresco visual de sockets mediante memoización y virtualización de listas.",
-        "whatItImproved": "Soportó ráfagas de más de 500 actualizaciones/segundo y recortó costes de peticiones de infraestructura en un 60%."
-      }
     }
   },
   "authority": {

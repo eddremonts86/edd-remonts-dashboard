@@ -110,25 +110,41 @@
       "governance": {
         "name": "Arkitektur & governance",
         "annot": "/ WORKSPACE-SYSTEMER",
-        "items": ["Monorepo-grænser", "Design-system-kontrakter", "Afkoblede moduler"],
+        "items": [
+          "Monorepo-grænser",
+          "Design-system-kontrakter",
+          "Afkoblede moduler"
+        ],
         "rationale": "Lader distribuerede produktteams udrulle funktioner uafhængigt uden at bryde den fælles arkitektur."
       },
       "performance": {
         "name": "Performance-engineering",
         "annot": "/ LATENS & KONVERTERING",
-        "items": ["Interaktionslatens", "Optimistisk synkronisering", "Core Web Vitals"],
+        "items": [
+          "Interaktionslatens",
+          "Optimistisk synkronisering",
+          "Core Web Vitals"
+        ],
         "rationale": "Sikrer perfekte Core Web Vitals og svartider under 12 ms på enterprise-platforme."
       },
       "leadership": {
         "name": "Teknisk lederskab",
         "annot": "/ ORGANISATORISK SYNKRONISERING",
-        "items": ["Udvikleroplevelse", "Aktiv mentorering", "Automatiserede quality gates"],
+        "items": [
+          "Udvikleroplevelse",
+          "Aktiv mentorering",
+          "Automatiserede quality gates"
+        ],
         "rationale": "Accelererer leveringscyklusser med 30% på tværs af 20+ udviklere gennem aktiv mentorering."
       },
       "product": {
         "name": "Produkt- og systemafstemning",
         "annot": "/ FULL-STACK-STRATEGI",
-        "items": ["Domænemodellering", "Stakeholder-koordinering", "State- og cache-kontrakter"],
+        "items": [
+          "Domænemodellering",
+          "Stakeholder-koordinering",
+          "State- og cache-kontrakter"
+        ],
         "rationale": "Lukker eksekveringshuller mellem engineering, produktledere og direktion."
       }
     }
@@ -517,32 +533,6 @@
       "businessBenefit": "Forretningsfordel",
       "proof": "[Se bevis →]",
       "eyebrow": "/ FORRETNINGSEFFEKT"
-    },
-    "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload-reduktion",
-        "whatChanged": "Opdelte monorepos med Vite og anvendte avanceret code-splitting, hvilket skar 94% af indlæsningsvægten.",
-        "whatItImproved": "Gjorde det muligt for under-teams at udrulle uafhængigt og bragte LCP ned på perfekte 1.4s."
-      },
-      "shipping": {
-        "metric": "30%",
-        "title": "Hurtigere levering",
-        "whatChanged": "Koordinerede fælles design-systemer, standardiserede komponentbiblioteker og versionsguider.",
-        "whatItImproved": "Fremskyndede udrulningshastigheden med 30% for mere end 20 aktive udviklere."
-      },
-      "latency": {
-        "metric": "Under 12ms",
-        "title": "Interaktionslatens",
-        "whatChanged": "Isolerede renderingen i browseren, så muteringer udelukkende sker i de aktive celler.",
-        "whatItImproved": "Fjernede fuldstændig den forsinkelse, brugeren oplever, og sikrede fejlfrie Core Web Vitals."
-      },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Stabil ydeevne",
-        "whatChanged": "Optimerede realtids-opdateringer af sockets via memoization og virtualiserede lister.",
-        "whatItImproved": "Håndterede over 500 opdateringer/sekund fejlfrit og reducerede databaseomkostninger med 60%."
-      }
     }
   },
   "authority": {

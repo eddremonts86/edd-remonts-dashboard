@@ -110,25 +110,41 @@
       "governance": {
         "name": "Architecture & Governance",
         "annot": "/ WORKSPACE SYSTEMS",
-        "items": ["Monorepo Boundaries", "Design-System Contracts", "Decoupled Modules"],
+        "items": [
+          "Monorepo Boundaries",
+          "Design-System Contracts",
+          "Decoupled Modules"
+        ],
         "rationale": "Enables distributed product teams to release features independently without breaking shared core architectures."
       },
       "performance": {
         "name": "Performance Engineering",
         "annot": "/ LATENCY & CONVERSION",
-        "items": ["Interaction Latency", "Optimistic State Sync", "Core Web Vitals"],
+        "items": [
+          "Interaction Latency",
+          "Optimistic State Sync",
+          "Core Web Vitals"
+        ],
         "rationale": "Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms."
       },
       "leadership": {
         "name": "Technical Leadership",
         "annot": "/ ORG SYNCHRONIZATION",
-        "items": ["Developer Experience", "Active Mentorship", "Automated Quality Gates"],
+        "items": [
+          "Developer Experience",
+          "Active Mentorship",
+          "Automated Quality Gates"
+        ],
         "rationale": "Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship."
       },
       "product": {
         "name": "Product Systems Alignment",
         "annot": "/ FULL-STACK STRATEGY",
-        "items": ["Domain Modeling", "Stakeholder Coordination", "State & Cache Contracts"],
+        "items": [
+          "Domain Modeling",
+          "Stakeholder Coordination",
+          "State & Cache Contracts"
+        ],
         "rationale": "Bridges execution gaps between engineering teams, product managers, and executive stakeholders."
       }
     }
@@ -517,32 +533,6 @@
       "businessBenefit": "Business Benefit",
       "proof": "[Proof Link →]",
       "eyebrow": "/ BUSINESS IMPACT"
-    },
-    "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload Reduction",
-        "whatChanged": "Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.",
-        "whatItImproved": "Enabled distributed teams to release features independently, and improved LCP to 1.4s."
-      },
-      "shipping": {
-        "metric": "30%",
-        "title": "Faster Shipping",
-        "whatChanged": "Coordinated design-system contracts, component standards, and modular versioning guidelines.",
-        "whatItImproved": "Accelerated overall feature-delivery speeds by 30% across 20+ frontend engineers."
-      },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Interaction Latency",
-        "whatChanged": "Restructured site-builder rendering architecture to isolate mutation cycles to individual cells.",
-        "whatItImproved": "Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals."
-      },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Sustained Performance",
-        "whatChanged": "Optimized real-time logistics socket rendering with virtualized list memoization queues.",
-        "whatItImproved": "Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%."
-      }
     }
   },
   "authority": {
