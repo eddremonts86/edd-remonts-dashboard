@@ -8,8 +8,14 @@ export function useFakeProgress(onComplete: () => void, intervalMs = 100, holdMs
     document.body.style.overflow = 'hidden'
 
     let currentProgress = 0
+    const getSafeRandomIncrement = () => {
+      const randomBuffer = new Uint32Array(1)
+      globalThis.crypto.getRandomValues(randomBuffer)
+      return (randomBuffer[0] % 15) + 5
+    }
+
     const interval = setInterval(() => {
-      currentProgress += Math.floor(Math.random() * 15) + 5
+      currentProgress += getSafeRandomIncrement()
       if (currentProgress >= 100) {
         currentProgress = 100
         setProgress(100)
