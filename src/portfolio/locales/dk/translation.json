@@ -176,56 +176,31 @@
         "id": "experience",
         "index": "01",
         "title": "18 års modenhed i engineering",
-        "subtitle": "Et stærkt full-stack fundament udviklet til elite-frontend-arkitektur.",
-        "bullets": [
-          "Startede i 2007, spændende fra vanilla JavaScript til massive moderne isomorfe arkitekturer.",
-          "Jeg bevarer en hands-on indstilling, leder arkitektonisk governance og understøtter produktfokuserede mål.",
-          "Jeg forener kompromisløst visuelt håndværk med robuste mønstre på produktionsniveau."
-        ]
+        "proof": "Full-stack-rødder siden 2007, udviklet til elite frontend-arkitektur — fra vanilla JavaScript til moderne isomorfe systemer."
       },
       {
         "id": "constraints",
         "index": "02",
         "title": "Effektivitets-DNA skabt af begrænsninger",
-        "subtitle": "Besatte ydeevnevaner opbygget under ekstreme ressourcegrænser.",
-        "bullets": [
-          "Jeg lærte faget under Cubas hårde dial-up-begrænsninger (56kbps), hvilket tvang mig til ekstrem ressourceeffektivitet.",
-          "En streng hygiejne-mentalitet: tæller hver eneste byte, beskærer payloads og mikrooptimerer renderingstrin.",
-          "Jeg behandler ikke ydeevne som en polering efter lancering, men som en afgørende faktor for forretningskonvertering."
-        ]
+        "proof": "Trænet under Cubas 56kbps dial-up. Performance er ikke en polish-ting — det er en konverteringsdriver."
       },
       {
         "id": "scale",
         "index": "03",
         "title": "Europæisk Enterprise SaaS-skala",
-        "subtitle": "Dokumenteret erfaring med at skalere komplekse softwareplatforme i København.",
-        "bullets": [
-          "Jeg har ledet opdelingen af monorepos, styret micro-frontend arkitekturer og skaleret systemer på enterprise-niveau.",
-          "Jeg reducerede den indledende payload med 94% og øgede samtidig leveringshastigheden med 30% på tværs af teams.",
-          "Jeg etablerede skarpe modulgrænser for at holde systemerne rene, testbare og højt sammensættelige."
-        ]
+        "proof": "Skar den initiale payload 94% og accelererede leveringen 30% på tværs af 20+ ingeniører i Copenhagen enterprise-teams."
       },
       {
         "id": "product",
         "index": "04",
         "title": "Produktorienteret Systemarkitekt",
-        "subtitle": "Omsætter produktvision og modne designsystemer til velstruktureret kode.",
-        "bullets": [
-          "Jeg afstemmer tekniske beslutninger, produkt-metrikker og design-systemers æstetik.",
-          "Jeg modellerer typesikre domænelag, koordinerer caching-strategier i browseren og sikrer overensstemmelse i databaser.",
-          "Jeg designer brugerflader, der er visuelt premium, ekstremt responsive og nemme at vedligeholde."
-        ]
+        "proof": "Oversætter produktmetrikker og design-system-æstetik til type-safe domænelag og state-kontrakter."
       },
       {
         "id": "leadership",
         "index": "05",
         "title": "Aktiv teknisk ledelse & governance",
-        "subtitle": "Orkestrerer teams og mentor-kulturer, der kan skalere.",
-        "bullets": [
-          "Jeg har sat de tekniske standarder, der bruges af mere end 20 udviklere på tværs af 4 uafhængige produkt-teams.",
-          "Jeg erstattede isolerede metoder med aktiv mentorering, klare systemaftaler og fælles workshops.",
-          "Jeg udrustede uafhængige teams til at udrulle sikkert på daglig basis med lav friktion."
-        ]
+        "proof": "Styrede tekniske standarder vedtaget af 20+ ingeniører på tværs af 4 autonome produkthold."
       }
     ],
     "servicesTitle": "Hvad Jeg Leverer.",
