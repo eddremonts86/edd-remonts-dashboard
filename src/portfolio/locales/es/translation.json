@@ -150,12 +150,6 @@
     }
   },
   "about": {
-    "different": "/ LO QUE ME HACE DIFERENTE",
-    "title": {
-      "whyHire": "¿Por qué deberías",
-      "name": "trabajar conmigo?"
-    },
-    "description": "Mucha gente sabe escribir código de interfaz. Yo me especializo en combinar la eficiencia forjada bajo restricciones, la escala empresarial europea, la intuición de producto y la gobernanza técnica de equipos.",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software empresarial a medida antes de mudarme a Dinamarca y especializarme a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro estrechamente con producto, diseño e infraestructura, y construyo interfaces que siguen siendo mantenibles a medida que los productos crecen.",
     "features": {
       "0": {
@@ -171,42 +165,16 @@
         "description": "La velocidad no significa nada sin estabilidad. Construyo microservicios robustos aprovechando meta-frameworks modernos como Next.js/React, priorizando renovaciones con cero tiempo de inactividad."
       }
     },
-    "advantages": [
-      {
-        "id": "experience",
-        "index": "01",
-        "title": "18 años de madurez en ingeniería",
-        "proof": "Raíces full-stack desde 2007, evolucionadas hacia arquitectura frontend de élite — de JavaScript vanilla a sistemas isomórficos modernos."
-      },
-      {
-        "id": "constraints",
-        "index": "02",
-        "title": "ADN de eficiencia forjado bajo restricciones",
-        "proof": "Formado bajo el dial-up cubano de 56kbps. El rendimiento no es un pulido final — es un motor de conversión."
-      },
-      {
-        "id": "scale",
-        "index": "03",
-        "title": "Escala SaaS corporativa europea",
-        "proof": "Reducí el payload inicial un 94% y aceleré la entrega un 30% con 20+ ingenieros en equipos enterprise en Copenhague."
-      },
-      {
-        "id": "product",
-        "index": "04",
-        "title": "Arquitecto de sistemas con enfoque en producto",
-        "proof": "Traduce métricas de producto y estética de design system en capas de dominio type-safe y contratos de estado."
-      },
-      {
-        "id": "leadership",
-        "index": "05",
-        "title": "Gobernanza y liderazgo técnico activo",
-        "proof": "Gobierné estándares técnicos adoptados por 20+ ingenieros en 4 squads de producto autónomas."
-      }
-    ],
     "servicesTitle": "Lo que entrego.",
     "servicesSub": "Entregando experiencias digitales premium.",
     "originsLabel": "Orígenes",
-    "originsSub": "Cuba → Copenhague"
+    "originsSub": "Cuba → Copenhague",
+    "kicker": "/ ACERCA DE",
+    "heading.line1": "Un ingeniero frontend-first con raíces full-stack",
+    "heading.line2": "y casi dos décadas enviando a producción.",
+    "p1": "Empecé en 2007 construyendo motores de JavaScript vanilla para la biblioteca estatal cubana bajo dial-up de 56kbps — una restricción de recursos extrema que me entrenó a contar cada byte y micro-optimizar cada ruta de render.",
+    "p2": "Me mudé a Copenhague y escalé esa mentalidad de higiene a SaaS enterprise: particiones de monorepo, contratos de design system, estado optimista — las técnicas que llevaron el bundle legacy de 6.2MB de Schilling a 350KB y sacaron al equipo de rewrites de 12 meses a envíos independientes con 20+ ingenieros.",
+    "p3": "Lo que aporto no es un framework. Es el pensamiento de sistemas orientado a producto que convierte rendimiento forjado por restricciones en resultados de negocio, y la gobernanza que lo escala entre equipos sin frenarlos."
   },
   "services": {
     "0": {

@@ -150,12 +150,6 @@
     }
   },
   "about": {
-    "different": "/ WHAT MAKES ME DIFFERENT",
-    "title": {
-      "whyHire": "Why you should",
-      "name": "hire me?"
-    },
-    "description": "Many can write UI code. I specialize in combining constraint-forged efficiency, European enterprise scale, product intuition, and team-wide technical governance.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
@@ -171,42 +165,16 @@
         "description": "Speed means nothing without stability. I build robust microservices leveraging modern Next.js/React meta-frameworks prioritizing zero-downtime overhauls."
       }
     },
-    "advantages": [
-      {
-        "id": "experience",
-        "index": "01",
-        "title": "18 Years of Engineering Maturity",
-        "proof": "Full-stack roots since 2007, evolved into elite frontend architecture — vanilla JavaScript to modern isomorphic systems."
-      },
-      {
-        "id": "constraints",
-        "index": "02",
-        "title": "Constraint-Born Efficiency DNA",
-        "proof": "Trained under Cuba's 56kbps dial-up. Performance is not a polish step — it's a conversion driver."
-      },
-      {
-        "id": "scale",
-        "index": "03",
-        "title": "European Enterprise-SaaS Scale",
-        "proof": "Slashed initial payloads 94% and accelerated delivery 30% across 20+ engineers in Copenhagen enterprise teams."
-      },
-      {
-        "id": "product",
-        "index": "04",
-        "title": "Product-Minded Systems Architect",
-        "proof": "Translates product metrics and design-system aesthetics into type-safe domain layers and state contracts."
-      },
-      {
-        "id": "leadership",
-        "index": "05",
-        "title": "Active Technical Leadership & Governance",
-        "proof": "Governed technical standards adopted by 20+ engineers across 4 autonomous product squads."
-      }
-    ],
     "servicesTitle": "What I Deliver.",
     "servicesSub": "Delivering premium digital experiences.",
     "originsLabel": "Origins",
-    "originsSub": "Cuba → Copenhagen"
+    "originsSub": "Cuba → Copenhagen",
+    "kicker": "/ ABOUT",
+    "heading.line1": "A frontend-first engineer with full-stack roots",
+    "heading.line2": "and nearly two decades of shipping.",
+    "p1": "I started in 2007 building vanilla JavaScript engines for the Cuban state library under 56kbps dial-up — an extreme resource constraint that trained me to count every byte and micro-optimize every render path.",
+    "p2": "I moved to Copenhagen and scaled that hygiene mindset into enterprise SaaS: monorepo partitions, design-system contracts, optimistic state — the techniques that took Schilling's 6.2MB legacy bundle to 350KB and lifted the team from 12-month rewrites to independent shipping across 20+ engineers.",
+    "p3": "What I bring is not a single framework. It is the product-minded systems thinking that turns constraint-forged performance into business outcomes, and the governance that scales it across teams without slowing them down."
   },
   "services": {
     "0": {

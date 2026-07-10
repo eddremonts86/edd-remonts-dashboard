@@ -150,12 +150,6 @@
     }
   },
   "about": {
-    "different": "/ HVAD DER GØR MIG SPECIEL",
-    "title": {
-      "whyHire": "Hvorfor du bør",
-      "name": "arbejde med mig?"
-    },
-    "description": "Mange kan skrive UI-kode. Jeg specialiserer mig i at kombinere effektivitet formet af begrænsninger, europæisk enterprise-skala, produktintuition og teknisk governance på tværs af teams.",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet forretningssoftware, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend-teams, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {
@@ -171,42 +165,16 @@
         "description": "Hastighed betyder intet uden stabilitet. Jeg bygger robuste mikrotjenester og drager fordel af moderne Next.js/React meta-frameworks, der prioriterer overhalinger med nul nedetid."
       }
     },
-    "advantages": [
-      {
-        "id": "experience",
-        "index": "01",
-        "title": "18 års modenhed i engineering",
-        "proof": "Full-stack-rødder siden 2007, udviklet til elite frontend-arkitektur — fra vanilla JavaScript til moderne isomorfe systemer."
-      },
-      {
-        "id": "constraints",
-        "index": "02",
-        "title": "Effektivitets-DNA skabt af begrænsninger",
-        "proof": "Trænet under Cubas 56kbps dial-up. Performance er ikke en polish-ting — det er en konverteringsdriver."
-      },
-      {
-        "id": "scale",
-        "index": "03",
-        "title": "Europæisk Enterprise SaaS-skala",
-        "proof": "Skar den initiale payload 94% og accelererede leveringen 30% på tværs af 20+ ingeniører i Copenhagen enterprise-teams."
-      },
-      {
-        "id": "product",
-        "index": "04",
-        "title": "Produktorienteret Systemarkitekt",
-        "proof": "Oversætter produktmetrikker og design-system-æstetik til type-safe domænelag og state-kontrakter."
-      },
-      {
-        "id": "leadership",
-        "index": "05",
-        "title": "Aktiv teknisk ledelse & governance",
-        "proof": "Styrede tekniske standarder vedtaget af 20+ ingeniører på tværs af 4 autonome produkthold."
-      }
-    ],
     "servicesTitle": "Hvad Jeg Leverer.",
     "servicesSub": "Leverer premium digitale oplevelser.",
     "originsLabel": "Ophav",
-    "originsSub": "Cuba → København"
+    "originsSub": "Cuba → København",
+    "kicker": "/ OM",
+    "heading.line1": "En frontend-først ingeniør med full-stack-rødder",
+    "heading.line2": "og næsten to årtiers produktion.",
+    "p1": "Jeg startede i 2007 med at bygge vanilla JavaScript-motorer til det cubanske statsbibliotek under 56kbps dial-up — en ekstrem ressourcebegrænsning der trænede mig i at tælle hver byte og mikrooptimere hver render-sti.",
+    "p2": "Jeg flyttede til København og skalerede den mindset ind i enterprise SaaS: monorepo-partitioner, design-system-kontrakter, optimistisk state — de teknikker der tog Schillings 6.2MB legacy bundle ned til 350KB og løftede teamet fra 12-måneders rewrites til uafhængig levering på tværs af 20+ ingeniører.",
+    "p3": "Det jeg bidrager med er ikke en enkelt framework. Det er den produkt-mindede systemtænkning, der omsætter constraint-forged performance til forretningsresultater, og den governance der skalerer det på tværs af teams uden at bremse dem."
   },
   "services": {
     "0": {
