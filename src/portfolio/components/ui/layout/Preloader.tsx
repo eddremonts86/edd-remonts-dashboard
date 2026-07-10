@@ -18,7 +18,9 @@ const BOOT_STEPS: Array<{ at: number; key: string; fallback: string }> = [
  */
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const { t } = useTranslation()
-  const progress = useFakeProgress(onComplete)
+  // 10 minute visible window so the loader stays on screen long enough
+  // to inspect every layer. Click anywhere to skip immediately.
+  const progress = useFakeProgress(onComplete, 100, 10 * 60 * 1000)
 
   return (
     <AnimatePresence>
