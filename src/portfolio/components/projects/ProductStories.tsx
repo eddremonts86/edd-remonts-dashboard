@@ -27,30 +27,18 @@ interface StoryProject {
 const TradeoffLedger = ({ chosen, rejected }: { chosen: string; rejected: string }) => {
   const { t } = useTranslation()
   return (
-    <div className="rounded-xl border border-subtle bg-surface/50 p-5 font-mono text-[9.5px] space-y-4 shadow-sm">
-      <div className="flex items-center justify-between border-b border-subtle pb-2 select-none">
-        <span className="text-primary font-bold flex items-center gap-1.5">
-          <GitBranch className="h-3.5 w-3.5 text-primary" />
-          {t('projects.stories.tradeoffTitle', 'ARCHITECTURAL TRADEOFF LEDGER')}
+    <div className="grid gap-4 sm:grid-cols-2 pf-card p-5 font-display">
+      <div className="space-y-1.5">
+        <span className="text-green-600 font-bold text-[10px] uppercase tracking-wider block">
+          {t('projects.stories.pathChosen', '✓ Path chosen')}
         </span>
+        <p className="text-xs leading-relaxed text-foreground/70 font-light">{chosen}</p>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="space-y-1.5">
-          <span className="text-green-600 font-bold block">
-            {t('projects.stories.pathChosen', '✓ PATH CHOSEN')}
-          </span>
-          <p className="text-foreground/70 leading-relaxed font-light font-sans text-xs">
-            {chosen}
-          </p>
-        </div>
-        <div className="space-y-1.5">
-          <span className="text-red-500 font-bold block">
-            {t('projects.stories.pathRejected', '✗ PATH REJECTED')}
-          </span>
-          <p className="text-foreground/70 leading-relaxed font-light font-sans text-xs">
-            {rejected}
-          </p>
-        </div>
+      <div className="space-y-1.5">
+        <span className="text-red-500 font-bold text-[10px] uppercase tracking-wider block">
+          {t('projects.stories.pathRejected', '✗ Path rejected')}
+        </span>
+        <p className="text-xs leading-relaxed text-foreground/70 font-light">{rejected}</p>
       </div>
     </div>
   )

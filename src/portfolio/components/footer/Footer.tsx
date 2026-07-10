@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { ArrowUp, Server, Layers } from 'lucide-react'
+import { Server } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
 import { NAV_SECTIONS } from '@/portfolio/data/navigation'
@@ -10,10 +10,6 @@ export const Footer = () => {
   const { t } = useTranslation()
   const { personalInfo } = usePortfolioData()
   const currentYear = new Date().getFullYear()
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   const nameParts = personalInfo.name.trim().split(/\s+/)
   const givenName = nameParts[0] ?? personalInfo.name
@@ -96,33 +92,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* ── Bottom rule: copyright & Back to Top ────────────────── */}
+        {/* ── Bottom rule: copyright ────────────────────────────── */}
         <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle py-8 sm:flex-row sm:items-center">
-          <div className="space-y-1">
-            <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/60">
-              &copy; {currentYear} {personalInfo.name}. {t('footer.rights', 'All rights reserved.')}
-            </p>
-            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/60">
-              {t('footer.builtWith', 'Engineered with React 19 & Anime minimalism.')}
-            </p>
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent('pf:open-palette'))}
-              className="hidden cursor-pointer font-mono text-[8px] uppercase tracking-[0.16em] text-foreground/40 transition-colors duration-300 hover:text-primary md:block"
-            >
-              {t('footer.paletteHint', 'Psst — press ⌘K. There are commands in here.')}
-            </button>
-          </div>
-
-          <button
-            onClick={scrollToTop}
-            type="button"
-            className="group inline-flex items-center gap-2 rounded-full border border-subtle bg-surface/30 px-4 py-2 font-mono text-[9px] uppercase tracking-widest text-foreground/50 hover:text-primary hover:border-primary hover:bg-primary/5 transition-all duration-300 cursor-pointer"
-          >
-            <Layers className="h-3 w-3 text-primary animate-pulse" />
-            <span>{t('footer.backToTop', 'Back to Top')}</span>
-            <ArrowUp className="h-3 w-3 transition-transform group-hover:-translate-y-0.5" />
-          </button>
+          <p className="font-mono text-[9px] uppercase tracking-widest text-foreground/60">
+            &copy; {currentYear} {personalInfo.name}. {t('footer.rights', 'All rights reserved.')}
+          </p>
         </div>
       </m.div>
     </footer>

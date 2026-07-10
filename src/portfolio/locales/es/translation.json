@@ -110,31 +110,19 @@
       "governance": {
         "name": "Arquitectura y gobernanza",
         "annot": "/ SISTEMAS DE WORKSPACE",
-        "items": [
-          "Límites de monorepo",
-          "Contratos de design system",
-          "Módulos desacoplados"
-        ],
+        "items": ["Límites de monorepo", "Contratos de design system", "Módulos desacoplados"],
         "rationale": "Permite a equipos distribuidos lanzar funcionalidades de forma independiente sin romper la arquitectura compartida."
       },
       "performance": {
         "name": "Ingeniería de rendimiento",
         "annot": "/ LATENCIA Y CONVERSIÓN",
-        "items": [
-          "Latencia de interacción",
-          "Sincronización optimista",
-          "Core Web Vitals"
-        ],
+        "items": ["Latencia de interacción", "Sincronización optimista", "Core Web Vitals"],
         "rationale": "Asegura Core Web Vitals perfectos y respuestas por debajo de 12 ms en plataformas de escala empresarial."
       },
       "leadership": {
         "name": "Liderazgo técnico",
         "annot": "/ SINCRONIZACIÓN ORGANIZATIVA",
-        "items": [
-          "Experiencia de desarrollo",
-          "Mentoría activa",
-          "Quality gates automatizados"
-        ],
+        "items": ["Experiencia de desarrollo", "Mentoría activa", "Quality gates automatizados"],
         "rationale": "Acelera los ciclos de entrega un 30% en equipos de más de 20 ingenieros mediante mentoría activa."
       },
       "product": {
@@ -381,7 +369,6 @@
       "fullStack": "Full Stack"
     },
     "stories": {
-      "tradeoffTitle": "LIBRO DE REGISTRO DE DECISIONES ARQUITECTÓNICAS",
       "pathChosen": "✓ CAMINO ELEGIDO",
       "pathRejected": "✗ CAMINO RECHAZADO",
       "viewInterface": "/ VER INTERFAZ COMPLETA",
@@ -573,8 +560,6 @@
     "ctaLabel": "Siguiente paso",
     "cta": "¿Buscas un Staff Engineer que asuma la responsabilidad global de los sistemas y no solo complete tareas? Hablemos.",
     "ctaButton": "Iniciar una conversación",
-    "lessonsHeader": "Lecciones de 18 Años de Carrera",
-    "howIWorkHeader": "Cómo Trabajo",
     "partnershipHeader": "/ COLABORACIÓN",
     "partnershipDesc": "¿Buscas un Staff Engineer que coordine arquitecturas, defina contratos de sistemas y potencie el rendimiento de tus squads? Conversemos.",
     "tabs": {
@@ -583,58 +568,7 @@
       "testing": "Calidad & Pruebas",
       "performance": "Rendimiento",
       "ai": "Flujo asistido por IA"
-    },
-    "lessons": [
-      {
-        "index": "01",
-        "title": "La arquitectura son personas",
-        "body": "Los sistemas prosperan cuando los límites de los equipos, las interfaces de software y las responsabilidades están perfectamente delimitados. La ley de Conway no es teoría, es una restricción real."
-      },
-      {
-        "index": "02",
-        "title": "La gobernanza acelera el desarrollo",
-        "body": "Los límites modulares estrictos, el versionado semántico y las interfaces por contrato no son cuellos de botella. Son salvaguardas que permiten a equipos autónomos desplegar a máxima velocidad de forma segura."
-      },
-      {
-        "index": "03",
-        "title": "El rendimiento es una métrica financiera",
-        "body": "Los Core Web Vitals y la respuesta a interacciones inciden directamente en las conversiones del producto. Dejar el rendimiento como un ajuste para después de lanzar es un impuesto operativo muy costoso."
-      },
-      {
-        "index": "04",
-        "title": "La complejidad es acumulativa",
-        "body": "El código más costoso es aquel construido sin interfaces estables y sin aislamiento a largo plazo. Una base de código sumamente tipada pero con alto acoplamiento sigue siendo código difícil de escalar."
-      },
-      {
-        "index": "05",
-        "title": "Los mejores sistemas son aburridos",
-        "body": "Los patrones predecibles, estables y desacoplados superan a las novedades emocionantes pero frágiles. La ejecución predecible del software es el mejor indicador de la madurez de una organización."
-      }
-    ],
-    "howIWork": [
-      {
-        "title": "Toma de decisiones pragmática",
-        "body": "Estrategia: Priorizo estándares estables y predecibles. Acción: Modelo límites estructurales estrictos y contratos de API limpios. Resultado: Elimino el desgaste por decisiones y prevengo regresiones."
-      },
-      {
-        "title": "Mentoría activa y confianza",
-        "body": "Estrategia: Elimino dinámicas de desarrollo aisladas. Acción: Lidero workshops colaborativos y establezco contratos de interfaz robustos. Resultado: Elevo las competencias técnicas del equipo."
-      },
-      {
-        "title": "Alineación integral con producto",
-        "body": "Estrategia: Coordino directamente con los stakeholders de negocio. Acción: Traduzco la complejidad técnica en términos de valor comercial. Resultado: Consigo respaldo para iniciativas técnicas clave sin vacíos de comunicación."
-      },
-      {
-        "title": "Reducción activa de deuda técnica",
-        "body": "Estrategia: Evito proactivamente el acoplamiento entre subaplicaciones. Acción: Implemento subapps independientes y aseguro esquemas de API rigurosos. Resultado: Ahorro un 60% en infraestructuras y agilizo upgrades."
-      },
-      {
-        "title": "Autonomía fortalecida",
-        "body": "Estrategia: Fomento la confianza descentralizada de los ingenieros. Acción: Estandarizo pruebas automatizadas estrictas y límites de monorepos. Resultado: Capacito a squads independientes para desplegar código seguro a diario."
-      }
-    ],
-    "lessonsHeaderLabel": "/ MADUREZ",
-    "howIWorkHeaderLabel": "/ EJECUCIÓN"
+    }
   },
   "testimonials": [
     {
@@ -702,9 +636,7 @@
     },
     "social": {
       "heading": "En la red"
-    },
-    "builtWith": "Construido con React 19, WebGL hecho a mano y minimalismo editorial.",
-    "paletteHint": "Psst — pulsa ⌘K. Aquí dentro hay comandos."
+    }
   },
   "preloader": {
     "loading": "Cargando experiencia",
@@ -790,10 +722,6 @@
         "placeholder": "Escribe una frase…",
         "inputLabel": "Frase a decodificar",
         "action": "Decodificar"
-      },
-      "code": {
-        "title": "Cine de código",
-        "goal": "Una secuencia de títulos para código fuente: tokenizada, escalonada y honesta sobre ser teatro."
       }
     }
   },

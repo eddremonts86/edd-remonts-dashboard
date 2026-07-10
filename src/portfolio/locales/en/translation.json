@@ -110,41 +110,25 @@
       "governance": {
         "name": "Architecture & Governance",
         "annot": "/ WORKSPACE SYSTEMS",
-        "items": [
-          "Monorepo Boundaries",
-          "Design-System Contracts",
-          "Decoupled Modules"
-        ],
+        "items": ["Monorepo Boundaries", "Design-System Contracts", "Decoupled Modules"],
         "rationale": "Enables distributed product teams to release features independently without breaking shared core architectures."
       },
       "performance": {
         "name": "Performance Engineering",
         "annot": "/ LATENCY & CONVERSION",
-        "items": [
-          "Interaction Latency",
-          "Optimistic State Sync",
-          "Core Web Vitals"
-        ],
+        "items": ["Interaction Latency", "Optimistic State Sync", "Core Web Vitals"],
         "rationale": "Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms."
       },
       "leadership": {
         "name": "Technical Leadership",
         "annot": "/ ORG SYNCHRONIZATION",
-        "items": [
-          "Developer Experience",
-          "Active Mentorship",
-          "Automated Quality Gates"
-        ],
+        "items": ["Developer Experience", "Active Mentorship", "Automated Quality Gates"],
         "rationale": "Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship."
       },
       "product": {
         "name": "Product Systems Alignment",
         "annot": "/ FULL-STACK STRATEGY",
-        "items": [
-          "Domain Modeling",
-          "Stakeholder Coordination",
-          "State & Cache Contracts"
-        ],
+        "items": ["Domain Modeling", "Stakeholder Coordination", "State & Cache Contracts"],
         "rationale": "Bridges execution gaps between engineering teams, product managers, and executive stakeholders."
       }
     }
@@ -381,7 +365,6 @@
       "fullStack": "Full Stack"
     },
     "stories": {
-      "tradeoffTitle": "ARCHITECTURAL TRADEOFF LEDGER",
       "pathChosen": "✓ PATH CHOSEN",
       "pathRejected": "✗ PATH REJECTED",
       "viewInterface": "/ VIEW FULL INTERFACE",
@@ -573,8 +556,6 @@
     "ctaLabel": "Next step",
     "cta": "Looking for an engineer who owns systems, not just tickets? Let's talk.",
     "ctaButton": "Start a conversation",
-    "lessonsHeader": "Lessons From 18 Years",
-    "howIWorkHeader": "How I Work",
     "partnershipHeader": "/ PARTNERSHIP",
     "partnershipDesc": "Looking for a Staff Engineer who coordinates systems, governs boundaries, and mentors squads? Let’s talk.",
     "tabs": {
@@ -583,58 +564,7 @@
       "testing": "Testing & Quality",
       "performance": "Performance",
       "ai": "AI-assisted workflow"
-    },
-    "lessons": [
-      {
-        "index": "01",
-        "title": "Architecture is People",
-        "body": "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint."
-      },
-      {
-        "index": "02",
-        "title": "Governance Enables Velocity",
-        "body": "Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity."
-      },
-      {
-        "index": "03",
-        "title": "Performance is a Business Metric",
-        "body": "Core Web Vitals, page-load latency, and interaction responsiveness directly determine user-retention and business-conversion rates. Treating performance as post-launch polish is a costly operational tax."
-      },
-      {
-        "index": "04",
-        "title": "Complexity Compounds",
-        "body": "The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti."
-      },
-      {
-        "index": "05",
-        "title": "The Best Systems are Boring",
-        "body": "Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity."
-      }
-    ],
-    "howIWork": [
-      {
-        "title": "Pragmatic Decision-Making",
-        "body": "Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue."
-      },
-      {
-        "title": "Active Mentorship & Trust",
-        "body": "Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers."
-      },
-      {
-        "title": "Product-Minded Alignment",
-        "body": "Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps."
-      },
-      {
-        "title": "Debt-Minimization Strategy",
-        "body": "Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades."
-      },
-      {
-        "title": "Empowered Autonomy",
-        "body": "Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy."
-      }
-    ],
-    "lessonsHeaderLabel": "/ MATURITY",
-    "howIWorkHeaderLabel": "/ EXECUTION"
+    }
   },
   "testimonials": [
     {
@@ -702,9 +632,7 @@
     },
     "social": {
       "heading": "Elsewhere"
-    },
-    "builtWith": "Engineered with React 19, hand-rolled WebGL & editorial minimalism.",
-    "paletteHint": "Psst — press ⌘K. There are commands in here."
+    }
   },
   "preloader": {
     "loading": "Loading experience",
@@ -790,10 +718,6 @@
         "placeholder": "Type a phrase…",
         "inputLabel": "Phrase to scramble",
         "action": "Decode"
-      },
-      "code": {
-        "title": "Code Cinema",
-        "goal": "A title sequence for source code — tokenized, staggered, and honest about being theatre."
       }
     }
   },

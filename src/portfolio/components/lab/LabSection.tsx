@@ -4,7 +4,6 @@ import { fadeInView } from '@/portfolio/lib/motion'
 import { Container, Section } from '../ui/layout/Section'
 import { SectionSlate } from '../ui/layout/SectionSlate'
 import { ExhibitCard } from './ExhibitCard'
-import { CodeCinema } from './exhibits/CodeCinema'
 import { InkStudy } from './exhibits/InkStudy'
 import { MagneticField } from './exhibits/MagneticField'
 import { ScrambleStudy } from './exhibits/ScrambleStudy'
@@ -22,7 +21,6 @@ export const LabSection = () => {
     <Section id="lab">
       <Container>
         <SectionSlate
-          reel={3}
           kicker={t('lab.kicker', 'Interaction Studies')}
           title={t('lab.title', 'The Lab.')}
           accent={t('lab.accent', 'Touch the work.')}
@@ -105,19 +103,6 @@ export const LabSection = () => {
               {t('lab.notes.footer', 'New exhibits land here first. Press ⌘K anywhere.')}
             </p>
           </m.aside>
-
-          <ExhibitCard
-            index={5}
-            title={t('lab.exhibits.code.title', 'Code Cinema')}
-            goal={t(
-              'lab.exhibits.code.goal',
-              'A title sequence for source code — tokenized, staggered, and honest about being theatre.',
-            )}
-            tools={['Framer Motion', 'React', 'Design tokens']}
-            className="md:col-span-6"
-          >
-            <CodeCinema />
-          </ExhibitCard>
         </div>
       </Container>
     </Section>

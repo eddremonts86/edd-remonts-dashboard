@@ -3,9 +3,7 @@ import type { ReactNode } from 'react'
 import { APPLE_EASE, fadeInView } from '@/portfolio/lib/motion'
 
 interface SectionSlateProps {
-  /** Reel number shown in the slate, e.g. 2 → "REEL 02" */
-  reel: number
-  /** Mono kicker after the reel number, e.g. "SELECTED WORK" */
+  /** Mono kicker above the headline, e.g. "SELECTED WORK" */
   kicker: string
   /** Main serif headline (first line) */
   title: string
@@ -18,12 +16,11 @@ interface SectionSlateProps {
 }
 
 /**
- * Film-slate section header: `REEL 02 — KICKER` mono line, masked headline
- * reveal, and a hairline rule that draws itself on scroll. One component so
- * every chapter of the page opens with the same cinematic grammar.
+ * Cinematic section header: kicker + masked headline reveal + hairline
+ * rule that draws itself on scroll. One component so every chapter of
+ * the page opens with the same grammar.
  */
 export const SectionSlate = ({
-  reel,
   kicker,
   title,
   accent,
@@ -31,15 +28,9 @@ export const SectionSlate = ({
   className = '',
   children,
 }: SectionSlateProps) => {
-  const reelNo = String(reel).padStart(2, '0')
-
   return (
     <header className={`mb-16 max-w-3xl text-left md:mb-20 ${className}`}>
-      <m.div {...fadeInView({ distance: 8 })} className="mb-5 flex items-center gap-4">
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-primary">
-          {`REEL ${reelNo}`}
-        </span>
-        <span aria-hidden="true" className="h-px w-8 bg-primary/40" />
+      <m.div {...fadeInView({ distance: 8 })} className="mb-5">
         <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/55">
           {kicker}
         </span>

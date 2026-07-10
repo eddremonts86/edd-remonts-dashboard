@@ -25,7 +25,6 @@ export const ProjectsGallery = () => {
       <FloatingImagePreview project={hoveredProject} cursorX={springX} cursorY={springY} />
       <Container>
         <SectionSlate
-          reel={2}
           kicker={t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
           title={t('projects.title', 'Product Stories')}
           accent={t('projects.titleAccent', 'Not Project Cards.')}

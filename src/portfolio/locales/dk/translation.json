@@ -110,41 +110,25 @@
       "governance": {
         "name": "Arkitektur & governance",
         "annot": "/ WORKSPACE-SYSTEMER",
-        "items": [
-          "Monorepo-grænser",
-          "Design-system-kontrakter",
-          "Afkoblede moduler"
-        ],
+        "items": ["Monorepo-grænser", "Design-system-kontrakter", "Afkoblede moduler"],
         "rationale": "Lader distribuerede produktteams udrulle funktioner uafhængigt uden at bryde den fælles arkitektur."
       },
       "performance": {
         "name": "Performance-engineering",
         "annot": "/ LATENS & KONVERTERING",
-        "items": [
-          "Interaktionslatens",
-          "Optimistisk synkronisering",
-          "Core Web Vitals"
-        ],
+        "items": ["Interaktionslatens", "Optimistisk synkronisering", "Core Web Vitals"],
         "rationale": "Sikrer perfekte Core Web Vitals og svartider under 12 ms på enterprise-platforme."
       },
       "leadership": {
         "name": "Teknisk lederskab",
         "annot": "/ ORGANISATORISK SYNKRONISERING",
-        "items": [
-          "Udvikleroplevelse",
-          "Aktiv mentorering",
-          "Automatiserede quality gates"
-        ],
+        "items": ["Udvikleroplevelse", "Aktiv mentorering", "Automatiserede quality gates"],
         "rationale": "Accelererer leveringscyklusser med 30% på tværs af 20+ udviklere gennem aktiv mentorering."
       },
       "product": {
         "name": "Produkt- og systemafstemning",
         "annot": "/ FULL-STACK-STRATEGI",
-        "items": [
-          "Domænemodellering",
-          "Stakeholder-koordinering",
-          "State- og cache-kontrakter"
-        ],
+        "items": ["Domænemodellering", "Stakeholder-koordinering", "State- og cache-kontrakter"],
         "rationale": "Lukker eksekveringshuller mellem engineering, produktledere og direktion."
       }
     }
@@ -381,7 +365,6 @@
       "fullStack": "Full Stack"
     },
     "stories": {
-      "tradeoffTitle": "ARKITEKTONISK BESLUTNINGSLOGBOG",
       "pathChosen": "✓ VALGT VEJ",
       "pathRejected": "✗ AFVIST VEJ",
       "viewInterface": "/ SE KOMPLET INTERFACE",
@@ -573,8 +556,6 @@
     "ctaLabel": "Næste skridt",
     "cta": "Søger du en Staff Engineer, der tager det fulde ansvar for systemerne og ikke bare løser opgaver? Lad os snakke.",
     "ctaButton": "Start en samtale",
-    "lessonsHeader": "Læring fra 18 Års Karriere",
-    "howIWorkHeader": "Hvordan Jeg Arbejder",
     "partnershipHeader": "/ SAMARBEJDE",
     "partnershipDesc": "Søger du en Staff Engineer, der kan koordinere arkitektur, fastlægge systemkontrakter og løfte dit teams ydeevne? Lad os tale sammen.",
     "tabs": {
@@ -583,58 +564,7 @@
       "testing": "Test & Kvalitet",
       "performance": "Ydeevne",
       "ai": "AI-assisteret workflow"
-    },
-    "lessons": [
-      {
-        "index": "01",
-        "title": "Arkitektur handler om mennesker",
-        "body": "Systemer lykkes, når grænserne mellem teams, softwaregrænseflader og ansvar er skarpt defineret. Conways lov er ikke teori, men en reel engineering-begrænsning."
-      },
-      {
-        "index": "02",
-        "title": "Governance skaber hastighed",
-        "body": "Skarpe modulgrænser, semantisk versionering og grænsefladekontrakter er ikke hindringer. De er afgørende guardrails, der lader uafhængige teams udrulle hurtigt og sikkert."
-      },
-      {
-        "index": "03",
-        "title": "Ydeevne er en forretningsmetrik",
-        "body": "Core Web Vitals og hurtig interaktion påvirker direkte brugernes fastholdelse og konvertering. At udskyde ydeevne til efter lanceringen er en dyr teknisk gæld."
-      },
-      {
-        "index": "04",
-        "title": "Kompleksitet akkumuleres",
-        "body": "Den dyreste linje kode er den, der skrives uden stabile interfaces og uafhængighed på sigt. En stærkt typet kodebase, der er tæt koblet, er stadig svær at skalere."
-      },
-      {
-        "index": "05",
-        "title": "De bedste systemer er forudsigelige",
-        "body": "Forudsigelige, stabile og afkoblede mønstre vinder over spændende men skrøbelige nyheder. Ensartet afvikling af software er det klareste tegn på teknologisk modenhed."
-      }
-    ],
-    "howIWork": [
-      {
-        "title": "Pragmatisk beslutningstagning",
-        "body": "Strategi: Prioriterer stabile og forudsigelige standarder. Handling: Modellerer skarpe strukturgrænser og rene API-kontrakter. Resultat: Eliminerer slid ved beslutninger og forebygger fejl."
-      },
-      {
-        "title": "Aktiv mentorering og tillid",
-        "body": "Strategi: Fjerner isolerede måder at udvikle kode på. Handling: Leder fælles workshops og fastlægger robuste systemgrænseflader. Resultat: Løfter de tekniske kompetencer i teamet."
-      },
-      {
-        "title": "Tæt produkt-afstemning",
-        "body": "Strategi: Koordinerer direkte med forretningens interessenter. Handling: Omsætter teknisk kompleksitet til konkret kommerciel værdi. Resultat: Opnår opbakning til vigtige tekniske tiltag uden kommunikationshuller."
-      },
-      {
-        "title": "Aktiv minimering af gæld",
-        "body": "Strategi: Forebygger tæt kobling mellem underapplikationer proaktivt. Handling: Implementerer uafhængige sub-apps og sikrer skarpe API-skemaer. Resultat: Sparer 60% på infrastruktur og sikrer nemme opgraderinger."
-      },
-      {
-        "title": "Øget autonomi",
-        "body": "Strategi: Opbygger decentraliseret tillid hos udviklerne. Handling: Standardiserer strenge automatiserede test og monorepo-grænser. Resultat: Gør uafhængige squads i stand til at udrulle sikker kode dagligt."
-      }
-    ],
-    "lessonsHeaderLabel": "/ MODENHED",
-    "howIWorkHeaderLabel": "/ EKSEKVERING"
+    }
   },
   "testimonials": [
     {
@@ -702,9 +632,7 @@
     },
     "social": {
       "heading": "Find mig"
-    },
-    "builtWith": "Bygget med React 19, håndskrevet WebGL og redaktionel minimalisme.",
-    "paletteHint": "Psst — tryk ⌘K. Der er kommandoer herinde."
+    }
   },
   "preloader": {
     "loading": "Indlæser oplevelse",
@@ -790,10 +718,6 @@
         "placeholder": "Skriv en sætning…",
         "inputLabel": "Sætning der skal dekodes",
         "action": "Afkod"
-      },
-      "code": {
-        "title": "Kodebiograf",
-        "goal": "En titelsekvens for kildekode — tokeniseret, forskudt og ærlig omkring at være teater."
       }
     }
   },

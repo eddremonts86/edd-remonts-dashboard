@@ -57,8 +57,7 @@ const LOG_ENTRIES: Array<{
     titleKey: 'log.entries.a11y.title',
     titleFallback: 'Accessibility pass across portfolio components',
     learningKey: 'log.entries.a11y.learning',
-    learningFallback:
-      'Motion you can switch off is craft; motion you cannot is decoration.',
+    learningFallback: 'Motion you can switch off is craft; motion you cannot is decoration.',
     tools: ['React', 'ARIA', 'prefers-reduced-motion'],
   },
   {
@@ -100,7 +99,6 @@ export const BuildLogSection = () => {
     <Section id="log">
       <Container>
         <SectionSlate
-          reel={4}
           kicker={t('log.kicker', 'Learning In Public')}
           title={t('log.title', 'Build Log.')}
           accent={t('log.accent', 'Shipped, not staged.')}
@@ -116,7 +114,11 @@ export const BuildLogSection = () => {
               key={entry.hash}
               variants={{
                 hidden: { opacity: 0, y: 16 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+                },
               }}
               className="group border-b border-subtle"
             >
