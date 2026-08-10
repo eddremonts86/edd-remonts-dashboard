@@ -328,3 +328,78 @@ looping, never decorative):**
 
 Aesthetic-direction verbs (`bolder`, `quieter`, `colorize`, `delight`) were
 **not** applied — excluded by skill §11.D.
+
+---
+
+## Open: the four new projects (added 2026-08-10, not yet on the page)
+
+Requested: add `ai-schadcn-chat`, `ai-os`, `BuilderHunt` and `GeoLocal` to the
+projects, and promote those four to "Proyectos insignia" (the `ProductStories`
+flagship section, replacing Schilling / Edd Remonts / Zunzun).
+
+### What is done
+
+Covers captured from the live sites and optimised
+(`scripts/media/capture-project-covers.mjs`, then `optimize-images.sh`):
+
+| project | cover | AVIF @800 |
+| --- | --- | --- |
+| BuilderHunt | `public/projects/builderhunt-cover.png` | 21 KB |
+| AI-OS | `public/projects/ai-os-cover.png` | 15 KB |
+| ai-schadcn-chat | `public/projects/ai-shadcn-chat-cover.png` | 14 KB |
+| GeoLocal | **none — site is broken, see below** | — |
+
+### Verified facts, for writing the copy
+
+**BuilderHunt** — <https://builderhunt.dev> · repo `eddremonts86/builderhunt`
+(TypeScript, 1 star, pushed 2026-08-10). Headline: "Find builders, not just
+repos." Aggregates 13 developer platforms (GitHub, Reddit, Hacker News, DEV.to,
+Lobsters, Stack Overflow, npm, Hugging Face, GitLab, Codeberg, Hashnode,
+SourceHut). Recency-weighted scoring with a half-life decay. Keyword alerts by
+email/RSS, private notes, CSV/JSON export, no outreach on the user's behalf.
+Public beta; free plan is 3 saved searches and 50 saved builders.
+
+**AI-OS** — <https://ai-os.eduardoinerarte.dk> · repo `eddremonts86/ai-os` ·
+npm `@edd_remonts/create-ai-os@0.1.1`, 13 downloads last week. Headline: "Your
+AI setup, booted like an operating system." Spec → Verifier → Environment
+(Karpathy) as real workflows. ~300 skills across 6 AI CLIs, 10 MCP servers as
+declarative YAML, 45 CLI tools, 43 global node packages, 28 python packages,
+3 verifier gates per task. `npx @edd_remonts/create-ai-os`; first install
+30–60 min. macOS / Linux / Windows.
+
+**ai-schadcn-chat** — <https://ai-chat.eduardoinerarte.dk> · repo
+`eddremonts86/ai-schadcn-chat` (TypeScript, pushed 2026-07-16) · npm
+`@edd_remonts/ai-schadcn-chat@0.2.0`, 10 downloads last week. Headline: "The AI
+chat panel shadcn/ui forgot to ship." React 18/19, works with Anthropic,
+OpenAI or any OpenAI-compatible gateway (OpenRouter, MiniMax, Together, Groq,
+vLLM, Ollama). MIT, 28 dependencies, 1.7 MB unpacked. Note: the unscoped
+`ai-schadcn-chat` package is deprecated in favour of the scoped one — the
+portfolio should link the scoped name.
+
+**GeoLocal** — <https://geo.eduardoinerarte.dk>. "A quiet, hand-curated
+marketplace for Copenhagen. Properties, vehicles, services and experiences —
+one map, one conversation." Four verticals on one map, hand-curated from
+Airbnb / Boliga / Homestra / Facebook plus local submissions.
+
+### Two things that need your call before this ships
+
+1. **GeoLocal is broken in the browser.** The URL answers HTTP 200 and the
+   server-rendered HTML is real, but the client render fails and the page
+   renders "Something went wrong! / Show Error". That is what the screenshot
+   captured, so no cover was committed. Linking it from the portfolio right now
+   sends founders to an error screen.
+
+2. **GeoLocal has nothing to show yet.** Its own page reports 0 listings across
+   all four categories and 0 neighbourhoods mapped, "Volume 01". The flagship
+   `ProductStories` format is CONTEXT / COMPLEXITY / DECISIONS / RESULTS with a
+   measured outcome per project — there is no measured outcome here, and
+   inventing one would be the exact opposite of what the rest of the page does.
+   Options: ship it as a "Más proyectos" row instead of a flagship, write the
+   flagship entry around the design thesis with no metrics, or hold it until
+   there are listings.
+
+Similarly, `ai-schadcn-chat` (10 weekly downloads) and `ai-os` (13) have real
+but small adoption numbers. They are honest as "shipped and installable"; they
+are not honest as traction claims. The current flagship entries lead with
+94% / 98 / sub-12ms — the new four cannot match that register truthfully, so
+the section's framing needs to change with its contents.
