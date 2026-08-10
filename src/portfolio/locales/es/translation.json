@@ -82,7 +82,7 @@
       "status": "ESTADO: MEDIDO Y REPORTADO",
       "engagement": "CONTRATACIÓN: TIEMPO COMPLETO"
     },
-    "tagline": "18 años construyendo interfaces donde la prueba es medible: 100% Core Web Vitals, interacciones por debajo de 12 ms y design systems adoptados por más de 20 ingenieros.",
+    "tagline": "Cubano en Copenhague. Ocho años programando en Cuba, once en Dinamarca, y en los dos sitios siempre haciendo lo mismo: que las cosas carguen rápido y no se rompan.",
     "taglineAccent": "Todo lo que sigue está vivo. Tócalo.",
     "enterLab": "Entrar al laboratorio"
   },
@@ -155,7 +155,7 @@
       "whyHire": "¿Por qué deberías",
       "name": "trabajar conmigo?"
     },
-    "description": "Mucha gente sabe escribir código de interfaz. Lo que aporto es la combinación: eficiencia aprendida bajo restricciones reales, escala corporativa europea, y la gobernanza que evita que veinte ingenieros se pisen entre sí.",
+    "description": "Mucha gente escribe código de interfaz. Lo mío es otra cosa: aprendí a hacer que las cosas funcionaran cuando no había con qué, y llevo once años aplicándolo a plataformas donde sí lo hay.",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software empresarial a medida antes de mudarme a Dinamarca y especializarme a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro estrechamente con producto, diseño e infraestructura, y construyo interfaces que siguen siendo mantenibles a medida que los productos crecen.",
     "features": {
       "0": {
@@ -175,34 +175,34 @@
       {
         "id": "experience",
         "index": "01",
-        "title": "18 años de madurez en ingeniería",
-        "subtitle": "Empecé full stack y acabé especializándome en arquitectura frontend.",
+        "title": "18 años, dos países",
+        "subtitle": "Empecé full stack en La Habana y acabé haciendo arquitectura frontend en Copenhague.",
         "bullets": [
-          "Inicié mi carrera en 2007, abarcando desde JavaScript vanilla hasta arquitecturas isomórficas masivas.",
-          "Mantengo una mentalidad de desarrollador activo, guío la gobernanza de arquitectura y promuevo capacidades centradas en producto.",
+          "Febrero de 2007, proyecto de la Biblioteca Nacional en la UCI. Desde ahí, lo que hiciera falta: JavaScript a mano, PHP, Drupal, MySQL.",
+          "Sigo escribiendo código. No dirijo desde una hoja de cálculo.",
           "Me importa cómo se ve y cómo aguanta. Son el mismo trabajo."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "ADN de eficiencia forjado bajo restricciones",
-        "subtitle": "Hábitos de rendimiento de una época en la que el ancho de banda no era opcional.",
+        "title": "Aprendí a optimizar con 56kbps",
+        "subtitle": "En Cuba el peso de una página no era una métrica. Era si cargaba o no.",
         "bullets": [
-          "Me formé bajo las severas limitaciones de la conexión dial-up en Cuba (56kbps), lo que me obligó a adoptar hábitos de eficiencia extrema.",
-          "Mentalidad rigurosa: contar cada byte, podar cargas útiles y microoptimizar la ejecución de las rutas de renderizado.",
-          "Trato el rendimiento web no como un pulido posterior al lanzamiento, sino como un motor crítico de conversión de negocio."
+          "Ocho años programando en Cuba: La Habana primero, Pinar del Río después. Biblioteca Nacional, ONEI, GEOCUBA.",
+          "Con ese ancho de banda aprendes a contar bytes antes que a maquetar. Después no se te quita.",
+          "Por eso el rendimiento nunca me pareció un pulido del final. Era la condición para que la cosa existiera."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "Escala SaaS corporativa europea",
-        "subtitle": "Autoridad probada escalando plataformas de software complejas en Copenhague.",
+        "title": "Mayo de 2015, Copenhague",
+        "subtitle": "Once años en Dinamarca, siete sitios.",
         "bullets": [
-          "Lideré particiones de monorepos, gestioné arquitecturas de microfrontends y escalé sistemas a nivel corporativo.",
-          "Reduje el peso de la carga útil inicial en un 94% y aceleré las velocidades de entrega en un 30% en múltiples unidades de ingeniería.",
-          "Establecí límites modulares estrictos para mantener los sistemas limpios, testeables y altamente componibles."
+          "El chiste es que pasé de pelearme con 56kbps a discutir milisegundos. Al final, siempre haciendo lo mismo.",
+          "Bajé el bundle inicial de una plataforma un 94% y aceleré la entrega un 30% en varios equipos a la vez.",
+          "Límites modulares estrictos para que veinte ingenieros puedan tocar el mismo sistema sin romperlo."
         ]
       },
       {
@@ -363,7 +363,7 @@
   "projects": {
     "title": "Cosas que he construido",
     "titleAccent": "De punta a punta.",
-    "subtitle": "Cuatro productos propios: el problema del que partió cada uno, la arquitectura que elegí y lo que descarté para llegar ahí.",
+    "subtitle": "Cuatro productos propios: el problema del que se partió cada uno, la arquitectura que elegí y lo que descarté para llegar ahí.",
     "view": "Ver Proyecto",
     "problem": "Problema",
     "results": "Resultados",
@@ -460,7 +460,7 @@
         "outcomeDetail": "Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM y Ollama, todos la misma integración para el componente."
       }
     },
-    "description": "Cuatro productos propios. De cada uno: el problema del que partió, la arquitectura que elegí y el camino que descarté para llegar ahí.",
+    "description": "Cuatro productos propios. De cada uno: el problema del que se partió, la arquitectura que elegí y el camino que descarté para llegar ahí.",
     "registry": {
       "kicker": "/ PROYECTOS ADICIONALES",
       "title": "Más proyectos",
@@ -577,6 +577,28 @@
         "whatChanged": "Puse el proveedor de modelos detrás de un adaptador, así el panel de chat solo conoce un flujo de tokens.",
         "whatItImproved": "Añadir Anthropic, OpenAI o cualquier gateway compatible es configuración, no otro fork que mantener."
       }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ TECNOLOGÍAS EN USO",
+        "desc": "Sistemas con los que he lanzado de verdad, catalogados en el registro."
+      },
+      "lighthouse": {
+        "label": "/ RENDIMIENTO LIGHTHOUSE",
+        "desc": "Puntuación media de Core Web Vitals en los sistemas que siguen en pie."
+      },
+      "users": {
+        "label": "/ USUARIOS FINALES",
+        "desc": "Gente usando las redes de consumo y los SaaS que hay detrás de estos números."
+      },
+      "uptime": {
+        "label": "/ DISPONIBILIDAD",
+        "desc": "Arquitectura serverless, sin incumplir un SLA hasta ahora."
+      },
+      "migrations": {
+        "label": "/ MIGRACIONES CORPORATIVAS",
+        "desc": "Bases de código heredadas desmontadas en algo donde un equipo pueda moverse."
+      }
     }
   },
   "authority": {
@@ -588,7 +610,7 @@
     "practiceLabel": "Manifestación práctica",
     "notesTitle": "Notas de ingeniería",
     "ctaLabel": "Siguiente paso",
-    "cta": "¿Buscas un Staff Engineer que asuma la responsabilidad global de los sistemas y no solo complete tareas? Hablemos.",
+    "cta": "Busco equipo a tiempo completo, en Copenhague o en remoto desde Europa. Si tienes una plataforma que pesa demasiado y un equipo que se pisa, hablemos.",
     "ctaButton": "Iniciar una conversación",
     "lessonsHeader": "Lecciones de 18 Años de Carrera",
     "howIWorkHeader": "Cómo Trabajo",

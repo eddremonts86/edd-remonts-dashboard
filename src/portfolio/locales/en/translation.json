@@ -82,7 +82,7 @@
       "status": "STATUS: MEASURED & REPORTED",
       "engagement": "ENGAGEMENT: FULL-TIME"
     },
-    "tagline": "18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.",
+    "tagline": "Cuban in Copenhagen. Eight years writing code in Cuba, eleven in Denmark, and the same job in both places: make it load fast and keep it from breaking.",
     "taglineAccent": "Everything below is live. Touch it.",
     "enterLab": "Enter the Lab"
   },
@@ -155,7 +155,7 @@
       "whyHire": "Why you should",
       "name": "hire me?"
     },
-    "description": "Plenty of people can write UI code. What I bring is the combination: efficiency learned under real constraints, European enterprise scale, and the governance that keeps twenty engineers from standing on each other's feet.",
+    "description": "Plenty of people write UI code. Mine is a different thing: I learned to make software work when there was nothing to work with, and I have spent eleven years applying that where there is.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
@@ -175,34 +175,34 @@
       {
         "id": "experience",
         "index": "01",
-        "title": "18 Years of Engineering Maturity",
-        "subtitle": "Started full stack, ended up specialising in frontend architecture.",
+        "title": "18 years, two countries",
+        "subtitle": "Started full stack in Havana, ended up doing frontend architecture in Copenhagen.",
         "bullets": [
-          "Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.",
-          "I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.",
+          "February 2007, the National Library project at UCI. From there, whatever the work needed: hand-written JavaScript, PHP, Drupal, MySQL.",
+          "I still write code. I do not lead from a spreadsheet.",
           "I care how it looks and how it holds up. Those are the same job."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "Constraint-Born Efficiency DNA",
-        "subtitle": "Performance habits from a time when bandwidth was not optional.",
+        "title": "I learned to optimise on 56kbps",
+        "subtitle": "In Cuba the weight of a page was not a metric. It was whether it loaded.",
         "bullets": [
-          "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
-          "A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.",
-          "I treat web performance not as a post-launch polish, but as a critical business-conversion driver."
+          "Eight years writing code in Cuba: Havana first, then Pinar del Río. The National Library, ONEI, GEOCUBA.",
+          "On that bandwidth you learn to count bytes before you learn to lay things out. It does not wear off.",
+          "So performance never looked like a final polish to me. It was the condition for the thing existing at all."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "European Enterprise-SaaS Scale",
-        "subtitle": "Proven authority scaling complex software platforms in Copenhagen.",
+        "title": "May 2015, Copenhagen",
+        "subtitle": "Eleven years in Denmark, seven places.",
         "bullets": [
-          "I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.",
-          "I slashed initial load payloads by 94% while raising delivery speeds by 30% across cross-functional engineering units.",
-          "I established strict modular boundaries to keep systems clean, testable, and highly composable."
+          "The joke is that I went from fighting 56kbps to arguing about milliseconds. It turned out to be the same job.",
+          "I cut one platform's initial bundle by 94% and sped delivery up 30% across several teams at once.",
+          "Strict module boundaries so twenty engineers can touch the same system without breaking it."
         ]
       },
       {
@@ -577,6 +577,28 @@
         "whatChanged": "Put the model provider behind an adapter, so the chat panel only ever knows about a stream of tokens.",
         "whatItImproved": "Adding Anthropic, OpenAI or any OpenAI-compatible gateway is configuration rather than another fork to maintain."
       }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ CURATED TECHNOLOGIES",
+        "desc": "Vetted systems I have actually shipped with, catalogued in the registry."
+      },
+      "lighthouse": {
+        "label": "/ LIGHTHOUSE PERFORMANCE",
+        "desc": "Average Core Web Vitals score across the systems still running."
+      },
+      "users": {
+        "label": "/ END USERS SERVED",
+        "desc": "People using the consumer networks and SaaS products behind these numbers."
+      },
+      "uptime": {
+        "label": "/ ENGINE UPTIME",
+        "desc": "Serverless architecture, no SLA breaches so far."
+      },
+      "migrations": {
+        "label": "/ ENTERPRISE MIGRATIONS",
+        "desc": "Legacy codebases pulled apart into something a team can move in."
+      }
     }
   },
   "authority": {
@@ -588,7 +610,7 @@
     "practiceLabel": "How it shows in practice",
     "notesTitle": "Engineering notes",
     "ctaLabel": "Next step",
-    "cta": "Looking for an engineer who owns systems, not just tickets? Let's talk.",
+    "cta": "I am looking for a full-time team, in Copenhagen or remote within Europe. If you have a platform that weighs too much and a team standing on each other's feet, let's talk.",
     "ctaButton": "Start a conversation",
     "lessonsHeader": "Lessons From 18 Years",
     "howIWorkHeader": "How I Work",

@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
 import { useAnimatedCounter } from '@/portfolio/hooks/useAnimatedCounter'
 import { fadeInView } from '@/portfolio/lib/motion'
@@ -31,6 +32,7 @@ const AnimatedNumber = ({
 }
 
 export const StatsCounter = () => {
+  const { t } = useTranslation()
   const { stats, content, skills } = usePortfolioData()
 
   const technologiesCount = skills.length > 0 ? skills.length : stats.technologies
@@ -49,37 +51,52 @@ export const StatsCounter = () => {
       id: 'technologies',
       value: technologiesCount,
       suffix: '',
-      label: '/ CURATED TECHNOLOGIES',
-      description: 'Vetted isomorphic systems cataloged in full registry.',
+      label: t('stats.counter.technologies.label', '/ CURATED TECHNOLOGIES'),
+      description: t(
+        'stats.counter.technologies.desc',
+        'Vetted isomorphic systems cataloged in full registry.',
+      ),
     },
     {
       id: 'lighthouse',
       value: stats.lighthouse,
       suffix: '%',
-      label: '/ LIGHTHOUSE PERFORMANCE',
-      description: 'Average Core Web Vitals score across active systems.',
+      label: t('stats.counter.lighthouse.label', '/ LIGHTHOUSE PERFORMANCE'),
+      description: t(
+        'stats.counter.lighthouse.desc',
+        'Average Core Web Vitals score across active systems.',
+      ),
     },
     {
       id: 'users',
       value: usersValue,
       suffix: 'k+',
-      label: '/ END USERS SERVED',
-      description: 'High-traffic consumer networks and SaaS active users.',
+      label: t('stats.counter.users.label', '/ END USERS SERVED'),
+      description: t(
+        'stats.counter.users.desc',
+        'High-traffic consumer networks and SaaS active users.',
+      ),
     },
     {
       id: 'uptime',
       value: uptime > 0 ? uptime : 99.95,
       suffix: '%',
-      label: '/ ENGINE UPTIME',
+      label: t('stats.counter.uptime.label', '/ ENGINE UPTIME'),
       decimals: uptimeDecimals || 2,
-      description: 'Robust serverless architecture with zero SLA breaches.',
+      description: t(
+        'stats.counter.uptime.desc',
+        'Robust serverless architecture with zero SLA breaches.',
+      ),
     },
     {
       id: 'migrations',
       value: migrationsValue,
       suffix: '+',
-      label: '/ ENTERPRISE MIGRATIONS',
-      description: 'Legacy codebases decoupled into agile modular structures.',
+      label: t('stats.counter.migrations.label', '/ ENTERPRISE MIGRATIONS'),
+      description: t(
+        'stats.counter.migrations.desc',
+        'Legacy codebases decoupled into agile modular structures.',
+      ),
     },
   ]
 

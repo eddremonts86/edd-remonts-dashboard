@@ -82,7 +82,7 @@
       "status": "STATUS: MÅLT & RAPPORTERET",
       "engagement": "ANSÆTTELSE: FULD TID"
     },
-    "tagline": "18 år med interfaces, hvor beviset kan måles — 100% Core Web Vitals, interaktioner under 12 ms og designsystemer brugt af 20+ ingeniører.",
+    "tagline": "Cubaner i København. Otte år som udvikler i Cuba, elleve i Danmark, og det samme arbejde begge steder: få tingene til at loade hurtigt og ikke gå i stykker.",
     "taglineAccent": "Alt herunder er levende. Rør ved det.",
     "enterLab": "Ind i laboratoriet"
   },
@@ -155,7 +155,7 @@
       "whyHire": "Hvorfor du bør",
       "name": "arbejde med mig?"
     },
-    "description": "Mange kan skrive UI-kode. Det jeg kommer med, er kombinationen: effektivitet lært under reelle begrænsninger, europæisk enterprise-skala, og den governance der holder tyve ingeniører fra at træde hinanden over tæerne.",
+    "description": "Mange skriver UI-kode. Mit er noget andet: jeg lærte at få tingene til at virke, da der ikke var noget at arbejde med, og jeg har brugt elleve år på at bruge det, hvor der er.",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet forretningssoftware, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend-teams, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {
@@ -175,34 +175,34 @@
       {
         "id": "experience",
         "index": "01",
-        "title": "18 års modenhed i engineering",
-        "subtitle": "Startede full stack og endte med at specialisere mig i frontend-arkitektur.",
+        "title": "18 år, to lande",
+        "subtitle": "Startede full stack i Havana og endte med frontend-arkitektur i København.",
         "bullets": [
-          "Startede i 2007, spændende fra vanilla JavaScript til massive moderne isomorfe arkitekturer.",
-          "Jeg bevarer en hands-on indstilling, leder arkitektonisk governance og understøtter produktfokuserede mål.",
+          "Februar 2007, Nationalbiblioteksprojektet på UCI. Derfra hvad der nu skulle til: håndskrevet JavaScript, PHP, Drupal, MySQL.",
+          "Jeg skriver stadig kode. Jeg leder ikke fra et regneark.",
           "Jeg går op i, hvordan det ser ud, og hvordan det holder. Det er det samme arbejde."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "Effektivitets-DNA skabt af begrænsninger",
-        "subtitle": "Performancevaner fra en tid, hvor båndbredde ikke var valgfri.",
+        "title": "Jeg lærte at optimere på 56kbps",
+        "subtitle": "I Cuba var en sides vægt ikke en måling. Det var, om den loadede.",
         "bullets": [
-          "Jeg lærte faget under Cubas hårde dial-up-begrænsninger (56kbps), hvilket tvang mig til ekstrem ressourceeffektivitet.",
-          "En streng hygiejne-mentalitet: tæller hver eneste byte, beskærer payloads og mikrooptimerer renderingstrin.",
-          "Jeg behandler ikke ydeevne som en polering efter lancering, men som en afgørende faktor for forretningskonvertering."
+          "Otte år som udvikler i Cuba: først Havana, så Pinar del Río. Nationalbiblioteket, ONEI, GEOCUBA.",
+          "Med den båndbredde lærer man at tælle bytes, før man lærer at sætte op. Det går ikke væk igen.",
+          "Derfor har performance aldrig lignet en sidste finpudsning for mig. Det var betingelsen for, at tingen overhovedet fandtes."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "Europæisk Enterprise SaaS-skala",
-        "subtitle": "Dokumenteret erfaring med at skalere komplekse softwareplatforme i København.",
+        "title": "Maj 2015, København",
+        "subtitle": "Elleve år i Danmark, syv steder.",
         "bullets": [
-          "Jeg har ledet opdelingen af monorepos, styret micro-frontend arkitekturer og skaleret systemer på enterprise-niveau.",
-          "Jeg reducerede den indledende payload med 94% og øgede samtidig leveringshastigheden med 30% på tværs af teams.",
-          "Jeg etablerede skarpe modulgrænser for at holde systemerne rene, testbare og højt sammensættelige."
+          "Det sjove er, at jeg gik fra at slås med 56kbps til at diskutere millisekunder. Det viste sig at være det samme arbejde.",
+          "Jeg skar en platforms initiale bundle med 94% og gjorde leveringen 30% hurtigere på tværs af flere teams.",
+          "Stramme modulgrænser, så tyve ingeniører kan arbejde i det samme system uden at ødelægge det."
         ]
       },
       {
@@ -577,6 +577,28 @@
         "whatChanged": "Jeg lagde modeludbyderen bag en adapter, så chatpanelet kun kender en strøm af tokens.",
         "whatItImproved": "At tilføje Anthropic, OpenAI eller en hvilken som helst kompatibel gateway er konfiguration, ikke endnu et fork at vedligeholde."
       }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ TEKNOLOGIER I BRUG",
+        "desc": "Systemer jeg faktisk har sendt i produktion med, samlet i registret."
+      },
+      "lighthouse": {
+        "label": "/ LIGHTHOUSE-PERFORMANCE",
+        "desc": "Gennemsnitlig Core Web Vitals-score på de systemer der stadig kører."
+      },
+      "users": {
+        "label": "/ SLUTBRUGERE",
+        "desc": "Folk der bruger de forbrugernetværk og SaaS-produkter, tallene dækker over."
+      },
+      "uptime": {
+        "label": "/ OPPETID",
+        "desc": "Serverless-arkitektur, ingen brudte SLA'er indtil videre."
+      },
+      "migrations": {
+        "label": "/ ENTERPRISE-MIGRERINGER",
+        "desc": "Legacy-kodebaser skilt ad til noget, et team kan bevæge sig i."
+      }
     }
   },
   "authority": {
@@ -588,7 +610,7 @@
     "practiceLabel": "Praktisk udmøntning",
     "notesTitle": "Tekniske noter",
     "ctaLabel": "Næste skridt",
-    "cta": "Søger du en Staff Engineer, der tager det fulde ansvar for systemerne og ikke bare løser opgaver? Lad os snakke.",
+    "cta": "Jeg søger et fuldtidsteam, i København eller remote i Europa. Har du en platform, der vejer for meget, og et team der træder hinanden over tæerne, så lad os snakke.",
     "ctaButton": "Start en samtale",
     "lessonsHeader": "Læring fra 18 Års Karriere",
     "howIWorkHeader": "Hvordan Jeg Arbejder",

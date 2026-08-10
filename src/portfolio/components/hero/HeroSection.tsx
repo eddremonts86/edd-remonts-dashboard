@@ -138,7 +138,7 @@ export const HeroSection = () => {
               <p className="text-[16px] font-light leading-relaxed text-foreground/75 md:text-lg">
                 {t(
                   'hero.tagline',
-                  '18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.',
+                  'Cuban in Copenhagen. Eight years writing code in Cuba, eleven in Denmark, and the same job in both places: make it load fast and keep it from breaking.',
                 )}{' '}
                 <span className="font-serif italic text-foreground">
                   {t('hero.taglineAccent', 'Everything below is live. Touch it.')}

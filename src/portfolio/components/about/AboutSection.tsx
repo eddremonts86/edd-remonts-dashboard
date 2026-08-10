@@ -1,6 +1,7 @@
 import { m } from 'framer-motion'
 import { Terminal, Shield, Compass, Sparkles, Award } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { CompanyChip } from '@/portfolio/components/ui/badges/CompanyChip'
 import { fadeInView } from '@/portfolio/lib/motion'
 import { Section, Container } from '../ui/layout/Section'
 
@@ -11,6 +12,8 @@ interface AdvantageItem {
   title: string
   subtitle: string
   bullets: string[]
+  /** Rendered as chips under the subtitle. Names carry more weight than prose. */
+  companies?: string[]
 }
 
 export const AboutSection = () => {
@@ -72,8 +75,17 @@ export const AboutSection = () => {
       title: t('about.advantages.2.title', 'European Enterprise-SaaS Scale'),
       subtitle: t(
         'about.advantages.2.subtitle',
-        'Proven authority scaling complex software platforms in Copenhagen.',
+        'Eleven years in Denmark, seven places.',
       ),
+      companies: [
+        'Plan Denmark',
+        'Rebel Penguins',
+        'GIG Media',
+        'Wunderman',
+        'Novo Nordisk',
+        'Resights',
+        'Schilling',
+      ],
       bullets: [
         t(
           'about.advantages.2.bullets.0',
@@ -159,7 +171,7 @@ export const AboutSection = () => {
           <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-foreground/78 md:text-[17px] font-light font-display">
             {t(
               'about.description',
-              'Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.',
+              'Plenty of people write UI code. Mine is a different thing: I learned to make software work when there was nothing to work with, and I have spent eleven years applying that where there is.',
             )}
           </p>
         </div>
@@ -201,6 +213,13 @@ export const AboutSection = () => {
                     <p className="text-[15px] text-foreground/72 leading-relaxed font-light">
                       {adv.subtitle}
                     </p>
+                    {adv.companies && (
+                      <div className="flex flex-wrap gap-1.5 pt-3">
+                        {adv.companies.map((name) => (
+                          <CompanyChip key={name} name={name} />
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Bullet Proof Points */}
