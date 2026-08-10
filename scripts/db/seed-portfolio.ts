@@ -446,6 +446,66 @@ async function main() {
         },
       ],
     },
+    // Employer products, not my own: the work is mine, the company is not.
+    // Kept out of the flagship four for that reason.
+    {
+      id: 'resights',
+      title: 'Resights',
+      coverImageUrl: '/projects/resights-cover.png',
+      link: 'https://resights.dk',
+      category: 'Full Stack',
+      featured: false,
+      sortOrder: 1,
+      scaleLabel: '25+ public registries',
+      impactLabel: '4,000+ daily users',
+      architectureLabel: 'Data aggregation platform',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'Danish property and construction data pulled from 25+ public registries into one platform. 1,400+ companies, 4,000+ daily users.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Datos inmobiliarios y de construcción de Dinamarca, sacados de más de 25 registros públicos y reunidos en una sola plataforma. Más de 1.400 empresas y 4.000 usuarios diarios.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Dansk ejendoms- og byggedata hentet fra 25+ offentlige registre og samlet ét sted. 1.400+ virksomheder, 4.000+ daglige brugere.',
+        },
+      ],
+    },
+    {
+      id: 'schilling-publishing',
+      title: 'Schilling Publishing',
+      coverImageUrl: '/projects/schilling-publishing-cover.png',
+      link: 'https://schillingpublishing.com',
+      category: 'Full Stack',
+      featured: false,
+      sortOrder: 2,
+      scaleLabel: 'Nordic & European publishers',
+      impactLabel: 'Royalty settlement automation',
+      architectureLabel: 'Micro-frontend console',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'Publishing software for royalties, rights and editorial workflow. The 6.2MB console I split into independent sub-apps.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Software editorial para regalías, derechos y flujo de redacción. Es la consola de 6,2MB que partí en subaplicaciones independientes.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Forlagssoftware til royalties, rettigheder og redaktionelt workflow. Det er den 6,2MB-konsol, jeg delte op i selvstændige subapps.',
+        },
+      ],
+    },
     {
       id: 'zunzun',
       title: 'Zunzun.io',
