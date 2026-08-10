@@ -62,25 +62,25 @@ const THEMES = {
 }
 
 const LABELS = {
-  en: { aboutEyebrow: 'Who is writing', aboutTitle: 'About', aboutAccent: 'me.', expEyebrow: 'Eighteen years, two countries', expTitle: 'Professional', expAccent: 'experience.', skillsEyebrow: 'Technical expertise', skillsTitle: 'Architectural', skillsAccent: 'capabilities.', langEyebrow: 'Languages', langTitle: 'Languages', present: 'Present', langs: [['Spanish', 'Native'], ['English', 'Fluent'], ['Danish', 'B1']] },
-  es: { aboutEyebrow: 'Quién escribe', aboutTitle: 'Sobre', aboutAccent: 'mí.', expEyebrow: 'Dieciocho años, dos países', expTitle: 'Experiencia', expAccent: 'profesional.', skillsEyebrow: 'Experiencia técnica', skillsTitle: 'Capacidades', skillsAccent: 'arquitectónicas.', langEyebrow: 'Idiomas', langTitle: 'Idiomas', present: 'Actualidad', langs: [['Español', 'Nativo'], ['Inglés', 'Fluido'], ['Danés', 'B1']] },
-  dk: { aboutEyebrow: 'Hvem skriver', aboutTitle: 'Om', aboutAccent: 'mig.', expEyebrow: 'Atten år, to lande', expTitle: 'Erhvervs', expAccent: 'erfaring.', skillsEyebrow: 'Teknisk erfaring', skillsTitle: 'Arkitektoniske', skillsAccent: 'kompetencer.', langEyebrow: 'Sprog', langTitle: 'Sprog', present: 'Nu', langs: [['Spansk', 'Modersmål'], ['Engelsk', 'Flydende'], ['Dansk', 'B1']] },
+  en: { projEyebrow: 'Built and shipped by me', projTitle: 'Selected', projAccent: 'projects.', aboutEyebrow: 'Who is writing', aboutTitle: 'About', aboutAccent: 'me.', expEyebrow: 'Eighteen years, two countries', expTitle: 'Professional', expAccent: 'experience.', skillsEyebrow: 'Technical expertise', skillsTitle: 'Architectural', skillsAccent: 'capabilities.', langEyebrow: 'Languages', langTitle: 'Languages', present: 'Present', langs: [['Spanish', 'Native'], ['English', 'Fluent'], ['Danish', 'B1']] },
+  es: { projEyebrow: 'Construidos y lanzados por mí', projTitle: 'Proyectos', projAccent: 'propios.', aboutEyebrow: 'Quién escribe', aboutTitle: 'Sobre', aboutAccent: 'mí.', expEyebrow: 'Dieciocho años, dos países', expTitle: 'Experiencia', expAccent: 'profesional.', skillsEyebrow: 'Experiencia técnica', skillsTitle: 'Capacidades', skillsAccent: 'arquitectónicas.', langEyebrow: 'Idiomas', langTitle: 'Idiomas', present: 'Actualidad', langs: [['Español', 'Nativo'], ['Inglés', 'Fluido'], ['Danés', 'B1']] },
+  dk: { projEyebrow: 'Bygget og sendt af mig', projTitle: 'Udvalgte', projAccent: 'projekter.', aboutEyebrow: 'Hvem skriver', aboutTitle: 'Om', aboutAccent: 'mig.', expEyebrow: 'Atten år, to lande', expTitle: 'Erhvervs', expAccent: 'erfaring.', skillsEyebrow: 'Teknisk erfaring', skillsTitle: 'Arkitektoniske', skillsAccent: 'kompetencer.', langEyebrow: 'Sprog', langTitle: 'Sprog', present: 'Nu', langs: [['Spansk', 'Modersmål'], ['Engelsk', 'Flydende'], ['Dansk', 'B1']] },
 }
 
 function styles(t) {
   return StyleSheet.create({
-    page: { backgroundColor: t.bg, color: t.fg, paddingTop: 34, paddingBottom: 40, paddingHorizontal: 44, fontFamily: 'Epilogue', fontSize: 8.5, lineHeight: 1.55 },
-    header: { flexDirection: 'row', alignItems: 'center', gap: 18, marginBottom: 16 },
+    page: { backgroundColor: t.bg, color: t.fg, paddingTop: 30, paddingBottom: 30, paddingHorizontal: 44, fontFamily: 'Epilogue', fontSize: 8.4, lineHeight: 1.45 },
+    header: { flexDirection: 'row', alignItems: 'center', gap: 18 },
     photo: { width: 74, height: 74, borderRadius: 37, objectFit: 'cover' },
     name: { fontFamily: 'Cinzel', fontWeight: 700, fontSize: 21, letterSpacing: 0.4, lineHeight: 1.25 },
     dot: { color: t.accent },
     role: { fontFamily: 'Mono', fontSize: 7.6, letterSpacing: 1.5, color: t.accent, marginTop: 5 },
     contactGrid: { flexDirection: 'row', flexWrap: 'wrap', marginTop: 9 },
-    contactCell: { width: '50%', flexDirection: 'row', gap: 5, marginBottom: 4, alignItems: 'center' },
+    contactCell: { width: '50%', flexDirection: 'row', gap: 5, marginBottom: 2.5, alignItems: 'center' },
     contactKey: { fontFamily: 'Mono', fontSize: 6.5, letterSpacing: 0.8, color: t.faint, width: 34 },
     contactVal: { fontFamily: 'Mono', fontSize: 7.5, color: t.accent, textDecoration: 'none' },
     contactPlain: { fontFamily: 'Mono', fontSize: 7.5, color: t.muted },
-    rule: { borderBottomWidth: 0.7, borderBottomColor: t.rule, marginVertical: 13 },
+    rule: { borderBottomWidth: 0.7, borderBottomColor: t.rule, marginTop: 10, marginBottom: 12 },
     // The site never uses a bare heading: every section opens with a mono
     // "/ EYEBROW", then a display line whose second half is serif italic in the
     // accent. Same two-part device here.
@@ -89,30 +89,34 @@ function styles(t) {
     sectionTitle: { fontFamily: 'Epilogue', fontSize: 14, color: t.fg },
     sectionAccent: { fontFamily: 'Cinzel', fontSize: 14, color: t.accent },
     // Hero metric panel, the page's signature block.
-    metrics: { flexDirection: 'row', flexWrap: 'wrap', borderTopWidth: 0.7, borderTopColor: t.rule, borderBottomWidth: 0.7, borderBottomColor: t.rule, paddingVertical: 10, marginBottom: 14 },
+    metrics: { flexDirection: 'row', flexWrap: 'wrap', borderTopWidth: 0.7, borderTopColor: t.rule, borderBottomWidth: 0.7, borderBottomColor: t.rule, paddingVertical: 9, marginBottom: 13 },
     metric: { width: '25%', paddingRight: 10 },
     metricValue: { fontFamily: 'Cinzel', fontSize: 17, color: t.fg, lineHeight: 1.2 },
     metricLabel: { fontFamily: 'Mono', fontSize: 6, letterSpacing: 1, color: t.accent, marginTop: 2 },
-    metricDesc: { fontSize: 6.6, color: t.faint, marginTop: 2, lineHeight: 1.45 },
+    metricDesc: { fontSize: 6.4, color: t.faint, marginTop: 2, lineHeight: 1.4 },
     // Index markers, as on the site's cards.
-    jobIndex: { fontFamily: 'Cinzel', fontSize: 9, color: t.faint, marginBottom: 2 },
+    jobIndex: { fontFamily: 'Cinzel', fontSize: 8.5, color: t.faint, marginBottom: 1 },
     // Company chips, matching CompanyChip on the page.
     companyChip: { borderWidth: 0.6, borderColor: t.rule, borderRadius: 20, paddingVertical: 1.5, paddingHorizontal: 5, fontFamily: 'Mono', fontSize: 6.4, letterSpacing: 0.8, color: t.accent },
-    prose: { textAlign: 'justify', color: t.muted, marginBottom: 6 },
-    job: { flexDirection: 'row', gap: 14, marginBottom: 11 },
+    prose: { textAlign: 'justify', color: t.muted, marginBottom: 5 },
+    job: { flexDirection: 'row', gap: 14, marginBottom: 6 },
     jobDates: { width: 88, textAlign: 'right', fontFamily: 'Mono', fontSize: 6.8, color: t.faint, lineHeight: 1.5 },
     jobBody: { flex: 1 },
-    jobRole: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 9.6, marginBottom: 1.5 },
-    jobMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4, flexWrap: 'wrap' },
+    jobRole: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 9.3, marginBottom: 1 },
+    jobMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 3, flexWrap: 'wrap' },
     jobCompany: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 8.3, color: t.accent },
     jobWhere: { fontSize: 8.3, color: t.muted },
     jobDesc: { textAlign: 'justify', color: t.muted },
-    chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 },
-    chip: { backgroundColor: t.chip, borderRadius: 20, paddingVertical: 3, paddingHorizontal: 6, fontFamily: 'Mono', fontSize: 6.6, letterSpacing: 0.7, color: t.muted },
+    chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 3.5 },
+    chip: { backgroundColor: t.chip, borderRadius: 20, paddingVertical: 2.5, paddingHorizontal: 5.5, fontFamily: 'Mono', fontSize: 6.6, letterSpacing: 0.7, color: t.muted },
+    project: { flexDirection: 'row', gap: 14, marginBottom: 5 },
+    projectName: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 9 },
+    projectUrl: { fontFamily: 'Mono', fontSize: 6.6, color: t.accent, textDecoration: 'none' },
+    projectWhat: { fontSize: 8.2, color: t.muted, marginTop: 1 },
     langRow: { flexDirection: 'row', marginBottom: 2 },
     langName: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 8.5 },
     langLevel: { fontSize: 8.5, color: t.muted },
-    footer: { position: 'absolute', bottom: 20, left: 44, right: 44, flexDirection: 'row', justifyContent: 'space-between', fontFamily: 'Mono', fontSize: 6.2, color: t.faint },
+    footer: { position: 'absolute', bottom: 14, left: 44, right: 44, flexDirection: 'row', justifyContent: 'space-between', fontFamily: 'Mono', fontSize: 6.2, color: t.faint },
   })
 }
 
@@ -206,7 +210,7 @@ function buildDoc({ lang, theme, cv, loc }) {
       h(Text, { style: s.prose }, loc.about.description),
       h(Text, { style: s.prose }, loc.about.advantages?.[1]?.bullets?.[2] ?? ''),
 
-      h(View, { style: { height: 6 } }),
+      h(View, { style: { height: 9 } }),
       Section(s, L.expEyebrow, L.expTitle, L.expAccent),
       ...cv.experiences.map((e, idx) => {
         // items is keyed by the experience id (1..12), not by array position.
@@ -233,14 +237,46 @@ function buildDoc({ lang, theme, cv, loc }) {
         )
       }),
 
-      h(View, { style: { height: 6 } }),
-      Section(s, L.skillsEyebrow, L.skillsTitle, L.skillsAccent),
-      h(View, { style: s.chips }, ...cv.skills.map((k) => h(Text, { style: s.chip, key: k }, k.toUpperCase()))),
+      h(View, { style: { height: 9 } }),
+      Section(s, L.projEyebrow, L.projTitle, L.projAccent),
+      ...PROJECTS.map((pr) => {
+        const st = loc.projects?.stories?.[pr.id] ?? {}
+        return h(
+          View,
+          { style: s.project, key: pr.id, wrap: false },
+          h(View, { style: { width: 88, alignItems: 'flex-end' } }, h(Text, { style: s.jobIndex }, pr.mark)),
+          h(
+            View,
+            { style: s.jobBody },
+            h(
+              View,
+              { style: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' } },
+              h(Text, { style: s.projectName }, st.title ?? pr.id),
+              h(Link, { style: s.projectUrl, src: pr.url }, pr.url.replace(/^https?:\/\//, '')),
+            ),
+            h(Text, { style: s.projectWhat }, st.outcomeDetail ?? st.outcomeHeadline ?? ''),
+          ),
+        )
+      }),
 
-      h(View, { style: { height: 12 } }),
-      Section(s, L.langEyebrow, L.langTitle, null),
-      ...L.langs.map(([n, lvl]) =>
-        h(View, { style: s.langRow, key: n }, h(Text, { style: s.langName }, n), h(Text, { style: s.langLevel }, ` – ${lvl}`)),
+      h(View, { style: { height: 9 } }),
+      h(
+        View,
+        { style: { flexDirection: 'row', gap: 22 } },
+        h(
+          View,
+          { style: { flex: 1 } },
+          Section(s, L.skillsEyebrow, L.skillsTitle, L.skillsAccent),
+          h(View, { style: s.chips }, ...cv.skills.map((k) => h(Text, { style: s.chip, key: k }, k.toUpperCase()))),
+        ),
+        h(
+          View,
+          { style: { width: 108 } },
+          Section(s, L.langEyebrow, L.langTitle, null),
+          ...L.langs.map(([n, lvl]) =>
+            h(View, { style: s.langRow, key: n }, h(Text, { style: s.langName }, n), h(Text, { style: s.langLevel }, ` – ${lvl}`)),
+          ),
+        ),
       ),
 
       h(
@@ -252,6 +288,15 @@ function buildDoc({ lang, theme, cv, loc }) {
     ),
   )
 }
+
+/** My own products. Titles and one-liners come from the locale files, so the
+ *  CV says exactly what the site says. */
+const PROJECTS = [
+  { id: 'builderhunt', url: 'https://builderhunt.dev', mark: '/01' },
+  { id: 'geolocal', url: 'https://geo.eduardoinerarte.dk', mark: '/02' },
+  { id: 'ai-os', url: 'https://ai-os.eduardoinerarte.dk', mark: '/03' },
+  { id: 'ai-schadcn-chat', url: 'https://ai-chat.eduardoinerarte.dk', mark: '/04' },
+]
 
 const cv = read('src/portfolio/data/cv-source.json')
 await mkdir('public/cv', { recursive: true })
