@@ -381,25 +381,47 @@ marketplace for Copenhagen. Properties, vehicles, services and experiences —
 one map, one conversation." Four verticals on one map, hand-curated from
 Airbnb / Boliga / Homestra / Facebook plus local submissions.
 
-### Two things that need your call before this ships
+### Correction (verified in a real browser)
 
-1. **GeoLocal is broken in the browser.** The URL answers HTTP 200 and the
-   server-rendered HTML is real, but the client render fails and the page
-   renders "Something went wrong! / Show Error". That is what the screenshot
-   captured, so no cover was committed. Linking it from the portfolio right now
-   sends founders to an error screen.
+An earlier version of this section claimed GeoLocal was broken and had zero
+listings. Both claims were wrong and are retracted:
 
-2. **GeoLocal has nothing to show yet.** Its own page reports 0 listings across
-   all four categories and 0 neighbourhoods mapped, "Volume 01". The flagship
-   `ProductStories` format is CONTEXT / COMPLEXITY / DECISIONS / RESULTS with a
-   measured outcome per project — there is no measured outcome here, and
-   inventing one would be the exact opposite of what the rest of the page does.
-   Options: ship it as a "Más proyectos" row instead of a flagship, write the
-   flagship entry around the design thesis with no metrics, or hold it until
-   there are listings.
+- **It is not broken.** It fails only under the headless Chrome used for the
+  first capture. In a normal browser it renders fully.
+- **It is not empty.** It reports **25.000 listings · 4 verticals · 8
+  neighbourhoods**, a live Mapbox map of Copenhagen, per-neighbourhood counts
+  (Østerbro 2.537, Valby 2.529, Frederiksberg 2.524, Indre By 2.509, Nørrebro
+  2.504, Christianshavn 2.502, Nordhavn 2.480, Vanløse 2.480), four verticals
+  (properties 5.000, vehicles 10.000, services 5.000, experiences 5.000) and a
+  featured-listings carousel with real prices in DKK.
 
-Similarly, `ai-schadcn-chat` (10 weekly downloads) and `ai-os` (13) have real
-but small adoption numbers. They are honest as "shipped and installable"; they
-are not honest as traction claims. The current flagship entries lead with
-94% / 98 / sub-12ms — the new four cannot match that register truthfully, so
-the section's framing needs to change with its contents.
+The "0 listings / 0 neighbourhoods" figure came from WebFetch reading the
+server-rendered HTML before the counters hydrated. Reading SSR output is not a
+substitute for loading the page.
+
+Covers for all four projects are now committed.
+
+### Console findings on the live sites (minor, not blockers)
+
+- **GeoLocal** — `Minified React error #418` (hydration mismatch) on load, plus
+  a Mapbox warning: `Image "wood-pattern" could not be loaded`.
+- **ai-schadcn-chat** — `Manifest: Line: 1, column: 1, Syntax error` — the web
+  manifest is malformed. Two Chrome built-in-AI warnings are expected: the demo
+  runs on Gemini Nano when available and falls back to a provider key.
+
+### The one thing that still needs your call
+
+The flagship `ProductStories` format is CONTEXT / COMPLEXITY / DECISIONS /
+**RESULTS**, and the current three entries open with 94% / 98 / sub-12ms —
+outcomes measured on client platforms at scale. The new four are your own
+products, and their honest numbers are of a different kind: 25.000 listings and
+8 neighbourhoods (GeoLocal), 13 sources and recency-weighted scoring
+(BuilderHunt), ~300 skills across 6 CLIs (AI-OS), 8 providers behind one API
+(ai-schadcn-chat). Adoption is small and recent — 10 and 13 weekly npm
+downloads for the two packages.
+
+Those are strong *product* facts and weak *traction* facts. So the section's
+framing has to move from "measured impact on someone else's platform" to
+"things I designed, built and shipped end to end" — which is arguably the
+better story for a founder anyway. Confirm the framing and I will write the
+four entries in en/es/dk.
