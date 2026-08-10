@@ -24,7 +24,15 @@ interface StoryProject {
   businessImpact: string
   tradeoffsChosen: string
   tradeoffsRejected: string
-  architectureDiagramType: 'microfrontend' | 'statesync' | 'composition'
+  /** Headline number for this project, and the one line that explains it. */
+  outcomeHeadline: string
+  outcomeDetail: string
+  /**
+   * Optional. The three diagrams are hand-drawn depictions of three specific
+   * architectures; a project without one simply hides the architecture tab
+   * rather than borrowing a picture of something it is not.
+   */
+  architectureDiagramType?: 'microfrontend' | 'statesync' | 'composition'
 }
 
 const TradeoffLedger = ({ chosen, rejected }: { chosen: string; rejected: string }) => {
@@ -75,116 +83,180 @@ export const ProductStories = () => {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
+  // Four products designed, built and shipped end to end. The framing here is
+  // deliberately not the one the client-platform case studies used: those led
+  // with a measured delta on someone else's system (94% bundle cut, 98
+  // Lighthouse). These are my own, and their honest numbers are product facts —
+  // what they index, what they unify, what they support — not traction claims.
   const topStories: StoryProject[] = [
     {
-      id: 'schilling',
-      title: t('projects.stories.schilling.title', 'Schilling SaaS Enterprise Platform'),
-      category: t('projects.stories.schilling.category', 'Enterprise Platform Architecture'),
-      scaleLabel: t('projects.stories.schilling.scaleLabel', '100k+ Lines of Code'),
-      impactLabel: t('projects.stories.schilling.impactLabel', '94% Bundle Cut'),
-      architectureLabel: t('projects.stories.schilling.architectureLabel', 'Micro-Frontend Core'),
-      link: 'https://schilling.dk/',
-      urlPlaceholder: 'console.schilling.dk/workspace',
-      coverPath: '/projects/schilling-cover.png',
+      id: 'builderhunt',
+      title: t('projects.stories.builderhunt.title', 'BuilderHunt'),
+      category: t('projects.stories.builderhunt.category', 'Multi-Source Discovery Engine'),
+      scaleLabel: t('projects.stories.builderhunt.scaleLabel', '13 Indexed Platforms'),
+      impactLabel: t('projects.stories.builderhunt.impactLabel', 'Recency-Weighted Scoring'),
+      architectureLabel: t('projects.stories.builderhunt.architectureLabel', 'Dedup & Decay Pipeline'),
+      link: 'https://builderhunt.dev',
+      urlPlaceholder: 'builderhunt.dev',
+      coverPath: '/projects/builderhunt-cover.png',
       context: t(
-        'projects.stories.schilling.context',
-        'Enterprise publishing SaaS serving large media organizations across Europe with high-data-density requirements.',
+        'projects.stories.builderhunt.context',
+        'Hiring and open-source sourcing both run on GitHub stars, which reward what was popular years ago rather than who is shipping this month.',
       ),
       challenge: t(
-        'projects.stories.schilling.challenge',
-        'Monolithic bundle sizes exceeded 6MB, which triggered LCP delays over 7.5s, raised bounce rates, and caused high-load abandonment. Complete core platform rewrites were strictly forbidden due to legacy billing and data-structure regression risks.',
+        'projects.stories.builderhunt.challenge',
+        'Thirteen platforms expose activity in thirteen shapes, the same person appears under different handles on each, and every signal ages at a different rate. Ranking them together means reconciling identity and freshness before a single result can be trusted.',
       ),
       decision: t(
-        'projects.stories.schilling.decision',
-        'Rather than freeze features for a multi-year rewrite, I designed Vite-based monorepo partitions, enabled route isolation, and established strict semantic contracts between modules, allowing product teams to build and ship independently.',
+        'projects.stories.builderhunt.decision',
+        'I modelled recency as a half-life decay instead of a raw count, so a commit from last week outranks a three-year-old star pile, and put deduplication ahead of scoring so one person is one result. Contact stays manual: the product surfaces people, it never messages them.',
       ),
       businessImpact: t(
-        'projects.stories.schilling.businessImpact',
-        'Slashed initial bundle payloads by 94% (6.2MB to 350KB), which dropped customer abandonment to near-zero, accelerated feature-delivery speeds by 30%, and allowed 20+ engineers to ship features with zero regressions.',
+        'projects.stories.builderhunt.businessImpact',
+        'In public beta with a free tier of 3 saved searches and 50 saved builders. Keyword alerts by email or RSS, private notes per profile, and CSV/JSON export, so a shortlist leaves the product in whatever tool the team already uses.',
       ),
       tradeoffsChosen: t(
-        'projects.stories.schilling.tradeoffsChosen',
-        'Scoped monorepo sub-app partitions with strict semantic-version contracts to support independent, low-risk releases.',
+        'projects.stories.builderhunt.tradeoffsChosen',
+        'Decay-weighted scoring over lifetime totals, and deduplication before ranking, so freshness and identity are settled before anything is shown.',
       ),
       tradeoffsRejected: t(
-        'projects.stories.schilling.tradeoffsRejected',
-        'Monolithic rewrite, avoiding a 12-month feature freeze and multi-million-euro regression risks.',
+        'projects.stories.builderhunt.tradeoffsRejected',
+        'Automated outreach. It would have been the obvious growth lever and would have turned a discovery tool into another cold-email machine.',
       ),
-      architectureDiagramType: 'microfrontend',
+      outcomeHeadline: t(
+        'projects.stories.builderhunt.outcomeHeadline',
+        '13 sources, one ranked list',
+      ),
+      outcomeDetail: t(
+        'projects.stories.builderhunt.outcomeDetail',
+        'GitHub, Reddit, Hacker News, DEV.to, Lobsters, Stack Overflow, npm, Hugging Face, GitLab, Codeberg, Hashnode and SourceHut, deduplicated and scored by recency.',
+      ),
     },
     {
-      id: 'edd-remonts',
-      title: t('projects.stories.edd-remonts.title', 'Edd Remonts System Dashboard'),
-      category: t('projects.stories.edd-remonts.category', 'Real-Time Transactional Dashboard'),
-      scaleLabel: t('projects.stories.edd-remonts.scaleLabel', 'Real-time Event Stream'),
-      impactLabel: t('projects.stories.edd-remonts.impactLabel', '98 Lighthouse Score'),
+      id: 'geolocal',
+      title: t('projects.stories.geolocal.title', 'GeoLocal CPH'),
+      category: t('projects.stories.geolocal.category', 'Map-First Marketplace'),
+      scaleLabel: t('projects.stories.geolocal.scaleLabel', '25,000 Listings'),
+      impactLabel: t('projects.stories.geolocal.impactLabel', '4 Verticals, One Map'),
+      architectureLabel: t('projects.stories.geolocal.architectureLabel', 'Geospatial Clustering'),
+      link: 'https://geo.eduardoinerarte.dk',
+      urlPlaceholder: 'geo.eduardoinerarte.dk',
+      coverPath: '/projects/geolocal-cover.png',
+      context: t(
+        'projects.stories.geolocal.context',
+        'Finding anything in Copenhagen means four different sites: Boliga for flats, DBA for cars, Facebook groups for services, Airbnb for the rest. Each one is a feed, and a feed cannot tell you what is ten minutes from your door.',
+      ),
+      challenge: t(
+        'projects.stories.geolocal.challenge',
+        'Properties, vehicles, services and experiences have almost nothing in common as data: different prices, different units, different lifespans. Putting all four on a single map means one schema flexible enough to hold them and one interface that does not turn into a filter panel.',
+      ),
+      decision: t(
+        'projects.stories.geolocal.decision',
+        'I made the map the primary surface rather than a feature of the list, and clustered by neighbourhood so a district reads at a glance before anything is filtered. Curation is deliberate and human, not a scraper firehose.',
+      ),
+      businessImpact: t(
+        'projects.stories.geolocal.businessImpact',
+        '25,000 listings across four verticals pinned over eight Copenhagen neighbourhoods, each with its own count. Free to browse, no ads, no dark patterns.',
+      ),
+      tradeoffsChosen: t(
+        'projects.stories.geolocal.tradeoffsChosen',
+        'Map first, list second, clustered per neighbourhood, so proximity is the primary filter and the rest is optional.',
+      ),
+      tradeoffsRejected: t(
+        'projects.stories.geolocal.tradeoffsRejected',
+        'An infinite ranked feed. Higher engagement, but it answers "what is popular" when the question is "what is near me".',
+      ),
+      outcomeHeadline: t('projects.stories.geolocal.outcomeHeadline', '25,000 listings on one map'),
+      outcomeDetail: t(
+        'projects.stories.geolocal.outcomeDetail',
+        'Properties, vehicles, services and experiences across eight neighbourhoods, clustered so a district is legible before you filter anything.',
+      ),
+    },
+    {
+      id: 'ai-os',
+      title: t('projects.stories.ai-os.title', 'AI-OS'),
+      category: t('projects.stories.ai-os.category', 'Developer Environment System'),
+      scaleLabel: t('projects.stories.ai-os.scaleLabel', '6 AI CLIs Unified'),
+      impactLabel: t('projects.stories.ai-os.impactLabel', '~300 Shared Skills'),
+      architectureLabel: t('projects.stories.ai-os.architectureLabel', 'Declarative & Idempotent'),
+      link: 'https://ai-os.eduardoinerarte.dk',
+      urlPlaceholder: 'ai-os.eduardoinerarte.dk',
+      coverPath: '/projects/ai-os-cover.png',
+      context: t(
+        'projects.stories.ai-os.context',
+        'Every AI CLI keeps its own config, its own skills folder and its own MCP list. Six of them means six copies of the same setup, drifting apart from the day you install the second one.',
+      ),
+      challenge: t(
+        'projects.stories.ai-os.challenge',
+        'A dev environment is not just dotfiles: it is CLIs, runtimes, language servers, model endpoints and the prompts themselves, spread across macOS, Linux and Windows. Making it reproducible means it has to be safe to run twice on a machine that is already half configured.',
+      ),
+      decision: t(
+        'projects.stories.ai-os.decision',
+        "I made one git repository the source of truth and symlinked out of it, so a skill is written once and every CLI sees it. MCP servers are declarative YAML rather than six hand-edited JSON files, and the installer is idempotent with a dry-run mode and CI validation on all three platforms. Karpathy's Spec → Verifier → Environment loop is encoded as three verifier gates per task.",
+      ),
+      businessImpact: t(
+        'projects.stories.ai-os.businessImpact',
+        'A new machine reaches a full working setup with one command: npx @edd_remonts/create-ai-os. Roughly 300 skills, 10 MCP servers, 45 CLI tools, 43 global node packages and 28 python packages, restored the same way every time.',
+      ),
+      tradeoffsChosen: t(
+        'projects.stories.ai-os.tradeoffsChosen',
+        'Symlinks from one repository over per-tool copies, so there is exactly one place a skill can be wrong.',
+      ),
+      tradeoffsRejected: t(
+        'projects.stories.ai-os.tradeoffsRejected',
+        'A sync daemon watching each tool. Less setup up front, but it turns config drift into a background process nobody can debug.',
+      ),
+      outcomeHeadline: t('projects.stories.ai-os.outcomeHeadline', '~300 skills across 6 AI CLIs'),
+      outcomeDetail: t(
+        'projects.stories.ai-os.outcomeDetail',
+        'One repository, symlinked into every CLI, with 10 MCP servers as declarative YAML and an installer that is safe to run twice.',
+      ),
+    },
+    {
+      id: 'ai-schadcn-chat',
+      title: t('projects.stories.ai-schadcn-chat.title', 'ai-schadcn-chat'),
+      category: t('projects.stories.ai-schadcn-chat.category', 'Open-Source React Package'),
+      scaleLabel: t('projects.stories.ai-schadcn-chat.scaleLabel', 'React 18 & 19'),
+      impactLabel: t('projects.stories.ai-schadcn-chat.impactLabel', '8 Providers, One API'),
       architectureLabel: t(
-        'projects.stories.edd-remonts.architectureLabel',
-        'TanStack DB Synchronization',
+        'projects.stories.ai-schadcn-chat.architectureLabel',
+        'Provider-Agnostic Adapter',
       ),
-      urlPlaceholder: 'logistics.remonts.io/dashboard',
-      coverPath: '/projects/edd-remonts-cover.png',
+      link: 'https://ai-chat.eduardoinerarte.dk',
+      urlPlaceholder: 'ai-chat.eduardoinerarte.dk',
+      coverPath: '/projects/ai-shadcn-chat-cover.png',
       context: t(
-        'projects.stories.edd-remonts.context',
-        'Real-time logistics tracking and transactional control dashboard managing high-frequency operational KPIs.',
+        'projects.stories.ai-schadcn-chat.context',
+        'shadcn/ui gives you every primitive a chat interface needs and no chat interface. Everyone rebuilds the same streaming panel, and everyone rebuilds it welded to one provider.',
       ),
       challenge: t(
-        'projects.stories.edd-remonts.challenge',
-        'Constant high-frequency data polling saturated client sockets, triggered heavy server-side load, and caused severe page-load latency. Direct WebSockets caused massive DOM thrashing and layout shifts on unstable mobile networks.',
+        'projects.stories.ai-schadcn-chat.challenge',
+        'Streaming, markdown, code blocks, file upload and virtualised history are each easy alone and awkward together, especially while tokens are still arriving. Doing it once for Anthropic and again for every OpenAI-compatible gateway would have meant maintaining the same panel eight times.',
       ),
       decision: t(
-        'projects.stories.edd-remonts.decision',
-        'Engineered virtualized-DOM memoization queues, integrated TanStack Query for optimistic caching, and isolated rendering updates strictly to active cells instead of re-rendering whole list panels.',
+        'projects.stories.ai-schadcn-chat.decision',
+        'I put the provider behind an adapter so the panel only knows about a stream of tokens, which makes Anthropic, OpenAI and every OpenAI-compatible gateway the same integration. Configuration is deep rather than a prop soup, and the component ships as a package you install instead of a template you fork.',
       ),
       businessImpact: t(
-        'projects.stories.edd-remonts.businessImpact',
-        'Slashed socket query traffic by 60%, reduced server-infrastructure costs, and secured a perfect 98 Lighthouse score. The application runs at a steady 60FPS on commercial-grade mobile devices even under intensive real-time transactional streams (500+ updates/sec).',
+        'projects.stories.ai-schadcn-chat.businessImpact',
+        'MIT, on npm as @edd_remonts/ai-schadcn-chat. Works with Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM and Ollama through one config object, and drops into an existing shadcn/ui app without a theme fight.',
       ),
       tradeoffsChosen: t(
-        'projects.stories.edd-remonts.tradeoffsChosen',
-        'Optimistic state synchronization coupled with a 150ms virtualized-DOM throttle to isolate CPU load.',
+        'projects.stories.ai-schadcn-chat.tradeoffsChosen',
+        'One adapter boundary between the panel and the provider, so adding a gateway is configuration rather than a fork.',
       ),
       tradeoffsRejected: t(
-        'projects.stories.edd-remonts.tradeoffsRejected',
-        'Raw WebSockets under 10ms, which would saturate mobile sockets and cause clientside layout shifts.',
+        'projects.stories.ai-schadcn-chat.tradeoffsRejected',
+        'A copy-paste template in the shadcn tradition. Easier to publish, impossible to fix once it is in fifty codebases.',
       ),
-      architectureDiagramType: 'statesync',
-    },
-    {
-      id: 'zunzun',
-      title: t('projects.stories.zunzun.title', 'Zunzun.io Platform Engine'),
-      category: t('projects.stories.zunzun.category', 'Full-Stack Performance Ecosystem'),
-      scaleLabel: t('projects.stories.zunzun.scaleLabel', 'Sub-millisecond Rendering'),
-      impactLabel: t('projects.stories.zunzun.impactLabel', '100% Core Web Vitals'),
-      architectureLabel: t('projects.stories.zunzun.architectureLabel', 'Modular State Framework'),
-      link: 'https://www.zunzun.io/',
-      urlPlaceholder: 'zunzun.io/canvas/assembler',
-      coverPath: '/projects/zunzun-cover.png',
-      context: t(
-        'projects.stories.zunzun.context',
-        'Full-stack canvas-builder and layout-assembler focused on modular templates and fast static-site regeneration.',
+      outcomeHeadline: t(
+        'projects.stories.ai-schadcn-chat.outcomeHeadline',
+        '8 providers behind one config',
       ),
-      challenge: t(
-        'projects.stories.zunzun.challenge',
-        'Canvas assembly of hundreds of elements triggered global state-re-render cascades, spiked key interaction delays (INP), and degraded user experiences.',
+      outcomeDetail: t(
+        'projects.stories.ai-schadcn-chat.outcomeDetail',
+        'Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM and Ollama, all the same integration for the component.',
       ),
-      decision: t(
-        'projects.stories.zunzun.decision',
-        'Re-architected state flow to use localized reactive nodes, treated layout elements as independent registers, and completely isolated visual mutations from the global state tree to prevent cascades.',
-      ),
-      businessImpact: t(
-        'projects.stories.zunzun.businessImpact',
-        'Guaranteed sub-12ms response times, maintained a 100% Core Web Vitals score across all outputs, and eliminated drop-offs during intensive real-time editing.',
-      ),
-      tradeoffsChosen: t(
-        'projects.stories.zunzun.tradeoffsChosen',
-        'Strict composite-UI layout nodes operating as independent registers to isolate mutations to leaves.',
-      ),
-      tradeoffsRejected: t(
-        'projects.stories.zunzun.tradeoffsRejected',
-        'Single global-state dispatch, avoiding global re-render cascades that spike key input latency (INP).',
-      ),
-      architectureDiagramType: 'composition',
     },
   ]
 
@@ -286,14 +358,18 @@ export const ProductStories = () => {
                     <Laptop className="h-3.5 w-3.5" />
                     {t('projects.stories.viewInterface', '/ VIEW FULL INTERFACE')}
                   </button>
-                  <button
-                    onClick={() => setModalState({ projectId: project.id, view: 'architecture' })}
-                    aria-label={`Open ${project.title} system architecture diagram modal`}
-                    className="flex-1 py-3 text-center rounded-lg cursor-pointer transition-colors flex items-center justify-center gap-1.5 font-bold bg-transparent border border-transparent text-foreground/50 hover:text-foreground hover:bg-foreground/2 w-full"
-                  >
-                    <GitBranch className="h-3.5 w-3.5" />
-                    {t('projects.stories.viewArchitecture', '/ VIEW ARCHITECTURE')}
-                  </button>
+                  {/* Only for projects that actually have a diagram — an empty
+                      modal is worse than a missing tab. */}
+                  {project.architectureDiagramType && (
+                    <button
+                      onClick={() => setModalState({ projectId: project.id, view: 'architecture' })}
+                      aria-label={`Open ${project.title} system architecture diagram modal`}
+                      className="flex-1 py-3 text-center rounded-lg cursor-pointer transition-colors flex items-center justify-center gap-1.5 font-bold bg-transparent border border-transparent text-foreground/50 hover:text-foreground hover:bg-foreground/2 w-full"
+                    >
+                      <GitBranch className="h-3.5 w-3.5" />
+                      {t('projects.stories.viewArchitecture', '/ VIEW ARCHITECTURE')}
+                    </button>
+                  )}
                 </div>
 
                 {/* 3. Performance Metrics Benchmarks */}
@@ -307,62 +383,14 @@ export const ProductStories = () => {
                     </span>
                   </div>
 
-                  {project.architectureDiagramType === 'microfrontend' && (
-                    <div className="space-y-3 font-sans">
-                      <div className="flex justify-between items-baseline gap-2">
-                        <span className="font-semibold text-foreground">
-                          {t(
-                            'projects.stories.outcomePayload',
-                            '94% Payload Reduction [6.2MB → 350KB]',
-                          )}
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-foreground/60 leading-relaxed font-light">
-                        {t(
-                          'projects.stories.outcomePayloadDesc',
-                          'Vite-based monorepo partitions decoupled legacy assets, securing a perfect 1.4s LCP load time.',
-                        )}
-                      </p>
+                  <div className="space-y-3 font-sans">
+                    <div className="flex justify-between items-baseline gap-2">
+                      <span className="font-semibold text-foreground">{project.outcomeHeadline}</span>
                     </div>
-                  )}
-
-                  {project.architectureDiagramType === 'statesync' && (
-                    <div className="space-y-3 font-sans">
-                      <div className="flex justify-between items-baseline gap-2">
-                        <span className="font-semibold text-foreground">
-                          {t(
-                            'projects.stories.outcomeDeduplication',
-                            '60% Request Deduplication [500+ updates/sec]',
-                          )}
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-foreground/60 leading-relaxed font-light">
-                        {t(
-                          'projects.stories.outcomeDeduplicationDesc',
-                          'Virtualized-DOM rendering throttles prevented mobile thrashing and cut server-infrastructure costs.',
-                        )}
-                      </p>
-                    </div>
-                  )}
-
-                  {project.architectureDiagramType === 'composition' && (
-                    <div className="space-y-3 font-sans">
-                      <div className="flex justify-between items-baseline gap-2">
-                        <span className="font-semibold text-foreground">
-                          {t(
-                            'projects.stories.outcomeVitals',
-                            '100% Core Web Vitals [INP Sub-12ms]',
-                          )}
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-foreground/60 leading-relaxed font-light">
-                        {t(
-                          'projects.stories.outcomeVitalsDesc',
-                          'Localized reactive leaf nodes completely isolated visual mutations from the global state tree.',
-                        )}
-                      </p>
-                    </div>
-                  )}
+                    <p className="text-[11px] leading-relaxed text-foreground/70 font-light">
+                      {project.outcomeDetail}
+                    </p>
+                  </div>
                 </div>
               </div>
 

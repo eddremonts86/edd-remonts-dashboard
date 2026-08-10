@@ -26,12 +26,12 @@ export const ProjectsGallery = () => {
       <Container>
         <SectionSlate
           reel={2}
-          kicker={t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
-          title={t('projects.title', 'Product Stories')}
-          accent={t('projects.titleAccent', 'Not Project Cards.')}
+          kicker={t('projects.eyebrow', 'Signature projects')}
+          title={t('projects.title', 'Things I built')}
+          accent={t('projects.titleAccent', 'End to end.')}
           description={t(
             'projects.description',
-            'Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.',
+            'Four products of my own. For each: the problem it started from, the architecture I chose, and the path I turned down to get there.',
           )}
         />
 
