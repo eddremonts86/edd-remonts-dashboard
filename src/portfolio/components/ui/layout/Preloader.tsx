@@ -15,6 +15,11 @@ const BOOT_STEPS: Array<{ at: number; key: string; fallback: string }> = [
 /**
  * Title sequence — the load is theatre (assets are tiny), so it behaves like
  * one: boot log, wordmark reveal, hairline progress. Click anywhere to skip.
+ *
+ * It is an overlay, not a gate: the page is fully rendered underneath it, both
+ * on the server and in the DOM. Previously it replaced the page until it
+ * finished, which left crawlers with "Loading experience / 0% / Stand by" as
+ * the entire document.
  */
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const { t } = useTranslation()
@@ -26,10 +31,12 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         initial={{ opacity: 1 }}
         exit={{
           opacity: 0,
-          transition: { duration: 1.2, ease: APPLE_EASE, delay: 0.2 },
+          transition: { duration: 0.7, ease: APPLE_EASE },
         }}
         onClick={onComplete}
         className="fixed inset-0 z-[99999] flex cursor-pointer flex-col items-center justify-center overflow-hidden bg-background text-foreground"
+        // The page beneath is the real document; this is decoration over it.
+        aria-hidden="true"
         aria-label={t('preloader.skip', 'Loading — click to skip')}
       >
         <m.div
@@ -42,22 +49,24 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
           </div>
 
           <div className="flex w-full flex-col items-center justify-center">
-            {/* Wordmark — masked line reveal, same grammar as the hero */}
+            {/* Wordmark — masked line reveal, same grammar as the hero.
+                A <div>, not an <h1>: the hero owns the page's only h1, and the
+                overlay must not add a second one. */}
             <div className="overflow-hidden">
-              <m.h1
+              <m.div
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1, ease: APPLE_EASE, delay: 0.1 }}
+                transition={{ duration: 0.7, ease: APPLE_EASE, delay: 0.05 }}
                 className="text-center font-serif text-4xl font-light leading-tight tracking-tight text-foreground md:text-6xl"
               >
                 Eduardo Inerarte
-              </m.h1>
+              </m.div>
             </div>
             <div className="overflow-hidden">
               <m.p
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1, ease: APPLE_EASE, delay: 0.25 }}
+                transition={{ duration: 0.7, ease: APPLE_EASE, delay: 0.15 }}
                 className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.35em] text-primary"
               >
                 {t('preloader.role', 'A Living Portfolio')}
