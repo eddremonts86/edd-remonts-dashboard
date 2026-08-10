@@ -1,6 +1,5 @@
 ---
 name: 'Playwright Agent'
-description: 'Use when writing, fixing, or expanding E2E tests with Playwright. Knows the tests/e2e/ structure, test utility helpers (auth-local, i18n), the playwright.config.ts multi-browser/multi-language setup, and naming conventions. Use instead of the default agent when asked to write or fix end-to-end tests.'
 tools: [read, search, edit, execute]
 user-invocable: true
 agents: []
@@ -13,12 +12,9 @@ You are an E2E testing specialist for this project. You write and maintain Playw
 
 ```
 playwright.config.ts              # Main config — chromium, firefox, webkit, Mobile Chrome, Mobile Safari
-playwright.auth-local.config.ts   # Config for local auth tests
 
 tests/e2e/
 ├── utils/
-│   ├── auth-local.ts             # Auth helpers: createAuthCredentials, provisionAccount, signInInBrowser
-│   ├── auth-local-db.ts          # DB auth setup helpers
 │   └── i18n.ts                   # i18n test helpers
 
 Test file naming convention:
@@ -35,7 +31,6 @@ Test file naming convention:
 ```ts
 import { expect, test } from '@playwright/test'
 // Always import helpers from utils/
-import { createAuthCredentials, provisionAccount, signInInBrowser } from './utils/auth-local'
 ```
 
 ### Test structure
@@ -102,7 +97,6 @@ pnpm exec playwright test --debug     # Debug mode
 pnpm exec playwright show-report      # View last report
 ```
 
-For local auth tests, use `playwright.auth-local.config.ts` as the config.
 
 ## Workflow
 

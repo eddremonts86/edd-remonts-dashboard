@@ -10,14 +10,12 @@ description: Tests E2E con Playwright en TanStack Template. Usar cuando se escri
 Two config files:
 
 - `playwright.config.ts` — Standard tests (auth.local.spec.ts excluded via `testIgnore`)
-- `playwright.auth-local.config.ts` — Local auth flow tests (sign-in/sign-up/logout)
 
 ```bash
 # Run all standard E2E tests
 pnpm test:e2e
 
 # Run local auth tests specifically
-pnpm playwright test --config playwright.auth-local.config.ts
 
 # Run a single spec
 pnpm playwright test tests/e2e/routes.navigation.spec.ts
@@ -49,13 +47,11 @@ without any redirect to `/auth`.
 ## Auth Test Utilities
 
 ```ts
-// tests/e2e/utils/auth-local.ts  (import from here)
 import {
   createAuthCredentials,
   provisionAccount,
   signInInBrowser,
   expectDashboard,
-} from './utils/auth-local'
 
 // Create unique credentials per test run (avoids conflicts)
 const creds = createAuthCredentials('my-test-prefix')
@@ -141,7 +137,6 @@ await expect(page.getByText('Submit')).toBeVisible()
 pnpm tsx scripts/testing/prepare-auth-e2e-db.ts
 
 # Smoke test auth approval flow
-bash scripts/testing/auth-local-approval-smoke.sh
 ```
 
 ## Route Inventory
