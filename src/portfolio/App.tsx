@@ -22,9 +22,6 @@ import { useTitleSequence } from './hooks/useTitleSequence'
 const ProjectsGallery = lazy(() =>
   import('./components/projects/ProjectsGallery').then((m) => ({ default: m.ProjectsGallery })),
 )
-const BuildLogSection = lazy(() =>
-  import('./components/buildlog/BuildLogSection').then((m) => ({ default: m.BuildLogSection })),
-)
 const ContactSection = lazy(() =>
   import('./components/contact/ContactSection').then((m) => ({ default: m.ContactSection })),
 )
@@ -59,14 +56,12 @@ export function App() {
             <ProjectsGallery />
           </Suspense>
 
-          {/* The Lab (interaction experiments) is off the landing: it is a
-              playground, not evidence a founder is scanning for. The components
-              under components/lab/ are kept intact for a future standalone
-              route. */}
-
-          <Suspense fallback={null}>
-            <BuildLogSection />
-          </Suspense>
+          {/* Two sections deliberately left off the landing. Their components
+              stay in the tree, intact, for a future standalone route:
+                - components/lab/       the interaction experiments
+                - components/buildlog/  the "learning in public" commit log
+              Both are process, not evidence; a founder scanning for 60 seconds
+              is looking for outcomes. */}
 
           <BusinessImpact />
           <AboutSection />

@@ -8,7 +8,4 @@ export const STORAGE_KEYS = {
   // Both providers write `light|dark|system` to <html>; one key keeps them agreeing
   // on load instead of racing (portfolio effect runs first, dashboard's last).
   theme: 'tanstack-template-theme',
-  // sessionStorage, not localStorage: the title sequence should play once per
-  // visit, not once ever. A founder who comes back next week still gets it.
-  titleSequencePlayed: 'edd-portfolio-title-sequence',
 } as const
