@@ -12,7 +12,7 @@
  * an unset env var used to emit `rel="canonical" href="https://example.com"`,
  * which handed the page's ranking to another domain.
  */
-export const SITE_URL = (import.meta.env.VITE_PUBLIC_URL || 'https://eddremonts.dk').replace(
+export const SITE_URL = (import.meta.env.VITE_PUBLIC_URL || 'https://profile.eduardoinerarte.dk').replace(
   /\/$/,
   '',
 )

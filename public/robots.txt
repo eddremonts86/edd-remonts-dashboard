@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eddremonts.dk/sitemap.xml
+Sitemap: https://profile.eduardoinerarte.dk/sitemap.xml

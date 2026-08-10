@@ -316,9 +316,9 @@ async function main() {
     },
     {
       key: 'site.url',
-      valueEn: 'https://eddremonts.dk',
-      valueEs: 'https://eddremonts.dk',
-      valueDk: 'https://eddremonts.dk',
+      valueEn: 'https://profile.eduardoinerarte.dk',
+      valueEs: 'https://profile.eduardoinerarte.dk',
+      valueDk: 'https://profile.eduardoinerarte.dk',
     },
   ]
 

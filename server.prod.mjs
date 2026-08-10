@@ -184,7 +184,7 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? '/', `${protocol}://${host}`)
 
   // Redirect root domain to canonical subdomain (301 permanent)
-  if (url.hostname === 'eduardoinerarte.dk') {
+  if (url.hostname === 'eduardoinerarte.dk' || url.hostname === 'www.eduardoinerarte.dk') {
     const target = `https://profile.eduardoinerarte.dk${url.pathname}${url.search}`
     res.writeHead(301, { Location: target })
     res.end()
