@@ -25,9 +25,23 @@ FROM base AS builder
 
 WORKDIR /app
 
+# MUST be set before `pnpm build`. Without it the React plugin emits the dev
+# JSX transform (`jsxDEV`) and bundles React's development build; the prod
+# stage then runs with NODE_ENV=production, where `react/jsx-dev-runtime`
+# has no `jsxDEV` export — every route 500s with
+# "TypeError: jsxDEV is not a function".
+ENV NODE_ENV=production
+
 COPY . .
 
 RUN pnpm build
+
+# Fail the image build rather than shipping a dev bundle: no server chunk may
+# import react/jsx-dev-runtime.
+RUN if grep -rq "react/jsx-dev-runtime" dist/server; then \
+      echo "FATAL: dist/server contains the dev JSX runtime — build ran without NODE_ENV=production" >&2; \
+      exit 1; \
+    fi
 
 FROM node:22-bookworm-slim AS prod
 
