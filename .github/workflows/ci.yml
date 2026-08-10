@@ -10,15 +10,10 @@ name: ci
 # on every route; scripts/verify/production-bundle.sh fails the build rather
 # than shipping that again.
 #
-# `pnpm test:unit` is deliberately NOT here, and that is a gap, not an
-# oversight. 8 of 184 tests fail as of 2026-08-10 — in the dashboard DataTable,
-# the RAG context builder and config loading — and they were already failing
-# before this workflow existed. Running them would make every pull request red
-# for reasons unrelated to the change under review, which is how the previous
-# workflow ended up ignored for three months.
-#
-# Run them locally with `pnpm test:unit`. Add the job back the moment the count
-# reaches zero; until then this file should not imply the suite is green.
+# The unit suite was held out of this workflow while 8 of its tests failed. It
+# is back in as of 2026-08-10, green at 152/152, and it stays in: a suite that
+# does not gate anything stops being maintained, which is how those 8 rotted in
+# the first place.
 
 on:
   pull_request:
@@ -32,7 +27,7 @@ concurrency:
 
 jobs:
   static:
-    name: types, lint, build
+    name: types, lint, test, build
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -52,6 +47,9 @@ jobs:
 
       - name: Lint
         run: pnpm lint --quiet
+
+      - name: Unit tests
+        run: pnpm test:unit
 
       - name: Build
         run: pnpm build

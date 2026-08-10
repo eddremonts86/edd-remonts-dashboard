@@ -1,18 +1,33 @@
-import { users } from '@/shared/lib/db/schema'
+import { count } from 'drizzle-orm'
+import {
+  portfolioContent,
+  portfolioExperiences,
+  portfolioProjects,
+  portfolioServices,
+  portfolioSkills,
+  portfolioTestimonials,
+  users,
+} from '@/shared/lib/db/schema'
 
 // ---------------------------------------------------------------------------
 // Intent Detection
 // ---------------------------------------------------------------------------
 
+// One member per section this dashboard actually has. The list used to carry
+// todos, transactions, categories, analytics and team, none of which exist
+// here — the assistant was routing people to /dashboard/todos and friends,
+// which 404.
 type Intent =
   | 'users'
-  | 'todos'
-  | 'transactions'
-  | 'categories'
   | 'dashboard'
-  | 'analytics'
+  | 'portfolio'
+  | 'experiences'
+  | 'skills'
   | 'projects'
-  | 'team'
+  | 'testimonials'
+  | 'services'
+  | 'content'
+  | 'translations'
   | 'settings'
   | 'help'
   | 'navigation'
@@ -23,7 +38,14 @@ type Intent =
 // ---------------------------------------------------------------------------
 
 type ActionType = 'create' | 'edit' | 'delete'
-type ActionEntity = 'todo' | 'user' | 'transaction' | 'category'
+type ActionEntity =
+  | 'user'
+  | 'experience'
+  | 'skill'
+  | 'project'
+  | 'testimonial'
+  | 'service'
+  | 'content'
 
 interface ActionIntent {
   action: ActionType
@@ -82,18 +104,13 @@ const ACTION_KEYWORDS: Record<ActionType, string[]> = {
 }
 
 const ENTITY_KEYWORDS: Record<ActionEntity, string[]> = {
-  todo: ['tarea', 'tareas', 'task', 'tasks', 'todo', 'todos', 'pendiente'],
   user: ['usuario', 'usuarios', 'user', 'users', 'miembro', 'member'],
-  transaction: [
-    'transacción',
-    'transaccion',
-    'transacciones',
-    'transaction',
-    'transactions',
-    'pago',
-    'pagos',
-  ],
-  category: ['categoría', 'categoria', 'categorias', 'category', 'categories'],
+  experience: ['experiencia', 'experiencias', 'experience', 'experiences', 'empleo', 'job', 'cargo'],
+  skill: ['habilidad', 'habilidades', 'skill', 'skills', 'tecnología', 'tecnologia', 'technology'],
+  project: ['proyecto', 'proyectos', 'project', 'projects'],
+  testimonial: ['testimonio', 'testimonios', 'testimonial', 'testimonials', 'reseña', 'review'],
+  service: ['servicio', 'servicios', 'service', 'services'],
+  content: ['contenido', 'bloque', 'bloques', 'content block', 'content'],
 }
 
 function detectActionIntent(query: string): ActionIntent | null {
@@ -137,57 +154,78 @@ const INTENT_KEYWORDS: Record<Intent, string[]> = {
     'miembro',
     'member',
   ],
-  todos: [
-    'task',
-    'tasks',
-    'tarea',
-    'tareas',
-    'todo',
-    'todos',
-    'pendiente',
-    'pendientes',
-    'resolver',
-    'completar',
-    'falta',
-    'faltan',
-    'prioridad',
-    'priority',
-    'urgente',
-    'importante',
-    'hoy',
-    'mañana',
-    'vencida',
-    'overdue',
-    'progreso',
-    'progress',
-    'in_progress',
+  portfolio: ['portafolio', 'portfolio', 'sitio público', 'sitio publico', 'public site'],
+  experiences: [
+    'experiencia',
+    'experiencias',
+    'experience',
+    'experiences',
+    'empleo',
+    'empleos',
+    'job',
+    'jobs',
+    'cargo',
+    'puesto',
+    'trayectoria',
+    'career',
+    'historial',
   ],
-  transactions: [
-    'transaction',
-    'transactions',
-    'transacción',
-    'transacciones',
-    'transaccion',
-    'payment',
-    'pago',
-    'pagos',
-    'amount',
-    'monto',
-    'dinero',
-    'revenue',
-    'ingreso',
-    'cliente',
-    'customer',
+  skills: [
+    'habilidad',
+    'habilidades',
+    'skill',
+    'skills',
+    'tecnología',
+    'tecnologia',
+    'tecnologías',
+    'tecnologias',
+    'technology',
+    'technologies',
+    'stack',
   ],
-  categories: [
-    'category',
-    'categories',
-    'categoría',
-    'categorias',
-    'categoria',
-    'color',
-    'etiqueta',
-    'label',
+  testimonials: [
+    'testimonio',
+    'testimonios',
+    'testimonial',
+    'testimonials',
+    'reseña',
+    'resena',
+    'review',
+    'reviews',
+    'recomendación',
+    'recomendacion',
+  ],
+  services: ['servicio', 'servicios', 'service', 'services', 'oferta', 'offering'],
+  content: [
+    'contenido',
+    'bloque',
+    'bloques',
+    'content',
+    'copy',
+    'texto',
+    'textos',
+    'hero',
+    'sobre mí',
+    'sobre mi',
+    'about',
+  ],
+  translations: [
+    'traducción',
+    'traduccion',
+    'traducciones',
+    'translation',
+    'translations',
+    'traducir',
+    'translate',
+    'danés',
+    'danes',
+    'danish',
+    'español',
+    'espanol',
+    'spanish',
+    'inglés',
+    'ingles',
+    'english',
   ],
   dashboard: [
     'dashboard',
@@ -197,29 +235,19 @@ const INTENT_KEYWORDS: Record<Intent, string[]> = {
     'estadísticas',
     'estadisticas',
     'stats',
-    'suscripciones',
-    'subscriptions',
-    'ventas',
-    'sales',
-    'activos',
-    'active',
-    'revenue',
-    'ingresos',
-  ],
-  analytics: [
-    'analytics',
-    'analíticas',
-    'analiticas',
-    'chart',
-    'gráfico',
-    'grafico',
-    'views',
-    'vistas',
-    'reporte',
-    'report',
+    'contador',
+    'contadores',
+    'counter',
+    'counters',
+    'cuántos',
+    'cuantos',
+    'how many',
+    'total',
+    'totales',
+    'resumen',
+    'overview',
   ],
   projects: ['project', 'projects', 'proyecto', 'proyectos'],
-  team: ['team', 'equipo', 'miembros', 'members'],
   settings: [
     'settings',
     'configuración',
@@ -390,14 +418,17 @@ function buildCommonAnswersContext(knowledge: AppKnowledge, intents: Intent[]): 
 
   // Map intents to whereToFind keys
   const intentToKey: Partial<Record<Intent, string>> = {
-    todos: 'tasks',
     users: 'users',
-    transactions: 'transactions',
-    analytics: 'analytics',
-    settings: 'settings',
+    dashboard: 'dashboard',
+    portfolio: 'portfolio',
+    experiences: 'experiences',
+    skills: 'skills',
     projects: 'projects',
-    team: 'team',
-    categories: 'categories',
+    testimonials: 'testimonials',
+    services: 'services',
+    content: 'content',
+    translations: 'translations',
+    settings: 'settings',
     help: 'help',
   }
 
@@ -415,36 +446,94 @@ function buildCommonAnswersContext(knowledge: AppKnowledge, intents: Intent[]): 
 // Dynamic Context (data from DB)
 // ---------------------------------------------------------------------------
 
+/**
+ * What the assistant can count, and where the user goes to see it.
+ *
+ * Counts only. The previous version pushed up to ten users' names and email
+ * addresses into the prompt, which then travelled to whichever provider is
+ * configured in /dashboard/settings/ia_config — OpenAI, Anthropic or MiniMax.
+ * A total answers "how many users do I have" just as well without sending
+ * anyone's address to a third party.
+ */
+const COUNT_SOURCES = [
+  { intent: 'users' as const, label: 'Users', url: '/dashboard/users', table: users },
+  {
+    intent: 'experiences' as const,
+    label: 'Experiences',
+    url: '/dashboard/portfolio/experiences',
+    table: portfolioExperiences,
+  },
+  {
+    intent: 'projects' as const,
+    label: 'Projects',
+    url: '/dashboard/portfolio/projects',
+    table: portfolioProjects,
+  },
+  {
+    intent: 'skills' as const,
+    label: 'Skills',
+    url: '/dashboard/portfolio/skills',
+    table: portfolioSkills,
+  },
+  {
+    intent: 'testimonials' as const,
+    label: 'Testimonials',
+    url: '/dashboard/portfolio/testimonials',
+    table: portfolioTestimonials,
+  },
+  {
+    intent: 'services' as const,
+    label: 'Services',
+    url: '/dashboard/portfolio/services',
+    table: portfolioServices,
+  },
+  {
+    intent: 'content' as const,
+    label: 'Content blocks',
+    url: '/dashboard/portfolio/content',
+    table: portfolioContent,
+  },
+]
+
+/** Asking about the portfolio as a whole means asking about all of its sections. */
+const PORTFOLIO_INTENTS: Intent[] = [
+  'experiences',
+  'projects',
+  'skills',
+  'testimonials',
+  'services',
+  'content',
+]
+
 async function fetchDynamicContext(intents: Intent[]): Promise<string | null> {
+  const wide = intents.includes('portfolio') || intents.includes('dashboard')
+  const wanted = COUNT_SOURCES.filter(
+    (source) =>
+      intents.includes(source.intent) || (wide && PORTFOLIO_INTENTS.includes(source.intent)),
+  )
+  if (intents.includes('dashboard') && !wanted.some((s) => s.intent === 'users')) {
+    wanted.unshift(COUNT_SOURCES[0])
+  }
+
   const sections: string[] = []
 
   try {
-    // Use the explicit /index subpath to bypass vite.config.ts's
-    // browser-stub alias (see src/shared/lib/db/load.ts for details).
-    const { getDb } = await import('@/shared/lib/db/index')
-    const db = getDb()
+    if (wanted.length > 0) {
+      // Use the explicit /index subpath to bypass vite.config.ts's
+      // browser-stub alias (see src/shared/lib/db/load.ts for details).
+      const { getDb } = await import('@/shared/lib/db/index')
+      const db = getDb()
 
-    if (intents.includes('users')) {
-      const [allUsers, totalUsers] = await Promise.all([
-        db.select().from(users).limit(10),
-        db.$count(users),
-      ])
-
-      sections.push(
-        [
-          `[Users Data — View at /dashboard/users]`,
-          `Total Users: ${totalUsers}`,
-          `Users: ${JSON.stringify(allUsers.map((u) => ({ name: u.name, email: u.email })))}`,
-        ].join('\n'),
+      const rows = await Promise.all(
+        wanted.map(async (source) => {
+          const result = await db.select({ total: count() }).from(source.table)
+          const total = Number(result?.[0]?.total ?? 0)
+          return `${source.label}: ${total} — see ${source.url}`
+        }),
       )
-    }
 
-    if (intents.includes('dashboard')) {
-      // Add app-specific dashboard data here
+      sections.push(['[Live Counts — read from the database for this question]', ...rows].join('\n'))
     }
-
-    // Dashboard stats skipped for now as they require complex aggregation
-    // If needed, we can add simple counts here
 
     if (intents.includes('status')) {
       sections.push(
@@ -467,96 +556,56 @@ async function fetchDynamicContext(intents: Intent[]): Promise<string | null> {
 // Action Instructions (injected when user wants to perform an action)
 // ---------------------------------------------------------------------------
 
-const ACTION_CREATE_SCHEMAS: Record<ActionEntity, string> = {
-  todo: `{"title":"<task title>","description":"<task description>","status":"pending","priority":"medium","dueDate":"<YYYY-MM-DD>","assignedTo":"<userId>"}`,
-  user: `{"name":"<user name>","email":"<user email>","role":"user","avatar":"https://api.dicebear.com/7.x/avataaars/svg?seed=<name>","createdAt":"<ISO date>"}`,
-  transaction: `{"customer":{"name":"<customer name>","email":"<email>"},"status":"Pending","date":"<YYYY-MM-DD>","amount":<number>}`,
-  category: `{"name":"<category name>","color":"<hex color>"}`,
+/**
+ * Where each kind of record is actually created and edited.
+ *
+ * This used to hand the model a JSON schema per entity and tell it to emit a
+ * fenced ```action block, then promise the user a confirmation button. Nothing
+ * ever parsed that fence and no such button exists anywhere in the app, so the
+ * assistant was reliably promising a control the user could not find. Pointing
+ * at the page that does the job is the honest answer, and it works today.
+ */
+const ENTITY_PAGES: Record<ActionEntity, { label: string; url: string }> = {
+  user: { label: 'user', url: '/dashboard/users' },
+  experience: { label: 'experience', url: '/dashboard/portfolio/experiences' },
+  skill: { label: 'skill', url: '/dashboard/portfolio/skills' },
+  project: { label: 'project', url: '/dashboard/portfolio/projects' },
+  testimonial: { label: 'testimonial', url: '/dashboard/portfolio/testimonials' },
+  service: { label: 'service', url: '/dashboard/portfolio/services' },
+  content: { label: 'content block', url: '/dashboard/portfolio/content' },
 }
 
-const ACTION_UPDATE_SCHEMAS: Record<ActionEntity, string> = {
-  todo: `{"title":"<new title>","description":"<new description>","status":"<pending|in_progress|completed>","priority":"<low|medium|high>","dueDate":"<YYYY-MM-DD>","assignedTo":"<userId>"}`,
-  user: `{"name":"<new name>","email":"<new email>","role":"<admin|user>"}`,
-  transaction: `{"customer":{"name":"<name>","email":"<email>"},"status":"<Approved|Pending|Rejected>","amount":<number>}`,
-  category: `{"name":"<new name>","color":"<new hex color>"}`,
+const ACTION_WORDS: Record<ActionType, { gerund: string; past: string }> = {
+  create: { gerund: 'creating', past: 'created' },
+  edit: { gerund: 'editing', past: 'edited' },
+  delete: { gerund: 'deleting', past: 'deleted' },
 }
 
-const ENTITY_LABELS: Record<ActionEntity, { en: string; es: string }> = {
-  todo: { en: 'task', es: 'tarea' },
-  user: { en: 'user', es: 'usuario' },
-  transaction: { en: 'transaction', es: 'transacción' },
-  category: { en: 'category', es: 'categoría' },
+/** The prompt is English; this only tells the model which language to answer in. */
+function replyLanguage(locale: string): string {
+  if (locale.startsWith('es')) return 'Spanish'
+  if (locale.startsWith('dk') || locale.startsWith('da')) return 'Danish'
+  return 'English'
 }
 
 function buildActionInstructions(actionIntent: ActionIntent, locale: string): string {
-  const isSpanish = locale.startsWith('es')
-  const entityLabel = isSpanish
-    ? ENTITY_LABELS[actionIntent.entity].es
-    : ENTITY_LABELS[actionIntent.entity].en
+  const entity = ENTITY_PAGES[actionIntent.entity]
+  const words = ACTION_WORDS[actionIntent.action]
 
-  if (actionIntent.action === 'create') {
-    const schema = ACTION_CREATE_SCHEMAS[actionIntent.entity]
-    return [
-      `[ACTION REQUIRED]`,
-      `The user wants to CREATE a new ${entityLabel}.`,
-      `Extract the details from their message and generate a response that:`,
-      `1. Confirms what you understood from their request`,
-      `2. Includes a fenced code block with language "action" containing a JSON object with the action details`,
-      `3. The JSON must follow this EXACT format:`,
-      '```action',
-      `{"type":"create_${actionIntent.entity}","data":${schema}}`,
-      '```',
-      `4. Fill in the data fields based on what the user provided. Use sensible defaults for missing fields.`,
-      `5. For dueDate, use today's date (${new Date().toISOString().split('T')[0]}) if not specified.`,
-      `6. For assignedTo, use the current user's ID from the context data if available.`,
-      `7. After the code block, tell the user to click the button to confirm the creation.`,
-      `IMPORTANT: The code block language MUST be "action" (not json, not javascript). This triggers the UI button.`,
-    ].join('\n')
-  }
-
-  if (actionIntent.action === 'edit') {
-    const schema = ACTION_UPDATE_SCHEMAS[actionIntent.entity]
-    return [
-      `[ACTION REQUIRED]`,
-      `The user wants to EDIT/UPDATE a ${entityLabel}.`,
-      `You MUST find the item to update from the data context provided above.`,
-      `Match the item by title, name, or ID mentioned in the user's message.`,
-      `Generate a response that:`,
-      `1. Confirms which ${entityLabel} you identified and what changes will be made`,
-      `2. Includes a fenced code block with language "action" containing:`,
-      '```action',
-      `{"type":"update_${actionIntent.entity}","id":"<item id>","data":${schema}}`,
-      '```',
-      `3. ONLY include the fields that need to change in the data object. Omit unchanged fields.`,
-      `4. The "id" field is REQUIRED — get it from the data context above.`,
-      `5. After the code block, tell the user to click the button to confirm the update.`,
-      `IMPORTANT: The code block language MUST be "action" (not json, not javascript). This triggers the UI button.`,
-      `If you cannot identify which ${entityLabel} to update, ask the user to clarify.`,
-      `PERMISSION RULE: For tasks, only the creator (createdBy) or assignee (assignedTo) can update. Admins can update any task. If the task does not belong to the current user, warn them the action may be denied.`,
-    ].join('\n')
-  }
-
-  if (actionIntent.action === 'delete') {
-    return [
-      `[ACTION REQUIRED]`,
-      `The user wants to DELETE a ${entityLabel}.`,
-      `You MUST find the item to delete from the data context provided above.`,
-      `Match the item by title, name, or ID mentioned in the user's message.`,
-      `Generate a response that:`,
-      `1. Confirms which ${entityLabel} will be deleted and shows its details`,
-      `2. Includes a fenced code block with language "action" containing:`,
-      '```action',
-      `{"type":"delete_${actionIntent.entity}","id":"<item id>"}`,
-      '```',
-      `3. The "id" field is REQUIRED — get it from the data context above.`,
-      `4. After the code block, warn the user this action cannot be undone and tell them to click confirm.`,
-      `IMPORTANT: The code block language MUST be "action" (not json, not javascript). This triggers the UI button.`,
-      `If you cannot identify which ${entityLabel} to delete, ask the user to clarify.`,
-      `PERMISSION RULE: For tasks, only the creator (createdBy) or assignee (assignedTo) can delete. Admins can delete any task. If the task does not belong to the current user, warn them the action may be denied.`,
-    ].join('\n')
-  }
-
-  return ''
+  return [
+    `[ACTION REQUESTED]`,
+    // "asking about" rather than "wants to": "where do I edit my testimonials?"
+    // trips the same keywords as "edit my testimonial", and the honest answer
+    // to both is the same page. No need to guess which one they meant.
+    `The user is asking about ${words.gerund} a ${entity.label}.`,
+    `The chat has no write access to the database, so you cannot do it for them.`,
+    `Tell them to go to ${entity.url}, which is where a ${entity.label} is ${words.past}, and walk them through it.`,
+    `Do not invent a confirmation button and do not emit an "action" code block. Neither exists.`,
+    actionIntent.action === 'delete'
+      ? `Warn them that deleting is permanent and also removes the record from the public site.`
+      : `Portfolio records carry English, Spanish and Danish text; point at /dashboard/portfolio/translations if the change affects copy.`,
+    `Answer in ${replyLanguage(locale)}.`,
+  ].join('\n')
 }
 
 // ---------------------------------------------------------------------------
@@ -583,13 +632,15 @@ export async function injectDynamicContext(query: string, locale: string = 'en')
       // Add specific page context for matched intents
       const intentToUrl: Partial<Record<Intent, string>> = {
         dashboard: '/dashboard',
-        todos: '/dashboard/todos',
-        analytics: '/dashboard/analytics',
-        projects: '/dashboard/projects',
-        team: '/dashboard/team',
         users: '/dashboard/users',
-        categories: '/dashboard/categories',
-        transactions: '/dashboard/transactions',
+        portfolio: '/dashboard/portfolio',
+        experiences: '/dashboard/portfolio/experiences',
+        skills: '/dashboard/portfolio/skills',
+        projects: '/dashboard/portfolio/projects',
+        testimonials: '/dashboard/portfolio/testimonials',
+        services: '/dashboard/portfolio/services',
+        content: '/dashboard/portfolio/content',
+        translations: '/dashboard/portfolio/translations',
         settings: '/dashboard/settings',
         help: '/dashboard/help',
       }

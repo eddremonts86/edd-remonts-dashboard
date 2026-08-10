@@ -23,7 +23,10 @@ describe('Configuration Loading System Integration', () => {
 
     expect(config.activeProvider).toBe('llama-cpp')
     expect(config.providers['ollama'].parameters.model).toBeDefined()
-    expect(config.providers['ollama'].baseUrl).toBe('http://localhost:11434/v1')
+    // 11435, not Ollama's stock 11434: this workspace runs its own container
+    // (scripts/ai/bootstrap-ollama.sh, .env.example, scripts/ai/ensure-runtime.sh
+    // all agree) so it can coexist with an Ollama already installed on the host.
+    expect(config.providers['ollama'].baseUrl).toBe('http://localhost:11435/v1')
   })
 
   it('should load and merge user configuration correctly', async () => {
