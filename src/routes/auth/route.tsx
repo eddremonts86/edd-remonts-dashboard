@@ -1,6 +1,6 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { AuthPage } from '@/modules/auth'
 import { getAppAuthSession } from '@/shared/lib/auth/app-auth.functions'
+import { AuthRoot } from './-AuthRoot'
 
 export const Route = createFileRoute('/auth')({
   beforeLoad: async () => {
@@ -12,5 +12,5 @@ export const Route = createFileRoute('/auth')({
       })
     }
   },
-  component: AuthPage,
+  component: AuthRoot,
 })
