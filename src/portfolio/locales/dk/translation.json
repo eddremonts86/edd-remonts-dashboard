@@ -72,7 +72,7 @@
       "vitals": {
         "value": "100%",
         "label": "Core Web Vitals",
-        "desc": "Sikrede fejlfrie Lighthouse-resultater på tværs af alle kritiske brugerruter."
+        "desc": "Perfekte Lighthouse-scorer på de veje, brugerne faktisk tager."
       },
       "impact": {
         "value": "20+",
@@ -110,25 +110,41 @@
       "governance": {
         "name": "Arkitektur & governance",
         "annot": "/ WORKSPACE-SYSTEMER",
-        "items": ["Monorepo-grænser", "Design-system-kontrakter", "Afkoblede moduler"],
+        "items": [
+          "Monorepo-grænser",
+          "Design-system-kontrakter",
+          "Afkoblede moduler"
+        ],
         "rationale": "Lader distribuerede produktteams udrulle funktioner uafhængigt uden at bryde den fælles arkitektur."
       },
       "performance": {
         "name": "Performance-engineering",
         "annot": "/ LATENS & KONVERTERING",
-        "items": ["Interaktionslatens", "Optimistisk synkronisering", "Core Web Vitals"],
+        "items": [
+          "Interaktionslatens",
+          "Optimistisk synkronisering",
+          "Core Web Vitals"
+        ],
         "rationale": "Sikrer perfekte Core Web Vitals og svartider under 12 ms på enterprise-platforme."
       },
       "leadership": {
         "name": "Teknisk lederskab",
         "annot": "/ ORGANISATORISK SYNKRONISERING",
-        "items": ["Udvikleroplevelse", "Aktiv mentorering", "Automatiserede quality gates"],
+        "items": [
+          "Udvikleroplevelse",
+          "Aktiv mentorering",
+          "Automatiserede quality gates"
+        ],
         "rationale": "Accelererer leveringscyklusser med 30% på tværs af 20+ udviklere gennem aktiv mentorering."
       },
       "product": {
         "name": "Produkt- og systemafstemning",
         "annot": "/ FULL-STACK-STRATEGI",
-        "items": ["Domænemodellering", "Stakeholder-koordinering", "State- og cache-kontrakter"],
+        "items": [
+          "Domænemodellering",
+          "Stakeholder-koordinering",
+          "State- og cache-kontrakter"
+        ],
         "rationale": "Lukker eksekveringshuller mellem engineering, produktledere og direktion."
       }
     }
@@ -139,20 +155,20 @@
       "whyHire": "Hvorfor du bør",
       "name": "arbejde med mig?"
     },
-    "description": "Mange kan skrive UI-kode. Jeg specialiserer mig i at kombinere effektivitet formet af begrænsninger, europæisk enterprise-skala, produktintuition og teknisk governance på tværs af teams.",
+    "description": "Mange kan skrive UI-kode. Det jeg kommer med, er kombinationen: effektivitet lært under reelle begrænsninger, europæisk enterprise-skala, og den governance der holder tyve ingeniører fra at træde hinanden over tæerne.",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet forretningssoftware, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend-teams, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {
-        "title": "Strategisk Samarbejdende Engineering",
-        "description": "Jeg trives i tværfunktionelle miljøer, der bygger bro mellem produktledere, UI/UX-designere og backend-infrastruktur-ingeniører for at sikre en justeret levering."
+        "title": "Arbejde i sømmene",
+        "description": "De fleste af de svære problemer lever mellem produkt, design og backend, ikke inde i nogen af dem. Det er dér, jeg bruger min tid."
       },
       "1": {
-        "title": "Kontinuerlig Systemudvikling",
-        "description": "Dagens teknologilandskab er utilgivende. Jeg omfavner arkitektonisk refaktoriseringsarbejde og holder min teknologistak, testdækning og CI/CD-pipelines på forkant."
+        "title": "Refaktorering med vilje",
+        "description": "Stacks rådner. Jeg planlægger refaktoreringen, før den bliver en nødsituation, og holder tests og CI så opdaterede, at opgraderinger er kedelige."
       },
       "2": {
-        "title": "Robust Skalerbarhed",
-        "description": "Hastighed betyder intet uden stabilitet. Jeg bygger robuste mikrotjenester og drager fordel af moderne Next.js/React meta-frameworks, der prioriterer overhalinger med nul nedetid."
+        "title": "Hurtigt, og stadig oppe",
+        "description": "Hastighed, ingen kan regne med, er ikke hastighed. Jeg bygger, så en deploy holder op med at være en begivenhed."
       }
     },
     "advantages": [
@@ -160,18 +176,18 @@
         "id": "experience",
         "index": "01",
         "title": "18 års modenhed i engineering",
-        "subtitle": "Et stærkt full-stack fundament udviklet til elite-frontend-arkitektur.",
+        "subtitle": "Startede full stack og endte med at specialisere mig i frontend-arkitektur.",
         "bullets": [
           "Startede i 2007, spændende fra vanilla JavaScript til massive moderne isomorfe arkitekturer.",
           "Jeg bevarer en hands-on indstilling, leder arkitektonisk governance og understøtter produktfokuserede mål.",
-          "Jeg forener kompromisløst visuelt håndværk med robuste mønstre på produktionsniveau."
+          "Jeg går op i, hvordan det ser ud, og hvordan det holder. Det er det samme arbejde."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
         "title": "Effektivitets-DNA skabt af begrænsninger",
-        "subtitle": "Besatte ydeevnevaner opbygget under ekstreme ressourcegrænser.",
+        "subtitle": "Performancevaner fra en tid, hvor båndbredde ikke var valgfri.",
         "bullets": [
           "Jeg lærte faget under Cubas hårde dial-up-begrænsninger (56kbps), hvilket tvang mig til ekstrem ressourceeffektivitet.",
           "En streng hygiejne-mentalitet: tæller hver eneste byte, beskærer payloads og mikrooptimerer renderingstrin.",
@@ -197,7 +213,7 @@
         "bullets": [
           "Jeg afstemmer tekniske beslutninger, produkt-metrikker og design-systemers æstetik.",
           "Jeg modellerer typesikre domænelag, koordinerer caching-strategier i browseren og sikrer overensstemmelse i databaser.",
-          "Jeg designer brugerflader, der er visuelt premium, ekstremt responsive og nemme at vedligeholde."
+          "Grænseflader der ser rigtige ud, svarer med det samme, og som en anden kan vedligeholde."
         ]
       },
       {
@@ -208,12 +224,12 @@
         "bullets": [
           "Jeg har sat de tekniske standarder, der bruges af mere end 20 udviklere på tværs af 4 uafhængige produkt-teams.",
           "Jeg erstattede isolerede metoder med aktiv mentorering, klare systemaftaler og fælles workshops.",
-          "Jeg udrustede uafhængige teams til at udrulle sikkert på daglig basis med lav friktion."
+          "Distribuerede teams endte med at sende dagligt uden at vente på mig."
         ]
       }
     ],
     "servicesTitle": "Hvad Jeg Leverer.",
-    "servicesSub": "Leverer premium digitale oplevelser.",
+    "servicesSub": "Det, jeg faktisk bliver hyret til.",
     "originsLabel": "Ophav",
     "originsSub": "Cuba → København"
   },
@@ -567,7 +583,7 @@
     "eyebrow": "/ LEDERSKAB & FILOSOFI",
     "title": "Teknisk",
     "titleAccent": "Lederskab",
-    "subtitle": "Teknisk ekspertise handler om mere end blot kode: det handler om at strukturere systemer, afstemme talenter og skabe resultater via solid governance.",
+    "subtitle": "At skrive koden er den nemme halvdel. Resten er at beslutte hvor grænserne går, få tyve mennesker til at blive enige om dem, og kunne vise hvad det gav forretningen.",
     "principlesLabel": "Engineering principper",
     "practiceLabel": "Praktisk udmøntning",
     "notesTitle": "Tekniske noter",
@@ -589,12 +605,12 @@
       {
         "index": "01",
         "title": "Arkitektur handler om mennesker",
-        "body": "Systemer lykkes, når grænserne mellem teams, softwaregrænseflader og ansvar er skarpt defineret. Conways lov er ikke teori, men en reel engineering-begrænsning."
+        "body": "Conways lov er ikke noget man læser om. Hvis to teams skal koordinere ved hver release, dukker det op i koden som kobling, og ingen refaktorering fikser det, før teamene ændrer sig."
       },
       {
         "index": "02",
         "title": "Governance skaber hastighed",
-        "body": "Skarpe modulgrænser, semantisk versionering og grænsefladekontrakter er ikke hindringer. De er afgørende guardrails, der lader uafhængige teams udrulle hurtigt og sikkert."
+        "body": "Stramme grænser og semantisk versionering ligner bureaukrati udefra. Det er præcis dét, der lader et team sende i produktion en fredag uden at spørge nogen."
       },
       {
         "index": "03",
@@ -604,34 +620,34 @@
       {
         "index": "04",
         "title": "Kompleksitet akkumuleres",
-        "body": "Den dyreste linje kode er den, der skrives uden stabile interfaces og uafhængighed på sigt. En stærkt typet kodebase, der er tæt koblet, er stadig svær at skalere."
+        "body": "Den dyreste linje kode er den, der bliver skrevet uden en kontrakt omkring sig. En fuldt typet kodebase, hvor alt rækker ind i alt, er stadig spaghetti. Den kompilerer bare."
       },
       {
         "index": "05",
         "title": "De bedste systemer er forudsigelige",
-        "body": "Forudsigelige, stabile og afkoblede mønstre vinder over spændende men skrøbelige nyheder. Ensartet afvikling af software er det klareste tegn på teknologisk modenhed."
+        "body": "Forudsigeligt og afkoblet slår smart og skrøbeligt. Hvor kedeligt et teams software er, viser sig at være et ret godt mål for hvor moden organisationen er."
       }
     ],
     "howIWork": [
       {
         "title": "Pragmatisk beslutningstagning",
-        "body": "Strategi: Prioriterer stabile og forudsigelige standarder. Handling: Modellerer skarpe strukturgrænser og rene API-kontrakter. Resultat: Eliminerer slid ved beslutninger og forebygger fejl."
+        "body": "Jeg vælger den kedelige løsning og skriver ned hvorfor. Stramme modulgrænser og eksplicitte skemaer betyder færre beslutninger, der skal tages op igen, og færre ting der knækker, når værktøjerne skifter under en."
       },
       {
         "title": "Aktiv mentorering og tillid",
-        "body": "Strategi: Fjerner isolerede måder at udvikle kode på. Handling: Leder fælles workshops og fastlægger robuste systemgrænseflader. Resultat: Løfter de tekniske kompetencer i teamet."
+        "body": "Udviklere i siloer skriver kode, ingen andre tør røre. Jeg kører interfacekontrakter gennem workshops i stedet for dokumenter, så de tyve ingeniører, der arbejder i systemet, bliver enige før release, ikke under review."
       },
       {
         "title": "Tæt produkt-afstemning",
-        "body": "Strategi: Koordinerer direkte med forretningens interessenter. Handling: Omsætter teknisk kompleksitet til konkret kommerciel værdi. Resultat: Opnår opbakning til vigtige tekniske tiltag uden kommunikationshuller."
+        "body": "Jeg sætter mig med dem, der står på mål for tallet, ikke kun med dem der skriver opgaven. At oversætte en arkitekturbeslutning til hvad den koster og hvad den giver, er ofte forskellen på om arbejdet bliver godkendt."
       },
       {
         "title": "Aktiv minimering af gæld",
-        "body": "Strategi: Forebygger tæt kobling mellem underapplikationer proaktivt. Handling: Implementerer uafhængige sub-apps og sikrer skarpe API-skemaer. Resultat: Sparer 60% på infrastruktur og sikrer nemme opgraderinger."
+        "body": "Kobling er langt billigere at forebygge end at pille fra hinanden. Isolerede subapps og præcise API-skemaer skar 60% af forespørgselsomkostningerne og gjorde opgraderinger til noget vi lavede en tirsdag i stedet for at planlægge et kvartal frem."
       },
       {
         "title": "Øget autonomi",
-        "body": "Strategi: Opbygger decentraliseret tillid hos udviklerne. Handling: Standardiserer strenge automatiserede test og monorepo-grænser. Resultat: Gør uafhængige squads i stand til at udrulle sikker kode dagligt."
+        "body": "Autonomi uden gelændere er bare risiko med et pænere navn. Automatiske quality gates og monorepo-grænser lader distribuerede teams deploye dagligt uden at spørge om lov, fordi tjekkene siger nej, før et menneske skal."
       }
     ],
     "lessonsHeaderLabel": "/ MODENHED",

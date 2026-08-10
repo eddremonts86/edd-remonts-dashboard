@@ -72,7 +72,7 @@
       "vitals": {
         "value": "100%",
         "label": "Core Web Vitals",
-        "desc": "Secured flawless Lighthouse scores across complex user paths."
+        "desc": "Perfect Lighthouse scores on the paths users actually take."
       },
       "impact": {
         "value": "20+",
@@ -110,25 +110,41 @@
       "governance": {
         "name": "Architecture & Governance",
         "annot": "/ WORKSPACE SYSTEMS",
-        "items": ["Monorepo Boundaries", "Design-System Contracts", "Decoupled Modules"],
+        "items": [
+          "Monorepo Boundaries",
+          "Design-System Contracts",
+          "Decoupled Modules"
+        ],
         "rationale": "Enables distributed product teams to release features independently without breaking shared core architectures."
       },
       "performance": {
         "name": "Performance Engineering",
         "annot": "/ LATENCY & CONVERSION",
-        "items": ["Interaction Latency", "Optimistic State Sync", "Core Web Vitals"],
+        "items": [
+          "Interaction Latency",
+          "Optimistic State Sync",
+          "Core Web Vitals"
+        ],
         "rationale": "Secures perfect Core Web Vitals and sub-12ms interaction responsiveness for enterprise-scale platforms."
       },
       "leadership": {
         "name": "Technical Leadership",
         "annot": "/ ORG SYNCHRONIZATION",
-        "items": ["Developer Experience", "Active Mentorship", "Automated Quality Gates"],
+        "items": [
+          "Developer Experience",
+          "Active Mentorship",
+          "Automated Quality Gates"
+        ],
         "rationale": "Accelerates feature-delivery cycles by 30% across 20+ active engineers via active mentorship."
       },
       "product": {
         "name": "Product Systems Alignment",
         "annot": "/ FULL-STACK STRATEGY",
-        "items": ["Domain Modeling", "Stakeholder Coordination", "State & Cache Contracts"],
+        "items": [
+          "Domain Modeling",
+          "Stakeholder Coordination",
+          "State & Cache Contracts"
+        ],
         "rationale": "Bridges execution gaps between engineering teams, product managers, and executive stakeholders."
       }
     }
@@ -139,20 +155,20 @@
       "whyHire": "Why you should",
       "name": "hire me?"
     },
-    "description": "Many can write UI code. I specialize in combining constraint-forged efficiency, European enterprise scale, product intuition, and team-wide technical governance.",
+    "description": "Plenty of people can write UI code. What I bring is the combination: efficiency learned under real constraints, European enterprise scale, and the governance that keeps twenty engineers from standing on each other's feet.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
-        "title": "Strategic Collaborative Engineering",
-        "description": "I thrive in cross-functional environments, bridging the gap between product managers, UI/UX designers, and backend infrastructure engineers to ensure aligned delivery."
+        "title": "Working across the seams",
+        "description": "Most of the hard problems live between product, design and backend, not inside any of them. That is where I spend my time."
       },
       "1": {
-        "title": "Continuous System Evolution",
-        "description": "The technological landscape is unforgiving. I embrace architectural refactoring, keeping my tech stack, testing coverage, and CI/CD pipelines at the bleeding edge."
+        "title": "Refactoring on purpose",
+        "description": "Stacks rot. I schedule the refactor before it turns into an emergency, and keep tests and CI current enough that upgrading is boring."
       },
       "2": {
-        "title": "Resilient Scalability",
-        "description": "Speed means nothing without stability. I build robust microservices leveraging modern Next.js/React meta-frameworks prioritizing zero-downtime overhauls."
+        "title": "Fast, and still up",
+        "description": "Speed nobody can rely on is not speed. I build so that a deploy stops being an event."
       }
     },
     "advantages": [
@@ -160,18 +176,18 @@
         "id": "experience",
         "index": "01",
         "title": "18 Years of Engineering Maturity",
-        "subtitle": "A full-stack foundation evolved into elite frontend architecture.",
+        "subtitle": "Started full stack, ended up specialising in frontend architecture.",
         "bullets": [
           "Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.",
           "I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.",
-          "I combine absolute visual craft with production-grade architectural patterns."
+          "I care how it looks and how it holds up. Those are the same job."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
         "title": "Constraint-Born Efficiency DNA",
-        "subtitle": "Obsessive performance habits forged under extreme resource limits.",
+        "subtitle": "Performance habits from a time when bandwidth was not optional.",
         "bullets": [
           "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
           "A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.",
@@ -197,7 +213,7 @@
         "bullets": [
           "I align technical decisions, product metrics, and design-system aesthetics.",
           "I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.",
-          "I design user interfaces that are visually premium, highly responsive, and operationally maintainable."
+          "Interfaces that look right, answer immediately, and someone else can maintain."
         ]
       },
       {
@@ -208,12 +224,12 @@
         "bullets": [
           "I governed technical standards adopted by 20+ engineers across 4 autonomous product teams.",
           "I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.",
-          "I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence."
+          "Distributed squads ended up shipping daily without waiting on me."
         ]
       }
     ],
     "servicesTitle": "What I Deliver.",
-    "servicesSub": "Delivering premium digital experiences.",
+    "servicesSub": "What I actually get hired to do.",
     "originsLabel": "Origins",
     "originsSub": "Cuba → Copenhagen"
   },
@@ -567,7 +583,7 @@
     "eyebrow": "/ LEADERSHIP & PHILOSOPHY",
     "title": "Engineering",
     "titleAccent": "Leadership",
-    "subtitle": "Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.",
+    "subtitle": "Writing the code is the easy half. The rest is deciding where the boundaries go, getting twenty people to agree on them, and being able to show what it bought the business.",
     "principlesLabel": "Engineering principles",
     "practiceLabel": "How it shows in practice",
     "notesTitle": "Engineering notes",
@@ -589,12 +605,12 @@
       {
         "index": "01",
         "title": "Architecture is People",
-        "body": "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint."
+        "body": "Conway's Law is not something you read about. If two teams have to coordinate on every release, that shows up in the code as coupling, and no amount of refactoring fixes it until the teams change."
       },
       {
         "index": "02",
         "title": "Governance Enables Velocity",
-        "body": "Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity."
+        "body": "Strict boundaries and semantic versioning look like bureaucracy from the outside. They are what lets a team ship on a Friday without asking anyone."
       },
       {
         "index": "03",
@@ -604,34 +620,34 @@
       {
         "index": "04",
         "title": "Complexity Compounds",
-        "body": "The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti."
+        "body": "The most expensive line of code is the one written without a contract around it. A fully typed codebase where everything reaches into everything is still spaghetti. It just compiles."
       },
       {
         "index": "05",
         "title": "The Best Systems are Boring",
-        "body": "Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity."
+        "body": "Predictable and decoupled beats clever and fragile. How boring a team's software is turns out to be a decent proxy for how mature the organisation is."
       }
     ],
     "howIWork": [
       {
         "title": "Pragmatic Decision-Making",
-        "body": "Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue."
+        "body": "I pick the boring option and write down why. Strict module boundaries and explicit schemas mean fewer decisions to relitigate later, and fewer things that break when the tooling shifts underneath you."
       },
       {
         "title": "Active Mentorship & Trust",
-        "body": "Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers."
+        "body": "Developers working in silos write code nobody else dares change. I run interface contracts through workshops instead of documents, so the twenty-odd engineers touching the system agree on it before it ships, not during review."
       },
       {
         "title": "Product-Minded Alignment",
-        "body": "Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps."
+        "body": "I sit with the people who own the number, not just the ticket. Turning an architecture decision into what it costs and what it buys is usually the difference between the work getting approved and not."
       },
       {
         "title": "Debt-Minimization Strategy",
-        "body": "Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades."
+        "body": "Coupling is far cheaper to prevent than to unpick. Isolated sub-apps and exact API schemas cut query overhead by 60% and turned upgrades into something we did on a Tuesday instead of scheduling for a quarter."
       },
       {
         "title": "Empowered Autonomy",
-        "body": "Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy."
+        "body": "Autonomy without guardrails is just risk with a nicer name. Automated quality gates and monorepo boundaries let distributed squads deploy daily without asking permission, because the checks say no before a person has to."
       }
     ],
     "lessonsHeaderLabel": "/ MATURITY",

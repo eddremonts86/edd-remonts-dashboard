@@ -24,7 +24,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.lessons.0.title', 'Architecture is People'),
       body: t(
         'authority.lessons.0.body',
-        "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint.",
+        "Conway's Law is not something you read about. If two teams have to coordinate on every release, that shows up in the code as coupling, and no amount of refactoring fixes it until the teams change.",
       ),
     },
     {
@@ -32,7 +32,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.lessons.1.title', 'Governance Enables Velocity'),
       body: t(
         'authority.lessons.1.body',
-        'Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity.',
+        'Strict boundaries and semantic versioning look like bureaucracy from the outside. They are what lets a team ship on a Friday without asking anyone.',
       ),
     },
     {
@@ -48,7 +48,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.lessons.3.title', 'Complexity Compounds'),
       body: t(
         'authority.lessons.3.body',
-        'The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti.',
+        'The most expensive line of code is the one written without a contract around it. A fully typed codebase where everything reaches into everything is still spaghetti. It just compiles.',
       ),
     },
     {
@@ -56,7 +56,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.lessons.4.title', 'The Best Systems are Boring'),
       body: t(
         'authority.lessons.4.body',
-        'Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity.',
+        "Predictable and decoupled beats clever and fragile. How boring a team's software is turns out to be a decent proxy for how mature the organisation is.",
       ),
     },
   ]
@@ -67,7 +67,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.howIWork.0.title', 'Pragmatic Decision-Making'),
       body: t(
         'authority.howIWork.0.body',
-        'Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue.',
+        'I pick the boring option and write down why. Strict module boundaries and explicit schemas mean fewer decisions to relitigate later, and fewer things that break when the tooling shifts underneath you.',
       ),
     },
     {
@@ -75,7 +75,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.howIWork.1.title', 'Active Mentorship & Trust'),
       body: t(
         'authority.howIWork.1.body',
-        'Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers.',
+        'Developers working in silos write code nobody else dares change. I run interface contracts through workshops instead of documents, so the twenty-odd engineers touching the system agree on it before it ships, not during review.',
       ),
     },
     {
@@ -83,7 +83,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.howIWork.2.title', 'Product-Minded Alignment'),
       body: t(
         'authority.howIWork.2.body',
-        'Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps.',
+        'I sit with the people who own the number, not just the ticket. Turning an architecture decision into what it costs and what it buys is usually the difference between the work getting approved and not.',
       ),
     },
     {
@@ -91,7 +91,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.howIWork.3.title', 'Debt-Minimization Strategy'),
       body: t(
         'authority.howIWork.3.body',
-        'Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades.',
+        'Coupling is far cheaper to prevent than to unpick. Isolated sub-apps and exact API schemas cut query overhead by 60% and turned upgrades into something we did on a Tuesday instead of scheduling for a quarter.',
       ),
     },
     {
@@ -99,7 +99,7 @@ export function EngineeringAuthoritySection() {
       title: t('authority.howIWork.4.title', 'Empowered Autonomy'),
       body: t(
         'authority.howIWork.4.body',
-        'Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy.',
+        'Autonomy without guardrails is just risk with a nicer name. Automated quality gates and monorepo boundaries let distributed squads deploy daily without asking permission, because the checks say no before a person has to.',
       ),
     },
   ]
@@ -128,7 +128,7 @@ export function EngineeringAuthoritySection() {
             <p className="max-w-md text-[16px] font-light leading-relaxed text-foreground/75 md:text-[17px] font-display">
               {t(
                 'authority.subtitle',
-                'Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.',
+                'Writing the code is the easy half. The rest is deciding where the boundaries go, getting twenty people to agree on them, and being able to show what it bought the business.',
               )}
             </p>
           </div>
