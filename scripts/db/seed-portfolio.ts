@@ -15,6 +15,8 @@ import {
   portfolioSkills,
   portfolioTestimonials,
   portfolioTestimonialTranslations,
+  portfolioServices,
+  portfolioServiceTranslations,
 } from '../../src/shared/lib/db/schema'
 
 interface ExperienceItem {
@@ -930,6 +932,150 @@ async function main() {
     .onConflictDoNothing()
   console.log(
     `  ✓ ${testimonialsSeed.length} testimonials + ${testimonialTranslations.length} translations`,
+  )
+
+  // ── Services ───────────────────────────────────────────────────────────────
+  // The table and its dashboard editor existed from the start; nothing ever
+  // filled them, so the section rendered empty and no component read it.
+  //
+  // These are engagement shapes, not a price list. The site says plainly that
+  // the goal is a full-time team, and a rate card underneath that reads as
+  // "contractor, gone in a quarter". Each one names a symptom, what I do about
+  // it, and a figure that appears elsewhere on the page and can be checked.
+  //
+  // Deliberately not overlapping authority.howIWork, which covers how I behave
+  // rather than what lands on my desk.
+  const servicesSeed: Array<{
+    id: string
+    iconSlug: string
+    sortOrder: number
+    translations: Array<{ locale: 'en' | 'es' | 'dk'; title: string; description: string }>
+  }> = [
+    {
+      id: 'platform-decoupling',
+      iconSlug: 'layers',
+      sortOrder: 0,
+      translations: [
+        {
+          locale: 'en',
+          title: 'A platform that got heavy',
+          description:
+            'One deploy, four teams, and every release turns into a negotiation. I put the boundaries where the teams already are, split the frontend into sub-apps that own their own data, and leave the contracts written down. The test is whether a framework upgrade stops being a project.',
+        },
+        {
+          locale: 'es',
+          title: 'Una plataforma que pesa demasiado',
+          description:
+            'Un solo despliegue, cuatro equipos, y cada release termina en negociación. Pongo los límites donde ya están los equipos, parto el frontend en sub-apps dueñas de sus datos y dejo los contratos escritos. La prueba es que actualizar el framework deje de ser un proyecto.',
+        },
+        {
+          locale: 'dk',
+          title: 'En platform, der er blevet tung',
+          description:
+            'Én deployment, fire teams, og hver release ender som en forhandling. Jeg lægger grænserne der, hvor teamene allerede er, deler frontenden op i sub-apps, der ejer deres egne data, og skriver kontrakterne ned. Prøven er, om en framework-opgradering holder op med at være et projekt.',
+        },
+      ],
+    },
+    {
+      id: 'performance-work',
+      iconSlug: 'cpu',
+      sortOrder: 1,
+      translations: [
+        {
+          locale: 'en',
+          title: 'Performance, with the number attached',
+          description:
+            'Not a Lighthouse screenshot. I measure what the page actually costs: bundle, interaction latency, server render. Then I cut the expensive part and report the difference. The one I keep citing: 94% off the initial bundle, LCP down to 1.4s, interactions under twelve milliseconds. Measured before and after, not estimated.',
+        },
+        {
+          locale: 'es',
+          title: 'Rendimiento, con el número delante',
+          description:
+            'No una captura de Lighthouse. Mido lo que cuesta la página de verdad: bundle, latencia de interacción, render de servidor. Después corto lo caro y reporto la diferencia. La que sigo citando: 94% menos de bundle inicial, LCP en 1,4s, interacciones por debajo de doce milisegundos. Medido antes y después, no estimado.',
+        },
+        {
+          locale: 'dk',
+          title: 'Performance, med tallet på',
+          description:
+            'Ikke et Lighthouse-screenshot. Jeg måler, hvad siden faktisk koster: bundle, interaktionslatens, server-render. Så skærer jeg det dyre væk og rapporterer forskellen. Den jeg bliver ved med at nævne: 94% mindre initial bundle, LCP nede på 1,4s, interaktioner under tolv millisekunder. Målt før og efter, ikke estimeret.',
+        },
+      ],
+    },
+    {
+      id: 'design-system',
+      iconSlug: 'sparkles',
+      sortOrder: 2,
+      translations: [
+        {
+          locale: 'en',
+          title: 'A design system people reach for',
+          description:
+            'A component library nobody adopts is a second codebase to maintain. I build it against the screens that already exist, migrate the first ones myself, and count adoption instead of components. The last one went out to twenty engineers and took thirty percent off delivery time.',
+        },
+        {
+          locale: 'es',
+          title: 'Un design system que la gente sí usa',
+          description:
+            'Una librería de componentes que nadie adopta es un segundo código que mantener. La construyo contra las pantallas que ya existen, migro las primeras yo mismo y cuento adopción, no componentes. La última llegó a veinte ingenieros y quitó un treinta por ciento al tiempo de entrega.',
+        },
+        {
+          locale: 'dk',
+          title: 'Et designsystem, folk rent faktisk bruger',
+          description:
+            'Et komponentbibliotek, ingen tager i brug, er bare endnu en kodebase at vedligeholde. Jeg bygger det op mod de skærme, der allerede findes, migrerer de første selv og tæller anvendelse frem for komponenter. Det seneste nåede ud til tyve udviklere og skar tredive procent af leveringstiden.',
+        },
+      ],
+    },
+    {
+      id: 'data-heavy-ui',
+      iconSlug: 'database',
+      sortOrder: 3,
+      translations: [
+        {
+          locale: 'en',
+          title: 'Data-heavy product UI, end to end',
+          description:
+            'Twenty-five thousand listings that filter without a spinner. Thirteen platforms reconciled into one ranked feed. I build the schema, the server functions and the interface as one piece, because in a product like that the seams are where it gets slow.',
+        },
+        {
+          locale: 'es',
+          title: 'Interfaz con mucho dato, de punta a punta',
+          description:
+            'Veinticinco mil anuncios que filtran sin spinner. Trece plataformas reconciliadas en una sola lista ordenada. Construyo el esquema, las funciones de servidor y la interfaz como una sola pieza, porque en un producto así lo lento siempre está en las costuras.',
+        },
+        {
+          locale: 'dk',
+          title: 'Datatung produkt-UI, hele vejen',
+          description:
+            'Femogtyve tusind annoncer, der filtrerer uden en spinner. Tretten platforme samlet til én rangeret liste. Jeg bygger skemaet, server-funktionerne og brugerfladen som ét stykke, for i den slags produkter er det sammenføjningerne, der gør det langsomt.',
+        },
+      ],
+    },
+  ]
+
+  await db
+    .insert(portfolioServices)
+    .values(
+      servicesSeed.map((s) => ({
+        id: s.id,
+        iconSlug: s.iconSlug,
+        visible: true,
+        sortOrder: s.sortOrder,
+      })),
+    )
+    .onConflictDoNothing()
+
+  const serviceTranslations = servicesSeed.flatMap((s) =>
+    s.translations.map((tr) => ({
+      serviceId: s.id,
+      locale: tr.locale,
+      title: tr.title,
+      description: tr.description,
+    })),
+  )
+  await db.insert(portfolioServiceTranslations).values(serviceTranslations).onConflictDoNothing()
+  console.log(
+    `  \u2713 ${servicesSeed.length} services + ${serviceTranslations.length} translations`,
   )
 
   await pool.end()

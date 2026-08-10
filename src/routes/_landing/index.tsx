@@ -36,13 +36,34 @@ export const Route = createFileRoute('/_landing/')({
    * refetches on arrival.
    */
   loader: async () => {
+    // Never let the database take the page down with it. Rendering on the
+    // server means a dead connection now throws inside the route instead of
+    // resolving to an empty query, and the whole landing page collapses into
+    // an error boundary — the failure mode is total where it used to be
+    // cosmetic. On failure this hands back nothing, the client refetches, and
+    // the visitor sees what they saw before this loader existed.
+    // undefined, not []: an empty array is data as far as React Query is
+    // concerned, and with a five-minute staleTime it would sit there instead of
+    // refetching. undefined leaves initialData unset so the query runs.
+    const settle = async <T,>(
+      label: string,
+      run: () => Promise<T[]>,
+    ): Promise<T[] | undefined> => {
+      try {
+        return await run()
+      } catch (error) {
+        console.error(`[landing] ${label} did not load; falling back to the client`, error)
+        return undefined
+      }
+    }
+
     const [content, experiences, skills, projects, services, testimonials] = await Promise.all([
-      getContentBlocks(),
-      getExperiences(),
-      getSkills(),
-      getProjects(),
-      getServices(),
-      getTestimonials(),
+      settle('content', getContentBlocks),
+      settle('experiences', getExperiences),
+      settle('skills', getSkills),
+      settle('projects', getProjects),
+      settle('services', getServices),
+      settle('testimonials', getTestimonials),
     ])
     return { content, experiences, skills, projects, services, testimonials }
   },

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
 import { MOON, SUN } from '@/portfolio/components/ui/icons/morphIconNodes'
 import { useTheme } from '@/portfolio/contexts/ThemeContextBase'
-import { NAV_SECTIONS } from '@/portfolio/data/navigation'
+import { useNavSections } from '@/portfolio/data/navigation'
 import { useResolvedTheme } from '@/portfolio/hooks/useResolvedTheme'
 import { getCvUrl } from '@/portfolio/lib/cvUrl'
 import { APPLE_EASE } from '@/portfolio/lib/motion'
@@ -89,6 +89,8 @@ export const CommandPalette = () => {
     if (open) inputRef.current?.focus()
   }, [open])
 
+  const navSections = useNavSections()
+
   const commands = useMemo<Command[]>(() => {
     const goto = (id: string) => () => {
       close()
@@ -101,7 +103,7 @@ export const CommandPalette = () => {
     }
 
     return [
-      ...NAV_SECTIONS.map((section) => ({
+      ...navSections.map((section) => ({
         id: `goto-${section.id}`,
         label: `${t('palette.goto', 'Go to')}: ${t(section.labelKey, section.id)}`,
         hint: `#${section.id}`,
@@ -194,7 +196,7 @@ export const CommandPalette = () => {
         },
       },
     ]
-  }, [t, i18n, resolvedTheme, setTheme, close, announce])
+  }, [navSections, t, i18n, resolvedTheme, setTheme, close, announce])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
