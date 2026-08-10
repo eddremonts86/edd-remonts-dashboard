@@ -1,44 +1,26 @@
 name: auth-local-e2e
 
+# Manual only, deliberately.
+#
+# This suite has never passed in this repository. It provisions users against a
+# `roles` table and a user-role relation that no migration here creates and no
+# drizzle schema defines: there are two SQL files and the initial one has no
+# such table. Roles in this app live in code, in
+# src/modules/users/model/permissions.ts, and `users` has no role column.
+#
+# The give-away is the database it asks for, `tanstack_template_auth_e2e`: the
+# tests came with the template this project was derived from and were never
+# adapted. They cannot pass without either re-introducing a data model the app
+# does not use, or being rewritten against the one it does.
+#
+# Blocking every pull request on a job that has failed since May teaches people
+# to ignore red, so it no longer runs automatically. It is still here, and still
+# runnable from the Actions tab, for whoever decides which of the two it should
+# be. The port and .env bugs underneath it are fixed, so it now fails on the
+# real problem rather than on ECONNREFUSED.
+
 on:
-  pull_request:
-    branches:
-      - main
-      - master
-    paths:
-      - '.github/workflows/auth-local-e2e.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'playwright.auth-local.config.ts'
-      - 'scripts/testing/e2e-ci-local.sh'
-      - 'scripts/testing/prepare-auth-e2e-db.ts'
-      - 'src/shared/lib/auth/**'
-      - 'src/modules/auth/**'
-      - 'src/modules/users/**'
-      - 'src/modules/dashboard/ui/navigation/NavUser.tsx'
-      - 'tests/e2e/auth*.local.spec.ts'
-      - 'tests/e2e/utils/auth-local*.ts'
-      - 'src/shared/lib/db/schema.ts'
-      - 'drizzle/**'
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - '.github/workflows/auth-local-e2e.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'playwright.auth-local.config.ts'
-      - 'scripts/testing/e2e-ci-local.sh'
-      - 'scripts/testing/prepare-auth-e2e-db.ts'
-      - 'src/shared/lib/auth/**'
-      - 'src/modules/auth/**'
-      - 'src/modules/users/**'
-      - 'src/modules/dashboard/ui/navigation/NavUser.tsx'
-      - 'tests/e2e/auth*.local.spec.ts'
-      - 'tests/e2e/utils/auth-local*.ts'
-      - 'src/shared/lib/db/schema.ts'
-      - 'drizzle/**'
+  workflow_dispatch:
 
 jobs:
   auth-local:
