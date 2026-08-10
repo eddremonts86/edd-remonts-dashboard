@@ -1,7 +1,13 @@
 import { m } from 'framer-motion'
-import { AlertCircle, ArrowRight } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import {
+  ARROW_RIGHT,
+  CIRCLE_CHECK,
+  LOADER_CIRCLE,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -113,11 +119,26 @@ export const ContactForm = ({
               ? t('contact.form.submitting', 'SENDING...')
               : t('contact.form.send', 'SEND MESSAGE')}
           </span>
-          {status === 'submitting' ? (
-            <div className="relative z-10 h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-          ) : (
-            <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-          )}
+          {/* arrow → spinner → check, morphed rather than swapped. The three
+              glyphs are the three states of one action, so the shape carrying
+              between them is information, not decoration. */}
+          <MorphingIcon
+            icon={
+              status === 'submitting'
+                ? LOADER_CIRCLE
+                : status === 'success'
+                  ? CIRCLE_CHECK
+                  : ARROW_RIGHT
+            }
+            size={14}
+            className={`relative z-10 transition-transform ${
+              status === 'submitting'
+                ? 'animate-spin'
+                : status === 'idle'
+                  ? 'group-hover:translate-x-1'
+                  : ''
+            }`}
+          />
         </button>
         <p className="mt-4 text-center font-mono text-[8px] text-foreground/60 leading-normal select-none">
           {t(

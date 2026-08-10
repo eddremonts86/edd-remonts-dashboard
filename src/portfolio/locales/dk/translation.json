@@ -463,6 +463,8 @@
     "title": "Lad os bygge",
     "titleAccent": "noget sammen",
     "subtitle": "Klar til at drøfte et projekt, ansætte en Staff Engineer eller booke teknisk rådgivning? Send en besked, og lad os starte dialogen.",
+    "copyEmail": "Kopiér e-mailadresse",
+    "copied": "Kopieret",
     "eyebrow": "/ TAG KONTAKT",
     "params": {
       "title": "Ansættelses- & Samarbejdsparametre",

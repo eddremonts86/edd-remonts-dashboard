@@ -463,6 +463,8 @@
     "title": "Let's Build",
     "titleAccent": "Something Together",
     "subtitle": "Ready to discuss a project, hire a staff engineer, or book technical consulting? Send a message and let's start a conversation.",
+    "copyEmail": "Copy email address",
+    "copied": "Copied",
     "eyebrow": "/ GET IN TOUCH",
     "params": {
       "title": "Hiring & Engagement Parameters",

@@ -463,6 +463,8 @@
     "title": "Construyamos",
     "titleAccent": "algo juntos",
     "subtitle": "¿Listo para hablar de un proyecto, contratar a un Staff Engineer o reservar una consultoría técnica? Envía un mensaje y empecemos la conversación.",
+    "copyEmail": "Copiar dirección de correo",
+    "copied": "Copiado",
     "eyebrow": "/ HABLEMOS",
     "params": {
       "title": "Parámetros de Contratación y Colaboración",

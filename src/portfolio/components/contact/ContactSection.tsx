@@ -5,6 +5,7 @@ import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
 import { useFormspree } from '@/portfolio/hooks/useFormspree'
 import { FORMSPREE_FORM_ID } from '@/portfolio/lib/config'
 import { fadeInView } from '@/portfolio/lib/motion'
+import { CopyButton } from '../ui/badges/CopyButton'
 import { Section, Container } from '../ui/layout/Section'
 import { ContactForm } from './ContactForm'
 import { SuccessMessage } from './SuccessMessage'
@@ -112,21 +113,30 @@ export const ContactSection = () => {
                   </span>
                 </div>
 
-                <a
-                  href={`mailto:${personalInfo.email}`}
-                  className="rounded-xl border border-subtle bg-surface/40 p-4 space-y-2 block hover:border-primary/45 hover:bg-primary/3 transition-all duration-300 group cursor-pointer"
-                >
-                  <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold group-hover:text-primary transition-colors">
-                    <Mail className="h-3 w-3 text-primary transition-transform group-hover:scale-110" />
-                    {t('contact.params.emailLabel', 'Direct Email')}
-                  </span>
-                  <span className="font-display text-sm font-semibold text-foreground block truncate group-hover:text-primary transition-colors">
-                    {personalInfo.email}
-                  </span>
-                  <span className="font-mono text-[9px] text-foreground/60 block group-hover:text-foreground/75 transition-colors">
-                    {t('contact.form.target', 'Initiate Connection')}
-                  </span>
-                </a>
+                {/* mailto for people who use a mail client, copy for everyone
+                    else — the address should never be a manual transcription. */}
+                <div className="relative rounded-xl border border-subtle bg-surface/40 transition-all duration-300 hover:border-primary/45 hover:bg-primary/3 group">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="block space-y-2 p-4 pr-14 cursor-pointer"
+                  >
+                    <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold group-hover:text-primary transition-colors">
+                      <Mail className="h-3 w-3 text-primary transition-transform group-hover:scale-110" />
+                      {t('contact.params.emailLabel', 'Direct Email')}
+                    </span>
+                    <span className="font-display text-sm font-semibold text-foreground block truncate group-hover:text-primary transition-colors">
+                      {personalInfo.email}
+                    </span>
+                    <span className="font-mono text-[9px] text-foreground/60 block group-hover:text-foreground/75 transition-colors">
+                      {t('contact.form.target', 'Initiate Connection')}
+                    </span>
+                  </a>
+                  <CopyButton
+                    value={personalInfo.email}
+                    label={t('contact.copyEmail', 'Copy email address')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-surface/80 backdrop-blur-sm"
+                  />
+                </div>
 
                 <div className="rounded-xl border border-subtle bg-surface/40 p-4 space-y-2 hover:border-primary/30 hover:bg-surface/50 transition-all duration-300">
                   <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1.5 font-bold">
