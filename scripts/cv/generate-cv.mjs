@@ -62,9 +62,9 @@ const THEMES = {
 }
 
 const LABELS = {
-  en: { about: 'About me', experience: 'Professional experience', skills: 'Technical skills', languages: 'Languages', present: 'Present', langs: [['Spanish', 'Native'], ['English', 'Fluent'], ['Danish', 'B1']] },
-  es: { about: 'Sobre mí', experience: 'Experiencia profesional', skills: 'Competencias técnicas', languages: 'Idiomas', present: 'Actualidad', langs: [['Español', 'Nativo'], ['Inglés', 'Fluido'], ['Danés', 'B1']] },
-  dk: { about: 'Om mig', experience: 'Erhvervserfaring', skills: 'Tekniske kompetencer', languages: 'Sprog', present: 'Nu', langs: [['Spansk', 'Modersmål'], ['Engelsk', 'Flydende'], ['Dansk', 'B1']] },
+  en: { aboutEyebrow: 'Who is writing', aboutTitle: 'About', aboutAccent: 'me.', expEyebrow: 'Eighteen years, two countries', expTitle: 'Professional', expAccent: 'experience.', skillsEyebrow: 'Technical expertise', skillsTitle: 'Architectural', skillsAccent: 'capabilities.', langEyebrow: 'Languages', langTitle: 'Languages', present: 'Present', langs: [['Spanish', 'Native'], ['English', 'Fluent'], ['Danish', 'B1']] },
+  es: { aboutEyebrow: 'Quién escribe', aboutTitle: 'Sobre', aboutAccent: 'mí.', expEyebrow: 'Dieciocho años, dos países', expTitle: 'Experiencia', expAccent: 'profesional.', skillsEyebrow: 'Experiencia técnica', skillsTitle: 'Capacidades', skillsAccent: 'arquitectónicas.', langEyebrow: 'Idiomas', langTitle: 'Idiomas', present: 'Actualidad', langs: [['Español', 'Nativo'], ['Inglés', 'Fluido'], ['Danés', 'B1']] },
+  dk: { aboutEyebrow: 'Hvem skriver', aboutTitle: 'Om', aboutAccent: 'mig.', expEyebrow: 'Atten år, to lande', expTitle: 'Erhvervs', expAccent: 'erfaring.', skillsEyebrow: 'Teknisk erfaring', skillsTitle: 'Arkitektoniske', skillsAccent: 'kompetencer.', langEyebrow: 'Sprog', langTitle: 'Sprog', present: 'Nu', langs: [['Spansk', 'Modersmål'], ['Engelsk', 'Flydende'], ['Dansk', 'B1']] },
 }
 
 function styles(t) {
@@ -81,20 +81,34 @@ function styles(t) {
     contactVal: { fontFamily: 'Mono', fontSize: 7.5, color: t.accent, textDecoration: 'none' },
     contactPlain: { fontFamily: 'Mono', fontSize: 7.5, color: t.muted },
     rule: { borderBottomWidth: 0.7, borderBottomColor: t.rule, marginVertical: 13 },
-    sectionRow: { flexDirection: 'row', alignItems: 'center', gap: 7, marginBottom: 9 },
-    sectionDash: { width: 13, height: 1.6, backgroundColor: t.accent },
-    sectionTitle: { fontFamily: 'Cinzel', fontWeight: 700, fontSize: 11.5, letterSpacing: 1 },
+    // The site never uses a bare heading: every section opens with a mono
+    // "/ EYEBROW", then a display line whose second half is serif italic in the
+    // accent. Same two-part device here.
+    eyebrow: { fontFamily: 'Mono', fontSize: 6.6, letterSpacing: 1.7, color: t.accent, marginBottom: 4 },
+    sectionHead: { flexDirection: 'row', alignItems: 'baseline', gap: 5, marginBottom: 9 },
+    sectionTitle: { fontFamily: 'Epilogue', fontSize: 14, color: t.fg },
+    sectionAccent: { fontFamily: 'Cinzel', fontSize: 14, color: t.accent },
+    // Hero metric panel, the page's signature block.
+    metrics: { flexDirection: 'row', flexWrap: 'wrap', borderTopWidth: 0.7, borderTopColor: t.rule, borderBottomWidth: 0.7, borderBottomColor: t.rule, paddingVertical: 10, marginBottom: 14 },
+    metric: { width: '25%', paddingRight: 10 },
+    metricValue: { fontFamily: 'Cinzel', fontSize: 17, color: t.fg, lineHeight: 1.2 },
+    metricLabel: { fontFamily: 'Mono', fontSize: 6, letterSpacing: 1, color: t.accent, marginTop: 2 },
+    metricDesc: { fontSize: 6.6, color: t.faint, marginTop: 2, lineHeight: 1.45 },
+    // Index markers, as on the site's cards.
+    jobIndex: { fontFamily: 'Cinzel', fontSize: 9, color: t.faint, marginBottom: 2 },
+    // Company chips, matching CompanyChip on the page.
+    companyChip: { borderWidth: 0.6, borderColor: t.rule, borderRadius: 20, paddingVertical: 1.5, paddingHorizontal: 5, fontFamily: 'Mono', fontSize: 6.4, letterSpacing: 0.8, color: t.accent },
     prose: { textAlign: 'justify', color: t.muted, marginBottom: 6 },
     job: { flexDirection: 'row', gap: 14, marginBottom: 11 },
-    jobDates: { width: 88, fontFamily: 'Mono', fontSize: 6.8, color: t.faint, lineHeight: 1.5, textAlign: 'right' },
+    jobDates: { width: 88, textAlign: 'right', fontFamily: 'Mono', fontSize: 6.8, color: t.faint, lineHeight: 1.5 },
     jobBody: { flex: 1 },
     jobRole: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 9.6, marginBottom: 1.5 },
-    jobMetaRow: { flexDirection: 'row', marginBottom: 3, flexWrap: 'wrap' },
+    jobMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4, flexWrap: 'wrap' },
     jobCompany: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 8.3, color: t.accent },
     jobWhere: { fontSize: 8.3, color: t.muted },
     jobDesc: { textAlign: 'justify', color: t.muted },
     chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 },
-    chip: { backgroundColor: t.chip, borderRadius: 3, paddingVertical: 3, paddingHorizontal: 6, fontFamily: 'Mono', fontSize: 6.6, letterSpacing: 0.7, color: t.muted },
+    chip: { backgroundColor: t.chip, borderRadius: 20, paddingVertical: 3, paddingHorizontal: 6, fontFamily: 'Mono', fontSize: 6.6, letterSpacing: 0.7, color: t.muted },
     langRow: { flexDirection: 'row', marginBottom: 2 },
     langName: { fontFamily: 'Epilogue', fontWeight: 700, fontSize: 8.5 },
     langLevel: { fontSize: 8.5, color: t.muted },
@@ -102,8 +116,18 @@ function styles(t) {
   })
 }
 
-const Section = (s, title) =>
-  h(View, { style: s.sectionRow, wrap: false }, h(View, { style: s.sectionDash }), h(Text, { style: s.sectionTitle }, title.toUpperCase()))
+const Section = (s, eyebrow, title, accent) =>
+  h(
+    View,
+    { wrap: false, style: { marginBottom: 2 } },
+    h(Text, { style: s.eyebrow }, `/ ${eyebrow.toUpperCase()}`),
+    h(
+      View,
+      { style: s.sectionHead },
+      h(Text, { style: s.sectionTitle }, title),
+      accent ? h(Text, { style: s.sectionAccent }, accent) : null,
+    ),
+  )
 
 /** cv-source already stores "01/08/2024 - Present day"; just split the range. */
 const splitPeriod = (period = '') => {
@@ -141,7 +165,7 @@ function buildDoc({ lang, theme, cv, loc }) {
           View,
           { style: { flex: 1 } },
           h(Text, { style: s.name }, p.name, h(Text, { style: s.dot }, '.')),
-          h(Text, { style: s.role }, (loc.hero?.titleLine1 ?? 'Staff Frontend Engineer').toUpperCase()),
+          h(Text, { style: s.role }, `${loc.hero?.titleLine1 ?? ''} ${loc.hero?.titleLine2 ?? ''}`.trim().toUpperCase()),
           h(
             View,
             { style: s.contactGrid },
@@ -160,20 +184,40 @@ function buildDoc({ lang, theme, cv, loc }) {
       ),
       h(View, { style: s.rule }),
 
-      Section(s, L.about),
+      // The four numbers the site leads with. The CV had none of them.
+      h(
+        View,
+        { style: s.metrics },
+        ...['bundle', 'delivery', 'vitals', 'impact']
+          .map((k) => loc.hero?.metrics?.[k])
+          .filter(Boolean)
+          .map((m, i) =>
+            h(
+              View,
+              { style: s.metric, key: i },
+              h(Text, { style: s.metricValue }, m.value),
+              h(Text, { style: s.metricLabel }, m.label.toUpperCase()),
+              h(Text, { style: s.metricDesc }, m.desc),
+            ),
+          ),
+      ),
+
+      Section(s, L.aboutEyebrow, L.aboutTitle, L.aboutAccent),
       h(Text, { style: s.prose }, loc.about.description),
       h(Text, { style: s.prose }, loc.about.advantages?.[1]?.bullets?.[2] ?? ''),
 
       h(View, { style: { height: 6 } }),
-      Section(s, L.experience),
-      ...cv.experiences.map((e) => {
+      Section(s, L.expEyebrow, L.expTitle, L.expAccent),
+      ...cv.experiences.map((e, idx) => {
         // items is keyed by the experience id (1..12), not by array position.
         const it = items[String(e.id)] ?? {}
         const [from, to] = splitPeriod(e.period)
         return h(
           View,
           { style: s.job, key: e.id, wrap: false },
-          h(Text, { style: s.jobDates }, `${from}\n${to || L.present}`),
+          h(View, { style: { width: 88, alignItems: 'flex-end' } },
+            h(Text, { style: s.jobIndex }, `/${String(idx + 1).padStart(2, '0')}`),
+            h(Text, { style: s.jobDates }, `${from}\n${to || L.present}`)),
           h(
             View,
             { style: s.jobBody },
@@ -181,8 +225,8 @@ function buildDoc({ lang, theme, cv, loc }) {
             h(
               View,
               { style: s.jobMetaRow },
-              h(Text, { style: s.jobCompany }, e.company),
-              h(Text, { style: s.jobWhere }, ` · ${e.location}`),
+              h(Text, { style: s.companyChip }, e.company.toUpperCase()),
+              h(Text, { style: s.jobWhere }, e.location),
             ),
             h(Text, { style: s.jobDesc }, it.description ?? ''),
           ),
@@ -190,11 +234,11 @@ function buildDoc({ lang, theme, cv, loc }) {
       }),
 
       h(View, { style: { height: 6 } }),
-      Section(s, L.skills),
+      Section(s, L.skillsEyebrow, L.skillsTitle, L.skillsAccent),
       h(View, { style: s.chips }, ...cv.skills.map((k) => h(Text, { style: s.chip, key: k }, k.toUpperCase()))),
 
       h(View, { style: { height: 12 } }),
-      Section(s, L.languages),
+      Section(s, L.langEyebrow, L.langTitle, null),
       ...L.langs.map(([n, lvl]) =>
         h(View, { style: s.langRow, key: n }, h(Text, { style: s.langName }, n), h(Text, { style: s.langLevel }, ` – ${lvl}`)),
       ),
