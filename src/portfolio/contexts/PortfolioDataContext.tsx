@@ -7,6 +7,7 @@
  */
 
 import { useQuery } from '@tanstack/react-query'
+import { useMatch } from '@tanstack/react-router'
 import { Mail } from 'lucide-react'
 import { createContext, useContext, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -171,40 +172,52 @@ const PortfolioDataCtx = createContext<PortfolioData>({
 export function PortfolioDataProvider({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation()
 
+  // Server-rendered seed from the /_landing/ loader. Without it every query
+  // below starts empty during SSR and the whole page ships to crawlers as a
+  // set of headings with nothing under them. shouldThrow: false keeps the
+  // provider usable if it is ever mounted outside that route.
+  const seed = useMatch({ from: '/_landing/', shouldThrow: false })?.loaderData
+
   const { data: contentBlocks = [], isLoading: loadingContent } = useQuery({
     queryKey: ['portfolio', 'content'],
     queryFn: () => getContentBlocks(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.content,
   })
 
   const { data: dbExperiences = [], isLoading: loadingExp } = useQuery({
     queryKey: ['portfolio', 'experiences'],
     queryFn: () => getExperiences(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.experiences,
   })
 
   const { data: dbSkills = [], isLoading: loadingSkills } = useQuery({
     queryKey: ['portfolio', 'skills'],
     queryFn: () => getSkills(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.skills,
   })
 
   const { data: dbProjects = [], isLoading: loadingProjects } = useQuery({
     queryKey: ['portfolio', 'projects'],
     queryFn: () => getProjects(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.projects,
   })
 
   const { data: dbServices = [], isLoading: loadingServices } = useQuery({
     queryKey: ['portfolio', 'services'],
     queryFn: () => getServices(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.services,
   })
 
   const { data: dbTestimonials = [], isLoading: loadingTestimonials } = useQuery({
     queryKey: ['portfolio', 'testimonials'],
     queryFn: () => getTestimonials(),
     staleTime: 5 * 60 * 1000,
+    initialData: seed?.testimonials,
   })
 
   const activeLocale = i18n.language.startsWith('es')

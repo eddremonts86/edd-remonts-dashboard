@@ -11,10 +11,16 @@ import { ProjectListItem } from './ProjectListItem'
 
 export const ProjectsGallery = () => {
   const { t } = useTranslation()
-  const { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject } =
-    useProjectFilter()
-  // The first row opens by default: a table of seventeen collapsed rows gives
-  // no hint that anything is behind them.
+  const {
+    activeCategory,
+    setActiveCategory,
+    allProjects,
+    filteredProjects,
+    hoveredProject,
+    setHoveredProject,
+  } = useProjectFilter()
+  // The first row opens by default: a table of collapsed rows gives no hint
+  // that anything is behind them.
   const [expandedId, setExpandedId] = useState<string | null>('builderhunt')
   const { springX, springY } = useMousePosition()
 
@@ -42,9 +48,13 @@ export const ProjectsGallery = () => {
             stories open inside their own rows; see ProjectStoryPanel. */}
         <div className="mb-8 flex flex-col justify-between gap-6 border-b border-subtle pb-6 md:flex-row md:items-end text-left">
           <p className="max-w-xl text-[16px] text-foreground/78 leading-relaxed font-light">
+            {/* Counted, not written down. The copy said "Seventeen in total"
+                while the table rendered nineteen, because the number was typed
+                once and the database kept moving. */}
             {t(
               'projects.registry.description',
-              'Seventeen in total. The four at the top are my own — open a row to read the case study.',
+              '{{total}} in total. The four at the top are my own — open a row to read the case study.',
+              { total: allProjects.length },
             )}
           </p>
 

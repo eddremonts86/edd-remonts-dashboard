@@ -464,7 +464,7 @@
     "registry": {
       "kicker": "/ PROYECTOS ADICIONALES",
       "title": "Más proyectos",
-      "description": "Diecisiete en total. Los cuatro primeros son míos — abre una fila para leer el caso completo.",
+      "description": "{{total}} en total. Los cuatro primeros son míos — abre una fila para leer el caso completo.",
       "aria": "Registro de proyectos adicionales",
       "colIndex": "Índice",
       "colProject": "Proyecto / Alcance",

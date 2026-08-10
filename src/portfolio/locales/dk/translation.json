@@ -464,7 +464,7 @@
     "registry": {
       "kicker": "/ FLERE PROJEKTER",
       "title": "Flere projekter",
-      "description": "Sytten i alt. De fire øverste er mine egne — åbn en række for at læse casen.",
+      "description": "{{total}} i alt. De fire øverste er mine egne — åbn en række for at læse casen.",
       "aria": "Register over yderligere projekter",
       "colIndex": "Indeks",
       "colProject": "Projekt / Omfang",
