@@ -9,7 +9,8 @@
     "resume": "Descargar CV",
     "discover": "Descubrir",
     "lab": "El Laboratorio",
-    "log": "Bitácora"
+    "log": "Bitácora",
+    "services": "Servicios"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -234,14 +235,10 @@
     "originsSub": "Cuba → Copenhague"
   },
   "services": {
-    "0": {
-      "title": "Arquitectura Frontend de Vanguardia",
-      "description": "No solo construyo sitios web; diseño ecosistemas digitales interactivos. Con React, Next.js y Framer Motion entrego aplicaciones que cargan en menos de un segundo, con animaciones a 60 fps y una precisión de UX innegociable."
-    },
-    "1": {
-      "title": "Resiliencia Cloud y Backend",
-      "description": "Un frontend excepcional requiere un backend sólido. Diseño capas API serverless robustas, optimizo consultas de bases de datos relacionales/NoSQL y establezco pipelines de despliegue automatizados garantizando un 99.9% de uptime."
-    }
+    "eyebrow": "Formas de entrada",
+    "title": "Lo que me pondrías delante",
+    "titleAccent": "Y lo que sale.",
+    "description": "Cuatro formas que suele tomar el trabajo. Cada una ya la he hecho, con el número que trajo."
   },
   "experience": {
     "title": "Trayectoria",

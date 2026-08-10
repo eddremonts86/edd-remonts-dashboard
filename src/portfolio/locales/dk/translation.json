@@ -9,7 +9,8 @@
     "resume": "Download CV",
     "discover": "Opdag",
     "lab": "Laboratoriet",
-    "log": "Byggelog"
+    "log": "Byggelog",
+    "services": "Ydelser"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -234,14 +235,10 @@
     "originsSub": "Cuba → København"
   },
   "services": {
-    "0": {
-      "title": "Avantgarde Frontend Arkitektur",
-      "description": "Jeg bygger ikke blot hjemmesider; jeg designer interaktive digitale økosystemer. Ved hjælp af React, Next.js og Framer Motion leverer jeg applikationer med indlæsning under 1 sekund, defineret af 60fps-animationer og urokkelig UX-præcision."
-    },
-    "1": {
-      "title": "Cloud & Backend Modstandsdygtighed",
-      "description": "En enestående frontend kræver en stenhård backend. Jeg designer robuste serverless API-lag, optimerer relationelle/NoSQL-databaseforespørgsler og etablerer automatiserede deploymentpipelines, der sikrer en oppetid på 99,9 %."
-    }
+    "eyebrow": "Indgange",
+    "title": "Det du ville give mig",
+    "titleAccent": "Og hvad der kommer tilbage.",
+    "description": "Fire former arbejdet typisk tager. Hver enkelt har jeg lavet før, med det tal, den kom med."
   },
   "experience": {
     "title": "Professionel",

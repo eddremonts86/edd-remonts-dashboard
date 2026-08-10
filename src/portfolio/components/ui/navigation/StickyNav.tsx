@@ -6,7 +6,7 @@ import { MENU, X } from '@/portfolio/components/ui/icons/morphIconNodes'
 import { Logo } from '@/portfolio/components/ui/media/Logo'
 import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
 import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
-import { NAV_SECTIONS } from '@/portfolio/data/navigation'
+import { useNavSections } from '@/portfolio/data/navigation'
 import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy'
 import { useScrollVisibility } from '@/portfolio/hooks/useScrollVisibility'
 import { useTextScramble } from '@/portfolio/hooks/useTextScramble'
@@ -44,13 +44,14 @@ const ScrambleNavLink = ({
 export const StickyNav = () => {
   const { t } = useTranslation()
   const visible = useScrollVisibility()
-  const { activeSection } = useScrollSpy(NAV_SECTIONS)
+  const navSections = useNavSections()
+  const { activeSection } = useScrollSpy(navSections)
   const [_mobileOpen, setMobileOpen] = useState(false)
   const mobileOpen = visible && _mobileOpen
 
   const closeMobile = useCallback(() => setMobileOpen(false), [])
 
-  const navLinks = NAV_SECTIONS.filter((s) => s.id !== 'hero')
+  const navLinks = navSections.filter((s) => s.id !== 'hero')
 
   return (
     <AnimatePresence>

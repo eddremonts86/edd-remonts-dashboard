@@ -1,12 +1,13 @@
 import { m } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { NAV_SECTIONS } from '@/portfolio/data/navigation'
+import { useNavSections } from '@/portfolio/data/navigation'
 import { useScrollSpy } from '@/portfolio/hooks/useScrollSpy'
 
 export const DotNavigation = () => {
   const { t } = useTranslation()
-  const { activeSection, isVisible } = useScrollSpy(NAV_SECTIONS)
+  const navSections = useNavSections()
+  const { activeSection, isVisible } = useScrollSpy(navSections)
   const [scrollProgress, setScrollProgress] = useState(0)
 
   // Track global page scroll progress for the vertical track fill
@@ -39,10 +40,10 @@ export const DotNavigation = () => {
         transition={{ type: 'spring', stiffness: 80, damping: 15 }}
       />
 
-      {NAV_SECTIONS.map(({ id, labelKey }, index) => {
+      {navSections.map(({ id, labelKey }, index) => {
         const isActive = activeSection === id
         // Dot sits at this fraction of the track — colored if progress line has reached it
-        const dotFraction = (index / (NAV_SECTIONS.length - 1)) * 100
+        const dotFraction = (index / (navSections.length - 1)) * 100
         const isPassed = scrollProgress >= dotFraction
 
         return (

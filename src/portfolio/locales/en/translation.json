@@ -9,7 +9,8 @@
     "resume": "Download CV",
     "discover": "Discover",
     "lab": "The Lab",
-    "log": "Build Log"
+    "log": "Build Log",
+    "services": "Services"
   },
   "hero": {
     "available": "Staff Frontend Engineer",
@@ -234,14 +235,10 @@
     "originsSub": "Cuba → Copenhagen"
   },
   "services": {
-    "0": {
-      "title": "Vanguard Frontend Architecture",
-      "description": "I don't just build websites; I engineer interactive digital ecosystems. Utilizing React, Next.js, and Framer Motion, I deliver sub-second loading applications defined by 60fps animations and uncompromising UX precision."
-    },
-    "1": {
-      "title": "Cloud & Backend Resiliency",
-      "description": "An exceptional frontend requires an ironclad backend. I design robust serverless API layers, optimize relational/NoSQL database queries, and establish automated deployment pipelines ensuring 99.9% uptime scalability."
-    }
+    "eyebrow": "Ways in",
+    "title": "What you'd hand me",
+    "titleAccent": "And what comes back.",
+    "description": "Four shapes this work usually takes. Each one is something I have already shipped, with the number it came with."
   },
   "experience": {
     "title": "Professional",

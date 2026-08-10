@@ -6,6 +6,7 @@ import { EngineeringAuthoritySection } from './components/authority/EngineeringA
 import { ExperienceTimeline } from './components/experience/ExperienceTimeline'
 import { Footer } from './components/footer/Footer'
 import { HeroSection } from './components/hero/HeroSection'
+import { ServicesSection } from './components/services/ServicesSection'
 import { SkillsMarquee } from './components/skills/SkillsMarquee'
 import { StatsCounter } from './components/stats/StatsCounter'
 import { TestimonialBlock } from './components/testimonials/TestimonialBlock'
@@ -69,6 +70,9 @@ export function App() {
           <SkillsMarquee />
           <ExperienceTimeline />
           <TestimonialBlock />
+          {/* The bridge from "this is impressive" to "let's talk": it sits
+              after the proof and immediately before the ask. */}
+          <ServicesSection />
 
           <Suspense fallback={null}>
             <ContactSection />
