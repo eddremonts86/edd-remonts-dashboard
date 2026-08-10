@@ -2,6 +2,7 @@
   "name": "edd-remonts-dashboard",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.10.0",
   "scripts": {
     "ai:switch": "tsx scripts/ai/switch-provider.ts",
     "dev": "sh scripts/dev/check-models.sh && pnpm dev:server",
