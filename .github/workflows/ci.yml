@@ -2,7 +2,7 @@ name: ci
 
 # The repository had exactly one workflow, auth-local-e2e, and it had been red
 # since May because it targeted a schema that never existed here. Removing it
-# left no automated checks at all, so this replaces it with the four that
+# left no automated checks at all, so this replaces it with the ones that
 # actually guard this codebase.
 #
 # The build step is not ceremony. A missing NODE_ENV once produced a bundle
