@@ -75,13 +75,13 @@ const yamlValue = (value: unknown, indent = 0): string => {
     return value
       .map((entry) => {
         if (entry && typeof entry === 'object' && !Array.isArray(entry)) {
-          const body = Object.entries(entry)
-            .map(
-              ([key, nested]) =>
-                `${'  '.repeat(indent + 1)}${key}: ${yamlValue(nested, indent + 1)}`,
-            )
-            .join('\n')
-          return `${pad}-\n${body}`
+          // Delegate to the object branch below rather than re-implementing it.
+          // The inline version wrote every value with `key: <value>`, so a list
+          // came out as `methods:     - GET`, which is a scalar followed by a
+          // sequence and parses as nothing. The generated file has been invalid
+          // YAML since it was first committed, which is why `pnpm format` fails
+          // on it.
+          return `${pad}-\n${yamlValue(entry, indent + 1)}`
         }
         return `${pad}- ${yamlValue(entry, indent + 1)}`
       })
@@ -112,14 +112,34 @@ const extractUiRoutesFromRouteTree = (routeTreeContents: string) => {
   return uniqueSorted(paths.filter((routePath) => !routePath.startsWith('/api/')))
 }
 
+/**
+ * Every file under src/routes/api, at any depth.
+ *
+ * This used to read src/routes and keep entries matching `api.*.tsx`, the flat
+ * dotted naming. The routes moved into nested directories, the filter stopped
+ * matching anything, and the generator reported zero API routes without
+ * complaining — so the inventory silently described a subset of the app.
+ */
+const collectApiFiles = async (dir: string): Promise<string[]> => {
+  const found: string[] = []
+  for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      found.push(...(await collectApiFiles(full)))
+    } else if (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx')) {
+      found.push(full)
+    }
+  }
+  return found
+}
+
 const extractApiRouteData = async () => {
-  const entries = await fs.readdir(routesDir)
-  const apiFiles = entries.filter((entry) => entry.startsWith('api.') && entry.endsWith('.tsx'))
+  const apiDir = path.join(routesDir, 'api')
+  const apiFiles = await collectApiFiles(apiDir).catch(() => [] as string[])
 
   const apiRoutes: ApiRoute[] = []
 
-  for (const file of apiFiles) {
-    const fullPath = path.join(routesDir, file)
+  for (const fullPath of apiFiles) {
     const content = await fs.readFile(fullPath, 'utf8')
 
     const pathMatch = content.match(/createFileRoute\('([^']+)'\)/)
@@ -129,9 +149,12 @@ const extractApiRouteData = async () => {
       (m) => m[1],
     )
 
+    // Second segment of the URL: /api/ai/chat -> ai, /api/health -> health.
+    const [, , group] = pathMatch[1].split('/')
+
     apiRoutes.push({
       path: pathMatch[1],
-      module: 'ai-api',
+      module: group ? `${group}-api` : 'api',
       methods: uniqueSorted(methods),
       params: extractParams(pathMatch[1]),
     })
