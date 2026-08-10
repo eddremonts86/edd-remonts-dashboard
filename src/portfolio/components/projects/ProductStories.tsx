@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TiltCard } from '@/portfolio/components/ui/effects/TiltCard'
 import { fadeInView } from '@/portfolio/lib/motion'
+import { COVER_WIDTHS, pictureSources } from '@/portfolio/lib/responsiveImage'
+
+const coverSources = (path: string) => pictureSources(path, COVER_WIDTHS)
 
 interface StoryProject {
   id: string
@@ -246,12 +249,28 @@ export const ProductStories = () => {
                     {/* Viewport Canvas (Static screenshot frame) */}
                     <div className="w-full aspect-4/3 relative bg-surface flex items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 w-full h-full">
-                        <img
-                          src={project.coverPath}
-                          alt={`${project.title} Interface UI`}
-                          className="w-full h-full object-cover object-top select-none"
-                          loading="lazy"
-                        />
+                        {/* These covers are PNG screenshots up to 807 KB. The
+                            card is never wider than ~640px, so the 800px AVIF
+                            (17-26 KB) is what should actually be fetched. */}
+                        <picture>
+                          <source
+                            type="image/avif"
+                            srcSet={coverSources(project.coverPath).avif}
+                            sizes="(min-width: 1024px) 640px, 100vw"
+                          />
+                          <source
+                            type="image/webp"
+                            srcSet={coverSources(project.coverPath).webp}
+                            sizes="(min-width: 1024px) 640px, 100vw"
+                          />
+                          <img
+                            src={project.coverPath}
+                            alt={`${project.title} Interface UI`}
+                            className="w-full h-full object-cover object-top select-none"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </picture>
                       </div>
                     </div>
                   </div>
@@ -451,11 +470,25 @@ export const ProductStories = () => {
               {/* Modal Body */}
               <div className="w-full aspect-[16/9] relative bg-surface rounded-lg flex items-center justify-center overflow-hidden border border-subtle">
                 {modalState.view === 'interface' ? (
-                  <img
-                    src={activeProject.coverPath}
-                    alt={`${activeProject.title} Interface Visual`}
-                    className="w-full h-full object-contain select-none"
-                  />
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcSet={coverSources(activeProject.coverPath).avif}
+                      sizes="(min-width: 1024px) 900px, 100vw"
+                    />
+                    <source
+                      type="image/webp"
+                      srcSet={coverSources(activeProject.coverPath).webp}
+                      sizes="(min-width: 1024px) 900px, 100vw"
+                    />
+                    <img
+                      src={activeProject.coverPath}
+                      alt={`${activeProject.title} Interface Visual`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-contain select-none"
+                    />
+                  </picture>
                 ) : (
                   <div className="w-full h-full p-8 flex flex-col justify-between select-none">
                     <div className="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(circle_at_1px_1px,#ff4a3a_1px,transparent_0)] bg-size-[12px_12px]" />
