@@ -2,8 +2,17 @@ import { spawnSync } from 'node:child_process'
 import postgres from 'postgres'
 
 // Derive host/port from DATABASE_URL so this script works regardless of which
-// port the DB container is mapped to (each app has its own unique port).
-const baseUrl = process.env.DATABASE_URL ?? 'postgresql://postgres:postgres@127.0.0.1:5437/postgres'
+// port the DB container is mapped to. The fallback used to be 5437, a port no
+// compose file has ever published; when the caller forgot to pass DATABASE_URL
+// the script quietly dialled it and died on ECONNREFUSED. Fail loudly instead.
+const baseUrl = process.env.DATABASE_URL
+if (!baseUrl) {
+  console.error(
+    'prepare-auth-e2e-db: DATABASE_URL is required.\n' +
+      'It must point at the port docker-compose publishes (DB_PORT), or the two disagree silently.',
+  )
+  process.exit(1)
+}
 const parsedUrl = new URL(baseUrl)
 const adminUrl = `${parsedUrl.protocol}//${parsedUrl.username}:${parsedUrl.password}@${parsedUrl.hostname}:${parsedUrl.port}/postgres`
 const databaseName = 'tanstack_template_auth_e2e'
@@ -45,7 +54,11 @@ async function recreateDatabase() {
 }
 
 function runMigrations() {
-  const result = spawnSync('pnpm', ['db:migrate'], {
+  // Not `pnpm db:migrate`: that script is `tsx --env-file=.env ... && drizzle-kit
+  // migrate`, so it reads .env — which does not exist on CI, and locally points
+  // at the development database rather than the throwaway E2E one. The database
+  // has already been created above, so drizzle-kit alone is what is needed.
+  const result = spawnSync('pnpm', ['exec', 'drizzle-kit', 'migrate'], {
     stdio: 'inherit',
     env: {
       ...process.env,
