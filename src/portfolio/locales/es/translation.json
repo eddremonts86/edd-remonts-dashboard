@@ -464,12 +464,12 @@
     "registry": {
       "kicker": "/ PROYECTOS ADICIONALES",
       "title": "Más proyectos",
-      "description": "Explora otras funcionalidades de producto, herramientas y sistemas heredados construidos a lo largo de mi carrera.",
+      "description": "Diecisiete en total. Los cuatro primeros son míos — abre una fila para leer el caso completo.",
       "aria": "Registro de proyectos adicionales",
       "colIndex": "Índice",
       "colProject": "Proyecto / Alcance",
       "colCategory": "Categoría",
-      "colVector": "Vector arquitectónico",
+      "colVector": "Qué hace",
       "colInspect": "Inspeccionar"
     },
     "empty": "Aún no hay proyectos para este filtro."

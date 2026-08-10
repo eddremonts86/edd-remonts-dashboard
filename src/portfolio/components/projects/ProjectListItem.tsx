@@ -1,8 +1,10 @@
-import { AnimatePresence, m } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowUpRight, ChevronDown, Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react'
 import { forwardRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext'
+import { useProjectStories } from '@/portfolio/data/useProjectStories'
+import { ProjectStoryPanel } from './ProjectStoryPanel'
 
 type Project = CvProject
 
@@ -18,8 +20,14 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
   ({ project, index, expanded, onToggle, onHover }, ref) => {
     const { t } = useTranslation()
     const hasLink = Boolean(project.link)
+    const story = useProjectStories()[project.id]
     const hasCaseStudy = Boolean(
-      project.problem || project.results || project.context || project.role || project.decisions,
+      story ||
+        project.problem ||
+        project.results ||
+        project.context ||
+        project.role ||
+        project.decisions,
     )
 
     const getNormalizedVector = (label?: string) => {
@@ -56,7 +64,9 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
         exit={{ opacity: 0, y: -15 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         role="row"
-        onMouseEnter={() => onHover(project)}
+        // No floating cover while this row is open: the panel already shows it,
+        // and the preview lands on top of the case study.
+        onMouseEnter={() => onHover(expanded ? null : project)}
         onMouseLeave={() => onHover(null)}
         className="border-b border-subtle/30 py-4.5 transition-all duration-300 hover:bg-foreground/[0.02] rounded-xl px-4 cursor-pointer"
         onClick={hasCaseStudy ? onToggle : undefined}
@@ -89,8 +99,15 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
           {/* Col 4: Technology/Architectural Vector (Col span: 4) */}
           <div role="cell" className="md:col-span-4 min-w-0 flex items-center gap-2">
             <Layers className="h-3.5 w-3.5 text-foreground/25 shrink-0" />
-            <span className="font-mono text-[10px] text-foreground/50 truncate max-w-full">
-              {techVector}
+            {/* For a project with a story, the row carries its headline number.
+                "Systems Integration" told a reader nothing about which of
+                seventeen rows was worth opening. */}
+            <span
+              className={`font-mono text-[10px] truncate max-w-full ${
+                story ? 'text-foreground/75 font-semibold' : 'text-foreground/50'
+              }`}
+            >
+              {story ? story.outcomeHeadline : techVector}
             </span>
           </div>
 
@@ -132,56 +149,56 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
           </div>
         </div>
 
-        {/* Case Details Drawer (Typographic Monospace Terminal) */}
-        <AnimatePresence initial={false}>
-          {expanded && hasCaseStudy && (
-            <m.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-              className="overflow-hidden"
-            >
-              <div className="mt-5 border border-foreground/10 dark:border-white/10 bg-foreground/2 dark:bg-white/[0.02] backdrop-blur-md rounded-2xl p-6 md:p-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.15)] overflow-hidden">
-                {/* Decorative terminal blueprint background */}
-                <div className="absolute inset-0 pointer-events-none opacity-[2%] bg-[radial-gradient(circle_at_1px_1px,#efefef_1px,transparent_0)] bg-size-[12px_12px]" />
-
-                <div className="absolute top-3 right-4 font-mono text-[7px] text-foreground/25 uppercase tracking-[0.25em]">
-                  / DIAGNOSTIC LOG DRAW_ACTIVE
+        {/*
+          Collapsed with a CSS grid-row transition rather than unmounted. The
+          server-rendered HTML has to contain every word of these case studies:
+          Googlebot does not click. `inert` keeps the hidden copy out of the tab
+          order and off the accessibility tree.
+        */}
+        {hasCaseStudy && (
+          <div
+            className="grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+            style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
+            inert={!expanded}
+          >
+            <div className="overflow-hidden">
+              {story ? (
+                <ProjectStoryPanel story={story} />
+              ) : (
+                <div className="mt-5 grid gap-6 rounded-2xl border border-foreground/10 bg-foreground/2 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-4 dark:border-white/10 dark:bg-white/[0.02]">
+                  {project.context && (
+                    <CaseBlock
+                      icon={Layers}
+                      label={t('projects.context', 'Context')}
+                      body={project.context}
+                    />
+                  )}
+                  {project.problem && (
+                    <CaseBlock
+                      icon={HelpCircle}
+                      label={t('projects.problem', 'Challenge')}
+                      body={project.problem}
+                    />
+                  )}
+                  {project.decisions && (
+                    <CaseBlock
+                      icon={Cpu}
+                      label={t('projects.decisions', 'Decisions')}
+                      body={project.decisions}
+                    />
+                  )}
+                  {project.results && (
+                    <CaseBlock
+                      icon={ShieldCheck}
+                      label={t('projects.results', 'Results')}
+                      body={project.results}
+                    />
+                  )}
                 </div>
-
-                {project.context && (
-                  <CaseBlock
-                    icon={Layers}
-                    label={t('projects.context', 'Context')}
-                    body={project.context}
-                  />
-                )}
-                {project.problem && (
-                  <CaseBlock
-                    icon={HelpCircle}
-                    label={t('projects.problem', 'Challenge')}
-                    body={project.problem}
-                  />
-                )}
-                {project.decisions && (
-                  <CaseBlock
-                    icon={Cpu}
-                    label={t('projects.decisions', 'Decisions')}
-                    body={project.decisions}
-                  />
-                )}
-                {project.results && (
-                  <CaseBlock
-                    icon={ShieldCheck}
-                    label={t('projects.results', 'Results')}
-                    body={project.results}
-                  />
-                )}
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
+              )}
+            </div>
+          </div>
+        )}
       </m.div>
     )
   },

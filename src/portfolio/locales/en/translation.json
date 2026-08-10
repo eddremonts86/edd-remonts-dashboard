@@ -464,12 +464,12 @@
     "registry": {
       "kicker": "/ ADDITIONAL PROJECTS",
       "title": "Additional Projects",
-      "description": "Explore additional product features, tools, and legacy software systems engineered throughout my career.",
+      "description": "Seventeen in total. The four at the top are my own — open a row to read the case study.",
       "aria": "Additional projects registry",
       "colIndex": "Index",
       "colProject": "Project / Scope",
       "colCategory": "Category",
-      "colVector": "Architectural Vector",
+      "colVector": "What it does",
       "colInspect": "Inspect"
     },
     "empty": "No projects found for this filter yet."

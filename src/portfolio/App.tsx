@@ -7,7 +7,6 @@ import { ExperienceTimeline } from './components/experience/ExperienceTimeline'
 import { Footer } from './components/footer/Footer'
 import { HeroSection } from './components/hero/HeroSection'
 import { SkillsMarquee } from './components/skills/SkillsMarquee'
-import { BusinessImpact } from './components/stats/BusinessImpact'
 import { StatsCounter } from './components/stats/StatsCounter'
 import { TestimonialBlock } from './components/testimonials/TestimonialBlock'
 import { MouseFollower } from './components/ui/layout/MouseFollower'
@@ -63,7 +62,8 @@ export function App() {
               Both are process, not evidence; a founder scanning for 60 seconds
               is looking for outcomes. */}
 
-          <BusinessImpact />
+          {/* BusinessImpact removed: it restated the same four metrics a third
+              time, after the story panels and the index rows. */}
           <AboutSection />
           <EngineeringAuthoritySection />
           <SkillsMarquee />
