@@ -15,7 +15,7 @@ export const ContactInfoItem = ({ icon: Icon, label, value, href }: ContactInfoI
         <Icon className="h-6 w-6 text-foreground transition-colors duration-300 group-hover:text-primary" />
       </div>
       <div>
-        <span className="mb-1 block text-xs font-bold uppercase tracking-widest opacity-50">
+        <span className="mb-1 block text-[15px] font-bold uppercase tracking-widest opacity-50">
           {label}
         </span>
         <span className="text-xl font-black tracking-wide transition-colors group-hover:text-primary md:text-2xl">

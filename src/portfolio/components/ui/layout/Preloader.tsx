@@ -41,9 +41,9 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
       >
         <m.div
           exit={{ opacity: 0, y: -20, transition: { duration: 0.8, ease: APPLE_EASE } }}
-          className="container relative z-10 flex h-full w-full max-w-350 flex-col justify-between px-6 py-12 md:py-24"
+          className="container relative z-10 flex h-full w-full max-w-[1500px] flex-col justify-between px-6 md:px-10 py-12 md:py-24"
         >
-          <div className="flex w-full items-start justify-between font-mono text-[11px] uppercase tracking-widest opacity-40">
+          <div className="flex w-full items-start justify-between font-mono text-[13px] uppercase tracking-widest opacity-40">
             <span>{t('preloader.loading')}</span>
             <span>2026</span>
           </div>
@@ -67,7 +67,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 0.7, ease: APPLE_EASE, delay: 0.15 }}
-                className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.35em] text-primary"
+                className="mt-2 text-center font-mono text-[13px] uppercase tracking-[0.35em] text-primary"
               >
                 {t('preloader.role', 'A Living Portfolio')}
               </m.p>
@@ -84,7 +84,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
 
             {/* Boot log */}
             <div
-              className="mt-8 flex h-24 flex-col items-center gap-1.5 font-mono text-[10px] tracking-wider text-foreground/45"
+              className="mt-8 flex h-24 flex-col items-center gap-1.5 font-mono text-[13px] tracking-wider text-foreground/70"
               aria-hidden="true"
             >
               {BOOT_STEPS.filter((step) => progress >= step.at).map((step) => (
@@ -101,7 +101,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             </div>
           </div>
 
-          <div className="flex w-full items-end justify-between font-mono text-[11px] uppercase tracking-widest opacity-40">
+          <div className="flex w-full items-end justify-between font-mono text-[13px] uppercase tracking-widest opacity-40">
             <span>{progress}%</span>
             <span className="text-primary">{t('preloader.standby')}</span>
           </div>

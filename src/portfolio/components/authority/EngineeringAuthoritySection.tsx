@@ -110,11 +110,11 @@ export function EngineeringAuthoritySection() {
       {/* Soft tonal aura — editorial light, no grid */}
       <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+      <div className="container relative z-10 mx-auto max-w-[1500px] px-6 md:px-10">
         {/* Section Header */}
         <m.div {...fadeInView()} className="mb-24 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <span className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold block">
+            <span className="mb-4 font-mono text-[13px] uppercase tracking-[0.3em] text-primary font-bold block">
               {t('authority.eyebrow', '/ LEADERSHIP & PHILOSOPHY')}
             </span>
             <h2 className="font-display text-4xl font-light leading-[0.95] tracking-tight md:text-6xl lg:text-7xl text-foreground">
@@ -125,7 +125,7 @@ export function EngineeringAuthoritySection() {
             </h2>
           </div>
           <div className="flex items-end lg:col-span-5">
-            <p className="max-w-md text-sm font-light leading-relaxed text-foreground/75 md:text-base font-display">
+            <p className="max-w-md text-[16px] font-light leading-relaxed text-foreground/75 md:text-[17px] font-display">
               {t(
                 'authority.subtitle',
                 'Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.',
@@ -139,7 +139,7 @@ export function EngineeringAuthoritySection() {
           {/* Column A: Lessons From 18 Years */}
           <div className="lg:col-span-6 space-y-12">
             <div className="border-b border-subtle pb-6">
-              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-2 font-bold">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-primary/70 block mb-2 font-bold">
                 {t('authority.lessonsHeaderLabel', '/ MATURITY')}
               </span>
               <h3 className="text-2xl font-light tracking-tight text-foreground font-display">
@@ -158,10 +158,10 @@ export function EngineeringAuthoritySection() {
                     /{lesson.index}
                   </span>
                   <div className="space-y-1.5">
-                    <h4 className="text-sm font-semibold tracking-tight text-foreground font-display">
+                    <h4 className="text-[16px] font-semibold tracking-tight text-foreground font-display">
                       {lesson.title}
                     </h4>
-                    <p className="text-xs leading-relaxed text-foreground/65 font-light font-display">
+                    <p className="text-[15px] leading-relaxed text-foreground/80 font-light font-display">
                       {lesson.body}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export function EngineeringAuthoritySection() {
           {/* Column B: How I Work */}
           <div className="lg:col-span-6 space-y-12 lg:mt-0">
             <div className="border-b border-subtle pb-6">
-              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70 block mb-2 font-bold">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-primary/70 block mb-2 font-bold">
                 {t('authority.howIWorkHeaderLabel', '/ EXECUTION')}
               </span>
               <h3 className="text-2xl font-light tracking-tight text-foreground font-display">
@@ -190,14 +190,14 @@ export function EngineeringAuthoritySection() {
                     {...fadeInView({ delay: i * 0.06 })}
                     className="pf-card group flex items-start gap-5 p-6"
                   >
-                    <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/60 group-hover:text-primary transition-colors shrink-0">
+                    <div className="p-2 rounded-lg border border-subtle bg-surface text-foreground/78 group-hover:text-primary transition-colors shrink-0">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div className="space-y-1.5">
-                      <h4 className="text-sm font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                      <h4 className="text-[16px] font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
                         {item.title}
                       </h4>
-                      <p className="text-xs leading-relaxed text-foreground/65 font-light font-display">
+                      <p className="text-[15px] leading-relaxed text-foreground/80 font-light font-display">
                         {item.body}
                       </p>
                     </div>
@@ -211,7 +211,7 @@ export function EngineeringAuthoritySection() {
         {/* Strategic CTA */}
         <div className="flex flex-col items-start justify-between gap-6 border-t border-subtle pt-16 mt-24 md:flex-row md:items-center">
           <div className="max-w-xl">
-            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary block mb-2 font-bold">
+            <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-primary block mb-2 font-bold">
               {t('authority.partnershipHeader', '/ PARTNERSHIP')}
             </span>
             <p className="text-lg font-light tracking-tight text-foreground md:text-xl max-w-lg font-display">
@@ -223,7 +223,7 @@ export function EngineeringAuthoritySection() {
           </div>
           <a
             href="#contact"
-            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 dark:border-white/20 bg-white text-zinc-950 px-6 py-3.5 text-[11px] font-medium uppercase tracking-widest transition-all duration-500 hover:bg-primary hover:text-white md:text-xs cursor-pointer font-mono"
+            className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 dark:border-white/20 bg-white text-zinc-950 px-6 py-3.5 text-[13px] font-medium uppercase tracking-widest transition-all duration-500 hover:bg-primary hover:text-white md:text-[15px] cursor-pointer font-mono"
           >
             {t('authority.ctaButton', 'Start a conversation')}
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />

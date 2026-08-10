@@ -136,7 +136,7 @@ export const ExperienceTimeline = () => {
             </span>
           </h2>
           <div className="max-w-md md:self-end">
-            <p className="text-foreground/60 text-sm leading-relaxed md:text-base font-light font-display">
+            <p className="text-foreground/78 text-[16px] leading-relaxed md:text-[17px] font-light font-display">
               {t(
                 'experience.subtitle',
                 '18+ years of building, scaling, and architecting resilient digital products from Havana to Copenhagen.',

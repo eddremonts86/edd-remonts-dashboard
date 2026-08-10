@@ -24,7 +24,7 @@ export const ThemeToggle = () => {
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-200 cursor-pointer ${
           theme === 'light'
             ? 'bg-foreground text-background shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-foreground/5 scale-105 font-bold z-10'
-            : 'text-foreground/50 hover:text-foreground/80 hover:bg-foreground/[0.04]'
+            : 'text-foreground/72 hover:text-foreground/80 hover:bg-foreground/[0.04]'
         }`}
         aria-label="Light mode"
         title="Light Mode"
@@ -36,7 +36,7 @@ export const ThemeToggle = () => {
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-200 cursor-pointer ${
           theme === 'dark'
             ? 'bg-foreground text-background shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-foreground/5 scale-105 font-bold z-10'
-            : 'text-foreground/50 hover:text-foreground/80 hover:bg-foreground/[0.04]'
+            : 'text-foreground/72 hover:text-foreground/80 hover:bg-foreground/[0.04]'
         }`}
         aria-label="Dark mode"
         title="Dark Mode"
@@ -48,7 +48,7 @@ export const ThemeToggle = () => {
         className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-200 cursor-pointer ${
           theme === 'system'
             ? 'bg-foreground text-background shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-foreground/5 scale-105 font-bold z-10'
-            : 'text-foreground/50 hover:text-foreground/80 hover:bg-foreground/[0.04]'
+            : 'text-foreground/72 hover:text-foreground/80 hover:bg-foreground/[0.04]'
         }`}
         aria-label="System mode"
         title="System Mode"

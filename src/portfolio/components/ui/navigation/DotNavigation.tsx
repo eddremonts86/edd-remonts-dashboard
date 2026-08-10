@@ -53,7 +53,7 @@ export const DotNavigation = () => {
             className="group relative flex h-6 w-6 items-center justify-center cursor-pointer"
           >
             {/* Elegant Glassmorphic Label Tooltip */}
-            <span className="text-foreground/80 pointer-events-none absolute right-8 whitespace-nowrap rounded-lg border border-subtle bg-surface/85 backdrop-blur-md px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-widest opacity-0 scale-90 translate-x-2 origin-right transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0 shadow-lg flex items-center gap-2">
+            <span className="text-foreground/80 pointer-events-none absolute right-8 whitespace-nowrap rounded-lg border border-subtle bg-surface/85 backdrop-blur-md px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-widest opacity-0 scale-90 translate-x-2 origin-right transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0 shadow-lg flex items-center gap-2">
               <span className="text-primary font-bold">/0{index + 1}</span>
               <span className="text-foreground/90">{t(labelKey)}</span>
             </span>

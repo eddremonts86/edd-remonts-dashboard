@@ -91,7 +91,7 @@ export const LabSection = () => {
             className="pf-accent-panel flex flex-col justify-between gap-6 p-6 md:col-span-6 lg:col-span-2"
           >
             <div>
-              <p className="mb-3 font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-primary">
+              <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-primary">
                 {t('lab.notes.kicker', 'Lab Notes')}
               </p>
               <p className="font-serif text-lg italic leading-relaxed text-foreground md:text-xl">
@@ -101,7 +101,7 @@ export const LabSection = () => {
                 )}
               </p>
             </div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/50">
+            <p className="font-mono text-[13px] uppercase tracking-[0.2em] text-foreground/72">
               {t('lab.notes.footer', 'New exhibits land here first. Press ⌘K anywhere.')}
             </p>
           </m.aside>

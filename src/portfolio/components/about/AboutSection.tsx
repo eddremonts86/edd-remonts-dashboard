@@ -147,7 +147,7 @@ export const AboutSection = () => {
       <Container>
         {/* Section Header */}
         <div className="mb-20 max-w-3xl">
-          <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
+          <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-primary font-bold block mb-4">
             {t('about.different', '/ WHAT MAKES ME DIFFERENT')}
           </span>
           <h2 className="text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-foreground leading-tight">
@@ -156,7 +156,7 @@ export const AboutSection = () => {
               {t('about.title.name', 'hire me')}
             </span>
           </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
+          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-foreground/78 md:text-[17px] font-light font-display">
             {t(
               'about.description',
               'Many can write UI code. I specialize in bridging extreme technical constraints, European enterprise scale, product systems intuition, and team-wide governance.',
@@ -198,7 +198,7 @@ export const AboutSection = () => {
                     <h3 className="font-display text-lg font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
                       {adv.title}
                     </h3>
-                    <p className="text-xs text-foreground/50 leading-relaxed font-light">
+                    <p className="text-[15px] text-foreground/72 leading-relaxed font-light">
                       {adv.subtitle}
                     </p>
                   </div>
@@ -208,7 +208,7 @@ export const AboutSection = () => {
                     {adv.bullets.map((bullet, bIdx) => (
                       <li
                         key={bIdx}
-                        className="flex items-start gap-2 text-xs leading-relaxed text-foreground/75 font-light font-display"
+                        className="flex items-start gap-2 text-[15px] leading-relaxed text-foreground/75 font-light font-display"
                       >
                         <span className="text-primary mt-1.5 shrink-0 block h-1 w-1 rounded-full bg-primary" />
                         <span>{bullet}</span>

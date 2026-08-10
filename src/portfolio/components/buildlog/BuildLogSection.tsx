@@ -127,26 +127,26 @@ export const BuildLogSection = () => {
                 className="grid gap-2 py-6 transition-colors duration-300 md:grid-cols-12 md:items-baseline md:gap-6 md:px-2 hover:bg-surface/40"
               >
                 <span className="flex items-baseline gap-4 md:col-span-2 md:flex-col md:gap-1">
-                  <code className="font-mono text-[11px] font-bold tracking-wider text-primary">
+                  <code className="font-mono text-[13px] font-bold tracking-wider text-primary">
                     {entry.hash}
                   </code>
                   <time
                     dateTime={entry.date}
-                    className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/45"
+                    className="font-mono text-[13px] uppercase tracking-[0.18em] text-foreground/70"
                   >
                     {formatDate(entry.date)}
                   </time>
                 </span>
 
                 <span className="md:col-span-6">
-                  <span className="flex items-start gap-2 font-display text-base font-medium tracking-tight text-foreground md:text-lg">
+                  <span className="flex items-start gap-2 font-display text-[17px] font-medium tracking-tight text-foreground md:text-lg">
                     {t(entry.titleKey, entry.titleFallback)}
                     <ArrowUpRight
                       className="mt-1 h-3.5 w-3.5 shrink-0 text-foreground/30 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="mt-1 block font-serif text-sm italic leading-relaxed text-foreground/65">
+                  <span className="mt-1 block font-serif text-[16px] italic leading-relaxed text-foreground/80">
                     {t(entry.learningKey, entry.learningFallback)}
                   </span>
                 </span>
@@ -155,7 +155,7 @@ export const BuildLogSection = () => {
                   {entry.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border border-subtle bg-background/60 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-foreground/55"
+                      className="rounded-full border border-subtle bg-background/60 px-2.5 py-0.5 font-mono text-[12px] uppercase tracking-wider text-foreground/75"
                     >
                       {tool}
                     </span>
@@ -171,7 +171,7 @@ export const BuildLogSection = () => {
             href={`${REPO_URL}/commits`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55 transition-colors duration-300 hover:text-primary"
+            className="group inline-flex items-center gap-2 font-mono text-[13px] uppercase tracking-[0.25em] text-foreground/75 transition-colors duration-300 hover:text-primary"
           >
             {t('log.viewAll', 'Full history on GitHub')}
             <ArrowUpRight className="h-3 w-3 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

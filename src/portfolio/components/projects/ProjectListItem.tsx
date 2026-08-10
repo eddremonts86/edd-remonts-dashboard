@@ -75,7 +75,7 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
         <div className="flex flex-col gap-3 md:grid md:grid-cols-12 md:items-center md:gap-4">
           {/* Col 1: Serial Tracker Index (Col span: 1) */}
           <div role="cell" className="md:col-span-1 flex items-center gap-2">
-            <span className="font-mono text-[10px] text-primary/65 font-bold select-none tracking-widest">
+            <span className="font-mono text-[13px] text-primary/65 font-bold select-none tracking-widest">
               0{index + 1}
             </span>
             {/* Mobile indicator line */}
@@ -84,14 +84,14 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
 
           {/* Col 2: Project Title (Col span: 4) */}
           <div role="cell" className="md:col-span-4 min-w-0">
-            <h3 className="font-display text-base font-semibold leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
+            <h3 className="font-display text-[17px] font-semibold leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
               {project.title}
             </h3>
           </div>
 
           {/* Col 3: Category Pill (Col span: 2) */}
           <div role="cell" className="md:col-span-2">
-            <span className="inline-flex rounded-md border border-subtle bg-surface/50 px-2 py-0.5 font-mono text-[8.5px] uppercase tracking-wider text-foreground/50">
+            <span className="inline-flex rounded-md border border-subtle bg-surface/50 px-2 py-0.5 font-mono text-[12px] uppercase tracking-wider text-foreground/72">
               {project.category}
             </span>
           </div>
@@ -103,8 +103,8 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
                 "Systems Integration" told a reader nothing about which of
                 seventeen rows was worth opening. */}
             <span
-              className={`font-mono text-[10px] truncate max-w-full ${
-                story ? 'text-foreground/75 font-semibold' : 'text-foreground/50'
+              className={`font-mono text-[13px] truncate max-w-full ${
+                story ? 'text-foreground/75 font-semibold' : 'text-foreground/72'
               }`}
             >
               {story ? story.outcomeHeadline : techVector}
@@ -124,7 +124,7 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
                 className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
                   expanded
                     ? 'border-primary bg-primary text-white'
-                    : 'border-subtle bg-background text-foreground/55 hover:border-foreground/25 hover:text-foreground'
+                    : 'border-subtle bg-background text-foreground/75 hover:border-foreground/25 hover:text-foreground'
                 }`}
                 aria-label={t('projects.toggleDetails', 'Toggle case details')}
               >
@@ -140,7 +140,7 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-subtle bg-background text-foreground/55 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-subtle bg-background text-foreground/75 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
                 aria-label={t('projects.view', 'View Project')}
               >
                 <ArrowUpRight className="h-3.5 w-3.5" />
@@ -215,13 +215,13 @@ function CaseBlock({ icon: Icon, label, body }: CaseBlockProps) {
     <div className="group/block relative space-y-3 rounded-xl border border-foreground/[0.05] dark:border-white/[0.05] bg-foreground/[0.01] dark:bg-white/[0.01] p-4 transition-all duration-300 hover:border-primary/20 hover:bg-foreground/[0.02] dark:hover:bg-white/[0.02] hover:shadow-[0_4px_24px_rgba(209,52,38,0.05)]">
       {/* Decorative telemetry header */}
       <div className="flex items-center justify-between border-b border-foreground/[0.05] dark:border-white/[0.05] pb-2">
-        <span className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-primary flex items-center gap-1.5 font-bold">
+        <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary flex items-center gap-1.5 font-bold">
           <Icon className="h-3 w-3 text-primary shrink-0 animate-pulse" />
           {label}
         </span>
         <span className="h-1.5 w-1.5 rounded-full bg-primary/25 transition-all duration-500 group-hover/block:bg-primary group-hover/block:shadow-[0_0_8px_rgba(209,52,38,0.8)]" />
       </div>
-      <p className="text-xs leading-relaxed text-foreground/75 font-mono">{body}</p>
+      <p className="text-[15px] leading-relaxed text-foreground/75 font-mono">{body}</p>
     </div>
   )
 }

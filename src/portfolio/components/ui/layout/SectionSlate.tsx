@@ -36,11 +36,11 @@ export const SectionSlate = ({
   return (
     <header className={`mb-16 max-w-3xl text-left md:mb-20 ${className}`}>
       <m.div {...fadeInView({ distance: 8 })} className="mb-5 flex items-center gap-4">
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-primary">
+        <span className="font-mono text-[13px] font-bold uppercase tracking-[0.3em] text-primary">
           {`REEL ${reelNo}`}
         </span>
         <span aria-hidden="true" className="h-px w-8 bg-primary/40" />
-        <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/55">
+        <span className="font-mono text-[13px] uppercase tracking-[0.28em] text-foreground/75">
           {kicker}
         </span>
       </m.div>
@@ -84,7 +84,7 @@ export const SectionSlate = ({
       {description && (
         <m.p
           {...fadeInView({ delay: 0.3, distance: 10 })}
-          className="mt-5 max-w-xl text-sm font-light leading-relaxed text-foreground/70 md:text-base"
+          className="mt-5 max-w-xl text-[16px] font-light leading-relaxed text-foreground/70 md:text-[17px]"
         >
           {description}
         </m.p>

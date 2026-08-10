@@ -56,7 +56,7 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
       <div className="flex flex-1 flex-col justify-between px-2 transition-colors duration-500 hover:bg-surface/5 md:flex-row md:rounded-2xl md:p-6 gap-8">
         {/* Left Column: Period, Role, Company */}
         <div role="cell" className="flex w-full flex-col md:w-[35%] text-left">
-          <span className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.25em] text-primary uppercase font-bold mb-3">
+          <span className="flex items-center gap-1.5 font-mono text-[12px] tracking-[0.25em] text-primary uppercase font-bold mb-3">
             <Calendar className="h-3 w-3" />
             {era.period}
           </span>
@@ -73,11 +73,11 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
                 className="h-7 w-7 rounded-lg border border-subtle bg-surface object-contain p-1 filter grayscale contrast-125 shrink-0"
               />
             ) : (
-              <span className="h-7 w-7 rounded-lg border border-subtle bg-surface flex items-center justify-center font-mono text-[10px] text-foreground/30 shrink-0 uppercase font-bold">
+              <span className="h-7 w-7 rounded-lg border border-subtle bg-surface flex items-center justify-center font-mono text-[13px] text-foreground/30 shrink-0 uppercase font-bold">
                 {era.company.charAt(0)}
               </span>
             )}
-            <span className="font-mono text-[10px] text-foreground/50 tracking-wider uppercase truncate">
+            <span className="font-mono text-[13px] text-foreground/72 tracking-wider uppercase truncate">
               {era.company}
             </span>
           </div>
@@ -86,10 +86,10 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
           <div className="flex items-start gap-2 mt-6 border-t border-subtle pt-4">
             <Layers className="h-3.5 w-3.5 text-foreground/25 shrink-0 mt-0.5" />
             <div className="space-y-0.5">
-              <span className="font-mono text-[8px] uppercase tracking-wider text-foreground/35 block">
+              <span className="font-mono text-[12px] uppercase tracking-wider text-foreground/78 block">
                 {t('experience.milestoneStack', 'Milestone Stack')}
               </span>
-              <p className="font-mono text-[9px] leading-relaxed text-foreground/60">
+              <p className="font-mono text-[12px] leading-relaxed text-foreground/78">
                 {era.vector}
               </p>
             </div>
@@ -103,24 +103,24 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
         >
           {/* Stack context */}
           <div className="space-y-1">
-            <span className="font-mono text-[8px] text-primary uppercase tracking-widest block font-bold">
+            <span className="font-mono text-[12px] text-primary uppercase tracking-widest block font-bold">
               {t('experience.techStackScope', '/ Tech Stack & Scope')}
             </span>
-            <p className="text-xs text-foreground/80 font-light leading-relaxed font-mono">
+            <p className="text-[15px] text-foreground/80 font-light leading-relaxed font-mono">
               {era.stackContext}
             </p>
           </div>
 
           {/* Contributions */}
           <div className="space-y-3">
-            <span className="font-mono text-[8px] text-foreground/35 uppercase tracking-widest block border-b border-subtle pb-2">
+            <span className="font-mono text-[12px] text-foreground/78 uppercase tracking-widest block border-b border-subtle pb-2">
               {t('experience.contributionsHeader', '/ Core Leadership & Contributions')}
             </span>
             <ul className="space-y-3">
               {era.contributions.map((bullet, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs leading-relaxed text-foreground/70 font-light font-display"
+                  className="flex items-start gap-2.5 text-[15px] leading-relaxed text-foreground/70 font-light font-display"
                 >
                   <span className="text-primary mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-primary" />
                   <span className="flex-1">{parseBoldText(bullet)}</span>
@@ -131,14 +131,14 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
 
           {/* Business Outcomes */}
           <div className="space-y-3">
-            <span className="font-mono text-[8px] text-primary uppercase tracking-widest block border-b border-subtle pb-2 font-bold">
+            <span className="font-mono text-[12px] text-primary uppercase tracking-widest block border-b border-subtle pb-2 font-bold">
               {t('experience.outcomesHeader', '/ Verified Business Outcomes')}
             </span>
             <ul className="space-y-3">
               {era.outcomes.map((bullet, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs leading-relaxed text-foreground font-medium font-display"
+                  className="flex items-start gap-2.5 text-[15px] leading-relaxed text-foreground font-medium font-display"
                 >
                   <span className="text-green-500 mt-1.5 shrink-0 block h-1.5 w-1.5 rounded-full bg-green-500" />
                   <span className="flex-1">{parseBoldText(bullet)}</span>

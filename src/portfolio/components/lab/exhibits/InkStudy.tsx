@@ -16,7 +16,7 @@ const UniformSlider = ({ label, value, min, max, step, onChange }: UniformSlider
     <div className="flex items-center gap-3">
       <label
         htmlFor={id}
-        className="w-24 shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-foreground/55"
+        className="w-24 shrink-0 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/75"
       >
         {label}
       </label>
@@ -30,7 +30,7 @@ const UniformSlider = ({ label, value, min, max, step, onChange }: UniformSlider
         onChange={(e) => onChange(Number(e.target.value))}
         className="h-1 w-full cursor-pointer accent-primary"
       />
-      <output htmlFor={id} className="w-10 text-right font-mono text-[10px] text-foreground/70">
+      <output htmlFor={id} className="w-10 text-right font-mono text-[13px] text-foreground/70">
         {value.toFixed(2)}
       </output>
     </div>
@@ -59,7 +59,7 @@ export const InkStudy = () => {
           quality={0.5}
           className="absolute inset-0"
         />
-        <span className="pointer-events-none absolute left-3 top-3 font-mono text-[8px] uppercase tracking-[0.2em] text-foreground/40">
+        <span className="pointer-events-none absolute left-3 top-3 font-mono text-[12px] uppercase tracking-[0.2em] text-foreground/80">
           fragment shader · 1 draw call
         </span>
       </div>

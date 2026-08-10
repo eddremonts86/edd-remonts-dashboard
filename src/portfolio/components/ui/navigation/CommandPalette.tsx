@@ -279,16 +279,16 @@ export const CommandPalette = () => {
                     if (e.key === 'Tab') e.preventDefault()
                   }}
                   placeholder={t('palette.placeholder', 'Type a command — or try "sudo"…')}
-                  className="w-full bg-transparent py-4 font-mono text-sm text-foreground placeholder:text-foreground/35 focus:outline-none focus-visible:ring-0"
+                  className="w-full bg-transparent py-4 font-mono text-[16px] text-foreground placeholder:text-foreground/35 focus:outline-none focus-visible:ring-0"
                 />
-                <kbd className="shrink-0 rounded border border-subtle px-1.5 py-0.5 font-mono text-[9px] uppercase text-foreground/45">
+                <kbd className="shrink-0 rounded border border-subtle px-1.5 py-0.5 font-mono text-[12px] uppercase text-foreground/70">
                   esc
                 </kbd>
               </div>
 
               <ul id="palette-listbox" role="listbox" className="max-h-72 overflow-y-auto p-2">
                 {filtered.length === 0 && (
-                  <li className="px-3 py-6 text-center font-mono text-xs text-foreground/45">
+                  <li className="px-3 py-6 text-center font-mono text-[15px] text-foreground/70">
                     {t('palette.empty', 'command not found — but nice try')}
                   </li>
                 )}
@@ -310,14 +310,14 @@ export const CommandPalette = () => {
                       }`}
                     >
                       <span
-                        className={`shrink-0 ${i === clampedIndex ? 'text-primary' : 'text-foreground/45'}`}
+                        className={`shrink-0 ${i === clampedIndex ? 'text-primary' : 'text-foreground/70'}`}
                         aria-hidden="true"
                       >
                         {cmd.icon}
                       </span>
-                      <span className="min-w-0 flex-1 truncate font-mono text-xs">{cmd.label}</span>
+                      <span className="min-w-0 flex-1 truncate font-mono text-[15px]">{cmd.label}</span>
                       {cmd.hint && (
-                        <span className="shrink-0 font-mono text-[9px] uppercase tracking-wider text-foreground/35">
+                        <span className="shrink-0 font-mono text-[12px] uppercase tracking-wider text-foreground/78">
                           {cmd.hint}
                         </span>
                       )}
@@ -326,7 +326,7 @@ export const CommandPalette = () => {
                 ))}
               </ul>
 
-              <div className="flex items-center justify-between border-t border-subtle px-4 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/40">
+              <div className="flex items-center justify-between border-t border-subtle px-4 py-2 font-mono text-[12px] uppercase tracking-[0.2em] text-foreground/80">
                 <span>{t('palette.footerHint', '↑↓ navigate · ↵ run')}</span>
                 <span className="text-primary/70">edd.os</span>
               </div>
@@ -344,7 +344,7 @@ export const CommandPalette = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.35, ease: APPLE_EASE }}
-            className="fixed bottom-6 left-1/2 z-[10001] -translate-x-1/2 rounded-full border border-subtle bg-surface px-5 py-2.5 font-mono text-xs text-foreground shadow-xl"
+            className="fixed bottom-6 left-1/2 z-[10001] -translate-x-1/2 rounded-full border border-subtle bg-surface px-5 py-2.5 font-mono text-[15px] text-foreground shadow-xl"
           >
             {toast}
           </m.div>

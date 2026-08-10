@@ -23,13 +23,13 @@ export const WindowChrome = ({
         <button
           key={tab.name}
           onClick={() => onTabChange(idx)}
-          className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-1.5 font-mono text-[11px] tracking-wide transition-all duration-300 ${
+          className={`flex items-center gap-2 whitespace-nowrap rounded-md px-4 py-1.5 font-mono text-[13px] tracking-wide transition-all duration-300 ${
             idx === activeTab
               ? 'bg-foreground/10 text-foreground shadow-sm'
-              : 'text-foreground/40 hover:bg-foreground/5 hover:text-foreground/80'
+              : 'text-foreground/80 hover:bg-foreground/5 hover:text-foreground/80'
           }`}
         >
-          <span className="text-[10px] opacity-70">{tab.icon}</span>
+          <span className="text-[13px] opacity-70">{tab.icon}</span>
           {tab.name}
         </button>
       ))}

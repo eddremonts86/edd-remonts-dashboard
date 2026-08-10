@@ -62,11 +62,15 @@ export const HeroSection = () => {
       </m.div>
 
       {/* ── Main grid ───────────────────────────────────────────────────── */}
+      {/* Two elements on purpose: the outer one owns the flex centring, the
+          inner one owns the measure. Tailwind's `container` class inside the
+          hero's flex column did not resolve to the same width as every other
+          section, which pushed the hero text 36px right of the page's line. */}
       <m.div
         style={{ opacity, scale, y }}
-        className="container relative z-10 mx-auto flex flex-1 w-full items-center px-6 py-28 md:py-32"
+        className="relative z-10 flex w-full flex-1 items-center py-28 md:py-32"
       >
-        <div className="mx-auto grid w-full max-w-350 gap-12 lg:grid-cols-12 lg:gap-16 xl:pl-12">
+        <div className="mx-auto grid w-full max-w-[1500px] gap-12 px-6 md:px-10 lg:grid-cols-12 lg:gap-16">
           {/* ── LEFT column ─ identity + role + description + CTAs ──────── */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Kicker */}
@@ -75,7 +79,7 @@ export const HeroSection = () => {
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
                 transition={{ delay: 0.15, duration: 0.9, ease: APPLE_EASE }}
-                className={`font-mono text-[10px] font-medium uppercase tracking-[0.3em] transition-colors duration-700 md:text-xs text-primary`}
+                className={`font-mono text-[13px] font-medium uppercase tracking-[0.3em] transition-colors duration-700 md:text-[15px] text-primary`}
               >
                 Eduardo Inerarte
               </m.p>
@@ -117,7 +121,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.6, duration: 1 }}
               className="mb-10 max-w-xl text-left"
             >
-              <p className="text-sm font-light leading-relaxed text-foreground/75 md:text-lg">
+              <p className="text-[16px] font-light leading-relaxed text-foreground/75 md:text-lg">
                 {t(
                   'hero.tagline',
                   '18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.',
@@ -138,7 +142,7 @@ export const HeroSection = () => {
               <MagneticButton>
                 <a
                   href="#projects"
-                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 bg-white px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-zinc-950 transition-all duration-500 hover:bg-primary hover:text-white md:text-xs"
+                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 bg-white px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-zinc-950 transition-all duration-500 hover:bg-primary hover:text-white md:text-[15px]"
                 >
                   <span>{t('hero.explore', 'View Work')}</span>
                   <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -149,7 +153,7 @@ export const HeroSection = () => {
                   href={cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:bg-surface/50 hover:border-default md:text-xs"
+                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:bg-surface/50 hover:border-default md:text-[15px]"
                   onPointerEnter={() => setIsHovered(true)}
                   onPointerLeave={() => setIsHovered(false)}
                 >
@@ -173,10 +177,10 @@ export const HeroSection = () => {
             <TiltCard maxTilt={5} className="rounded-2xl">
             <div className="overflow-hidden rounded-2xl border border-subtle bg-surface/30 backdrop-blur-md shadow-lg p-6 md:p-8 space-y-6">
               <div className="flex items-center justify-between border-b border-subtle pb-4">
-                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50 font-bold">
+                <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-foreground/72 font-bold">
                   {t('hero.metrics.title', '/ PROVEN PERFORMANCE METRICS')}
                 </span>
-                <span className="font-mono text-[8px] text-primary font-bold">
+                <span className="font-mono text-[12px] text-primary font-bold">
                   {t('hero.metrics.verified', '[VERIFIED]')}
                 </span>
               </div>
@@ -187,10 +191,10 @@ export const HeroSection = () => {
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.bundle.value', '94%')}
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                  <p className="font-mono text-[12px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.bundle.label', 'Bundle Reduction')}
                   </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                  <p className="text-[13px] text-foreground/72 font-light leading-relaxed font-display">
                     {t(
                       'hero.metrics.bundle.desc',
                       'Decoupled architectural boundaries from 6.2MB down to 350KB.',
@@ -202,10 +206,10 @@ export const HeroSection = () => {
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.delivery.value', '30%')}
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                  <p className="font-mono text-[12px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.delivery.label', 'Faster Delivery')}
                   </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                  <p className="text-[13px] text-foreground/72 font-light leading-relaxed font-display">
                     {t(
                       'hero.metrics.delivery.desc',
                       'Accelerated delivery via contract-based workspace isolation.',
@@ -217,10 +221,10 @@ export const HeroSection = () => {
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.vitals.value', '100%')}
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                  <p className="font-mono text-[12px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.vitals.label', 'Core Web Vitals')}
                   </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                  <p className="text-[13px] text-foreground/72 font-light leading-relaxed font-display">
                     {t(
                       'hero.metrics.vitals.desc',
                       'Secured flawless Lighthouse scores across complex user paths.',
@@ -232,10 +236,10 @@ export const HeroSection = () => {
                   <p className="font-serif text-3xl font-light text-foreground md:text-4xl">
                     {t('hero.metrics.impact.value', '20+')}
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-primary font-bold">
+                  <p className="font-mono text-[12px] uppercase tracking-wider text-primary font-bold">
                     {t('hero.metrics.impact.label', 'Engineers Impacted')}
                   </p>
-                  <p className="text-[10px] text-foreground/50 font-light leading-relaxed font-display">
+                  <p className="text-[13px] text-foreground/72 font-light leading-relaxed font-display">
                     {t(
                       'hero.metrics.impact.desc',
                       'Mentored engineers, governed design systems, and aligned teams.',
@@ -244,7 +248,7 @@ export const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[8px] text-foreground/60">
+              <div className="border-t border-subtle pt-4 flex justify-between font-mono text-[12px] text-foreground/78">
                 <span>{t('hero.metrics.status', 'STATUS: MEASURED & REPORTED')}</span>
                 <span>{t('hero.metrics.engagement', 'ENGAGEMENT: FULL-TIME')}</span>
               </div>

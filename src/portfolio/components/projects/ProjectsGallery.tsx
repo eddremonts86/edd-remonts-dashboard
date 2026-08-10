@@ -41,7 +41,7 @@ export const ProjectsGallery = () => {
         {/* One index, not a marquee plus a leftovers table. The four flagship
             stories open inside their own rows; see ProjectStoryPanel. */}
         <div className="mb-8 flex flex-col justify-between gap-6 border-b border-subtle pb-6 md:flex-row md:items-end text-left">
-          <p className="max-w-xl text-sm text-foreground/60 leading-relaxed font-light">
+          <p className="max-w-xl text-[16px] text-foreground/78 leading-relaxed font-light">
             {t(
               'projects.registry.description',
               'Seventeen in total. The four at the top are my own — open a row to read the case study.',
@@ -61,7 +61,7 @@ export const ProjectsGallery = () => {
         >
           <div
             role="row"
-            className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[9px] uppercase tracking-wider text-foreground/35 select-none"
+            className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[12px] uppercase tracking-wider text-foreground/78 select-none"
           >
             <span role="columnheader" className="col-span-1">
               {t('projects.registry.colIndex', 'Index')}
@@ -106,7 +106,7 @@ export const ProjectsGallery = () => {
           <m.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-10 rounded-2xl border border-subtle bg-surface p-6 text-sm text-foreground/65 text-left"
+            className="mt-10 rounded-2xl border border-subtle bg-surface p-6 text-[16px] text-foreground/80 text-left"
           >
             {t('projects.empty', 'No projects found for this filter yet.')}
           </m.p>

@@ -12,11 +12,11 @@ interface CaseBlockProps {
 function CaseBlock({ icon: Icon, label, body }: CaseBlockProps) {
   return (
     <div className="space-y-2">
-      <span className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-primary flex items-center gap-1.5 font-bold">
+      <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary flex items-center gap-1.5 font-bold">
         <Icon className="h-3 w-3 shrink-0" />
         {label}
       </span>
-      <p className="text-xs leading-relaxed text-foreground/75 font-light">{body}</p>
+      <p className="text-[15px] leading-relaxed text-foreground/75 font-light">{body}</p>
     </div>
   )
 }
@@ -59,11 +59,11 @@ export function ProjectStoryPanel({ story }: { story: StoryProject }) {
         </div>
 
         <div className="rounded-xl border border-subtle bg-surface/30 p-4">
-          <span className="mb-1 block font-mono text-[8.5px] font-bold uppercase tracking-wider text-primary">
+          <span className="mb-1 block font-mono text-[12px] font-bold uppercase tracking-wider text-primary">
             {t('projects.stories.metricOutcomes', '/ Metric Outcomes')}
           </span>
           <p className="font-semibold text-foreground">{story.outcomeHeadline}</p>
-          <p className="mt-1.5 text-[11px] font-light leading-relaxed text-foreground/70">
+          <p className="mt-1.5 text-[13px] font-light leading-relaxed text-foreground/70">
             {story.outcomeDetail}
           </p>
         </div>
@@ -98,24 +98,24 @@ export function ProjectStoryPanel({ story }: { story: StoryProject }) {
 
         {/* Tradeoff ledger — the part a founder cannot get from a screenshot. */}
         <div className="space-y-4 rounded-xl border border-subtle bg-surface/50 p-5">
-          <span className="flex items-center gap-1.5 border-b border-subtle pb-2 font-mono text-[9.5px] font-bold text-primary">
+          <span className="flex items-center gap-1.5 border-b border-subtle pb-2 font-mono text-[12px] font-bold text-primary">
             <GitBranch className="h-3.5 w-3.5" />
             {t('projects.stories.tradeoffTitle', 'ARCHITECTURAL TRADEOFF LEDGER')}
           </span>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <span className="block font-mono text-[9.5px] font-bold text-green-600">
+              <span className="block font-mono text-[12px] font-bold text-green-600">
                 {t('projects.stories.pathChosen', '✓ PATH CHOSEN')}
               </span>
-              <p className="text-xs font-light leading-relaxed text-foreground/70">
+              <p className="text-[15px] font-light leading-relaxed text-foreground/70">
                 {story.tradeoffsChosen}
               </p>
             </div>
             <div className="space-y-1.5">
-              <span className="block font-mono text-[9.5px] font-bold text-red-500">
+              <span className="block font-mono text-[12px] font-bold text-red-500">
                 {t('projects.stories.pathRejected', '✗ PATH REJECTED')}
               </span>
-              <p className="text-xs font-light leading-relaxed text-foreground/70">
+              <p className="text-[15px] font-light leading-relaxed text-foreground/70">
                 {story.tradeoffsRejected}
               </p>
             </div>

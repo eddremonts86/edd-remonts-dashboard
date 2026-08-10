@@ -42,7 +42,7 @@ export function CopyButton({ value, label, className = '' }: CopyButtonProps) {
       type="button"
       onClick={copy}
       aria-label={copied ? t('contact.copied', 'Copied') : label}
-      className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-subtle text-foreground/60 transition-colors duration-300 hover:border-primary/50 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 ${className}`}
+      className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-subtle text-foreground/78 transition-colors duration-300 hover:border-primary/50 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 ${className}`}
     >
       <MorphingIcon icon={copied ? CHECK : COPY} size={13} />
     </button>

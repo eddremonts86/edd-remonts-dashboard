@@ -12,7 +12,7 @@ export const StatusBadge = ({ label, className = '' }: StatusBadgeProps) => (
       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
       <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
     </span>
-    <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] md:text-xs">
+    <span className="font-mono text-[13px] font-medium uppercase tracking-[0.2em] md:text-[15px]">
       {label}
     </span>
   </div>

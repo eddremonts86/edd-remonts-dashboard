@@ -17,7 +17,7 @@ const Dial = ({ label, value, min, max, step, onChange }: DialProps) => {
     <div className="flex items-center gap-3">
       <label
         htmlFor={id}
-        className="w-24 shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-foreground/55"
+        className="w-24 shrink-0 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/75"
       >
         {label}
       </label>
@@ -31,7 +31,7 @@ const Dial = ({ label, value, min, max, step, onChange }: DialProps) => {
         onChange={(e) => onChange(Number(e.target.value))}
         className="h-1 w-full cursor-pointer accent-primary"
       />
-      <output htmlFor={id} className="w-10 text-right font-mono text-[10px] text-foreground/70">
+      <output htmlFor={id} className="w-10 text-right font-mono text-[13px] text-foreground/70">
         {value}
       </output>
     </div>
@@ -85,7 +85,7 @@ export const SpringLab = () => {
       >
         {/* Chamber graticule */}
         <div aria-hidden="true" className="absolute inset-0 cinematic-grid opacity-[0.18]" />
-        <span className="pointer-events-none absolute left-3 top-3 font-mono text-[8px] uppercase tracking-[0.2em] text-foreground/40">
+        <span className="pointer-events-none absolute left-3 top-3 font-mono text-[12px] uppercase tracking-[0.2em] text-foreground/80">
           {t('lab.exhibits.spring.hint', 'click anywhere — the puck obeys your spring')}
         </span>
 

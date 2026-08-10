@@ -89,7 +89,7 @@ export const StatsCounter = () => {
       {/* Soft tonal aura — editorial light, no grid */}
       <div aria-hidden="true" className="pf-section-bg pf-section-bg--alt" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+      <div className="container relative z-10 mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {statItems.map((stat, index) => (
             <m.article
@@ -97,7 +97,7 @@ export const StatsCounter = () => {
               {...fadeInView({ delay: index * 0.06 })}
               className="flex flex-col justify-start space-y-2"
             >
-              <span className="font-mono text-[8.5px] uppercase tracking-[0.2em] text-primary font-bold block">
+              <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary font-bold block">
                 {stat.label}
               </span>
 
@@ -105,7 +105,7 @@ export const StatsCounter = () => {
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
               </h3>
 
-              <p className="text-[11px] leading-relaxed text-foreground/50 font-light font-display">
+              <p className="text-[13px] leading-relaxed text-foreground/72 font-light font-display">
                 {stat.description}
               </p>
             </m.article>

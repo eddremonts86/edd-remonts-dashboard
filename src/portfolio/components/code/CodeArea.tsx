@@ -18,7 +18,7 @@ export const CodeArea = ({
   <div className="flex">
     {/* Line numbers gutter */}
     <div
-      className="shrink-0 select-none border-r border-white/5 py-6 pl-4 pr-4 text-right font-mono text-[11px] leading-[1.7] tracking-widest text-white/20"
+      className="shrink-0 select-none border-r border-white/5 py-6 pl-4 pr-4 text-right font-mono text-[13px] leading-[1.7] tracking-widest text-white/20"
       aria-hidden="true"
     >
       {Array.from({ length: lineCount }, (_, i) => (
@@ -28,7 +28,7 @@ export const CodeArea = ({
 
     {/* Token stream */}
     <m.pre
-      className="scrollbar-none flex-1 overflow-x-auto px-6 py-6 font-mono text-[13px] leading-[1.7]"
+      className="scrollbar-none flex-1 overflow-x-auto px-6 py-6 font-mono text-[15px] leading-[1.7]"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

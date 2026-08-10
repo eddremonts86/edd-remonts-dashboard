@@ -38,10 +38,10 @@ export const ExhibitCard = ({
       className={`group flex flex-col overflow-hidden rounded-2xl border border-subtle bg-surface/40 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_48px_-16px_rgba(209,52,38,0.25)] ${className}`}
     >
       <header className="flex items-center justify-between border-b border-subtle px-5 py-3">
-        <h3 className="font-display text-sm font-medium tracking-tight text-foreground">
+        <h3 className="font-display text-[16px] font-medium tracking-tight text-foreground">
           {title}
         </h3>
-        <span className="font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-primary">
+        <span className="font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-primary">
           {`EXP.${String(index).padStart(2, '0')}`}
         </span>
       </header>
@@ -49,8 +49,8 @@ export const ExhibitCard = ({
       <div className={`relative flex-1 overflow-hidden ${demoClassName}`}>{children}</div>
 
       <footer className="space-y-3 border-t border-subtle px-5 py-4">
-        <p className="text-xs font-light leading-relaxed text-foreground/70">
-          <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-foreground/45">
+        <p className="text-[15px] font-light leading-relaxed text-foreground/70">
+          <span className="font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/70">
             {t('lab.goalLabel', 'Goal')}
             {' — '}
           </span>
@@ -60,7 +60,7 @@ export const ExhibitCard = ({
           {tools.map((tool) => (
             <li
               key={tool}
-              className="rounded-full border border-subtle bg-background/60 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-foreground/55"
+              className="rounded-full border border-subtle bg-background/60 px-2.5 py-0.5 font-mono text-[12px] uppercase tracking-wider text-foreground/75"
             >
               {tool}
             </li>

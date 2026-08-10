@@ -27,7 +27,7 @@ export const CarouselControls = ({
       <button
         onClick={onPrev}
         aria-label={t('a11y.prevTestimonial')}
-        className="text-foreground/50 hover:border-foreground/30 hover:bg-foreground/5 focus:ring-primary/50 active:scale-90 flex h-10 w-10 items-center justify-center rounded-full border border-subtle transition-all duration-300 hover:text-foreground focus:outline-none focus:ring-2"
+        className="text-foreground/72 hover:border-foreground/30 hover:bg-foreground/5 focus:ring-primary/50 active:scale-90 flex h-10 w-10 items-center justify-center rounded-full border border-subtle transition-all duration-300 hover:text-foreground focus:outline-none focus:ring-2"
       >
         <ChevronLeft className="ml-[-1px] h-4 w-4" />
       </button>
@@ -46,7 +46,7 @@ export const CarouselControls = ({
       <button
         onClick={onNext}
         aria-label={t('a11y.nextTestimonial')}
-        className="text-foreground/50 hover:border-foreground/30 hover:bg-foreground/5 focus:ring-primary/50 active:scale-90 flex h-10 w-10 items-center justify-center rounded-full border border-subtle transition-all duration-300 hover:text-foreground focus:outline-none focus:ring-2"
+        className="text-foreground/72 hover:border-foreground/30 hover:bg-foreground/5 focus:ring-primary/50 active:scale-90 flex h-10 w-10 items-center justify-center rounded-full border border-subtle transition-all duration-300 hover:text-foreground focus:outline-none focus:ring-2"
       >
         <ChevronRight className="mr-[-1px] h-4 w-4" />
       </button>

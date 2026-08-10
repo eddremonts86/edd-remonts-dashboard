@@ -86,7 +86,12 @@ export const SkillsMarquee = () => {
   return (
     <section
       id="stack"
-      className="relative z-20 isolate py-28 md:py-40"
+      /* The strip is a full-bleed band and reads as a divider, so it belongs
+         near the section boundary. Left alone it sat 216px below the previous
+         section's last line — that section's 160px of bottom padding plus this
+         one's own. No top padding, and a negative margin to climb into the gap;
+         the capability grid below keeps its breathing room. */
+      className="relative z-20 isolate -mt-16 pt-0 pb-28 md:-mt-24 md:pb-40"
       aria-label={t('a11y.skillsMarquee')}
     >
       <span aria-hidden="true" className="section-seam" />
@@ -97,7 +102,7 @@ export const SkillsMarquee = () => {
         <TechFilmStrip />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6">
+      <div className="container mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           {/* Left Column: Section Title & Narrative (5 cols) */}
           <m.div
@@ -108,7 +113,7 @@ export const SkillsMarquee = () => {
             className="lg:col-span-5 space-y-6"
           >
             <div>
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
+              <p className="mb-4 font-mono text-[13px] uppercase tracking-[0.3em] text-primary font-bold">
                 {t('skills.kicker', '/ TECHNICAL EXPERTISE')}
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
@@ -117,7 +122,7 @@ export const SkillsMarquee = () => {
                   {t('skills.title.capabilities', 'Capabilities')}
                 </span>
               </h2>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
+              <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-foreground/80 font-light font-display">
                 {t(
                   'skills.description',
                   'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.',
@@ -140,8 +145,10 @@ export const SkillsMarquee = () => {
                   transition={cardProps.transition}
                   className="pf-card group p-6"
                 >
-                  {/* Visual coordinate annotation */}
-                  <div className="absolute top-4 right-5 font-mono text-[8px] text-foreground/20 uppercase tracking-widest">
+                  {/* In the flow, not absolutely positioned over the card. As a
+                      floating annotation it overlapped the capability heading
+                      the moment the type got big enough to read. */}
+                  <div className="mb-4 font-mono text-[12px] uppercase tracking-widest text-foreground/45">
                     {layer.annot}
                   </div>
 
@@ -150,18 +157,18 @@ export const SkillsMarquee = () => {
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
-                      <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary block font-bold">
                         {t('skills.capabilityLabel', 'Capability')} 0{index + 1}
                       </span>
-                      <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
+                      <h3 className="text-[16px] font-semibold tracking-tight text-foreground font-display">
                         {layer.name}
                       </h3>
                     </div>
                   </div>
 
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
-                  <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
-                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">
+                  <p className="font-mono text-[12px] text-foreground/78 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[12px] mb-1">
                       {t('skills.valueProof', '/ VALUE PROOF')}
                     </span>
                     {layer.rationale}
@@ -172,7 +179,7 @@ export const SkillsMarquee = () => {
                     {layer.items.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[12px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
                       >
                         {tech}
                       </span>
