@@ -17,8 +17,10 @@ export const ProjectsGallery = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const { springX, springY } = useMousePosition()
 
-  // Filter out Zunzun from additional list
-  const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
+  // The full index, nothing held back. Zunzun used to be excluded here because
+  // it was one of the flagship stories above; it no longer is, so hiding it
+  // just made a project disappear from the site entirely.
+  const additionalProjects = filteredProjects
 
   return (
     <Section id="projects">

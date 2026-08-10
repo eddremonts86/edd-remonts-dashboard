@@ -543,39 +543,39 @@
     "telemetry": "Portfolio telemetry",
     "status": "Operational",
     "businessImpact": {
-      "title": "Measurable",
-      "titleAccent": "Business Outcomes",
-      "subtitle": "Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.",
+      "title": "What they",
+      "titleAccent": "actually do",
+      "subtitle": "The same four projects, in numbers. Each figure links to the running thing, so you can check it rather than take my word for it.",
       "measuredOutcome": "Measured Outcome",
       "techAction": "Technical Action",
       "businessBenefit": "Business Benefit",
-      "proof": "[Proof Link →]",
-      "eyebrow": "/ BUSINESS IMPACT"
+      "proof": "[View it →]",
+      "eyebrow": "/ THE PRODUCTS"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload Reduction",
-        "whatChanged": "Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.",
-        "whatItImproved": "Enabled distributed teams to release features independently, and improved LCP to 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Indexed Sources",
+        "whatChanged": "Reconciled 13 developer platforms into one identity, then scored activity by recency instead of lifetime totals.",
+        "whatItImproved": "A search returns the people shipping this month, not the ones who were popular three years ago."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Faster Shipping",
-        "whatChanged": "Coordinated design-system contracts, component standards, and modular versioning guidelines.",
-        "whatItImproved": "Accelerated overall feature-delivery speeds by 30% across 20+ frontend engineers."
+      "geolocal": {
+        "metric": "25,000",
+        "title": "Listings Mapped",
+        "whatChanged": "Put properties, vehicles, services and experiences on one schema and one map, clustered by neighbourhood.",
+        "whatItImproved": "A Copenhagen district is legible at a glance, across eight neighbourhoods, before any filter is applied."
       },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Interaction Latency",
-        "whatChanged": "Restructured site-builder rendering architecture to isolate mutation cycles to individual cells.",
-        "whatItImproved": "Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLIs",
+        "whatChanged": "Made one git repository the source of truth and symlinked it into every AI CLI, with MCP servers as declarative YAML.",
+        "whatItImproved": "A new machine reaches a full working setup with one command, and a skill has exactly one place it can be wrong."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Sustained Performance",
-        "whatChanged": "Optimized real-time logistics socket rendering with virtualized list memoization queues.",
-        "whatItImproved": "Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Providers, One API",
+        "whatChanged": "Put the model provider behind an adapter, so the chat panel only ever knows about a stream of tokens.",
+        "whatItImproved": "Adding Anthropic, OpenAI or any OpenAI-compatible gateway is configuration rather than another fork to maintain."
       }
     }
   },

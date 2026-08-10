@@ -543,39 +543,39 @@
     "telemetry": "Telemetría del portafolio",
     "status": "Operacional",
     "businessImpact": {
-      "title": "Impacto de negocio",
-      "titleAccent": "medible",
-      "subtitle": "La excelencia técnica cobra valor cuando impulsa el valor de negocio. He aquí el impacto operativo y de producto concreto y verificable entregado en sistemas de gran escala.",
+      "title": "Qué hacen",
+      "titleAccent": "realmente",
+      "subtitle": "Los mismos cuatro proyectos, en cifras. Cada dato enlaza al producto en funcionamiento, para que lo compruebes en vez de creerme.",
       "measuredOutcome": "Resultado medido",
       "techAction": "Acción técnica",
       "businessBenefit": "Beneficio de negocio",
-      "proof": "[Ver prueba →]",
-      "eyebrow": "/ IMPACTO DE NEGOCIO"
+      "proof": "[Verlo →]",
+      "eyebrow": "/ LOS PRODUCTOS"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Reducción de bundle",
-        "whatChanged": "Particioné monorepos en Vite y apliqué code-splitting avanzado, reduciendo el peso de bundle inicial en un 94%.",
-        "whatItImproved": "Permitió entregas independientes entre subequipos y redujo el LCP a un tiempo idóneo de 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Fuentes indexadas",
+        "whatChanged": "Reconcilié 13 plataformas de desarrollo en una sola identidad y puntué la actividad por recencia en vez de por totales acumulados.",
+        "whatItImproved": "Una búsqueda devuelve a quien está publicando este mes, no a quien fue popular hace tres años."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Entregas más rápidas",
-        "whatChanged": "Coordiné contratos de diseño de sistemas, estandaricé librerías modulares y guías de versiones.",
-        "whatItImproved": "Aceleró los tiempos globales de desarrollo en un 30% para un conjunto de más de 20 ingenieros."
+      "geolocal": {
+        "metric": "25.000",
+        "title": "Anuncios en el mapa",
+        "whatChanged": "Puse inmuebles, vehículos, servicios y experiencias en un mismo esquema y un mismo mapa, agrupados por barrio.",
+        "whatItImproved": "Un distrito de Copenhague se lee de un vistazo, en ocho barrios, antes de aplicar ningún filtro."
       },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Latencia de interacción",
-        "whatChanged": "Aislé los ciclos de renderizado de la UI de edición, limitando las mutaciones a celdas operativas concretas.",
-        "whatItImproved": "Mitigó por completo la latencia percibida por el usuario y garantizó Core Web Vitals impecables."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLIs",
+        "whatChanged": "Convertí un repositorio git en la fuente de verdad y lo enlacé con symlinks a cada CLI de IA, con los servidores MCP como YAML declarativo.",
+        "whatItImproved": "Una máquina nueva llega a un entorno completo con un solo comando, y una skill tiene exactamente un sitio donde puede estar mal."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Rendimiento sostenido",
-        "whatChanged": "Optimicé las colas de refresco visual de sockets mediante memoización y virtualización de listas.",
-        "whatItImproved": "Soportó ráfagas de más de 500 actualizaciones/segundo y recortó costes de peticiones de infraestructura en un 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Proveedores, una API",
+        "whatChanged": "Puse el proveedor de modelos detrás de un adaptador, así el panel de chat solo conoce un flujo de tokens.",
+        "whatItImproved": "Añadir Anthropic, OpenAI o cualquier gateway compatible es configuración, no otro fork que mantener."
       }
     }
   },

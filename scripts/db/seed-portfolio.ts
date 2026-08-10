@@ -324,6 +324,128 @@ async function main() {
 
   // ── Projects (static) ─────────────────────────────────────────────────────
   const staticProjects = [
+    // The four own products. They also lead the flagship ProductStories section;
+    // listing them here keeps the full index complete rather than making a
+    // visitor infer that the four at the top are somehow not projects.
+    {
+      id: 'builderhunt',
+      title: 'BuilderHunt',
+      coverImageUrl: '/projects/builderhunt-cover.png',
+      link: 'https://builderhunt.dev',
+      repositoryUrl: 'https://github.com/eddremonts86/builderhunt',
+      category: 'Full Stack',
+      featured: true,
+      sortOrder: -4,
+      scaleLabel: '13 indexed platforms',
+      impactLabel: 'Recency-weighted scoring',
+      architectureLabel: 'Dedup & decay pipeline',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'Finds active open-source builders across 13 platforms, scored by recency rather than lifetime stars.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Encuentra desarrolladores activos de open source en 13 plataformas, puntuados por recencia en vez de por estrellas acumuladas.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Finder aktive open source-udviklere på tværs af 13 platforme, scoret efter aktualitet frem for samlede stjerner.',
+        },
+      ],
+    },
+    {
+      id: 'geolocal',
+      title: 'GeoLocal CPH',
+      coverImageUrl: '/projects/geolocal-cover.png',
+      link: 'https://geo.eduardoinerarte.dk',
+      category: 'Full Stack',
+      featured: true,
+      sortOrder: -3,
+      scaleLabel: '25,000 listings',
+      impactLabel: '4 verticals, one map',
+      architectureLabel: 'Geospatial clustering',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'A map-first Copenhagen marketplace: properties, vehicles, services and experiences clustered across eight neighbourhoods.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Un marketplace de Copenhague centrado en el mapa: inmuebles, vehículos, servicios y experiencias agrupados en ocho barrios.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'En kortbaseret markedsplads for København: boliger, køretøjer, services og oplevelser klynget på tværs af otte bydele.',
+        },
+      ],
+    },
+    {
+      id: 'ai-os',
+      title: 'AI-OS',
+      coverImageUrl: '/projects/ai-os-cover.png',
+      link: 'https://ai-os.eduardoinerarte.dk',
+      repositoryUrl: 'https://github.com/eddremonts86/ai-os',
+      category: 'Full Stack',
+      featured: true,
+      sortOrder: -2,
+      scaleLabel: '6 AI CLIs unified',
+      impactLabel: '~300 shared skills',
+      architectureLabel: 'Declarative & idempotent',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'One git repository as the source of truth for every AI CLI: ~300 skills, 10 MCP servers, restored with a single command.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Un repositorio git como fuente de verdad para cada CLI de IA: ~300 skills, 10 servidores MCP, restaurados con un solo comando.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Ét git-repository som kilden til sandhed for hver AI-CLI: ~300 skills, 10 MCP-servere, gendannet med én kommando.',
+        },
+      ],
+    },
+    {
+      id: 'ai-schadcn-chat',
+      title: 'ai-schadcn-chat',
+      coverImageUrl: '/projects/ai-shadcn-chat-cover.png',
+      link: 'https://ai-chat.eduardoinerarte.dk',
+      repositoryUrl: 'https://github.com/eddremonts86/ai-schadcn-chat',
+      category: 'Frontend',
+      featured: true,
+      sortOrder: -1,
+      scaleLabel: 'React 18 & 19',
+      impactLabel: '8 providers, one API',
+      architectureLabel: 'Provider-agnostic adapter',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'The streaming chat panel shadcn/ui never shipped. One adapter covers Anthropic, OpenAI and any OpenAI-compatible gateway.',
+        },
+        {
+          locale: 'es',
+          description:
+            'El panel de chat con streaming que shadcn/ui nunca publicó. Un adaptador cubre Anthropic, OpenAI y cualquier gateway compatible.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Streaming-chatpanelet som shadcn/ui aldrig udgav. Én adapter dækker Anthropic, OpenAI og enhver OpenAI-kompatibel gateway.',
+        },
+      ],
+    },
     {
       id: 'zunzun',
       title: 'Zunzun.io',

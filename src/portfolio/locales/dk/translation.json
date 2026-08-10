@@ -543,39 +543,39 @@
     "telemetry": "Portfolio telemetri",
     "status": "Operationel",
     "businessImpact": {
-      "title": "Målbare",
-      "titleAccent": "forretningsresultater",
-      "subtitle": "Teknisk ydeevne er afgørende, når det skaber reel værdi. Her er den konkrete, målbare og verificerbare driftseffekt leveret på tværs af enterprise-systemer.",
+      "title": "Hvad de",
+      "titleAccent": "faktisk gør",
+      "subtitle": "De samme fire projekter, i tal. Hvert tal linker til det kørende produkt, så du kan tjekke det i stedet for at tage mit ord for det.",
       "measuredOutcome": "Målt resultat",
       "techAction": "Teknisk handling",
       "businessBenefit": "Forretningsfordel",
-      "proof": "[Se bevis →]",
-      "eyebrow": "/ FORRETNINGSEFFEKT"
+      "proof": "[Se det →]",
+      "eyebrow": "/ PRODUKTERNE"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload-reduktion",
-        "whatChanged": "Opdelte monorepos med Vite og anvendte avanceret code-splitting, hvilket skar 94% af indlæsningsvægten.",
-        "whatItImproved": "Gjorde det muligt for under-teams at udrulle uafhængigt og bragte LCP ned på perfekte 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Indekserede kilder",
+        "whatChanged": "Jeg samlede 13 udviklerplatforme til én identitet og scorede aktivitet efter aktualitet frem for livstidstotaler.",
+        "whatItImproved": "En søgning finder dem, der leverer i denne måned, ikke dem, der var populære for tre år siden."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Hurtigere levering",
-        "whatChanged": "Koordinerede fælles design-systemer, standardiserede komponentbiblioteker og versionsguider.",
-        "whatItImproved": "Fremskyndede udrulningshastigheden med 30% for mere end 20 aktive udviklere."
+      "geolocal": {
+        "metric": "25.000",
+        "title": "Annoncer på kortet",
+        "whatChanged": "Jeg samlede boliger, køretøjer, services og oplevelser i ét skema og på ét kort, klynget efter bydel.",
+        "whatItImproved": "En københavnsk bydel kan læses på et øjeblik, på tværs af otte kvarterer, før der filtreres."
       },
-      "latency": {
-        "metric": "Under 12ms",
-        "title": "Interaktionslatens",
-        "whatChanged": "Isolerede renderingen i browseren, så muteringer udelukkende sker i de aktive celler.",
-        "whatItImproved": "Fjernede fuldstændig den forsinkelse, brugeren oplever, og sikrede fejlfrie Core Web Vitals."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLI’er",
+        "whatChanged": "Jeg gjorde ét git-repository til kilden til sandhed og symlinkede det ind i hver AI-CLI, med MCP-servere som deklarativ YAML.",
+        "whatItImproved": "En ny maskine når et komplet setup med én kommando, og en skill har præcis ét sted, den kan være forkert."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Stabil ydeevne",
-        "whatChanged": "Optimerede realtids-opdateringer af sockets via memoization og virtualiserede lister.",
-        "whatItImproved": "Håndterede over 500 opdateringer/sekund fejlfrit og reducerede databaseomkostninger med 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Udbydere, én API",
+        "whatChanged": "Jeg lagde modeludbyderen bag en adapter, så chatpanelet kun kender en strøm af tokens.",
+        "whatItImproved": "At tilføje Anthropic, OpenAI eller en hvilken som helst kompatibel gateway er konfiguration, ikke endnu et fork at vedligeholde."
       }
     }
   },

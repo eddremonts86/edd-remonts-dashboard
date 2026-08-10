@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { Activity, ShieldCheck, Zap, Layers } from 'lucide-react'
+import { MapPin, MessageSquare, Search, Terminal } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { fadeInView } from '@/portfolio/lib/motion'
 
@@ -16,66 +16,69 @@ interface ImpactCard {
 export const BusinessImpact = () => {
   const { t } = useTranslation()
 
+  // One card per flagship product, each linking to the thing itself. Previously
+  // all four pointed at this repository, including the two whose numbers came
+  // from client platforms — a "view proof" link that proved nothing.
   const impactCards: ImpactCard[] = [
     {
-      id: 'payload',
-      metric: t('stats.impactCards.payload.metric', '94%'),
-      title: t('stats.impactCards.payload.title', 'Payload Reduction'),
+      id: 'builderhunt',
+      metric: t('stats.impactCards.builderhunt.metric', '13'),
+      title: t('stats.impactCards.builderhunt.title', 'Indexed Sources'),
       whatChanged: t(
-        'stats.impactCards.payload.whatChanged',
-        'Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.',
+        'stats.impactCards.builderhunt.whatChanged',
+        'Reconciled 13 developer platforms into one identity, then scored activity by recency instead of lifetime totals.',
       ),
       whatItImproved: t(
-        'stats.impactCards.payload.whatItImproved',
-        'Enabled distributed teams to release features independently, and improved LCP to 1.4s.',
+        'stats.impactCards.builderhunt.whatItImproved',
+        'A search returns the people shipping this month, not the ones who were popular three years ago.',
       ),
-      proofLink: 'https://github.com/eddremonts86/edd-remonts-dashboard',
-      Icon: Layers,
+      proofLink: 'https://builderhunt.dev',
+      Icon: Search,
     },
     {
-      id: 'shipping',
-      metric: t('stats.impactCards.shipping.metric', '30%'),
-      title: t('stats.impactCards.shipping.title', 'Faster Shipping'),
+      id: 'geolocal',
+      metric: t('stats.impactCards.geolocal.metric', '25,000'),
+      title: t('stats.impactCards.geolocal.title', 'Listings Mapped'),
       whatChanged: t(
-        'stats.impactCards.shipping.whatChanged',
-        'Coordinated design-system contracts, component standards, and modular versioning guidelines.',
+        'stats.impactCards.geolocal.whatChanged',
+        'Put properties, vehicles, services and experiences on one schema and one map, clustered by neighbourhood.',
       ),
       whatItImproved: t(
-        'stats.impactCards.shipping.whatItImproved',
-        'Accelerated overall feature-delivery speeds by 30% across 20+ frontend engineers.',
+        'stats.impactCards.geolocal.whatItImproved',
+        'A Copenhagen district is legible at a glance, across eight neighbourhoods, before any filter is applied.',
       ),
-      proofLink: 'https://github.com/eddremonts86/edd-remonts-dashboard',
-      Icon: ShieldCheck,
+      proofLink: 'https://geo.eduardoinerarte.dk',
+      Icon: MapPin,
     },
     {
-      id: 'latency',
-      metric: t('stats.impactCards.latency.metric', 'Sub-12ms'),
-      title: t('stats.impactCards.latency.title', 'Interaction Latency'),
+      id: 'ai-os',
+      metric: t('stats.impactCards.ai-os.metric', '~300'),
+      title: t('stats.impactCards.ai-os.title', 'Skills, 6 CLIs'),
       whatChanged: t(
-        'stats.impactCards.latency.whatChanged',
-        'Restructured site-builder rendering architecture to isolate mutation cycles to individual cells.',
+        'stats.impactCards.ai-os.whatChanged',
+        'Made one git repository the source of truth and symlinked it into every AI CLI, with MCP servers as declarative YAML.',
       ),
       whatItImproved: t(
-        'stats.impactCards.latency.whatItImproved',
-        'Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals.',
+        'stats.impactCards.ai-os.whatItImproved',
+        'A new machine reaches a full working setup with one command, and a skill has exactly one place it can be wrong.',
       ),
-      proofLink: 'https://github.com/eddremonts86/edd-remonts-dashboard',
-      Icon: Zap,
+      proofLink: 'https://ai-os.eduardoinerarte.dk',
+      Icon: Terminal,
     },
     {
-      id: 'throughput',
-      metric: t('stats.impactCards.throughput.metric', '98/100'),
-      title: t('stats.impactCards.throughput.title', 'Sustained Performance'),
+      id: 'ai-schadcn-chat',
+      metric: t('stats.impactCards.ai-schadcn-chat.metric', '8'),
+      title: t('stats.impactCards.ai-schadcn-chat.title', 'Providers, One API'),
       whatChanged: t(
-        'stats.impactCards.throughput.whatChanged',
-        'Optimized real-time logistics socket rendering with virtualized list memoization queues.',
+        'stats.impactCards.ai-schadcn-chat.whatChanged',
+        'Put the model provider behind an adapter, so the chat panel only ever knows about a stream of tokens.',
       ),
       whatItImproved: t(
-        'stats.impactCards.throughput.whatItImproved',
-        'Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%.',
+        'stats.impactCards.ai-schadcn-chat.whatItImproved',
+        'Adding Anthropic, OpenAI or any OpenAI-compatible gateway is configuration rather than another fork to maintain.',
       ),
-      proofLink: 'https://github.com/eddremonts86/edd-remonts-dashboard',
-      Icon: Activity,
+      proofLink: 'https://github.com/eddremonts86/ai-schadcn-chat',
+      Icon: MessageSquare,
     },
   ]
 
@@ -89,18 +92,18 @@ export const BusinessImpact = () => {
         {/* Section Header */}
         <m.div {...fadeInView()} className="mb-20 max-w-3xl">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold block mb-4">
-            {t('stats.businessImpact.eyebrow', '/ BUSINESS IMPACT')}
+            {t('stats.businessImpact.eyebrow', '/ THE PRODUCTS')}
           </span>
           <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-7xl text-foreground leading-tight">
-            {t('stats.businessImpact.title', 'Measurable')} <br />
+            {t('stats.businessImpact.title', 'What they')} <br />
             <span className="font-serif italic text-primary">
-              {t('stats.businessImpact.titleAccent', 'Business Outcomes')}
+              {t('stats.businessImpact.titleAccent', 'actually do')}
             </span>
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/60 md:text-base font-light font-display">
             {t(
               'stats.businessImpact.subtitle',
-              'Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.',
+              'The same four projects, in numbers. Each figure links to the running thing, so you can check it rather than take my word for it.',
             )}
           </p>
         </m.div>
@@ -164,7 +167,7 @@ export const BusinessImpact = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-primary hover:text-foreground transition-colors hover:underline"
                       >
-                        {t('stats.businessImpact.proof', '[Proof Link →]')}
+                        {t('stats.businessImpact.proof', '[View it →]')}
                       </a>
                     </div>
                   )}
