@@ -1,5 +1,5 @@
 import { m, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ArrowDownToLine, FlaskConical } from 'lucide-react'
+import { ArrowRight, ArrowDownToLine } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { InkCanvas } from '@/portfolio/components/gl/InkCanvas'
@@ -32,6 +32,9 @@ export const HeroSection = () => {
 
   return (
     <section
+      // NAV_SECTIONS lists 'hero' as the first dot; without this id the dot
+      // navigation and the ⌘K "Go to: Home" entry pointed at nothing.
+      id="hero"
       ref={containerRef}
       className={`relative flex min-h-svh flex-col overflow-hidden transition-colors duration-1000 ${bgColor}`}
     >
@@ -139,15 +142,6 @@ export const HeroSection = () => {
                 >
                   <span>{t('hero.explore', 'View Work')}</span>
                   <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
-                </a>
-              </MagneticButton>
-              <MagneticButton>
-                <a
-                  href="#lab"
-                  className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[11px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:border-primary/60 hover:text-primary md:text-xs"
-                >
-                  <FlaskConical className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-rotate-12" />
-                  <span>{t('hero.enterLab', 'Enter the Lab')}</span>
                 </a>
               </MagneticButton>
               <MagneticButton>

@@ -22,9 +22,6 @@ import { useTitleSequence } from './hooks/useTitleSequence'
 const ProjectsGallery = lazy(() =>
   import('./components/projects/ProjectsGallery').then((m) => ({ default: m.ProjectsGallery })),
 )
-const LabSection = lazy(() =>
-  import('./components/lab/LabSection').then((m) => ({ default: m.LabSection })),
-)
 const BuildLogSection = lazy(() =>
   import('./components/buildlog/BuildLogSection').then((m) => ({ default: m.BuildLogSection })),
 )
@@ -62,9 +59,10 @@ export function App() {
             <ProjectsGallery />
           </Suspense>
 
-          <Suspense fallback={null}>
-            <LabSection />
-          </Suspense>
+          {/* The Lab (interaction experiments) is off the landing: it is a
+              playground, not evidence a founder is scanning for. The components
+              under components/lab/ are kept intact for a future standalone
+              route. */}
 
           <Suspense fallback={null}>
             <BuildLogSection />
