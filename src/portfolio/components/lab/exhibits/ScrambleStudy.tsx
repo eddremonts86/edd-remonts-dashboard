@@ -18,7 +18,7 @@ export const ScrambleStudy = () => {
       <div className="flex flex-1 items-center justify-center overflow-hidden rounded-xl bg-background/60 px-4">
         <p
           aria-live="polite"
-          className="break-all text-center font-mono text-sm leading-relaxed text-foreground md:text-base"
+          className="break-all text-center font-mono text-[16px] leading-relaxed text-foreground md:text-[17px]"
         >
           {display}
         </p>
@@ -38,11 +38,11 @@ export const ScrambleStudy = () => {
           onChange={(e) => setValue(e.target.value)}
           placeholder={t('lab.exhibits.scramble.placeholder', 'Type a phrase…')}
           aria-label={t('lab.exhibits.scramble.inputLabel', 'Phrase to scramble')}
-          className="min-w-0 flex-1 rounded-full border border-subtle bg-background/70 px-4 py-2 font-mono text-xs text-foreground placeholder:text-foreground/35 focus:border-primary/50"
+          className="min-w-0 flex-1 rounded-full border border-subtle bg-background/70 px-4 py-2 font-mono text-[15px] text-foreground placeholder:text-foreground/35 focus:border-primary/50"
         />
         <button
           type="submit"
-          className="shrink-0 rounded-full border border-subtle bg-foreground px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-background transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+          className="shrink-0 rounded-full border border-subtle bg-foreground px-4 py-2 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-background transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
         >
           {t('lab.exhibits.scramble.action', 'Decode')}
         </button>

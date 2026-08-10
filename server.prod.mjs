@@ -7,10 +7,11 @@
  *
  * Usage: node server.prod.mjs
  */
-import { createReadStream, statSync } from 'node:fs'
+import { readFileSync, statSync } from 'node:fs'
 import { createServer } from 'node:http'
 import { extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { brotliCompressSync, constants as zlibConstants, gzipSync } from 'node:zlib'
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10)
 const HOST = process.env.HOST ?? '0.0.0.0'
@@ -38,8 +39,80 @@ const MIME = {
   '.webmanifest': 'application/manifest+json',
 }
 
+/** Extensions worth compressing. Images, fonts and wasm are already compressed. */
+const COMPRESSIBLE = new Set([
+  '.js',
+  '.mjs',
+  '.css',
+  '.html',
+  '.json',
+  '.svg',
+  '.txt',
+  '.xml',
+  '.webmanifest',
+])
+
+/** Below this, framing overhead outweighs the saving. */
+const MIN_COMPRESS_BYTES = 1024
+
+/**
+ * Compressed static assets, cached in memory.
+ *
+ * Hashed assets are immutable by definition, so compressing each one once and
+ * holding the bytes is both correct and cheap (the whole client build is a
+ * couple of MB compressed). Without this the server re-ran brotli on every
+ * request — or, as it did before this change, shipped 1,510,799 bytes of JS
+ * that gzips to 444 KB with no Content-Encoding at all.
+ */
+const compressedCache = new Map()
+
+function negotiateEncoding(req) {
+  const accept = String(req.headers['accept-encoding'] ?? '')
+  if (/\bbr\b/.test(accept)) return 'br'
+  if (/\bgzip\b/.test(accept)) return 'gzip'
+  return null
+}
+
+function compress(buffer, encoding) {
+  return encoding === 'br'
+    ? brotliCompressSync(buffer, {
+        params: {
+          [zlibConstants.BROTLI_PARAM_QUALITY]: 11,
+          [zlibConstants.BROTLI_PARAM_SIZE_HINT]: buffer.length,
+        },
+      })
+    : gzipSync(buffer, { level: 9 })
+}
+
+/**
+ * Headers every response carries.
+ *
+ * netlify.toml declares an overlapping set, but the Dockerfile runs this file,
+ * so those never applied to the deployed site.
+ *
+ * No Content-Security-Policy yet: TanStack Start emits inline bootstrap scripts
+ * without a nonce, so any policy strict enough to be worth having would break
+ * hydration. That needs a nonce plumbed through the SSR handler — tracked
+ * separately rather than shipped half-done here.
+ */
+function securityHeaders(req) {
+  const headers = {
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+    'Cross-Origin-Opener-Policy': 'same-origin',
+  }
+  // Only when the proxy terminated TLS — sending HSTS over plain HTTP is
+  // ignored by browsers and misleading to read in a local curl.
+  if (req.headers['x-forwarded-proto'] === 'https') {
+    headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+  }
+  return headers
+}
+
 // Try to serve a static file; return true if served
-function tryServeStatic(pathname, res) {
+function tryServeStatic(pathname, req, res) {
   // Prevent path traversal
   const safePath = pathname.replace(/\.\./g, '')
   const filePath = join(CLIENT_DIR, safePath)
@@ -65,12 +138,35 @@ function tryServeStatic(pathname, res) {
     ? 'public, max-age=31536000, immutable'
     : 'public, max-age=3600'
 
-  res.writeHead(200, {
+  const headers = {
+    ...securityHeaders(req),
     'Content-Type': mime,
-    'Content-Length': stat.size,
     'Cache-Control': cacheControl,
-  })
-  createReadStream(filePath).pipe(res)
+  }
+
+  const encoding =
+    COMPRESSIBLE.has(ext) && stat.size >= MIN_COMPRESS_BYTES ? negotiateEncoding(req) : null
+
+  if (encoding) {
+    const key = `${filePath}:${encoding}`
+    let body = compressedCache.get(key)
+    if (!body) {
+      body = compress(readFileSync(filePath), encoding)
+      compressedCache.set(key, body)
+    }
+    res.writeHead(200, {
+      ...headers,
+      'Content-Encoding': encoding,
+      'Content-Length': body.length,
+      Vary: 'Accept-Encoding',
+    })
+    res.end(req.method === 'HEAD' ? undefined : body)
+    return true
+  }
+
+  const body = readFileSync(filePath)
+  res.writeHead(200, { ...headers, 'Content-Length': body.length })
+  res.end(req.method === 'HEAD' ? undefined : body)
   return true
 }
 
@@ -88,7 +184,7 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? '/', `${protocol}://${host}`)
 
   // Redirect root domain to canonical subdomain (301 permanent)
-  if (url.hostname === 'eduardoinerarte.dk') {
+  if (url.hostname === 'eduardoinerarte.dk' || url.hostname === 'www.eduardoinerarte.dk') {
     const target = `https://profile.eduardoinerarte.dk${url.pathname}${url.search}`
     res.writeHead(301, { Location: target })
     res.end()
@@ -97,7 +193,7 @@ const server = createServer(async (req, res) => {
 
   // Serve static files from dist/client/ before hitting the SSR handler
   if (req.method === 'GET' || req.method === 'HEAD') {
-    if (tryServeStatic(url.pathname, res)) return
+    if (tryServeStatic(url.pathname, req, res)) return
   }
 
   const headers = new Headers()
@@ -128,10 +224,36 @@ const server = createServer(async (req, res) => {
   }
 
   // Forward status + headers
-  const resHeaders = {}
+  const resHeaders = { ...securityHeaders(req) }
   for (const [k, v] of webResponse.headers.entries()) {
     resHeaders[k] = v
   }
+
+  const contentType = webResponse.headers.get('content-type') ?? ''
+  const isHtml = contentType.includes('text/html')
+  if (isHtml && !resHeaders['cache-control']) {
+    // Always revalidate the document; the assets it points at are immutable.
+    resHeaders['Cache-Control'] = 'no-cache'
+  }
+
+  // SSR HTML compresses ~8:1 and is the very first byte a visitor waits on, so
+  // it is worth buffering the (already fully-rendered) document to compress it.
+  // Non-HTML responses keep streaming untouched.
+  const encoding = isHtml ? negotiateEncoding(req) : null
+  if (encoding && webResponse.body) {
+    const raw = Buffer.from(await webResponse.arrayBuffer())
+    const body = compress(raw, encoding)
+    delete resHeaders['content-length']
+    res.writeHead(webResponse.status, {
+      ...resHeaders,
+      'Content-Encoding': encoding,
+      'Content-Length': body.length,
+      Vary: 'Accept-Encoding',
+    })
+    res.end(body)
+    return
+  }
+
   res.writeHead(webResponse.status, resHeaders)
 
   // Stream body

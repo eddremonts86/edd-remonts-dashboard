@@ -7,18 +7,21 @@ import { Section, Container } from '../ui/layout/Section'
 import { SectionSlate } from '../ui/layout/SectionSlate'
 import { CategoryFilter } from './CategoryFilter'
 import { FloatingImagePreview } from './FloatingImagePreview'
-import { ProductStories } from './ProductStories'
 import { ProjectListItem } from './ProjectListItem'
 
 export const ProjectsGallery = () => {
   const { t } = useTranslation()
   const { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject } =
     useProjectFilter()
-  const [expandedId, setExpandedId] = useState<string | null>(null)
+  // The first row opens by default: a table of seventeen collapsed rows gives
+  // no hint that anything is behind them.
+  const [expandedId, setExpandedId] = useState<string | null>('builderhunt')
   const { springX, springY } = useMousePosition()
 
-  // Filter out Zunzun from additional list
-  const additionalProjects = filteredProjects.filter((p) => p.id !== 'zunzun')
+  // The full index, nothing held back. Zunzun used to be excluded here because
+  // it was one of the flagship stories above; it no longer is, so hiding it
+  // just made a project disappear from the site entirely.
+  const additionalProjects = filteredProjects
 
   return (
     <Section id="projects">
@@ -26,36 +29,24 @@ export const ProjectsGallery = () => {
       <Container>
         <SectionSlate
           reel={2}
-          kicker={t('projects.eyebrow', 'Featured Systems & Engineering Outcomes')}
-          title={t('projects.title', 'Product Stories')}
-          accent={t('projects.titleAccent', 'Not Project Cards.')}
+          kicker={t('projects.eyebrow', 'Signature projects')}
+          title={t('projects.title', 'Things I built')}
+          accent={t('projects.titleAccent', 'End to end.')}
           description={t(
             'projects.description',
-            'Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.',
+            'Four products of my own. For each: the problem it started from, the architecture I chose, and the path I turned down to get there.',
           )}
         />
 
-        {/* 1. Immersive Product Stories Marquee */}
-        <div className="mb-32">
-          <ProductStories />
-        </div>
-
-        {/* 2. Additional Case Notes Repository */}
-        <div className="mb-12 flex flex-col justify-between gap-8 border-b border-subtle pb-8 md:flex-row md:items-end text-left">
-          <div className="max-w-xl">
-            <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">
-              {t('projects.registry.kicker', '/ ADDITIONAL PROJECTS')}
-            </p>
-            <h3 className="text-3xl font-light tracking-tight text-foreground font-display">
-              {t('projects.registry.title', 'Additional Projects')}
-            </h3>
-            <p className="mt-3 text-sm text-foreground/65 leading-relaxed font-light">
-              {t(
-                'projects.registry.description',
-                'Explore additional product features, tools, and legacy software systems engineered throughout my career.',
-              )}
-            </p>
-          </div>
+        {/* One index, not a marquee plus a leftovers table. The four flagship
+            stories open inside their own rows; see ProjectStoryPanel. */}
+        <div className="mb-8 flex flex-col justify-between gap-6 border-b border-subtle pb-6 md:flex-row md:items-end text-left">
+          <p className="max-w-xl text-[16px] text-foreground/78 leading-relaxed font-light">
+            {t(
+              'projects.registry.description',
+              'Seventeen in total. The four at the top are my own — open a row to read the case study.',
+            )}
+          </p>
 
           <div className="shrink-0">
             <CategoryFilter active={activeCategory} onSelect={setActiveCategory} />
@@ -70,7 +61,7 @@ export const ProjectsGallery = () => {
         >
           <div
             role="row"
-            className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[9px] uppercase tracking-wider text-foreground/35 select-none"
+            className="hidden md:grid grid-cols-12 gap-4 px-4 pb-3 border-b border-subtle/50 font-mono text-[12px] uppercase tracking-wider text-foreground/78 select-none"
           >
             <span role="columnheader" className="col-span-1">
               {t('projects.registry.colIndex', 'Index')}
@@ -82,7 +73,7 @@ export const ProjectsGallery = () => {
               {t('projects.registry.colCategory', 'Category')}
             </span>
             <span role="columnheader" className="col-span-4">
-              {t('projects.registry.colVector', 'Architectural Vector')}
+              {t('projects.registry.colVector', 'What it does')}
             </span>
             <span role="columnheader" className="col-span-1 justify-self-end">
               {t('projects.registry.colInspect', 'Inspect')}
@@ -115,7 +106,7 @@ export const ProjectsGallery = () => {
           <m.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-10 rounded-2xl border border-subtle bg-surface p-6 text-sm text-foreground/65 text-left"
+            className="mt-10 rounded-2xl border border-subtle bg-surface p-6 text-[16px] text-foreground/80 text-left"
           >
             {t('projects.empty', 'No projects found for this filter yet.')}
           </m.p>

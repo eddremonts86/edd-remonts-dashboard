@@ -1,7 +1,13 @@
 import { m } from 'framer-motion'
-import { AlertCircle, ArrowRight } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import {
+  ARROW_RIGHT,
+  CIRCLE_CHECK,
+  LOADER_CIRCLE,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -20,7 +26,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-name"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
+            className="ml-1 text-[13px] font-mono uppercase tracking-widest text-foreground/72"
           >
             {t('contact.form.name')}
           </label>
@@ -29,7 +35,7 @@ export const ContactForm = ({
             name="name"
             type="text"
             required
-            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-[16px] text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder={t('contact.form.namePlaceholder')}
           />
         </div>
@@ -37,7 +43,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-email"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
+            className="ml-1 text-[13px] font-mono uppercase tracking-widest text-foreground/72"
           >
             {t('contact.form.email')}
           </label>
@@ -46,7 +52,7 @@ export const ContactForm = ({
             name="email"
             type="email"
             required
-            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
+            className="w-full rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-[16px] text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder={t('contact.form.emailPlaceholder')}
           />
         </div>
@@ -54,7 +60,7 @@ export const ContactForm = ({
         <div className="flex flex-col gap-2">
           <label
             htmlFor="contact-message"
-            className="ml-1 text-[10px] font-mono uppercase tracking-widest text-foreground/50"
+            className="ml-1 text-[13px] font-mono uppercase tracking-widest text-foreground/72"
           >
             {t('contact.form.message')}
           </label>
@@ -63,7 +69,7 @@ export const ContactForm = ({
             name="message"
             rows={4}
             required
-            className="w-full resize-none rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-sm text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
+            className="w-full resize-none rounded-xl border border-subtle bg-surface px-5 py-4 font-mono text-[16px] text-foreground placeholder:text-foreground/45 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-surface/95 focus:ring-2 focus:ring-primary/20"
             placeholder="..."
           />
         </div>
@@ -83,7 +89,7 @@ export const ContactForm = ({
       {status === 'error' && (
         <div className="flex items-center gap-4 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
           <AlertCircle className="h-5 w-5 flex-shrink-0" />
-          <span className="text-sm font-bold tracking-wide font-mono">
+          <span className="text-[16px] font-bold tracking-wide font-mono">
             {t('contact.form.error')}
           </span>
         </div>
@@ -93,7 +99,7 @@ export const ContactForm = ({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[10px] uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/95 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-4 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:scale-100 shadow-md cursor-pointer"
+          className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 font-mono text-[13px] uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/95 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-4 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:scale-100 shadow-md cursor-pointer"
         >
           {/* Reflective dynamic sheen sweep on hover */}
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
@@ -113,13 +119,28 @@ export const ContactForm = ({
               ? t('contact.form.submitting', 'SENDING...')
               : t('contact.form.send', 'SEND MESSAGE')}
           </span>
-          {status === 'submitting' ? (
-            <div className="relative z-10 h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-          ) : (
-            <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-          )}
+          {/* arrow → spinner → check, morphed rather than swapped. The three
+              glyphs are the three states of one action, so the shape carrying
+              between them is information, not decoration. */}
+          <MorphingIcon
+            icon={
+              status === 'submitting'
+                ? LOADER_CIRCLE
+                : status === 'success'
+                  ? CIRCLE_CHECK
+                  : ARROW_RIGHT
+            }
+            size={14}
+            className={`relative z-10 transition-transform ${
+              status === 'submitting'
+                ? 'animate-spin'
+                : status === 'idle'
+                  ? 'group-hover:translate-x-1'
+                  : ''
+            }`}
+          />
         </button>
-        <p className="mt-4 text-center font-mono text-[8px] text-foreground/60 leading-normal select-none">
+        <p className="mt-4 text-center font-mono text-[12px] text-foreground/78 leading-normal select-none">
           {t(
             'contact.form.privacyNotice',
             '* PRIVACY NOTICE: Your details are processed strictly to respond to your direct inquiry, and are never shared or used for marketing.',

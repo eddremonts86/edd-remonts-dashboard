@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { CompanyChip } from '@/portfolio/components/ui/badges/CompanyChip'
 import { ShieldCheck, CalendarRange, Workflow } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -96,7 +97,7 @@ function Avatar({ name, src }: { name: string; src?: string }) {
   return (
     <div
       aria-hidden
-      className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-base font-semibold tracking-wide text-primary ring-2 ring-primary/20 ring-offset-2 ring-offset-background"
+      className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-[17px] font-semibold tracking-wide text-primary ring-2 ring-primary/20 ring-offset-2 ring-offset-background"
     >
       {getInitials(name)}
     </div>
@@ -129,11 +130,11 @@ export const TestimonialSlide = ({
     >
       {/* Context Badge Row */}
       <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-        <span className="inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 font-mono text-[9px] uppercase tracking-wider text-primary">
+        <span className="inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 font-mono text-[12px] uppercase tracking-wider text-primary">
           <ShieldCheck className="h-3 w-3" />
           {authority.relationship}
         </span>
-        <span className="inline-flex items-center gap-1 rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[9px] uppercase tracking-wider text-foreground/60">
+        <span className="inline-flex items-center gap-1 rounded-full border border-subtle bg-surface px-3 py-1 font-mono text-[12px] uppercase tracking-wider text-foreground/78">
           <CalendarRange className="h-3 w-3 text-primary animate-pulse" />
           {authority.timeline}
         </span>
@@ -145,7 +146,7 @@ export const TestimonialSlide = ({
       </blockquote>
 
       {/* Verification platform detail */}
-      <div className="mb-8 font-mono text-[10px] text-foreground/60 flex items-center gap-1.5 justify-center">
+      <div className="mb-8 font-mono text-[13px] text-foreground/78 flex items-center gap-1.5 justify-center">
         <Workflow className="h-3 w-3 text-primary" />
         <span>
           {t('testimonialAuthority.contextLabel', 'Context')}: {authority.context}
@@ -161,11 +162,14 @@ export const TestimonialSlide = ({
       >
         <Avatar name={testimonial.author} src={testimonial.avatar} />
         <div className="text-left">
-          <p className="text-base font-semibold tracking-wide text-foreground">
+          <p className="text-[17px] font-semibold tracking-wide text-foreground">
             {testimonial.author}
           </p>
-          <p className="font-mono text-xs uppercase tracking-widest text-foreground/60 mt-0.5">
-            {[testimonial.role, testimonial.company].filter(Boolean).join(' · ')}
+          <p className="font-mono text-[15px] uppercase tracking-widest text-foreground/78 mt-0.5">
+            {testimonial.role}
+            {testimonial.company && (
+              <CompanyChip name={testimonial.company} className="ml-2 align-middle" />
+            )}
           </p>
         </div>
       </m.div>

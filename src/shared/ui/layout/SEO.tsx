@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
 
-const SITE_URL = 'https://eddremonts.dk'
+const SITE_URL = 'https://profile.eduardoinerarte.dk'
 
 const OG_IMAGE = `${SITE_URL}/edd/edd_light.jpg`
 

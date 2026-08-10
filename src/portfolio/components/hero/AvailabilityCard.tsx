@@ -17,38 +17,38 @@ export const AvailabilityCard = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
-        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/60">
+        <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-foreground/78">
           {t('hero.availability.title', 'Hiring & Engagement Status')}
         </span>
       </div>
 
       <div className="grid gap-3.5 sm:grid-cols-3 text-left">
         <div className="space-y-1">
-          <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
+          <span className="font-mono text-[12px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
             <Calendar className="h-3 w-3 shrink-0" />
             {t('hero.availability.timeline.label', 'TIMELINE')}
           </span>
-          <span className="font-display text-[11px] font-semibold text-foreground block">
+          <span className="font-display text-[13px] font-semibold text-foreground block">
             {t('hero.availability.timeline.value', 'Q3 2026 Ready')}
           </span>
         </div>
 
         <div className="space-y-1">
-          <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
+          <span className="font-mono text-[12px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
             <MapPin className="h-3 w-3 shrink-0" />
             {t('hero.availability.location.label', 'LOCATION')}
           </span>
-          <span className="font-display text-[11px] font-semibold text-foreground block">
+          <span className="font-display text-[13px] font-semibold text-foreground block">
             {t('hero.availability.location.value', 'Copenhagen, DK')}
           </span>
         </div>
 
         <div className="space-y-1">
-          <span className="font-mono text-[8px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
+          <span className="font-mono text-[12px] uppercase tracking-wider text-primary flex items-center gap-1 font-bold">
             <Compass className="h-3 w-3 shrink-0" />
             {t('hero.availability.engagement.label', 'ENGAGEMENT')}
           </span>
-          <span className="font-display text-[11px] font-semibold text-foreground block">
+          <span className="font-display text-[13px] font-semibold text-foreground block">
             {t('hero.availability.engagement.value', 'Remote / Hybrid')}
           </span>
         </div>

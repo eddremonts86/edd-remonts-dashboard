@@ -20,8 +20,8 @@ export const CategoryFilter = ({
             key={cat}
             onClick={() => onSelect(cat)}
             aria-pressed={isActive}
-            className={`relative whitespace-nowrap rounded-lg px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors duration-300 focus:outline-none z-10 ${
-              isActive ? 'text-foreground font-medium' : 'text-foreground/50 hover:text-foreground'
+            className={`relative whitespace-nowrap rounded-lg px-4 py-1.5 font-mono text-[13px] uppercase tracking-widest transition-colors duration-300 focus:outline-none z-10 ${
+              isActive ? 'text-foreground font-medium' : 'text-foreground/72 hover:text-foreground'
             }`}
           >
             {isActive && (

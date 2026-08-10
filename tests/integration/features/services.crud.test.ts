@@ -37,18 +37,16 @@ describe('Services CRUD server functions', () => {
     const dbMock = {
       select: vi.fn(() => ({
         from: vi.fn(() => ({
-          orderBy: vi
-            .fn()
-            .mockResolvedValue([
-              {
-                id: 'svc-1',
-                iconSlug: 'code',
-                visible: true,
-                sortOrder: 0,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-            ]),
+          orderBy: vi.fn().mockResolvedValue([
+            {
+              id: 'svc-1',
+              iconSlug: 'code',
+              visible: true,
+              sortOrder: 0,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]),
         })),
       })),
     }
@@ -59,18 +57,16 @@ describe('Services CRUD server functions', () => {
       if (callCount === 1) {
         return {
           from: vi.fn(() => ({
-            orderBy: vi
-              .fn()
-              .mockResolvedValue([
-                {
-                  id: 'svc-1',
-                  iconSlug: 'code',
-                  visible: true,
-                  sortOrder: 0,
-                  createdAt: new Date(),
-                  updatedAt: new Date(),
-                },
-              ]),
+            orderBy: vi.fn().mockResolvedValue([
+              {
+                id: 'svc-1',
+                iconSlug: 'code',
+                visible: true,
+                sortOrder: 0,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+              },
+            ]),
           })),
         }
       }

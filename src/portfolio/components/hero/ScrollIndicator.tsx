@@ -17,7 +17,7 @@ export const ScrollIndicator = ({
     ? 'text-white/60'
     : isLightHover
       ? 'text-black/60'
-      : 'text-foreground/60'
+      : 'text-foreground/78'
 
   return (
     <m.div
@@ -27,7 +27,7 @@ export const ScrollIndicator = ({
       className={`absolute bottom-8 left-6 flex items-center gap-4 transition-colors duration-700 md:left-12 ${textColor}`}
     >
       <span
-        className="text-xs font-bold tracking-widest uppercase rotate-180"
+        className="text-[15px] font-bold tracking-widest uppercase rotate-180"
         style={{ writingMode: 'vertical-rl' }}
       >
         {label}

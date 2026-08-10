@@ -72,7 +72,7 @@
       "vitals": {
         "value": "100%",
         "label": "Core Web Vitals",
-        "desc": "Sikrede fejlfrie Lighthouse-resultater på tværs af alle kritiske brugerruter."
+        "desc": "Perfekte Lighthouse-scorer på de veje, brugerne faktisk tager."
       },
       "impact": {
         "value": "20+",
@@ -82,7 +82,7 @@
       "status": "STATUS: MÅLT & RAPPORTERET",
       "engagement": "ANSÆTTELSE: FULD TID"
     },
-    "tagline": "18 år med interfaces, hvor beviset kan måles — 100% Core Web Vitals, interaktioner under 12 ms og designsystemer brugt af 20+ ingeniører.",
+    "tagline": "Cubaner i København. Otte år som udvikler i Cuba, elleve i Danmark, og det samme arbejde begge steder: få tingene til at loade hurtigt og ikke gå i stykker.",
     "taglineAccent": "Alt herunder er levende. Rør ved det.",
     "enterLab": "Ind i laboratoriet"
   },
@@ -155,54 +155,54 @@
       "whyHire": "Hvorfor du bør",
       "name": "arbejde med mig?"
     },
-    "description": "Mange kan skrive UI-kode. Jeg specialiserer mig i at kombinere effektivitet formet af begrænsninger, europæisk enterprise-skala, produktintuition og teknisk governance på tværs af teams.",
+    "description": "Mange skriver UI-kode. Mit er noget andet: jeg lærte at få tingene til at virke, da der ikke var noget at arbejde med, og jeg har brugt elleve år på at bruge det, hvor der er.",
     "intro": "Jeg begyndte min karriere i Cuba i 2007, hvor jeg arbejdede med institutionelle platforme, medieprodukter og skræddersyet forretningssoftware, før jeg flyttede til Danmark og specialiserede mig yderligere i frontend engineering. Den end-to-end baggrund præger stadig min måde at arbejde på i dag: jeg forstår hele leverancekæden, samarbejder naturligt med produkt, design og backend-teams, og bygger interfaces der forbliver vedligeholdelige, når produkter vokser.",
     "features": {
       "0": {
-        "title": "Strategisk Samarbejdende Engineering",
-        "description": "Jeg trives i tværfunktionelle miljøer, der bygger bro mellem produktledere, UI/UX-designere og backend-infrastruktur-ingeniører for at sikre en justeret levering."
+        "title": "Arbejde i sømmene",
+        "description": "De fleste af de svære problemer lever mellem produkt, design og backend, ikke inde i nogen af dem. Det er dér, jeg bruger min tid."
       },
       "1": {
-        "title": "Kontinuerlig Systemudvikling",
-        "description": "Dagens teknologilandskab er utilgivende. Jeg omfavner arkitektonisk refaktoriseringsarbejde og holder min teknologistak, testdækning og CI/CD-pipelines på forkant."
+        "title": "Refaktorering med vilje",
+        "description": "Stacks rådner. Jeg planlægger refaktoreringen, før den bliver en nødsituation, og holder tests og CI så opdaterede, at opgraderinger er kedelige."
       },
       "2": {
-        "title": "Robust Skalerbarhed",
-        "description": "Hastighed betyder intet uden stabilitet. Jeg bygger robuste mikrotjenester og drager fordel af moderne Next.js/React meta-frameworks, der prioriterer overhalinger med nul nedetid."
+        "title": "Hurtigt, og stadig oppe",
+        "description": "Hastighed, ingen kan regne med, er ikke hastighed. Jeg bygger, så en deploy holder op med at være en begivenhed."
       }
     },
     "advantages": [
       {
         "id": "experience",
         "index": "01",
-        "title": "18 års modenhed i engineering",
-        "subtitle": "Et stærkt full-stack fundament udviklet til elite-frontend-arkitektur.",
+        "title": "18 år, to lande",
+        "subtitle": "Startede full stack i Havana og endte med frontend-arkitektur i København.",
         "bullets": [
-          "Startede i 2007, spændende fra vanilla JavaScript til massive moderne isomorfe arkitekturer.",
-          "Jeg bevarer en hands-on indstilling, leder arkitektonisk governance og understøtter produktfokuserede mål.",
-          "Jeg forener kompromisløst visuelt håndværk med robuste mønstre på produktionsniveau."
+          "Februar 2007, Nationalbiblioteksprojektet på UCI. Derfra hvad der nu skulle til: håndskrevet JavaScript, PHP, Drupal, MySQL.",
+          "Jeg skriver stadig kode. Jeg leder ikke fra et regneark.",
+          "Jeg går op i, hvordan det ser ud, og hvordan det holder. Det er det samme arbejde."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "Effektivitets-DNA skabt af begrænsninger",
-        "subtitle": "Besatte ydeevnevaner opbygget under ekstreme ressourcegrænser.",
+        "title": "Jeg lærte at optimere på 56kbps",
+        "subtitle": "I Cuba var en sides vægt ikke en måling. Det var, om den loadede.",
         "bullets": [
-          "Jeg lærte faget under Cubas hårde dial-up-begrænsninger (56kbps), hvilket tvang mig til ekstrem ressourceeffektivitet.",
-          "En streng hygiejne-mentalitet: tæller hver eneste byte, beskærer payloads og mikrooptimerer renderingstrin.",
-          "Jeg behandler ikke ydeevne som en polering efter lancering, men som en afgørende faktor for forretningskonvertering."
+          "Otte år som udvikler i Cuba: først Havana, så Pinar del Río. Nationalbiblioteket, ONEI, GEOCUBA.",
+          "Med den båndbredde lærer man at tælle bytes, før man lærer at sætte op. Det går ikke væk igen.",
+          "Derfor har performance aldrig lignet en sidste finpudsning for mig. Det var betingelsen for, at tingen overhovedet fandtes."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "Europæisk Enterprise SaaS-skala",
-        "subtitle": "Dokumenteret erfaring med at skalere komplekse softwareplatforme i København.",
+        "title": "Maj 2015, København",
+        "subtitle": "Elleve år i Danmark, syv steder.",
         "bullets": [
-          "Jeg har ledet opdelingen af monorepos, styret micro-frontend arkitekturer og skaleret systemer på enterprise-niveau.",
-          "Jeg reducerede den indledende payload med 94% og øgede samtidig leveringshastigheden med 30% på tværs af teams.",
-          "Jeg etablerede skarpe modulgrænser for at holde systemerne rene, testbare og højt sammensættelige."
+          "Det sjove er, at jeg gik fra at slås med 56kbps til at diskutere millisekunder. Det viste sig at være det samme arbejde.",
+          "Jeg skar en platforms initiale bundle med 94% og gjorde leveringen 30% hurtigere på tværs af flere teams.",
+          "Stramme modulgrænser, så tyve ingeniører kan arbejde i det samme system uden at ødelægge det."
         ]
       },
       {
@@ -213,7 +213,7 @@
         "bullets": [
           "Jeg afstemmer tekniske beslutninger, produkt-metrikker og design-systemers æstetik.",
           "Jeg modellerer typesikre domænelag, koordinerer caching-strategier i browseren og sikrer overensstemmelse i databaser.",
-          "Jeg designer brugerflader, der er visuelt premium, ekstremt responsive og nemme at vedligeholde."
+          "Grænseflader der ser rigtige ud, svarer med det samme, og som en anden kan vedligeholde."
         ]
       },
       {
@@ -224,12 +224,12 @@
         "bullets": [
           "Jeg har sat de tekniske standarder, der bruges af mere end 20 udviklere på tværs af 4 uafhængige produkt-teams.",
           "Jeg erstattede isolerede metoder med aktiv mentorering, klare systemaftaler og fælles workshops.",
-          "Jeg udrustede uafhængige teams til at udrulle sikkert på daglig basis med lav friktion."
+          "Distribuerede teams endte med at sende dagligt uden at vente på mig."
         ]
       }
     ],
     "servicesTitle": "Hvad Jeg Leverer.",
-    "servicesSub": "Leverer premium digitale oplevelser.",
+    "servicesSub": "Det, jeg faktisk bliver hyret til.",
     "originsLabel": "Ophav",
     "originsSub": "Cuba → København"
   },
@@ -361,9 +361,9 @@
     ]
   },
   "projects": {
-    "title": "Produkthistorier",
-    "titleAccent": "Ikke projektkort.",
-    "subtitle": "En samling af digitale oplevelser der forener premium design med kompromisløs systemteknik.",
+    "title": "Ting jeg har bygget",
+    "titleAccent": "Fra ende til anden.",
+    "subtitle": "Fire produkter af mine egne: problemet hvert af dem startede fra, arkitekturen jeg valgte, og hvad jeg valgte fra for at nå dertil.",
     "view": "Se Projekt",
     "problem": "Problem",
     "results": "Resultater",
@@ -388,12 +388,6 @@
       "viewArchitecture": "/ SE ARKITEKTUR",
       "metricOutcomes": "/ Målbare Resultater",
       "metricSubtitle": "Hvad vi ændrede / Hvorfor det betød noget",
-      "outcomePayload": "94% payload-reduktion [6.2MB → 350KB]",
-      "outcomePayloadDesc": "Opdeling af monorepo med Vite adskilte ældre ressourcer, hvilket gav et fejlfrit LCP på 1.4s.",
-      "outcomeDeduplication": "60% Request-deduplikering [500+ updates/sek]",
-      "outcomeDeduplicationDesc": "Virtualiserede renderingstrin forhindrede DOM-overbelastning og nedbragte server-infrastruktur-omkostninger.",
-      "outcomeVitals": "100% Core Web Vitals [INP under 12ms]",
-      "outcomeVitalsDesc": "Lokale, reaktive noder isolerede UI-ændringer helt fra det globale træ, hvilket forhindrede inputdelay.",
       "modal": {
         "topology": "SYSTEMTOPOLOGI",
         "diagnostic": "DIAGNOSTISK_SNAP",
@@ -405,56 +399,77 @@
         "registry": "Klient-register",
         "leaf": "Isoleret Node"
       },
-      "schilling": {
-        "title": "Schilling SaaS Enterprise Platform",
-        "category": "Enterprise Platform Arkitektur",
-        "scaleLabel": "100k+ linjer kode",
-        "impactLabel": "94% payload-reduktion",
-        "architectureLabel": "Micro-Frontend Core",
-        "context": "Enterprise SaaS til forlag, der betjener store medieorganisationer i Europa med høje krav til datatæthed.",
-        "challenge": "Monolitiske bundle-størrelser oversteg 6MB, hvilket gav LCP-forsinkelser på over 7.5s og øgede bounce-raten. Komplette omskrivninger var udelukket på grund af finansielle regressionsrisici.",
-        "decision": "I stedet for at fryse produktudviklingen designede jeg Vite-baserede monorepo-partitioner, der sikrede uafhængig ruteisolering og semantiske kontrakter mellem moduler.",
-        "businessImpact": "Reducerede den indledende payload med 94% (fra 6.2MB til 350KB), hvilket fjernede bounce-raten næsten helt, øgede leveringshastigheden med 30% og lod mere end 20 udviklere udrulle fejlfrit.",
-        "tradeoffsChosen": "Afgrænsede underapp-partitioner med semantiske versioneringskontrakter for at minimere risici ved udrulning.",
-        "tradeoffsRejected": "Fuldstændig omskrivning, hvilket ville have medført 12 måneders feature-frys og million-euro regressionsrisici."
+      "builderhunt": {
+        "title": "BuilderHunt",
+        "category": "Opdagelsesmotor på tværs af kilder",
+        "scaleLabel": "13 indekserede platforme",
+        "impactLabel": "Score vægtet efter aktualitet",
+        "architectureLabel": "Dedup- og henfaldspipeline",
+        "context": "Både rekruttering og open source-sourcing kører på GitHub-stjerner, som belønner det, der var populært for år siden, frem for dem, der rent faktisk leverer i denne måned.",
+        "challenge": "Tretten platforme viser aktivitet i tretten forskellige former, den samme person optræder med forskellige brugernavne hvert sted, og hvert signal ældes i sit eget tempo. At rangere dem samlet kræver, at identitet og aktualitet er afklaret, før et eneste resultat kan bruges.",
+        "decision": "Jeg modellerede aktualitet som halveringstid frem for et råt antal, så en commit fra i sidste uge slår en tre år gammel bunke stjerner, og lagde deduplikering før scoring, så én person bliver til ét resultat. Kontakten er stadig manuel: produktet finder mennesker, det skriver aldrig til dem.",
+        "businessImpact": "I offentlig beta med en gratis plan på 3 gemte søgninger og 50 gemte profiler. Nøgleordsalarmer via e-mail eller RSS, private noter pr. profil og CSV/JSON-eksport, så en shortlist forlader produktet og lander i det værktøj, teamet allerede bruger.",
+        "tradeoffsChosen": "Henfaldsvægtet score frem for livstidstotaler, og deduplikering før rangering, så aktualitet og identitet er afklaret, før noget vises.",
+        "tradeoffsRejected": "Automatiseret opsøgning. Det ville have været den oplagte vækstmekanik og ville have gjort et opdagelsesværktøj til endnu en maskine til kolde mails.",
+        "outcomeHeadline": "13 kilder, én rangeret liste",
+        "outcomeDetail": "GitHub, Reddit, Hacker News, DEV.to, Lobsters, Stack Overflow, npm, Hugging Face, GitLab, Codeberg, Hashnode og SourceHut, dedupliceret og scoret efter aktualitet."
       },
-      "edd-remonts": {
-        "title": "Edd Remonts System Dashboard",
-        "category": "Realtids-transaktionelt Dashboard",
-        "scaleLabel": "Realtids Event-strøm",
-        "impactLabel": "98 i Lighthouse-score",
-        "architectureLabel": "TanStack DB Synkronisering",
-        "context": "Dashboard til realtids-logistikstyring og transaktionel overvågning af højfrekvente drifts-KPI'er.",
-        "challenge": "Konstant højfrekvent polling mættede forbindelserne, overbelastede databasen og forsinkede indlæsningen. Rå WebSockets gav DOM-thrashing på ustabile mobilnetværk.",
-        "decision": "Udviklede virtualiserede DOM-memoizationkøer, integrerede TanStack Query til klientside-caching og isolerede renderingstrin udelukkende til aktive celler.",
-        "businessImpact": "Reducerede socket-trafik med 60%, nedbragte serverinfrastrukturomkostninger og sikrede en perfekt Lighthouse-score på 98 med 60FPS fluiditet under 500+ opdateringer/sek.",
-        "tradeoffsChosen": "Optimistisk statestruktur kombineret med en 150ms virtualiseret DOM-dæmper for at minimere CPU-belastning.",
-        "tradeoffsRejected": "Rå WebSockets med < 10ms forsinkelse, som ville have overbelastet mobilnetværket og givet konstante layout-skift."
+      "geolocal": {
+        "title": "GeoLocal CPH",
+        "category": "Markedsplads bygget om kortet",
+        "scaleLabel": "25.000 annoncer",
+        "impactLabel": "4 kategorier, ét kort",
+        "architectureLabel": "Geografisk klyngedannelse",
+        "context": "At finde noget som helst i København betyder fire forskellige sider: Boliga til lejligheder, DBA til biler, Facebook-grupper til services, Airbnb til resten. Hver af dem er et feed, og et feed kan ikke fortælle dig, hvad der ligger ti minutter fra din dør.",
+        "challenge": "Boliger, køretøjer, services og oplevelser har næsten intet til fælles som data: forskellige priser, forskellige enheder, forskellig levetid. At samle alle fire på ét kort kræver ét skema, der er fleksibelt nok til at rumme dem, og én grænseflade, der ikke ender som et filterpanel.",
+        "decision": "Jeg gjorde kortet til den primære flade i stedet for en funktion i listen, og klyngede efter bydel, så et kvarter kan læses på et øjeblik, før der filtreres. Kurateringen er bevidst og menneskelig, ikke en scraper-brandslange.",
+        "businessImpact": "25.000 annoncer i fire kategorier fordelt på otte københavnske bydele, hver med sit eget antal. Gratis at browse, uden reklamer og uden mørke mønstre.",
+        "tradeoffsChosen": "Kort først, liste bagefter, klynget pr. bydel, så nærhed er det primære filter og resten er valgfrit.",
+        "tradeoffsRejected": "Et uendeligt rangeret feed. Mere engagement, men det svarer på «hvad er populært», når spørgsmålet er «hvad ligger tæt på mig».",
+        "outcomeHeadline": "25.000 annoncer på ét kort",
+        "outcomeDetail": "Boliger, køretøjer, services og oplevelser i otte bydele, klynget så et kvarter kan læses, før du filtrerer noget."
       },
-      "zunzun": {
-        "title": "Zunzun.io Platform Engine",
-        "category": "Full-Stack Ydeevne-økosystem",
-        "scaleLabel": "Renderingshastighed < 1ms",
-        "impactLabel": "100% Core Web Vitals",
-        "architectureLabel": "Modulært State-framework",
-        "context": "Visuel canvas-editor og layout-builder med fokus på lynhurtig generering af statiske websider.",
-        "challenge": "Visuel samling af hundredvis af elementer udløste globale re-rendering-kaskader, hvilket øgede input-latency (INP) og ødelagde flyden.",
-        "decision": "Redesignede datastrømmen baseret på lokale, reaktive noder, så hvert modul opererer uafhængigt uden at belaste det globale træ.",
-        "businessImpact": "Garanterede svartider under 12ms ved redigering, bevarede 100% Core Web Vitals og eliminerede browser-frys under intensivt arbejde.",
-        "tradeoffsChosen": "Isolerede UI-layoutnoder, der fungerer som uafhængige registre for at begrænse ændringer til de enkelte blade.",
-        "tradeoffsRejected": "Brug af centraliseret global state dispatch, hvilket ville have udløst globale render-kaskader og øget input latency (INP)."
+      "ai-os": {
+        "title": "AI-OS",
+        "category": "System til udviklingsmiljø",
+        "scaleLabel": "6 AI-CLI'er samlet",
+        "impactLabel": "~300 delte skills",
+        "architectureLabel": "Deklarativ og idempotent",
+        "context": "Hver AI-CLI har sin egen konfiguration, sin egen skills-mappe og sin egen MCP-liste. Seks af dem betyder seks kopier af det samme setup, som begynder at glide fra hinanden den dag, du installerer nummer to.",
+        "challenge": "Et udviklingsmiljø er ikke bare dotfiles: det er CLI'er, runtimes, sprogservere, modelendepunkter og selve prompterne, spredt over macOS, Linux og Windows. At gøre det reproducerbart betyder, at det skal være sikkert at køre to gange på en maskine, der allerede er halvt sat op.",
+        "decision": "Jeg gjorde ét git-repository til kilden til sandhed og symlinkede ud derfra, så en skill skrives én gang og ses af alle CLI'er. MCP-servere er deklarativ YAML frem for seks håndredigerede JSON-filer, og installeren er idempotent med dry-run og CI-validering på alle tre platforme. Karpathys Spec → Verifier → Environment-løkke er kodet som tre verifikationsporte pr. opgave.",
+        "businessImpact": "En ny maskine når et komplet setup med én kommando: npx @edd_remonts/create-ai-os. Omkring 300 skills, 10 MCP-servere, 45 CLI-værktøjer, 43 globale node-pakker og 28 python-pakker, gendannet ens hver gang.",
+        "tradeoffsChosen": "Symlinks fra ét repository frem for kopier pr. værktøj, så der er præcis ét sted, en skill kan være forkert.",
+        "tradeoffsRejected": "En synkroniseringsdæmon, der overvåger hvert værktøj. Mindre arbejde i starten, men det gør konfigurationsdrift til en baggrundsproces, ingen kan fejlsøge.",
+        "outcomeHeadline": "~300 skills på tværs af 6 AI-CLI'er",
+        "outcomeDetail": "Ét repository, symlinket ind i hver CLI, med 10 MCP-servere som deklarativ YAML og en installer, det er sikkert at køre to gange."
+      },
+      "ai-schadcn-chat": {
+        "title": "ai-schadcn-chat",
+        "category": "Open source React-pakke",
+        "scaleLabel": "React 18 og 19",
+        "impactLabel": "8 udbydere, én API",
+        "architectureLabel": "Udbyderuafhængig adapter",
+        "context": "shadcn/ui giver dig hver eneste primitiv, en chatgrænseflade har brug for, og ingen chatgrænseflade. Alle bygger det samme streaming-panel forfra, og alle bygger det svejset fast til én udbyder.",
+        "challenge": "Streaming, markdown, kodeblokke, filupload og virtualiseret historik er hver for sig nemme og sammen besværlige, især mens der stadig kommer tokens ind. At gøre det én gang for Anthropic og igen for hver OpenAI-kompatibel gateway ville have betydet at vedligeholde det samme panel otte gange.",
+        "decision": "Jeg lagde udbyderen bag en adapter, så panelet kun kender en strøm af tokens, hvilket gør Anthropic, OpenAI og enhver OpenAI-kompatibel gateway til den samme integration. Konfigurationen er dyb frem for en suppe af props, og komponenten udgives som en pakke, du installerer, i stedet for en skabelon, du forker.",
+        "businessImpact": "MIT, på npm som @edd_remonts/ai-schadcn-chat. Virker med Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM og Ollama gennem ét konfigurationsobjekt, og falder ind i en eksisterende shadcn/ui-app uden temakamp.",
+        "tradeoffsChosen": "Én adaptergrænse mellem panelet og udbyderen, så det at tilføje en gateway er konfiguration frem for et fork.",
+        "tradeoffsRejected": "En copy-paste-skabelon i shadcn-traditionen. Nemmere at udgive, umulig at rette, når den ligger i halvtreds kodebaser.",
+        "outcomeHeadline": "8 udbydere bag én konfiguration",
+        "outcomeDetail": "Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM og Ollama, alle den samme integration for komponenten."
       }
     },
-    "description": "Fortællinger om kontekst, tekniske udfordringer, arkitekturer og metrikker bag tre store digitale platforme.",
+    "description": "Fire produkter af mine egne. For hvert af dem: problemet det startede fra, arkitekturen jeg valgte, og vejen jeg fravalgte for at nå dertil.",
     "registry": {
       "kicker": "/ FLERE PROJEKTER",
       "title": "Flere projekter",
-      "description": "Udforsk flere produktfunktioner, værktøjer og ældre systemer bygget gennem min karriere.",
+      "description": "Sytten i alt. De fire øverste er mine egne — åbn en række for at læse casen.",
       "aria": "Register over yderligere projekter",
       "colIndex": "Indeks",
       "colProject": "Projekt / Omfang",
       "colCategory": "Kategori",
-      "colVector": "Arkitektonisk vektor",
+      "colVector": "Hvad det gør",
       "colInspect": "Inspicér"
     },
     "empty": "Ingen projekter matcher dette filter endnu."
@@ -463,6 +478,8 @@
     "title": "Lad os bygge",
     "titleAccent": "noget sammen",
     "subtitle": "Klar til at drøfte et projekt, ansætte en Staff Engineer eller booke teknisk rådgivning? Send en besked, og lad os starte dialogen.",
+    "copyEmail": "Kopiér e-mailadresse",
+    "copied": "Kopieret",
     "eyebrow": "/ TAG KONTAKT",
     "params": {
       "title": "Ansættelses- & Samarbejdsparametre",
@@ -526,39 +543,61 @@
     "telemetry": "Portfolio telemetri",
     "status": "Operationel",
     "businessImpact": {
-      "title": "Målbare",
-      "titleAccent": "forretningsresultater",
-      "subtitle": "Teknisk ydeevne er afgørende, når det skaber reel værdi. Her er den konkrete, målbare og verificerbare driftseffekt leveret på tværs af enterprise-systemer.",
+      "title": "Hvad de",
+      "titleAccent": "faktisk gør",
+      "subtitle": "De samme fire projekter, i tal. Hvert tal linker til det kørende produkt, så du kan tjekke det i stedet for at tage mit ord for det.",
       "measuredOutcome": "Målt resultat",
       "techAction": "Teknisk handling",
       "businessBenefit": "Forretningsfordel",
-      "proof": "[Se bevis →]",
-      "eyebrow": "/ FORRETNINGSEFFEKT"
+      "proof": "[Se det →]",
+      "eyebrow": "/ PRODUKTERNE"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload-reduktion",
-        "whatChanged": "Opdelte monorepos med Vite og anvendte avanceret code-splitting, hvilket skar 94% af indlæsningsvægten.",
-        "whatItImproved": "Gjorde det muligt for under-teams at udrulle uafhængigt og bragte LCP ned på perfekte 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Indekserede kilder",
+        "whatChanged": "Jeg samlede 13 udviklerplatforme til én identitet og scorede aktivitet efter aktualitet frem for livstidstotaler.",
+        "whatItImproved": "En søgning finder dem, der leverer i denne måned, ikke dem, der var populære for tre år siden."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Hurtigere levering",
-        "whatChanged": "Koordinerede fælles design-systemer, standardiserede komponentbiblioteker og versionsguider.",
-        "whatItImproved": "Fremskyndede udrulningshastigheden med 30% for mere end 20 aktive udviklere."
+      "geolocal": {
+        "metric": "25.000",
+        "title": "Annoncer på kortet",
+        "whatChanged": "Jeg samlede boliger, køretøjer, services og oplevelser i ét skema og på ét kort, klynget efter bydel.",
+        "whatItImproved": "En københavnsk bydel kan læses på et øjeblik, på tværs af otte kvarterer, før der filtreres."
       },
-      "latency": {
-        "metric": "Under 12ms",
-        "title": "Interaktionslatens",
-        "whatChanged": "Isolerede renderingen i browseren, så muteringer udelukkende sker i de aktive celler.",
-        "whatItImproved": "Fjernede fuldstændig den forsinkelse, brugeren oplever, og sikrede fejlfrie Core Web Vitals."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLI’er",
+        "whatChanged": "Jeg gjorde ét git-repository til kilden til sandhed og symlinkede det ind i hver AI-CLI, med MCP-servere som deklarativ YAML.",
+        "whatItImproved": "En ny maskine når et komplet setup med én kommando, og en skill har præcis ét sted, den kan være forkert."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Stabil ydeevne",
-        "whatChanged": "Optimerede realtids-opdateringer af sockets via memoization og virtualiserede lister.",
-        "whatItImproved": "Håndterede over 500 opdateringer/sekund fejlfrit og reducerede databaseomkostninger med 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Udbydere, én API",
+        "whatChanged": "Jeg lagde modeludbyderen bag en adapter, så chatpanelet kun kender en strøm af tokens.",
+        "whatItImproved": "At tilføje Anthropic, OpenAI eller en hvilken som helst kompatibel gateway er konfiguration, ikke endnu et fork at vedligeholde."
+      }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ TEKNOLOGIER I BRUG",
+        "desc": "Systemer jeg faktisk har sendt i produktion med, samlet i registret."
+      },
+      "lighthouse": {
+        "label": "/ LIGHTHOUSE-PERFORMANCE",
+        "desc": "Gennemsnitlig Core Web Vitals-score på de systemer der stadig kører."
+      },
+      "users": {
+        "label": "/ SLUTBRUGERE",
+        "desc": "Folk der bruger de forbrugernetværk og SaaS-produkter, tallene dækker over."
+      },
+      "uptime": {
+        "label": "/ OPPETID",
+        "desc": "Serverless-arkitektur, ingen brudte SLA'er indtil videre."
+      },
+      "migrations": {
+        "label": "/ ENTERPRISE-MIGRERINGER",
+        "desc": "Legacy-kodebaser skilt ad til noget, et team kan bevæge sig i."
       }
     }
   },
@@ -566,12 +605,12 @@
     "eyebrow": "/ LEDERSKAB & FILOSOFI",
     "title": "Teknisk",
     "titleAccent": "Lederskab",
-    "subtitle": "Teknisk ekspertise handler om mere end blot kode: det handler om at strukturere systemer, afstemme talenter og skabe resultater via solid governance.",
+    "subtitle": "At skrive koden er den nemme halvdel. Resten er at beslutte hvor grænserne går, få tyve mennesker til at blive enige om dem, og kunne vise hvad det gav forretningen.",
     "principlesLabel": "Engineering principper",
     "practiceLabel": "Praktisk udmøntning",
     "notesTitle": "Tekniske noter",
     "ctaLabel": "Næste skridt",
-    "cta": "Søger du en Staff Engineer, der tager det fulde ansvar for systemerne og ikke bare løser opgaver? Lad os snakke.",
+    "cta": "Jeg søger et fuldtidsteam, i København eller remote i Europa. Har du en platform, der vejer for meget, og et team der træder hinanden over tæerne, så lad os snakke.",
     "ctaButton": "Start en samtale",
     "lessonsHeader": "Læring fra 18 Års Karriere",
     "howIWorkHeader": "Hvordan Jeg Arbejder",
@@ -588,12 +627,12 @@
       {
         "index": "01",
         "title": "Arkitektur handler om mennesker",
-        "body": "Systemer lykkes, når grænserne mellem teams, softwaregrænseflader og ansvar er skarpt defineret. Conways lov er ikke teori, men en reel engineering-begrænsning."
+        "body": "Conways lov er ikke noget man læser om. Hvis to teams skal koordinere ved hver release, dukker det op i koden som kobling, og ingen refaktorering fikser det, før teamene ændrer sig."
       },
       {
         "index": "02",
         "title": "Governance skaber hastighed",
-        "body": "Skarpe modulgrænser, semantisk versionering og grænsefladekontrakter er ikke hindringer. De er afgørende guardrails, der lader uafhængige teams udrulle hurtigt og sikkert."
+        "body": "Stramme grænser og semantisk versionering ligner bureaukrati udefra. Det er præcis dét, der lader et team sende i produktion en fredag uden at spørge nogen."
       },
       {
         "index": "03",
@@ -603,34 +642,34 @@
       {
         "index": "04",
         "title": "Kompleksitet akkumuleres",
-        "body": "Den dyreste linje kode er den, der skrives uden stabile interfaces og uafhængighed på sigt. En stærkt typet kodebase, der er tæt koblet, er stadig svær at skalere."
+        "body": "Den dyreste linje kode er den, der bliver skrevet uden en kontrakt omkring sig. En fuldt typet kodebase, hvor alt rækker ind i alt, er stadig spaghetti. Den kompilerer bare."
       },
       {
         "index": "05",
         "title": "De bedste systemer er forudsigelige",
-        "body": "Forudsigelige, stabile og afkoblede mønstre vinder over spændende men skrøbelige nyheder. Ensartet afvikling af software er det klareste tegn på teknologisk modenhed."
+        "body": "Forudsigeligt og afkoblet slår smart og skrøbeligt. Hvor kedeligt et teams software er, viser sig at være et ret godt mål for hvor moden organisationen er."
       }
     ],
     "howIWork": [
       {
         "title": "Pragmatisk beslutningstagning",
-        "body": "Strategi: Prioriterer stabile og forudsigelige standarder. Handling: Modellerer skarpe strukturgrænser og rene API-kontrakter. Resultat: Eliminerer slid ved beslutninger og forebygger fejl."
+        "body": "Jeg vælger den kedelige løsning og skriver ned hvorfor. Stramme modulgrænser og eksplicitte skemaer betyder færre beslutninger, der skal tages op igen, og færre ting der knækker, når værktøjerne skifter under en."
       },
       {
         "title": "Aktiv mentorering og tillid",
-        "body": "Strategi: Fjerner isolerede måder at udvikle kode på. Handling: Leder fælles workshops og fastlægger robuste systemgrænseflader. Resultat: Løfter de tekniske kompetencer i teamet."
+        "body": "Udviklere i siloer skriver kode, ingen andre tør røre. Jeg kører interfacekontrakter gennem workshops i stedet for dokumenter, så de tyve ingeniører, der arbejder i systemet, bliver enige før release, ikke under review."
       },
       {
         "title": "Tæt produkt-afstemning",
-        "body": "Strategi: Koordinerer direkte med forretningens interessenter. Handling: Omsætter teknisk kompleksitet til konkret kommerciel værdi. Resultat: Opnår opbakning til vigtige tekniske tiltag uden kommunikationshuller."
+        "body": "Jeg sætter mig med dem, der står på mål for tallet, ikke kun med dem der skriver opgaven. At oversætte en arkitekturbeslutning til hvad den koster og hvad den giver, er ofte forskellen på om arbejdet bliver godkendt."
       },
       {
         "title": "Aktiv minimering af gæld",
-        "body": "Strategi: Forebygger tæt kobling mellem underapplikationer proaktivt. Handling: Implementerer uafhængige sub-apps og sikrer skarpe API-skemaer. Resultat: Sparer 60% på infrastruktur og sikrer nemme opgraderinger."
+        "body": "Kobling er langt billigere at forebygge end at pille fra hinanden. Isolerede subapps og præcise API-skemaer skar 60% af forespørgselsomkostningerne og gjorde opgraderinger til noget vi lavede en tirsdag i stedet for at planlægge et kvartal frem."
       },
       {
         "title": "Øget autonomi",
-        "body": "Strategi: Opbygger decentraliseret tillid hos udviklerne. Handling: Standardiserer strenge automatiserede test og monorepo-grænser. Resultat: Gør uafhængige squads i stand til at udrulle sikker kode dagligt."
+        "body": "Autonomi uden gelændere er bare risiko med et pænere navn. Automatiske quality gates og monorepo-grænser lader distribuerede teams deploye dagligt uden at spørge om lov, fordi tjekkene siger nej, før et menneske skal."
       }
     ],
     "lessonsHeaderLabel": "/ MODENHED",

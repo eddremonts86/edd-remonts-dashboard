@@ -13,12 +13,10 @@ You are the CI/CD specialist for this repository.
 
 ```
 .github/workflows/
-  auth-local-e2e.yml
 
 netlify.toml
 package.json (scripts used by pipelines)
 playwright.config.ts
-playwright.auth-local.config.ts
 ```
 
 ## Current Pipeline Patterns
@@ -91,6 +89,10 @@ If CI/deploy changes affect these paths/commands, update `netlify.toml` and pipe
 ## Constraints
 
 - DO NOT change Node or pnpm versions unless explicitly requested
-- DO NOT remove existing auth-local E2E workflow coverage
+- The auth-local E2E suite was removed on 2026-08-10. It targeted `roles`,
+  `projects` and `users.role_id`, none of which this schema has ever defined,
+  and had never passed. Auth has no E2E coverage right now; new tests must be
+  written against better-auth and the code-level roles in
+  src/modules/users/model/permissions.ts
 - DO NOT add long-running jobs without path filters
 - DO NOT hardcode secrets in workflow files — use GitHub secrets

@@ -8,11 +8,13 @@ export interface NavSection {
   labelKey: string
 }
 
+// The Lab and the build log are no longer on the page (see App.tsx). Their
+// components and translations are kept for a possible standalone route, but
+// they must not appear here — DotNavigation and the command palette would
+// offer dead anchors.
 export const NAV_SECTIONS: NavSection[] = [
   { id: 'hero', labelKey: 'nav.home' },
   { id: 'projects', labelKey: 'nav.projects' },
-  { id: 'lab', labelKey: 'nav.lab' },
-  { id: 'log', labelKey: 'nav.log' },
   { id: 'about', labelKey: 'nav.about' },
   { id: 'authority', labelKey: 'nav.authority' },
   { id: 'experience', labelKey: 'nav.experience' },

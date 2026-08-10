@@ -2,109 +2,31 @@ import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioData } from '@/portfolio/contexts/PortfolioDataContext'
 
-const SITE_URL = 'https://eddremonts.dk'
-
-const OG_IMAGE = `${SITE_URL}/edd/edd_light.jpg`
-
-const LOCALE_MAP: Record<string, string> = {
-  en: 'en_US',
-  es: 'es_ES',
-  dk: 'da_DK',
-}
-
+/**
+ * Client-side, language-dependent head bits only.
+ *
+ * Canonical, hreflang, Open Graph, Twitter and JSON-LD are server-rendered by
+ * the route heads (`src/routes/__root.tsx`, `src/routes/_landing/index.tsx`)
+ * because crawlers and link unfurlers never run this component. Duplicating
+ * them here would emit two of every tag once the client hydrates.
+ *
+ * What is genuinely client-only: the tab title and <html lang>, both of which
+ * depend on the visitor's detected language.
+ */
 interface SEOProps {
   title?: string
-  description?: string
-  image?: string
-  url?: string
 }
 
-export const SEO = ({ title, description, image, url }: SEOProps) => {
+export const SEO = ({ title }: SEOProps) => {
   const { i18n, t } = useTranslation()
   const { personalInfo } = usePortfolioData()
 
   const lang = i18n.language
   const siteTitle = title || `${personalInfo.name} — ${t('hero.role', personalInfo.title)}`
-  const siteDescription = description || t('personalInfo.description')
-  const siteImage = image || OG_IMAGE
-  const siteUrl = url || SITE_URL
-  const locale = LOCALE_MAP[lang] || 'en_US'
 
   return (
     <Helmet htmlAttributes={{ lang: lang === 'dk' ? 'da' : lang }}>
       <title>{siteTitle}</title>
-      <meta name="description" content={siteDescription} />
-      <meta name="author" content={personalInfo.name} />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href={siteUrl} />
-
-      {/* Favicons & App Logos */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="manifest" href="/manifest.json" />
-
-      {/* Theme color */}
-      <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-      <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:title" content={siteTitle} />
-      <meta property="og:description" content={siteDescription} />
-      <meta property="og:image" content={siteImage} />
-      <meta property="og:image:width" content="2400" />
-      <meta property="og:image:height" content="1600" />
-      <meta property="og:locale" content={locale} />
-      <meta property="og:site_name" content={`${personalInfo.name} Portfolio`} />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={siteTitle} />
-      <meta name="twitter:description" content={siteDescription} />
-      <meta name="twitter:image" content={siteImage} />
-
-      {/* Hreflang alternates */}
-      <link rel="alternate" hrefLang="en" href={SITE_URL} />
-      <link rel="alternate" hrefLang="es" href={`${SITE_URL}?lang=es`} />
-      <link rel="alternate" hrefLang="da" href={`${SITE_URL}?lang=dk`} />
-      <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
-
-      {/* JSON-LD Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify([
-          {
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: personalInfo.name,
-            jobTitle: 'Staff Frontend Engineer & Technical Leader',
-            description: personalInfo.description,
-            url: SITE_URL,
-            image: siteImage,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Copenhagen',
-              addressCountry: 'DK',
-            },
-            knowsAbout: [
-              'React',
-              'TypeScript',
-              'Vite',
-              'Design Systems',
-              'Micro-Frontends',
-              'Monorepos',
-              'Web Performance',
-              'Frontend Architecture',
-            ],
-            sameAs: personalInfo.socials.map((s) => s.url).filter((u) => !u.startsWith('mailto:')),
-          },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: `${personalInfo.name} — Staff Frontend Engineer & Technical Leader`,
-            url: SITE_URL,
-          },
-        ])}
-      </script>
     </Helmet>
   )
 }

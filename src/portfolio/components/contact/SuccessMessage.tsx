@@ -17,11 +17,11 @@ export const SuccessMessage = ({ onReset }: { onReset: () => void }) => {
       <h4 className="text-3xl font-black uppercase tracking-tighter">
         {t('contact.success.title')}
       </h4>
-      <p className="font-body text-base opacity-70">{t('contact.success.body')}</p>
+      <p className="font-body text-[17px] opacity-70">{t('contact.success.body')}</p>
       <button
         type="button"
         onClick={onReset}
-        className="mt-6 rounded-full bg-foreground px-8 py-3 text-xs font-bold uppercase tracking-widest text-background transition-colors hover:bg-primary"
+        className="mt-6 rounded-full bg-foreground px-8 py-3 text-[15px] font-bold uppercase tracking-widest text-background transition-colors hover:bg-primary"
       >
         {t('contact.success.reset')}
       </button>

@@ -5,7 +5,10 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { SkipLink } from '@/components/ui/skip-link'
-import { useDevtoolsVisibility } from '@/modules/settings'
+// Deep import, not the '@/modules/settings' barrel: that barrel also re-exports
+// AiConfigForm, SystemSettings and the ai-config queries, which pulled the whole
+// AI settings module into the root chunk every landing visitor downloads.
+import { useDevtoolsVisibility } from '@/modules/settings/hooks/useDevtoolsVisibility'
 import { AppProviders } from '@/shared/providers'
 import { RootErrorContent } from './-root-components/RootErrorContent'
 

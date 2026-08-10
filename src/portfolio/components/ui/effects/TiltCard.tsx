@@ -15,7 +15,12 @@ interface TiltCardProps {
  * Pointer-tracked 3D perspective tilt. Pure CSS transforms driven by springs —
  * disabled entirely under prefers-reduced-motion.
  */
-export const TiltCard = ({ children, className = '', maxTilt = 7, glare = true }: TiltCardProps) => {
+export const TiltCard = ({
+  children,
+  className = '',
+  maxTilt = 7,
+  glare = true,
+}: TiltCardProps) => {
   const prefersReducedMotion = useReducedMotion()
   const px = useMotionValue(0.5)
   const py = useMotionValue(0.5)

@@ -64,7 +64,10 @@
     "group": "Group",
     "groupBy": "Group by",
     "columns": "Columns",
-    "export": "Export"
+    "export": "Export",
+    "selectAllRows": "Select all rows",
+    "selectRow": "Select row",
+    "filterBy": "Filter by {{label}}"
   },
   "common": {
     "loading": "Loading...",
@@ -1072,19 +1075,39 @@
       "links": {
         "essence": {
           "title": "Our Essence",
-          "items": ["Philosophy", "Success stories", "Methodology", "Human Blog"]
+          "items": [
+            "Philosophy",
+            "Success stories",
+            "Methodology",
+            "Human Blog"
+          ]
         },
         "company": {
           "title": "Company",
-          "items": ["About us", "Culture", "Work with us", "Press"]
+          "items": [
+            "About us",
+            "Culture",
+            "Work with us",
+            "Press"
+          ]
         },
         "community": {
           "title": "Community",
-          "items": ["Events", "Help Center", "Partners", "Network Status"]
+          "items": [
+            "Events",
+            "Help Center",
+            "Partners",
+            "Network Status"
+          ]
         },
         "legal": {
           "title": "Legal",
-          "items": ["Ethical Privacy", "Terms of Use", "Cookies", "Licenses"]
+          "items": [
+            "Ethical Privacy",
+            "Terms of Use",
+            "Cookies",
+            "Licenses"
+          ]
         }
       }
     }

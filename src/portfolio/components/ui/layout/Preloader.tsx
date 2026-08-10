@@ -15,6 +15,11 @@ const BOOT_STEPS: Array<{ at: number; key: string; fallback: string }> = [
 /**
  * Title sequence — the load is theatre (assets are tiny), so it behaves like
  * one: boot log, wordmark reveal, hairline progress. Click anywhere to skip.
+ *
+ * It is an overlay, not a gate: the page is fully rendered underneath it, both
+ * on the server and in the DOM. Previously it replaced the page until it
+ * finished, which left crawlers with "Loading experience / 0% / Stand by" as
+ * the entire document.
  */
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const { t } = useTranslation()
@@ -26,39 +31,43 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         initial={{ opacity: 1 }}
         exit={{
           opacity: 0,
-          transition: { duration: 1.2, ease: APPLE_EASE, delay: 0.2 },
+          transition: { duration: 0.7, ease: APPLE_EASE },
         }}
         onClick={onComplete}
         className="fixed inset-0 z-[99999] flex cursor-pointer flex-col items-center justify-center overflow-hidden bg-background text-foreground"
+        // The page beneath is the real document; this is decoration over it.
+        aria-hidden="true"
         aria-label={t('preloader.skip', 'Loading — click to skip')}
       >
         <m.div
           exit={{ opacity: 0, y: -20, transition: { duration: 0.8, ease: APPLE_EASE } }}
-          className="container relative z-10 flex h-full w-full max-w-350 flex-col justify-between px-6 py-12 md:py-24"
+          className="container relative z-10 flex h-full w-full max-w-[1500px] flex-col justify-between px-6 md:px-10 py-12 md:py-24"
         >
-          <div className="flex w-full items-start justify-between font-mono text-[11px] uppercase tracking-widest opacity-40">
+          <div className="flex w-full items-start justify-between font-mono text-[13px] uppercase tracking-widest opacity-40">
             <span>{t('preloader.loading')}</span>
             <span>2026</span>
           </div>
 
           <div className="flex w-full flex-col items-center justify-center">
-            {/* Wordmark — masked line reveal, same grammar as the hero */}
+            {/* Wordmark — masked line reveal, same grammar as the hero.
+                A <div>, not an <h1>: the hero owns the page's only h1, and the
+                overlay must not add a second one. */}
             <div className="overflow-hidden">
-              <m.h1
+              <m.div
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1, ease: APPLE_EASE, delay: 0.1 }}
+                transition={{ duration: 0.7, ease: APPLE_EASE, delay: 0.05 }}
                 className="text-center font-serif text-4xl font-light leading-tight tracking-tight text-foreground md:text-6xl"
               >
                 Eduardo Inerarte
-              </m.h1>
+              </m.div>
             </div>
             <div className="overflow-hidden">
               <m.p
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1, ease: APPLE_EASE, delay: 0.25 }}
-                className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.35em] text-primary"
+                transition={{ duration: 0.7, ease: APPLE_EASE, delay: 0.15 }}
+                className="mt-2 text-center font-mono text-[13px] uppercase tracking-[0.35em] text-primary"
               >
                 {t('preloader.role', 'A Living Portfolio')}
               </m.p>
@@ -75,7 +84,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
 
             {/* Boot log */}
             <div
-              className="mt-8 flex h-24 flex-col items-center gap-1.5 font-mono text-[10px] tracking-wider text-foreground/45"
+              className="mt-8 flex h-24 flex-col items-center gap-1.5 font-mono text-[13px] tracking-wider text-foreground/70"
               aria-hidden="true"
             >
               {BOOT_STEPS.filter((step) => progress >= step.at).map((step) => (
@@ -92,7 +101,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             </div>
           </div>
 
-          <div className="flex w-full items-end justify-between font-mono text-[11px] uppercase tracking-widest opacity-40">
+          <div className="flex w-full items-end justify-between font-mono text-[13px] uppercase tracking-widest opacity-40">
             <span>{progress}%</span>
             <span className="text-primary">{t('preloader.standby')}</span>
           </div>

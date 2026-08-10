@@ -72,7 +72,7 @@
       "vitals": {
         "value": "100%",
         "label": "Core Web Vitals",
-        "desc": "Secured flawless Lighthouse scores across complex user paths."
+        "desc": "Perfect Lighthouse scores on the paths users actually take."
       },
       "impact": {
         "value": "20+",
@@ -82,7 +82,7 @@
       "status": "STATUS: MEASURED & REPORTED",
       "engagement": "ENGAGEMENT: FULL-TIME"
     },
-    "tagline": "18 years shipping interfaces where the proof is measurable — 100% Core Web Vitals, sub-12ms interactions, design systems adopted by 20+ engineers.",
+    "tagline": "Cuban in Copenhagen. Eight years writing code in Cuba, eleven in Denmark, and the same job in both places: make it load fast and keep it from breaking.",
     "taglineAccent": "Everything below is live. Touch it.",
     "enterLab": "Enter the Lab"
   },
@@ -155,54 +155,54 @@
       "whyHire": "Why you should",
       "name": "hire me?"
     },
-    "description": "Many can write UI code. I specialize in combining constraint-forged efficiency, European enterprise scale, product intuition, and team-wide technical governance.",
+    "description": "Plenty of people write UI code. Mine is a different thing: I learned to make software work when there was nothing to work with, and I have spent eleven years applying that where there is.",
     "intro": "I started my career in Cuba in 2007, working across institutional platforms, media products, and custom business software before moving to Denmark and specializing further in frontend engineering. That end-to-end background still shapes how I work today: I understand the full delivery chain, collaborate comfortably with product, design, and backend teams, and build interfaces that stay maintainable as products grow.",
     "features": {
       "0": {
-        "title": "Strategic Collaborative Engineering",
-        "description": "I thrive in cross-functional environments, bridging the gap between product managers, UI/UX designers, and backend infrastructure engineers to ensure aligned delivery."
+        "title": "Working across the seams",
+        "description": "Most of the hard problems live between product, design and backend, not inside any of them. That is where I spend my time."
       },
       "1": {
-        "title": "Continuous System Evolution",
-        "description": "The technological landscape is unforgiving. I embrace architectural refactoring, keeping my tech stack, testing coverage, and CI/CD pipelines at the bleeding edge."
+        "title": "Refactoring on purpose",
+        "description": "Stacks rot. I schedule the refactor before it turns into an emergency, and keep tests and CI current enough that upgrading is boring."
       },
       "2": {
-        "title": "Resilient Scalability",
-        "description": "Speed means nothing without stability. I build robust microservices leveraging modern Next.js/React meta-frameworks prioritizing zero-downtime overhauls."
+        "title": "Fast, and still up",
+        "description": "Speed nobody can rely on is not speed. I build so that a deploy stops being an event."
       }
     },
     "advantages": [
       {
         "id": "experience",
         "index": "01",
-        "title": "18 Years of Engineering Maturity",
-        "subtitle": "A full-stack foundation evolved into elite frontend architecture.",
+        "title": "18 years, two countries",
+        "subtitle": "Started full stack in Havana, ended up doing frontend architecture in Copenhagen.",
         "bullets": [
-          "Started in 2007, spanning vanilla JavaScript to massive modern isomorphic architectures.",
-          "I maintain a hands-on developer mindset, guide architectural governance, and champion product-first capabilities.",
-          "I combine absolute visual craft with production-grade architectural patterns."
+          "February 2007, the National Library project at UCI. From there, whatever the work needed: hand-written JavaScript, PHP, Drupal, MySQL.",
+          "I still write code. I do not lead from a spreadsheet.",
+          "I care how it looks and how it holds up. Those are the same job."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "Constraint-Born Efficiency DNA",
-        "subtitle": "Obsessive performance habits forged under extreme resource limits.",
+        "title": "I learned to optimise on 56kbps",
+        "subtitle": "In Cuba the weight of a page was not a metric. It was whether it loaded.",
         "bullets": [
-          "I cut my teeth under Cuba's severe dial-up limitations (56kbps), forcing extreme efficiency habits.",
-          "A strict hygiene mindset: counting every byte, pruning payloads, and micro-optimizing render-path execution.",
-          "I treat web performance not as a post-launch polish, but as a critical business-conversion driver."
+          "Eight years writing code in Cuba: Havana first, then Pinar del Río. The National Library, ONEI, GEOCUBA.",
+          "On that bandwidth you learn to count bytes before you learn to lay things out. It does not wear off.",
+          "So performance never looked like a final polish to me. It was the condition for the thing existing at all."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "European Enterprise-SaaS Scale",
-        "subtitle": "Proven authority scaling complex software platforms in Copenhagen.",
+        "title": "May 2015, Copenhagen",
+        "subtitle": "Eleven years in Denmark, seven places.",
         "bullets": [
-          "I led monorepo partitions, managed micro-frontend structures, and scaled systems at an enterprise level.",
-          "I slashed initial load payloads by 94% while raising delivery speeds by 30% across cross-functional engineering units.",
-          "I established strict modular boundaries to keep systems clean, testable, and highly composable."
+          "The joke is that I went from fighting 56kbps to arguing about milliseconds. It turned out to be the same job.",
+          "I cut one platform's initial bundle by 94% and sped delivery up 30% across several teams at once.",
+          "Strict module boundaries so twenty engineers can touch the same system without breaking it."
         ]
       },
       {
@@ -213,7 +213,7 @@
         "bullets": [
           "I align technical decisions, product metrics, and design-system aesthetics.",
           "I model type-safe domain layers, coordinate client-side caching strategies, and manage database schema alignments.",
-          "I design user interfaces that are visually premium, highly responsive, and operationally maintainable."
+          "Interfaces that look right, answer immediately, and someone else can maintain."
         ]
       },
       {
@@ -224,12 +224,12 @@
         "bullets": [
           "I governed technical standards adopted by 20+ engineers across 4 autonomous product teams.",
           "I replaced siloed engineering practices with active mentoring, clear system contracts, and collaborative workshops.",
-          "I empowered distributed squads to release independently, ship code daily, and operate with low-friction confidence."
+          "Distributed squads ended up shipping daily without waiting on me."
         ]
       }
     ],
     "servicesTitle": "What I Deliver.",
-    "servicesSub": "Delivering premium digital experiences.",
+    "servicesSub": "What I actually get hired to do.",
     "originsLabel": "Origins",
     "originsSub": "Cuba → Copenhagen"
   },
@@ -361,9 +361,9 @@
     ]
   },
   "projects": {
-    "title": "Product Stories",
-    "titleAccent": "Not Project Cards.",
-    "subtitle": "A collection of digital experiences blending premium design and robust engineering.",
+    "title": "Things I built",
+    "titleAccent": "End to end.",
+    "subtitle": "Four products of my own: the problem each one started from, the architecture I chose, and what I turned down to get there.",
     "view": "View Project",
     "problem": "Problem",
     "results": "Results",
@@ -388,12 +388,6 @@
       "viewArchitecture": "/ VIEW ARCHITECTURE",
       "metricOutcomes": "/ Metric Outcomes",
       "metricSubtitle": "What we changed / Why it mattered",
-      "outcomePayload": "94% Payload Reduction [6.2MB → 350KB]",
-      "outcomePayloadDesc": "Vite-based monorepo partitions decoupled legacy assets, securing a perfect 1.4s LCP load time.",
-      "outcomeDeduplication": "60% Request Deduplication [500+ updates/sec]",
-      "outcomeDeduplicationDesc": "Virtualized-DOM rendering throttles prevented mobile thrashing and cut server-infrastructure costs.",
-      "outcomeVitals": "100% Core Web Vitals [INP Sub-12ms]",
-      "outcomeVitalsDesc": "Localized reactive leaf nodes completely isolated visual mutations from the global state tree.",
       "modal": {
         "topology": "SYSTEM TOPOLOGY",
         "diagnostic": "DIAGNOSTIC_SNAP",
@@ -405,56 +399,77 @@
         "registry": "Client Registry",
         "leaf": "Isolated Leaf"
       },
-      "schilling": {
-        "title": "Schilling SaaS Enterprise Platform",
-        "category": "Enterprise Platform Architecture",
-        "scaleLabel": "100k+ Lines of Code",
-        "impactLabel": "94% Bundle Cut",
-        "architectureLabel": "Micro-Frontend Core",
-        "context": "Enterprise publishing SaaS serving large media organizations across Europe with high-data-density requirements.",
-        "challenge": "Monolithic bundle sizes exceeded 6MB, which triggered LCP delays over 7.5s, raised bounce rates, and caused high-load abandonment. Complete core platform rewrites were strictly forbidden due to legacy billing and data-structure regression risks.",
-        "decision": "Rather than freeze features for a multi-year rewrite, I designed Vite-based monorepo partitions, enabled route isolation, and established strict semantic contracts between modules, allowing product teams to build and ship independently.",
-        "businessImpact": "Slashed initial bundle payloads by 94% (6.2MB to 350KB), which dropped customer abandonment to near-zero, accelerated feature-delivery speeds by 30%, and allowed 20+ engineers to ship features with zero regressions.",
-        "tradeoffsChosen": "Scoped monorepo sub-app partitions with strict semantic-version contracts to support independent, low-risk releases.",
-        "tradeoffsRejected": "Monolithic rewrite, avoiding a 12-month feature freeze and multi-million-euro regression risks."
+      "builderhunt": {
+        "title": "BuilderHunt",
+        "category": "Multi-Source Discovery Engine",
+        "scaleLabel": "13 Indexed Platforms",
+        "impactLabel": "Recency-Weighted Scoring",
+        "architectureLabel": "Dedup & Decay Pipeline",
+        "context": "Hiring and open-source sourcing both run on GitHub stars, which reward what was popular years ago rather than who is shipping this month.",
+        "challenge": "Thirteen platforms expose activity in thirteen shapes, the same person appears under different handles on each, and every signal ages at a different rate. Ranking them together means reconciling identity and freshness before a single result can be trusted.",
+        "decision": "I modelled recency as a half-life decay instead of a raw count, so a commit from last week outranks a three-year-old star pile, and put deduplication ahead of scoring so one person is one result. Contact stays manual: the product surfaces people, it never messages them.",
+        "businessImpact": "In public beta with a free tier of 3 saved searches and 50 saved builders. Keyword alerts by email or RSS, private notes per profile, and CSV/JSON export, so a shortlist leaves the product in whatever tool the team already uses.",
+        "tradeoffsChosen": "Decay-weighted scoring over lifetime totals, and deduplication before ranking, so freshness and identity are settled before anything is shown.",
+        "tradeoffsRejected": "Automated outreach. It would have been the obvious growth lever and would have turned a discovery tool into another cold-email machine.",
+        "outcomeHeadline": "13 sources, one ranked list",
+        "outcomeDetail": "GitHub, Reddit, Hacker News, DEV.to, Lobsters, Stack Overflow, npm, Hugging Face, GitLab, Codeberg, Hashnode and SourceHut, deduplicated and scored by recency."
       },
-      "edd-remonts": {
-        "title": "Edd Remonts System Dashboard",
-        "category": "Real-Time Transactional Dashboard",
-        "scaleLabel": "Real-time Event Stream",
-        "impactLabel": "98 Lighthouse Score",
-        "architectureLabel": "TanStack DB Synchronization",
-        "context": "Real-time logistics tracking and transactional control dashboard managing high-frequency operational KPIs.",
-        "challenge": "Constant high-frequency data polling saturated client sockets, triggered heavy server-side load, and caused severe page-load latency. Direct WebSockets caused massive DOM thrashing and layout shifts on unstable mobile networks.",
-        "decision": "Engineered virtualized-DOM memoization queues, integrated TanStack Query for optimistic caching, and isolated rendering updates strictly to active cells instead of re-rendering whole list panels.",
-        "businessImpact": "Slashed socket query traffic by 60%, reduced server-infrastructure costs, and secured a perfect 98 Lighthouse score. The application runs at a steady 60FPS on commercial-grade mobile devices even under intensive real-time transactional streams (500+ updates/sec).",
-        "tradeoffsChosen": "Optimistic state synchronization coupled with a 150ms virtualized-DOM throttle to isolate CPU load.",
-        "tradeoffsRejected": "Raw WebSockets under 10ms, which would saturate mobile sockets and cause clientside layout shifts."
+      "geolocal": {
+        "title": "GeoLocal CPH",
+        "category": "Map-First Marketplace",
+        "scaleLabel": "25,000 Listings",
+        "impactLabel": "4 Verticals, One Map",
+        "architectureLabel": "Geospatial Clustering",
+        "context": "Finding anything in Copenhagen means four different sites: Boliga for flats, DBA for cars, Facebook groups for services, Airbnb for the rest. Each one is a feed, and a feed cannot tell you what is ten minutes from your door.",
+        "challenge": "Properties, vehicles, services and experiences have almost nothing in common as data: different prices, different units, different lifespans. Putting all four on a single map means one schema flexible enough to hold them and one interface that does not turn into a filter panel.",
+        "decision": "I made the map the primary surface rather than a feature of the list, and clustered by neighbourhood so a district reads at a glance before anything is filtered. Curation is deliberate and human, not a scraper firehose.",
+        "businessImpact": "25,000 listings across four verticals pinned over eight Copenhagen neighbourhoods, each with its own count. Free to browse, no ads, no dark patterns.",
+        "tradeoffsChosen": "Map first, list second, clustered per neighbourhood, so proximity is the primary filter and the rest is optional.",
+        "tradeoffsRejected": "An infinite ranked feed. Higher engagement, but it answers \"what is popular\" when the question is \"what is near me\".",
+        "outcomeHeadline": "25,000 listings on one map",
+        "outcomeDetail": "Properties, vehicles, services and experiences across eight neighbourhoods, clustered so a district is legible before you filter anything."
       },
-      "zunzun": {
-        "title": "Zunzun.io Platform Engine",
-        "category": "Full-Stack Performance Ecosystem",
-        "scaleLabel": "Sub-millisecond Rendering",
-        "impactLabel": "100% Core Web Vitals",
-        "architectureLabel": "Modular State Framework",
-        "context": "Full-stack canvas-builder and layout-assembler focused on modular templates and fast static-site regeneration.",
-        "challenge": "Canvas assembly of hundreds of elements triggered global state-re-render cascades, spiked key interaction delays (INP), and degraded user experiences.",
-        "decision": "Re-architected state flow to use localized reactive nodes, treated layout elements as independent registers, and completely isolated visual mutations from the global state tree to prevent cascades.",
-        "businessImpact": "Guaranteed sub-12ms response times, maintained a 100% Core Web Vitals score across all outputs, and eliminated drop-offs during intensive real-time editing.",
-        "tradeoffsChosen": "Strict composite-UI layout nodes operating as independent registers to isolate mutations to leaves.",
-        "tradeoffsRejected": "Single global-state dispatch, avoiding global re-render cascades that spike key input latency (INP)."
+      "ai-os": {
+        "title": "AI-OS",
+        "category": "Developer Environment System",
+        "scaleLabel": "6 AI CLIs Unified",
+        "impactLabel": "~300 Shared Skills",
+        "architectureLabel": "Declarative & Idempotent",
+        "context": "Every AI CLI keeps its own config, its own skills folder and its own MCP list. Six of them means six copies of the same setup, drifting apart from the day you install the second one.",
+        "challenge": "A dev environment is not just dotfiles: it is CLIs, runtimes, language servers, model endpoints and the prompts themselves, spread across macOS, Linux and Windows. Making it reproducible means it has to be safe to run twice on a machine that is already half configured.",
+        "decision": "I made one git repository the source of truth and symlinked out of it, so a skill is written once and every CLI sees it. MCP servers are declarative YAML rather than six hand-edited JSON files, and the installer is idempotent with a dry-run mode and CI validation on all three platforms. Karpathy's Spec → Verifier → Environment loop is encoded as three verifier gates per task.",
+        "businessImpact": "A new machine reaches a full working setup with one command: npx @edd_remonts/create-ai-os. Roughly 300 skills, 10 MCP servers, 45 CLI tools, 43 global node packages and 28 python packages, restored the same way every time.",
+        "tradeoffsChosen": "Symlinks from one repository over per-tool copies, so there is exactly one place a skill can be wrong.",
+        "tradeoffsRejected": "A sync daemon watching each tool. Less setup up front, but it turns config drift into a background process nobody can debug.",
+        "outcomeHeadline": "~300 skills across 6 AI CLIs",
+        "outcomeDetail": "One repository, symlinked into every CLI, with 10 MCP servers as declarative YAML and an installer that is safe to run twice."
+      },
+      "ai-schadcn-chat": {
+        "title": "ai-schadcn-chat",
+        "category": "Open-Source React Package",
+        "scaleLabel": "React 18 & 19",
+        "impactLabel": "8 Providers, One API",
+        "architectureLabel": "Provider-Agnostic Adapter",
+        "context": "shadcn/ui gives you every primitive a chat interface needs and no chat interface. Everyone rebuilds the same streaming panel, and everyone rebuilds it welded to one provider.",
+        "challenge": "Streaming, markdown, code blocks, file upload and virtualised history are each easy alone and awkward together, especially while tokens are still arriving. Doing it once for Anthropic and again for every OpenAI-compatible gateway would have meant maintaining the same panel eight times.",
+        "decision": "I put the provider behind an adapter so the panel only knows about a stream of tokens, which makes Anthropic, OpenAI and every OpenAI-compatible gateway the same integration. Configuration is deep rather than a prop soup, and the component ships as a package you install instead of a template you fork.",
+        "businessImpact": "MIT, on npm as @edd_remonts/ai-schadcn-chat. Works with Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM and Ollama through one config object, and drops into an existing shadcn/ui app without a theme fight.",
+        "tradeoffsChosen": "One adapter boundary between the panel and the provider, so adding a gateway is configuration rather than a fork.",
+        "tradeoffsRejected": "A copy-paste template in the shadcn tradition. Easier to publish, impossible to fix once it is in fifty codebases.",
+        "outcomeHeadline": "8 providers behind one config",
+        "outcomeDetail": "Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM and Ollama, all the same integration for the component."
       }
     },
-    "description": "Narratives tracking the context, technological hurdles, system architectures, and metrics behind three major digital platforms.",
+    "description": "Four products of my own. For each: the problem it started from, the architecture I chose, and the path I turned down to get there.",
     "registry": {
       "kicker": "/ ADDITIONAL PROJECTS",
       "title": "Additional Projects",
-      "description": "Explore additional product features, tools, and legacy software systems engineered throughout my career.",
+      "description": "Seventeen in total. The four at the top are my own — open a row to read the case study.",
       "aria": "Additional projects registry",
       "colIndex": "Index",
       "colProject": "Project / Scope",
       "colCategory": "Category",
-      "colVector": "Architectural Vector",
+      "colVector": "What it does",
       "colInspect": "Inspect"
     },
     "empty": "No projects found for this filter yet."
@@ -463,6 +478,8 @@
     "title": "Let's Build",
     "titleAccent": "Something Together",
     "subtitle": "Ready to discuss a project, hire a staff engineer, or book technical consulting? Send a message and let's start a conversation.",
+    "copyEmail": "Copy email address",
+    "copied": "Copied",
     "eyebrow": "/ GET IN TOUCH",
     "params": {
       "title": "Hiring & Engagement Parameters",
@@ -526,39 +543,61 @@
     "telemetry": "Portfolio telemetry",
     "status": "Operational",
     "businessImpact": {
-      "title": "Measurable",
-      "titleAccent": "Business Outcomes",
-      "subtitle": "Technical excellence is relevant when it drives business value. Here is the concrete, verifiable operational and product impact delivered across enterprise-scale applications.",
+      "title": "What they",
+      "titleAccent": "actually do",
+      "subtitle": "The same four projects, in numbers. Each figure links to the running thing, so you can check it rather than take my word for it.",
       "measuredOutcome": "Measured Outcome",
       "techAction": "Technical Action",
       "businessBenefit": "Business Benefit",
-      "proof": "[Proof Link →]",
-      "eyebrow": "/ BUSINESS IMPACT"
+      "proof": "[View it →]",
+      "eyebrow": "/ THE PRODUCTS"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Payload Reduction",
-        "whatChanged": "Slashed initial bundle size by 94% through Vite monorepo partitions and code-splitting.",
-        "whatItImproved": "Enabled distributed teams to release features independently, and improved LCP to 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Indexed Sources",
+        "whatChanged": "Reconciled 13 developer platforms into one identity, then scored activity by recency instead of lifetime totals.",
+        "whatItImproved": "A search returns the people shipping this month, not the ones who were popular three years ago."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Faster Shipping",
-        "whatChanged": "Coordinated design-system contracts, component standards, and modular versioning guidelines.",
-        "whatItImproved": "Accelerated overall feature-delivery speeds by 30% across 20+ frontend engineers."
+      "geolocal": {
+        "metric": "25,000",
+        "title": "Listings Mapped",
+        "whatChanged": "Put properties, vehicles, services and experiences on one schema and one map, clustered by neighbourhood.",
+        "whatItImproved": "A Copenhagen district is legible at a glance, across eight neighbourhoods, before any filter is applied."
       },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Interaction Latency",
-        "whatChanged": "Restructured site-builder rendering architecture to isolate mutation cycles to individual cells.",
-        "whatItImproved": "Reduced perceived UI latency for real-time edits and secured 100% Core Web Vitals."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLIs",
+        "whatChanged": "Made one git repository the source of truth and symlinked it into every AI CLI, with MCP servers as declarative YAML.",
+        "whatItImproved": "A new machine reaches a full working setup with one command, and a skill has exactly one place it can be wrong."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Sustained Performance",
-        "whatChanged": "Optimized real-time logistics socket rendering with virtualized list memoization queues.",
-        "whatItImproved": "Handled 500+ updates/sec with zero lag, and reduced infrastructure query costs by 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Providers, One API",
+        "whatChanged": "Put the model provider behind an adapter, so the chat panel only ever knows about a stream of tokens.",
+        "whatItImproved": "Adding Anthropic, OpenAI or any OpenAI-compatible gateway is configuration rather than another fork to maintain."
+      }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ CURATED TECHNOLOGIES",
+        "desc": "Vetted systems I have actually shipped with, catalogued in the registry."
+      },
+      "lighthouse": {
+        "label": "/ LIGHTHOUSE PERFORMANCE",
+        "desc": "Average Core Web Vitals score across the systems still running."
+      },
+      "users": {
+        "label": "/ END USERS SERVED",
+        "desc": "People using the consumer networks and SaaS products behind these numbers."
+      },
+      "uptime": {
+        "label": "/ ENGINE UPTIME",
+        "desc": "Serverless architecture, no SLA breaches so far."
+      },
+      "migrations": {
+        "label": "/ ENTERPRISE MIGRATIONS",
+        "desc": "Legacy codebases pulled apart into something a team can move in."
       }
     }
   },
@@ -566,12 +605,12 @@
     "eyebrow": "/ LEADERSHIP & PHILOSOPHY",
     "title": "Engineering",
     "titleAccent": "Leadership",
-    "subtitle": "Technical excellence is not just about writing code; it is about scaling systems, aligning teams, and driving business outcomes through mature technical governance.",
+    "subtitle": "Writing the code is the easy half. The rest is deciding where the boundaries go, getting twenty people to agree on them, and being able to show what it bought the business.",
     "principlesLabel": "Engineering principles",
     "practiceLabel": "How it shows in practice",
     "notesTitle": "Engineering notes",
     "ctaLabel": "Next step",
-    "cta": "Looking for an engineer who owns systems, not just tickets? Let's talk.",
+    "cta": "I am looking for a full-time team, in Copenhagen or remote within Europe. If you have a platform that weighs too much and a team standing on each other's feet, let's talk.",
     "ctaButton": "Start a conversation",
     "lessonsHeader": "Lessons From 18 Years",
     "howIWorkHeader": "How I Work",
@@ -588,12 +627,12 @@
       {
         "index": "01",
         "title": "Architecture is People",
-        "body": "Systems succeed when coordination boundaries, team responsibilities, and system interfaces align cleanly. Conway's Law is not a theoretical concept, but an active engineering constraint."
+        "body": "Conway's Law is not something you read about. If two teams have to coordinate on every release, that shows up in the code as coupling, and no amount of refactoring fixes it until the teams change."
       },
       {
         "index": "02",
         "title": "Governance Enables Velocity",
-        "body": "Strict modular boundaries, semantic versioning, and interface contracts are not blockers. They serve as essential guardrails, allowing independent teams to ship code safely at maximum velocity."
+        "body": "Strict boundaries and semantic versioning look like bureaucracy from the outside. They are what lets a team ship on a Friday without asking anyone."
       },
       {
         "index": "03",
@@ -603,34 +642,34 @@
       {
         "index": "04",
         "title": "Complexity Compounds",
-        "body": "The most expensive line of code is the one written without clear contracts, clean domain interfaces, and long-term isolation. A well-typed spaghetti codebase is still spaghetti."
+        "body": "The most expensive line of code is the one written without a contract around it. A fully typed codebase where everything reaches into everything is still spaghetti. It just compiles."
       },
       {
         "index": "05",
         "title": "The Best Systems are Boring",
-        "body": "Highly predictable, stable, and decoupled patterns outperform exciting but fragile novelties. Predictable software execution is the ultimate indicator of organizational maturity."
+        "body": "Predictable and decoupled beats clever and fragile. How boring a team's software is turns out to be a decent proxy for how mature the organisation is."
       }
     ],
     "howIWork": [
       {
         "title": "Pragmatic Decision-Making",
-        "body": "Strategy: Prioritize stable, predictable standards. Action: Model strict structural boundaries and data schemas. Outcome: Cut tooling regressions and design-choice fatigue."
+        "body": "I pick the boring option and write down why. Strict module boundaries and explicit schemas mean fewer decisions to relitigate later, and fewer things that break when the tooling shifts underneath you."
       },
       {
         "title": "Active Mentorship & Trust",
-        "body": "Strategy: Replace siloed developer practices. Action: Foster peer alignment workshops and establish clean interface contracts. Outcome: Raise capabilities across 20+ active engineers."
+        "body": "Developers working in silos write code nobody else dares change. I run interface contracts through workshops instead of documents, so the twenty-odd engineers touching the system agree on it before it ships, not during review."
       },
       {
         "title": "Product-Minded Alignment",
-        "body": "Strategy: Coordinate directly with business stakeholders. Action: Translate architectural complexity into high-value business outcomes. Outcome: Secure stakeholder buy-in with zero product-engineering alignment gaps."
+        "body": "I sit with the people who own the number, not just the ticket. Turning an architecture decision into what it costs and what it buys is usually the difference between the work getting approved and not."
       },
       {
         "title": "Debt-Minimization Strategy",
-        "body": "Strategy: Prevent modular coupling proactively. Action: Enforce isolated sub-apps and maintain exact API schemas. Outcome: Drop query overhead costs by 60% and streamline system upgrades."
+        "body": "Coupling is far cheaper to prevent than to unpick. Isolated sub-apps and exact API schemas cut query overhead by 60% and turned upgrades into something we did on a Tuesday instead of scheduling for a quarter."
       },
       {
         "title": "Empowered Autonomy",
-        "body": "Strategy: Build decentralized developer confidence. Action: Standardize automated quality gates and monorepo boundaries. Outcome: Empower distributed squads to deploy daily with low-friction autonomy."
+        "body": "Autonomy without guardrails is just risk with a nicer name. Automated quality gates and monorepo boundaries let distributed squads deploy daily without asking permission, because the checks say no before a person has to."
       }
     ],
     "lessonsHeaderLabel": "/ MATURITY",

@@ -37,7 +37,7 @@ export const TestimonialBlock = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14 text-center font-mono text-xs uppercase tracking-[0.25em] text-foreground/35"
+          className="mb-14 text-center font-mono text-[15px] uppercase tracking-[0.25em] text-foreground/78"
         >
           {t('testimonials_label', 'What clients say')}
         </m.p>

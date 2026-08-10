@@ -1,7 +1,15 @@
 import { m } from 'framer-motion'
-import { Layers, Database, Cpu, Sparkles } from 'lucide-react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import type { MorphIconData } from '@/portfolio/components/ui/icons/MorphingIcon'
+import {
+  CIRCLE_CHECK,
+  CPU,
+  DATABASE,
+  LAYERS,
+  SPARKLES,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 import { fadeInView } from '@/portfolio/lib/motion'
 import { TechFilmStrip } from './TechFilmStrip'
 
@@ -9,7 +17,7 @@ interface CuratedLayer {
   id: string
   name: string
   annot: string
-  Icon: typeof Layers
+  icon: MorphIconData
   items: string[]
   rationale: string
 }
@@ -17,6 +25,7 @@ interface CuratedLayer {
 export const SkillsMarquee = () => {
   const { t } = useTranslation()
   const leftColProps = fadeInView()
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
@@ -24,7 +33,7 @@ export const SkillsMarquee = () => {
         id: 'governance',
         name: t('skills.layers.governance.name', 'Architecture & Governance'),
         annot: t('skills.layers.governance.annot', '/ WORKSPACE SYSTEMS'),
-        Icon: Layers,
+        icon: LAYERS,
         items: [
           t('skills.layers.governance.items.0', 'Monorepo Boundaries'),
           t('skills.layers.governance.items.1', 'Design-System Contracts'),
@@ -39,7 +48,7 @@ export const SkillsMarquee = () => {
         id: 'performance',
         name: t('skills.layers.performance.name', 'Performance Engineering'),
         annot: t('skills.layers.performance.annot', '/ LATENCY & CONVERSION'),
-        Icon: Cpu,
+        icon: CPU,
         items: [
           t('skills.layers.performance.items.0', 'Interaction Latency'),
           t('skills.layers.performance.items.1', 'Optimistic State Sync'),
@@ -54,7 +63,7 @@ export const SkillsMarquee = () => {
         id: 'leadership',
         name: t('skills.layers.leadership.name', 'Technical Leadership'),
         annot: t('skills.layers.leadership.annot', '/ ORG SYNCHRONIZATION'),
-        Icon: Sparkles,
+        icon: SPARKLES,
         items: [
           t('skills.layers.leadership.items.0', 'Developer Experience'),
           t('skills.layers.leadership.items.1', 'Active Mentorship'),
@@ -69,7 +78,7 @@ export const SkillsMarquee = () => {
         id: 'product',
         name: t('skills.layers.product.name', 'Product Systems Alignment'),
         annot: t('skills.layers.product.annot', '/ FULL-STACK STRATEGY'),
-        Icon: Database,
+        icon: DATABASE,
         items: [
           t('skills.layers.product.items.0', 'Domain Modeling'),
           t('skills.layers.product.items.1', 'Stakeholder Coordination'),
@@ -86,7 +95,12 @@ export const SkillsMarquee = () => {
   return (
     <section
       id="stack"
-      className="relative z-20 isolate py-28 md:py-40"
+      /* The strip is a full-bleed band and reads as a divider, so it belongs
+         near the section boundary. Left alone it sat 216px below the previous
+         section's last line — that section's 160px of bottom padding plus this
+         one's own. No top padding, and a negative margin to climb into the gap;
+         the capability grid below keeps its breathing room. */
+      className="relative z-20 isolate -mt-16 pt-0 pb-28 md:-mt-24 md:pb-40"
       aria-label={t('a11y.skillsMarquee')}
     >
       <span aria-hidden="true" className="section-seam" />
@@ -97,7 +111,7 @@ export const SkillsMarquee = () => {
         <TechFilmStrip />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6">
+      <div className="container mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
           {/* Left Column: Section Title & Narrative (5 cols) */}
           <m.div
@@ -108,7 +122,7 @@ export const SkillsMarquee = () => {
             className="lg:col-span-5 space-y-6"
           >
             <div>
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
+              <p className="mb-4 font-mono text-[13px] uppercase tracking-[0.3em] text-primary font-bold">
                 {t('skills.kicker', '/ TECHNICAL EXPERTISE')}
               </p>
               <h2 className="font-display text-4xl font-light tracking-tight md:text-5xl lg:text-6xl text-foreground leading-[1.1]">
@@ -117,7 +131,7 @@ export const SkillsMarquee = () => {
                   {t('skills.title.capabilities', 'Capabilities')}
                 </span>
               </h2>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 font-light font-display">
+              <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-foreground/80 font-light font-display">
                 {t(
                   'skills.description',
                   'Technologies are commodities; architectural alignment and organizational governance are competitive differentiators. Here is how my capabilities are marshaled to deliver verified business speed and performance stability.',
@@ -129,7 +143,6 @@ export const SkillsMarquee = () => {
           {/* Right Column: The Curated Stack Layers Matrix (7 cols) */}
           <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
             {curatedLayers.map((layer, index) => {
-              const Icon = layer.Icon
               const cardProps = fadeInView({ delay: index * 0.08 })
               return (
                 <m.div
@@ -138,30 +151,37 @@ export const SkillsMarquee = () => {
                   whileInView={cardProps.whileInView}
                   viewport={cardProps.viewport}
                   transition={cardProps.transition}
+                  onPointerEnter={() => setHoveredCard(layer.id)}
+                  onPointerLeave={() => setHoveredCard(null)}
                   className="pf-card group p-6"
                 >
-                  {/* Visual coordinate annotation */}
-                  <div className="absolute top-4 right-5 font-mono text-[8px] text-foreground/20 uppercase tracking-widest">
+                  {/* In the flow, not absolutely positioned over the card. As a
+                      floating annotation it overlapped the capability heading
+                      the moment the type got big enough to read. */}
+                  <div className="mb-4 font-mono text-[12px] uppercase tracking-widest text-foreground/45">
                     {layer.annot}
                   </div>
 
                   <div className="flex items-center gap-3 mb-6">
                     <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/70 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
-                      <Icon className="h-4 w-4" />
+                      <MorphingIcon
+                        icon={hoveredCard === layer.id ? CIRCLE_CHECK : layer.icon}
+                        size={16}
+                      />
                     </div>
                     <div>
-                      <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-primary block font-bold">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary block font-bold">
                         {t('skills.capabilityLabel', 'Capability')} 0{index + 1}
                       </span>
-                      <h3 className="text-sm font-semibold tracking-tight text-foreground font-display">
+                      <h3 className="text-[16px] font-semibold tracking-tight text-foreground font-display">
                         {layer.name}
                       </h3>
                     </div>
                   </div>
 
                   {/* Monospaced Rationale Statement (Engineering Judgement) */}
-                  <p className="font-mono text-[9px] text-foreground/60 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
-                    <span className="text-primary block font-bold uppercase tracking-wider text-[8px] mb-1">
+                  <p className="font-mono text-[12px] text-foreground/78 leading-relaxed mb-6 bg-surface/40 p-3 rounded-lg border border-subtle select-none">
+                    <span className="text-primary block font-bold uppercase tracking-wider text-[12px] mb-1">
                       {t('skills.valueProof', '/ VALUE PROOF')}
                     </span>
                     {layer.rationale}
@@ -172,7 +192,7 @@ export const SkillsMarquee = () => {
                     {layer.items.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-subtle bg-surface/40 px-3 py-1.5 font-mono text-[12px] uppercase tracking-wider text-foreground/75 transition-colors group-hover:border-foreground/20 group-hover:bg-background"
                       >
                         {tech}
                       </span>

@@ -4,30 +4,13 @@ import {
   useUser as useClerkUser,
 } from '@clerk/tanstack-react-start'
 import * as React from 'react'
+import { AppAuthContext } from './app-auth.context'
+import type { AppAuthContextValue, AppAuthUser } from './app-auth.context'
 import { authClient, useSession as useBetterAuthSession } from './better-auth-client'
 import { getClientTestUserId, isClientAuthBypassEnabled } from './bypass'
 import { getAuthMode, getClerkPublishableKey, isBetterAuthEnabled, isClerkEnabled } from './config'
 
-export type AppAuthProviderKind = 'bypass' | 'clerk' | 'better-auth' | null
-
-export interface AppAuthUser {
-  id: string
-  email: string
-  name: string
-  image: string | null
-  role: string | null
-}
-
-interface AppAuthContextValue {
-  authMode: 'local' | 'clerk' | 'hybrid'
-  provider: AppAuthProviderKind
-  isLoaded: boolean
-  isAuthenticated: boolean
-  userId: string | null
-  user: AppAuthUser | null
-  canSignOut: boolean
-  signOut: () => Promise<void>
-}
+export type { AppAuthContextValue, AppAuthProviderKind, AppAuthUser } from './app-auth.context'
 
 interface BetterAuthSessionShape {
   user?: {
@@ -55,8 +38,6 @@ interface ClerkAuthSnapshot {
   } | null
   signOut: () => Promise<void>
 }
-
-const AppAuthContext = React.createContext<AppAuthContextValue | undefined>(undefined)
 
 const defaultAsyncNoop = async () => {}
 

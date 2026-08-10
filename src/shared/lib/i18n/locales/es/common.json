@@ -64,7 +64,10 @@
     "group": "Agrupar",
     "groupBy": "Agrupar por",
     "columns": "Columnas",
-    "export": "Exportar"
+    "export": "Exportar",
+    "selectAllRows": "Seleccionar todas las filas",
+    "selectRow": "Seleccionar fila",
+    "filterBy": "Filtrar por {{label}}"
   },
   "common": {
     "loading": "Cargando...",

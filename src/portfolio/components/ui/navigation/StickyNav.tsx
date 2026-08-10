@@ -1,7 +1,8 @@
 import { AnimatePresence, m } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import { MENU, X } from '@/portfolio/components/ui/icons/morphIconNodes'
 import { Logo } from '@/portfolio/components/ui/media/Logo'
 import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
 import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
@@ -31,8 +32,8 @@ const ScrambleNavLink = ({
       onClick={onClick}
       onMouseEnter={scramble}
       onMouseLeave={reset}
-      className={`whitespace-nowrap border-b border-transparent pb-0.5 font-mono text-[11px] uppercase tracking-widest transition-all hover:text-foreground ${
-        isActive ? 'border-primary text-foreground' : 'text-foreground/50'
+      className={`whitespace-nowrap border-b border-transparent pb-0.5 font-mono text-[13px] uppercase tracking-widest transition-all hover:text-foreground ${
+        isActive ? 'border-primary text-foreground' : 'text-foreground/72'
       }`}
     >
       {display}
@@ -91,7 +92,7 @@ export const StickyNav = () => {
                 onClick={() => window.dispatchEvent(new CustomEvent('pf:open-palette'))}
                 aria-label={t('palette.title', 'Command palette')}
                 title={t('palette.title', 'Command palette')}
-                className="hidden items-center gap-1.5 rounded-full border border-subtle bg-surface/50 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-foreground/55 backdrop-blur-md transition-colors duration-300 hover:border-primary/50 hover:text-primary md:flex"
+                className="hidden items-center gap-1.5 rounded-full border border-subtle bg-surface/50 px-3 py-1.5 font-mono text-[13px] uppercase tracking-wider text-foreground/75 backdrop-blur-md transition-colors duration-300 hover:border-primary/50 hover:text-primary md:flex"
               >
                 <kbd className="font-mono">⌘K</kbd>
               </button>
@@ -104,29 +105,11 @@ export const StickyNav = () => {
                 className="text-foreground/70 flex h-10 w-10 items-center justify-center rounded-full border border-subtle bg-surface transition-colors duration-300 hover:text-foreground md:hidden"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               >
-                <AnimatePresence mode="wait" initial={false}>
-                  {mobileOpen ? (
-                    <m.span
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X className="h-4 w-4" />
-                    </m.span>
-                  ) : (
-                    <m.span
-                      key="menu"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Menu className="h-4 w-4" />
-                    </m.span>
-                  )}
-                </AnimatePresence>
+                {/* Morph rather than a rotate-and-fade swap: the three bars
+                    become the two strokes of the cross, so the control reads
+                    as one thing changing state instead of two icons trading
+                    places. */}
+                <MorphingIcon icon={mobileOpen ? X : MENU} size={16} />
               </button>
             </div>
           </div>

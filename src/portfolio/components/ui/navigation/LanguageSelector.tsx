@@ -25,10 +25,10 @@ export const LanguageSelector = () => {
             key={lang.code}
             type="button"
             onClick={() => i18n.changeLanguage(lang.code)}
-            className={`flex h-7 min-w-8 items-center justify-center rounded-full px-2.5 transition-all duration-200 font-mono text-[9px] font-bold cursor-pointer ${
+            className={`flex h-7 min-w-8 items-center justify-center rounded-full px-2.5 transition-all duration-200 font-mono text-[12px] font-bold cursor-pointer ${
               isSelected
                 ? 'bg-foreground text-background shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-foreground/5 scale-105 z-10'
-                : 'text-foreground/50 hover:text-foreground/80 hover:bg-foreground/4'
+                : 'text-foreground/72 hover:text-foreground/80 hover:bg-foreground/4'
             }`}
             aria-label={t('a11y.changeLanguageTo', 'Change language to {{language}}', {
               language: fullName,

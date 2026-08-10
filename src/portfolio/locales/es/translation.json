@@ -72,7 +72,7 @@
       "vitals": {
         "value": "100%",
         "label": "Core Web Vitals",
-        "desc": "Aseguré puntuaciones perfectas en Lighthouse en todas las rutas críticas de usuario."
+        "desc": "Puntuaciones perfectas de Lighthouse en las rutas que la gente recorre de verdad."
       },
       "impact": {
         "value": "20+",
@@ -82,7 +82,7 @@
       "status": "ESTADO: MEDIDO Y REPORTADO",
       "engagement": "CONTRATACIÓN: TIEMPO COMPLETO"
     },
-    "tagline": "18 años construyendo interfaces donde la prueba es medible: 100% Core Web Vitals, interacciones por debajo de 12 ms y design systems adoptados por más de 20 ingenieros.",
+    "tagline": "Cubano en Copenhague. Ocho años programando en Cuba, once en Dinamarca, y en los dos sitios siempre haciendo lo mismo: que las cosas carguen rápido y no se rompan.",
     "taglineAccent": "Todo lo que sigue está vivo. Tócalo.",
     "enterLab": "Entrar al laboratorio"
   },
@@ -155,54 +155,54 @@
       "whyHire": "¿Por qué deberías",
       "name": "trabajar conmigo?"
     },
-    "description": "Mucha gente sabe escribir código de interfaz. Yo me especializo en combinar la eficiencia forjada bajo restricciones, la escala empresarial europea, la intuición de producto y la gobernanza técnica de equipos.",
+    "description": "Mucha gente escribe código de interfaz. Lo mío es otra cosa: aprendí a hacer que las cosas funcionaran cuando no había con qué, y llevo once años aplicándolo a plataformas donde sí lo hay.",
     "intro": "Comencé mi carrera en Cuba en 2007, trabajando en plataformas institucionales, productos para medios y software empresarial a medida antes de mudarme a Dinamarca y especializarme a fondo en ingeniería frontend. Ese recorrido de extremo a extremo sigue definiendo cómo trabajo hoy: entiendo toda la cadena de entrega, colaboro estrechamente con producto, diseño e infraestructura, y construyo interfaces que siguen siendo mantenibles a medida que los productos crecen.",
     "features": {
       "0": {
-        "title": "Ingeniería Estratégica Colaborativa",
-        "description": "Me muevo con soltura en entornos multifuncionales, tendiendo puentes entre product managers, diseñadores UI/UX e ingenieros de backend para garantizar una entrega alineada."
+        "title": "Trabajar en las costuras",
+        "description": "Casi todos los problemas difíciles viven entre producto, diseño y backend, no dentro de ninguno de los tres. Ahí es donde paso el tiempo."
       },
       "1": {
-        "title": "Evolución Continua de Sistemas",
-        "description": "El panorama tecnológico no perdona. Adopto la refactorización arquitectónica, manteniendo mi stack técnico, cobertura de pruebas y pipelines CI/CD a la vanguardia."
+        "title": "Refactorizar a propósito",
+        "description": "Los stacks se pudren. Programo el refactor antes de que se convierta en emergencia, y mantengo tests y CI lo bastante al día como para que actualizar sea aburrido."
       },
       "2": {
-        "title": "Escalabilidad Resiliente",
-        "description": "La velocidad no significa nada sin estabilidad. Construyo microservicios robustos aprovechando meta-frameworks modernos como Next.js/React, priorizando renovaciones con cero tiempo de inactividad."
+        "title": "Rápido, y en pie",
+        "description": "La velocidad en la que nadie puede confiar no es velocidad. Construyo para que un despliegue deje de ser un acontecimiento."
       }
     },
     "advantages": [
       {
         "id": "experience",
         "index": "01",
-        "title": "18 años de madurez en ingeniería",
-        "subtitle": "Una base full-stack consolidada hacia una arquitectura frontend de élite.",
+        "title": "18 años, dos países",
+        "subtitle": "Empecé full stack en La Habana y acabé haciendo arquitectura frontend en Copenhague.",
         "bullets": [
-          "Inicié mi carrera en 2007, abarcando desde JavaScript vanilla hasta arquitecturas isomórficas masivas.",
-          "Mantengo una mentalidad de desarrollador activo, guío la gobernanza de arquitectura y promuevo capacidades centradas en producto.",
-          "Combino el máximo cuidado visual con patrones de arquitectura de nivel de producción."
+          "Febrero de 2007, proyecto de la Biblioteca Nacional en la UCI. Desde ahí, lo que hiciera falta: JavaScript a mano, PHP, Drupal, MySQL.",
+          "Sigo escribiendo código. No dirijo desde una hoja de cálculo.",
+          "Me importa cómo se ve y cómo aguanta. Son el mismo trabajo."
         ]
       },
       {
         "id": "constraints",
         "index": "02",
-        "title": "ADN de eficiencia forjado bajo restricciones",
-        "subtitle": "Hábitos de rendimiento obsesivos cultivados en entornos con recursos extremos.",
+        "title": "Aprendí a optimizar con 56kbps",
+        "subtitle": "En Cuba el peso de una página no era una métrica. Era si cargaba o no.",
         "bullets": [
-          "Me formé bajo las severas limitaciones de la conexión dial-up en Cuba (56kbps), lo que me obligó a adoptar hábitos de eficiencia extrema.",
-          "Mentalidad rigurosa: contar cada byte, podar cargas útiles y microoptimizar la ejecución de las rutas de renderizado.",
-          "Trato el rendimiento web no como un pulido posterior al lanzamiento, sino como un motor crítico de conversión de negocio."
+          "Ocho años programando en Cuba: La Habana primero, Pinar del Río después. Biblioteca Nacional, ONEI, GEOCUBA.",
+          "Con ese ancho de banda aprendes a contar bytes antes que a maquetar. Después no se te quita.",
+          "Por eso el rendimiento nunca me pareció un pulido del final. Era la condición para que la cosa existiera."
         ]
       },
       {
         "id": "scale",
         "index": "03",
-        "title": "Escala SaaS corporativa europea",
-        "subtitle": "Autoridad probada escalando plataformas de software complejas en Copenhague.",
+        "title": "Mayo de 2015, Copenhague",
+        "subtitle": "Once años en Dinamarca, siete sitios.",
         "bullets": [
-          "Lideré particiones de monorepos, gestioné arquitecturas de microfrontends y escalé sistemas a nivel corporativo.",
-          "Reduje el peso de la carga útil inicial en un 94% y aceleré las velocidades de entrega en un 30% en múltiples unidades de ingeniería.",
-          "Establecí límites modulares estrictos para mantener los sistemas limpios, testeables y altamente componibles."
+          "El chiste es que pasé de pelearme con 56kbps a discutir milisegundos. Al final, siempre haciendo lo mismo.",
+          "Bajé el bundle inicial de una plataforma un 94% y aceleré la entrega un 30% en varios equipos a la vez.",
+          "Límites modulares estrictos para que veinte ingenieros puedan tocar el mismo sistema sin romperlo."
         ]
       },
       {
@@ -213,7 +213,7 @@
         "bullets": [
           "Alineo las decisiones técnicas con las métricas de negocio y la estética premium de los sistemas de diseño.",
           "Modelo capas de dominio con tipado seguro, coordino estrategias de caché en cliente y gestiono alineaciones de esquemas de bases de datos.",
-          "Diseño interfaces que son visualmente premium, sumamente reactivas y operativamente mantenibles."
+          "Interfaces que se ven bien, responden al instante y otra persona puede mantener."
         ]
       },
       {
@@ -224,12 +224,12 @@
         "bullets": [
           "Establecí estándares técnicos adoptados por más de 20 ingenieros en 4 equipos de producto autónomos.",
           "Sustituí las prácticas de desarrollo aisladas por mentoría activa, contratos claros entre sistemas y talleres colaborativos.",
-          "Capacité a equipos distribuidos para desplegar código de forma independiente y diaria con total seguridad."
+          "Los equipos distribuidos acabaron enviando a diario sin esperarme."
         ]
       }
     ],
     "servicesTitle": "Lo que entrego.",
-    "servicesSub": "Entregando experiencias digitales premium.",
+    "servicesSub": "Para lo que realmente me contratan.",
     "originsLabel": "Orígenes",
     "originsSub": "Cuba → Copenhague"
   },
@@ -361,9 +361,9 @@
     ]
   },
   "projects": {
-    "title": "Historias de producto",
-    "titleAccent": "No tarjetas de proyecto.",
-    "subtitle": "Una colección de experiencias digitales que fusionan el diseño premium con una férrea ingeniería de sistemas.",
+    "title": "Cosas que he construido",
+    "titleAccent": "De punta a punta.",
+    "subtitle": "Cuatro productos propios: el problema del que se partió cada uno, la arquitectura que elegí y lo que descarté para llegar ahí.",
     "view": "Ver Proyecto",
     "problem": "Problema",
     "results": "Resultados",
@@ -388,12 +388,6 @@
       "viewArchitecture": "/ VER ARQUITECTURA",
       "metricOutcomes": "/ Resultados Métricos",
       "metricSubtitle": "Qué cambiamos / Por qué importó",
-      "outcomePayload": "Reducción de bundle del 94% [6.2MB → 350KB]",
-      "outcomePayloadDesc": "Las particiones del monorepo Vite desacoplaron activos legados, asegurando un LCP perfecto de 1.4s.",
-      "outcomeDeduplication": "Reducción de Peticiones del 60% [500+ camb./seg]",
-      "outcomeDeduplicationDesc": "Los limitadores de renderizado sobre DOM virtualizado evitaron la saturación del cliente y recortaron los costes de servidor.",
-      "outcomeVitals": "100% Core Web Vitals [INP sub-12ms]",
-      "outcomeVitalsDesc": "Nodos reactivos y locales aislaron por completo las mutaciones del árbol global, neutralizando bloqueos de entrada.",
       "modal": {
         "topology": "TOPOLOGÍA DEL SISTEMA",
         "diagnostic": "MUESTRA_DIAGNÓSTICO",
@@ -405,56 +399,77 @@
         "registry": "Registro de Clientes",
         "leaf": "Nodo Aislado"
       },
-      "schilling": {
-        "title": "Plataforma Schilling SaaS Enterprise",
-        "category": "Arquitectura de Plataformas Corporativas",
-        "scaleLabel": "Más de 100k líneas de código",
-        "impactLabel": "Corte de bundle del 94%",
-        "architectureLabel": "Core Microfrontend",
-        "context": "SaaS de gestión editorial que sirve a corporaciones mediáticas líderes en Europa con estrictos requisitos de densidad de datos.",
-        "challenge": "Los tamaños de bundle monolíticos superaban los 6MB, disparando tiempos de LCP a más de 7.5s y provocando pérdidas de usuarios. Las refactorizaciones completas estaban prohibidas debido al alto riesgo de regresiones financieras.",
-        "decision": "En lugar de congelar funcionalidades por años, diseñé particiones del monorepo en Vite, habilitando aislamiento de rutas y definiendo contratos estrictos entre módulos para permitir releases independientes.",
-        "businessImpact": "Reduje el peso de bundle inicial en un 94% (de 6.2MB a 350KB), reduciendo el rebote de clientes a casi cero, acelerando la entrega en un 30% y capacitando a más de 20 ingenieros para desplegar sin regresiones.",
-        "tradeoffsChosen": "Particiones de subaplicaciones acotadas con estrictas interfaces de versiones semánticas para mitigar riesgos en despliegues.",
-        "tradeoffsRejected": "Reescritura monolítica integral, evitando un congelamiento de producto de 12 meses y riesgos financieros de millones de euros."
+      "builderhunt": {
+        "title": "BuilderHunt",
+        "category": "Motor de descubrimiento multi-fuente",
+        "scaleLabel": "13 plataformas indexadas",
+        "impactLabel": "Puntuación por recencia",
+        "architectureLabel": "Pipeline de dedup y decaimiento",
+        "context": "Tanto la contratación como el sourcing en open source funcionan a base de estrellas de GitHub, que premian lo que fue popular hace años en lugar de a quien está publicando este mes.",
+        "challenge": "Trece plataformas exponen la actividad en trece formatos distintos, la misma persona aparece con handles diferentes en cada una y cada señal envejece a otro ritmo. Ordenarlas juntas obliga a resolver identidad y frescura antes de que un solo resultado sea fiable.",
+        "decision": "Modelé la recencia como un decaimiento por vida media en lugar de un conteo bruto, así un commit de la semana pasada gana a un montón de estrellas de hace tres años, y puse la deduplicación antes de la puntuación para que una persona sea un resultado. El contacto sigue siendo manual: el producto muestra a la gente, nunca le escribe.",
+        "businessImpact": "En beta pública, con un plan gratuito de 3 búsquedas guardadas y 50 perfiles. Alertas por palabra clave vía email o RSS, notas privadas por perfil y exportación CSV/JSON, para que la lista corta salga del producto hacia la herramienta que el equipo ya usa.",
+        "tradeoffsChosen": "Puntuación con decaimiento en vez de totales acumulados, y deduplicación antes del ranking, para resolver frescura e identidad antes de mostrar nada.",
+        "tradeoffsRejected": "Contacto automatizado. Habría sido la palanca de crecimiento evidente y habría convertido una herramienta de descubrimiento en otra máquina de correo frío.",
+        "outcomeHeadline": "13 fuentes, una lista ordenada",
+        "outcomeDetail": "GitHub, Reddit, Hacker News, DEV.to, Lobsters, Stack Overflow, npm, Hugging Face, GitLab, Codeberg, Hashnode y SourceHut, deduplicados y puntuados por recencia."
       },
-      "edd-remonts": {
-        "title": "Dashboard del Sistema Edd Remonts",
-        "category": "Dashboard Transaccional en Tiempo Real",
-        "scaleLabel": "Flujo de Eventos en Tiempo Real",
-        "impactLabel": "Puntuación de 98 en Lighthouse",
-        "architectureLabel": "Sincronización TanStack DB",
-        "context": "Dashboard logístico y transaccional diseñado para la monitorización en vivo de KPIs de alta frecuencia de actualización.",
-        "challenge": "El polling constante saturaba las conexiones del cliente, elevaba la carga de la base de datos y aumentaba la latencia de carga. Los sockets planos provocaban DOM thrashing en terminales con cobertura inestable.",
-        "decision": "Implementé colas de memoización del DOM virtualizadas, integré TanStack Query para optimizar la caché en cliente y restringí las mutaciones visuales exclusivamente a las celdas activas.",
-        "businessImpact": "Recorté el tráfico de sockets en un 60%, reduje los costes de infraestructura y aseguré una puntuación perfecta de 98 en Lighthouse, manteniendo 60 fps estables incluso con flujos de más de 500 actualizaciones por segundo.",
-        "tradeoffsChosen": "Sincronización optimista de estado acoplada a un limitador de 150 ms sobre el DOM virtualizado para contener el consumo de CPU.",
-        "tradeoffsRejected": "WebSockets planos con latencia < 10ms, que habrían saturado la red del usuario y provocado layout shifts constantes."
+      "geolocal": {
+        "title": "GeoLocal CPH",
+        "category": "Marketplace centrado en el mapa",
+        "scaleLabel": "25.000 anuncios",
+        "impactLabel": "4 verticales, un mapa",
+        "architectureLabel": "Agrupación geoespacial",
+        "context": "Buscar cualquier cosa en Copenhague significa cuatro sitios distintos: Boliga para pisos, DBA para coches, grupos de Facebook para servicios, Airbnb para lo demás. Cada uno es un feed, y un feed no puede decirte qué tienes a diez minutos de tu puerta.",
+        "challenge": "Inmuebles, vehículos, servicios y experiencias no comparten casi nada como datos: precios distintos, unidades distintas, vidas útiles distintas. Ponerlos los cuatro en un mismo mapa exige un esquema lo bastante flexible para sostenerlos y una interfaz que no acabe siendo un panel de filtros.",
+        "decision": "Hice del mapa la superficie principal en lugar de una función de la lista, y agrupé por barrio para que un distrito se lea de un vistazo antes de filtrar nada. La curaduría es deliberada y humana, no una manguera de scraping.",
+        "businessImpact": "25.000 anuncios en cuatro verticales repartidos sobre ocho barrios de Copenhague, cada uno con su propio recuento. Gratis para explorar, sin publicidad ni patrones oscuros.",
+        "tradeoffsChosen": "Mapa primero, lista después, agrupado por barrio, para que la proximidad sea el filtro principal y el resto sea opcional.",
+        "tradeoffsRejected": "Un feed infinito ordenado por relevancia. Más engagement, pero responde a «qué es popular» cuando la pregunta es «qué tengo cerca».",
+        "outcomeHeadline": "25.000 anuncios en un solo mapa",
+        "outcomeDetail": "Inmuebles, vehículos, servicios y experiencias en ocho barrios, agrupados para que un distrito sea legible antes de filtrar nada."
       },
-      "zunzun": {
-        "title": "Plataforma Operativa Zunzun.io",
-        "category": "Ecosistema de Rendimiento Full-Stack",
-        "scaleLabel": "Renderizado Sub-milisegundo",
-        "impactLabel": "100% Core Web Vitals",
-        "architectureLabel": "Framework Modular de Estado",
-        "context": "Motor de diseño visual y canvas centrado en la generación ultrarrápida de interfaces estáticas.",
-        "challenge": "El ensamblado interactivo de cientos de elementos desencadenaba cascadas de re-renderizado global, elevando la latencia de entrada (INP) y perjudicando la fluidez.",
-        "decision": "Rediseñé el flujo de datos basándome en nodos reactivos y locales, operando cada módulo de forma aislada y neutralizando dependencias de árbol globales.",
-        "businessImpact": "Garanticé tiempos de respuesta sub-12ms en edición directa, mantuve puntuaciones del 100% en Core Web Vitals y erradiqué los congelamientos del navegador durante la edición intensiva.",
-        "tradeoffsChosen": "Estructuración de componentes aislados tipo registro para limitar las mutaciones visuales a las hojas de la UI.",
-        "tradeoffsRejected": "Uso de un dispatch global centralizado, evitando cascadas críticas de renderizado que disparan los retrasos de interacción (INP)."
+      "ai-os": {
+        "title": "AI-OS",
+        "category": "Sistema de entorno de desarrollo",
+        "scaleLabel": "6 CLIs de IA unificados",
+        "impactLabel": "~300 skills compartidas",
+        "architectureLabel": "Declarativo e idempotente",
+        "context": "Cada CLI de IA guarda su propia configuración, su propia carpeta de skills y su propia lista de MCP. Seis significan seis copias del mismo setup, separándose entre sí desde el día en que instalas la segunda.",
+        "challenge": "Un entorno de desarrollo no son solo dotfiles: son CLIs, runtimes, servidores de lenguaje, endpoints de modelos y los propios prompts, repartidos entre macOS, Linux y Windows. Hacerlo reproducible implica que tiene que ser seguro ejecutarlo dos veces sobre una máquina ya medio configurada.",
+        "decision": "Convertí un único repositorio git en la fuente de verdad y enlacé desde ahí con symlinks, así una skill se escribe una vez y todos los CLIs la ven. Los servidores MCP son YAML declarativo en lugar de seis JSON editados a mano, y el instalador es idempotente, con modo dry-run y validación en CI sobre las tres plataformas. El bucle Spec → Verifier → Environment de Karpathy está codificado como tres puertas de verificación por tarea.",
+        "businessImpact": "Una máquina nueva llega a un entorno completo con un solo comando: npx @edd_remonts/create-ai-os. Unas 300 skills, 10 servidores MCP, 45 herramientas de línea de comandos, 43 paquetes globales de node y 28 de python, restaurados igual cada vez.",
+        "tradeoffsChosen": "Symlinks desde un repositorio en lugar de copias por herramienta, para que haya exactamente un sitio donde una skill puede estar mal.",
+        "tradeoffsRejected": "Un demonio de sincronización vigilando cada herramienta. Menos trabajo inicial, pero convierte la deriva de configuración en un proceso en segundo plano que nadie puede depurar.",
+        "outcomeHeadline": "~300 skills en 6 CLIs de IA",
+        "outcomeDetail": "Un repositorio, enlazado a cada CLI, con 10 servidores MCP como YAML declarativo y un instalador que es seguro ejecutar dos veces."
+      },
+      "ai-schadcn-chat": {
+        "title": "ai-schadcn-chat",
+        "category": "Paquete open source de React",
+        "scaleLabel": "React 18 y 19",
+        "impactLabel": "8 proveedores, una API",
+        "architectureLabel": "Adaptador agnóstico de proveedor",
+        "context": "shadcn/ui te da todas las primitivas que necesita una interfaz de chat y ninguna interfaz de chat. Todo el mundo reconstruye el mismo panel de streaming, y todo el mundo lo reconstruye soldado a un solo proveedor.",
+        "challenge": "Streaming, markdown, bloques de código, subida de archivos e historial virtualizado son fáciles por separado e incómodos juntos, sobre todo mientras aún están llegando tokens. Hacerlo una vez para Anthropic y otra para cada gateway compatible con OpenAI habría significado mantener el mismo panel ocho veces.",
+        "decision": "Puse el proveedor detrás de un adaptador, de forma que el panel solo conoce un flujo de tokens, lo que convierte a Anthropic, OpenAI y cualquier gateway compatible con OpenAI en la misma integración. La configuración es profunda en vez de una sopa de props, y el componente se publica como paquete que instalas en lugar de plantilla que bifurcas.",
+        "businessImpact": "MIT, en npm como @edd_remonts/ai-schadcn-chat. Funciona con Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM y Ollama a través de un solo objeto de configuración, y encaja en una app shadcn/ui existente sin pelearse con el tema.",
+        "tradeoffsChosen": "Una única frontera de adaptador entre el panel y el proveedor, de modo que añadir un gateway sea configuración y no un fork.",
+        "tradeoffsRejected": "Una plantilla de copiar y pegar al estilo shadcn. Más fácil de publicar, imposible de arreglar una vez está en cincuenta bases de código.",
+        "outcomeHeadline": "8 proveedores tras una sola configuración",
+        "outcomeDetail": "Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM y Ollama, todos la misma integración para el componente."
       }
     },
-    "description": "Narrativas que recorren el contexto, los retos técnicos, las arquitecturas y las métricas detrás de tres grandes plataformas digitales.",
+    "description": "Cuatro productos propios. De cada uno: el problema del que se partió, la arquitectura que elegí y el camino que descarté para llegar ahí.",
     "registry": {
       "kicker": "/ PROYECTOS ADICIONALES",
       "title": "Más proyectos",
-      "description": "Explora otras funcionalidades de producto, herramientas y sistemas heredados construidos a lo largo de mi carrera.",
+      "description": "Diecisiete en total. Los cuatro primeros son míos — abre una fila para leer el caso completo.",
       "aria": "Registro de proyectos adicionales",
       "colIndex": "Índice",
       "colProject": "Proyecto / Alcance",
       "colCategory": "Categoría",
-      "colVector": "Vector arquitectónico",
+      "colVector": "Qué hace",
       "colInspect": "Inspeccionar"
     },
     "empty": "Aún no hay proyectos para este filtro."
@@ -463,6 +478,8 @@
     "title": "Construyamos",
     "titleAccent": "algo juntos",
     "subtitle": "¿Listo para hablar de un proyecto, contratar a un Staff Engineer o reservar una consultoría técnica? Envía un mensaje y empecemos la conversación.",
+    "copyEmail": "Copiar dirección de correo",
+    "copied": "Copiado",
     "eyebrow": "/ HABLEMOS",
     "params": {
       "title": "Parámetros de Contratación y Colaboración",
@@ -526,39 +543,61 @@
     "telemetry": "Telemetría del portafolio",
     "status": "Operacional",
     "businessImpact": {
-      "title": "Impacto de negocio",
-      "titleAccent": "medible",
-      "subtitle": "La excelencia técnica cobra valor cuando impulsa el valor de negocio. He aquí el impacto operativo y de producto concreto y verificable entregado en sistemas de gran escala.",
+      "title": "Qué hacen",
+      "titleAccent": "realmente",
+      "subtitle": "Los mismos cuatro proyectos, en cifras. Cada dato enlaza al producto en funcionamiento, para que lo compruebes en vez de creerme.",
       "measuredOutcome": "Resultado medido",
       "techAction": "Acción técnica",
       "businessBenefit": "Beneficio de negocio",
-      "proof": "[Ver prueba →]",
-      "eyebrow": "/ IMPACTO DE NEGOCIO"
+      "proof": "[Verlo →]",
+      "eyebrow": "/ LOS PRODUCTOS"
     },
     "impactCards": {
-      "payload": {
-        "metric": "94%",
-        "title": "Reducción de bundle",
-        "whatChanged": "Particioné monorepos en Vite y apliqué code-splitting avanzado, reduciendo el peso de bundle inicial en un 94%.",
-        "whatItImproved": "Permitió entregas independientes entre subequipos y redujo el LCP a un tiempo idóneo de 1.4s."
+      "builderhunt": {
+        "metric": "13",
+        "title": "Fuentes indexadas",
+        "whatChanged": "Reconcilié 13 plataformas de desarrollo en una sola identidad y puntué la actividad por recencia en vez de por totales acumulados.",
+        "whatItImproved": "Una búsqueda devuelve a quien está publicando este mes, no a quien fue popular hace tres años."
       },
-      "shipping": {
-        "metric": "30%",
-        "title": "Entregas más rápidas",
-        "whatChanged": "Coordiné contratos de diseño de sistemas, estandaricé librerías modulares y guías de versiones.",
-        "whatItImproved": "Aceleró los tiempos globales de desarrollo en un 30% para un conjunto de más de 20 ingenieros."
+      "geolocal": {
+        "metric": "25.000",
+        "title": "Anuncios en el mapa",
+        "whatChanged": "Puse inmuebles, vehículos, servicios y experiencias en un mismo esquema y un mismo mapa, agrupados por barrio.",
+        "whatItImproved": "Un distrito de Copenhague se lee de un vistazo, en ocho barrios, antes de aplicar ningún filtro."
       },
-      "latency": {
-        "metric": "Sub-12ms",
-        "title": "Latencia de interacción",
-        "whatChanged": "Aislé los ciclos de renderizado de la UI de edición, limitando las mutaciones a celdas operativas concretas.",
-        "whatItImproved": "Mitigó por completo la latencia percibida por el usuario y garantizó Core Web Vitals impecables."
+      "ai-os": {
+        "metric": "~300",
+        "title": "Skills, 6 CLIs",
+        "whatChanged": "Convertí un repositorio git en la fuente de verdad y lo enlacé con symlinks a cada CLI de IA, con los servidores MCP como YAML declarativo.",
+        "whatItImproved": "Una máquina nueva llega a un entorno completo con un solo comando, y una skill tiene exactamente un sitio donde puede estar mal."
       },
-      "throughput": {
-        "metric": "98/100",
-        "title": "Rendimiento sostenido",
-        "whatChanged": "Optimicé las colas de refresco visual de sockets mediante memoización y virtualización de listas.",
-        "whatItImproved": "Soportó ráfagas de más de 500 actualizaciones/segundo y recortó costes de peticiones de infraestructura en un 60%."
+      "ai-schadcn-chat": {
+        "metric": "8",
+        "title": "Proveedores, una API",
+        "whatChanged": "Puse el proveedor de modelos detrás de un adaptador, así el panel de chat solo conoce un flujo de tokens.",
+        "whatItImproved": "Añadir Anthropic, OpenAI o cualquier gateway compatible es configuración, no otro fork que mantener."
+      }
+    },
+    "counter": {
+      "technologies": {
+        "label": "/ TECNOLOGÍAS EN USO",
+        "desc": "Sistemas con los que he lanzado de verdad, catalogados en el registro."
+      },
+      "lighthouse": {
+        "label": "/ RENDIMIENTO LIGHTHOUSE",
+        "desc": "Puntuación media de Core Web Vitals en los sistemas que siguen en pie."
+      },
+      "users": {
+        "label": "/ USUARIOS FINALES",
+        "desc": "Gente usando las redes de consumo y los SaaS que hay detrás de estos números."
+      },
+      "uptime": {
+        "label": "/ DISPONIBILIDAD",
+        "desc": "Arquitectura serverless, sin incumplir un SLA hasta ahora."
+      },
+      "migrations": {
+        "label": "/ MIGRACIONES CORPORATIVAS",
+        "desc": "Bases de código heredadas desmontadas en algo donde un equipo pueda moverse."
       }
     }
   },
@@ -566,12 +605,12 @@
     "eyebrow": "/ LIDERAZGO & FILOSOFÍA",
     "title": "Liderazgo en",
     "titleAccent": "Ingeniería",
-    "subtitle": "La excelencia técnica va más allá del código: consiste en estructurar sistemas, alinear talentos y catalizar resultados de negocio mediante una gobernanza robusta.",
+    "subtitle": "Escribir el código es la mitad fácil. El resto es decidir dónde van los límites, conseguir que veinte personas los acepten, y poder enseñar qué le supuso al negocio.",
     "principlesLabel": "Principios de ingeniería",
     "practiceLabel": "Manifestación práctica",
     "notesTitle": "Notas de ingeniería",
     "ctaLabel": "Siguiente paso",
-    "cta": "¿Buscas un Staff Engineer que asuma la responsabilidad global de los sistemas y no solo complete tareas? Hablemos.",
+    "cta": "Busco equipo a tiempo completo, en Copenhague o en remoto desde Europa. Si tienes una plataforma que pesa demasiado y un equipo que se pisa, hablemos.",
     "ctaButton": "Iniciar una conversación",
     "lessonsHeader": "Lecciones de 18 Años de Carrera",
     "howIWorkHeader": "Cómo Trabajo",
@@ -588,12 +627,12 @@
       {
         "index": "01",
         "title": "La arquitectura son personas",
-        "body": "Los sistemas prosperan cuando los límites de los equipos, las interfaces de software y las responsabilidades están perfectamente delimitados. La ley de Conway no es teoría, es una restricción real."
+        "body": "La ley de Conway no es algo que se lee. Si dos equipos tienen que coordinarse en cada release, eso aparece en el código como acoplamiento, y no hay refactor que lo arregle hasta que cambien los equipos."
       },
       {
         "index": "02",
         "title": "La gobernanza acelera el desarrollo",
-        "body": "Los límites modulares estrictos, el versionado semántico y las interfaces por contrato no son cuellos de botella. Son salvaguardas que permiten a equipos autónomos desplegar a máxima velocidad de forma segura."
+        "body": "Los límites estrictos y el versionado semántico parecen burocracia desde fuera. Son justo lo que permite a un equipo enviar un viernes sin preguntarle a nadie."
       },
       {
         "index": "03",
@@ -603,34 +642,34 @@
       {
         "index": "04",
         "title": "La complejidad es acumulativa",
-        "body": "El código más costoso es aquel construido sin interfaces estables y sin aislamiento a largo plazo. Una base de código sumamente tipada pero con alto acoplamiento sigue siendo código difícil de escalar."
+        "body": "La línea de código más cara es la que se escribe sin un contrato alrededor. Una base de código completamente tipada donde todo mete la mano en todo sigue siendo espagueti. Solo que compila."
       },
       {
         "index": "05",
         "title": "Los mejores sistemas son aburridos",
-        "body": "Los patrones predecibles, estables y desacoplados superan a las novedades emocionantes pero frágiles. La ejecución predecible del software es el mejor indicador de la madurez de una organización."
+        "body": "Predecible y desacoplado le gana a ingenioso y frágil. Lo aburrido que sea el software de un equipo resulta ser un indicador bastante bueno de lo maduro que es la organización."
       }
     ],
     "howIWork": [
       {
         "title": "Toma de decisiones pragmática",
-        "body": "Estrategia: Priorizo estándares estables y predecibles. Acción: Modelo límites estructurales estrictos y contratos de API limpios. Resultado: Elimino el desgaste por decisiones y prevengo regresiones."
+        "body": "Elijo la opción aburrida y dejo escrito por qué. Los límites estrictos entre módulos y los esquemas explícitos significan menos decisiones que volver a discutir después, y menos cosas que se rompen cuando el tooling cambia por debajo."
       },
       {
         "title": "Mentoría activa y confianza",
-        "body": "Estrategia: Elimino dinámicas de desarrollo aisladas. Acción: Lidero workshops colaborativos y establezco contratos de interfaz robustos. Resultado: Elevo las competencias técnicas del equipo."
+        "body": "Los desarrolladores en silos escriben código que nadie más se atreve a tocar. Los contratos de interfaz los saco en talleres en lugar de en documentos, así los más de veinte ingenieros que tocan el sistema se ponen de acuerdo antes de enviar, no durante la revisión."
       },
       {
         "title": "Alineación integral con producto",
-        "body": "Estrategia: Coordino directamente con los stakeholders de negocio. Acción: Traduzco la complejidad técnica en términos de valor comercial. Resultado: Consigo respaldo para iniciativas técnicas clave sin vacíos de comunicación."
+        "body": "Me siento con quien responde por el número, no solo con quien abre el ticket. Traducir una decisión de arquitectura a lo que cuesta y lo que compra suele ser la diferencia entre que el trabajo se apruebe o no."
       },
       {
         "title": "Reducción activa de deuda técnica",
-        "body": "Estrategia: Evito proactivamente el acoplamiento entre subaplicaciones. Acción: Implemento subapps independientes y aseguro esquemas de API rigurosos. Resultado: Ahorro un 60% en infraestructuras y agilizo upgrades."
+        "body": "Acoplar sale mucho más barato de prevenir que de deshacer. Las subaplicaciones aisladas y los esquemas de API exactos recortaron un 60% la carga de consultas y convirtieron las actualizaciones en algo de un martes cualquiera en lugar de un plan trimestral."
       },
       {
         "title": "Autonomía fortalecida",
-        "body": "Estrategia: Fomento la confianza descentralizada de los ingenieros. Acción: Estandarizo pruebas automatizadas estrictas y límites de monorepos. Resultado: Capacito a squads independientes para desplegar código seguro a diario."
+        "body": "La autonomía sin barandillas es riesgo con mejor nombre. Los quality gates automatizados y los límites del monorepo permiten a equipos distribuidos desplegar a diario sin pedir permiso, porque los checks dicen que no antes de que tenga que decirlo alguien."
       }
     ],
     "lessonsHeaderLabel": "/ MADUREZ",

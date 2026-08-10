@@ -216,21 +216,21 @@ export function UnifiedDataTable<TData, TValue>({
             (table.getIsSomePageRowsSelected() && 'indeterminate')
           }
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Seleccionar todas las filas"
+          aria-label={t('dataTable.selectAllRows', 'Select all rows')}
         />
       ),
       cell: ({ row }) => (
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Seleccionar fila"
+          aria-label={t('dataTable.selectRow', 'Select row')}
         />
       ),
       enableSorting: false,
       enableHiding: false,
       size: 40,
     }
-  }, [enableSelection])
+  }, [enableSelection, t])
 
   const mergedColumns = React.useMemo(
     () => (selectionColumn ? [selectionColumn, ...columns] : columns),
@@ -504,7 +504,10 @@ export function UnifiedDataTable<TData, TValue>({
                     key={filter.columnId}
                     value={(column.getFilterValue() as string) ?? ''}
                     onChange={(event) => column.setFilterValue(event.target.value)}
-                    placeholder={filter.placeholder ?? `Filtrar por ${filter.label}`}
+                    placeholder={
+                      filter.placeholder ??
+                      t('dataTable.filterBy', 'Filter by {{label}}', { label: filter.label })
+                    }
                     className="h-11 rounded-2xl bg-secondary/20 border-transparent"
                   />
                 )

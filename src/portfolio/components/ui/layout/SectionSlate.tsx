@@ -34,48 +34,57 @@ export const SectionSlate = ({
   const reelNo = String(reel).padStart(2, '0')
 
   return (
-    <header className={`mb-16 max-w-3xl text-left md:mb-20 ${className}`}>
-      <m.div {...fadeInView({ distance: 8 })} className="mb-5 flex items-center gap-4">
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-primary">
+    <header className={`mb-10 max-w-3xl text-left md:mb-14 ${className}`}>
+      <m.div {...fadeInView({ distance: 8 })} className="mb-3 flex items-center gap-4">
+        <span className="font-mono text-[13px] font-bold uppercase tracking-[0.3em] text-primary">
           {`REEL ${reelNo}`}
         </span>
         <span aria-hidden="true" className="h-px w-8 bg-primary/40" />
-        <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/55">
+        <span className="font-mono text-[13px] uppercase tracking-[0.28em] text-foreground/75">
           {kicker}
         </span>
       </m.div>
 
       <h2 className="flex flex-col text-4xl font-light leading-[1.05] tracking-tight text-foreground md:text-6xl">
-        <span className="overflow-hidden">
+        {/* The trigger sits on the mask, not on the text inside it. Observing
+            the inner span deadlocked: overflow-hidden clipped it to zero
+            visible area, so the observer never fired, so it never un-hid. */}
+        <m.span
+          className="overflow-hidden"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <m.span
-            initial={{ y: '110%' }}
-            whileInView={{ y: '0%' }}
-            viewport={{ once: true, margin: '-80px' }}
+            variants={{ hidden: { y: '110%' }, show: { y: '0%' } }}
             transition={{ duration: 0.9, ease: APPLE_EASE }}
             className="inline-block"
           >
             {title}
           </m.span>
-        </span>
+        </m.span>
         {accent && (
-          <span className="overflow-hidden">
+          <m.span
+            className="overflow-hidden"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <m.span
-              initial={{ y: '110%' }}
-              whileInView={{ y: '0%' }}
-              viewport={{ once: true, margin: '-80px' }}
+              variants={{ hidden: { y: '110%' }, show: { y: '0%' } }}
               transition={{ duration: 0.9, ease: APPLE_EASE, delay: 0.12 }}
               className="mt-1 inline-block font-serif italic text-primary"
             >
               {accent}
             </m.span>
-          </span>
+          </m.span>
         )}
       </h2>
 
       <m.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
-        viewport={{ once: true, margin: '-80px' }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1.1, ease: APPLE_EASE, delay: 0.25 }}
         className="mt-6 h-px w-full origin-left bg-gradient-to-r from-primary/60 via-foreground/15 to-transparent"
         aria-hidden="true"
@@ -84,7 +93,7 @@ export const SectionSlate = ({
       {description && (
         <m.p
           {...fadeInView({ delay: 0.3, distance: 10 })}
-          className="mt-5 max-w-xl text-sm font-light leading-relaxed text-foreground/70 md:text-base"
+          className="mt-5 max-w-xl text-[16px] font-light leading-relaxed text-foreground/70 md:text-[17px]"
         >
           {description}
         </m.p>

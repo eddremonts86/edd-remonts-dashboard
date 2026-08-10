@@ -41,7 +41,7 @@ const StripRow = () => (
             maskPosition: 'center',
           }}
         />
-        <span className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/45 transition-colors duration-300 group-hover/icon:text-foreground">
+        <span className="whitespace-nowrap font-mono text-[13px] uppercase tracking-[0.2em] text-foreground/70 transition-colors duration-300 group-hover/icon:text-foreground">
           {name}
         </span>
         <span aria-hidden="true" className="ml-7 block h-1 w-1 rotate-45 bg-primary/40" />

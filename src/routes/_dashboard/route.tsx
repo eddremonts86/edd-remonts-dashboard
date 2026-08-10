@@ -1,6 +1,6 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { DashboardLayout } from '@/modules/dashboard'
 import { ensureAppAuthSession } from '@/shared/lib/auth/app-auth.functions'
+import { DashboardRoot } from './-DashboardRoot'
 
 export const Route = createFileRoute('/_dashboard')({
   beforeLoad: async () => {
@@ -12,5 +12,5 @@ export const Route = createFileRoute('/_dashboard')({
       })
     }
   },
-  component: DashboardLayout,
+  component: DashboardRoot,
 })

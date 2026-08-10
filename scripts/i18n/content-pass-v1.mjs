@@ -200,7 +200,11 @@ const fixes = {
       product: {
         name: 'Alineación producto-sistemas',
         annot: '/ ESTRATEGIA FULL-STACK',
-        items: ['Modelado de dominio', 'Coordinación con stakeholders', 'Contratos de estado y caché'],
+        items: [
+          'Modelado de dominio',
+          'Coordinación con stakeholders',
+          'Contratos de estado y caché',
+        ],
         rationale:
           'Cierra las brechas de ejecución entre ingeniería, product managers y dirección.',
       },
@@ -300,8 +304,7 @@ const fixes = {
         name: 'Produkt- og systemafstemning',
         annot: '/ FULL-STACK-STRATEGI',
         items: ['Domænemodellering', 'Stakeholder-koordinering', 'State- og cache-kontrakter'],
-        rationale:
-          'Lukker eksekveringshuller mellem engineering, produktledere og direktion.',
+        rationale: 'Lukker eksekveringshuller mellem engineering, produktledere og direktion.',
       },
     },
     'projects.registry': {

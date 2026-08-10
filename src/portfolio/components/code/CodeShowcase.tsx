@@ -17,12 +17,12 @@ export const CodeShowcase = () => {
         </h2>
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-350 px-6">
+      <div className="container relative z-10 mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-24">
           {/* Left: Refined typography */}
           <m.div {...fadeInView({ distance: 30, axis: 'x' })} className="lg:col-span-5">
             <div className="mb-10">
-              <span className="mb-6 block font-mono text-[11px] uppercase tracking-widest text-primary">
+              <span className="mb-6 block font-mono text-[13px] uppercase tracking-widest text-primary">
                 {t('codeShowcase.badge')}
               </span>
               <h2 className="break-words text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-7xl">
@@ -32,7 +32,7 @@ export const CodeShowcase = () => {
                 </span>
               </h2>
             </div>
-            <p className="text-foreground/70 max-w-md text-sm font-light leading-relaxed md:text-base">
+            <p className="text-foreground/70 max-w-md text-[16px] font-light leading-relaxed md:text-[17px]">
               {t('codeShowcase.description')}
             </p>
           </m.div>
