@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { CompanyChip } from '@/portfolio/components/ui/badges/CompanyChip'
 import { ShieldCheck, CalendarRange, Workflow } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -165,7 +166,10 @@ export const TestimonialSlide = ({
             {testimonial.author}
           </p>
           <p className="font-mono text-[15px] uppercase tracking-widest text-foreground/78 mt-0.5">
-            {[testimonial.role, testimonial.company].filter(Boolean).join(' · ')}
+            {testimonial.role}
+            {testimonial.company && (
+              <CompanyChip name={testimonial.company} className="ml-2 align-middle" />
+            )}
           </p>
         </div>
       </m.div>

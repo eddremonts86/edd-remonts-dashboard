@@ -1,6 +1,7 @@
 import { m } from 'framer-motion'
 import { Layers, Calendar } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { CompanyChip } from '@/portfolio/components/ui/badges/CompanyChip'
 import { fadeInView } from '@/portfolio/lib/motion'
 
 export interface EraData {
@@ -12,7 +13,6 @@ export interface EraData {
   contributions: string[]
   outcomes: string[]
   vector: string
-  logoUrl?: string
 }
 
 interface ExperienceCardProps {
@@ -64,22 +64,18 @@ export const ExperienceCard = ({ era, index }: ExperienceCardProps) => {
             {era.role}
           </h3>
 
-          <div className="flex items-center gap-3 mt-3 select-none">
-            {era.logoUrl ? (
-              <img
-                src={era.logoUrl}
-                alt={`${era.company} Logo`}
-                loading="lazy"
-                className="h-7 w-7 rounded-lg border border-subtle bg-surface object-contain p-1 filter grayscale contrast-125 shrink-0"
-              />
-            ) : (
-              <span className="h-7 w-7 rounded-lg border border-subtle bg-surface flex items-center justify-center font-mono text-[13px] text-foreground/30 shrink-0 uppercase font-bold">
-                {era.company.charAt(0)}
-              </span>
-            )}
-            <span className="font-mono text-[13px] text-foreground/72 tracking-wider uppercase truncate">
-              {era.company}
-            </span>
+          <div className="flex flex-wrap items-center gap-2 mt-3 select-none">
+            {/* The company is the credential here, not a caption. */}
+            {/* An era can cover several employers ("Novo Nordisk, Wunderman,
+                GIG Media & Rebel Penguins"). One chip each: as a single chip it
+                truncated and the individual names were the point. */}
+            {era.company
+              .split(/\s*(?:,|&|\band\b|\by\b|\bog\b)\s*/)
+              .map((name) => name.trim())
+              .filter(Boolean)
+              .map((name) => (
+                <CompanyChip key={name} name={name} size="md" />
+              ))}
           </div>
 
           {/* Tech Vector indicator */}

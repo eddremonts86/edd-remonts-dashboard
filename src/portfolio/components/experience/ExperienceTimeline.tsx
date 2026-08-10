@@ -43,7 +43,6 @@ export const ExperienceTimeline = () => {
         'experience.eras.0.vector',
         'Design Systems Governance · Monorepos · Decoupled Contracts · API Design',
       ),
-      logoUrl: '/projects/schilling-cover.png',
     },
     {
       id: 'scaling',
@@ -82,7 +81,6 @@ export const ExperienceTimeline = () => {
         'experience.eras.1.vector',
         'Virtualized DOM · Event-Driven State · Optimistic Caching · Performance SLAs',
       ),
-      logoUrl: '/projects/edd-remonts-cover.png',
     },
     {
       id: 'genesis',
@@ -121,7 +119,6 @@ export const ExperienceTimeline = () => {
         'experience.eras.2.vector',
         'Extreme Byte Optimization · Lightweight Parsers · Dial-up DB Sync · Primitives',
       ),
-      logoUrl: '/projects/zunzun-cover.png',
     },
   ]
 
