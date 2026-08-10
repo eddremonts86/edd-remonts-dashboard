@@ -464,7 +464,7 @@
     "registry": {
       "kicker": "/ ADDITIONAL PROJECTS",
       "title": "Additional Projects",
-      "description": "Seventeen in total. The four at the top are my own — open a row to read the case study.",
+      "description": "{{total}} in total. The four at the top are my own — open a row to read the case study.",
       "aria": "Additional projects registry",
       "colIndex": "Index",
       "colProject": "Project / Scope",

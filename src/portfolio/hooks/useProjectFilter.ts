@@ -7,6 +7,8 @@ type Project = CvProject
 interface UseProjectFilterReturn {
   activeCategory: string
   setActiveCategory: (category: string) => void
+  /** Every project, ignoring the active filter. */
+  allProjects: Project[]
   filteredProjects: Project[]
   hoveredProject: Project | null
   setHoveredProject: (project: Project | null) => void
@@ -23,5 +25,12 @@ export function useProjectFilter(): UseProjectFilterReturn {
     [activeCategory, projects],
   )
 
-  return { activeCategory, setActiveCategory, filteredProjects, hoveredProject, setHoveredProject }
+  return {
+    activeCategory,
+    setActiveCategory,
+    allProjects: projects,
+    filteredProjects,
+    hoveredProject,
+    setHoveredProject,
+  }
 }
