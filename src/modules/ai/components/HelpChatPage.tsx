@@ -156,7 +156,7 @@ function useConversationManager(userId: string | null, userRole: 'admin' | 'user
   }, [userId, userRole])
 
   // Load the active conversation object when activeId changes
-   
+
   React.useEffect(() => {
     if (!activeId) {
       // eslint-disable-next-line react-hooks/set-state-in-effect

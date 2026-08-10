@@ -15,9 +15,7 @@ export const useTextScramble = (text: string, framesPerChar = 3) => {
   const rafRef = useRef<number | null>(null)
 
   // Keep text in sync if the prop changes (e.g. language switch)
-  useEffect(() => {
-     
-  }, [text])
+  useEffect(() => {}, [text])
 
   const scramble = useCallback(() => {
     if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)

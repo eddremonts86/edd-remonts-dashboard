@@ -110,31 +110,19 @@
       "governance": {
         "name": "Arquitectura y gobernanza",
         "annot": "/ SISTEMAS DE WORKSPACE",
-        "items": [
-          "Límites de monorepo",
-          "Contratos de design system",
-          "Módulos desacoplados"
-        ],
+        "items": ["Límites de monorepo", "Contratos de design system", "Módulos desacoplados"],
         "rationale": "Permite a equipos distribuidos lanzar funcionalidades de forma independiente sin romper la arquitectura compartida."
       },
       "performance": {
         "name": "Ingeniería de rendimiento",
         "annot": "/ LATENCIA Y CONVERSIÓN",
-        "items": [
-          "Latencia de interacción",
-          "Sincronización optimista",
-          "Core Web Vitals"
-        ],
+        "items": ["Latencia de interacción", "Sincronización optimista", "Core Web Vitals"],
         "rationale": "Asegura Core Web Vitals perfectos y respuestas por debajo de 12 ms en plataformas de escala empresarial."
       },
       "leadership": {
         "name": "Liderazgo técnico",
         "annot": "/ SINCRONIZACIÓN ORGANIZATIVA",
-        "items": [
-          "Experiencia de desarrollo",
-          "Mentoría activa",
-          "Quality gates automatizados"
-        ],
+        "items": ["Experiencia de desarrollo", "Mentoría activa", "Quality gates automatizados"],
         "rationale": "Acelera los ciclos de entrega un 30% en equipos de más de 20 ingenieros mediante mentoría activa."
       },
       "product": {

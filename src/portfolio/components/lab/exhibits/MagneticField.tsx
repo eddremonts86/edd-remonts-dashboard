@@ -104,12 +104,18 @@ export const MagneticField = () => {
   return (
     <div
       ref={fieldRef}
-      aria-label={t('lab.exhibits.magnet.fieldLabel', 'Magnetic dot field — move your cursor through it')}
+      aria-label={t(
+        'lab.exhibits.magnet.fieldLabel',
+        'Magnetic dot field — move your cursor through it',
+      )}
       className="relative h-full min-h-52 w-full overflow-hidden bg-background/60"
     >
       <div
         className="grid h-full w-full"
-        style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)`, gridTemplateRows: `repeat(${ROWS}, 1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(${COLS}, 1fr)`,
+          gridTemplateRows: `repeat(${ROWS}, 1fr)`,
+        }}
         aria-hidden="true"
       >
         {Array.from({ length: COLS * ROWS }, (_, i) => (

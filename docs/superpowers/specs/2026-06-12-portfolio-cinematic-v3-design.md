@@ -9,7 +9,7 @@ Turn the portfolio from a static editorial presentation into a **living system o
 itself be proof of engineering judgment — performance, accessibility, and zero bundle bloat are
 part of the show, not casualties of it.
 
-Pass the 55-second test: visual polish on first paint, something to *touch* within one scroll,
+Pass the 55-second test: visual polish on first paint, something to _touch_ within one scroll,
 personality everywhere, tools-used receipts on every experiment.
 
 ## Approaches considered
@@ -28,7 +28,7 @@ personality everywhere, tools-used receipts on every experiment.
 
 Keep the existing identity (Cinzel serif, Epilogue, JetBrains Mono; paper-white/ink-black,
 crimson `#d13426`/`#ff4a3a`, film grain + vignette) — it is already distinctive. Elevate it from
-*printed editorial* to *film production*:
+_printed editorial_ to _film production_:
 
 - Every section opens with a **slate** (film clapperboard header): `REEL 02 — SELECTED WORK`
   mono kicker, serif headline with masked line reveal, hairline rule that draws on scroll.
@@ -46,7 +46,7 @@ crimson `#d13426`/`#ff4a3a`, film grain + vignette) — it is already distinctiv
 2. **StatsCounter** — restyled as a slim ticker band (DB-driven, count-up preserved).
 3. **Selected Work** — ProductStories + project registry. Browser-chrome panels get 3D tilt +
    sheen; `FloatingImagePreview` (currently orphaned) is re-mounted on the registry rows.
-4. **The Lab** *(new)* — live playground grid, 5 exhibits, each a working artifact with
+4. **The Lab** _(new)_ — live playground grid, 5 exhibits, each a working artifact with
    `Goal:` and `Tools:` microcopy:
    - **Ink Study** — the hero shader in a card with live uniform sliders (turbulence, speed, ink).
    - **Spring Lab** — stiffness/damping/mass sliders driving a spring-animated ball; presets.
@@ -55,7 +55,7 @@ crimson `#d13426`/`#ff4a3a`, film grain + vignette) — it is already distinctiv
    - **Code Cinema** — revives the dead `CodeShowcase` suite (~650 lines) as an exhibit.
 5. **BusinessImpact** — kept, slate header added.
 6. **About + Engineering Authority** — kept, tightened with slates ("How I think" stays short).
-7. **Tech Film Strip** *(new, replaces the misnamed static SkillsMarquee's missing motion)* —
+7. **Tech Film Strip** _(new, replaces the misnamed static SkillsMarquee's missing motion)_ —
    infinite icon marquee from the 52 unused `/tech-icons/*.svg` + `techIcons.ts`, velocity/skew
    tied to scroll speed. The Architectural Capabilities card matrix stays below it.
 8. **Experience / Testimonials / Contact / Footer** — kept, slate headers + microinteraction pass.

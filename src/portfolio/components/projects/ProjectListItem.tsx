@@ -1,9 +1,11 @@
 import { m } from 'framer-motion'
-import { ArrowUpRight, ChevronDown, Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react'
+import { ArrowUpRight, Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react'
 import { forwardRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext'
 import { useProjectStories } from '@/portfolio/data/useProjectStories'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import { MINUS, PLUS } from '@/portfolio/components/ui/icons/morphIconNodes'
 import { ProjectStoryPanel } from './ProjectStoryPanel'
 
 type Project = CvProject
@@ -23,11 +25,11 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
     const story = useProjectStories()[project.id]
     const hasCaseStudy = Boolean(
       story ||
-        project.problem ||
-        project.results ||
-        project.context ||
-        project.role ||
-        project.decisions,
+      project.problem ||
+      project.results ||
+      project.context ||
+      project.role ||
+      project.decisions,
     )
 
     const getNormalizedVector = (label?: string) => {
@@ -128,10 +130,7 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
                 }`}
                 aria-label={t('projects.toggleDetails', 'Toggle case details')}
               >
-                <ChevronDown
-                  className={`h-3.5 w-3.5 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
-                  aria-hidden
-                />
+                <MorphingIcon icon={expanded ? MINUS : PLUS} size={14} />
               </button>
             )}
 

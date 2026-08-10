@@ -72,7 +72,11 @@ export function ProjectStoryPanel({ story }: { story: StoryProject }) {
       {/* Case study */}
       <div className="space-y-6 lg:col-span-7">
         <div className="grid gap-5 sm:grid-cols-2">
-          <CaseBlock icon={Layers} label={t('projects.context', '/ CONTEXT')} body={story.context} />
+          <CaseBlock
+            icon={Layers}
+            label={t('projects.context', '/ CONTEXT')}
+            body={story.context}
+          />
           <CaseBlock
             icon={HelpCircle}
             label={t('projects.complexity', '/ CHALLENGE')}

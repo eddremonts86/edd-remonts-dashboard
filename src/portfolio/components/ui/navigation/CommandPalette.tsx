@@ -1,17 +1,9 @@
 import { AnimatePresence, m } from 'framer-motion'
-import {
-  ArrowDownToLine,
-  Coffee,
-  Copy,
-  Globe,
-  Languages,
-  Moon,
-  MoveRight,
-  Sun,
-  Terminal,
-} from 'lucide-react'
+import { ArrowDownToLine, Coffee, Copy, Globe, Languages, MoveRight, Terminal } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import { MOON, SUN } from '@/portfolio/components/ui/icons/morphIconNodes'
 import { useTheme } from '@/portfolio/contexts/ThemeContextBase'
 import { NAV_SECTIONS } from '@/portfolio/data/navigation'
 import { useResolvedTheme } from '@/portfolio/hooks/useResolvedTheme'
@@ -123,12 +115,7 @@ export const CommandPalette = () => {
           resolvedTheme === 'dark'
             ? t('palette.themeLight', 'Switch to light — roll credits')
             : t('palette.themeDark', 'Switch to dark — kill the lights'),
-        icon:
-          resolvedTheme === 'dark' ? (
-            <Sun className="h-3.5 w-3.5" />
-          ) : (
-            <Moon className="h-3.5 w-3.5" />
-          ),
+        icon: <MorphingIcon icon={resolvedTheme === 'dark' ? SUN : MOON} size={14} />,
         keywords: 'theme dark light mode toggle',
         run: () => {
           setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
@@ -198,7 +185,10 @@ export const CommandPalette = () => {
         secret: true,
         run: () => {
           announce(
-            t('palette.whoami', 'eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.'),
+            t(
+              'palette.whoami',
+              'eduardo — staff frontend engineer. uptime: 18 years. no zombie processes.',
+            ),
           )
           close()
         },
@@ -315,7 +305,9 @@ export const CommandPalette = () => {
                       >
                         {cmd.icon}
                       </span>
-                      <span className="min-w-0 flex-1 truncate font-mono text-[15px]">{cmd.label}</span>
+                      <span className="min-w-0 flex-1 truncate font-mono text-[15px]">
+                        {cmd.label}
+                      </span>
                       {cmd.hint && (
                         <span className="shrink-0 font-mono text-[12px] uppercase tracking-wider text-foreground/78">
                           {cmd.hint}

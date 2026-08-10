@@ -31,13 +31,11 @@ export function UserDirectoryStatsWidget() {
 
   const totalUsers = users.length
   // Placeholder breakdown — extend in your app with real categories
-  const recentUsers = users.filter(
-    (u) => {
-      // eslint-disable-next-line react-hooks/purity
-      const now = Date.now()
-      return now - new Date(u.createdAt).getTime() < 7 * 24 * 60 * 60 * 1000
-    },
-  ).length
+  const recentUsers = users.filter((u) => {
+    // eslint-disable-next-line react-hooks/purity
+    const now = Date.now()
+    return now - new Date(u.createdAt).getTime() < 7 * 24 * 60 * 60 * 1000
+  }).length
   const topDepts: [string, number][] = [
     [t('users.stats.total', 'Total Users'), totalUsers],
     [t('users.stats.recent', 'Joined This Week'), recentUsers],

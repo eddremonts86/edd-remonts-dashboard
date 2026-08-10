@@ -66,8 +66,7 @@ const patches = {
         },
         spec: {
           title: 'Escribí el spec de diseño antes de tocar código',
-          learning:
-            'Decidir qué NO añadir (three.js) fue la línea más valiosa del documento.',
+          learning: 'Decidir qué NO añadir (three.js) fue la línea más valiosa del documento.',
         },
         grid: {
           title: 'Tramas cinematográficas y overlays dinámicos',
@@ -76,8 +75,7 @@ const patches = {
         },
         a11y: {
           title: 'Pasada de accesibilidad por todos los componentes',
-          learning:
-            'El movimiento que se puede apagar es oficio; el que no, es decoración.',
+          learning: 'El movimiento que se puede apagar es oficio; el que no, es decoración.',
         },
         i18n: {
           title: 'Internacionalicé cada sección — EN / ES / DK',
@@ -120,8 +118,7 @@ const patches = {
         },
         a11y: {
           title: 'Tilgængeligheds-gennemgang af alle komponenter',
-          learning:
-            'Bevægelse man kan slå fra er håndværk; bevægelse man ikke kan, er dekoration.',
+          learning: 'Bevægelse man kan slå fra er håndværk; bevægelse man ikke kan, er dekoration.',
         },
         i18n: {
           title: 'Internationaliserede hver sektion — EN / ES / DK',
@@ -130,8 +127,7 @@ const patches = {
         },
         v2: {
           title: 'Site v2 — portfolioet blev et databasedrevet produkt',
-          learning:
-            'Egen medicin: dashboardet der styrer dette site er i sig selv casestudiet.',
+          learning: 'Egen medicin: dashboardet der styrer dette site er i sig selv casestudiet.',
         },
       },
     },

@@ -80,14 +80,7 @@ export const InkStudy = () => {
           step={0.05}
           onChange={setTurbulence}
         />
-        <UniformSlider
-          label="u_ink"
-          value={ink}
-          min={0}
-          max={1}
-          step={0.05}
-          onChange={setInk}
-        />
+        <UniformSlider label="u_ink" value={ink} min={0} max={1} step={0.05} onChange={setInk} />
         <UniformSlider
           label="u_accent"
           value={accent}

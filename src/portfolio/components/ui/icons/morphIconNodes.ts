@@ -31,3 +31,48 @@ export const COPY: MorphIconData = [
 ]
 
 export const CHECK: MorphIconData = [['path', { d: 'M20 6 9 17l-5-5' }]]
+
+export const MENU: MorphIconData = [
+  ['path', { d: 'M4 5h16' }],
+  ['path', { d: 'M4 12h16' }],
+  ['path', { d: 'M4 19h16' }],
+]
+
+export const X: MorphIconData = [
+  ['path', { d: 'M18 6 6 18' }],
+  ['path', { d: 'm6 6 12 12' }],
+]
+
+export const PLUS: MorphIconData = [
+  ['path', { d: 'M5 12h14' }],
+  ['path', { d: 'M12 5v14' }],
+]
+
+/** Deliberately the same first path as PLUS: the vertical stroke is what flies. */
+export const MINUS: MorphIconData = [['path', { d: 'M5 12h14' }]]
+
+export const SUN: MorphIconData = [
+  ['circle', { cx: '12', cy: '12', r: '4' }],
+  ['path', { d: 'M12 2v2' }],
+  ['path', { d: 'M12 20v2' }],
+  ['path', { d: 'm4.93 4.93 1.41 1.41' }],
+  ['path', { d: 'm17.66 17.66 1.41 1.41' }],
+  ['path', { d: 'M2 12h2' }],
+  ['path', { d: 'M20 12h2' }],
+  ['path', { d: 'm6.34 17.66-1.41 1.41' }],
+  ['path', { d: 'm19.07 4.93-1.41 1.41' }],
+]
+
+export const MOON: MorphIconData = [
+  [
+    'path',
+    {
+      d: 'M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401',
+    },
+  ],
+]
+
+export const ARROW_DOWN: MorphIconData = [
+  ['path', { d: 'M12 5v14' }],
+  ['path', { d: 'm19 12-7 7-7-7' }],
+]

@@ -24,8 +24,10 @@ import type { ComponentPropsWithoutRef } from 'react'
 /** Lucide exports icon data as `IconName.__iconNode`; that array is what MorphIcon takes. */
 export type MorphIconData = IconNode
 
-interface MorphingIconProps
-  extends Omit<ComponentPropsWithoutRef<typeof MorphIcon>, 'icon' | 'reducedMotion'> {
+interface MorphingIconProps extends Omit<
+  ComponentPropsWithoutRef<typeof MorphIcon>,
+  'icon' | 'reducedMotion'
+> {
   /** The icon to display. Changing it animates from the previous one. */
   icon: MorphIconData
   /** Accessible name. Omit only when an adjacent label already names the control. */

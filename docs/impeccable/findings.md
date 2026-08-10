@@ -19,11 +19,11 @@ Run date: 2026-08-10 · Branch: `main` @ `2fca399` · Pipeline: `/ai-os-review-a
 
 ## Phase 0 — Gate baseline (recorded, not clean)
 
-| Gate | Result |
-| --- | --- |
-| `pnpm type-check` | ✅ pass |
-| `pnpm lint --quiet` | ✅ pass |
-| `pnpm test:unit` | ❌ **8 failed / 176 passed** (4 files) |
+| Gate                | Result                                 |
+| ------------------- | -------------------------------------- |
+| `pnpm type-check`   | ✅ pass                                |
+| `pnpm lint --quiet` | ✅ pass                                |
+| `pnpm test:unit`    | ❌ **8 failed / 176 passed** (4 files) |
 
 Failing files — **all dashboard/AI, none touch the landing**:
 
@@ -44,7 +44,7 @@ recorded here rather than hidden.
 ### P0-1 · The production Docker image cannot serve a single request
 
 `Dockerfile:30` runs `RUN pnpm build` in the `builder` stage. `ENV
-NODE_ENV=production` is only set at `Dockerfile:36`, in the *later* `prod`
+NODE_ENV=production` is only set at `Dockerfile:36`, in the _later_ `prod`
 stage. So the app is **compiled in development mode and then run in production
 mode**.
 
@@ -62,12 +62,12 @@ TypeError: jsxDEV is not a function
 
 Evidence of the dev build leaking into `dist/`:
 
-| Artifact | `pnpm build` | `NODE_ENV=production pnpm build` |
-| --- | --- | --- |
-| server chunks importing `react/jsx-dev-runtime` | **45** | 0 |
-| client chunks containing `jsxDEV` | 33 | 1 |
-| client chunks containing the React **development** build | **yes** | no |
-| entry chunk | 500 KB gz | 434 KB gz |
+| Artifact                                                 | `pnpm build` | `NODE_ENV=production pnpm build` |
+| -------------------------------------------------------- | ------------ | -------------------------------- |
+| server chunks importing `react/jsx-dev-runtime`          | **45**       | 0                                |
+| client chunks containing `jsxDEV`                        | 33           | 1                                |
+| client chunks containing the React **development** build | **yes**      | no                               |
+| entry chunk                                              | 500 KB gz    | 434 KB gz                        |
 
 Not caused by `@tanstack/devtools-vite` — rebuilding with
 `DISABLE_TANSTACK_VITE_DEVTOOLS=true` still emitted `jsxDEV` in 33 client / 45
@@ -101,11 +101,11 @@ const BASE_URL = import.meta.env.VITE_PUBLIC_URL || 'https://example.com'
 `.env.production.example`. The served HTML contains:
 
 ```html
-<link rel="canonical" href="https://example.com"/>
-<link rel="alternate" hreflang="en" href="https://example.com"/>
-<link rel="alternate" hreflang="es" href="https://example.com/?lang=es"/>
-<link rel="alternate" hreflang="da" href="https://example.com/?lang=da"/>
-<link rel="alternate" hreflang="x-default" href="https://example.com"/>
+<link rel="canonical" href="https://example.com" />
+<link rel="alternate" hreflang="en" href="https://example.com" />
+<link rel="alternate" hreflang="es" href="https://example.com/?lang=es" />
+<link rel="alternate" hreflang="da" href="https://example.com/?lang=da" />
+<link rel="alternate" hreflang="x-default" href="https://example.com" />
 ```
 
 Meanwhile `public/robots.txt` and `public/sitemap.xml` both declare
@@ -154,11 +154,11 @@ target does not currently build.
 Measured against the production server over loopback (**zero network
 latency**):
 
-| Metric | Value |
-| --- | --- |
-| TTFB | 10 ms |
-| FCP | 128 ms |
-| **LCP** | **2,948 ms** |
+| Metric      | Value                                                      |
+| ----------- | ---------------------------------------------------------- |
+| TTFB        | 10 ms                                                      |
+| FCP         | 128 ms                                                     |
+| **LCP**     | **2,948 ms**                                               |
 | LCP element | `DIV.overflow-hidden` (hero, revealed after the preloader) |
 
 FCP is fast because the preloader paints instantly; LCP is slow because real
@@ -173,13 +173,13 @@ not currently meet it. That is the credibility risk, not just the metric.
 The 434 KB gz / 1,475 KB raw entry chunk (`index-*.js`) is on the landing's
 critical path. Fingerprints inside it:
 
-| Library | Hits | Needed to view the portfolio? |
-| --- | --- | --- |
+| Library            | Hits     | Needed to view the portfolio?    |
+| ------------------ | -------- | -------------------------------- |
 | `clerk` / `@clerk` | 401 / 15 | no — `/auth` + `/dashboard` only |
-| `openai` | 40 | no — dashboard AI features |
-| `i18next` | 13 | yes |
-| `better-auth` | 6 | no |
-| `Sentry` | 3 | arguable |
+| `openai`           | 40       | no — dashboard AI features       |
+| `i18next`          | 13       | yes                              |
+| `better-auth`      | 6        | no                               |
+| `Sentry`           | 3        | arguable                         |
 
 Critical-path JS for `/` is **533 KB gzipped** across 20 modulepreloads, before
 CSS (36 KB gz) and images. Splitting auth/AI out of the shared entry is the
@@ -197,12 +197,12 @@ landing, so it costs no page weight — but it is publicly served and inflates
 
 ### P1-4 · Images shipped raw
 
-| File | Size | Note |
-| --- | --- | --- |
-| `public/edd/edd_light.jpg` | 1.9 MB | no WebP/AVIF variant |
-| `public/edd/edd_dark.jpg` | 1.4 MB | no WebP/AVIF variant |
-| `public/projects/live-fodbold-cover.png` | 808 KB | PNG for a photo |
-| 13 more project covers | 219–628 KB | all PNG |
+| File                                     | Size       | Note                 |
+| ---------------------------------------- | ---------- | -------------------- |
+| `public/edd/edd_light.jpg`               | 1.9 MB     | no WebP/AVIF variant |
+| `public/edd/edd_dark.jpg`                | 1.4 MB     | no WebP/AVIF variant |
+| `public/projects/live-fodbold-cover.png` | 808 KB     | PNG for a photo      |
+| 13 more project covers                   | 219–628 KB | all PNG              |
 
 Worst single case measured at runtime: `schilling-cover.png` — **500 KB
 downloaded, 1024 px natural, rendered at 18 px wide.** ~10 MB of images total,
@@ -228,19 +228,19 @@ the wrong first impression for anyone who opens devtools — and some will.
 
 ## P2 — Craft (design-taste-frontend §4.7 pre-flight)
 
-| Check | Budget | Actual | Verdict |
-| --- | --- | --- | --- |
-| §4.7 eyebrow restraint | ≤ `ceil(14/3)` = **5** | **119** | ❌ **24× over** |
-| §9.G zero em-dashes | 0 | 14 | ❌ (see note) |
-| §4.7 hero stack ≤ 4 text + 1+1 CTA | 4 + 2 | 4 text + **3 CTAs** | ⚠️ |
-| §4.7 hero subtext ≤ 20 words | 20 | **38** | ❌ |
-| §4.7 no section-number eyebrows | none | `01 /`, `02 /`, `/01`…`/05`, `REEL 02-04`, `EXP.01-05` | ❌ |
-| §9.F no div-built fake product UI | none | `edd.config.ts` code-editor mock (EXP.05) | ⚠️ deliberate — labelled "honesto sobre ser teatro" |
-| §4.7 no split-header | none | not present | ✅ |
-| §4.7 ≤ 2 consecutive zigzag splits | 2 | not present | ✅ |
-| single `h1` | 1 | 1 | ✅ |
-| image `alt` coverage | 100% | 100% (6/6) | ✅ |
-| unlabelled buttons/links | 0 | 0 | ✅ |
+| Check                              | Budget                 | Actual                                                 | Verdict                                             |
+| ---------------------------------- | ---------------------- | ------------------------------------------------------ | --------------------------------------------------- |
+| §4.7 eyebrow restraint             | ≤ `ceil(14/3)` = **5** | **119**                                                | ❌ **24× over**                                     |
+| §9.G zero em-dashes                | 0                      | 14                                                     | ❌ (see note)                                       |
+| §4.7 hero stack ≤ 4 text + 1+1 CTA | 4 + 2                  | 4 text + **3 CTAs**                                    | ⚠️                                                  |
+| §4.7 hero subtext ≤ 20 words       | 20                     | **38**                                                 | ❌                                                  |
+| §4.7 no section-number eyebrows    | none                   | `01 /`, `02 /`, `/01`…`/05`, `REEL 02-04`, `EXP.01-05` | ❌                                                  |
+| §9.F no div-built fake product UI  | none                   | `edd.config.ts` code-editor mock (EXP.05)              | ⚠️ deliberate — labelled "honesto sobre ser teatro" |
+| §4.7 no split-header               | none                   | not present                                            | ✅                                                  |
+| §4.7 ≤ 2 consecutive zigzag splits | 2                      | not present                                            | ✅                                                  |
+| single `h1`                        | 1                      | 1                                                      | ✅                                                  |
+| image `alt` coverage               | 100%                   | 100% (6/6)                                             | ✅                                                  |
+| unlabelled buttons/links           | 0                      | 0                                                      | ✅                                                  |
 
 **The eyebrow count is the headline craft finding.** 119 uppercase
 letter-spaced micro-labels across 14 sections (`/ MÉTRICAS DE RENDIMIENTO
@@ -277,17 +277,17 @@ preloader before the first word.
 
 Researched <https://www.morphicons.com> and unpacked the published artifact.
 
-| Fact | Value |
-| --- | --- |
-| npm package | `morphicons` |
-| Latest | `1.6.0`, **published 2 days ago** (2026-08-08) |
-| Licence / deps | MIT / **zero runtime dependencies** |
-| Size | 138.6 kB unpacked, ~6.5 kB gzipped core |
-| Entry for us | `morphicons/react` → `<MorphIcon>` (forwardRef, `MorphHandle`) |
-| Input | Lucide `IconNode` or a raw `d` string — **already our icon format** |
-| Physics | `smooth` (ζ=1.00), `snappy` (ζ=0.73), `bouncy` (ζ=0.40) |
-| Accessibility | `label` prop → `role="img"` + `<title>`; without it `aria-hidden` |
-| Reduced motion | `reducedMotion="user"` degrades a morph to an instant swap |
+| Fact           | Value                                                               |
+| -------------- | ------------------------------------------------------------------- |
+| npm package    | `morphicons`                                                        |
+| Latest         | `1.6.0`, **published 2 days ago** (2026-08-08)                      |
+| Licence / deps | MIT / **zero runtime dependencies**                                 |
+| Size           | 138.6 kB unpacked, ~6.5 kB gzipped core                             |
+| Entry for us   | `morphicons/react` → `<MorphIcon>` (forwardRef, `MorphHandle`)      |
+| Input          | Lucide `IconNode` or a raw `d` string — **already our icon format** |
+| Physics        | `smooth` (ζ=1.00), `snappy` (ζ=0.73), `bouncy` (ζ=0.40)             |
+| Accessibility  | `label` prop → `role="img"` + `<title>`; without it `aria-hidden`   |
+| Reduced motion | `reducedMotion="user"` degrades a morph to an instant swap          |
 
 It fits: we already use `lucide-react` across 24 portfolio files, it is a shared
 single `requestAnimationFrame` loop rather than per-icon timers, and the
@@ -309,22 +309,22 @@ looping, never decorative):**
 3. `ContactForm` submit — send ⇄ loader ⇄ circle-check, on state (`smooth`)
 4. Copy-to-clipboard — copy ⇄ check, on success (`snappy`)
 5. `ProjectsGallery` filter chips — chevron ⇄ x when active (`smooth`)
-6. `StickyNav` mobile trigger — menu ⇄ x (`snappy`) *(if a mobile menu exists)*
+6. `StickyNav` mobile trigger — menu ⇄ x (`snappy`) _(if a mobile menu exists)_
 
 ---
 
 ## Deviations from the skill, itemised
 
-| Skill prescribes | Reality here | Substituted |
-| --- | --- | --- |
-| Port 3010 | `.claude/launch.json` already pins 3210 | 3210 (dev) + 3410 (prod build) |
-| `scripts/audit/saas-review-walk.ts` | absent | in-browser multi-viewport walk (desktop 1280, mobile 375) + prod-server probe |
-| `pnpm db:seed:test-users` | script absent | not needed — landing is public, no roles |
-| 4 roles × 70 routes | this repo's public surface is a single route `/` | `/` at 2 viewports + prod SSR HTML |
-| Phase 4.A slot registry (9 BuilderHunt images) | product does not exist | dropped; real image work here is compressing the 10 MB already present |
-| Phase 4.B `StickyStack` "how it works" | no such section | dropped |
-| Phase 5 dashboard polish | different components entirely | dropped (out of `--landing` scope anyway) |
-| Pre-known findings F1–F8 | BuilderHunt bugs | not applicable; none observed |
+| Skill prescribes                               | Reality here                                     | Substituted                                                                   |
+| ---------------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------- |
+| Port 3010                                      | `.claude/launch.json` already pins 3210          | 3210 (dev) + 3410 (prod build)                                                |
+| `scripts/audit/saas-review-walk.ts`            | absent                                           | in-browser multi-viewport walk (desktop 1280, mobile 375) + prod-server probe |
+| `pnpm db:seed:test-users`                      | script absent                                    | not needed — landing is public, no roles                                      |
+| 4 roles × 70 routes                            | this repo's public surface is a single route `/` | `/` at 2 viewports + prod SSR HTML                                            |
+| Phase 4.A slot registry (9 BuilderHunt images) | product does not exist                           | dropped; real image work here is compressing the 10 MB already present        |
+| Phase 4.B `StickyStack` "how it works"         | no such section                                  | dropped                                                                       |
+| Phase 5 dashboard polish                       | different components entirely                    | dropped (out of `--landing` scope anyway)                                     |
+| Pre-known findings F1–F8                       | BuilderHunt bugs                                 | not applicable; none observed                                                 |
 
 Aesthetic-direction verbs (`bolder`, `quieter`, `colorize`, `delight`) were
 **not** applied — excluded by skill §11.D.
@@ -342,12 +342,12 @@ flagship section, replacing Schilling / Edd Remonts / Zunzun).
 Covers captured from the live sites and optimised
 (`scripts/media/capture-project-covers.mjs`, then `optimize-images.sh`):
 
-| project | cover | AVIF @800 |
-| --- | --- | --- |
-| BuilderHunt | `public/projects/builderhunt-cover.png` | 21 KB |
-| AI-OS | `public/projects/ai-os-cover.png` | 15 KB |
-| ai-schadcn-chat | `public/projects/ai-shadcn-chat-cover.png` | 14 KB |
-| GeoLocal | **none — site is broken, see below** | — |
+| project         | cover                                      | AVIF @800 |
+| --------------- | ------------------------------------------ | --------- |
+| BuilderHunt     | `public/projects/builderhunt-cover.png`    | 21 KB     |
+| AI-OS           | `public/projects/ai-os-cover.png`          | 15 KB     |
+| ai-schadcn-chat | `public/projects/ai-shadcn-chat-cover.png` | 14 KB     |
+| GeoLocal        | **none — site is broken, see below**       | —         |
 
 ### Verified facts, for writing the copy
 
@@ -420,7 +420,7 @@ products, and their honest numbers are of a different kind: 25.000 listings and
 (ai-schadcn-chat). Adoption is small and recent — 10 and 13 weekly npm
 downloads for the two packages.
 
-Those are strong *product* facts and weak *traction* facts. So the section's
+Those are strong _product_ facts and weak _traction_ facts. So the section's
 framing has to move from "measured impact on someone else's platform" to
 "things I designed, built and shipped end to end" — which is arguably the
 better story for a founder anyway. Confirm the framing and I will write the
