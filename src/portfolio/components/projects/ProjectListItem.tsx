@@ -1,11 +1,16 @@
 import { m } from 'framer-motion'
-import { ArrowUpRight, Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react'
-import { forwardRef } from 'react'
+import { Cpu, Layers, ShieldCheck, HelpCircle } from 'lucide-react'
+import { forwardRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { type CvProject } from '@/portfolio/contexts/PortfolioDataContext'
 import { useProjectStories } from '@/portfolio/data/useProjectStories'
 import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
-import { MINUS, PLUS } from '@/portfolio/components/ui/icons/morphIconNodes'
+import {
+  ARROW_UP_RIGHT,
+  EXTERNAL_LINK,
+  MINUS,
+  PLUS,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 import { ProjectStoryPanel } from './ProjectStoryPanel'
 
 type Project = CvProject
@@ -23,6 +28,7 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
     const { t } = useTranslation()
     const hasLink = Boolean(project.link)
     const story = useProjectStories()[project.id]
+    const [linkHovered, setLinkHovered] = useState(false)
     const hasCaseStudy = Boolean(
       story ||
       project.problem ||
@@ -139,10 +145,12 @@ export const ProjectListItem = forwardRef<HTMLDivElement, Props>(
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onPointerEnter={() => setLinkHovered(true)}
+                onPointerLeave={() => setLinkHovered(false)}
                 className="flex h-8 w-8 items-center justify-center rounded-full border border-subtle bg-background text-foreground/75 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
                 aria-label={t('projects.view', 'View Project')}
               >
-                <ArrowUpRight className="h-3.5 w-3.5" />
+                <MorphingIcon icon={linkHovered ? EXTERNAL_LINK : ARROW_UP_RIGHT} size={14} />
               </a>
             )}
           </div>

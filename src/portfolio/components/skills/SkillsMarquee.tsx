@@ -1,7 +1,15 @@
 import { m } from 'framer-motion'
-import { Layers, Database, Cpu, Sparkles } from 'lucide-react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
+import type { MorphIconData } from '@/portfolio/components/ui/icons/MorphingIcon'
+import {
+  CIRCLE_CHECK,
+  CPU,
+  DATABASE,
+  LAYERS,
+  SPARKLES,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 import { fadeInView } from '@/portfolio/lib/motion'
 import { TechFilmStrip } from './TechFilmStrip'
 
@@ -9,7 +17,7 @@ interface CuratedLayer {
   id: string
   name: string
   annot: string
-  Icon: typeof Layers
+  icon: MorphIconData
   items: string[]
   rationale: string
 }
@@ -17,6 +25,7 @@ interface CuratedLayer {
 export const SkillsMarquee = () => {
   const { t } = useTranslation()
   const leftColProps = fadeInView()
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   const curatedLayers: CuratedLayer[] = useMemo(() => {
     return [
@@ -24,7 +33,7 @@ export const SkillsMarquee = () => {
         id: 'governance',
         name: t('skills.layers.governance.name', 'Architecture & Governance'),
         annot: t('skills.layers.governance.annot', '/ WORKSPACE SYSTEMS'),
-        Icon: Layers,
+        icon: LAYERS,
         items: [
           t('skills.layers.governance.items.0', 'Monorepo Boundaries'),
           t('skills.layers.governance.items.1', 'Design-System Contracts'),
@@ -39,7 +48,7 @@ export const SkillsMarquee = () => {
         id: 'performance',
         name: t('skills.layers.performance.name', 'Performance Engineering'),
         annot: t('skills.layers.performance.annot', '/ LATENCY & CONVERSION'),
-        Icon: Cpu,
+        icon: CPU,
         items: [
           t('skills.layers.performance.items.0', 'Interaction Latency'),
           t('skills.layers.performance.items.1', 'Optimistic State Sync'),
@@ -54,7 +63,7 @@ export const SkillsMarquee = () => {
         id: 'leadership',
         name: t('skills.layers.leadership.name', 'Technical Leadership'),
         annot: t('skills.layers.leadership.annot', '/ ORG SYNCHRONIZATION'),
-        Icon: Sparkles,
+        icon: SPARKLES,
         items: [
           t('skills.layers.leadership.items.0', 'Developer Experience'),
           t('skills.layers.leadership.items.1', 'Active Mentorship'),
@@ -69,7 +78,7 @@ export const SkillsMarquee = () => {
         id: 'product',
         name: t('skills.layers.product.name', 'Product Systems Alignment'),
         annot: t('skills.layers.product.annot', '/ FULL-STACK STRATEGY'),
-        Icon: Database,
+        icon: DATABASE,
         items: [
           t('skills.layers.product.items.0', 'Domain Modeling'),
           t('skills.layers.product.items.1', 'Stakeholder Coordination'),
@@ -134,7 +143,6 @@ export const SkillsMarquee = () => {
           {/* Right Column: The Curated Stack Layers Matrix (7 cols) */}
           <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2 relative">
             {curatedLayers.map((layer, index) => {
-              const Icon = layer.Icon
               const cardProps = fadeInView({ delay: index * 0.08 })
               return (
                 <m.div
@@ -143,6 +151,8 @@ export const SkillsMarquee = () => {
                   whileInView={cardProps.whileInView}
                   viewport={cardProps.viewport}
                   transition={cardProps.transition}
+                  onPointerEnter={() => setHoveredCard(layer.id)}
+                  onPointerLeave={() => setHoveredCard(null)}
                   className="pf-card group p-6"
                 >
                   {/* In the flow, not absolutely positioned over the card. As a
@@ -154,7 +164,10 @@ export const SkillsMarquee = () => {
 
                   <div className="flex items-center gap-3 mb-6">
                     <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-subtle text-foreground/70 transition-colors group-hover:border-primary/45 group-hover:text-primary bg-surface/50">
-                      <Icon className="h-4 w-4" />
+                      <MorphingIcon
+                        icon={hoveredCard === layer.id ? CIRCLE_CHECK : layer.icon}
+                        size={16}
+                      />
                     </div>
                     <div>
                       <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-primary block font-bold">

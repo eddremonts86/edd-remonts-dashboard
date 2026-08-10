@@ -76,3 +76,72 @@ export const ARROW_DOWN: MorphIconData = [
   ['path', { d: 'M12 5v14' }],
   ['path', { d: 'm19 12-7 7-7-7' }],
 ]
+
+export const FILE_TEXT: MorphIconData = [
+  [
+    'path',
+    {
+      d: 'M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z',
+    },
+  ],
+  ['path', { d: 'M14 2v5a1 1 0 0 0 1 1h5' }],
+  ['path', { d: 'M10 9H8' }],
+  ['path', { d: 'M16 13H8' }],
+  ['path', { d: 'M16 17H8' }],
+]
+
+export const ARROW_DOWN_TO_LINE: MorphIconData = [
+  ['path', { d: 'M12 17V3' }],
+  ['path', { d: 'm6 11 6 6 6-6' }],
+  ['path', { d: 'M19 21H5' }],
+]
+
+export const ARROW_UP_RIGHT: MorphIconData = [
+  ['path', { d: 'M7 7h10v10' }],
+  ['path', { d: 'M7 17 17 7' }],
+]
+
+export const EXTERNAL_LINK: MorphIconData = [
+  ['path', { d: 'M15 3h6v6' }],
+  ['path', { d: 'M10 14 21 3' }],
+  ['path', { d: 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6' }],
+]
+
+/* Capability-card glyphs. This file is now sixteen icons deep; if it keeps
+   growing, generate it from lucide at build time rather than by hand. */
+
+export const LAYERS: MorphIconData = [
+  ['path', { d: 'M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z' }],
+  ['path', { d: 'M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12' }],
+  ['path', { d: 'M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17' }],
+]
+
+export const CPU: MorphIconData = [
+  ['path', { d: 'M12 20v2' }],
+  ['path', { d: 'M12 2v2' }],
+  ['path', { d: 'M17 20v2' }],
+  ['path', { d: 'M17 2v2' }],
+  ['path', { d: 'M2 12h2' }],
+  ['path', { d: 'M2 17h2' }],
+  ['path', { d: 'M2 7h2' }],
+  ['path', { d: 'M20 12h2' }],
+  ['path', { d: 'M20 17h2' }],
+  ['path', { d: 'M20 7h2' }],
+  ['path', { d: 'M7 20v2' }],
+  ['path', { d: 'M7 2v2' }],
+  ['rect', { x: '4', y: '4', width: '16', height: '16', rx: '2' }],
+  ['rect', { x: '8', y: '8', width: '8', height: '8', rx: '1' }],
+]
+
+export const SPARKLES: MorphIconData = [
+  ['path', { d: 'M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z' }],
+  ['path', { d: 'M20 2v4' }],
+  ['path', { d: 'M22 4h-4' }],
+  ['circle', { cx: '4', cy: '20', r: '2' }],
+]
+
+export const DATABASE: MorphIconData = [
+  ['ellipse', { cx: '12', cy: '5', rx: '9', ry: '3' }],
+  ['path', { d: 'M3 5V19A9 3 0 0 0 21 19V5' }],
+  ['path', { d: 'M3 12A9 3 0 0 0 21 12' }],
+]

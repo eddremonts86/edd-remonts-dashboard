@@ -1,11 +1,15 @@
 import { m, AnimatePresence } from 'framer-motion'
-import { ArrowDownToLine } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { InkCanvas } from '@/portfolio/components/gl/InkCanvas'
 import { MagneticButton } from '@/portfolio/components/ui/effects/MagneticButton'
 import { MorphingIcon } from '@/portfolio/components/ui/icons/MorphingIcon'
-import { ARROW_DOWN, ARROW_RIGHT } from '@/portfolio/components/ui/icons/morphIconNodes'
+import {
+  ARROW_DOWN,
+  ARROW_DOWN_TO_LINE,
+  ARROW_RIGHT,
+  FILE_TEXT,
+} from '@/portfolio/components/ui/icons/morphIconNodes'
 import { TiltCard } from '@/portfolio/components/ui/effects/TiltCard'
 import { LanguageSelector } from '@/portfolio/components/ui/navigation/LanguageSelector'
 import { ThemeToggle } from '@/portfolio/components/ui/navigation/ThemeToggle'
@@ -25,6 +29,7 @@ export const HeroSection = () => {
   const containerRef = useRef<HTMLElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const [exploreHovered, setExploreHovered] = useState(false)
+  const [cvHovered, setCvHovered] = useState(false)
 
   const cvUrl = getCvUrl(i18n.language, resolvedTheme)
   const { opacity, scale, y } = useHeroParallax(containerRef)
@@ -167,10 +172,16 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-subtle bg-surface/30 backdrop-blur-md px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-foreground transition-all duration-500 hover:bg-surface/50 hover:border-default md:text-[15px]"
-                  onPointerEnter={() => setIsHovered(true)}
-                  onPointerLeave={() => setIsHovered(false)}
+                  onPointerEnter={() => {
+                    setIsHovered(true)
+                    setCvHovered(true)
+                  }}
+                  onPointerLeave={() => {
+                    setIsHovered(false)
+                    setCvHovered(false)
+                  }}
                 >
-                  <ArrowDownToLine className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-y-0.5" />
+                  <MorphingIcon icon={cvHovered ? ARROW_DOWN_TO_LINE : FILE_TEXT} size={14} />
                   <span>{t('nav.resume', 'Download CV')}</span>
                 </a>
               </MagneticButton>
