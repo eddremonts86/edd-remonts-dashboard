@@ -1,0 +1,136 @@
+# -----------------------------------------------------------------------------
+# Deploy the dashboard to Coolify.
+#
+# Coolify's source for this app is a public repository, which installs no
+# webhook and never deploys on its own. The trigger lives here, where it is
+# versioned and reviewable.
+#
+# It WAITS. Coolify answers as soon as the build enters its queue, not when it
+# is live, so a workflow that stops at "queued" reports a green tick over a
+# failed build and the only place the truth exists is a log on the server.
+#
+# SAFE BY DEFAULT: until the secrets are set this is a green no-op that says so.
+# That is about activation. It is not permission to report success once the
+# deploy is real.
+#
+# Activation (values live in ai-os/dev-env/env-config/.env):
+#   gh secret set COOLIFY_API_URL
+#   gh secret set COOLIFY_API_TOKEN
+#   gh secret set COOLIFY_APP_UUID   # edd-remonts-dashboard = auvhqvzjmwl9v7wda1y5nigt
+#   gh secret set SITE_URL           # https://profile.eduardoinerarte.dk
+#
+# API shape, checked against the running Coolify rather than recalled:
+#   trigger  GET /api/v1/deploy?uuid=...&force=false
+#   returns  {"deployments":[{message, resource_uuid, deployment_uuid?}]}
+#            deployment_uuid is OPTIONAL — omitted when nothing was queued
+#   poll     GET /api/v1/deployments/<deployment_uuid>
+#   states   queued | in_progress | finished | failed | cancelled-by-user
+#            note the hyphen; `success` and `error` are not among them
+# -----------------------------------------------------------------------------
+name: Deploy the dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**"
+      - "!docs/**"
+      - "!**/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-dashboard
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy the dashboard
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Guard — is deploy configured?
+        id: guard
+        env:
+          APP_UUID: ${{ secrets.COOLIFY_APP_UUID }}
+        run: |
+          if [ -z "$APP_UUID" ]; then
+            echo "::notice title=Deploy skipped::COOLIFY_APP_UUID is not set — wired but not activated."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy, and wait for the result
+        if: steps.guard.outputs.configured == 'true'
+        env:
+          COOLIFY_API_URL: ${{ secrets.COOLIFY_API_URL }}
+          COOLIFY_API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+          APP_UUID: ${{ secrets.COOLIFY_APP_UUID }}
+        run: |
+          set -euo pipefail
+          base="${COOLIFY_API_URL%/}"
+          auth="Authorization: Bearer $COOLIFY_API_TOKEN"
+
+          echo "Requesting deployment of edd-remonts-dashboard ..."
+          code=$(curl -sS -o /tmp/deploy.json -w '%{http_code}' --max-time 60 \
+            -H "$auth" -H 'Accept: application/json' \
+            "$base/api/v1/deploy?uuid=$APP_UUID&force=false")
+          echo "Coolify responded HTTP $code:"
+          cat /tmp/deploy.json; echo
+
+          if [ "$code" = "429" ]; then
+            echo "::error title=Rate limited::Coolify is throttling deploys — re-run in a minute."
+            exit 1
+          fi
+          case "$code" in
+            2*) ;;
+            *) echo "::error title=Deploy trigger failed::Coolify returned HTTP $code"; exit 1 ;;
+          esac
+
+          id=$(jq -r '.deployments[0].deployment_uuid // empty' /tmp/deploy.json)
+          if [ -z "$id" ]; then
+            echo "::error title=Nothing queued::Coolify accepted the request but queued no deployment — its message above says why."
+            exit 1
+          fi
+
+          echo "Waiting on deployment $id ..."
+          for i in $(seq 1 60); do
+            sleep 10
+            status=$(curl -fsS -H "$auth" --max-time 30 \
+              "$base/api/v1/deployments/$id" | jq -r '.status // "?"')
+            echo "  poll $i: $status"
+            case "$status" in
+              finished) echo "Build finished."; exit 0 ;;
+              failed|cancelled-by-user)
+                echo "::error title=Deployment $status::See the Coolify deployment log."
+                exit 1 ;;
+            esac
+          done
+          echo "::error title=Timed out::Deployment did not finish within 10 minutes."
+          exit 1
+
+      - name: Verify it is serving
+        if: steps.guard.outputs.configured == 'true'
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SITE_URL:-}" ]; then
+            echo "::notice::SITE_URL not set — skipping the HTTP check."
+            exit 0
+          fi
+          # No sleep: the step above waited for `finished`, so the container is
+          # up. The retries are only for the seconds Traefik needs.
+          echo "Probing ${SITE_URL} ..."
+          for i in 1 2 3 4 5; do
+            code=$(curl -fsS -o /dev/null -w '%{http_code}' --max-time 15 "$SITE_URL" || true)
+            echo "attempt ${i}: HTTP ${code}"
+            [ "$code" = "200" ] && { echo "Live."; exit 0; }
+            sleep 10
+          done
+          echo "::error title=Not serving::Deployed but not answering 200."
+          exit 1
