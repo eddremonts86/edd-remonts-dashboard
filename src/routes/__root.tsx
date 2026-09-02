@@ -18,7 +18,12 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // viewport-fit=cover is what makes env(safe-area-inset-*) report a real
+      // number. StickyNav and Footer already pad by those insets, and without
+      // this they resolve to 0 — which is invisible in a browser tab and puts
+      // the nav under the clock once the app is installed and the status bar
+      // is translucent.
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
       { title: DEFAULT_TITLE },
       { name: 'description', content: DEFAULT_DESCRIPTION },
       { name: 'author', content: SITE_NAME },
