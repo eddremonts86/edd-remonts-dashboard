@@ -134,9 +134,16 @@ function tryServeStatic(pathname, req, res) {
 
   // Immutable cache for hashed assets (Vite uses hash in filename)
   const isHashedAsset = /\/assets\//.test(safePath)
+  // The service worker and the manifest are the two files that decide what a
+  // returning visitor gets, and neither carries a hash. Served with the
+  // default hour, a worker fix waits an hour to reach the devices running the
+  // broken one — the update it exists to deliver is the update it delays.
+  const isPwaControlFile = safePath === '/sw.js' || safePath === '/manifest.json'
   const cacheControl = isHashedAsset
     ? 'public, max-age=31536000, immutable'
-    : 'public, max-age=3600'
+    : isPwaControlFile
+      ? 'no-cache'
+      : 'public, max-age=3600'
 
   const headers = {
     ...securityHeaders(req),
