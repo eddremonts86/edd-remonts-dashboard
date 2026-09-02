@@ -1,15 +1,58 @@
 {
+  "id": "/",
+  "name": "Eduardo Inerarte — Staff Frontend Engineer",
   "short_name": "Eduardo Inerarte",
-  "name": "Eduardo Inerarte — Senior Frontend Engineer",
+  "description": "Portfolio of Eduardo Inerarte, Staff Frontend Engineer and technical leader in Copenhagen.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "categories": ["portfolio", "business", "developer"],
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#09090b",
-  "background_color": "#09090b"
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/#projects"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact"
+    }
+  ]
 }

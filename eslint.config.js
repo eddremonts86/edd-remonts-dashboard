@@ -108,6 +108,24 @@ export default tseslint.config(
     },
   },
   {
+    // The service worker runs in ServiceWorkerGlobalScope, not a window and
+    // not Node. Declared rather than switched off, so a genuine typo in there
+    // is still an error — it is the one file no page can reload its way out of.
+    files: ['public/sw.js'],
+    languageOptions: {
+      globals: {
+        self: 'readonly',
+        caches: 'readonly',
+        clients: 'readonly',
+        fetch: 'readonly',
+        console: 'readonly',
+        Request: 'readonly',
+        Response: 'readonly',
+        URL: 'readonly',
+      },
+    },
+  },
+  {
     files: ['tests/**/*.{ts,tsx}'],
     rules: {
       '@typescript-eslint/consistent-type-imports': 'off',

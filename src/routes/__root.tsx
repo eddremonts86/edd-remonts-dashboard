@@ -27,11 +27,20 @@ export const Route = createRootRoute({
       // light/dark pair collapses to whichever comes last. The site's default
       // presentation is dark, so that is the value worth keeping.
       { name: 'theme-color', content: '#0a0a0a' },
+      // iOS reads none of the manifest. Installed from Safari, these four are
+      // the entire configuration: without them the shortcut opens in a browser
+      // tab with a white status bar and a screenshot for an icon.
+      { name: 'mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+      { name: 'apple-mobile-web-app-title', content: 'Eduardo Inerarte' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'manifest', href: '/manifest.json' },
+      // Also the icon iOS uses for the home-screen shortcut.
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
       { rel: 'canonical', href: SITE_URL },
       // React needs the camelCase prop; `hreflang` logs
       // "Invalid DOM property `hreflang`" on every render.
