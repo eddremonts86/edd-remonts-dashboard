@@ -38,7 +38,7 @@ export interface StoryProject {
 export function useProjectStories(): Record<string, StoryProject> {
   const { t } = useTranslation()
 
-  // Four products designed, built and shipped end to end. The framing here is
+  // Seven products designed, built and shipped end to end. The framing here is
   // deliberately not the one the client-platform case studies used: those led
   // with a measured delta on someone else's system (94% bundle cut, 98
   // Lighthouse). These are my own, and their honest numbers are product facts —
@@ -214,6 +214,135 @@ export function useProjectStories(): Record<string, StoryProject> {
       outcomeDetail: t(
         'projects.stories.ai-schadcn-chat.outcomeDetail',
         'Anthropic, OpenAI, OpenRouter, MiniMax, Together, Groq, vLLM and Ollama, all the same integration for the component.',
+      ),
+    },
+    {
+      id: 'hunterready',
+      title: t('projects.stories.hunterready.title', 'HunterReady'),
+      category: t('projects.stories.hunterready.category', 'Verifiable Document Renderer'),
+      scaleLabel: t('projects.stories.hunterready.scaleLabel', '103 Designs'),
+      impactLabel: t('projects.stories.hunterready.impactLabel', 'Round-Trip Proven'),
+      architectureLabel: t('projects.stories.hunterready.architectureLabel', 'WASM Vector PDF'),
+      link: 'https://hunterready.eduardoinerarte.dk',
+      urlPlaceholder: 'hunterready.eduardoinerarte.dk',
+      coverPath: '/projects/hunterready-cover.png',
+      context: t(
+        'projects.stories.hunterready.context',
+        'CV tools are either pretty and unparseable or parseable and ugly. Both sell the same promise — "ATS-friendly" — and neither can show you what an automated screen actually read back.',
+      ),
+      challenge: t(
+        'projects.stories.hunterready.challenge',
+        'A PDF that looks correct proves nothing: the text layer can arrive out of reading order, or be an image with no text at all. And the render path is WASM, which a green build silently drops — the bundler cannot see a file read at runtime, so dev and CI both pass while production has no renderer.',
+      ),
+      decision: t(
+        'projects.stories.hunterready.decision',
+        'Every design renders in a test that reads the PDF back with an independent parser and asserts each critical field survived in reading order, so the build fails rather than the applicant. A second test fails if any template has no round-trip test, and health checks assert the WASM binary and fonts are present instead of merely that the server is up.',
+      ),
+      businessImpact: t(
+        'projects.stories.hunterready.businessImpact',
+        'In beta at €12/month with checkout still closed. 28 structures across 17 themes, 60 bundled font families, five input formats including scans, and a public API of eight endpoints with its own OpenAPI reference.',
+      ),
+      tradeoffsChosen: t(
+        'projects.stories.hunterready.tradeoffsChosen',
+        'An independent parser as the judge, and a per-structure honesty rating: one of the 28 is labelled design-first rather than verified, because it is.',
+      ),
+      tradeoffsRejected: t(
+        'projects.stories.hunterready.tradeoffsRejected',
+        'Right-to-left PDF support. The glyphs and layout come out right and the text layer comes back reversed — a document that looks perfect and silently fails the one thing this product sells. The endpoint answers 422 and names the formats that do work.',
+      ),
+      outcomeHeadline: t(
+        'projects.stories.hunterready.outcomeHeadline',
+        'Every design read back, every build',
+      ),
+      outcomeDetail: t(
+        'projects.stories.hunterready.outcomeDetail',
+        'Fabrication is blocked in code rather than asked for in a prompt: numbers, names and acronyms must be grounded in the source document, and refused claims come back marked as refused.',
+      ),
+    },
+    {
+      id: 'enforma',
+      title: t('projects.stories.enforma.title', 'enForma'),
+      category: t('projects.stories.enforma.category', 'Local-First Training Platform'),
+      scaleLabel: t('projects.stories.enforma.scaleLabel', '2,076 Movements Offline'),
+      impactLabel: t('projects.stories.enforma.impactLabel', 'Encrypted Row Sync'),
+      architectureLabel: t('projects.stories.enforma.architectureLabel', 'Envelopes, Not Blobs'),
+      link: 'https://enforma.eduardoinerarte.dk',
+      urlPlaceholder: 'enforma.eduardoinerarte.dk',
+      coverPath: '/projects/enforma-cover.png',
+      context: t(
+        'projects.stories.enforma.context',
+        'A training log is health data, and the box where you describe your situation is where somebody writes about an injury. Every tracker asks for an account first and holds that in plain text on its own server.',
+      ),
+      challenge: t(
+        'projects.stories.enforma.challenge',
+        'Encrypting on the device is the easy half. One encrypted blob per account is fine on one device and destroys data on two: train on the phone, open the laptop holding a stale copy, and the session is gone. Syncing without ever letting the server read a workout means the merge has to work on data it cannot see.',
+      ),
+      decision: t(
+        'projects.stories.enforma.decision',
+        'Rows, not blobs: one workout is one record with its own id and timestamp, and the server moves envelopes whose metadata is plaintext for merging while the body stays the same AES-GCM ciphertext that sits on the device. A random data key wrapped by the passphrase-derived key means a password change re-wraps one blob instead of re-encrypting every row. Sync is opt-in, and the active workout never leaves the device.',
+      ),
+      businessImpact: t(
+        'projects.stories.enforma.businessImpact',
+        'In production as an installable offline PWA, with web push and a paid panel gyms use to publish announcements, events, menus and programmes to their members. Pricing is published at €200 to €1,000 a month and invoiced by hand.',
+      ),
+      tradeoffsChosen: t(
+        'projects.stories.enforma.tradeoffsChosen',
+        'Deterministic arithmetic owns the timeline and the model only picks movements, so the plan can refuse a date instead of flattering one. Ask for one month to lose 60 kg and it still says twenty.',
+      ),
+      tradeoffsRejected: t(
+        'projects.stories.enforma.tradeoffsRejected',
+        'A payment processor. A subscription state machine with no payments behind it is a mechanism pretending to be a fact, so the gym plan is a field a human sets and the invoice is a human writing one.',
+      ),
+      outcomeHeadline: t(
+        'projects.stories.enforma.outcomeHeadline',
+        'A server that cannot read a workout',
+      ),
+      outcomeDetail: t(
+        'projects.stories.enforma.outcomeDetail',
+        '17 collections behind an opt-in sync server, and 2,076 movements bundled for offline use — held in separate files by licence, so share-alike attribution never leaks into a generated programme.',
+      ),
+    },
+    {
+      id: 'plans-explorer',
+      title: t('projects.stories.plans-explorer.title', 'Plans Explorer'),
+      category: t('projects.stories.plans-explorer.category', 'Static Faceted Search'),
+      scaleLabel: t('projects.stories.plans-explorer.scaleLabel', '927 Indexed Plans'),
+      impactLabel: t('projects.stories.plans-explorer.impactLabel', 'No Backend At All'),
+      architectureLabel: t('projects.stories.plans-explorer.architectureLabel', 'Build-Time Index'),
+      link: 'https://plans.eduardoinerarte.dk',
+      urlPlaceholder: 'plans.eduardoinerarte.dk',
+      coverPath: '/projects/plans-explorer-cover.png',
+      context: t(
+        'projects.stories.plans-explorer.context',
+        'A corpus of 927 product plans, five documents each, sitting in folders. Deciding what to build next meant opening directories one at a time, and a corpus you cannot search is a corpus you rewrite by accident.',
+      ),
+      challenge: t(
+        'projects.stories.plans-explorer.challenge',
+        'The facets a reader wants are buried in prose written by successive generations of tooling: the country is a loose line, what someone will pay is free text, the stack is a bold label halfway down a plan. Faceted search over that means parsing prose reliably — and the whole thing had to keep running on a static file server.',
+      ),
+      decision: t(
+        'projects.stories.plans-explorer.decision',
+        'The index is built once at build time into JSON, and search runs in the browser over it. Each plan’s five documents are their own file, fetched only when a plan is opened, so the first paint carries the index rather than the corpus.',
+      ),
+      businessImpact: t(
+        'projects.stories.plans-explorer.businessImpact',
+        'Live and free with no account. 927 plans faceted by 58 categories, 318 tags, 1,821 technologies and 45 countries, ranked on three axes, with every plan shareable as its own URL.',
+      ),
+      tradeoffsChosen: t(
+        'projects.stories.plans-explorer.tradeoffsChosen',
+        'Build-time indexing and client-side search, so hosting is a static file server and there is nothing to keep running.',
+      ),
+      tradeoffsRejected: t(
+        'projects.stories.plans-explorer.tradeoffsRejected',
+        'A search backend. It would have handled a corpus ten times the size, and added a service to operate for a reader count that will never need one.',
+      ),
+      outcomeHeadline: t(
+        'projects.stories.plans-explorer.outcomeHeadline',
+        '927 plans, zero servers',
+      ),
+      outcomeDetail: t(
+        'projects.stories.plans-explorer.outcomeDetail',
+        'An 813 KB index searched in the browser with Fuse.js, and each plan’s SPEC, PRODUCT, PLAN, DESIGN and TASKS loaded only on open.',
       ),
     },
   ]

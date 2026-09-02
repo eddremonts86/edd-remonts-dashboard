@@ -326,9 +326,98 @@ async function main() {
 
   // ── Projects (static) ─────────────────────────────────────────────────────
   const staticProjects = [
-    // The four own products. They also lead the flagship ProductStories section;
-    // listing them here keeps the full index complete rather than making a
-    // visitor infer that the four at the top are somehow not projects.
+    // The seven own products. They also lead the flagship ProductStories
+    // section; listing them here keeps the full index complete rather than
+    // making a visitor infer that the ones at the top are somehow not projects.
+    // Ordered newest first: the three most recent lead, because "what I built
+    // last" is the question a visitor is actually asking.
+    {
+      id: 'hunterready',
+      title: 'HunterReady',
+      coverImageUrl: '/projects/hunterready-cover.png',
+      link: 'https://hunterready.eduardoinerarte.dk',
+      category: 'Full Stack',
+      featured: true,
+      sortOrder: -7,
+      scaleLabel: '103 designs',
+      impactLabel: 'Round-trip proven',
+      architectureLabel: 'WASM vector PDF',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'Turns any CV into a PDF an automated screen can actually read, and proves it on every build by parsing the result back out.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Convierte cualquier CV en un PDF que un filtro automático sí puede leer, y lo demuestra en cada build volviendo a extraer el resultado.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Forvandler et CV til en PDF, som en automatisk screening faktisk kan læse — og beviser det ved hver build ved at læse resultatet ud igen.',
+        },
+      ],
+    },
+    {
+      id: 'enforma',
+      title: 'enForma',
+      coverImageUrl: '/projects/enforma-cover.png',
+      link: 'https://enforma.eduardoinerarte.dk',
+      category: 'Full Stack',
+      featured: true,
+      sortOrder: -6,
+      scaleLabel: '2,076 movements offline',
+      impactLabel: 'Server cannot read a workout',
+      architectureLabel: 'Encrypted row sync',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'A training tracker that encrypts every row on the device and still syncs across two, plus a paid panel for the gyms that publish to it.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Un registro de entrenamiento que cifra cada fila en el dispositivo y aun así sincroniza entre dos, más un panel de pago para los gimnasios que publican en él.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'En træningsdagbog, der krypterer hver række på enheden og alligevel synkroniserer mellem to, plus et betalt panel til de gyms, der publicerer i den.',
+        },
+      ],
+    },
+    {
+      id: 'plans-explorer',
+      title: 'Plans Explorer',
+      coverImageUrl: '/projects/plans-explorer-cover.png',
+      link: 'https://plans.eduardoinerarte.dk',
+      category: 'Frontend',
+      featured: true,
+      sortOrder: -5,
+      scaleLabel: '927 indexed plans',
+      impactLabel: 'No backend at all',
+      architectureLabel: 'Build-time index',
+      translations: [
+        {
+          locale: 'en',
+          description:
+            'Faceted search over 927 product plans — 58 categories, 1,821 technologies, 45 countries — served as static files with no backend.',
+        },
+        {
+          locale: 'es',
+          description:
+            'Búsqueda por facetas sobre 927 planes de producto — 58 categorías, 1.821 tecnologías, 45 países — servida como ficheros estáticos, sin backend.',
+        },
+        {
+          locale: 'dk',
+          description:
+            'Facetteret søgning i 927 produktplaner — 58 kategorier, 1.821 teknologier, 45 lande — leveret som statiske filer uden backend.',
+        },
+      ],
+    },
     {
       id: 'builderhunt',
       title: 'BuilderHunt',

@@ -1,6 +1,7 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useProjectStories } from '@/portfolio/data/useProjectStories'
 import { useMousePosition } from '@/portfolio/hooks/useMousePosition'
 import { useProjectFilter } from '@/portfolio/hooks/useProjectFilter'
 import { Section, Container } from '../ui/layout/Section'
@@ -20,9 +21,18 @@ export const ProjectsGallery = () => {
     setHoveredProject,
   } = useProjectFilter()
   // The first row opens by default: a table of collapsed rows gives no hint
-  // that anything is behind them.
-  const [expandedId, setExpandedId] = useState<string | null>('builderhunt')
+  // that anything is behind them. Read off the list rather than named, so
+  // adding a newer product to the top does not leave the fourth row open.
+  const [expandedId, setExpandedId] = useState<string | null>(
+    () => filteredProjects[0]?.id ?? null,
+  )
   const { springX, springY } = useMousePosition()
+
+  // Counted the same way the total is: a story exists for every product of my
+  // own, and for none of the client work, so the copy cannot claim four while
+  // seven of them render.
+  const stories = useProjectStories()
+  const ownCount = allProjects.filter((project) => stories[project.id]).length
 
   // The full index, nothing held back. Zunzun used to be excluded here because
   // it was one of the flagship stories above; it no longer is, so hiding it
@@ -40,11 +50,12 @@ export const ProjectsGallery = () => {
           accent={t('projects.titleAccent', 'End to end.')}
           description={t(
             'projects.description',
-            'Four products of my own. For each: the problem it started from, the architecture I chose, and the path I turned down to get there.',
+            '{{own}} products of my own. For each: the problem it started from, the architecture I chose, and the path I turned down to get there.',
+            { own: ownCount },
           )}
         />
 
-        {/* One index, not a marquee plus a leftovers table. The four flagship
+        {/* One index, not a marquee plus a leftovers table. The flagship
             stories open inside their own rows; see ProjectStoryPanel. */}
         <div className="mb-8 flex flex-col justify-between gap-6 border-b border-subtle pb-6 md:flex-row md:items-end text-left">
           <p className="max-w-xl text-[16px] text-foreground/78 leading-relaxed font-light">
@@ -53,8 +64,8 @@ export const ProjectsGallery = () => {
                 once and the database kept moving. */}
             {t(
               'projects.registry.description',
-              '{{total}} in total. The four at the top are my own — open a row to read the case study.',
-              { total: allProjects.length },
+              '{{total}} in total. The {{own}} at the top are my own — open a row to read the case study.',
+              { total: allProjects.length, own: ownCount },
             )}
           </p>
 
