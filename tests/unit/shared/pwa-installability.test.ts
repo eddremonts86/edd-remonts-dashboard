@@ -89,6 +89,16 @@ describe('the iOS half, which the manifest does not cover', () => {
   it('links the manifest at all', () => {
     expect(rootRoute).toContain("rel: 'manifest'")
   })
+
+  it('pairs a translucent status bar with viewport-fit=cover', () => {
+    // These two only work together. A translucent status bar puts the page
+    // under the clock, and the padding that saves it — StickyNav's
+    // env(safe-area-inset-top) — reports 0 unless the viewport covers the
+    // display. Either both, or neither.
+    const translucent = rootRoute.includes('black-translucent')
+    const coversDisplay = rootRoute.includes('viewport-fit=cover')
+    expect(translucent).toBe(coversDisplay)
+  })
 })
 
 describe('service worker', () => {
