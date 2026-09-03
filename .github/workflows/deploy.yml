@@ -51,9 +51,16 @@ concurrency:
 # change over there is a deliberate bump here and not a surprise mid-deploy.
 jobs:
   deploy:
-    uses: eddremonts86/ai-os/.github/workflows/reusable-coolify-deploy.yml@coolify-deploy-v1
+    uses: eddremonts86/ai-os/.github/workflows/reusable-coolify-deploy.yml@coolify-deploy-v2
     with:
       app: edd-remonts-dashboard
+      # This app is the reason v2 has the knob. Three deploys on 2 Sept
+      # overran the old ten-minute wait and all three went on to succeed —
+      # the slowest reached `finished` around seventeen minutes in, so even
+      # v2's default of 20 leaves little room. Thirty is the measured range
+      # plus headroom, and it costs nothing on a fast deploy: the wait ends
+      # the moment Coolify says `finished`.
+      wait_minutes: 30
     secrets:
       coolify_api_url: ${{ secrets.COOLIFY_API_URL }}
       coolify_api_token: ${{ secrets.COOLIFY_API_TOKEN }}
